@@ -1,0 +1,1256 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "continue": "Continue",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "lastUpdated": "Last updated",
+    "menu": "Menu",
+    "yes": "Yes",
+    "no": "No",
+    "open": "Open",
+    "add": "Add",
+    "done": "Done",
+    "undo": "Undo",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "notALawFirm": "We are not a law firm.",
+    "viewPricing": "View pricing",
+    "startFiling": "Start filing your claim",
+    "goToCheckout": "Go to checkout",
+    "backHome": "Back home",
+    "home": "Home",
+    "englishControls": "The English version is the controlling text. This translation is for convenience."
+  },
+  "navigation": {
+    "home": "Home",
+    "whoWeAre": "Who We Are",
+    "whatWeDo": "What We Do",
+    "howItWorks": "How It Works",
+    "learningCenter": "Learning Center",
+    "needProfessionalHelp": "When to Call an Attorney",
+    "needHelpShort": "Complex claim?",
+    "licenseCredentials": "License & Credentials",
+    "contact": "Contact",
+    "pricing": "Pricing",
+    "notarization": "Notarization",
+    "dashboard": "Dashboard",
+    "submitClaim": "Create Your Account & Start Filing",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "ourStory": "Our Story",
+    "howWeHelp": "How We Help",
+    "getStarted": "Get started",
+    "dataHandling": "Data handling"
+  },
+  "home": {
+    "hero": {
+      "title": "File Your Florida No-Fault Claim.",
+      "titleLine1": "File Your Florida",
+      "titleLine2": "No-Fault Claim.",
+      "subtitle": "Keep What's Yours.",
+      "description": "The tools and guidance you need to move your Florida PIP claim forward—track your recovery and keep more of your benefits. Flat $500 platform access—not a contingency fee.",
+      "cta": "Get started",
+      "ctaSecondary": "See how it works",
+      "learnMore": "Learn More",
+      "watchDemo": "Watch Demo",
+      "imageAlt": "ClaimSaver+ Background",
+      "eyebrow": "Florida PIP only · Guided claim platform",
+      "visualProgressTitle": "Claim progress",
+      "visualProgressSubtitle": "Guided steps · save anytime",
+      "visualStepsDone": "Steps completed",
+      "visualStepsRatio": "5 / 8",
+      "visualStat1": "Forms",
+      "visualStat2": "Docs",
+      "visualStat3": "Timeline",
+      "visualDeadlineTitle": "Next milestone",
+      "visualDeadlineHint": "Deadlines & reminders in one place",
+      "visualDocsTitle": "Forms & uploads",
+      "visualDocsHint": "Encrypted storage for your records",
+      "trust1": "Not a law firm",
+      "trust2": "Flat $500 access",
+      "trust3": "Guided filing—you stay in control",
+      "visualPreviewEventTitle": "Follow-up reminder",
+      "visualPreviewEventDate": "Example — add your own in Calendar",
+      "dashboardPreviewBadge": "Sample preview",
+      "dashboardPreviewHint": "Your own progress and documents will appear here after you sign in."
+    },
+    "video": {
+      "notSupported": "Your browser does not support the video tag."
+    },
+    "features": {
+      "title": "Everything You Need",
+      "subtitle": "Guided tools to file and manage your Florida PIP claim—forms, storage, tracking, and reminders",
+      "feature1": {
+        "title": "No-Fault Form Filing",
+        "description": "Streamlined form submission with real-time validation and instant confirmation."
+      },
+      "feature3": {
+        "title": "Document Management",
+        "description": "Secured cloud storage for your uploads: TLS (HTTPS) in transit; files stored with our provider (Supabase) using industry-standard encryption at rest (AES-256). You control what you upload."
+      },
+      "feature4": {
+        "title": "Reminders & milestones",
+        "description": "Track your claim timeline with automated reminders and milestone updates—you stay in control of every step."
+      },
+      "feature5": {
+        "title": "Claim progress & timeline",
+        "description": "Track treatment, expenses, and deadlines in one place—with reminders so nothing slips through the cracks."
+      }
+    },
+    "benefits": {
+      "benefit1": {
+        "title": "You stay in control",
+        "description": "You enter your information and submit your claim materials. We provide the guided forms, validation, and organization—not representation."
+      },
+      "benefit3": {
+        "title": "Clear fee structure",
+        "description": "Flat platform access fee—not a percentage of your PIP benefit"
+      },
+      "benefit4": {
+        "title": "Help when you need it",
+        "description": "Email support for platform and billing questions—not legal advice about your case"
+      }
+    },
+    "whyChoose": {
+      "title": "Why Choose",
+      "brand": "ClaimSaver+",
+      "description": "Purpose-built guided claim tools for Florida no-fault (PIP): forms, secure storage, expense tracking, and education—so you can file and manage your claim with confidence.",
+      "getStarted": "Create Your Account & Start Filing",
+      "flatFee": "Flat $500 platform access",
+      "freeConsultation": "Educational resources & platform walkthrough",
+      "imageAlt": "ClaimSaver+ Background"
+    },
+    "stats": {
+      "title": "Simple, transparent pricing",
+      "recoveryTime": "Illustrative PIP benefit (example)",
+      "recoveryTimeValue": "$10,000 limit",
+      "successRate": "vs. typical 33% attorney fee on $10K",
+      "successRateValue": "$3,300",
+      "satisfaction": "Flat platform fee",
+      "satisfactionValue": "$500",
+      "flatFeeLabel": "Flat platform fee",
+      "flatFeeValue": "$500",
+      "statsNote": "Example assumes a $10,000 PIP benefit and 33% contingency for comparison only—not a guarantee of your outcome.",
+      "statsIllustrativeBadge": "Illustrative comparison—not your claim"
+    },
+    "story": {
+      "heroBannerAlt": "ClaimSaver+ — guided tools for Florida PIP claims",
+      "pipStepsAlt": "Illustrated five-step overview of the Florida PIP claim process",
+      "whatYouGetAlt": "Overview of tools and benefits included with ClaimSaver+",
+      "beforeAfterAlt": "Before and after: scattered records versus an organized claim workflow",
+      "pipStepsTitle": "Your PIP path in five steps",
+      "pipStepsSubtitle": "From the accident to an organized claim—the roadmap our guided platform follows with you.",
+      "whatYouGetTitle": "What you get",
+      "whatYouGetSubtitle": "Structured tools and secure storage—not a contingency fee.",
+      "beforeAfterTitle": "From chaos to clarity",
+      "beforeAfterSubtitle": "Replace scattered paperwork with a single, guided workflow you control."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Get answers to the most common questions about ClaimSaver+",
+      "legal": {
+        "question": "What's the difference between ClaimSaver+ and an attorney?",
+        "answer": "ClaimSaver+ is software: guided forms, secure storage, reminders, and education so you can prepare and submit your Florida PIP claim materials. We are not a law firm and do not provide legal advice, evaluate your claim’s merits, negotiate with insurers, or represent you. An attorney can advise on strategy, liability, coverage disputes, and represent you when your situation requires it. For advice about your specific matter, consult a licensed Florida attorney."
+      },
+      "accidents": {
+        "question": "What types of accidents does ClaimSaver+ handle?",
+        "answer": "The platform is designed for Florida motor vehicle-related PIP claims—including car, motorcycle, truck, pedestrian, and bicycle incidents—so you can document and pursue no-fault benefits you are entitled to seek under your policy. We do not guarantee outcomes or act as your representative."
+      },
+      "documents": {
+        "question": "Do I need to provide documents for my claim?",
+        "answer": "Yes, you'll need to provide relevant documents such as police reports, medical records, insurance information, photos of the accident scene, and any other evidence related to your case. Our secure platform makes it easy to upload and organize these documents."
+      },
+      "states": {
+        "question": "Is ClaimSaver+ available in all states?",
+        "answer": "ClaimSaver+ is focused on Florida motor vehicle no-fault (PIP) claims. Other states may be added over time. We do not provide legal advice; for questions about your jurisdiction, consult a licensed attorney."
+      }
+    },
+    "optionalServices": {
+      "title": "Platform access and optional notarization",
+      "subtitle": "Guided PIP filing is our core product. Online notarization is a separate add-on—priced and purchased on its own when you need it.",
+      "pipTitle": "Guided claim platform ($500)",
+      "pipBody": "Access to guided PIP forms, secure document storage, tracking, and reminders. This is what you use to prepare and file your Florida no-fault claim.",
+      "notarizationBadge": "Optional add-on",
+      "notarizationTitle": "Online notarization (~$25)",
+      "notarizationBody": "Remote document notarization via DocuSign. Add it at checkout if you need it, or review the service first—it is not part of the guided PIP form workflow.",
+      "linkNotarization": "Notarization service",
+      "linkPricing": "Pricing & checkout"
+    },
+    "notaryNote": "Need a document notarized? Optional ~$25 add-on via DocuSign—not required to use the platform.",
+    "graphicCaption": "Illustrative art—not your claim and not a guaranteed amount."
+  },
+  "pages": {
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Your claim. Your control. Our tools.",
+      "intro": "You handle every step. We provide the platform that makes each step easier.",
+      "step1Title": "Create your account & pay for access",
+      "step1Body": "Sign in, complete checkout for platform access, and unlock the guided workflows and document tools.",
+      "step2Title": "Complete the guided PIP information",
+      "step2Body": "Walk through the PIP form one section at a time with plain-language prompts. Built-in validation catches formatting errors and missing fields before you submit.",
+      "step3Title": "Upload & organize documents",
+      "step3Body": "Upload police reports, medical records, photos, and insurance documents to your encrypted vault. Everything stays organized and accessible when you need it.",
+      "step4Title": "Track deadlines & recovery",
+      "step4Body": "Use calendars, reminders, and expense tracking—including awareness of common deadlines like Florida’s 14-day initial treatment rule (general information, not legal advice).",
+      "step5Title": "Compile and submit your claim package",
+      "step5Body": "When you’re ready, pull your documents together into a complete claim package and submit it to your insurer.",
+      "notarizationNote": "Need a document notarized? We offer optional online notarization via DocuSign as a separate service from guided PIP filing—about $25 when you add it at checkout. It is not required to use the claim platform.",
+      "viewPricing": "View pricing",
+      "startFiling": "Get started",
+      "includesTitle": "What's included",
+      "include1Title": "Guided PIP worksheets",
+      "include1Body": "Worksheets modeled on the Florida no-fault application, with plain-language prompts so you can complete them yourself.",
+      "include2Title": "Explanations and completeness checks",
+      "include2Body": "Field-level help and formatting checks catch missing information before you move on—not legal advice about what to answer.",
+      "include3Title": "Encrypted document vault",
+      "include3Body": "Upload police reports, medical records, photos, and insurance documents. Everything stays organized and accessible when you need it.",
+      "include4Title": "Dashboard, calendar, and reminders",
+      "include4Body": "Track appointments and common Florida PIP-oriented dates you enter, including the 14-day treatment window as a reminder—not a legal deadline.",
+      "include5Title": "Expense and wage-loss logging",
+      "include5Body": "Record medical bills, mileage, and lost wages in one place so you can see what you have documented before you send anything to an insurer.",
+      "include6Title": "Printable summary",
+      "include6Body": "Download a summary of what you entered so you can copy it onto the insurer’s official form or keep it as your own record.",
+      "include7Title": "General PIP education",
+      "include7Body": "Articles that explain how Florida no-fault claims often work. This is general information, not advice about your case."
+    },
+    "learningCenter": {
+      "title": "Learning Center",
+      "subtitle": "General education about Florida PIP—not legal advice",
+      "intro": "These topics explain how no-fault claims often work. Your situation is unique; for advice about your specific case, consult a licensed Florida attorney.",
+      "articles": {
+        "pipSteps": {
+          "title": "How to file a PIP claim in Florida (overview)",
+          "summary": "A high-level look at forms, documentation, and timelines—educational only."
+        },
+        "fourteenDay": {
+          "title": "The 14-day rule and PIP",
+          "summary": "Why the initial treatment window matters in many Florida PIP matters (general information)."
+        },
+        "needLawyer": {
+          "title": "Do you need an attorney for every PIP claim?",
+          "summary": "When guided tools may be enough—and when to call a licensed attorney."
+        },
+        "documents": {
+          "title": "Documents often used in no-fault claims",
+          "summary": "Checklists and organization tips—not a determination of what you must submit."
+        },
+        "mistakes": {
+          "title": "Common mistakes that complicate claims",
+          "summary": "Practical tips to stay organized and complete."
+        }
+      },
+      "footerDisclaimer": "This content is for general educational purposes. ClaimSaver+ is a guided claim platform and does not provide legal advice.",
+      "attorneyLink": "Wondering when to call an attorney?",
+      "notarizationLink": "Optional online notarization (separate from PIP filing)"
+    },
+    "needProfessionalHelp": {
+      "title": "When Your Claim Needs Legal Expertise",
+      "subtitle": "Some claims go beyond standard PIP filing. Here’s how to know if yours is one of them.",
+      "body": "ClaimSaver+ is designed for standard Florida PIP claims—the kind that make up the vast majority of no-fault filings. But some situations involve complexities that go beyond form filing and documentation. Here are signals that your claim may benefit from a licensed attorney:",
+      "bullets": {
+        "serious": "Serious injury or stepping outside no-fault",
+        "denied": "Claim denials or coverage disputes",
+        "multi": "Multiple vehicles or complex liability",
+        "advice": "Any question that requires legal advice about your specific situation",
+        "euo": "Examinations under oath, IMEs, or recorded statements you do not feel equipped to handle",
+        "overlapping": "Overlapping workers’ compensation, Medicare, or stacked coverages",
+        "fraud": "Fraud allegations or coordinated treatment audits"
+      },
+      "closing": "As we grow, we may add optional professional services as a separate offering—always clearly distinguished from standard platform access, with their own agreements and disclosures.",
+      "ctaHome": "Back to home",
+      "ctaHowItWorks": "How the platform works",
+      "notEveryClaim": "Not every PIP claim belongs on a DIY path.",
+      "introDiy": "ClaimSaver+ is software for standard Florida no-fault paperwork. Leave the DIY path and consult a licensed Florida attorney when:",
+      "supportNote": "We do not match you to a lawyer as part of the $500 product. Support may help with login, billing, and how to use the site—not “what should I do in my case?”"
+    },
+    "licenseCredentials": {
+      "title": "License & Credentials",
+      "subtitle": "Transparency about what ClaimSaver+ is—and is not",
+      "body": "The ClaimSaver+ product is guided claim software. It is not a law firm, not your representative with an insurance company, and not a substitute for legal or adjusting advice when your situation requires it.",
+      "optionalPA": "As we grow, optional licensed public adjusting or other professional services may be offered as a separate product—with separate agreements and disclosures, not part of the standard $500 platform access.",
+      "verify": "Verification links to the Florida Department of Financial Services (DFS) license lookup will be posted here for any credentials we publish.",
+      "staffLicenseHeading": "Team credentials (Florida)",
+      "staffLicenseBody": "Florida All-Lines Adjuster (6-20) license G279764 is published below for public verification through the Florida Department of Financial Services licensee search.",
+      "staffLicensePending": "Public adjuster (3-20) or other credentials, if offered as a separate service later, will be listed separately with full disclosures.",
+      "founderAlt": "ClaimSaver+ founder",
+      "teamAlt": "ClaimSaver+ team",
+      "founderName": "Miguel A. Fernandez, M.Sc.",
+      "founderRole": "Founder",
+      "licenseType": "Florida All-Lines Adjuster (6-20)",
+      "licenseNumberLabel": "License number",
+      "verifyDfs": "Verify on the Florida DFS Licensee Search",
+      "notAdjusting": "This is founder background. ClaimSaver+ is software—we do not adjust your claim, negotiate with insurers, or represent you.",
+      "searchHint": "On the DFS site, search license number G279764 (or the name Miguel A. Fernandez) under Adjuster.",
+      "founderCaption": "Miguel A. Fernandez, M.Sc., founder",
+      "teamCaption": "ClaimSaver+ team"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Platform & technical support",
+      "body": "For help signing in, billing, or using the website, email us. We cannot answer questions about the legal merits of your specific claim or tell you what you should do in your case—those questions belong to a licensed attorney.",
+      "emailLabel": "Email",
+      "notarizationNote": "Optional online notarization is a separate service from guided PIP filing—add it at checkout or review details first:",
+      "headquarters": "Headquarters: Miami, Florida.",
+      "attorneyCta": "If your matter is too complex for standard PIP filing, see When to Call an Attorney."
+    },
+    "dataHandling": {
+      "title": "Data handling & security",
+      "metaDescription": "How ClaimSaver+ processes and stores claim-related information: scope of HIPAA, encryption, vendors, payments, and accounts.",
+      "intro": "This page summarizes how the ClaimSaver+ application handles information you provide. It is general information, not legal advice, and does not replace any contract or policy you agree to when using the service.",
+      "section1Title": "HIPAA scope — no certification claimed",
+      "section1Body": "Many users upload health- and accident-related documents. ClaimSaver+ is built as claim-preparation software for consumers. We do not operate as your health care provider or health plan under HIPAA, and we do not claim to be a HIPAA business associate for routine platform use. We do not display or rely on a third-party HIPAA “certification” badge. If you are a regulated entity that requires a Business Associate Agreement, contact us before using the platform for regulated workflows.",
+      "section2Title": "What we collect and store",
+      "section2Body": "We collect account information you provide, claim form fields you enter, calendar and expense entries you create, and files you upload. Operational logs may include IP address, device type, and timestamps for security and troubleshooting.",
+      "section3Title": "Encryption and storage",
+      "section3Body": "Traffic between your browser and our services uses TLS (HTTPS). Uploaded files and application data are stored using our database and object storage providers (for example Supabase), which apply industry-standard encryption for data at rest. We do not describe this as “bank-level encryption.”",
+      "section4Title": "Payments (Stripe)",
+      "section4Body": "Card payments are processed by Stripe. We do not store full card numbers on ClaimSaver+ servers for hosted Checkout flows.",
+      "section5Title": "Accounts and authentication",
+      "section5Body": "Sign-in uses Supabase Auth. We recommend strong passwords and enabling MFA when available.",
+      "section6Title": "Email and domain mail policy",
+      "section6Body": "Public support email is sent from our claimsaverplus.com domain.",
+      "section7Title": "Retention and deletion",
+      "section7Body": "We retain data as needed to operate your account and meet legal obligations. You may request deletion or export of personal data subject to applicable law.",
+      "section8Title": "Contact",
+      "section8Body": "Questions about this summary can be sent to our support channel listed on the Contact page."
+    }
+  },
+  "pricing": {
+    "title": "Pricing — Florida PIP claim software | ClaimSaver+",
+    "headlinePart1": "Florida PIP.",
+    "headlinePart2": "Guided software",
+    "headlinePart3": "Flat $500 access.",
+    "subtitle": "Same product as the rest of this site: software to help you prepare Florida no-fault (PIP) claim materials—you send them to your insurer. $500 is platform access only. Optional online notarization (~$25) is a separate add-on. ClaimSaver+ is not a law firm; we do not negotiate with insurers or act as your representative.",
+    "startClaim": "Start Filing Your Claim",
+    "learnMore": "Learn More",
+    "selectServices": "Select Your Services & Payment",
+    "selectServicesDesc": "Choose the services you need and complete your payment securely with Stripe",
+    "services": {
+      "noFaultAssistance": {
+        "name": "Guided Claim Platform",
+        "description": "Guided PIP forms, document tools, tracking, and reminders—you remain the party filing",
+        "price": "500.00"
+      },
+      "notarization": {
+        "name": "Notarization Services",
+        "description": "Online document notarization via DocuSign",
+        "price": "25.00"
+      }
+    },
+    "traditionalCosts": {
+      "title": "Illustrative: attorney contingency model",
+      "averagePolicy": "Example PIP benefit used in comparisons: $10,000 (your policy may differ)",
+      "attorneyFee": "Example 33% contingency fee on that benefit: $3,300",
+      "netToVictim": "Illustrative amount left before other costs: less than $7,000 of the example benefit",
+      "additionalCosts": "Other professional or court costs may still apply with any path",
+      "hiddenFees": "Contingency structures vary by firm—ask any lawyer you hire for their written terms"
+    },
+    "claimSaverAdvantages": {
+      "title": "ClaimSaver+ Advantage",
+      "keep95Percent": "Illustrative only: on a $10,000 PIP benefit example, a flat $500 software fee leaves more of the benefit than a 33% contingency fee on the same example—not a prediction of your outcome",
+      "noContingency": "No 33% contingency fee structure on our platform",
+      "transparentPricing": "Transparent flat rate for platform access",
+      "professionalService": "Tools and education—you decide and submit",
+      "maximumRecovery": "Stay organized and informed throughout your claim"
+    },
+    "comparisonNote": "Comparison assumes you file using ClaimSaver+ guided tools versus using a 33% contingency attorney on a $10,000 PIP benefit. Actual outcomes vary.",
+    "optionalNotarizationIntro": "Guided PIP platform access ($500) and optional online notarization (~$25) are separate line items. You can purchase notarization only if you need it—see below.",
+    "selectServicesNotarizationHint": "Select guided platform access for PIP filing. Add notarization only if you need documents notarized; it is billed separately and is not part of the PIP workflow.",
+    "selectServicesCheckoutNote": "This is the purchase flow for this visit—not your claim dashboard or an existing order. Choose services below, then pay securely with Stripe.",
+    "platformAccessSubtitle": "Guided platform access—you control the process",
+    "features": {
+      "transparentPricing": {
+        "title": "Transparent Pricing",
+        "description": "One clear fee for platform access. No hidden subscription for the core product."
+      },
+      "maximumRecovery": {
+        "title": "Keep More of Your Benefit",
+        "description": "Compared to typical contingency percentages, a flat fee can leave more in your pocket on standard PIP claims you manage with the platform."
+      },
+      "professionalService": {
+        "title": "Platform guidance",
+        "description": "Step-by-step software workflows and validation—not an adjuster negotiating with insurers or speaking for you."
+      },
+      "fasterProcessing": {
+        "title": "Stay on Track",
+        "description": "Reminders and checklists help you complete forms and follow common timelines."
+      }
+    },
+    "cta": {
+      "title": "Ready to Move Your Claim Forward?",
+      "subtitle": "Get guided tools for a flat $500. You prepare and submit your PIP materials—no contingency fee to ClaimSaver+.",
+      "button": "Start Filing Your Claim"
+    },
+    "ui": {
+      "complexClaimLead": "Complex claim or disputed coverage?",
+      "complexClaimMid": "If your situation may require legal judgment or representation,",
+      "complexClaimLink": "see when to call an attorney",
+      "comparisonTitleLead": "Illustrative comparison:",
+      "comparisonTitleAccent": "Contingency fee vs. flat software fee",
+      "comparisonSubtitle": "Example math for a common PIP benefit limit—not a guarantee about your case or settlement.",
+      "supportEmailLine": "Questions about checkout or billing? Use the Contact page (linked in the footer).",
+      "averageFeesCaption": "Average fees and costs",
+      "recommendedBadge": "RECOMMENDED",
+      "advantageCallout": "Illustrative: on a $10K PIP benefit, a flat $500 platform fee leaves far more in your pocket than a 33% contingency fee—your results may differ.",
+      "whyChooseLead": "Why Choose",
+      "whyChooseAccent": "ClaimSaver+?",
+      "whyParagraph1": "For illustration only, many Florida drivers compare a $10,000 PIP benefit limit to typical 33% contingency fees—that is $3,300 in fees on that example amount alone (your policy and facts may differ).",
+      "whyParagraph2": "ClaimSaver+ charges a flat $500 for software access: guided forms, storage, reminders, and education. We do not take a percentage of your benefits and we do not handle your claim for you—you remain the person filing and communicating with your insurer.",
+      "savingsCalculator": "Savings Calculator",
+      "calcTraditionalFee": "Traditional Service Fee (33%)",
+      "calcFlatFee": "ClaimSaver+ Flat Fee",
+      "calcYourSavings": "Your Savings",
+      "ctaFootnote": "Flat $500 platform access • No contingency fee to ClaimSaver+",
+      "loadingTitle": "Preparing Your Payment",
+      "loadingSubtitle": "Validating session and redirecting to secure payment...",
+      "alertSelectService": "Please select at least one service",
+      "errSessionInvalid": "Checkout session is invalid or expired. Please try again.",
+      "errStripeUnavailable": "Stripe is not available. Please check your configuration.",
+      "errPaymentGeneric": "There was an error processing your payment. Please try again or contact support.",
+      "errPaymentConfig": "Payment system is not properly configured. Please contact support.",
+      "errNoSession": "Unable to create payment session. Please try again.",
+      "stripeNotConfigured": "Stripe not configured — payment processing disabled",
+      "oneTimeFee": "One-time fee",
+      "selectedServicesHeading": "Selected Services:",
+      "noServicesSelected": "No services selected",
+      "totalLabel": "Total",
+      "processing": "Processing...",
+      "proceedToPayment": "Pay for platform access",
+      "securePaymentStripe": "Secure payment powered by Stripe",
+      "faqTitle": "Pricing questions",
+      "faqSubtitle": "Straight answers—ClaimSaver+ sells access to claim-preparation software, not legal services.",
+      "faq1q": "What am I paying $500 for?",
+      "faq1a": "Access to ClaimSaver+’s guided PIP workflows, document storage, reminders, and educational content—so you can prepare your own materials. It is not a fee for representation, negotiation, or communicating with your insurance company on your behalf.",
+      "faq2q": "Why compare 33% to $500?",
+      "faq2a": "Many people compare a typical attorney contingency percentage to a flat software fee—we show illustrative math only. Whether you use an attorney is your choice; we are not a substitute for one when your situation requires licensed counsel.",
+      "faq3q": "Does ClaimSaver+ guarantee I’ll recover more money?",
+      "faq3a": "No. We do not guarantee any financial outcome. Charts on this page use simplified examples. Results depend on your coverage, facts, and how your insurer processes the claim.",
+      "faq4q": "Who do I contact about charges or receipts?",
+      "faq4a": "For billing and platform support, use the Contact page (footer). We cannot advise you on the legal merits of your claim.",
+      "faq5q": "Is notarization included in the $500?",
+      "faq5a": "No. Optional online notarization through DocuSign is a separate line item (~$25) if you add it at checkout. It is not required to use the guided claim tools.",
+      "modalServicesTitle": "Our Services",
+      "modalServicesSavingsHeading": "Illustrative comparison (example math only)",
+      "modalServicesSavingsDifferenceLabel": "Illustrative difference on this example",
+      "modalPricingTitle": "Pricing illustration",
+      "modalPricingSavingsBreakdown": "Illustrative fee comparison (example)",
+      "modalPricingTotalDifferenceLabel": "Illustrative difference on the example",
+      "notaryBulletAvailability": "Scheduling depends on notary availability in the DocuSign network",
+      "notaryBulletCompletion": "Session length varies—not instantaneous",
+      "btnClose": "Close",
+      "btnStartYourClaim": "Start Your Claim",
+      "modalSelectServices": "Select Services",
+      "stickyBarLead": "flat platform access",
+      "stickyBarCta": "Start for $500"
+    },
+    "selectAtLeastOne": "Select at least one service.",
+    "checkoutFailed": "Checkout failed",
+    "redirecting": "Redirecting…",
+    "checkoutNote": "This is the purchase flow for this visit—not your claim dashboard. Prices are set on the server; you only choose which products to buy."
+  },
+  "claimForm": {
+    "header": {
+      "title": "Florida No-Fault Form",
+      "description": "Enter your information step by step—you remain responsible for your claim; ClaimSaver+ provides software and storage, not legal advice or representation.",
+      "step": "Step"
+    },
+    "steps": {
+      "personalInfo": "Personal Information",
+      "vehicleInfo": "Vehicle Information",
+      "accidentDetails": "Accident Details",
+      "insuranceInfo": "Insurance Information",
+      "medicalInfo": "Medical Information",
+      "employmentWages": "Employment & Wages",
+      "insuranceAuthorization": "Insurance Authorization",
+      "reviewSubmit": "Review & Submit",
+      "hipaaAuthorization": "HIPAA Authorization",
+      "step": "Step"
+    },
+    "success": {
+      "title": "Information Saved",
+      "description": "Your responses have been submitted to your ClaimSaver+ account. Continue organizing documents and, when ready, submit materials to your insurer directly—ClaimSaver+ does not file or negotiate for you.",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "errors": {
+      "submitFailed": "Failed to submit claim"
+    },
+    "guidedTitle": "Guided PIP worksheet",
+    "guidedIntro": "Personal drafting aid aligned with the common Florida application. The insurer’s official form always controls. Saving stores information in your account—it does not send anything to an insurer.",
+    "signInTitle": "Sign in to use the worksheet",
+    "paywallTitle": "Platform access required",
+    "paywallBody": "The $500 guided platform unlocks this worksheet, document vault, and reminders. Notarization is optional and separate.",
+    "record": "Record {{number}}",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "saveFailed": "Save failed",
+    "loadFailed": "Could not load worksheet",
+    "stepOf": "Step {{step}} of 8 — {{title}}",
+    "methodPrompt": "How will you use this worksheet? This is not legal advice and does not tell you what to claim.",
+    "methodDigital": "I plan to transfer answers onto the insurer’s official form or portal, or print the summary for my records.",
+    "methodPaper": "I expect to fill the paper form the insurer sent by hand, and may upload a scan later.",
+    "notInjuredNote": "If you were not injured, many official paper forms ask you to sign and return early. Follow the insurer’s version of the form.",
+    "authIntro": "These sections organize information in your account. They do not send releases to anyone. Use the same titles as your carrier’s pages when you file.",
+    "authInsuranceHeading": "Insurance information disclosure authorization",
+    "authHipaaHeading": "HIPAA-style medical authorization",
+    "authPipHeading": "OIR-B1-1571-style PIP disclosure",
+    "reviewIntro": "Review your answers. Optional signature is for your PDF copy—you may instead sign only the insurer’s paper. Saving means information is stored in your account. You still must send materials to the insurer yourself.",
+    "fieldsStarted": "Fields started",
+    "identityChecks": "{{count}} of 3 identity/date checks",
+    "helloFiler": "Hello {{name}}—you remain the filer.",
+    "saveToAccount": "Save to my account",
+    "fraudNotice": "Any person who knowingly and with intent to injure, defraud or deceive any insurance company makes a statement of claim containing any false incomplete or misleading information, is guilty of a felony of the third degree.",
+    "worksheetSteps": {
+      "method": "How you’ll use this worksheet",
+      "header": "Application header",
+      "identity": "Claimant identity",
+      "accident": "Accident",
+      "injury": "Injury and treatment",
+      "wages": "Employment, wages, other coverage",
+      "authorizations": "Authorizations",
+      "review": "Review and save"
+    },
+    "fields": {
+      "signatureDate": "Date filling this out",
+      "policyHolder": "Policy holder",
+      "dateOfAccident": "Date of accident",
+      "fileNumber": "Insurer file / claim number (if assigned)",
+      "insuranceCompany": "Insurance company",
+      "policyNumber": "Policy number",
+      "fullName": "Full name",
+      "email": "Email",
+      "homePhone": "Home phone",
+      "businessPhone": "Business phone",
+      "address": "Address",
+      "dob": "Date of birth",
+      "ssn": "Social Security number (official packets often ask; treat as highly sensitive)",
+      "floridaResidency": "How long have you lived in Florida?",
+      "permanentAddress": "Permanent address if different",
+      "vehicleYear": "Vehicle year",
+      "make": "Make",
+      "model": "Model",
+      "plate": "Plate",
+      "accidentDateTime": "Accident date and time",
+      "place": "Place",
+      "briefDescription": "Brief description",
+      "yourVehicle": "Your vehicle",
+      "familyVehicle": "Any family vehicle involved",
+      "injured": "Injured as a result of the accident",
+      "injuryDescription": "Injury description",
+      "treatedByDoctor": "Treated by a doctor",
+      "doctorName": "Doctor name",
+      "doctorAddress": "Doctor address",
+      "hospitalInpatient": "Hospital inpatient",
+      "hospitalOutpatient": "Hospital outpatient",
+      "hospitalName": "Hospital name",
+      "hospitalAddress": "Hospital address",
+      "medicalBills": "Medical bills to date",
+      "moreMedical": "Expect more medical expense",
+      "courseOfEmployment": "Accident in the course of employment",
+      "lostWages": "Lost wages",
+      "wageLossToDate": "Wage loss to date",
+      "averageWeeklyWage": "Average weekly wage",
+      "disabilityStart": "Disability start",
+      "disabilityEnd": "Disability end",
+      "workersComp": "Workers’ compensation",
+      "workersCompAmount": "Workers’ comp amount",
+      "otherExpenses": "Other expenses",
+      "employersList": "List of employers",
+      "medicalInsurance": "Health/medical insurance name",
+      "memberId": "Member ID",
+      "insuredName": "Insured name",
+      "recipientOrg": "Recipient name / organization",
+      "reason": "Reason",
+      "patientName": "Patient name",
+      "healthcareProvider": "Health care provider",
+      "recipient": "Recipient",
+      "providerName": "Provider name (when applicable)",
+      "name": "Name",
+      "accident": "Accident",
+      "insurer": "Insurer",
+      "signature": "Signature (type your name for your copy)",
+      "disclosureType": "Complete file or limited disclosure",
+      "disclosureTypeHint": "e.g. complete claim file, or limited to listed items",
+      "recipientAddress": "Recipient address",
+      "authStart": "Authorization start",
+      "authEnd": "Authorization end",
+      "providerSignature": "Provider signature (when applicable)",
+      "providerDate": "Provider date"
+    },
+    "printSummary": "Print summary"
+  },
+  "notarization": {
+    "hero": {
+      "title": "Online",
+      "subtitle": "Notarization",
+      "description": "Get your documents notarized securely and legally from anywhere. Powered by DocuSign for the most trusted digital notarization experience.",
+      "startNotarization": "Start Notarization",
+      "learnMore": "Learn More",
+      "imageAlt": "ClaimSaver+ Background"
+    },
+    "features": {
+      "title": "Why Choose Our",
+      "subtitle": "Notarization Service?",
+      "description": "Professional, secure, and convenient notarization powered by DocuSign",
+      "secure": {
+        "title": "Secure & Legal",
+        "description": "Fully compliant with state notarization laws and regulations"
+      },
+      "availability": {
+        "title": "Schedule online",
+        "description": "Notary availability depends on the DocuSign network where you complete your session"
+      },
+      "remote": {
+        "title": "Remote Notarization",
+        "description": "Connect with licensed notaries via video conference"
+      },
+      "instant": {
+        "title": "Typical session length",
+        "description": "Many sessions complete quickly; actual timing depends on the notary and your document"
+      },
+      "security": {
+        "title": "Encryption & secure handling",
+        "description": "TLS-protected sessions; DocuSign governs notary-session security per its documentation"
+      },
+      "certified": {
+        "title": "Certified Notaries",
+        "description": "All notaries are licensed and background-checked"
+      }
+    },
+    "benefits": {
+      "noAppointments": {
+        "title": "No Appointments Needed",
+        "description": "Skip the hassle of scheduling and travel time"
+      },
+      "affordable": {
+        "title": "Affordable Pricing",
+        "description": "Competitive rates starting at $25 per document"
+      },
+      "experts": {
+        "title": "Expert Notaries",
+        "description": "Experienced professionals for all document types"
+      },
+      "rated": {
+        "title": "Professional service",
+        "description": "Remote notarization with licensed notaries"
+      }
+    },
+    "documents": {
+      "realEstate": "Real Estate Documents",
+      "legalContracts": "Legal Contracts",
+      "powerOfAttorney": "Power of Attorney",
+      "willsTrusts": "Wills & Trusts",
+      "businessAgreements": "Business Agreements",
+      "loanDocuments": "Loan Documents",
+      "affidavits": "Affidavits",
+      "deedsTitles": "Deeds & Titles"
+    },
+    "faq": {
+      "whatIs": {
+        "question": "What is digital notarization?",
+        "answer": "Digital notarization is a secure, online process where documents are notarized remotely using advanced technology and video conferencing, making it convenient and legally binding."
+      },
+      "legal": {
+        "question": "Is digital notarization legally valid?",
+        "answer": "Yes, digital notarization is legally valid in all 50 states and is recognized by courts, government agencies, and businesses nationwide."
+      },
+      "documents": {
+        "question": "What documents can be notarized online?",
+        "answer": "Most documents can be notarized online, including real estate documents, legal contracts, power of attorney forms, wills, business agreements, and more."
+      },
+      "duration": {
+        "question": "How long does the process take?",
+        "answer": "The entire digital notarization process typically takes 5-10 minutes from start to finish, including document upload and notary verification."
+      },
+      "requirements": {
+        "question": "What do I need to get started?",
+        "answer": "You'll need a valid government-issued ID, a computer or mobile device with camera and microphone, and the document you want to notarize in PDF format."
+      },
+      "security": {
+        "question": "How secure is the process?",
+        "answer": "Your browser connects over TLS (HTTPS). The notary workflow is completed in DocuSign’s environment; follow DocuSign’s security documentation for session specifics. ClaimSaver+ stored files use TLS in transit and our storage provider’s standard protections for data at rest. We do not claim HIPAA certification."
+      }
+    },
+    "promoSection": {
+      "description": "Remote notarization through DocuSign with TLS-protected access. Notary availability and how long a session takes depend on the DocuSign network and the notary—not 24/7 on-demand or guaranteed “instant” completion.",
+      "pillar1Title": "Encryption in transit",
+      "pillar1Desc": "HTTPS/TLS between your browser and service providers.",
+      "pillar2Title": "Network scheduling",
+      "pillar2Desc": "Sessions depend on notary availability in the DocuSign network.",
+      "pillar3Title": "Session timing",
+      "pillar3Desc": "Completion time varies by document and notary; it is not instantaneous."
+    },
+    "learnMoreModal": {
+      "digitalSecurityBullet": "Transport security: TLS (HTTPS). Notary sessions follow DocuSign’s platform controls; see their documentation for details."
+    },
+    "pageTitle": "Optional online notarization",
+    "pageIntro": "Notarization is not part of guided PIP filing. Price is about $25 per document via DocuSign remote online notarization.",
+    "needId": "Valid government-issued ID",
+    "needDevice": "Device with camera and microphone",
+    "needPdf": "Document (typically PDF)",
+    "needAvailability": "Availability depends on the DocuSign notary network—not 24/7 on-demand",
+    "notLegalReview": "This is not a ClaimSaver+ legal review of the document. Do not bundle notarization into the $500 fee.",
+    "addAtCheckout": "Add at checkout"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back — here's your claim workspace.",
+    "overviewWelcome": "Welcome back, <name>{{name}}</name> — here’s your claim workspace.",
+    "overviewNoUpcoming": "No upcoming events — add milestones in the calendar.",
+    "overviewDocsCount": "{{count}} document(s) in your secure vault",
+    "overview": {
+      "title": "Recovery Overview",
+      "subtitle": "Recovery Overview",
+      "description": "Track your progress and stay informed about your claims"
+    },
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions",
+    "navClaims": "Claims",
+    "documents": "Documents",
+    "payments": "Payments",
+    "settings": "Settings",
+    "hero": {
+      "title": "Dashboard",
+      "subtitle": "Recovery Dashboard",
+      "description": "Track your claims, monitor progress, and stay updated on your recovery journey",
+      "newClaim": "New Claim",
+      "refresh": "Refresh",
+      "imageAlt": "ClaimSaver+ Background"
+    },
+    "stats": {
+      "totalClaims": "Total Claims",
+      "pendingClaims": "Pending Claims",
+      "approvedClaims": "Approved Claims",
+      "totalValue": "Total Value"
+    },
+    "claims": {
+      "title": "Your Claims",
+      "filedOn": "Filed on",
+      "accident": "Accident",
+      "estimatedValue": "Estimated Value",
+      "noClaims": {
+        "title": "No Claims Yet",
+        "description": "Start your recovery journey by filing your first claim",
+        "button": "File Your First Claim"
+      }
+    },
+    "errors": {
+      "loadFailed": "Failed to load claims"
+    },
+    "unlockTitle": "Unlock your workspace",
+    "unlockBody": "Flat $500 platform access includes the guided worksheet, document vault, calendar, and expense log. You remain the filer.",
+    "journeyTitle": "Your claim journey",
+    "journeySubtitle": "Workspace checklist—not an insurer decision.",
+    "tabClaims": "Claims",
+    "tabDocs": "Documents",
+    "tabCalendar": "Calendar",
+    "tabExpenses": "Expenses",
+    "openWorksheet": "Open worksheet",
+    "noClaims": "No claim records yet. Start the guided worksheet.",
+    "untitled": "Untitled",
+    "noAccidentDate": "No accident date",
+    "internalIdNote": "Internal record ID—not your insurer’s claim number unless you entered it.",
+    "continue": "Continue",
+    "uploadFile": "Upload a file",
+    "uploading": "Uploading…",
+    "docsHint": "Typical: police/crash reports, medical records and bills, insurance declarations, photos, wage proofs, carrier correspondence.",
+    "reminderTitle": "Reminder title",
+    "calendarHint": "When you enter an accident date on the worksheet, Florida PIP–oriented milestone templates can be added automatically. They are general information, not legal advice.",
+    "expenseIntro": "Personal organization of amounts you enter—not medical or legal monitoring. Logged total: {{total}}",
+    "description": "Description",
+    "amountUsd": "Amount USD",
+    "logExpense": "Log expense",
+    "loadFailed": "Could not load workspace",
+    "there": "there",
+    "journey": {
+      "1title": "Enter information",
+      "1note": "Complete the Florida no-fault worksheet.",
+      "2title": "Organize documents",
+      "2note": "Police report, medical records, insurance card, photos, bills.",
+      "3title": "Track treatment and expenses",
+      "3note": "Log visits, bills, and wage loss for your own records.",
+      "4title": "You send the package to your insurer",
+      "4note": "ClaimSaver+ does not file or submit on your behalf.",
+      "5title": "Stay on deadlines with reminders",
+      "5note": "General templates—not legal advice.",
+      "6title": "You handle follow-up with the carrier",
+      "6note": "ClaimSaver+ does not negotiate."
+    }
+  },
+  "footer": {
+    "description": "Guided PIP claim filing for Florida drivers—secure documents, smart tools, flat pricing.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "support": "Support",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "headquarters": "Headquartered in Miami, FL",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "legalDisclaimer": "Legal Disclaimer",
+    "legalText": "ClaimSaver+ is a guided claim technology platform—not a law firm. We do not provide legal advice, legal representation, claim evaluation, or negotiation with insurers on your behalf. Information on this site is general and educational only. You file your no-fault (PIP) claim using our tools—you are the filer, not ClaimSaver+. For advice about your specific situation, consult a licensed attorney. We do not guarantee any outcome. Optional attorney or other professional referrals may be offered separately where permitted; they are not part of the standard platform fee.",
+    "optionalNotarization": "Optional online notarization (DocuSign) is available separately—see Notarization and Pricing.",
+    "services": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "emailSupport": "Email support:",
+    "servingFlorida": "Guided claim platform • Serving Florida drivers",
+    "claimForm": "Claim Form",
+    "licenseLine": "Founder {{name}} · {{type}} · License {{number}}"
+  },
+  "whoWeAre": {
+    "hero": {
+      "title": "Tools for",
+      "subtitle": "Your Florida PIP Claim",
+      "description": "We built ClaimSaver+ so Florida drivers can file and manage no-fault claims with clear, guided tools—without paying contingency fees for paperwork you can complete with the platform."
+    },
+    "about": {
+      "title": "About ClaimSaver+",
+      "paragraph1": "ClaimSaver+ is a guided claim filing platform for Florida motor vehicle no-fault (PIP) claims. You enter your information, upload your documents, and submit your claim materials. We provide software, validation, organization, reminders, and educational content—not legal advice or representation.",
+      "paragraph2": "Our goal is to reduce confusion and errors that push people toward expensive services for straightforward paperwork. You stay in control; we provide the tools and general information to help you move through the process confidently.",
+      "paragraph3": "We are not a law firm and do not negotiate with insurance companies on your behalf. When a situation is too complex for standard PIP filing alone, we point you toward professional resources—see our “When to Call an Attorney” page.",
+      "imageAlt": "ClaimSaver+ Family",
+      "familyFirst": "Family First"
+    },
+    "familyStory": {
+      "title": "Our Family Story",
+      "subtitle": "ClaimSaver+ was born from a personal experience that changed our family forever.",
+      "personalJourney": {
+        "title": "A Personal Journey",
+        "description": "After our family faced the challenges of navigating the complex world of accident claims and administrative fees, we realized there had to be a better way."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "To give Florida families straightforward, affordable tools to file and manage no-fault claims—without paying contingency fees for paperwork they can complete with good guidance and the platform."
+      },
+      "whyWeCare": {
+        "title": "Why We Care",
+        "quote": "\"We created this platform to help families like ours avoid the financial burden of traditional administrative services during already difficult times.\""
+      }
+    },
+    "values": {
+      "mission": {
+        "title": "Our Mission",
+        "description": "To give Florida drivers affordable, transparent tools to file and manage no-fault claims—with honest clarity about what software can and can’t do."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "A trusted alternative for drivers who don’t need an attorney for a standard PIP claim—structured organization and education when you choose to manage the filing directly."
+      },
+      "values": {
+        "title": "Our Values",
+        "description": "Transparency, honesty about what we can and cannot do, and respect for your autonomy—your claim, your decisions."
+      },
+      "support": {
+        "title": "Customer Support",
+        "description": "Our support team handles platform and billing questions. For legal questions about your specific situation, we’ll point you to the right resources—including a licensed attorney when that’s what you need."
+      }
+    },
+    "coreValues": {
+      "title": "Our Core Values",
+      "subtitle": "The principles that guide everything we do at ClaimSaver+"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Explore how the platform works, then start your guided filing when you are ready.",
+      "startClaim": "Start Filing Your Claim",
+      "learnMore": "How It Works"
+    },
+    "headquartersNote": "Headquarters: Miami, Florida. We are not a law firm."
+  },
+  "whatWeDo": {
+    "hero": {
+      "title": "Your Claim.",
+      "subtitle": "Your Control. Our Tools.",
+      "description": "ClaimSaver+ gives Florida drivers full-featured guided tools, forms, and education to file no-fault PIP claims. A flat $500 platform fee—no contingency percentage to us.",
+      "startRecovery": "See How It Works",
+      "fileClaim": "Start Filing Your Claim",
+      "imageAlt": "ClaimSaver+ Background"
+    },
+    "services": {
+      "title": "What the",
+      "subtitle": "Platform Provides",
+      "description": "Everything you need to prepare and submit your claim—guided workflows, secure storage, and reminders while you stay in control",
+      "noFault": {
+        "title": "Guided PIP form completion",
+        "description": "You fill out the standardized information with field-level explanations and validation—we help ensure fields are complete and formatted, not that your answers are legally “best.”",
+        "features": {
+          "interface": "Step-by-step guided workflow",
+          "upload": "You control what you upload to your secure account",
+          "validation": "Format and completeness checks",
+          "errorChecking": "Automated checks for common field issues",
+          "confirmation": "You review and submit your materials"
+        }
+      },
+      "documents": {
+        "title": "Document organization",
+        "description": "Secure storage and checklists—organizational tools, not a professional review of your evidence.",
+        "features": {
+          "storage": "Encrypted storage for your files",
+          "encryption": "Security practices appropriate for sensitive information",
+          "sharing": "Share exports you choose to create",
+          "version": "Keep your uploads organized in one place",
+          "mobile": "Access from modern browsers on phone or desktop"
+        }
+      },
+      "recovery": {
+        "title": "Recovery tracking tools",
+        "description": "Personal dashboards for appointments, expenses, and reminders—organizational aids, not medical or legal monitoring.",
+        "features": {
+          "organization": "Expense logs and document grouping",
+          "tracking": "Track dates and amounts you enter",
+          "wageLoss": "Templates to document lost income you report",
+          "property": "Space for property-related documentation you upload",
+          "guidance": "General educational content—not advice for your specific case"
+        }
+      }
+    },
+    "optionalNotarization": {
+      "title": "Optional add-on: online notarization",
+      "body": "Need documents notarized? We offer remote notarization via DocuSign for a separate fee (~$25). It is not part of the guided PIP form service—you add it only if you need it, at checkout or after reviewing the notarization page.",
+      "linkNotarization": "Notarization service",
+      "linkPricing": "Pricing & checkout"
+    },
+    "process": {
+      "title": "A typical",
+      "subtitle": "guided filing flow",
+      "description": "You perform each step; the platform helps you stay organized",
+      "imageAlt": "ClaimSaver+ Background",
+      "step1": {
+        "title": "Enter your information",
+        "description": "Use our guided forms to enter your accident details and upload documents into your secure account. We do not “analyze” your claim for legal merit—you provide the facts."
+      },
+      "step2": {
+        "title": "Track your recovery",
+        "description": "Log medical appointments, upload treatment-related records you choose, and track expenses using the built-in tools. Follow your healthcare providers’ instructions—ClaimSaver+ does not give medical advice."
+      },
+      "step3": {
+        "title": "Stay on track",
+        "description": "Use calendars and reminders for deadlines and follow-ups. Reminders reflect common timelines (like the 14-day initial treatment rule) as general information—not legal advice about what you must do."
+      },
+      "step4": {
+        "title": "Send materials to your insurer (you file)",
+        "description": "When you’re ready, compile your documents into a complete package and send them to your insurance company yourself. You communicate with your carrier directly; ClaimSaver+ does not submit to an adjuster, negotiate, or speak for you."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Get answers to the most common questions about our services",
+      "whatDoWeDo": {
+        "question": "What exactly does ClaimSaver+ do for me?",
+        "answer": "We provide software: guided forms, validation, secure storage, expense tracking, reminders, and education. You file your claim and communicate with your insurer. We do not negotiate, evaluate legal merit, or represent you."
+      },
+      "documents": {
+        "question": "What documents do I need to provide?",
+        "answer": "You'll need to provide police reports, medical records, insurance information, photos of the accident scene, vehicle damage photos, medical bills, and any other evidence related to your case. Our platform makes it easy to upload and organize these documents securely."
+      },
+      "security": {
+        "question": "How secure is my personal information?",
+        "answer": "We use industry-standard protections, including TLS in transit and secured storage for the files you upload (see our Data handling page for details). ClaimSaver+ is claim-preparation software—not a HIPAA-covered health care provider or health plan—and we do not claim formal HIPAA certification, HIPAA “compliance,” or covered-entity status. Coordinate sensitive health information with your providers; we do not provide medical or legal advice."
+      },
+      "mobile": {
+        "question": "Can I access my case information on my phone?",
+        "answer": "Yes. The platform works in modern mobile browsers so you can upload documents and use your dashboard on the go."
+      },
+      "help": {
+        "question": "What if I need help during the process?",
+        "answer": "Contact us for platform, billing, or technical issues. We cannot tell you what you should do in your specific legal situation—that requires a licensed attorney. If your matter is too complex for standard PIP filing alone, see our “When to Call an Attorney” page."
+      },
+      "timeline": {
+        "question": "How long does the entire process take?",
+        "answer": "Timing depends on your situation, your insurer, and how quickly you complete steps using the platform. ClaimSaver+ provides tools and reminders only—we do not control insurer response times, medical treatment, or legal deadlines."
+      },
+      "guarantee": {
+        "question": "Do you guarantee compensation?",
+        "answer": "No. ClaimSaver+ does not guarantee any outcome or settlement amount. We provide tools and general education only. Results depend on your facts, coverage, and how your insurer handles the claim."
+      }
+    },
+    "tools": {
+      "item1": "Guided worksheets modeled on the Florida no-fault application",
+      "item2": "Field-level explanations and completeness checks",
+      "item3": "Secure document storage and organization",
+      "item4": "Dashboard, calendar, and reminders",
+      "item5": "Expense and wage-loss logging",
+      "item6": "A printable summary of what you entered",
+      "item7": "General educational content about how Florida PIP often works"
+    },
+    "notaryNote": "Online notarization is a separate add-on (~$25 via DocuSign) and is not included in the $500 platform fee.",
+    "seeHow": "See how it works"
+  },
+  "success": {
+    "loading": {
+      "processing": "Processing your payment...",
+      "loading": "Loading..."
+    },
+    "hero": {
+      "title": "Payment Successful!",
+      "description": "Thank you for choosing ClaimSaver+. Your payment was processed. You can now use the platform to complete your guided forms and organize your claim."
+    },
+    "whatsNext": {
+      "title": "What's Next?",
+      "email": {
+        "title": "Check Your Email",
+        "description": "We've sent a receipt and confirmation. Save it for your records."
+      },
+      "call": {
+        "title": "Open Your Dashboard",
+        "description": "Continue in the app: complete your information, upload documents, and track deadlines—at your pace."
+      }
+    },
+    "assistance": {
+      "title": "Need Help Using the Platform?",
+      "description": "Email us for login, billing, or technical issues. We cannot provide legal advice or evaluate your claim.",
+      "email": "Email Support",
+      "dashboard": "Go to Dashboard"
+    },
+    "journey": {
+      "title": "Your guided workflow",
+      "description": "You control each step. ClaimSaver+ provides tools and reminders—not representation."
+    },
+    "steps": {
+      "caseReview": {
+        "title": "Complete your guided forms",
+        "description": "Enter your details with validation and plain-language field help."
+      },
+      "documentation": {
+        "title": "Upload & organize",
+        "description": "Store police reports, medical records, and photos in your secure account."
+      },
+      "recovery": {
+        "title": "Submit to your insurer",
+        "description": "When ready, compile your package and send it to your insurance company directly."
+      }
+    },
+    "returnHome": "Return to Home",
+    "receivedTitle": "Payment received",
+    "receivedBody": "If you purchased platform access, your workspace is unlocking now. Stripe webhooks grant access—refresh the dashboard if it still asks you to pay.",
+    "sessionLabel": "Session {{id}}",
+    "openWorksheet": "Open worksheet",
+    "purchaseNote": "This purchase is platform access—not a case being accepted, and not a filing with your insurer.",
+    "goToDashboard": "Go to dashboard"
+  },
+  "notFound": {
+    "title": "404 - Page Not Found | ClaimSaver+",
+    "description": "Page not found",
+    "subtitle": "Page Not Found",
+    "message": "Sorry, the page you're looking for doesn't exist. It might have been moved or deleted.",
+    "goHome": "Go Home",
+    "learnAboutUs": "Learn About Us",
+    "heading": "Page not found",
+    "messageShort": "That URL is not part of ClaimSaver+.",
+    "backHome": "Back home"
+  },
+  "pitch": {
+    "eyebrow": "The guided middle path",
+    "title": "Florida is a no-fault state. The paperwork still isn’t.",
+    "body1": "After a crash, your own PIP coverage is supposed to help pay medical bills and lost wages fast, without anyone arguing about fault. In practice it often doesn’t work that way—there’s a hard 14-day initial treatment window that can limit PIP medical benefits if qualifying care isn’t furnished in time, paperwork and documentation carriers use to delay or deny, and a system built for insurance professionals, not the person who just got rear-ended on the Palmetto.",
+    "fourteenDayNote": "That 14-day rule is general information, not a determination about whether a particular ER, urgent-care, or clinic visit counts in your case.",
+    "optionOneLabel": "Option one",
+    "optionOneTitle": "File it yourself",
+    "optionOneBody": "Risk missing a deadline or making a technical error on a packet built for professionals.",
+    "optionTwoLabel": "Option two",
+    "optionTwoTitle": "Hire a PI attorney",
+    "optionTwoBody": "A typical contingency takes about a third of the recovery—for what is often a routine, undisputed no-fault filing. Illustrative comparison, not a prediction of your outcome.",
+    "middlePath": "ClaimSaver+ is the guided middle path—a platform that walks you through preparing your own PIP claim materials, keeps documentation organized, and can remind you of common Florida PIP-oriented dates you enter, including the 14-day treatment window as a reminder—not legal advice. Flat $500 platform access instead of a contingency cut to ClaimSaver+. You remain the filer. We do not talk to your insurer.",
+    "founder": "Built by a licensed Florida adjuster who has seen both the carrier side and the claimant side of these files. ClaimSaver+ is still software, not a law firm and not your representative.",
+    "attorneyLink": "Complex or disputed claims belong with a licensed Florida attorney."
+  },
+  "auth": {
+    "signInTitle": "Sign in",
+    "signInSubtitle": "Access your ClaimSaver+ workspace.",
+    "signingIn": "Signing in…",
+    "forgotPassword": "Forgot password?",
+    "newHere": "New here?",
+    "createAccount": "Create an account",
+    "signUpTitle": "Create your account",
+    "signUpSubtitle": "Account information must be accurate. You stay in control of your claim.",
+    "passwordHint": "Password (8+ characters)",
+    "creating": "Creating…",
+    "alreadyHaveAccount": "Already have an account?",
+    "checkEmailTitle": "Check your email",
+    "checkEmailBody": "We sent a confirmation link to {{email}}. After you confirm, you can sign in and continue to checkout.",
+    "authNotConfigured": "Auth is not configured. Add Supabase keys to .env.local.",
+    "resetTitle": "Reset password",
+    "resetSent": "If that email exists, we sent a reset link.",
+    "sendReset": "Send reset link",
+    "newPasswordTitle": "Set a new password",
+    "newPasswordPlaceholder": "New password",
+    "updatePassword": "Update password"
+  },
+  "legalPages": {
+    "privacyTitle": "Privacy Policy",
+    "privacy1": "ClaimSaver+ collects account information and the claim materials you choose to enter or upload so you can organize and prepare your own Florida PIP package. We do not use that information to negotiate with insurers or to represent you.",
+    "privacy2": "Payment card numbers are processed by Stripe. We do not store full card numbers as part of the customer-facing product.",
+    "privacy3": "You may request export or deletion of your account data as required by applicable law. Contact support for platform and billing questions only.",
+    "termsTitle": "Terms of Service",
+    "terms1": "You are responsible for the accuracy of information you enter. Saving to your ClaimSaver+ account does not send anything to an insurer. The insurer’s official form and your policy control.",
+    "terms2": "The $500 fee is a one-time purchase of platform access. Notarization is optional and billed separately. There is no subscription for the core product and no contingency fee to ClaimSaver+."
+  },
+  "admin": {
+    "title": "Admin",
+    "workspace": "Admin workspace",
+    "forbidden": "Staff only—not a claims-adjusting desk.",
+    "intro": "Platform support and records only. Do not negotiate with insurers or give legal advice from this screen.",
+    "users": "Users ({{count}})",
+    "claims": "Claim records ({{count}})",
+    "access": "access",
+    "recordNotes": "Record notes",
+    "internalNote": "Internal note",
+    "addNote": "Add note"
+  },
+  "faqBox": {
+    "supportTitle": "Platform support",
+    "supportBody": "Email us for login, billing, or how to use the site. We cannot provide legal advice or tell you what to do in your specific case.",
+    "emailSupport": "Email support",
+    "attorneyLink": "When to call an attorney",
+    "defaultTitle": "Common Questions",
+    "defaultSubtitle": "How the guided platform works—general information, not legal advice"
+  },
+  "graphics": {
+    "pip": {
+      "kicker": "Florida PIP",
+      "title": "PIP in 5 steps",
+      "footnote": "General information about how Florida PIP often works—not legal advice, and not a determination about your visit or your claim.",
+      "step1Title": "Report the accident",
+      "step1Body": "Contact law enforcement or file a required report when the situation calls for it.",
+      "step2Title": "Seek medical care",
+      "step2Body": "Florida PIP medical benefits can be limited if qualifying care is not furnished within a 14-day initial treatment window. That is education—not a ruling on whether a particular visit counts.",
+      "step3Title": "Notify your insurer",
+      "step3Body": "Call your auto insurer to start a PIP claim. You remain the person who files.",
+      "step4Title": "Gather documents",
+      "step4Body": "Collect medical records, bills, proof of lost wages, photos, and other evidence you choose to keep.",
+      "step5Title": "Follow up and track",
+      "step5Body": "Stay organized on forms, dates, and communications. ClaimSaver+ does not talk to your insurer for you."
+    },
+    "whatYouGet": {
+      "title": "What you get with ClaimSaver+",
+      "item1Title": "Organized claim journey",
+      "item1Body": "Guided steps from start to a package you send",
+      "item2Title": "Printable summary",
+      "item2Body": "A record of what you entered—for your copy",
+      "item3Title": "Calendar and reminders",
+      "item3Body": "Dates you enter, including common PIP-oriented templates",
+      "item4Title": "Secure account",
+      "item4Body": "TLS in transit and encrypted storage for your uploads",
+      "item5Title": "Progress tracking",
+      "item5Body": "See worksheet, documents, and reminders in one place",
+      "item6Title": "English, Spanish, and French",
+      "item6Body": "Switch the whole workspace, including these graphics"
+    },
+    "beforeAfter": {
+      "beforeLabel": "Before",
+      "afterLabel": "After",
+      "afterTitle": "One ClaimSaver+ workspace",
+      "before": {
+        "scattered": "Scattered information",
+        "overwhelming": "Overwhelming tasks",
+        "lost": "Lost documents",
+        "visibility": "No clear timeline"
+      },
+      "after1": "Guided PIP worksheet you control",
+      "after2": "Documents in one vault",
+      "after3": "Reminders you set—not legal deadlines",
+      "after4": "You send the package to your insurer"
+    }
+  },
+  "cta": {
+    "primary": "Get started",
+    "secondary": "See how it works",
+    "path": "Create an account, then pay $500 for platform access.",
+    "payAccess": "Continue to pricing"
+  },
+  "fourteenDay": {
+    "banner": "Injured in a Florida crash in the last 14 days?",
+    "body": "PIP medical benefits can be limited if qualifying care is not furnished within a 14-day initial treatment window. That is general information—not a determination about whether a particular visit counts in your case.",
+    "link": "Read the 14-day overview",
+    "attorney": "When to call an attorney"
+  },
+  "floridaOnly": {
+    "chip": "Florida PIP only",
+    "note": "This platform is for Florida motor-vehicle no-fault (PIP) claims. Other states are not supported yet."
+  },
+  "notFiling": {
+    "title": "You are not filing yet",
+    "body": "Saving stores information in your ClaimSaver+ account. Nothing is sent to an insurer until you send it yourself."
+  },
+  "capture": {
+    "title": "Capture from the scene",
+    "body": "Use your camera for the other plate, damage, the crash site, or ER papers. You stay in control of what you upload.",
+    "photo": "Take a photo",
+    "file": "Upload a file",
+    "vaultHint": "Photos save to your document vault. They are not sent to an insurer.",
+    "error": "Upload failed. Try again."
+  },
+  "proof": {
+    "miami": "Headquartered in Miami",
+    "languages": "English, Spanish, and French",
+    "flat": "Flat $500—no contingency to us",
+    "notLaw": "Not a law firm"
+  },
+  "nav": {
+    "company": "Company"
+  },
+  "meta": {
+    "title": "ClaimSaver+ — Florida PIP claim software",
+    "description": "Self-service software for Florida no-fault (PIP) claims. Flat $500 platform access. You file. Not a law firm."
+  },
+  "deadlines": {
+    "fourteenTitle": "14-day initial treatment window",
+    "fourteenCountdown": "Counted from your accident date, day 14 is {{date}} ({{days}} day(s) from today). This is a reminder—not a determination about whether a visit counts.",
+    "fourteenPassed": "Counted from your accident date, day 14 was {{date}}. This is a reminder—not a determination about your case.",
+    "education": "These dates are general Florida PIP-oriented reminders, not legal advice and not a ruling on your facts.",
+    "seeCalendar": "See reminder dates",
+    "chainTitle": "Florida PIP reminder dates",
+    "needAccidentDate": "Enter an accident date on the worksheet to generate this reminder chain.",
+    "add": "Add PIP reminder dates",
+    "refresh": "Update reminder dates",
+    "syncFailed": "Could not update reminder dates.",
+    "critical": "Higher-emphasis reminder",
+    "daysAway": "{{n}} day(s) from today",
+    "daysAgo": "{{n}} day(s) ago",
+    "savedWithChain": "Reminder dates for common Florida PIP milestones were added to your calendar. They are education, not legal deadlines.",
+    "templates": {
+      "1": {
+        "label": "Accident date"
+      },
+      "2": {
+        "label": "14-day treatment window"
+      },
+      "3": {
+        "label": "PIP application / notice"
+      },
+      "4": {
+        "label": "Insurer acknowledgement (illustrative)"
+      },
+      "5": {
+        "label": "Medical bills & records"
+      },
+      "6": {
+        "label": "Payment / denial (illustrative)"
+      },
+      "7": {
+        "label": "Suit limitation (verify)"
+      }
+    }
+  }
+}

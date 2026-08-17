@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "ClaimSaver+",
+    "slug": "claimsaver-plus",
+    "version": "3.0.0",
+    "orientation": "portrait",
+    "scheme": "claimsaver",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "backgroundColor": "#0f172a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.claimsaverplus.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Take photos of accident scenes, vehicle damage, and documents for your PIP file.",
+        "NSPhotoLibraryUsageDescription": "Attach existing photos and documents to your claim workspace.",
+        "NSMicrophoneUsageDescription": "Optional if you later use video for notarization."
+      }
+    },
+    "android": {
+      "package": "com.claimsaverplus.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0f172a"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-image-picker",
+      "expo-document-picker"
+    ]
+  }
+}

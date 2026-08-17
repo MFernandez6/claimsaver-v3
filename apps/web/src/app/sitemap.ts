@@ -1,0 +1,23 @@
+import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/utils";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base = siteUrl();
+  const paths = [
+    "",
+    "/how-it-works",
+    "/pricing",
+    "/who-we-are",
+    "/learning-center",
+    "/when-to-call-an-attorney",
+    "/notarization",
+    "/contact",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/data-handling",
+  ];
+  return paths.map((path) => ({
+    url: `${base}${path}`,
+    lastModified: new Date(),
+  }));
+}
