@@ -1090,7 +1090,7 @@
     "alreadyHaveAccount": "Vous avez déjà un compte ?",
     "checkEmailTitle": "Vérifiez votre e-mail",
     "checkEmailBody": "Nous avons envoyé un lien de confirmation à {{email}}. Après confirmation, vous pourrez vous connecter et continuer vers le paiement.",
-    "authNotConfigured": "L’authentification n’est pas configurée. Ajoutez les clés Supabase à .env.local.",
+    "authNotConfigured": "L’authentification n’est pas configurée. Ajoutez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY dans apps/web/.env.local, puis redémarrez le serveur.",
     "resetTitle": "Réinitialiser le mot de passe",
     "resetSent": "Si cet e-mail existe, nous avons envoyé un lien de réinitialisation.",
     "sendReset": "Envoyer le lien",

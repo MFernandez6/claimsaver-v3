@@ -1089,7 +1089,7 @@
     "alreadyHaveAccount": "Already have an account?",
     "checkEmailTitle": "Check your email",
     "checkEmailBody": "We sent a confirmation link to {{email}}. After you confirm, you can sign in and continue to checkout.",
-    "authNotConfigured": "Auth is not configured. Add Supabase keys to .env.local.",
+    "authNotConfigured": "Auth is not configured. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to apps/web/.env.local, then restart the dev server.",
     "resetTitle": "Reset password",
     "resetSent": "If that email exists, we sent a reset link.",
     "sendReset": "Send reset link",
