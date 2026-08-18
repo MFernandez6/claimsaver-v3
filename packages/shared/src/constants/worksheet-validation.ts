@@ -96,6 +96,11 @@ export function isStepComplete(step: number, form: FloridaNoFaultFormData) {
   return missingFieldsForStep(step, form).length === 0;
 }
 
+/** True after the filer finishes every required step, including the review signature. */
+export function isWorksheetComplete(form: FloridaNoFaultFormData) {
+  return WORKSHEET_STEP_NUMBERS.every((step) => isStepComplete(step, form));
+}
+
 /** Highest step the user may open (completed prefix + current). */
 export function highestReachableStep(form: FloridaNoFaultFormData) {
   let reachable = 1;

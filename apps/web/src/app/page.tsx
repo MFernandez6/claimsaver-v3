@@ -36,7 +36,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white dark:bg-gray-950">
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50 dark:from-slate-950 dark:via-gray-900 dark:to-slate-900">
         <PageHeroBackdrop />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-12 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-8 pb-12 sm:px-6 sm:pt-12 sm:pb-16 lg:px-8 lg:pb-20">
           <HeroLogoLockup />
           <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
             <div className="text-center lg:text-left">

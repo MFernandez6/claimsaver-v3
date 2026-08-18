@@ -45,8 +45,8 @@ export function DashboardOnboarding({
           </li>
         </ol>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <Button asChild className="min-h-11 w-full bg-gradient-to-r from-emerald-600 to-teal-800 sm:w-auto">
             <Link href="/claim-form">
               {hasDraft
                 ? t("dashboard.onboarding.continueWorksheet", { step: worksheetStep })

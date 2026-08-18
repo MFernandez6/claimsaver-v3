@@ -146,6 +146,7 @@ export const claimSummarySchema = z.object({
   updatedAt: z.string(),
   createdAt: z.string(),
   worksheetStep: z.number().int().min(1).max(TOTAL_WORKSHEET_STEPS).default(1),
+  worksheetComplete: z.boolean().default(false),
 });
 
 export type ClaimSummary = z.infer<typeof claimSummarySchema>;

@@ -166,7 +166,7 @@ export default function DashboardPage() {
     : null;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
+    <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
       {!worksheetStarted ? (
         <DashboardOnboarding
           welcomeName={welcomeName}
@@ -177,6 +177,7 @@ export default function DashboardPage() {
       <DashboardOverviewPanels
         currentStep={primary?.worksheetStep ?? 1}
         totalSteps={TOTAL_WORKSHEET_STEPS}
+        worksheetComplete={Boolean(primary?.worksheetComplete)}
         documentsCount={docs.length}
         calendarCount={events.length}
         expensesCount={expenses.length}
@@ -201,13 +202,20 @@ export default function DashboardPage() {
         <SceneCapture onUploaded={() => void refresh()} />
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-2">
-        {(["claims", "docs", "calendar", "expenses"] as Tab[]).map((tabKey) => (
-          <Button key={tabKey} variant={tab === tabKey ? "default" : "outline"} onClick={() => setTab(tabKey)}>
-            {tabKey === "claims" ? t("dashboard.tabClaims") : tabKey === "docs" ? t("dashboard.tabDocs") : tabKey === "calendar" ? t("dashboard.tabCalendar") : t("dashboard.tabExpenses")}
-          </Button>
-        ))}
-        <Button asChild className="ml-auto bg-gradient-to-r from-emerald-600 to-teal-800">
+      <div className="mt-8 flex flex-col gap-3">
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+          {(["claims", "docs", "calendar", "expenses"] as Tab[]).map((tabKey) => (
+            <Button
+              key={tabKey}
+              variant={tab === tabKey ? "default" : "outline"}
+              onClick={() => setTab(tabKey)}
+              className="min-h-11 w-full justify-center sm:w-auto"
+            >
+              {tabKey === "claims" ? t("dashboard.tabClaims") : tabKey === "docs" ? t("dashboard.tabDocs") : tabKey === "calendar" ? t("dashboard.tabCalendar") : t("dashboard.tabExpenses")}
+            </Button>
+          ))}
+        </div>
+        <Button asChild className="min-h-11 w-full bg-gradient-to-r from-emerald-600 to-teal-800 sm:w-auto sm:self-start">
           <Link href="/claim-form">{t("dashboard.openWorksheet")}</Link>
         </Button>
       </div>
@@ -268,25 +276,26 @@ function ClaimRecordCard({
   const { t } = useTranslation();
   const pair = calendarMilestonePair(events);
   const current = Math.min(Math.max(1, claim.worksheetStep || 1), TOTAL_WORKSHEET_STEPS);
+  const complete = Boolean(claim.worksheetComplete);
   const stepMeta = WORKSHEET_STEPS.find((step) => step.step === current);
   const stepTitle = stepMeta ? t(`claimForm.worksheetSteps.${stepMeta.key}`) : "";
   const lastTitle = pair.lastCompleted
     ? eventDisplayTitle(pair.lastCompleted, t)
     : null;
   const nextTitle = pair.nextEvent ? eventDisplayTitle(pair.nextEvent, t) : null;
-  const worksheetPct = Math.round(((current - 1) / TOTAL_WORKSHEET_STEPS) * 100);
+  const worksheetPct = complete ? 100 : Math.round(((current - 1) / TOTAL_WORKSHEET_STEPS) * 100);
 
   return (
     <Card>
       <CardContent className="space-y-4 pt-6">
-        <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
               <p className="font-semibold text-slate-900 dark:text-white">{claim.claimNumber}</p>
               <span
                 className={cn(
                   "rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
-                  claim.status === "completed" || claim.status === "approved"
+                  complete || claim.status === "completed" || claim.status === "approved"
                     ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200"
                     : claim.status === "rejected"
                       ? "bg-red-50 text-red-800 dark:bg-red-950/50 dark:text-red-200"
@@ -295,7 +304,9 @@ function ClaimRecordCard({
                         : "bg-teal-50 text-teal-800 dark:bg-teal-950/50 dark:text-teal-200",
                 )}
               >
-                {t(`dashboard.claimStatus.${claim.status}`, { defaultValue: claim.status })}
+                {complete
+                  ? t("dashboard.claimCard.completeBadge")
+                  : t(`dashboard.claimStatus.${claim.status}`, { defaultValue: claim.status })}
               </span>
             </div>
             <p className="mt-1 text-sm text-slate-500">
@@ -305,15 +316,17 @@ function ClaimRecordCard({
             </p>
             <p className="mt-1 text-xs text-slate-400">{t("dashboard.internalIdNote")}</p>
           </div>
-          <Button asChild variant="outline">
-            <Link href="/claim-form">{t("dashboard.continue")}</Link>
+          <Button asChild variant="outline" className="min-h-11 w-full sm:w-auto">
+            <Link href="/claim-form">{complete ? t("dashboard.progress.review") : t("dashboard.continue")}</Link>
           </Button>
         </div>
 
         <div>
           <div className="mb-1.5 flex items-center justify-between gap-3 text-xs">
             <p className="font-medium text-slate-700 dark:text-slate-200">
-              {t("dashboard.claimCard.worksheet", { current, total: TOTAL_WORKSHEET_STEPS })}
+              {complete
+                ? t("dashboard.claimCard.worksheetDone", { total: TOTAL_WORKSHEET_STEPS })
+                : t("dashboard.claimCard.worksheet", { current, total: TOTAL_WORKSHEET_STEPS })}
             </p>
             <p className="tabular-nums text-teal-700 dark:text-teal-300">{worksheetPct}%</p>
           </div>
@@ -323,7 +336,9 @@ function ClaimRecordCard({
               style={{ width: `${worksheetPct}%` }}
             />
           </div>
-          {stepTitle ? (
+          {complete ? (
+            <p className="mt-1.5 text-xs text-slate-500">{t("dashboard.claimCard.savedHint")}</p>
+          ) : stepTitle ? (
             <p className="mt-1.5 text-xs text-slate-500">
               {t("dashboard.claimCard.currentStep", { title: stepTitle })}
             </p>

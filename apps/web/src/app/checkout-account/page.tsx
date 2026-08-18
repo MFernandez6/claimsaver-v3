@@ -91,7 +91,7 @@ function CheckoutAccountInner() {
 
   if (checkEmail) {
     return (
-      <div className="mx-auto max-w-md px-4 py-24">
+      <div className="mx-auto max-w-md px-4 py-16 sm:py-24">
         <FlashNotice message={t("auth.checkEmailNotice")} />
         <div className="rounded-2xl border border-teal-200 bg-teal-50 p-6 text-teal-950 shadow-sm" role="status">
           <Mail className="h-8 w-8 text-teal-700" aria-hidden />
@@ -104,8 +104,8 @@ function CheckoutAccountInner() {
   }
 
   return (
-    <div className="mx-auto max-w-md px-4 py-24">
-      <h1 className="text-3xl font-bold text-slate-900">{t("auth.checkoutGateTitle")}</h1>
+    <div className="mx-auto max-w-md px-4 py-16 sm:py-24">
+      <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl">{t("auth.checkoutGateTitle")}</h1>
       <p className="mt-3 text-slate-600">{t("auth.checkoutGateSubtitle")}</p>
       <div className="mt-6 grid grid-cols-2 gap-2 rounded-xl bg-slate-100 p-1">
         <button

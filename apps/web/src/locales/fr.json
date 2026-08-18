@@ -904,6 +904,9 @@
     },
     "claimCard": {
       "worksheet": "Feuille de travail · étape {{current}} sur {{total}}",
+      "worksheetDone": "Feuille de travail · {{total}} sur {{total}} terminée",
+      "completeBadge": "Feuille enregistrée",
+      "savedHint": "Le brouillon signé est dans votre compte. Vous envoyez encore le dossier à l’assureur.",
       "currentStep": "Maintenant : {{title}}",
       "lastDoneDetail": "{{title}} · {{date}}",
       "nextDetail": "{{title}} · {{date}}"
@@ -914,6 +917,9 @@
       "stepsAria": "Étapes de la feuille de travail",
       "inProgress": "En cours",
       "continue": "Continuer la feuille",
+      "review": "Revoir la feuille",
+      "completeSubtitle": "Demande guidée enregistrée dans votre compte",
+      "completeLabel": "Les 10 étapes sont enregistrées. Vous envoyez encore le dossier à l’assureur.",
       "currentLabel": "Maintenant : {{title}}",
       "upNext": "Ensuite : {{title}}",
       "statForms": "{{done}} / {{total}}",

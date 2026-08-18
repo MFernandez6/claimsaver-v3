@@ -88,8 +88,11 @@ export function ClaimFormWizard() {
   const prefilled = useRef(false);
 
   const patch = useCallback(
-    async (partial: Partial<FloridaNoFaultFormData>, worksheetStep?: number) => {
-      if (!claimId) return;
+    async (
+      partial: Partial<FloridaNoFaultFormData>,
+      worksheetStep?: number,
+    ): Promise<boolean> => {
+      if (!claimId) return false;
       setStatus("saving");
       try {
         const updated = await webApi.patch<ClaimDetail>(`/api/v1/claims/${claimId}`, {
@@ -98,9 +101,11 @@ export function ClaimFormWizard() {
         });
         setClaim(updated);
         setStatus("saved");
+        return true;
       } catch (e) {
         setStatus("error");
         setError(e instanceof Error ? e.message : t("claimForm.saveFailed"));
+        return false;
       }
     },
     [claimId, step, t],
@@ -235,10 +240,10 @@ export function ClaimFormWizard() {
   const current = WORKSHEET_STEPS[step - 1];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
+    <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
       <div className="print:hidden">
       <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{t("claimForm.header.title")}</p>
-      <h1 className="mt-1 text-3xl font-bold text-slate-900">{t("claimForm.guidedTitle")}</h1>
+      <h1 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">{t("claimForm.guidedTitle")}</h1>
       <p className="mt-2 max-w-3xl text-sm text-slate-500">
         {t("claimForm.guidedIntro")}
       </p>
@@ -470,11 +475,11 @@ export function ClaimFormWizard() {
                   <p className="text-sm text-slate-600">{t("claimForm.success.description")}</p>
                   {accidentDate ? <p className="text-sm text-slate-600">{t("deadlines.savedWithChain")}</p> : null}
                   <p className="text-sm text-slate-600">{t("claimForm.printFullHint")}</p>
-                  <div className="flex flex-wrap gap-3">
-                    <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Button asChild className="min-h-11 w-full bg-gradient-to-r from-emerald-600 to-teal-800 sm:w-auto">
                       <Link href="/dashboard">{t("claimForm.success.goToDashboard")}</Link>
                     </Button>
-                    <Button type="button" variant="outline" onClick={() => window.print()}>
+                    <Button type="button" variant="outline" className="min-h-11 w-full sm:w-auto" onClick={() => window.print()}>
                       {t("claimForm.printSummary")}
                     </Button>
                   </div>
@@ -503,30 +508,30 @@ export function ClaimFormWizard() {
           ) : null}
 
           {savedComplete && step === TOTAL_WORKSHEET_STEPS ? null : (
-          <div className="flex justify-between pt-4 print:hidden">
-            <Button variant="outline" disabled={step === 1} onClick={() => goToStep(step - 1)}>{t("common.back")}</Button>
+          <div className="flex flex-col-reverse gap-3 pt-4 print:hidden sm:flex-row sm:justify-between">
+            <Button variant="outline" className="min-h-11 w-full sm:w-auto" disabled={step === 1} onClick={() => goToStep(step - 1)}>{t("common.back")}</Button>
             {step < TOTAL_WORKSHEET_STEPS ? (
               <Button
-                className="bg-gradient-to-r from-emerald-600 to-teal-800"
+                className="min-h-11 w-full bg-gradient-to-r from-emerald-600 to-teal-800 sm:w-auto"
                 onClick={advance}
               >
                 {t("common.next")}
               </Button>
             ) : (
-              <div className="flex gap-2">
-                <Button type="button" variant="outline" onClick={() => window.print()}>
+              <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+                <Button type="button" variant="outline" className="min-h-11 w-full sm:w-auto" onClick={() => window.print()}>
                   {t("claimForm.printSummary")}
                 </Button>
                 <Button
-                  className="bg-gradient-to-r from-emerald-600 to-teal-800"
+                  className="min-h-11 w-full bg-gradient-to-r from-emerald-600 to-teal-800 sm:w-auto"
                   onClick={async () => {
                     if (missing.length > 0) {
                       setStepError(t("claimForm.completeRequired"));
                       return;
                     }
                     if (timer.current) clearTimeout(timer.current);
-                    await patch(form, TOTAL_WORKSHEET_STEPS);
-                    setSavedComplete(true);
+                    const ok = await patch(form, TOTAL_WORKSHEET_STEPS);
+                    if (ok) setSavedComplete(true);
                   }}
                 >
                   {t("claimForm.saveToAccount")}

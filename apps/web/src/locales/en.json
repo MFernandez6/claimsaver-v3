@@ -904,6 +904,9 @@
     },
     "claimCard": {
       "worksheet": "Worksheet · step {{current}} of {{total}}",
+      "worksheetDone": "Worksheet · {{total}} of {{total}} complete",
+      "completeBadge": "Worksheet saved",
+      "savedHint": "Signed draft is in your account. You still send the package to the insurer.",
       "currentStep": "Now: {{title}}",
       "lastDoneDetail": "{{title}} · {{date}}",
       "nextDetail": "{{title}} · {{date}}"
@@ -914,6 +917,9 @@
       "stepsAria": "Worksheet steps",
       "inProgress": "Now",
       "continue": "Continue worksheet",
+      "review": "Review worksheet",
+      "completeSubtitle": "Guided application saved in your account",
+      "completeLabel": "All 10 steps saved. You still send the package to the insurer.",
       "currentLabel": "Now: {{title}}",
       "upNext": "Up next: {{title}}",
       "statForms": "{{done}} / {{total}}",

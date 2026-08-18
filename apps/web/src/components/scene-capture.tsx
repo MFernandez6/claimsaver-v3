@@ -70,17 +70,17 @@ export function SceneCapture({
   );
 
   const actions = (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
       <Button
         type="button"
         disabled={busy}
-        className="bg-gradient-to-r from-emerald-600 to-teal-800"
+        className="min-h-11 w-full bg-gradient-to-r from-emerald-600 to-teal-800 sm:w-auto"
         onClick={() => cameraRef.current?.click()}
       >
         <Camera className="h-4 w-4" />
         {busy ? t("dashboard.uploading") : t("capture.photo")}
       </Button>
-      <Button type="button" variant="outline" disabled={busy} onClick={() => fileRef.current?.click()}>
+      <Button type="button" variant="outline" disabled={busy} className="min-h-11 w-full sm:w-auto" onClick={() => fileRef.current?.click()}>
         <Upload className="h-4 w-4" />
         {t("capture.file")}
       </Button>

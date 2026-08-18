@@ -18,7 +18,7 @@ export default function Footer() {
         />
       </div>
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div className="md:col-span-1">
             <BrandLogo variant="footer" />
             <p className="mt-4 text-sm text-teal-100/80">

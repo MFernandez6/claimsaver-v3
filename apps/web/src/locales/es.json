@@ -626,6 +626,9 @@
     },
     "claimCard": {
       "worksheet": "Hoja de trabajo · paso {{current}} de {{total}}",
+      "worksheetDone": "Hoja de trabajo · {{total}} de {{total}} completa",
+      "completeBadge": "Hoja guardada",
+      "savedHint": "El borrador firmado está en su cuenta. Usted sigue enviando el paquete a la aseguradora.",
       "currentStep": "Ahora: {{title}}",
       "lastDoneDetail": "{{title}} · {{date}}",
       "nextDetail": "{{title}} · {{date}}"
@@ -636,6 +639,9 @@
       "stepsAria": "Pasos de la hoja de trabajo",
       "inProgress": "Ahora",
       "continue": "Continuar hoja",
+      "review": "Revisar hoja",
+      "completeSubtitle": "Solicitud guiada guardada en su cuenta",
+      "completeLabel": "Los 10 pasos están guardados. Usted sigue enviando el paquete a la aseguradora.",
       "currentLabel": "Ahora: {{title}}",
       "upNext": "Siguiente: {{title}}",
       "statForms": "{{done}} / {{total}}",

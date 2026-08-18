@@ -20,6 +20,8 @@ export type DashboardOverviewPanelsProps = {
   /** 1-based worksheet step the user is currently on */
   currentStep: number;
   totalSteps?: number;
+  /** True when every required worksheet step, including the review signature, is saved */
+  worksheetComplete?: boolean;
   documentsCount: number;
   calendarCount?: number;
   expensesCount?: number;
@@ -40,20 +42,22 @@ function clampStep(step: number, total: number) {
 function claimProgressPercent({
   currentStep,
   totalSteps,
+  worksheetComplete,
   documentsCount,
   calendarCount,
   expensesCount,
 }: {
   currentStep: number;
   totalSteps: number;
+  worksheetComplete: boolean;
   documentsCount: number;
   calendarCount: number;
   expensesCount: number;
 }) {
   const total = Math.max(1, totalSteps);
   const current = clampStep(currentStep, total);
-  const completed = Math.max(0, current - 1);
-  const worksheetScore = (completed + 0.4) / total;
+  const completed = worksheetComplete ? total : Math.max(0, current - 1);
+  const worksheetScore = worksheetComplete ? 1 : (completed + 0.4) / total;
   const docsScore = Math.min(1, documentsCount / 3);
   const calendarScore = calendarCount > 0 ? 1 : 0;
   const expensesScore = expensesCount > 0 ? 1 : 0;
@@ -130,8 +134,8 @@ function useAnimatedPercent(target: number) {
 
 type StepState = "done" | "current" | "upcoming";
 
-function stepState(step: number, current: number): StepState {
-  if (step < current) return "done";
+function stepState(step: number, current: number, complete: boolean): StepState {
+  if (complete || step < current) return "done";
   if (step === current) return "current";
   return "upcoming";
 }
@@ -142,6 +146,7 @@ function stepState(step: number, current: number): StepState {
 export function DashboardOverviewPanels({
   currentStep,
   totalSteps = TOTAL_WORKSHEET_STEPS,
+  worksheetComplete = false,
   documentsCount,
   calendarCount = 0,
   expensesCount = 0,
@@ -154,10 +159,12 @@ export function DashboardOverviewPanels({
   const isPreview = variant === "preview";
   const total = Math.max(1, totalSteps);
   const current = clampStep(currentStep, total);
-  const completedCount = current - 1;
+  const complete = worksheetComplete;
+  const completedCount = complete ? total : Math.max(0, current - 1);
   const pct = claimProgressPercent({
     currentStep: current,
     totalSteps: total,
+    worksheetComplete: complete,
     documentsCount,
     calendarCount,
     expensesCount,
@@ -248,7 +255,7 @@ export function DashboardOverviewPanels({
           </div>
         ) : null}
 
-        <div className="rounded-2xl border border-slate-200/90 bg-white/90 p-6 shadow-[0_24px_80px_-12px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/85 dark:shadow-[0_24px_80px_-12px_rgba(0,0,0,0.45)]">
+        <div className="rounded-2xl border border-slate-200/90 bg-white/90 p-4 shadow-[0_24px_80px_-12px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/85 dark:shadow-[0_24px_80px_-12px_rgba(0,0,0,0.45)] sm:p-6">
           <div className="mb-5 flex items-start justify-between gap-4">
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-2">
@@ -268,11 +275,13 @@ export function DashboardOverviewPanels({
               <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                 {isPreview
                   ? t("home.hero.visualProgressSubtitle")
-                  : t("dashboard.progress.subtitle", {
-                      current,
-                      total,
-                      title: currentTitle,
-                    })}
+                  : complete
+                    ? t("dashboard.progress.completeSubtitle")
+                    : t("dashboard.progress.subtitle", {
+                        current,
+                        total,
+                        title: currentTitle,
+                      })}
               </p>
             </div>
             <div
@@ -337,7 +346,7 @@ export function DashboardOverviewPanels({
             aria-label={isPreview ? undefined : t("dashboard.progress.stepsAria")}
           >
             {WORKSHEET_STEPS.map((s) => {
-              const state = stepState(s.step, current);
+              const state = stepState(s.step, current, complete);
               return (
                 <li key={s.step} className="min-w-0 flex-1">
                   <span
@@ -359,7 +368,7 @@ export function DashboardOverviewPanels({
             <>
               <ol className="mt-4 grid gap-1.5 sm:grid-cols-2">
                 {WORKSHEET_STEPS.map((s, index) => {
-                  const state = stepState(s.step, current);
+                  const state = stepState(s.step, current, complete);
                   const title = t(`claimForm.worksheetSteps.${s.key}`);
                   return (
                     <li
@@ -403,9 +412,11 @@ export function DashboardOverviewPanels({
               </ol>
 
               <div className="mt-4 flex flex-col gap-3 rounded-xl border border-teal-100 bg-gradient-to-r from-teal-50/80 to-emerald-50/50 px-3 py-3 sm:flex-row sm:items-center sm:justify-between dark:border-teal-900/60 dark:from-teal-950/40 dark:to-emerald-950/20">
-                <p className="text-xs text-slate-600 dark:text-slate-300">
-                  {t("dashboard.progress.currentLabel", { title: currentTitle })}
-                  {nextTitle ? (
+                <p className="min-w-0 text-xs text-slate-600 dark:text-slate-300">
+                  {complete
+                    ? t("dashboard.progress.completeLabel")
+                    : t("dashboard.progress.currentLabel", { title: currentTitle })}
+                  {!complete && nextTitle ? (
                     <span className="mt-0.5 block text-[11px] text-slate-500 dark:text-slate-400">
                       {t("dashboard.progress.upNext", { title: nextTitle })}
                     </span>
@@ -413,9 +424,9 @@ export function DashboardOverviewPanels({
                 </p>
                 <Link
                   href="/claim-form"
-                  className="inline-flex shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-emerald-600 to-teal-800 px-3 py-1.5 text-xs font-semibold text-white shadow-sm shadow-teal-900/20 transition hover:brightness-110"
+                  className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-emerald-600 to-teal-800 px-3 py-2 text-xs font-semibold text-white shadow-sm shadow-teal-900/20 transition hover:brightness-110 sm:h-auto sm:min-h-0 sm:w-auto sm:py-1.5"
                 >
-                  {t("dashboard.progress.continue")}
+                  {complete ? t("dashboard.progress.review") : t("dashboard.progress.continue")}
                 </Link>
               </div>
             </>

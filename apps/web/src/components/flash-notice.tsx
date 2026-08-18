@@ -25,7 +25,7 @@ export function FlashNotice({
     <div
       role="status"
       aria-live="polite"
-      className={`fixed bottom-6 left-1/2 z-50 w-[min(32rem,calc(100%-2rem))] -translate-x-1/2 rounded-xl border px-4 py-3 text-sm shadow-lg ${
+      className={`fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-1/2 z-50 w-[min(32rem,calc(100%-2rem))] -translate-x-1/2 rounded-xl border px-4 py-3 text-sm shadow-lg ${
         success
           ? "border-teal-200 bg-teal-50 text-teal-950 dark:border-teal-800 dark:bg-teal-950/90 dark:text-teal-50"
           : "border-red-200 bg-red-50 text-red-950"

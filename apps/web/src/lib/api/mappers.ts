@@ -1,4 +1,11 @@
-import { emptyWorksheet, type ClaimDetail, type ClaimSummary } from "@claimsaver/shared";
+import {
+  emptyWorksheet,
+  floridaNoFaultFormSchema,
+  isWorksheetComplete,
+  TOTAL_WORKSHEET_STEPS,
+  type ClaimDetail,
+  type ClaimSummary,
+} from "@claimsaver/shared";
 
 function str(v: unknown) {
   return typeof v === "string" ? v : v == null ? "" : String(v);
@@ -6,6 +13,9 @@ function str(v: unknown) {
 
 export function toClaimSummary(row: Record<string, unknown>): ClaimSummary {
   const ws = (row.worksheet ?? {}) as Record<string, unknown>;
+  const parsed = floridaNoFaultFormSchema.safeParse(ws);
+  const worksheet = parsed.success ? parsed.data : emptyWorksheet();
+  const step = Number(row.worksheet_step) || 1;
   return {
     id: str(row.id),
     claimNumber: str(row.claim_number),
@@ -17,7 +27,10 @@ export function toClaimSummary(row: Record<string, unknown>): ClaimSummary {
     estimatedValue: typeof ws.estimatedValue === "number" ? ws.estimatedValue : null,
     updatedAt: str(row.updated_at),
     createdAt: str(row.created_at),
-    worksheetStep: Number(row.worksheet_step) || 1,
+    worksheetStep: step,
+    worksheetComplete:
+      (parsed.success && isWorksheetComplete(worksheet)) ||
+      (step >= TOTAL_WORKSHEET_STEPS && str(ws.signature).trim().length > 0),
   };
 }
 

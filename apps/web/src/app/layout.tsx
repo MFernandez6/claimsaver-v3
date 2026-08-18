@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="print:hidden">
               <Navbar />
             </div>
-            <main className="min-w-0 w-full overflow-x-hidden pt-16 pb-[max(0px,env(safe-area-inset-bottom))] print:overflow-visible print:p-0 print:pt-0">
+            <main className="min-w-0 w-full overflow-x-hidden pt-[calc(4rem+env(safe-area-inset-top,0px))] pb-[max(1rem,env(safe-area-inset-bottom))] print:overflow-visible print:p-0 print:pt-0">
               <div className="print:hidden">
                 <ProductionTestingNotice />
                 <FourteenDayBanner />

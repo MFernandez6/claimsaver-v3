@@ -113,12 +113,12 @@ function PricingInner() {
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <label className="flex cursor-pointer items-start justify-between gap-4 rounded-xl border p-4">
+              <label className="flex cursor-pointer flex-col gap-3 rounded-xl border p-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                 <div>
                   <p className="font-semibold">{t("pricing.services.noFaultAssistance.name")}</p>
                   <p className="text-sm text-slate-500">{t("pricing.services.noFaultAssistance.description")}</p>
                 </div>
-                <div className="text-right">
+                <div className="text-left sm:text-right">
                   <p className="font-bold">{PRODUCTS.platform.displayPrice}</p>
                   {PLATFORM_PRICE_TESTING ? (
                     <>
@@ -131,12 +131,12 @@ function PricingInner() {
                   <input type="checkbox" className="mt-2" checked={platform} onChange={(e) => setPlatform(e.target.checked)} />
                 </div>
               </label>
-              <label className="flex cursor-pointer items-start justify-between gap-4 rounded-xl border p-4">
+              <label className="flex cursor-pointer flex-col gap-3 rounded-xl border p-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                 <div>
                   <p className="font-semibold">{t("pricing.services.notarization.name")}</p>
                   <p className="text-sm text-slate-500">{t("pricing.services.notarization.description")}</p>
                 </div>
-                <div className="text-right">
+                <div className="text-left sm:text-right">
                   <p className="font-bold">{PRODUCTS.notarization.displayPrice}</p>
                   <input type="checkbox" className="mt-2" checked={notarization} onChange={(e) => setNotarization(e.target.checked)} />
                 </div>
