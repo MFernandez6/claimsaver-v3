@@ -35,6 +35,7 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/auth/") ||
     pathname === "/login" ||
     pathname === "/signup" ||
+    pathname === "/checkout-account" ||
     pathname === "/forgot-password" ||
     pathname === "/update-password";
 
@@ -65,6 +66,7 @@ export const config = {
     "/auth/:path*",
     "/login",
     "/signup",
+    "/checkout-account",
     "/forgot-password",
     "/update-password",
   ],

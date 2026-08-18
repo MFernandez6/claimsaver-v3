@@ -6,8 +6,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Mail } from "lucide-react";
+import { FlashNotice } from "@/components/flash-notice";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
+import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
 import { siteUrl } from "@/lib/utils";
 
 export default function SignupPage() {
@@ -22,7 +25,7 @@ function SignupInner() {
   const { t } = useTranslation();
   const router = useRouter();
   const params = useSearchParams();
-  const next = params.get("next") || "/claim-form";
+  const next = safeNextPath(params.get("next"), "/claim-form");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -53,7 +56,7 @@ function SignupInner() {
       return;
     }
     if (data.session) {
-      router.push(next);
+      router.push(withQueryParam(next, "account_created", "1"));
       router.refresh();
       return;
     }
@@ -63,8 +66,13 @@ function SignupInner() {
   if (checkEmail) {
     return (
       <div className="mx-auto max-w-md px-4 py-24">
-        <h1 className="text-3xl font-bold">{t("auth.checkEmailTitle")}</h1>
-        <p className="mt-3 text-slate-600">{t("auth.checkEmailBody", { email })}</p>
+        <FlashNotice message={t("auth.checkEmailNotice")} />
+        <div className="rounded-2xl border border-teal-200 bg-teal-50 p-6 text-teal-950 shadow-sm" role="status">
+          <Mail className="h-8 w-8 text-teal-700" aria-hidden />
+          <h1 className="mt-3 text-2xl font-bold">{t("auth.checkEmailTitle")}</h1>
+          <p className="mt-3 text-sm leading-relaxed">{t("auth.checkEmailBody", { email })}</p>
+          <p className="mt-3 text-sm text-teal-800">{t("auth.checkEmailSpam")}</p>
+        </div>
       </div>
     );
   }

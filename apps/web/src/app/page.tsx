@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { CHECKOUT_PATH, FOUNDER } from "@claimsaver/shared";
+import { CHECKOUT_PATH } from "@claimsaver/shared";
 import { Button } from "@/components/ui/button";
 import FAQ from "@/components/faq";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
@@ -30,7 +30,6 @@ export default function HomePage() {
     t("proof.languages"),
     t("proof.flat"),
     t("proof.notLaw"),
-    `${FOUNDER.licenseClass} ${FOUNDER.licenseNumber}`,
   ];
 
   return (

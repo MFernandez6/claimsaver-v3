@@ -435,6 +435,7 @@
       "totalLabel": "Total",
       "processing": "Procesando...",
       "proceedToPayment": "Pagar el acceso a la plataforma",
+      "continueWithAccount": "Continuar — inicie sesión o cree una cuenta",
       "securePaymentStripe": "Pago seguro con Stripe",
       "supportEmailLine": "¿Dudas sobre el pago o la facturación? Use la página de Contacto (enlace en el pie).",
       "faqTitle": "Preguntas sobre precios",
@@ -961,70 +962,58 @@
     "yesWages": "Sí — perdí salarios o tiempo de trabajo por este accidente.",
     "noWages": "No — no reclamo pérdida de salarios en esta hoja.",
     "coach": {
-      "badge": "Guía de este paso",
-      "statLabel": "Contexto de PIP en Florida",
-      "statNote": "Información general. Su póliza, la aseguradora y un abogado con licencia—no este software—determinan lo que le aplica.",
-      "notAdvice": "Esto es educación y una ayuda de redacción, no asesoría legal, médica ni de cobertura. Usted sigue siendo quien presenta el reclamo.",
+      "badge": "Este paso",
+      "notAdvice": "Solo educación. Usted presenta el reclamo—no es asesoría legal.",
       "learnMore": "Centro de aprendizaje",
       "s1": {
-        "title": "Cómo se usa esta hoja",
-        "body": "Está armando un borrador personal alineado con la solicitud de no-fault habitual de Florida. Copiará las respuestas al formulario o portal oficial de su aseguradora. ClaimSaver+ no envía esto a ninguna compañía.",
-        "stat": "PIP es cobertura de primera parte: por lo general reclama contra su propia póliza de auto, no demostrando la culpa del otro conductor.",
-        "tip": "Tenga a mano la página de declaraciones o la tarjeta de seguro. Si la aseguradora ya envió un paquete, colóquelo junto a esta pantalla."
+        "title": "Cómo funciona esta hoja",
+        "body": "Redacte las respuestas aquí y cópielas al formulario oficial de su aseguradora. Esta página no envía nada a una compañía de seguros.",
+        "tip": "Tenga a mano la tarjeta de seguro o la página de declaraciones."
       },
       "s2": {
-        "title": "Identifique la póliza y la fecha del accidente",
-        "body": "El encabezado indica a la aseguradora qué póliza aplica y qué incidente describe. El número de expediente es opcional hasta que la aseguradora lo asigne.",
-        "stat": "Muchas pólizas de Florida mencionan un límite médico PIP de $10,000. Los deducibles y límites reales varían. Es un ejemplo, no su cifra.",
-        "tip": "Use la fecha del informe de accidente si la tiene. Si aún no hay número de expediente, déjelo en blanco y agréguelo después."
+        "title": "Póliza y fecha del accidente",
+        "body": "Indique qué póliza aplica y cuándo ocurrió el accidente. Deje el número de expediente en blanco hasta que la aseguradora lo asigne.",
+        "tip": "Use la fecha del informe de accidente si la tiene."
       },
       "s3": {
-        "title": "Quién presenta el reclamo",
-        "body": "Los paquetes oficiales piden identidad, contacto, residencia en Florida y el vehículo. Escriba solo lo que sepa que es cierto. El número de Seguro Social es opcional aquí si prefiere escribirlo solo en el papel de la aseguradora.",
-        "stat": "PIP puede aplicar al asegurado nombrado, familiares residentes y ciertos ocupantes, peatones o ciclistas en un incidente de vehículo de motor, según la póliza.",
-        "tip": "Haga coincidir el nombre y la dirección con su licencia y tarjeta de seguro para que la aseguradora cruce registros sin llamadas extra."
+        "title": "Quién reclama",
+        "body": "Escriba identidad y contacto como en su identificación y tarjeta de seguro. Omita el SSN aquí si prefiere escribirlo solo en el formulario de la aseguradora.",
+        "tip": "Haga coincidir la ortografía con su licencia y tarjeta de seguro."
       },
       "s4": {
-        "title": "Qué ocurrió, en hechos",
-        "body": "Describa la hora, el lugar y los vehículos. Quédese con lo que observó. No adivine velocidades, culpa ni conclusiones legales.",
-        "stat": "A menudo piden el informe de accidente (HSMV / policía). Fotos, testigos y facturas de grúa suelen ir en la misma capa del expediente.",
-        "tip": "Escriba un relato breve: dónde, cuándo, qué vehículos y qué sintió o vio. Puede adjuntar el informe policial en el panel después."
+        "title": "Qué ocurrió",
+        "body": "Hora, lugar y vehículos—solo lo que vio. No adivine velocidades ni quién tuvo la culpa.",
+        "tip": "Sea breve. Puede subir el informe policial desde el panel."
       },
       "s5": {
         "title": "Lesión y primer tratamiento",
-        "body": "Indique si resultó lesionado y, de ser así, qué tratamiento comenzó. Florida PIP incluye una regla de 14 días muy comentada para los primeros servicios médicos que califican.",
-        "stat": "Si no se prestan servicios médicos iniciales que califiquen dentro de 14 días calendario después del accidente, los beneficios médicos PIP de ese incidente pueden limitarse. Este software no decide si una visita “cuenta”.",
-        "tip": "Guarde fechas de visita, nombres de proveedores y facturas detalladas. Si duda si una visita cumple una regla legal, pregunte a su proveedor o a un abogado de Florida."
+        "body": "Indique si resultó herido y qué atención comenzó. Florida PIP suele mencionar una ventana de 14 días para el tratamiento inicial que califica—es un recordatorio, no una decisión sobre su visita.",
+        "tip": "Guarde fechas de visita, nombres de proveedores y facturas."
       },
       "s6": {
-        "title": "Trabajo, salarios y otra cobertura",
-        "body": "Las preguntas de salarios aparecen en muchos formularios oficiales. Otra cobertura de salud (Medicare, plan grupal, compensación laboral) suele pedirse para coordinar beneficios.",
-        "stat": "Cuando la póliza cubre salarios, las aseguradoras suelen pedir prueba de empleo, ingresos previos y una restricción médica. Recibos de pago y cartas del empleador son frecuentes.",
-        "tip": "Si no faltó al trabajo, dígalo con claridad. Si faltó, liste empleadores y adjunte recibos después, en lugar de estimar una cifra que no pueda respaldar."
+        "title": "Trabajo y otra cobertura",
+        "body": "La pérdida de salarios y otra cobertura de salud (Medicare, plan grupal, compensación laboral) ayudan a la aseguradora a coordinar beneficios.",
+        "tip": "Si no faltó al trabajo, dígalo. Si faltó, liste empleadores y suba recibos después."
       },
       "s7": {
-        "title": "Qui puede ver su expediente de seguro",
-        "body": "Esta página redacta una autorización para que su aseguradora de auto (u otro destinatario que usted nombre) obtenga información del expediente. Guardarla aquí no envía una autorización a nadie.",
-        "stat": "Las autorizaciones definen quién puede pedir facturas o registros de salarios y por cuánto tiempo. Léalas en el formulario oficial antes de firmar esa versión.",
-        "tip": "El destinatario suele ser el departamento de reclamos de su aseguradora. Haga coincidir nombres y números de póliza con su tarjeta."
+        "title": "Autorización del expediente de seguro",
+        "body": "Redacte quién puede pedir su expediente de auto. Guardar aquí no envía una autorización a nadie.",
+        "tip": "El destinatario suele ser el departamento de reclamos de su aseguradora."
       },
       "s8": {
-        "title": "Quién puede pedir historiales médicos",
-        "body": "Esta página redacta una autorización para que un destinatario nombrado solicite información de tratamiento y facturación al proveedor que usted liste. Es una hoja de trabajo, no un formulario HIPAA enviado a una clínica.",
-        "stat": "Una autorización médica debe nombrar al proveedor, al destinatario y un límite de tiempo. Más amplio no siempre es mejor—use el mismo alcance que el paquete de la aseguradora al presentar.",
-        "tip": "El proveedor es la clínica u hospital que lo trató. Usted decide qué enviar; ClaimSaver+ no contacta proveedores por usted."
+        "title": "Autorización de historiales médicos",
+        "body": "Redacte quién puede pedir historiales al proveedor que usted nombre. Esto no es un formulario enviado a una clínica.",
+        "tip": "Nombre la clínica u hospital que lo trató. ClaimSaver+ no los contacta."
       },
       "s9": {
-        "title": "PIP puede pagar a sus proveedores médicos",
-        "body": "Los paquetes de no-fault en Florida suelen incluir un reconocimiento del paciente—y, cuando aplique, del consultorio—de que los beneficios de protección contra lesiones personales (PIP) pueden aplicar al tratamiento. Esta página es una ayuda para redactar esa divulgación.",
-        "stat": "PIP es cobertura de primera parte en muchas pólizas de auto de Florida. Si una visita es pagadera depende de la póliza y los hechos; esta página no decide la cobertura.",
-        "tip": "La firma del proveedor a menudo la completa la oficina, no usted. Déjela en blanco aquí si la clínica firmará el papel de la aseguradora."
+        "title": "PIP puede pagar a proveedores",
+        "body": "Muchos paquetes de Florida incluyen un reconocimiento del paciente de que PIP puede aplicar al tratamiento. Esta página es un borrador de esa divulgación.",
+        "tip": "Deje en blanco la firma del proveedor si la clínica firmará el papel de la aseguradora."
       },
       "s10": {
-        "title": "Revise; luego usted envía el paquete",
-        "body": "Verifique nombres, fechas y la descripción. Guardar almacena un borrador en su cuenta ClaimSaver+. Usted sigue compilando documentos y enviando el paquete a la aseguradora.",
-        "stat": "En un ejemplo ilustrativo de $10,000 médicos PIP, un 33% de contingencia es $3,300. Una tarifa fija de $500 puede dejar más de ese ejemplo con usted. No predice su resultado.",
-        "tip": "Después de guardar, use el panel para subir el informe, facturas y fotos, y envíe el formulario oficial más sus copias."
+        "title": "Revise; luego usted envía",
+        "body": "Verifique nombres y fechas. Guardar almacena un borrador en su cuenta. Usted sigue enviando el paquete a la aseguradora.",
+        "tip": "Siguiente: suba el informe, facturas y fotos en el panel, y presente ante la aseguradora."
       }
     },
     "hints": {
@@ -1305,7 +1294,15 @@
     "creating": "Creando…",
     "alreadyHaveAccount": "¿Ya tiene una cuenta?",
     "checkEmailTitle": "Revise su correo",
-    "checkEmailBody": "Enviamos un enlace de confirmación a {{email}}. Después de confirmar, puede iniciar sesión y continuar al pago.",
+    "checkEmailNotice": "Correo de confirmación enviado. Abra el enlace para activar su cuenta.",
+    "checkEmailBody": "Enviamos un enlace de confirmación a {{email}}. Después de confirmar, quedará conectado y podrá continuar.",
+    "checkEmailSpam": "Si no lo ve en unos minutos, revise spam o promociones.",
+    "emailConfirmed": "Correo confirmado. Ya está conectado.",
+    "accountCreated": "Cuenta creada. Ya está conectado.",
+    "checkoutGateTitle": "Inicie sesión o cree una cuenta",
+    "checkoutGateSubtitle": "Necesita una cuenta antes de pagar y abrir la solicitud PIP. Créela ahora, o inicie sesión si ya tiene una—luego lo llevamos al pago.",
+    "checkoutCreateTab": "Crear cuenta",
+    "checkoutSignInTab": "Iniciar sesión",
     "authNotConfigured": "La autenticación no está configurada. Añada NEXT_PUBLIC_SUPABASE_URL y NEXT_PUBLIC_SUPABASE_ANON_KEY en apps/web/.env.local y reinicie el servidor.",
     "resetTitle": "Restablecer contraseña",
     "resetSent": "Si ese correo existe, enviamos un enlace de restablecimiento.",

@@ -45,7 +45,7 @@ export function SessionGuard() {
     const redirectToLogin = () => {
       setWarnSeconds(null);
       const path = pathRef.current;
-      if (path.startsWith("/login") || path.startsWith("/signup")) return;
+      if (path.startsWith("/login") || path.startsWith("/signup") || path.startsWith("/checkout-account")) return;
       router.replace(loginPath(path));
       router.refresh();
     };

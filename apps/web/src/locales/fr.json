@@ -435,6 +435,7 @@
       "totalLabel": "Total",
       "processing": "Traitement…",
       "proceedToPayment": "Payer l’accès à la plateforme",
+      "continueWithAccount": "Continuer — connectez-vous ou créez un compte",
       "securePaymentStripe": "Paiement sécurisé par Stripe",
       "supportEmailLine": "Questions sur le paiement ou la facturation ? Utilisez la page Contact (lien dans le pied de page).",
       "faqTitle": "Questions sur les tarifs",
@@ -511,70 +512,58 @@
     "yesWages": "Oui — j’ai perdu des salaires ou du temps de travail à cause de cet accident.",
     "noWages": "Non — je ne réclame pas de perte de salaire sur cette feuille.",
     "coach": {
-      "badge": "Guide de cette étape",
-      "statLabel": "Contexte PIP en Floride",
-      "statNote": "Information générale. Votre police, l’assureur et un avocat agréé—pas ce logiciel—déterminent ce qui s’applique à vous.",
-      "notAdvice": "Ceci est de l’éducation et une aide à la rédaction, pas un conseil juridique, médical ou de couverture. Vous restez le déposant.",
+      "badge": "Cette étape",
+      "notAdvice": "Information seulement. Vous restez le déposant—pas un conseil juridique.",
       "learnMore": "Centre d’apprentissage",
       "s1": {
-        "title": "Comment utiliser cette feuille",
-        "body": "Vous rédigez un brouillon personnel aligné sur la demande no-fault courante de Floride. Vous copierez les réponses sur le formulaire ou le portail officiel de l’assureur. ClaimSaver+ n’envoie rien à une compagnie.",
-        "stat": "La PIP est une garantie de première partie : vous réclamez en général contre votre propre police auto, sans prouver la faute de l’autre conducteur.",
-        "tip": "Gardez la page de déclarations ou la carte d’assurance à portée. Si l’assureur a déjà envoyé un dossier, placez-le à côté de cet écran."
+        "title": "Comment fonctionne cette feuille",
+        "body": "Rédigez les réponses ici, puis copiez-les sur le formulaire officiel de l’assureur. Cette page n’envoie rien à une compagnie d’assurance.",
+        "tip": "Gardez votre carte d’assurance ou la page de déclarations à portée."
       },
       "s2": {
-        "title": "Identifier la police et la date de l’accident",
-        "body": "L’en-tête indique à l’assureur quelle police s’applique et quel incident vous décrivez. Le numéro de dossier est facultatif jusqu’à ce que l’assureur l’attribue.",
-        "stat": "Beaucoup de polices de Floride évoquent une limite médicale PIP de 10 000 $. Franchises et plafonds réels varient. C’est un exemple, pas votre chiffre.",
-        "tip": "Utilisez la date du rapport d’accident si vous l’avez. S’il n’y a pas encore de numéro de dossier, laissez vide et ajoutez-le plus tard."
+        "title": "Police et date de l’accident",
+        "body": "Indiquez quelle police s’applique et quand l’accident a eu lieu. Laissez le numéro de dossier vide jusqu’à ce que l’assureur l’attribue.",
+        "tip": "Utilisez la date du rapport d’accident si vous l’avez."
       },
       "s3": {
-        "title": "Qui présente la réclamation",
-        "body": "Les dossiers officiels demandent l’identité, les coordonnées, la résidence en Floride et le véhicule. N’inscrivez que ce que vous savez vrai. Le numéro de sécurité sociale est facultatif ici si vous préférez l’écrire seulement sur le papier de l’assureur.",
-        "stat": "La PIP peut s’appliquer à l’assuré désigné, aux proches résidents et à certains occupants, piétons ou cyclistes dans un incident de véhicule à moteur, selon la police.",
-        "tip": "Faites correspondre le nom et l’adresse à votre permis et à votre carte d’assurance pour que l’assureur relie les dossiers sans appels inutiles."
+        "title": "Qui réclame",
+        "body": "Saisissez l’identité et les coordonnées comme sur votre pièce d’identité et votre carte d’assurance. Omettez le NAS ici si vous préférez l’écrire seulement sur le formulaire de l’assureur.",
+        "tip": "Faites correspondre l’orthographe à votre permis et à votre carte d’assurance."
       },
       "s4": {
-        "title": "Ce qui s’est passé, en faits",
-        "body": "Décrivez l’heure, le lieu et les véhicules. Tenez-vous à ce que vous avez observé. N’inventez pas de vitesses, de faute ou de conclusions juridiques.",
-        "stat": "Un rapport d’accident (HSMV / police) est souvent demandé. Photos, témoins et factures de remorquage font souvent partie du même dossier.",
-        "tip": "Rédigez un récit court : où, quand, quels véhicules, ce que vous avez ressenti ou vu. Vous pourrez joindre le rapport de police ensuite."
+        "title": "Ce qui s’est passé",
+        "body": "Heure, lieu et véhicules—seulement ce que vous avez vu. N’inventez pas de vitesses ni de faute.",
+        "tip": "Restez bref. Vous pourrez téléverser le rapport de police depuis le tableau de bord."
       },
       "s5": {
         "title": "Blessure et premiers soins",
-        "body": "Indiquez si vous avez été blessé(e) et, le cas échéant, quels soins ont commencé. La PIP de Floride inclut une règle de 14 jours largement discutée pour les premiers services médicaux qualifiants.",
-        "stat": "Si des services médicaux initiaux qualifiants ne sont pas fournis dans les 14 jours calendaires après l’accident, les prestations médicales PIP de cet incident peuvent être limitées. Ce logiciel ne décide pas si une visite « compte ».",
-        "tip": "Gardez les dates de visite, les noms des prestataires et les factures détaillées. En cas de doute sur une règle légale, demandez à votre prestataire ou à un avocat de Floride."
+        "body": "Indiquez si vous avez été blessé(e) et quels soins ont commencé. La PIP de Floride évoque souvent une fenêtre de 14 jours pour les premiers soins qualifiants—c’est un rappel, pas une décision sur votre visite.",
+        "tip": "Gardez les dates de visite, les noms des prestataires et les factures."
       },
       "s6": {
-        "title": "Travail, salaires et autres couvertures",
-        "body": "Les questions de perte de salaire figurent sur beaucoup de formulaires officiels. Une autre couverture santé (Medicare, assurance groupe, accidents du travail) est souvent demandée pour coordonner les prestations.",
-        "stat": "Lorsqu’une police prévoit des prestations salariales, les assureurs veulent en général une preuve d’emploi, les revenus avant l’accident et une restriction médicale. Fiches de paie et lettres d’employeur sont fréquentes.",
-        "tip": "Si vous n’avez pas manqué le travail, dites-le clairement. Sinon, listez les employeurs et joignez les fiches de paie plus tard plutôt que d’estimer un montant non étayé."
+        "title": "Travail et autres couvertures",
+        "body": "La perte de salaire et une autre couverture santé (Medicare, assurance groupe, accidents du travail) aident l’assureur à coordonner les prestations.",
+        "tip": "Si vous n’avez pas manqué le travail, dites-le. Sinon, listez les employeurs et joignez les fiches de paie plus tard."
       },
       "s7": {
-        "title": "Qui peut consulter votre dossier d’assurance",
-        "body": "Cette page prépare une autorisation pour que votre assureur auto (ou un autre destinataire que vous nommez) obtienne des informations du dossier. L’enregistrer ici n’envoie une autorisation à personne.",
-        "stat": "Les autorisations définissent qui peut demander des factures ou des justificatifs de salaire et pour combien de temps. Lisez-les sur le formulaire officiel avant de signer cette version.",
-        "tip": "Le destinataire est souvent le service sinistres de votre assureur. Faites correspondre les noms et numéros de police à votre carte."
+        "title": "Autorisation du dossier d’assurance",
+        "body": "Indiquez qui peut demander votre dossier auto. Enregistrer ici n’envoie une autorisation à personne.",
+        "tip": "Le destinataire est souvent le service sinistres de votre assureur."
       },
       "s8": {
-        "title": "Qui peut demander des dossiers médicaux",
-        "body": "Cette page prépare une autorisation pour qu’un destinataire nommé puisse demander des informations de traitement et de facturation au prestataire que vous indiquez. C’est une feuille de travail, pas un formulaire HIPAA envoyé à une clinique.",
-        "stat": "Une autorisation médicale doit nommer le prestataire, le destinataire et une durée. Plus large n’est pas toujours mieux—utilisez la même portée que le dossier de l’assureur lorsque vous déposez.",
-        "tip": "Le prestataire est la clinique ou l’hôpital qui vous a soigné. Vous décidez ce que vous envoyez ; ClaimSaver+ ne contacte pas les prestataires pour vous."
+        "title": "Autorisation des dossiers médicaux",
+        "body": "Indiquez qui peut demander des dossiers au prestataire que vous nommez. Ce n’est pas un formulaire envoyé à une clinique.",
+        "tip": "Nommez la clinique ou l’hôpital qui vous a soigné. ClaimSaver+ ne les contacte pas."
       },
       "s9": {
-        "title": "La PIP peut payer vos prestataires de soins",
-        "body": "Les dossiers sans égard à la faute en Floride incluent souvent un accusé de réception du patient—et, le cas échéant, du cabinet—indiquant que les prestations de protection contre les blessures personnelles (PIP) peuvent s’appliquer au traitement. Cette page aide à rédiger cette divulgation.",
-        "stat": "La PIP est une couverture de première partie sur beaucoup de polices auto en Floride. Le caractère payable d’une visite dépend encore de la police et des faits ; cette page ne tranche pas la couverture.",
-        "tip": "La signature du prestataire est souvent complétée par le cabinet, pas par vous. Laissez-la vide ici si la clinique signera le papier de l’assureur."
+        "title": "La PIP peut payer les prestataires",
+        "body": "Beaucoup de dossiers de Floride incluent un accusé du patient indiquant que la PIP peut s’appliquer au traitement. Cette page en est un brouillon.",
+        "tip": "Laissez la signature du prestataire vide si la clinique signera le papier de l’assureur."
       },
       "s10": {
-        "title": "Vérifiez, puis vous envoyez le dossier",
-        "body": "Vérifiez les noms, les dates et la description. Enregistrer stocke un brouillon dans votre compte ClaimSaver+. Vous compilez encore les documents et envoyez le dossier à l’assureur vous-même.",
-        "stat": "Sur un exemple illustratif de 10 000 $ de PIP médicale, une contingence de 33 % vaut 3 300 $. Des frais logiciels forfaitaires de 500 $ peuvent laisser davantage de cet exemple. Ce n’est pas une prévision de votre résultat.",
-        "tip": "Après l’enregistrement, utilisez le tableau de bord pour téléverser le rapport, les factures et les photos, puis envoyez le formulaire officiel plus vos copies."
+        "title": "Vérifiez, puis vous envoyez",
+        "body": "Vérifiez les noms et les dates. Enregistrer stocke un brouillon dans votre compte. Vous envoyez encore le dossier à l’assureur.",
+        "tip": "Ensuite : téléversez le rapport, les factures et les photos, puis déposez auprès de l’assureur."
       }
     },
     "hints": {
@@ -1305,7 +1294,15 @@
     "creating": "Création…",
     "alreadyHaveAccount": "Vous avez déjà un compte ?",
     "checkEmailTitle": "Vérifiez votre e-mail",
-    "checkEmailBody": "Nous avons envoyé un lien de confirmation à {{email}}. Après confirmation, vous pourrez vous connecter et continuer vers le paiement.",
+    "checkEmailNotice": "E-mail de confirmation envoyé. Ouvrez le lien pour activer votre compte.",
+    "checkEmailBody": "Nous avons envoyé un lien de confirmation à {{email}}. Après confirmation, vous serez connecté et pourrez continuer.",
+    "checkEmailSpam": "Si vous ne le voyez pas en quelques minutes, vérifiez les indésirables ou les promotions.",
+    "emailConfirmed": "E-mail confirmé. Vous êtes connecté.",
+    "accountCreated": "Compte créé. Vous êtes connecté.",
+    "checkoutGateTitle": "Connectez-vous ou créez un compte",
+    "checkoutGateSubtitle": "Vous avez besoin d’un compte avant de payer et d’ouvrir la demande PIP. Créez-en un maintenant, ou connectez-vous si vous en avez déjà un—puis nous vous emmenons au paiement.",
+    "checkoutCreateTab": "Créer un compte",
+    "checkoutSignInTab": "Connexion",
     "authNotConfigured": "L’authentification n’est pas configurée. Ajoutez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY dans apps/web/.env.local, puis redémarrez le serveur.",
     "resetTitle": "Réinitialiser le mot de passe",
     "resetSent": "Si cet e-mail existe, nous avons envoyé un lien de réinitialisation.",

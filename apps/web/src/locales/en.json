@@ -436,6 +436,7 @@
       "totalLabel": "Total",
       "processing": "Processing...",
       "proceedToPayment": "Pay for platform access",
+      "continueWithAccount": "Continue — sign in or create an account",
       "securePaymentStripe": "Secure payment powered by Stripe",
       "faqTitle": "Pricing questions",
       "faqSubtitle": "Straight answers—ClaimSaver+ sells access to claim-preparation software, not legal services.",
@@ -511,70 +512,58 @@
     "yesWages": "Yes — I lost wages or work time because of this accident.",
     "noWages": "No — I am not claiming wage loss on this worksheet.",
     "coach": {
-      "badge": "Guide for this step",
-      "statLabel": "Florida PIP context",
-      "statNote": "General information. Your policy, insurer, and a licensed attorney—not this software—control what applies to you.",
-      "notAdvice": "This is education and a drafting aid, not legal, medical, or coverage advice. You remain the filer.",
+      "badge": "This step",
+      "notAdvice": "Education only. You remain the filer—not legal advice.",
       "learnMore": "Learning Center",
       "s1": {
-        "title": "How this worksheet is used",
-        "body": "You are building a personal draft aligned with the common Florida no-fault application. You will copy answers onto your insurer’s official form or portal. ClaimSaver+ does not send this to any insurance company.",
-        "stat": "PIP is first-party coverage: you typically claim against your own auto policy, not by proving the other driver was at fault.",
-        "tip": "Have your declarations page or insurance card nearby. If the carrier already mailed a packet, keep it next to this screen."
+        "title": "How this worksheet works",
+        "body": "Draft answers here, then copy them onto your insurer’s official form. Nothing is sent to an insurance company from this page.",
+        "tip": "Keep your insurance card or declarations page nearby."
       },
       "s2": {
-        "title": "Identify the policy and the crash date",
-        "body": "The header tells the carrier whose policy applies and which incident you are describing. The file number is optional until the insurer assigns one.",
-        "stat": "Many Florida policies discuss a $10,000 PIP medical benefit limit. Deductibles and actual limits vary. This is an illustration, not your number.",
-        "tip": "Use the accident date from the crash report if you have one. If you do not have a file number yet, leave it blank and add it later."
+        "title": "Policy and crash date",
+        "body": "Tell the carrier whose policy applies and when the crash happened. Leave the file number blank until they assign one.",
+        "tip": "Use the date on the crash report if you have it."
       },
       "s3": {
-        "title": "Who is making the claim",
-        "body": "Official packets ask for identity, contact, Florida residency, and the vehicle involved. Enter only what you know to be true. Social Security number is optional here if you prefer to write it only on the insurer’s paper form.",
-        "stat": "PIP can apply to a named insured, resident relatives, and certain occupants, pedestrians, or cyclists in a motor-vehicle incident—subject to the policy.",
-        "tip": "Match the name and address to your license and insurance card so the carrier can match records without extra phone calls."
+        "title": "Who is claiming",
+        "body": "Enter identity and contact details as they appear on your ID and insurance card. Skip SSN here if you prefer to write it only on the insurer’s form.",
+        "tip": "Match the spelling to your license and insurance card."
       },
       "s4": {
-        "title": "What happened, in plain facts",
-        "body": "Describe the time, place, and vehicles. Stick to what you observed. Do not guess speeds, fault, or legal conclusions.",
-        "stat": "A crash report (HSMV / law enforcement) is often requested. Photos, witness names, and tow invoices commonly sit in the same file layer.",
-        "tip": "Write a short factual narrative: where, when, which vehicles, and what you felt or saw. You can attach the police report on the dashboard after this step."
+        "title": "What happened",
+        "body": "Time, place, and vehicles—only what you saw. Don’t guess speeds or who was at fault.",
+        "tip": "Keep it short. You can upload the police report from the dashboard."
       },
       "s5": {
         "title": "Injury and first treatment",
-        "body": "Say whether you were injured and, if so, what treatment you have started. Florida PIP includes a widely discussed 14-day timing rule for initial qualifying medical services.",
-        "stat": "If qualifying initial medical services are not furnished within 14 calendar days after the accident, PIP medical benefits for that incident may be limited. This software cannot decide whether a particular visit “counts.”",
-        "tip": "Keep visit dates, provider names, and itemized bills. If you are unsure whether a visit satisfies a legal rule, ask your provider or a licensed Florida attorney."
+        "body": "Say if you were hurt and what care you’ve started. Florida PIP often discusses a 14-day window for initial qualifying treatment—this is a reminder, not a ruling on your visit.",
+        "tip": "Save visit dates, provider names, and bills."
       },
       "s6": {
-        "title": "Work, wages, and other coverage",
-        "body": "Wage-loss questions appear on many official forms. Other health coverage (Medicare, group health, workers’ compensation) is often asked so the carrier can coordinate benefits.",
-        "stat": "When a policy extends wage benefits, carriers typically want proof of employment, pre-accident earnings, and a physician work restriction. Pay stubs and employer letters are frequently part of that file.",
-        "tip": "If you did not miss work, say so clearly. If you did, list employers and attach pay stubs later rather than estimating a number you cannot support."
+        "title": "Work and other coverage",
+        "body": "Wage-loss and other health coverage (Medicare, group health, workers’ comp) help the carrier coordinate benefits.",
+        "tip": "If you didn’t miss work, say so. If you did, list employers and add pay stubs later."
       },
       "s7": {
-        "title": "Who may see your insurance file",
-        "body": "This page drafts an authorization for your auto insurer (or another recipient you name) to obtain claim-file information. Saving it here does not send a release to anyone.",
-        "stat": "Authorizations define who may request billing or wage records and for how long. Read the insurer’s official version before you sign that one.",
-        "tip": "Recipient is often your insurance company’s claims department. Match names and policy numbers to your ID card."
+        "title": "Insurance-file authorization",
+        "body": "Draft who may request your auto-claim file. Saving here does not send a release to anyone.",
+        "tip": "Recipient is usually your insurer’s claims department."
       },
       "s8": {
-        "title": "Who may request medical records",
-        "body": "This page drafts a medical-records release so a named recipient can request treatment and billing information from a provider you list. It is a worksheet, not a HIPAA form mailed to a clinic.",
-        "stat": "A medical authorization should name the provider, the recipient, and a time limit. Broader is not always better—use the same scope as the carrier’s packet when you file.",
-        "tip": "Provider is the clinic or hospital that treated you. You still decide what to send; ClaimSaver+ does not contact providers for you."
+        "title": "Medical records authorization",
+        "body": "Draft who may request records from a provider you name. This is not a form mailed to a clinic.",
+        "tip": "Name the clinic or hospital that treated you. ClaimSaver+ does not contact them."
       },
       "s9": {
-        "title": "PIP may pay your medical providers",
-        "body": "Florida no-fault (PIP) packets often include a patient acknowledgment—and, when applicable, a treating-office acknowledgment—that personal injury protection benefits may apply to treatment. This page is a drafting aid for that disclosure.",
-        "stat": "PIP is first-party coverage on many Florida auto policies. Whether a visit is payable still depends on the policy and the facts; this page does not decide coverage.",
-        "tip": "The provider signature is often completed by the treating office, not by you. Leave it blank here if the clinic will sign the insurer’s paper."
+        "title": "PIP may pay providers",
+        "body": "Many Florida packets include a patient acknowledgment that PIP may apply to treatment. This page is a draft of that disclosure.",
+        "tip": "Leave the provider signature blank if the clinic will sign the insurer’s paper."
       },
       "s10": {
-        "title": "Review, then you send the package",
-        "body": "Check names, dates, and the accident description. Saving stores a draft in your ClaimSaver+ account. You still compile documents and send the package to the insurer yourself.",
-        "stat": "On an illustrative $10,000 PIP medical example, a 33% contingency is $3,300. A flat $500 software fee can leave more of that example benefit with you. It is not a prediction of your outcome.",
-        "tip": "After you save, use the dashboard to upload the crash report, bills, and photos, then send the insurer’s official form plus your copies."
+        "title": "Review, then you send it",
+        "body": "Check names and dates. Saving stores a draft in your account. You still send the package to the insurer.",
+        "tip": "Next: upload the crash report, bills, and photos on the dashboard, then file with the carrier."
       }
     },
     "hints": {
@@ -1304,7 +1293,15 @@
     "creating": "Creating…",
     "alreadyHaveAccount": "Already have an account?",
     "checkEmailTitle": "Check your email",
-    "checkEmailBody": "We sent a confirmation link to {{email}}. After you confirm, you can sign in and continue to checkout.",
+    "checkEmailNotice": "Confirmation email sent. Open the link to activate your account.",
+    "checkEmailBody": "We sent a confirmation link to {{email}}. After you confirm, you’ll be signed in and can continue.",
+    "checkEmailSpam": "If you don’t see it in a few minutes, check spam or promotions.",
+    "emailConfirmed": "Email confirmed. You’re signed in.",
+    "accountCreated": "Account created. You’re signed in.",
+    "checkoutGateTitle": "Sign in or create an account",
+    "checkoutGateSubtitle": "You need an account before you can pay and open the PIP application. Create one now, or sign in if you already have one—then we’ll take you to checkout.",
+    "checkoutCreateTab": "Create account",
+    "checkoutSignInTab": "Sign in",
     "authNotConfigured": "Auth is not configured. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to apps/web/.env.local, then restart the dev server.",
     "resetTitle": "Reset password",
     "resetSent": "If that email exists, we sent a reset link.",

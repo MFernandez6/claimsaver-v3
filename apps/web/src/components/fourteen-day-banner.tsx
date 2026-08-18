@@ -15,6 +15,7 @@ const HIDDEN = [
   "/admin",
   "/login",
   "/signup",
+  "/checkout-account",
   "/success",
   "/forgot-password",
   "/update-password",

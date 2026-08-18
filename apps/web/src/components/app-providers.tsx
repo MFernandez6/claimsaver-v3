@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState, type ReactNode } from "react";
 import I18nProvider from "@/components/i18n-provider";
 import { SessionGuard } from "@/components/auth/session-guard";
+import { QueryNotice } from "@/components/auth/query-notice";
 
 export function AppProviders({ children }: { children: ReactNode }) {
   const [client] = useState(
@@ -22,6 +23,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
     <QueryClientProvider client={client}>
       <I18nProvider>
         <SessionGuard />
+        <QueryNotice />
         {children}
       </I18nProvider>
     </QueryClientProvider>

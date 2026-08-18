@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { PLATFORM_PRICE_TESTING, PRODUCTS } from "@claimsaver/shared";
 import { ProductionTestingNotice } from "@/components/production-testing-notice";
@@ -12,15 +12,30 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import FAQ from "@/components/faq";
 import { useSupabaseUser } from "@/components/auth/use-supabase-user";
+import { pricingCheckoutPath } from "@/lib/auth/next-path";
 import { formatUsd } from "@/lib/utils";
 import { webApi } from "@/lib/api/client";
 
 export default function PricingPage() {
+  return (
+    <Suspense>
+      <PricingInner />
+    </Suspense>
+  );
+}
+
+function PricingInner() {
   const { t } = useTranslation();
   const { isSignedIn, isLoaded } = useSupabaseUser();
   const router = useRouter();
-  const [platform, setPlatform] = useState(true);
-  const [notarization, setNotarization] = useState(false);
+  const params = useSearchParams();
+  const autoCheckout =
+    params.get("checkout") === "1" &&
+    params.get("email_confirmed") !== "1" &&
+    params.get("account_created") !== "1";
+  const started = useRef(false);
+  const [platform, setPlatform] = useState(params.get("platform") !== "0");
+  const [notarization, setNotarization] = useState(params.get("notarization") === "1");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -28,11 +43,11 @@ export default function PricingPage() {
     (platform ? PRODUCTS.platform.amountCents : 0) +
     (notarization ? PRODUCTS.notarization.amountCents : 0);
 
-  async function checkout() {
+  async function startCheckout() {
     setError(null);
     if (!isLoaded) return;
     if (!isSignedIn) {
-      router.push("/signup?next=/pricing");
+      router.push(`/checkout-account?next=${encodeURIComponent(pricingCheckoutPath({ platform, notarization }))}`);
       return;
     }
     const products = [
@@ -48,11 +63,27 @@ export default function PricingPage() {
       const data = await webApi.post<{ url: string }>("/api/v1/checkout", { products });
       if (data.url) window.location.href = data.url;
     } catch (e) {
+      started.current = false;
       setError(e instanceof Error ? e.message : t("pricing.checkoutFailed"));
-    } finally {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    if (!autoCheckout || !isLoaded || !isSignedIn || started.current) return;
+    started.current = true;
+    void startCheckout();
+    // Intentional: run once when signed-in checkout resume is requested.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCheckout, isLoaded, isSignedIn]);
+
+  const ctaLabel = !isLoaded
+    ? t("pricing.ui.proceedToPayment")
+    : !isSignedIn
+      ? t("pricing.ui.continueWithAccount")
+      : loading
+        ? t("pricing.redirecting")
+        : t("pricing.ui.proceedToPayment");
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950">
@@ -115,8 +146,8 @@ export default function PricingPage() {
                 <span className="text-xl font-bold">{formatUsd(total)}</span>
               </div>
               {error ? <p className="text-sm text-red-600">{error}</p> : null}
-              <Button disabled={loading || total === 0} onClick={() => void checkout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
-                {loading ? t("pricing.redirecting") : t("pricing.ui.proceedToPayment")}
+              <Button disabled={loading || total === 0} onClick={() => void startCheckout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
+                {ctaLabel}
               </Button>
               <p className="text-center text-xs text-slate-500">{t("pricing.ui.securePaymentStripe")}</p>
             </CardContent>

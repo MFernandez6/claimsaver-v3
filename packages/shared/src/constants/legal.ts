@@ -12,7 +12,7 @@ export const FOUNDER = {
   dfsLookupUrl: "https://licenseesearch.fldfs.com/",
 } as const;
 
-export const CHECKOUT_PATH = "/signup?next=/pricing";
+export const CHECKOUT_PATH = "/checkout-account?next=%2Fpricing";
 
 export const POSITIONING =
   "File your Florida no-fault claim. Keep what’s yours.";
