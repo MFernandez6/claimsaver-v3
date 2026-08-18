@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { COMPLETION_METHODS } from "../constants/worksheet";
+import { COMPLETION_METHODS, TOTAL_WORKSHEET_STEPS } from "../constants/worksheet";
 import {
   CLAIM_PRIORITIES,
   CLAIM_STATUSES,
@@ -44,6 +44,7 @@ export const floridaNoFaultFormSchema = z.object({
   yourVehicle: z.string().default(""),
   familyVehicle: z.string().default(""),
   injured: z.boolean().default(false),
+  injuryResponse: z.enum(["", "yes", "no"]).default(""),
   injuryDescription: z.string().default(""),
 
   treatedByDoctor: z.boolean().default(false),
@@ -58,6 +59,7 @@ export const floridaNoFaultFormSchema = z.object({
 
   inCourseOfEmployment: z.boolean().default(false),
   lostWages: z.boolean().default(false),
+  wageLossResponse: z.enum(["", "yes", "no"]).default(""),
   wageLossToDate: z.string().default(""),
   averageWeeklyWage: z.string().default(""),
   disabilityStart: z.string().default(""),
@@ -124,6 +126,10 @@ export const floridaNoFaultFormSchema = z.object({
 
 export type FloridaNoFaultFormData = z.infer<typeof floridaNoFaultFormSchema>;
 
+export function isDrawnSignature(value: string) {
+  return value.startsWith("data:image/");
+}
+
 export function emptyWorksheet(): FloridaNoFaultFormData {
   return floridaNoFaultFormSchema.parse({});
 }
@@ -139,7 +145,7 @@ export const claimSummarySchema = z.object({
   estimatedValue: z.number().nullable(),
   updatedAt: z.string(),
   createdAt: z.string(),
-  worksheetStep: z.number().int().min(1).max(8).default(1),
+  worksheetStep: z.number().int().min(1).max(TOTAL_WORKSHEET_STEPS).default(1),
 });
 
 export type ClaimSummary = z.infer<typeof claimSummarySchema>;
@@ -154,7 +160,7 @@ export const patchClaimSchema = z.object({
   worksheet: floridaNoFaultFormSchema.partial().optional(),
   status: z.enum(CLAIM_STATUSES).optional(),
   priority: z.enum(CLAIM_PRIORITIES).optional(),
-  worksheetStep: z.number().int().min(1).max(8).optional(),
+  worksheetStep: z.number().int().min(1).max(TOTAL_WORKSHEET_STEPS).optional(),
 });
 
 export type PatchClaimInput = z.infer<typeof patchClaimSchema>;

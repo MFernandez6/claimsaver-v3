@@ -24,6 +24,7 @@ export const calendarEventSchema = z.object({
   priority: z.enum(["low", "medium", "high"]),
   completed: z.boolean().default(false),
   createdAt: z.string(),
+  updatedAt: z.string().default(""),
 });
 
 export type CalendarEvent = z.infer<typeof calendarEventSchema>;

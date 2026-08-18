@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "./server";
-import { getSupabaseAdmin, isSupabaseConfigured } from "./admin";
+import { getSupabaseAdmin, isDevPlatformUnlocked, isSupabaseConfigured } from "./admin";
 import type { User } from "@supabase/supabase-js";
 
 export async function getAuthUser(req?: NextRequest): Promise<User | null> {
@@ -44,11 +44,12 @@ export async function requireUser(req: NextRequest): Promise<{
 
 export async function getProfile(userId: string) {
   const admin = getSupabaseAdmin();
-  const { data } = await admin
+  const { data, error } = await admin
     .from("profiles")
     .select("*")
     .eq("id", userId)
     .maybeSingle();
+  if (error) return null;
   return data as {
     id: string;
     email: string;
@@ -67,7 +68,7 @@ export async function requirePlatformAccess(req: NextRequest): Promise<{
   const { user, response } = await requireUser(req);
   if (response) return { user, profile: null, response };
   const profile = await getProfile(user.id);
-  if (!profile?.has_platform_access) {
+  if (!profile?.has_platform_access && !isDevPlatformUnlocked()) {
     return {
       user,
       profile,

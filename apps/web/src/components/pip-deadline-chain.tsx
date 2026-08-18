@@ -20,11 +20,13 @@ export function PipDeadlineChain({
   claimId,
   events,
   onChange,
+  onToggleCompleted,
 }: {
   accidentDate: string | null;
   claimId: string | null;
   events: CalendarEvent[];
   onChange: () => void;
+  onToggleCompleted?: (event: CalendarEvent) => void | Promise<void>;
 }) {
   const { t } = useTranslation();
   const [busy, setBusy] = useState(false);
@@ -92,6 +94,10 @@ export function PipDeadlineChain({
                     size="sm"
                     variant="outline"
                     onClick={async () => {
+                      if (onToggleCompleted) {
+                        await onToggleCompleted(event);
+                        return;
+                      }
                       await webApi.patch(`/api/v1/calendar/${event.id}`, { completed: !event.completed });
                       onChange();
                     }}

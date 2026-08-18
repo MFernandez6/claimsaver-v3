@@ -89,6 +89,8 @@
       "trust3": "Guided filing—you stay in control",
       "visualPreviewEventTitle": "Follow-up reminder",
       "visualPreviewEventDate": "Example — add your own in Calendar",
+      "visualPreviewLastDoneTitle": "Finished physical therapy",
+      "visualPreviewLastDoneDate": "Marked done",
       "dashboardPreviewBadge": "Sample preview",
       "dashboardPreviewHint": "Your own progress and documents will appear here after you sign in."
     },
@@ -464,7 +466,13 @@
     "selectAtLeastOne": "Select at least one service.",
     "checkoutFailed": "Checkout failed",
     "redirecting": "Redirecting…",
-    "checkoutNote": "This is the purchase flow for this visit—not your claim dashboard. Prices are set on the server; you only choose which products to buy."
+    "checkoutNote": "This is the purchase flow for this visit—not your claim dashboard. Prices are set on the server; you only choose which products to buy.",
+    "testing": {
+      "kicker": "Limited production testing.",
+      "body": "Thank you for helping us validate ClaimSaver+ with live payments. During this period, invited testers are charged {{testPrice}} for platform access. That {{testPrice}} charge will be refunded after testing. The standard list price remains {{listPrice}}. This is a real Stripe charge; you receive the same software access. Please do not share or circulate this testing rate.",
+      "rateLabel": "Testing rate",
+      "compareNote": "Checkout is currently {{testPrice}} during production testing. That amount will be refunded after testing."
+    }
   },
   "claimForm": {
     "header": {
@@ -494,6 +502,150 @@
     },
     "guidedTitle": "Guided PIP worksheet",
     "guidedIntro": "Personal drafting aid aligned with the common Florida application. The insurer’s official form always controls. Saving stores information in your account—it does not send anything to an insurer.",
+    "requiredNote": "Required fields are marked with *. You cannot continue until this step is complete.",
+    "completeRequired": "Complete the required fields on this step before continuing.",
+    "stillNeeded": "Still needed on this step:",
+    "completeCurrentFirst": "Finish the current step before jumping ahead.",
+    "yesInjured": "Yes — I was injured as a result of this accident.",
+    "notInjured": "No — I was not injured as a result of this accident.",
+    "yesWages": "Yes — I lost wages or work time because of this accident.",
+    "noWages": "No — I am not claiming wage loss on this worksheet.",
+    "coach": {
+      "badge": "Guide for this step",
+      "statLabel": "Florida PIP context",
+      "statNote": "General information. Your policy, insurer, and a licensed attorney—not this software—control what applies to you.",
+      "notAdvice": "This is education and a drafting aid, not legal, medical, or coverage advice. You remain the filer.",
+      "learnMore": "Learning Center",
+      "s1": {
+        "title": "How this worksheet is used",
+        "body": "You are building a personal draft aligned with the common Florida no-fault application. You will copy answers onto your insurer’s official form or portal. ClaimSaver+ does not send this to any insurance company.",
+        "stat": "PIP is first-party coverage: you typically claim against your own auto policy, not by proving the other driver was at fault.",
+        "tip": "Have your declarations page or insurance card nearby. If the carrier already mailed a packet, keep it next to this screen."
+      },
+      "s2": {
+        "title": "Identify the policy and the crash date",
+        "body": "The header tells the carrier whose policy applies and which incident you are describing. The file number is optional until the insurer assigns one.",
+        "stat": "Many Florida policies discuss a $10,000 PIP medical benefit limit. Deductibles and actual limits vary. This is an illustration, not your number.",
+        "tip": "Use the accident date from the crash report if you have one. If you do not have a file number yet, leave it blank and add it later."
+      },
+      "s3": {
+        "title": "Who is making the claim",
+        "body": "Official packets ask for identity, contact, Florida residency, and the vehicle involved. Enter only what you know to be true. Social Security number is optional here if you prefer to write it only on the insurer’s paper form.",
+        "stat": "PIP can apply to a named insured, resident relatives, and certain occupants, pedestrians, or cyclists in a motor-vehicle incident—subject to the policy.",
+        "tip": "Match the name and address to your license and insurance card so the carrier can match records without extra phone calls."
+      },
+      "s4": {
+        "title": "What happened, in plain facts",
+        "body": "Describe the time, place, and vehicles. Stick to what you observed. Do not guess speeds, fault, or legal conclusions.",
+        "stat": "A crash report (HSMV / law enforcement) is often requested. Photos, witness names, and tow invoices commonly sit in the same file layer.",
+        "tip": "Write a short factual narrative: where, when, which vehicles, and what you felt or saw. You can attach the police report on the dashboard after this step."
+      },
+      "s5": {
+        "title": "Injury and first treatment",
+        "body": "Say whether you were injured and, if so, what treatment you have started. Florida PIP includes a widely discussed 14-day timing rule for initial qualifying medical services.",
+        "stat": "If qualifying initial medical services are not furnished within 14 calendar days after the accident, PIP medical benefits for that incident may be limited. This software cannot decide whether a particular visit “counts.”",
+        "tip": "Keep visit dates, provider names, and itemized bills. If you are unsure whether a visit satisfies a legal rule, ask your provider or a licensed Florida attorney."
+      },
+      "s6": {
+        "title": "Work, wages, and other coverage",
+        "body": "Wage-loss questions appear on many official forms. Other health coverage (Medicare, group health, workers’ compensation) is often asked so the carrier can coordinate benefits.",
+        "stat": "When a policy extends wage benefits, carriers typically want proof of employment, pre-accident earnings, and a physician work restriction. Pay stubs and employer letters are frequently part of that file.",
+        "tip": "If you did not miss work, say so clearly. If you did, list employers and attach pay stubs later rather than estimating a number you cannot support."
+      },
+      "s7": {
+        "title": "Who may see your insurance file",
+        "body": "This page drafts an authorization for your auto insurer (or another recipient you name) to obtain claim-file information. Saving it here does not send a release to anyone.",
+        "stat": "Authorizations define who may request billing or wage records and for how long. Read the insurer’s official version before you sign that one.",
+        "tip": "Recipient is often your insurance company’s claims department. Match names and policy numbers to your ID card."
+      },
+      "s8": {
+        "title": "Who may request medical records",
+        "body": "This page drafts a medical-records release so a named recipient can request treatment and billing information from a provider you list. It is a worksheet, not a HIPAA form mailed to a clinic.",
+        "stat": "A medical authorization should name the provider, the recipient, and a time limit. Broader is not always better—use the same scope as the carrier’s packet when you file.",
+        "tip": "Provider is the clinic or hospital that treated you. You still decide what to send; ClaimSaver+ does not contact providers for you."
+      },
+      "s9": {
+        "title": "PIP may pay your medical providers",
+        "body": "Florida no-fault (PIP) packets often include a patient acknowledgment—and, when applicable, a treating-office acknowledgment—that personal injury protection benefits may apply to treatment. This page is a drafting aid for that disclosure.",
+        "stat": "PIP is first-party coverage on many Florida auto policies. Whether a visit is payable still depends on the policy and the facts; this page does not decide coverage.",
+        "tip": "The provider signature is often completed by the treating office, not by you. Leave it blank here if the clinic will sign the insurer’s paper."
+      },
+      "s10": {
+        "title": "Review, then you send the package",
+        "body": "Check names, dates, and the accident description. Saving stores a draft in your ClaimSaver+ account. You still compile documents and send the package to the insurer yourself.",
+        "stat": "On an illustrative $10,000 PIP medical example, a 33% contingency is $3,300. A flat $500 software fee can leave more of that example benefit with you. It is not a prediction of your outcome.",
+        "tip": "After you save, use the dashboard to upload the crash report, bills, and photos, then send the insurer’s official form plus your copies."
+      }
+    },
+    "hints": {
+      "signatureDate": "The date you are filling this worksheet—not the accident date.",
+      "policyHolder": "The named insured on the auto policy. That may be you or a family member.",
+      "dateOfAccident": "Starts general reminder templates, including the widely discussed 14-day initial-treatment window.",
+      "fileNumber": "Optional until the insurer assigns a claim or file number.",
+      "insuranceCompany": "The company on your declarations page or ID card.",
+      "policyNumber": "Usually on the ID card. Letters and numbers, not the VIN.",
+      "homePhone": "A number the carrier can use to reach you.",
+      "ssn": "Official packets often ask. You may leave this blank here and write it only on the insurer’s form.",
+      "floridaResidency": "For example “12 years” or “since 2019.”",
+      "permanentAddress": "Leave blank if it is the same as the address above.",
+      "accidentDateTime": "As close as you can recall. The crash report time is preferred if you have it.",
+      "place": "City, intersection, or highway mile marker in Florida if you know it.",
+      "briefDescription": "Facts only—no opinions about who was at fault.",
+      "yourVehicle": "Year, make, and model of the vehicle you were in, or “pedestrian” / “bicycle” if that applies.",
+      "injuryDescription": "What hurts, when it started, and any diagnosis you were given. Do not invent a diagnosis.",
+      "wageLossToDate": "A dollar amount you can support with pay records.",
+      "averageWeeklyWage": "Use recent pay stubs. Do not guess a higher number.",
+      "employersList": "Name and address of each employer at the time of the accident.",
+      "medicalInsurance": "Health insurance, Medicare, or “none” if you have no other medical coverage.",
+      "recipientOrg": "Often your auto insurer’s claims department.",
+      "healthcareProvider": "The hospital, clinic, or physician who treated you.",
+      "reviewSignature": "Draw your signature for your saved copy, or type your name. You may still sign only the insurer’s paper form."
+    },
+    "missing": {
+      "completionMethod": "How you will use this worksheet",
+      "signatureDate": "Date you are filling this out",
+      "policyHolder": "Policy holder",
+      "dateOfAccident": "Date of accident",
+      "insuranceCompany": "Insurance company",
+      "policyNumber": "Policy number",
+      "fullName": "Full name",
+      "email": "Email",
+      "homePhone": "Phone number",
+      "address": "Address",
+      "dob": "Date of birth",
+      "floridaResidency": "How long you have lived in Florida",
+      "vehicleYear": "Vehicle year",
+      "make": "Vehicle make",
+      "model": "Vehicle model",
+      "accidentDateTime": "Accident date and time",
+      "place": "Accident place",
+      "briefDescription": "Accident description",
+      "yourVehicle": "Your vehicle",
+      "injured": "Whether you were injured",
+      "injuryDescription": "Injury description",
+      "doctorName": "Doctor name (required if you were treated by a doctor)",
+      "hospitalName": "Hospital name (required if you marked hospital care)",
+      "lostWages": "Whether you lost wages",
+      "wageLossToDate": "Wage loss to date",
+      "averageWeeklyWage": "Average weekly wage",
+      "employersList": "Employer list",
+      "insuredName": "Insured name on the authorization",
+      "authPolicyNumber": "Authorization policy number",
+      "authInsurer": "Authorization insurance company",
+      "recipientOrg": "Who may receive insurance-file information",
+      "reason": "Reason for the authorization",
+      "insuranceAuthSignature": "Insurance authorization signature",
+      "insuranceAuthSignatureDate": "Insurance authorization date",
+      "patientName": "Patient name",
+      "healthcareProvider": "Health care provider",
+      "recipient": "Medical-authorization recipient",
+      "hipaaSignature": "Medical-authorization signature",
+      "hipaaSignatureDate": "Medical-authorization date",
+      "pipPatientName": "PIP disclosure patient name",
+      "pipPatientSignature": "PIP disclosure signature",
+      "pipPatientDate": "PIP disclosure date",
+      "reviewSignature": "Review signature"
+    },
     "signInTitle": "Sign in to use the worksheet",
     "paywallTitle": "Platform access required",
     "paywallBody": "The $500 guided platform unlocks this worksheet, document vault, and reminders. Notarization is optional and separate.",
@@ -502,15 +654,18 @@
     "saved": "Saved",
     "saveFailed": "Save failed",
     "loadFailed": "Could not load worksheet",
-    "stepOf": "Step {{step}} of 8 — {{title}}",
+    "stepOf": "Step {{step}} of {{total}} — {{title}}",
     "methodPrompt": "How will you use this worksheet? This is not legal advice and does not tell you what to claim.",
     "methodDigital": "I plan to transfer answers onto the insurer’s official form or portal, or print the summary for my records.",
     "methodPaper": "I expect to fill the paper form the insurer sent by hand, and may upload a scan later.",
     "notInjuredNote": "If you were not injured, many official paper forms ask you to sign and return early. Follow the insurer’s version of the form.",
-    "authIntro": "These sections organize information in your account. They do not send releases to anyone. Use the same titles as your carrier’s pages when you file.",
-    "authInsuranceHeading": "Insurance information disclosure authorization",
-    "authHipaaHeading": "HIPAA-style medical authorization",
-    "authPipHeading": "OIR-B1-1571-style PIP disclosure",
+    "authDoesNotSend": "Saving this page stores a draft in your account. It does not send a release or file anything with an insurer, clinic, or employer.",
+    "authInsuranceHeading": "Authorization to disclose insurance-file information",
+    "authInsuranceIntro": "Use this page to name who may receive information from your auto-insurance claim file, for what purpose, and for how long. Copy the same details onto the insurer’s official authorization when you file.",
+    "authHipaaHeading": "Authorization to release medical records",
+    "authMedicalIntro": "Use this page to name a health-care provider and who may request treatment or billing records. This is a worksheet, not a form mailed to a clinic.",
+    "authPipHeading": "PIP benefits disclosure (patient and provider)",
+    "authPipIntro": "Many Florida no-fault packets include a patient acknowledgment—and, when applicable, a treating-office acknowledgment—that personal injury protection (PIP) benefits may apply to medical treatment. Draft those names and signatures here, then use the insurer’s official page when you submit.",
     "reviewIntro": "Review your answers. Optional signature is for your PDF copy—you may instead sign only the insurer’s paper. Saving means information is stored in your account. You still must send materials to the insurer yourself.",
     "fieldsStarted": "Fields started",
     "identityChecks": "{{count}} of 3 identity/date checks",
@@ -524,10 +679,13 @@
       "accident": "Accident",
       "injury": "Injury and treatment",
       "wages": "Employment, wages, other coverage",
-      "authorizations": "Authorizations",
+      "insuranceAuth": "Insurance-file authorization",
+      "medicalAuth": "Medical records authorization",
+      "pipDisclosure": "PIP benefits disclosure",
       "review": "Review and save"
     },
     "fields": {
+      "completionMethod": "How you will use this worksheet",
       "signatureDate": "Date filling this out",
       "policyHolder": "Policy holder",
       "dateOfAccident": "Date of accident",
@@ -585,7 +743,7 @@
       "name": "Name",
       "accident": "Accident",
       "insurer": "Insurer",
-      "signature": "Signature (type your name for your copy)",
+      "signature": "Signature",
       "disclosureType": "Complete file or limited disclosure",
       "disclosureTypeHint": "e.g. complete claim file, or limited to listed items",
       "recipientAddress": "Recipient address",
@@ -594,7 +752,17 @@
       "providerSignature": "Provider signature (when applicable)",
       "providerDate": "Provider date"
     },
-    "printSummary": "Print summary"
+    "signaturePad": {
+      "hint": "Draw with a mouse, trackpad, or finger. This is for your saved copy—you may still sign only the insurer’s paper form.",
+      "clear": "Clear signature",
+      "orType": "Or type your name",
+      "typedPlaceholder": "Full legal name"
+    },
+    "printDocumentTitle": "Florida no-fault (PIP) worksheet — complete application",
+    "printClaimNumber": "Record {{number}}",
+    "printDisclaimer": "This is your saved worksheet for transferring answers onto the insurer’s official form or portal. ClaimSaver+ does not file or send this to an insurer. Empty fields show as —.",
+    "printFullHint": "The full application is below. Print or save as PDF so every answer, authorization, and signature is on the page for you to file.",
+    "printSummary": "Print full application"
   },
   "notarization": {
     "hero": {
@@ -713,8 +881,55 @@
     "title": "Dashboard",
     "welcome": "Welcome back — here's your claim workspace.",
     "overviewWelcome": "Welcome back, <name>{{name}}</name> — here’s your claim workspace.",
+    "onboarding": {
+      "kicker": "Start here",
+      "title": "Welcome, {{name}}. Your workspace fills in as you go.",
+      "body": "The dashboard tracks progress, documents, and deadlines after you enter claim facts. Begin with the guided Florida no-fault worksheet. You stay the filer—ClaimSaver+ does not send anything to an insurer.",
+      "step1title": "1. Complete the guided application",
+      "step1body": "Eight short steps with field help. Required answers must be filled before you move on.",
+      "step2title": "2. Upload your documents",
+      "step2body": "Crash report, medical bills, insurance card, and photos—after the worksheet has your basics.",
+      "step3title": "3. Track treatment and deadlines",
+      "step3body": "Log expenses and use general PIP reminder templates, including the 14-day education window.",
+      "startWorksheet": "Start the guided application",
+      "continueWorksheet": "Continue application (step {{step}})",
+      "youRemainFiler": "Saving stores a draft in your account. You send the package to your insurer."
+    },
     "overviewNoUpcoming": "No upcoming events — add milestones in the calendar.",
     "overviewDocsCount": "{{count}} document(s) in your secure vault",
+    "milestone": {
+      "lastDone": "Last done",
+      "upNext": "Up next",
+      "noneDone": "Nothing marked done yet — tap Done on a calendar reminder.",
+      "allCaughtUp": "No upcoming reminders — add one in Calendar.",
+      "markedOn": "Done · {{date}}"
+    },
+    "claimStatus": {
+      "draft": "Draft",
+      "in_progress": "In progress",
+      "pending": "Pending",
+      "reviewing": "In review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "completed": "Completed"
+    },
+    "claimCard": {
+      "worksheet": "Worksheet · step {{current}} of {{total}}",
+      "currentStep": "Now: {{title}}",
+      "lastDoneDetail": "{{title}} · {{date}}",
+      "nextDetail": "{{title}} · {{date}}"
+    },
+    "progress": {
+      "live": "Live",
+      "subtitle": "Updates as you save · {{title}} (step {{current}} of {{total}})",
+      "stepsAria": "Worksheet steps",
+      "inProgress": "Now",
+      "continue": "Continue worksheet",
+      "currentLabel": "Now: {{title}}",
+      "upNext": "Up next: {{title}}",
+      "statForms": "{{done}} / {{total}}",
+      "statCount": "{{count}}"
+    },
     "overview": {
       "title": "Recovery Overview",
       "subtitle": "Recovery Overview",
@@ -770,6 +985,7 @@
     "continue": "Continue",
     "uploadFile": "Upload a file",
     "uploading": "Uploading…",
+    "uploadSuccess": "Saved to your document vault: {{name}}. It is not sent to an insurer.",
     "docsHint": "Typical: police/crash reports, medical records and bills, insurance declarations, photos, wage proofs, carrier correspondence.",
     "reminderTitle": "Reminder title",
     "calendarHint": "When you enter an accident date on the worksheet, Florida PIP–oriented milestone templates can be added automatically. They are general information, not legal advice.",
@@ -1095,7 +1311,12 @@
     "sendReset": "Send reset link",
     "newPasswordTitle": "Set a new password",
     "newPasswordPlaceholder": "New password",
-    "updatePassword": "Update password"
+    "updatePassword": "Update password",
+    "session": {
+      "idleTitle": "Still there?",
+      "idleBody": "You will be signed out in {{seconds}} seconds because this session has been idle. Claim work is saved to your account.",
+      "staySignedIn": "Stay signed in"
+    }
   },
   "legalPages": {
     "privacyTitle": "Privacy Policy",

@@ -7,6 +7,14 @@ export function isSupabaseConfigured() {
   );
 }
 
+/** Local testing only — never honor this in production builds. */
+export function isDevPlatformUnlocked() {
+  return (
+    process.env.NODE_ENV !== "production" &&
+    process.env.DEV_UNLOCK_PLATFORM === "true"
+  );
+}
+
 export function getSupabaseAdmin() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;

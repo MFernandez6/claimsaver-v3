@@ -89,6 +89,8 @@
       "trust3": "Dépôt guidé—vous gardez la maîtrise",
       "visualPreviewEventTitle": "Rappel de suivi",
       "visualPreviewEventDate": "Exemple — ajoutez le vôtre dans le calendrier",
+      "visualPreviewLastDoneTitle": "Kinésithérapie terminée",
+      "visualPreviewLastDoneDate": "Marqué comme fait",
       "dashboardPreviewBadge": "Aperçu d’exemple",
       "dashboardPreviewHint": "Votre progrès et vos documents s’afficheront ici après la connexion."
     },
@@ -464,7 +466,13 @@
     "selectAtLeastOne": "Sélectionnez au moins un service.",
     "checkoutFailed": "Échec du paiement",
     "redirecting": "Redirection…",
-    "checkoutNote": "Ceci est le parcours d’achat de cette visite—pas votre tableau de bord. Les prix sont fixés côté serveur ; vous choisissez seulement les produits à acheter."
+    "checkoutNote": "Ceci est le parcours d’achat de cette visite—pas votre tableau de bord. Les prix sont fixés côté serveur ; vous choisissez seulement les produits à acheter.",
+    "testing": {
+      "kicker": "Test de production limité.",
+      "body": "Merci de nous aider à valider ClaimSaver+ avec des paiements réels. Pendant cette période, les testeurs invités sont facturés {{testPrice}} pour l’accès à la plateforme. Ce montant de {{testPrice}} sera remboursé après le test. Le tarif catalogue reste {{listPrice}}. Il s’agit d’un vrai paiement Stripe ; vous recevez le même accès logiciel. Merci de ne pas partager ni diffuser ce tarif de test.",
+      "rateLabel": "Tarif de test",
+      "compareNote": "Le paiement est actuellement {{testPrice}} pendant le test de production. Ce montant sera remboursé après le test."
+    }
   },
   "claimForm": {
     "header": {
@@ -494,6 +502,150 @@
     },
     "guidedTitle": "Feuille de travail PIP guidée",
     "guidedIntro": "Aide personnelle à la rédaction alignée sur la demande courante de Floride. Le formulaire officiel de l’assureur fait toujours foi. Enregistrer stocke les informations dans votre compte—cela n’envoie rien à un assureur.",
+    "requiredNote": "Les champs obligatoires sont marqués d’un *. Vous ne pouvez pas continuer tant que cette étape n’est pas complète.",
+    "completeRequired": "Complétez les champs obligatoires de cette étape avant de continuer.",
+    "stillNeeded": "Encore requis à cette étape :",
+    "completeCurrentFirst": "Terminez l’étape en cours avant d’avancer.",
+    "yesInjured": "Oui — j’ai été blessé(e) à la suite de cet accident.",
+    "notInjured": "Non — je n’ai pas été blessé(e) à la suite de cet accident.",
+    "yesWages": "Oui — j’ai perdu des salaires ou du temps de travail à cause de cet accident.",
+    "noWages": "Non — je ne réclame pas de perte de salaire sur cette feuille.",
+    "coach": {
+      "badge": "Guide de cette étape",
+      "statLabel": "Contexte PIP en Floride",
+      "statNote": "Information générale. Votre police, l’assureur et un avocat agréé—pas ce logiciel—déterminent ce qui s’applique à vous.",
+      "notAdvice": "Ceci est de l’éducation et une aide à la rédaction, pas un conseil juridique, médical ou de couverture. Vous restez le déposant.",
+      "learnMore": "Centre d’apprentissage",
+      "s1": {
+        "title": "Comment utiliser cette feuille",
+        "body": "Vous rédigez un brouillon personnel aligné sur la demande no-fault courante de Floride. Vous copierez les réponses sur le formulaire ou le portail officiel de l’assureur. ClaimSaver+ n’envoie rien à une compagnie.",
+        "stat": "La PIP est une garantie de première partie : vous réclamez en général contre votre propre police auto, sans prouver la faute de l’autre conducteur.",
+        "tip": "Gardez la page de déclarations ou la carte d’assurance à portée. Si l’assureur a déjà envoyé un dossier, placez-le à côté de cet écran."
+      },
+      "s2": {
+        "title": "Identifier la police et la date de l’accident",
+        "body": "L’en-tête indique à l’assureur quelle police s’applique et quel incident vous décrivez. Le numéro de dossier est facultatif jusqu’à ce que l’assureur l’attribue.",
+        "stat": "Beaucoup de polices de Floride évoquent une limite médicale PIP de 10 000 $. Franchises et plafonds réels varient. C’est un exemple, pas votre chiffre.",
+        "tip": "Utilisez la date du rapport d’accident si vous l’avez. S’il n’y a pas encore de numéro de dossier, laissez vide et ajoutez-le plus tard."
+      },
+      "s3": {
+        "title": "Qui présente la réclamation",
+        "body": "Les dossiers officiels demandent l’identité, les coordonnées, la résidence en Floride et le véhicule. N’inscrivez que ce que vous savez vrai. Le numéro de sécurité sociale est facultatif ici si vous préférez l’écrire seulement sur le papier de l’assureur.",
+        "stat": "La PIP peut s’appliquer à l’assuré désigné, aux proches résidents et à certains occupants, piétons ou cyclistes dans un incident de véhicule à moteur, selon la police.",
+        "tip": "Faites correspondre le nom et l’adresse à votre permis et à votre carte d’assurance pour que l’assureur relie les dossiers sans appels inutiles."
+      },
+      "s4": {
+        "title": "Ce qui s’est passé, en faits",
+        "body": "Décrivez l’heure, le lieu et les véhicules. Tenez-vous à ce que vous avez observé. N’inventez pas de vitesses, de faute ou de conclusions juridiques.",
+        "stat": "Un rapport d’accident (HSMV / police) est souvent demandé. Photos, témoins et factures de remorquage font souvent partie du même dossier.",
+        "tip": "Rédigez un récit court : où, quand, quels véhicules, ce que vous avez ressenti ou vu. Vous pourrez joindre le rapport de police ensuite."
+      },
+      "s5": {
+        "title": "Blessure et premiers soins",
+        "body": "Indiquez si vous avez été blessé(e) et, le cas échéant, quels soins ont commencé. La PIP de Floride inclut une règle de 14 jours largement discutée pour les premiers services médicaux qualifiants.",
+        "stat": "Si des services médicaux initiaux qualifiants ne sont pas fournis dans les 14 jours calendaires après l’accident, les prestations médicales PIP de cet incident peuvent être limitées. Ce logiciel ne décide pas si une visite « compte ».",
+        "tip": "Gardez les dates de visite, les noms des prestataires et les factures détaillées. En cas de doute sur une règle légale, demandez à votre prestataire ou à un avocat de Floride."
+      },
+      "s6": {
+        "title": "Travail, salaires et autres couvertures",
+        "body": "Les questions de perte de salaire figurent sur beaucoup de formulaires officiels. Une autre couverture santé (Medicare, assurance groupe, accidents du travail) est souvent demandée pour coordonner les prestations.",
+        "stat": "Lorsqu’une police prévoit des prestations salariales, les assureurs veulent en général une preuve d’emploi, les revenus avant l’accident et une restriction médicale. Fiches de paie et lettres d’employeur sont fréquentes.",
+        "tip": "Si vous n’avez pas manqué le travail, dites-le clairement. Sinon, listez les employeurs et joignez les fiches de paie plus tard plutôt que d’estimer un montant non étayé."
+      },
+      "s7": {
+        "title": "Qui peut consulter votre dossier d’assurance",
+        "body": "Cette page prépare une autorisation pour que votre assureur auto (ou un autre destinataire que vous nommez) obtienne des informations du dossier. L’enregistrer ici n’envoie une autorisation à personne.",
+        "stat": "Les autorisations définissent qui peut demander des factures ou des justificatifs de salaire et pour combien de temps. Lisez-les sur le formulaire officiel avant de signer cette version.",
+        "tip": "Le destinataire est souvent le service sinistres de votre assureur. Faites correspondre les noms et numéros de police à votre carte."
+      },
+      "s8": {
+        "title": "Qui peut demander des dossiers médicaux",
+        "body": "Cette page prépare une autorisation pour qu’un destinataire nommé puisse demander des informations de traitement et de facturation au prestataire que vous indiquez. C’est une feuille de travail, pas un formulaire HIPAA envoyé à une clinique.",
+        "stat": "Une autorisation médicale doit nommer le prestataire, le destinataire et une durée. Plus large n’est pas toujours mieux—utilisez la même portée que le dossier de l’assureur lorsque vous déposez.",
+        "tip": "Le prestataire est la clinique ou l’hôpital qui vous a soigné. Vous décidez ce que vous envoyez ; ClaimSaver+ ne contacte pas les prestataires pour vous."
+      },
+      "s9": {
+        "title": "La PIP peut payer vos prestataires de soins",
+        "body": "Les dossiers sans égard à la faute en Floride incluent souvent un accusé de réception du patient—et, le cas échéant, du cabinet—indiquant que les prestations de protection contre les blessures personnelles (PIP) peuvent s’appliquer au traitement. Cette page aide à rédiger cette divulgation.",
+        "stat": "La PIP est une couverture de première partie sur beaucoup de polices auto en Floride. Le caractère payable d’une visite dépend encore de la police et des faits ; cette page ne tranche pas la couverture.",
+        "tip": "La signature du prestataire est souvent complétée par le cabinet, pas par vous. Laissez-la vide ici si la clinique signera le papier de l’assureur."
+      },
+      "s10": {
+        "title": "Vérifiez, puis vous envoyez le dossier",
+        "body": "Vérifiez les noms, les dates et la description. Enregistrer stocke un brouillon dans votre compte ClaimSaver+. Vous compilez encore les documents et envoyez le dossier à l’assureur vous-même.",
+        "stat": "Sur un exemple illustratif de 10 000 $ de PIP médicale, une contingence de 33 % vaut 3 300 $. Des frais logiciels forfaitaires de 500 $ peuvent laisser davantage de cet exemple. Ce n’est pas une prévision de votre résultat.",
+        "tip": "Après l’enregistrement, utilisez le tableau de bord pour téléverser le rapport, les factures et les photos, puis envoyez le formulaire officiel plus vos copies."
+      }
+    },
+    "hints": {
+      "signatureDate": "La date à laquelle vous remplissez cette feuille—pas la date de l’accident.",
+      "policyHolder": "L’assuré désigné sur la police. Cela peut être vous ou un proche.",
+      "dateOfAccident": "Démarre des modèles de rappel, y compris la fenêtre éducative de 14 jours.",
+      "fileNumber": "Facultatif jusqu’à ce que l’assureur attribue un numéro.",
+      "insuranceCompany": "La compagnie sur votre page de déclarations ou carte.",
+      "policyNumber": "Souvent sur la carte. Ce n’est pas le NIV.",
+      "homePhone": "Un numéro où l’assureur peut vous joindre.",
+      "ssn": "Les dossiers officiels le demandent souvent. Vous pouvez le laisser vide ici et l’écrire seulement sur le formulaire de l’assureur.",
+      "floridaResidency": "Par exemple « 12 ans » ou « depuis 2019 ».",
+      "permanentAddress": "Laissez vide s’il s’agit de la même adresse que ci-dessus.",
+      "accidentDateTime": "Aussi précis que possible. L’heure du rapport d’accident est préférable.",
+      "place": "Ville, intersection ou borne kilométrique en Floride si vous la connaissez.",
+      "briefDescription": "Des faits seulement—pas d’avis sur la faute.",
+      "yourVehicle": "Année, marque et modèle, ou « piéton » / « vélo » le cas échéant.",
+      "injuryDescription": "Ce qui fait mal, depuis quand, et tout diagnostic reçu. N’inventez pas de diagnostic.",
+      "wageLossToDate": "Un montant que vous pouvez justifier avec des fiches de paie.",
+      "averageWeeklyWage": "Utilisez des fiches récentes. N’inventez pas un chiffre plus élevé.",
+      "employersList": "Nom et adresse de chaque employeur au moment de l’accident.",
+      "medicalInsurance": "Assurance maladie, Medicare, ou « aucune » si vous n’avez pas d’autre couverture.",
+      "recipientOrg": "Souvent le service sinistres de votre assureur auto.",
+      "healthcareProvider": "L’hôpital, la clinique ou le médecin qui vous a soigné.",
+      "reviewSignature": "Dessinez votre signature pour votre copie enregistrée, ou saisissez votre nom. Vous pouvez encore ne signer que le papier de l’assureur."
+    },
+    "missing": {
+      "completionMethod": "Comment vous utiliserez cette feuille",
+      "signatureDate": "Date à laquelle vous remplissez ceci",
+      "policyHolder": "Titulaire de la police",
+      "dateOfAccident": "Date de l’accident",
+      "insuranceCompany": "Compagnie d’assurance",
+      "policyNumber": "Numéro de police",
+      "fullName": "Nom complet",
+      "email": "E-mail",
+      "homePhone": "Téléphone",
+      "address": "Adresse",
+      "dob": "Date de naissance",
+      "floridaResidency": "Durée de résidence en Floride",
+      "vehicleYear": "Année du véhicule",
+      "make": "Marque",
+      "model": "Modèle",
+      "accidentDateTime": "Date et heure de l’accident",
+      "place": "Lieu de l’accident",
+      "briefDescription": "Description de l’accident",
+      "yourVehicle": "Votre véhicule",
+      "injured": "Si vous avez été blessé(e)",
+      "injuryDescription": "Description de la blessure",
+      "doctorName": "Nom du médecin (si un médecin vous a soigné)",
+      "hospitalName": "Nom de l’hôpital (si vous avez coché des soins hospitaliers)",
+      "lostWages": "Si vous avez perdu des salaires",
+      "wageLossToDate": "Perte de salaire à ce jour",
+      "averageWeeklyWage": "Salaire hebdomadaire moyen",
+      "employersList": "Liste des employeurs",
+      "insuredName": "Nom de l’assuré sur l’autorisation",
+      "authPolicyNumber": "Numéro de police de l’autorisation",
+      "authInsurer": "Assureur de l’autorisation",
+      "recipientOrg": "Qui peut recevoir les informations du dossier",
+      "reason": "Motif de l’autorisation",
+      "insuranceAuthSignature": "Signature d’autorisation d’assurance",
+      "insuranceAuthSignatureDate": "Date d’autorisation d’assurance",
+      "patientName": "Nom du patient",
+      "healthcareProvider": "Prestataire de soins",
+      "recipient": "Destinataire de l’autorisation médicale",
+      "hipaaSignature": "Signature d’autorisation médicale",
+      "hipaaSignatureDate": "Date d’autorisation médicale",
+      "pipPatientName": "Nom du patient sur la divulgation PIP",
+      "pipPatientSignature": "Signature de divulgation PIP",
+      "pipPatientDate": "Date de divulgation PIP",
+      "reviewSignature": "Signature de révision"
+    },
     "signInTitle": "Connectez-vous pour utiliser la feuille de travail",
     "paywallTitle": "Accès à la plateforme requis",
     "paywallBody": "La plateforme guidée à 500 $ déverrouille cette feuille de travail, le coffre de documents et les rappels. La notarisation est facultative et séparée.",
@@ -502,15 +654,18 @@
     "saved": "Enregistré",
     "saveFailed": "Échec de l’enregistrement",
     "loadFailed": "Impossible de charger la feuille de travail",
-    "stepOf": "Étape {{step}} sur 8 — {{title}}",
+    "stepOf": "Étape {{step}} sur {{total}} — {{title}}",
     "methodPrompt": "Comment utiliserez-vous cette feuille de travail ? Ceci n’est pas un conseil juridique et ne vous dit pas quoi réclamer.",
     "methodDigital": "Je prévois de transférer les réponses sur le formulaire ou le portail officiel de l’assureur, ou d’imprimer le résumé pour mes dossiers.",
     "methodPaper": "Je m’attends à remplir à la main le formulaire papier envoyé par l’assureur, et je pourrai téléverser un scan plus tard.",
     "notInjuredNote": "Si vous n’êtes pas blessé, de nombreux formulaires officiels papier demandent de signer et de renvoyer rapidement. Suivez la version de l’assureur.",
-    "authIntro": "Ces sections organisent des informations dans votre compte. Elles n’envoient d’autorisations à personne. Utilisez les mêmes titres que les pages de votre assureur lorsque vous déposez.",
-    "authInsuranceHeading": "Autorisation de divulgation d’informations d’assurance",
-    "authHipaaHeading": "Autorisation médicale de type HIPAA",
-    "authPipHeading": "Divulgation PIP de type OIR-B1-1571",
+    "authDoesNotSend": "Enregistrer cette page stocke un brouillon dans votre compte. Cela n’envoie aucune autorisation et ne dépose rien auprès d’un assureur, d’une clinique ou d’un employeur.",
+    "authInsuranceHeading": "Autorisation de divulgation du dossier d’assurance",
+    "authInsuranceIntro": "Utilisez cette page pour indiquer qui peut recevoir des informations de votre dossier de sinistre auto, dans quel but et pour combien de temps. Recopiez les mêmes détails sur l’autorisation officielle de l’assureur lorsque vous déposez.",
+    "authHipaaHeading": "Autorisation de communication des dossiers médicaux",
+    "authMedicalIntro": "Utilisez cette page pour nommer un prestataire de soins et qui peut demander des dossiers de traitement ou de facturation. C’est une feuille de travail, pas un formulaire envoyé à une clinique.",
+    "authPipHeading": "Divulgation des prestations PIP (patient et prestataire)",
+    "authPipIntro": "Beaucoup de dossiers sans égard à la faute en Floride incluent un accusé de réception du patient—et, le cas échéant, du cabinet—indiquant que les prestations de protection contre les blessures personnelles (PIP) peuvent s’appliquer au traitement. Rédigez ici ces noms et signatures, puis utilisez la page officielle de l’assureur lors de l’envoi.",
     "reviewIntro": "Relisez vos réponses. La signature facultative est pour votre copie PDF—vous pouvez signer uniquement le papier de l’assureur. Enregistrer signifie que les informations sont stockées dans votre compte. Vous devez toujours envoyer les pièces à l’assureur vous-même.",
     "fieldsStarted": "Champs commencés",
     "identityChecks": "{{count}} sur 3 contrôles d’identité/date",
@@ -524,10 +679,13 @@
       "accident": "Accident",
       "injury": "Blessure et traitement",
       "wages": "Emploi, salaires, autre couverture",
-      "authorizations": "Autorisations",
+      "insuranceAuth": "Autorisation du dossier d’assurance",
+      "medicalAuth": "Autorisation des dossiers médicaux",
+      "pipDisclosure": "Divulgation des prestations PIP",
       "review": "Relire et enregistrer"
     },
     "fields": {
+      "completionMethod": "Comment vous utiliserez cette feuille",
       "signatureDate": "Date de remplissage",
       "policyHolder": "Titulaire de la police",
       "dateOfAccident": "Date de l’accident",
@@ -585,7 +743,7 @@
       "name": "Nom",
       "accident": "Accident",
       "insurer": "Assureur",
-      "signature": "Signature (tapez votre nom pour votre copie)",
+      "signature": "Signature",
       "disclosureType": "Dossier complet ou divulgation limitée",
       "disclosureTypeHint": "p. ex. dossier complet, ou limité aux éléments indiqués",
       "recipientAddress": "Adresse du destinataire",
@@ -594,7 +752,17 @@
       "providerSignature": "Signature du prestataire (le cas échéant)",
       "providerDate": "Date du prestataire"
     },
-    "printSummary": "Imprimer le résumé"
+    "signaturePad": {
+      "hint": "Dessinez avec la souris, le pavé tactile ou le doigt. Ceci est pour votre copie enregistrée—vous pouvez encore ne signer que le formulaire papier de l’assureur.",
+      "clear": "Effacer la signature",
+      "orType": "Ou saisissez votre nom",
+      "typedPlaceholder": "Nom légal complet"
+    },
+    "printDocumentTitle": "Feuille de travail no-fault (PIP) de Floride — demande complète",
+    "printClaimNumber": "Dossier {{number}}",
+    "printDisclaimer": "Ceci est votre feuille enregistrée pour reporter les réponses sur le formulaire ou le portail officiel de l’assureur. ClaimSaver+ ne dépose pas et n’envoie pas ceci à un assureur. Les champs vides s’affichent comme —.",
+    "printFullHint": "La demande complète est ci-dessous. Imprimez ou enregistrez en PDF pour que chaque réponse, autorisation et signature figure sur la page, afin que vous puissiez la déposer.",
+    "printSummary": "Imprimer la demande complète"
   },
   "notarization": {
     "hero": {
@@ -713,8 +881,55 @@
     "title": "Tableau de Bord",
     "welcome": "Bon retour",
     "overviewWelcome": "Bon retour, <name>{{name}}</name> — voici votre espace de réclamation.",
+    "onboarding": {
+      "kicker": "Commencez ici",
+      "title": "Bienvenue, {{name}}. L’espace se remplit au fur et à mesure.",
+      "body": "Le tableau de bord suit les progrès, documents et échéances après que vous avez saisi les faits. Commencez par la feuille guidée no-fault de Floride. Vous restez le déposant—ClaimSaver+ n’envoie rien à un assureur.",
+      "step1title": "1. Remplir la demande guidée",
+      "step1body": "Huit étapes courtes avec de l’aide. Les réponses obligatoires doivent être remplies avant d’avancer.",
+      "step2title": "2. Téléverser vos documents",
+      "step2body": "Rapport d’accident, factures médicales, carte d’assurance et photos—après les informations de base.",
+      "step3title": "3. Suivre les soins et les délais",
+      "step3body": "Enregistrez les dépenses et utilisez des modèles généraux de rappel PIP, y compris la fenêtre éducative de 14 jours.",
+      "startWorksheet": "Commencer la demande guidée",
+      "continueWorksheet": "Continuer la demande (étape {{step}})",
+      "youRemainFiler": "Enregistrer stocke un brouillon dans votre compte. Vous envoyez le dossier à votre assureur."
+    },
     "overviewNoUpcoming": "Aucun événement à venir — ajoutez des jalons au calendrier.",
     "overviewDocsCount": "{{count}} document(s) dans votre coffre sécurisé",
+    "milestone": {
+      "lastDone": "Dernier fait",
+      "upNext": "À suivre",
+      "noneDone": "Rien n’est encore marqué — appuyez sur Fait sur un rappel du calendrier.",
+      "allCaughtUp": "Aucun rappel à venir — ajoutez-en un dans le calendrier.",
+      "markedOn": "Fait · {{date}}"
+    },
+    "claimStatus": {
+      "draft": "Brouillon",
+      "in_progress": "En cours",
+      "pending": "En attente",
+      "reviewing": "En révision",
+      "approved": "Approuvé",
+      "rejected": "Refusé",
+      "completed": "Terminé"
+    },
+    "claimCard": {
+      "worksheet": "Feuille de travail · étape {{current}} sur {{total}}",
+      "currentStep": "Maintenant : {{title}}",
+      "lastDoneDetail": "{{title}} · {{date}}",
+      "nextDetail": "{{title}} · {{date}}"
+    },
+    "progress": {
+      "live": "En direct",
+      "subtitle": "Se met à jour à l’enregistrement · {{title}} (étape {{current}} sur {{total}})",
+      "stepsAria": "Étapes de la feuille de travail",
+      "inProgress": "En cours",
+      "continue": "Continuer la feuille",
+      "currentLabel": "Maintenant : {{title}}",
+      "upNext": "Ensuite : {{title}}",
+      "statForms": "{{done}} / {{total}}",
+      "statCount": "{{count}}"
+    },
     "navOverview": "Aperçu",
     "recentActivity": "Activité Récente",
     "quickActions": "Actions Rapides",
@@ -771,6 +986,7 @@
     "continue": "Continuer",
     "uploadFile": "Téléverser un fichier",
     "uploading": "Téléversement…",
+    "uploadSuccess": "Enregistré dans votre coffre de documents : {{name}}. Il n’est pas envoyé à un assureur.",
     "docsHint": "Typique : rapports de police, dossiers et factures médicaux, attestations d’assurance, photos, preuves de salaire, correspondance de l’assureur.",
     "reminderTitle": "Titre du rappel",
     "calendarHint": "Lorsque vous saisissez une date d’accident sur la feuille de travail, des modèles d’étapes orientés PIP en Floride peuvent être ajoutés automatiquement. Ce sont des informations générales, pas un conseil juridique.",
@@ -1096,7 +1312,12 @@
     "sendReset": "Envoyer le lien",
     "newPasswordTitle": "Définir un nouveau mot de passe",
     "newPasswordPlaceholder": "Nouveau mot de passe",
-    "updatePassword": "Mettre à jour le mot de passe"
+    "updatePassword": "Mettre à jour le mot de passe",
+    "session": {
+      "idleTitle": "Toujours là ?",
+      "idleBody": "Vous serez déconnecté dans {{seconds}} secondes pour inactivité. Le travail sur le dossier est enregistré dans votre compte.",
+      "staySignedIn": "Rester connecté"
+    }
   },
   "legalPages": {
     "privacyTitle": "Politique de confidentialité",

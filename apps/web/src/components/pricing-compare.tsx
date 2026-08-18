@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { ILLUSTRATIVE_CONTINGENCY_FEE_CENTS, PRODUCTS } from "@claimsaver/shared";
+import {
+  ILLUSTRATIVE_CONTINGENCY_FEE_CENTS,
+  PLATFORM_PRICE_TESTING,
+  PRODUCTS,
+} from "@claimsaver/shared";
 import { Button } from "@/components/ui/button";
 import { formatUsd } from "@/lib/utils";
 
@@ -40,8 +44,13 @@ export function PricingCompare({
           {t("pricing.claimSaverAdvantages.title")}
         </h3>
         <p className="mt-5 text-3xl font-semibold tracking-tight text-emerald-700 dark:text-emerald-300">
-          {PRODUCTS.platform.displayPrice}
+          {PRODUCTS.platform.listDisplayPrice}
         </p>
+        {PLATFORM_PRICE_TESTING ? (
+          <p className="mt-1 text-xs font-medium text-teal-800 dark:text-teal-200">
+            {t("pricing.testing.compareNote", { testPrice: PRODUCTS.platform.displayPrice })}
+          </p>
+        ) : null}
         <p className="mt-2 text-sm leading-relaxed text-emerald-900/80 dark:text-emerald-100/80">
           {t("pricing.claimSaverAdvantages.noContingency")}
         </p>

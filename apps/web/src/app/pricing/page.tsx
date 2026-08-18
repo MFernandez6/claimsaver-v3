@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { PRODUCTS } from "@claimsaver/shared";
+import { PLATFORM_PRICE_TESTING, PRODUCTS } from "@claimsaver/shared";
+import { ProductionTestingNotice } from "@/components/production-testing-notice";
 import { PricingCompare } from "@/components/pricing-compare";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -69,6 +70,9 @@ export default function PricingPage() {
           </p>
           <p className="mt-2 max-w-3xl text-sm text-slate-500">{t("floridaOnly.note")}</p>
           <p className="mt-1 text-sm font-medium text-slate-500">{t("cta.path")}</p>
+          <div className="mt-6">
+            <ProductionTestingNotice compact />
+          </div>
 
           <Card className="mt-10">
             <CardHeader>
@@ -85,6 +89,14 @@ export default function PricingPage() {
                 </div>
                 <div className="text-right">
                   <p className="font-bold">{PRODUCTS.platform.displayPrice}</p>
+                  {PLATFORM_PRICE_TESTING ? (
+                    <>
+                      <p className="text-[11px] font-medium uppercase tracking-wide text-teal-700">
+                        {t("pricing.testing.rateLabel")}
+                      </p>
+                      <p className="text-xs text-slate-400 line-through">{PRODUCTS.platform.listDisplayPrice}</p>
+                    </>
+                  ) : null}
                   <input type="checkbox" className="mt-2" checked={platform} onChange={(e) => setPlatform(e.target.checked)} />
                 </div>
               </label>

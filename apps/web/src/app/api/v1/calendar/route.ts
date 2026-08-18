@@ -15,6 +15,7 @@ function toEvent(row: Record<string, unknown>) {
     priority: String(row.priority),
     completed: Boolean(row.completed),
     createdAt: String(row.created_at),
+    updatedAt: String(row.updated_at ?? row.created_at ?? ""),
   };
 }
 

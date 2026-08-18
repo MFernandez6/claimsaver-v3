@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 import { FourteenDayBanner } from "@/components/fourteen-day-banner";
+import { ProductionTestingNotice } from "@/components/production-testing-notice";
 import { AppProviders } from "@/components/app-providers";
 import { siteUrl } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
@@ -66,14 +67,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${plusJakarta.variable} antialiased`}>
         <AppProviders>
-          <div className="min-h-screen min-w-0 bg-gradient-to-br from-gray-50 via-white to-emerald-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-emerald-950/30">
-            <Navbar />
-            <main className="min-w-0 w-full overflow-x-hidden pt-16 pb-[max(0px,env(safe-area-inset-bottom))]">
-              <FourteenDayBanner />
+          <div className="min-h-screen min-w-0 bg-gradient-to-br from-gray-50 via-white to-emerald-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-emerald-950/30 print:min-h-0 print:bg-white">
+            <div className="print:hidden">
+              <Navbar />
+            </div>
+            <main className="min-w-0 w-full overflow-x-hidden pt-16 pb-[max(0px,env(safe-area-inset-bottom))] print:overflow-visible print:p-0 print:pt-0">
+              <div className="print:hidden">
+                <ProductionTestingNotice />
+                <FourteenDayBanner />
+              </div>
               {children}
             </main>
-            <Footer />
+            <div className="print:hidden">
+              <Footer />
+            </div>
           </div>
+          <Analytics />
         </AppProviders>
         <Analytics />
       </body>

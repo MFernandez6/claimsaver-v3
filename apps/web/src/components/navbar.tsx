@@ -10,8 +10,8 @@ import { BrandLogo } from "@/components/brand-logo";
 import LanguageSwitcher from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
 import { useSupabaseUser } from "@/components/auth/use-supabase-user";
-import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
+import { endSession } from "@/lib/auth/session-security";
 import { cn } from "@/lib/utils";
 
 const PRIMARY = [
@@ -56,12 +56,12 @@ export function Navbar() {
 
   const signOut = async () => {
     if (!isSupabaseBrowserConfigured()) return;
-    await getBrowserSupabase().auth.signOut();
+    await endSession("manual");
     window.location.href = "/";
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md print:hidden dark:border-slate-800 dark:bg-slate-950/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
           <BrandLogo />

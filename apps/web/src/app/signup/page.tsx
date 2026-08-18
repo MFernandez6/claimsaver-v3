@@ -22,7 +22,7 @@ function SignupInner() {
   const { t } = useTranslation();
   const router = useRouter();
   const params = useSearchParams();
-  const next = params.get("next") || "/pricing";
+  const next = params.get("next") || "/claim-form";
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");

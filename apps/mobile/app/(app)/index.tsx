@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 import { Pressable, RefreshControl, ScrollView, Text, View } from "react-native";
 import * as WebBrowser from "expo-web-browser";
 import type { ClaimSummary, Me } from "@claimsaver/shared";
-import { ApiClientError } from "@claimsaver/shared";
+import { ApiClientError, TOTAL_WORKSHEET_STEPS } from "@claimsaver/shared";
 import { api } from "../../src/lib/api";
 
 export default function WorkspaceScreen() {
@@ -76,7 +76,7 @@ export default function WorkspaceScreen() {
         <View key={c.id} style={card}>
           <Text style={{ fontWeight: "700" }}>{c.claimNumber}</Text>
           <Text style={{ color: "#64748b", marginTop: 4 }}>
-            Step {c.worksheetStep}/8 · {c.status} · {c.accidentDate || "No accident date"}
+            Step {c.worksheetStep}/{TOTAL_WORKSHEET_STEPS} · {c.status} · {c.accidentDate || "No accident date"}
           </Text>
         </View>
       ))}

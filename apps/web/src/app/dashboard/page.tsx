@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   type CalendarEvent,
@@ -8,26 +8,53 @@ import {
   type DocumentRow,
   type ExpenseRow,
   type Me,
-  JOURNEY_STEPS,
+  TOTAL_WORKSHEET_STEPS,
+  WORKSHEET_STEPS,
+  calendarMilestonePair,
   isPipTemplateEvent,
+  parsePipTemplateId,
 } from "@claimsaver/shared";
 import { ApiClientError } from "@claimsaver/shared";
+import { DashboardOnboarding } from "@/components/dashboard-onboarding";
 import { DashboardOverviewPanels } from "@/components/dashboard-overview-panels";
 import { NotFilingYet } from "@/components/not-filing-yet";
 import { PipDeadlineBanner } from "@/components/pip-deadline-banner";
 import { PipDeadlineChain } from "@/components/pip-deadline-chain";
 import { SceneCapture } from "@/components/scene-capture";
+import { FlashNotice } from "@/components/flash-notice";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { webApi } from "@/lib/api/client";
+import { useSupabaseUser } from "@/components/auth/use-supabase-user";
+import { greetingName } from "@/lib/auth/display-name";
 import { useTranslation } from "react-i18next";
-import { formatUsd } from "@/lib/utils";
+import { formatUsd, cn } from "@/lib/utils";
 
 type Tab = "claims" | "docs" | "calendar" | "expenses";
 
+function eventDisplayTitle(
+  event: { title: string; description?: string },
+  translate: (key: string, options?: { defaultValue?: string }) => string,
+) {
+  const id = parsePipTemplateId(event.description || "");
+  if (id != null) {
+    return translate(`deadlines.templates.${id}.label`, { defaultValue: event.title });
+  }
+  return event.title;
+}
+
+function eventsForClaim(events: CalendarEvent[], claimId: string, isPrimary: boolean) {
+  return events.filter((event) => event.claimId === claimId || (isPrimary && !event.claimId));
+}
+
+function docsForClaim(docs: DocumentRow[], claimId: string, isPrimary: boolean) {
+  return docs.filter((doc) => doc.claimId === claimId || (isPrimary && !doc.claimId));
+}
+
 export default function DashboardPage() {
   const { t } = useTranslation();
+  const { user } = useSupabaseUser();
   const [me, setMe] = useState<Me | null>(null);
   const [paywall, setPaywall] = useState(false);
   const [tab, setTab] = useState<Tab>("claims");
@@ -37,7 +64,7 @@ export default function DashboardPage() {
   const [expenses, setExpenses] = useState<ExpenseRow[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  async function refresh() {
+  const refresh = useCallback(async () => {
     try {
       const profile = await webApi.get<Me>("/api/v1/me");
       setMe(profile);
@@ -62,16 +89,44 @@ export default function DashboardPage() {
       }
       setError(err instanceof Error ? err.message : t("dashboard.loadFailed"));
     }
-  }
+  }, [t]);
 
   useEffect(() => {
+    if (paywall) return;
     void refresh();
-  }, []);
+    const tick = () => {
+      if (document.visibilityState === "visible") void refresh();
+    };
+    const id = window.setInterval(tick, 10_000);
+    window.addEventListener("focus", tick);
+    document.addEventListener("visibilitychange", tick);
+    return () => {
+      window.clearInterval(id);
+      window.removeEventListener("focus", tick);
+      document.removeEventListener("visibilitychange", tick);
+    };
+  }, [refresh, paywall]);
 
-  const nextEvent = useMemo(() => {
-    const upcoming = events.filter((e) => !e.completed).sort((a, b) => a.date.localeCompare(b.date))[0];
-    return upcoming ? { title: upcoming.title, dateLabel: upcoming.date } : null;
-  }, [events]);
+  const toggleEventCompleted = useCallback(
+    async (event: CalendarEvent) => {
+      const next = !event.completed;
+      setEvents((prev) =>
+        prev.map((row) =>
+          row.id === event.id
+            ? { ...row, completed: next, updatedAt: new Date().toISOString() }
+            : row,
+        ),
+      );
+      try {
+        await webApi.patch(`/api/v1/calendar/${event.id}`, { completed: next });
+      } catch {
+        await refresh();
+      }
+    },
+    [refresh],
+  );
+
+  const milestones = useMemo(() => calendarMilestonePair(events), [events]);
 
   if (paywall) {
     return (
@@ -88,20 +143,54 @@ export default function DashboardPage() {
   }
 
   const primary = claims[0];
+  const welcomeName = greetingName(me, user, t("dashboard.there"));
+  const worksheetStarted = Boolean(
+    primary &&
+      (primary.worksheetStep > 1 ||
+        primary.claimantName ||
+        primary.accidentDate),
+  );
+  const lastCompleted = milestones.lastCompleted
+    ? {
+        title: eventDisplayTitle(milestones.lastCompleted, t),
+        dateLabel: t("dashboard.milestone.markedOn", {
+          date: milestones.lastCompleted.date,
+        }),
+      }
+    : null;
+  const nextEvent = milestones.nextEvent
+    ? {
+        title: eventDisplayTitle(milestones.nextEvent, t),
+        dateLabel: milestones.nextEvent.date,
+      }
+    : null;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
+      {!worksheetStarted ? (
+        <DashboardOnboarding
+          welcomeName={welcomeName}
+          hasDraft={Boolean(primary)}
+          worksheetStep={primary?.worksheetStep ?? 1}
+        />
+      ) : (
       <DashboardOverviewPanels
-        completedSteps={primary?.worksheetStep ?? 0}
-        totalSteps={8}
+        currentStep={primary?.worksheetStep ?? 1}
+        totalSteps={TOTAL_WORKSHEET_STEPS}
         documentsCount={docs.length}
+        calendarCount={events.length}
+        expensesCount={expenses.length}
+        lastCompleted={lastCompleted}
         nextEvent={nextEvent}
-        welcomeName={me?.firstName || me?.email || t("dashboard.there")}
+        welcomeName={welcomeName}
       />
+      )}
 
       <div className="mt-6">
         <NotFilingYet />
       </div>
+      {worksheetStarted ? (
+      <>
       {primary?.accidentDate ? (
         <div className="mt-4">
           <PipDeadlineBanner accidentDate={primary.accidentDate} />
@@ -111,21 +200,6 @@ export default function DashboardPage() {
       <div className="mt-6">
         <SceneCapture onUploaded={() => void refresh()} />
       </div>
-
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>{t("dashboard.journeyTitle")}</CardTitle>
-          <p className="text-sm text-slate-500">{t("dashboard.journeySubtitle")}</p>
-        </CardHeader>
-        <CardContent className="grid gap-3 sm:grid-cols-2">
-          {JOURNEY_STEPS.map((s) => (
-            <div key={s.id} className="rounded-lg border p-3">
-              <p className="font-medium">{s.id}. {t(`dashboard.journey.${s.id}title`)}</p>
-              <p className="text-xs text-slate-500">{t(`dashboard.journey.${s.id}note`)}</p>
-            </div>
-          ))}
-        </CardContent>
-      </Card>
 
       <div className="mt-8 flex flex-wrap gap-2">
         {(["claims", "docs", "calendar", "expenses"] as Tab[]).map((tabKey) => (
@@ -145,19 +219,13 @@ export default function DashboardPage() {
           {claims.length === 0 ? (
             <p className="text-slate-500">{t("dashboard.noClaims")}</p>
           ) : (
-            claims.map((c) => (
-              <Card key={c.id}>
-                <CardContent className="flex flex-wrap items-center justify-between gap-3 pt-6">
-                  <div>
-                    <p className="font-semibold">{c.claimNumber}</p>
-                    <p className="text-sm text-slate-500">
-                      {c.claimantName || t("dashboard.untitled")} · {c.accidentDate || t("dashboard.noAccidentDate")} · {c.status}
-                    </p>
-                    <p className="text-xs text-slate-400">{t("dashboard.internalIdNote")}</p>
-                  </div>
-                  <Button asChild variant="outline"><Link href="/claim-form">{t("dashboard.continue")}</Link></Button>
-                </CardContent>
-              </Card>
+            claims.map((c, index) => (
+              <ClaimRecordCard
+                key={c.id}
+                claim={c}
+                events={eventsForClaim(events, c.id, index === 0)}
+                documentsCount={docsForClaim(docs, c.id, index === 0).length}
+              />
             ))
           )}
         </div>
@@ -171,28 +239,156 @@ export default function DashboardPage() {
             claimId={primary?.id ?? null}
             events={events}
             onChange={() => void refresh()}
+            onToggleCompleted={toggleEventCompleted}
           />
-          <CalendarPanel events={events.filter((e) => !isPipTemplateEvent(e))} claimId={primary?.id ?? null} onChange={refresh} />
+          <CalendarPanel
+            events={events.filter((e) => !isPipTemplateEvent(e))}
+            claimId={primary?.id ?? null}
+            onChange={refresh}
+            onToggleCompleted={toggleEventCompleted}
+          />
         </div>
       )}
       {tab === "expenses" && <ExpensesPanel expenses={expenses} onChange={refresh} />}
+      </>
+      ) : null}
     </div>
+  );
+}
+
+function ClaimRecordCard({
+  claim,
+  events,
+  documentsCount,
+}: {
+  claim: ClaimSummary;
+  events: CalendarEvent[];
+  documentsCount: number;
+}) {
+  const { t } = useTranslation();
+  const pair = calendarMilestonePair(events);
+  const current = Math.min(Math.max(1, claim.worksheetStep || 1), TOTAL_WORKSHEET_STEPS);
+  const stepMeta = WORKSHEET_STEPS.find((step) => step.step === current);
+  const stepTitle = stepMeta ? t(`claimForm.worksheetSteps.${stepMeta.key}`) : "";
+  const lastTitle = pair.lastCompleted
+    ? eventDisplayTitle(pair.lastCompleted, t)
+    : null;
+  const nextTitle = pair.nextEvent ? eventDisplayTitle(pair.nextEvent, t) : null;
+  const worksheetPct = Math.round(((current - 1) / TOTAL_WORKSHEET_STEPS) * 100);
+
+  return (
+    <Card>
+      <CardContent className="space-y-4 pt-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="font-semibold text-slate-900 dark:text-white">{claim.claimNumber}</p>
+              <span
+                className={cn(
+                  "rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
+                  claim.status === "completed" || claim.status === "approved"
+                    ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200"
+                    : claim.status === "rejected"
+                      ? "bg-red-50 text-red-800 dark:bg-red-950/50 dark:text-red-200"
+                      : claim.status === "pending" || claim.status === "reviewing"
+                        ? "bg-amber-50 text-amber-900 dark:bg-amber-950/40 dark:text-amber-200"
+                        : "bg-teal-50 text-teal-800 dark:bg-teal-950/50 dark:text-teal-200",
+                )}
+              >
+                {t(`dashboard.claimStatus.${claim.status}`, { defaultValue: claim.status })}
+              </span>
+            </div>
+            <p className="mt-1 text-sm text-slate-500">
+              {claim.claimantName || t("dashboard.untitled")}
+              {" · "}
+              {claim.accidentDate || t("dashboard.noAccidentDate")}
+            </p>
+            <p className="mt-1 text-xs text-slate-400">{t("dashboard.internalIdNote")}</p>
+          </div>
+          <Button asChild variant="outline">
+            <Link href="/claim-form">{t("dashboard.continue")}</Link>
+          </Button>
+        </div>
+
+        <div>
+          <div className="mb-1.5 flex items-center justify-between gap-3 text-xs">
+            <p className="font-medium text-slate-700 dark:text-slate-200">
+              {t("dashboard.claimCard.worksheet", { current, total: TOTAL_WORKSHEET_STEPS })}
+            </p>
+            <p className="tabular-nums text-teal-700 dark:text-teal-300">{worksheetPct}%</p>
+          </div>
+          <div className="h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-teal-500 to-emerald-600 transition-[width] duration-500"
+              style={{ width: `${worksheetPct}%` }}
+            />
+          </div>
+          {stepTitle ? (
+            <p className="mt-1.5 text-xs text-slate-500">
+              {t("dashboard.claimCard.currentStep", { title: stepTitle })}
+            </p>
+          ) : null}
+        </div>
+
+        <dl className="grid gap-2 text-xs sm:grid-cols-2">
+          <div className="rounded-lg bg-slate-50 px-3 py-2 dark:bg-slate-800/60">
+            <dt className="font-medium uppercase tracking-wide text-slate-500">
+              {t("dashboard.milestone.lastDone")}
+            </dt>
+            <dd className="mt-0.5 text-slate-800 dark:text-slate-100">
+              {lastTitle
+                ? t("dashboard.claimCard.lastDoneDetail", {
+                    title: lastTitle,
+                    date: pair.lastCompleted?.date ?? "",
+                  })
+                : t("dashboard.milestone.noneDone")}
+            </dd>
+          </div>
+          <div className="rounded-lg bg-slate-50 px-3 py-2 dark:bg-slate-800/60">
+            <dt className="font-medium uppercase tracking-wide text-slate-500">
+              {t("dashboard.milestone.upNext")}
+            </dt>
+            <dd className="mt-0.5 text-slate-800 dark:text-slate-100">
+              {nextTitle && pair.nextEvent
+                ? t("dashboard.claimCard.nextDetail", {
+                    title: nextTitle,
+                    date: pair.nextEvent.date,
+                  })
+                : t("dashboard.milestone.allCaughtUp")}
+            </dd>
+          </div>
+        </dl>
+        <p className="text-xs text-slate-500">
+          {t("dashboard.overviewDocsCount", { count: documentsCount })}
+        </p>
+      </CardContent>
+    </Card>
   );
 }
 
 function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => void }) {
   const { t } = useTranslation();
   const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   async function upload(file: File) {
     setBusy(true);
-    const form = new FormData();
-    form.append("file", file);
-    form.append("name", file.name);
-    form.append("type", "other");
-    await webApi.upload("/api/v1/documents", form);
-    setBusy(false);
-    onChange();
+    setError(null);
+    setNotice(null);
+    try {
+      const form = new FormData();
+      form.append("file", file);
+      form.append("name", file.name);
+      form.append("type", "other");
+      await webApi.upload("/api/v1/documents", form);
+      setNotice(t("dashboard.uploadSuccess", { name: file.name }));
+      onChange();
+    } catch {
+      setError(t("capture.error"));
+    } finally {
+      setBusy(false);
+    }
   }
 
   return (
@@ -206,11 +402,13 @@ function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => vo
           className="hidden"
           onChange={(e) => {
             const f = e.target.files?.[0];
+            e.target.value = "";
             if (f) void upload(f);
           }}
         />
       </label>
       <p className="text-xs text-slate-500">{t("dashboard.docsHint")}</p>
+      {error ? <p className="text-sm text-red-600">{error}</p> : null}
       {docs.map((d) => (
         <Card key={d.id}>
           <CardContent className="flex items-center justify-between gap-3 pt-6">
@@ -243,11 +441,22 @@ function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => vo
           </CardContent>
         </Card>
       ))}
+      <FlashNotice message={notice} onDismiss={() => setNotice(null)} />
     </div>
   );
 }
 
-function CalendarPanel({ events, claimId, onChange }: { events: CalendarEvent[]; claimId: string | null; onChange: () => void }) {
+function CalendarPanel({
+  events,
+  claimId,
+  onChange,
+  onToggleCompleted,
+}: {
+  events: CalendarEvent[];
+  claimId: string | null;
+  onChange: () => void;
+  onToggleCompleted: (event: CalendarEvent) => void;
+}) {
   const { t } = useTranslation();
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
@@ -286,10 +495,7 @@ function CalendarPanel({ events, claimId, onChange }: { events: CalendarEvent[];
             <Button
               size="sm"
               variant="outline"
-              onClick={async () => {
-                await webApi.patch(`/api/v1/calendar/${ev.id}`, { completed: !ev.completed });
-                onChange();
-              }}
+              onClick={() => void onToggleCompleted(ev)}
             >
               {ev.completed ? t("common.undo") : t("common.done")}
             </Button>

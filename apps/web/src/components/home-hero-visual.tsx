@@ -13,9 +13,14 @@ export function HomeHeroVisual() {
     <div className="relative mx-auto w-full max-w-lg lg:ml-auto lg:max-w-none">
       <DashboardOverviewPanels
         variant="preview"
-        completedSteps={5}
-        totalSteps={8}
+        currentStep={5}
         documentsCount={3}
+        calendarCount={2}
+        expensesCount={1}
+        lastCompleted={{
+          title: t("home.hero.visualPreviewLastDoneTitle"),
+          dateLabel: t("home.hero.visualPreviewLastDoneDate"),
+        }}
         nextEvent={{
           title: t("home.hero.visualPreviewEventTitle"),
           dateLabel: t("home.hero.visualPreviewEventDate"),

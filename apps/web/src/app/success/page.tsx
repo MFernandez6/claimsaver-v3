@@ -24,10 +24,10 @@ function SuccessInner() {
       ) : null}
       <div className="mt-8 flex justify-center gap-3">
         <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">
-          <Link href="/dashboard">{t("success.goToDashboard")}</Link>
+          <Link href="/claim-form">{t("success.openWorksheet")}</Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/claim-form">{t("success.openWorksheet")}</Link>
+          <Link href="/dashboard">{t("success.goToDashboard")}</Link>
         </Button>
       </div>
       <p className="mt-6 text-sm text-slate-500">

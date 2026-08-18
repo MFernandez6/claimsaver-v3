@@ -10,7 +10,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 text-white">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 text-white print:hidden">
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden>
         <div
           className="absolute inset-0 bg-no-repeat bg-center"

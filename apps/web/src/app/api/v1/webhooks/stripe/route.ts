@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { PRODUCTS, isProductCode } from "@claimsaver/shared";
 import { getStripe } from "@/lib/stripe/server";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import type Stripe from "stripe";
@@ -40,9 +41,8 @@ export async function POST(req: NextRequest) {
     if (userId && session.payment_status === "paid") {
       const admin = getSupabaseAdmin();
       for (const code of products) {
-        if (code !== "platform" && code !== "notarization") continue;
-        const amount =
-          code === "platform" ? 50_000 : 2_500;
+        if (!isProductCode(code)) continue;
+        const amount = PRODUCTS[code].amountCents;
         await admin.from("purchases").upsert(
           {
             user_id: userId,

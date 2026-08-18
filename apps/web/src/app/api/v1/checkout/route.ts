@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { checkoutRequestSchema, PRODUCTS } from "@claimsaver/shared";
+import { checkoutRequestSchema, PRODUCTS, stripeProductDescription } from "@claimsaver/shared";
 import { getStripe } from "@/lib/stripe/server";
 import { jsonErr, jsonOk, requireUser } from "@/lib/supabase/auth";
 import { siteUrl } from "@/lib/utils";
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         unit_amount: product.amountCents,
         product_data: {
           name: product.name,
-          description: product.description,
+          description: stripeProductDescription(code),
         },
       },
     };

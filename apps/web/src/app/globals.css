@@ -103,3 +103,124 @@
     );
   }
 }
+
+@keyframes claim-progress-shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes claim-progress-pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(20 184 166 / 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgb(20 184 166 / 0);
+  }
+}
+
+@keyframes claim-progress-check-in {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes claim-progress-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes claim-progress-live-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes claim-progress-current-seg {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.claim-progress-shimmer {
+  animation: claim-progress-shimmer 1.8s ease-in-out infinite;
+}
+
+.claim-progress-pulse-ring {
+  animation: claim-progress-pulse-ring 1.8s ease-out infinite;
+}
+
+.claim-progress-check-in {
+  animation: claim-progress-check-in 0.45s cubic-bezier(0.22, 1.2, 0.36, 1) both;
+}
+
+.claim-progress-step-in {
+  animation: claim-progress-step-in 0.45s ease-out both;
+}
+
+.claim-progress-live-dot {
+  animation: claim-progress-live-dot 1.4s ease-in-out infinite;
+}
+
+.claim-progress-current-seg {
+  animation: claim-progress-current-seg 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-progress-shimmer,
+  .claim-progress-pulse-ring,
+  .claim-progress-check-in,
+  .claim-progress-step-in,
+  .claim-progress-live-dot,
+  .claim-progress-current-seg {
+    animation: none;
+  }
+}
+
+@media print {
+  html,
+  body {
+    overflow: visible !important;
+    height: auto !important;
+    background: white !important;
+    color: black !important;
+  }
+  body::before {
+    display: none !important;
+  }
+  #worksheet-print {
+    display: block !important;
+  }
+  .worksheet-print-section {
+    break-inside: avoid;
+  }
+}

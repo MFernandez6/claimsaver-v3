@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import {
   emptyWorksheet,
+  TOTAL_WORKSHEET_STEPS,
   type ClaimDetail,
   type FloridaNoFaultFormData,
 } from "@claimsaver/shared";
@@ -56,7 +57,7 @@ export default function WorksheetScreen() {
       <Field label="Policy number" value={form.policyNumber} onChange={(v) => set("policyNumber", v)} />
       <Field label="Injury description" value={form.injuryDescription} onChange={(v) => set("injuryDescription", v)} multiline />
       <Pressable
-        onPress={() => claim && api.patch(`/api/v1/claims/${claim.id}`, { worksheet: form, worksheetStep: 8 })}
+        onPress={() => claim && api.patch(`/api/v1/claims/${claim.id}`, { worksheet: form, worksheetStep: TOTAL_WORKSHEET_STEPS })}
         style={{ marginTop: 16, backgroundColor: "#0d9488", padding: 14, borderRadius: 12, alignItems: "center" }}
       >
         <Text style={{ color: "#fff", fontWeight: "600" }}>Save to my account</Text>

@@ -5,6 +5,7 @@ import { Camera, Upload } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FlashNotice } from "@/components/flash-notice";
 import { webApi } from "@/lib/api/client";
 
 export function SceneCapture({
@@ -19,16 +20,19 @@ export function SceneCapture({
   const fileRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
 
   async function upload(file: File) {
     setBusy(true);
     setError(null);
+    setNotice(null);
     try {
       const form = new FormData();
       form.append("file", file);
       form.append("name", file.name);
       form.append("type", "evidence");
       await webApi.upload("/api/v1/documents", form);
+      setNotice(t("dashboard.uploadSuccess", { name: file.name }));
       onUploaded?.();
     } catch {
       setError(t("capture.error"));
@@ -91,6 +95,7 @@ export function SceneCapture({
         <p className="mt-1 text-xs text-slate-500">{t("capture.vaultHint")}</p>
         <div className="mt-3">{actions}</div>
         {error ? <p className="mt-2 text-xs text-red-600">{error}</p> : null}
+        <FlashNotice message={notice} onDismiss={() => setNotice(null)} />
       </div>
     );
   }
@@ -106,6 +111,7 @@ export function SceneCapture({
         {actions}
         <p className="mt-3 text-xs text-slate-500">{t("capture.vaultHint")}</p>
         {error ? <p className="mt-2 text-sm text-red-600">{error}</p> : null}
+        <FlashNotice message={notice} onDismiss={() => setNotice(null)} />
       </CardContent>
     </Card>
   );

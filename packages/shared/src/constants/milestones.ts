@@ -106,3 +106,71 @@ export function isPipTemplateEvent(event: { description?: string; title?: string
   if (event.description && parsePipTemplateId(event.description) != null) return true;
   return FLORIDA_PIP_MILESTONE_TEMPLATES.some((t) => t.label === event.title);
 }
+
+/** Minimal calendar shape for last-done / next-up calculations. */
+export type CalendarMilestoneLike = {
+  title: string;
+  date: string;
+  completed: boolean;
+  description?: string;
+  updatedAt?: string;
+  createdAt?: string;
+};
+
+export function pipTemplateIdForEvent(event: CalendarMilestoneLike): number | null {
+  const fromDescription = parsePipTemplateId(event.description || "");
+  if (fromDescription != null) return fromDescription;
+  return FLORIDA_PIP_MILESTONE_TEMPLATES.find((t) => t.label === event.title)?.id ?? null;
+}
+
+function timestampKey(event: CalendarMilestoneLike) {
+  return event.updatedAt || event.createdAt || event.date;
+}
+
+/** Most recently marked-done reminder (Done button), not the latest scheduled date. */
+export function lastCompletedMilestone(
+  events: CalendarMilestoneLike[],
+): CalendarMilestoneLike | null {
+  const done = events.filter((event) => event.completed);
+  if (done.length === 0) return null;
+  return [...done].sort((a, b) => timestampKey(b).localeCompare(timestampKey(a)))[0] ?? null;
+}
+
+/**
+ * Next incomplete reminder on the list: after a PIP item, the following PIP
+ * template; otherwise the earliest open date.
+ */
+export function nextOpenMilestone(
+  events: CalendarMilestoneLike[],
+  lastCompleted: CalendarMilestoneLike | null = lastCompletedMilestone(events),
+): CalendarMilestoneLike | null {
+  const open = events.filter((event) => !event.completed);
+  if (open.length === 0) return null;
+
+  if (lastCompleted) {
+    const lastPipId = pipTemplateIdForEvent(lastCompleted);
+    if (lastPipId != null) {
+      const followingPip = open
+        .map((event) => ({ event, id: pipTemplateIdForEvent(event) }))
+        .filter((row) => row.id != null && row.id > lastPipId)
+        .sort((a, b) => (a.id ?? 0) - (b.id ?? 0));
+      if (followingPip[0]) return followingPip[0].event;
+    }
+  }
+
+  return (
+    [...open].sort((a, b) => {
+      const byDate = a.date.localeCompare(b.date);
+      if (byDate !== 0) return byDate;
+      return (pipTemplateIdForEvent(a) ?? 99) - (pipTemplateIdForEvent(b) ?? 99);
+    })[0] ?? null
+  );
+}
+
+export function calendarMilestonePair(events: CalendarMilestoneLike[]) {
+  const lastCompleted = lastCompletedMilestone(events);
+  return {
+    lastCompleted,
+    nextEvent: nextOpenMilestone(events, lastCompleted),
+  };
+}
