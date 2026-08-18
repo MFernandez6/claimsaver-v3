@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import { FourteenDayBanner } from "@/components/fourteen-day-banner";
 import { AppProviders } from "@/components/app-providers";
 import { siteUrl } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </div>
         </AppProviders>
+        <Analytics />
       </body>
     </html>
   );
