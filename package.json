@@ -14,7 +14,9 @@
     "dev:mobile": "npm run start -w @claimsaver/mobile",
     "build": "npm run build -w @claimsaver/web",
     "lint": "npm run lint -w @claimsaver/web",
-    "typecheck": "npm run typecheck --workspaces --if-present"
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "auth-emails:write": "node supabase/templates/write-html.mjs",
+    "auth-emails:push": "node supabase/templates/push.mjs"
   },
   "engines": {
     "node": ">=20"

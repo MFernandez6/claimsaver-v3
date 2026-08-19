@@ -6,8 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
-import { FlashNotice } from "@/components/flash-notice";
+import { CheckEmailPanel } from "@/components/auth/check-email-panel";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
@@ -64,17 +63,7 @@ function SignupInner() {
   }
 
   if (checkEmail) {
-    return (
-      <div className="mx-auto max-w-md px-4 py-24">
-        <FlashNotice message={t("auth.checkEmailNotice")} />
-        <div className="rounded-2xl border border-teal-200 bg-teal-50 p-6 text-teal-950 shadow-sm" role="status">
-          <Mail className="h-8 w-8 text-teal-700" aria-hidden />
-          <h1 className="mt-3 text-2xl font-bold">{t("auth.checkEmailTitle")}</h1>
-          <p className="mt-3 text-sm leading-relaxed">{t("auth.checkEmailBody", { email })}</p>
-          <p className="mt-3 text-sm text-teal-800">{t("auth.checkEmailSpam")}</p>
-        </div>
-      </div>
-    );
+    return <CheckEmailPanel email={email} />;
   }
 
   return (
