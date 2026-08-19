@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { AgeTermsConsent } from "@/components/auth/age-terms-consent";
 import { CheckEmailPanel } from "@/components/auth/check-email-panel";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
@@ -32,10 +33,15 @@ function SignupInner() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [checkEmail, setCheckEmail] = useState(false);
+  const [ageTerms, setAgeTerms] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+    if (!ageTerms) {
+      setError(t("auth.ageTermsRequired"));
+      return;
+    }
     if (!isSupabaseBrowserConfigured()) {
       setError(t("auth.authNotConfigured"));
       return;
@@ -82,8 +88,9 @@ function SignupInner() {
         </div>
         <Input type="email" required placeholder={t("common.email")} value={email} onChange={(e) => setEmail(e.target.value)} />
         <Input type="password" required minLength={8} placeholder={t("auth.passwordHint")} value={password} onChange={(e) => setPassword(e.target.value)} />
+        <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
         {error ? <p className="text-sm text-red-600">{error}</p> : null}
-        <Button type="submit" disabled={loading} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
+        <Button type="submit" disabled={loading || !ageTerms} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
           {loading ? t("auth.creating") : t("auth.createAccount")}
         </Button>
       </form>

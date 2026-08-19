@@ -263,7 +263,11 @@ Example difference shown in marketing: **$3,300 − $500 = $2,800** on the examp
 
 Payment is processed by Stripe. After a successful payment, the customer receives a receipt and can use the dashboard and guided forms. ClaimSaver+ does not store full card numbers as part of the customer-facing product story.
 
-Refunds, charge disputes, and billing questions go to support. Support still cannot advise on claim merits.
+There is **no $1 testing rate** in production. Checkout charges the **$500** list price.
+
+Refunds are not automatic. Digital access starts when payment succeeds. A written refund request to support within 14 days of purchase may be considered if the customer has not begun the guided worksheet and has not uploaded documents. Missed reminders, missed treatment or filing windows, and insurer delay/reduction/denial are **not** refund grounds. Optional notarization follows the notary network’s own practices. Charge disputes and billing questions go to support. Support still cannot advise on claim merits.
+
+The public Terms of Service must include: eligibility (18+ to create an account), prohibited uses, refund/cancellation, disclaimer of warranties, limitation of liability, indemnification, Florida governing law and Miami-Dade venue, individual arbitration with a class-action waiver and a 30-day email opt-out, and an explicit statement that ClaimSaver+ does **not** pay or receive a referral fee for introducing a customer to an attorney. These pages are a product contract, not legal advice. Florida counsel should review them.
 
 ---
 
@@ -275,21 +279,21 @@ This is the intended business flow. A rebuild should preserve it.
 
 Public pages explain the product, the fee, and the limits:
 
-- **Home** — Florida PIP, keep what’s yours, not a law firm, $500, five-step path
-- **Who We Are** — origin story, mission, values; founder 6-20 license G279764 is noted in the site footer for DFS lookup
+- **Home** — Florida PIP, keep what’s yours, not a law firm, $500, five-step path. Do **not** lead with “built by a licensed Florida adjuster” as a sales hook.
+- **Who We Are** — origin story, mission, values; founder 6-20 license G279764 is noted in the site footer for DFS lookup as **background**, not a service sold on the platform
 - **How It Works** — five steps the customer performs, plus what the platform includes; optional notarization called out as separate
-- **Pricing** — $500 vs. illustrative contingency math; checkout
+- **Pricing** — $500 list price vs. illustrative contingency math; checkout
 - **Learning Center** — general PIP education
-- **When to Call an Attorney** — off-ramps for complex claims
+- **When to Call an Attorney** — off-ramps for complex claims; not a paid referral service
 - **Notarization** — optional DocuSign add-on
 - **Contact** — platform/technical support only
-- **Data handling, Privacy, Terms** — what is collected, what is not promised
+- **Data handling, Privacy, Terms, Accessibility** — what is collected (including police reports, medical records, insurance files), subprocessors, retention, Florida breach notice, eligibility, and WCAG 2.2 AA as a design target (not a conformance badge)
 
 A legal disclaimer must be easy to find: ClaimSaver+ is a guided claim technology platform, not a law firm; the customer is the filer.
 
 ### Stage B — Create an account
 
-The customer signs up and signs in. Account information must be accurate. They are responsible for credentials.
+The customer signs up and signs in. They must be **18 or older** to create an account and must accept the Terms and Privacy Policy. Account information must be accurate. They are responsible for credentials. A parent or guardian who is 18+ may use their own account for a minor’s accident.
 
 Starting a claim from marketing pages typically sends an unauthenticated user to sign in, then onward to the claim form or dashboard.
 
@@ -603,14 +607,16 @@ Staff credentials currently published for public verification through the [Flori
 - Florida All-Lines Adjuster (**6-20**), license number **G279764**
 - Search the DFS site for `G279764` (or the name Miguel A. Fernandez) under Adjuster
 
-This is **founder background**. A 6-20 All-Lines adjuster license is **not** a public adjuster (3-20) license. ClaimSaver+ is software: the company does not adjust the customer’s claim, negotiate with insurers, or represent the customer.
+This is **founder background**, not a service sold on the platform. Do not use “Built by a licensed Florida adjuster” as homepage or pitch marketing until Florida insurance-regulatory counsel has given a written opinion on a 6-20 licensee operating claimant-facing claim-prep software. A 6-20 All-Lines adjuster license is **not** a public adjuster (3-20) license. ClaimSaver+ is software: the company does not adjust the customer’s claim, negotiate with insurers, or represent the customer. The footer may keep the license number for public DFS lookup, framed as background only.
 
 Public adjuster (3-20) or other credentials, if offered as a separate service later, will be listed separately with full disclosures.
 
+**Referrals today:** ClaimSaver+ does **not** operate a lawyer referral service and does **not** pay or receive a fee in either direction for introducing a customer to an attorney or other professional. Educational pages are general information only. Florida Bar Rule 4-7.22 must be reviewed before any paid referral arrangement is turned on.
+
 **Future, optional, separate products** (not part of the $500 platform):
 
-- licensed public adjusting or other professional services
-- optional attorney or other professional referrals where permitted
+- licensed public adjusting or other professional services (only after regulatory counsel review)
+- optional attorney or other professional referrals where permitted (only after Bar-rule review; never a hidden add-on to $500)
 
 If those are ever offered, they must have **their own agreements, disclosures, and pricing**, clearly distinguished from standard platform access. Do not quietly mix representation into the software fee.
 
@@ -657,6 +663,9 @@ User roles in the business sense: ordinary customer, admin, super-admin. Custome
 - “bank-level encryption” as marketing slang
 - implying notarization is included in $500
 - implying reminders are legally sufficient to meet deadlines
+- “built by a licensed Florida adjuster” (or similar) as a sales headline
+- implying a gated or invited-only $1 testing rate while checkout is public
+- implying ClaimSaver+ is a lawyer referral service or that a fee is paid for attorney introductions
 
 ### Tone
 
@@ -684,6 +693,8 @@ Business rules:
 - do not use it to negotiate with insurers
 - do not claim to be the customer’s health provider
 - honor deletion/export requests as required by law and feasibility
+- name subprocessors in the Privacy Policy (Stripe, Supabase, Vercel, and DocuSign when notarization is used)
+- keep a stated retention period and a Florida Statutes §501.171 breach-notice commitment
 - do not allow fraudulent claims or uploads of material the customer has no right to share
 
 ---

@@ -51,6 +51,7 @@ export default function Footer() {
               <li><Link href="/data-handling" className="hover:text-white">{t("navigation.dataHandling")}</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-white">{t("common.privacyPolicy")}</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-white">{t("common.termsOfService")}</Link></li>
+              <li><Link href="/accessibility" className="hover:text-white">{t("common.accessibility")}</Link></li>
             </ul>
             <p className="mt-4 text-sm text-white/70">
               {t("footer.emailSupport")} <ObfuscatedSupportEmail className="underline" />

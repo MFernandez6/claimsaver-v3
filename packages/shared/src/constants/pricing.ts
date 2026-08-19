@@ -5,15 +5,12 @@ export const CURRENCY = "usd" as const;
 export const PRODUCT_CODES = ["platform", "notarization"] as const;
 export type ProductCode = (typeof PRODUCT_CODES)[number];
 
-/** Standard list price. Checkout uses `amountCents` while testing is on. */
+/** Standard list price charged at checkout. */
 export const PLATFORM_LIST_AMOUNT_CENTS = 50_000;
 export const PLATFORM_LIST_DISPLAY_PRICE = "$500.00";
 
-/**
- * Temporary production-testing rate. Set to `false` and restore `amountCents`
- * to `PLATFORM_LIST_AMOUNT_CENTS` before public launch.
- */
-export const PLATFORM_PRICE_TESTING = true;
+/** Public launch: always charge the list price. Keep the flag for a future private test window. */
+export const PLATFORM_PRICE_TESTING = false;
 
 export const PRODUCTS = {
   platform: {
