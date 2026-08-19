@@ -150,6 +150,7 @@ function PricingInner() {
                 {ctaLabel}
               </Button>
               <p className="text-center text-xs text-slate-500">{t("pricing.ui.securePaymentStripe")}</p>
+              <p className="text-center text-xs text-slate-500">{t("pricing.ui.supportEmailLine")}</p>
             </CardContent>
           </Card>
 
@@ -171,6 +172,7 @@ function PricingInner() {
         items={[
           { question: t("pricing.ui.faq1q"), answer: t("pricing.ui.faq1a") },
           { question: t("pricing.ui.faq3q"), answer: t("pricing.ui.faq3a") },
+          { question: t("pricing.ui.faq4q"), answer: t("pricing.ui.faq4a") },
           { question: t("pricing.ui.faq5q"), answer: t("pricing.ui.faq5a") },
         ]}
       />

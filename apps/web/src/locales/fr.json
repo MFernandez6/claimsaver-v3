@@ -307,7 +307,7 @@
     "contact": {
       "title": "Contact",
       "subtitle": "Assistance plateforme et technique",
-      "body": "Pour l’aide à la connexion, la facturation ou l’utilisation du site, écrivez-nous. Nous ne pouvons pas répondre sur le bien-fondé juridique de votre dossier ni vous dire quoi faire dans votre cas—ces questions relèvent d’un avocat agréé.",
+      "body": "Pour l’aide à la connexion, la facturation ou l’utilisation du site, écrivez à {{supportEmail}}. Nous ne pouvons pas répondre sur le bien-fondé juridique de votre dossier ni vous dire quoi faire dans votre cas—ces questions relèvent d’un avocat agréé.",
       "emailLabel": "Courriel",
       "notarizationNote": "La notarisation en ligne facultative est distincte du dépôt PIP guidé—ajoutez-la au paiement ou consultez d’abord les détails :",
       "headquarters": "Siège : Miami, Floride.",
@@ -328,11 +328,11 @@
       "section5Title": "Comptes et authentification",
       "section5Body": "La connexion utilise Supabase Auth. Nous recommandons des mots de passe forts et d’activer la MFA lorsqu’elle est disponible.",
       "section6Title": "E-mail et politique du domaine",
-      "section6Body": "L’e-mail public de support est envoyé depuis notre domaine claimsaverplus.com.",
+      "section6Body": "L’adresse de support de la plateforme est {{supportEmail}}. Les messages de compte transactionnels sont envoyés depuis notre domaine claimsaverplus.com.",
       "section7Title": "Conservation et suppression",
       "section7Body": "Nous conservons les données nécessaires pour exploiter votre compte et respecter les obligations légales. Vous pouvez demander la suppression ou l’export des données personnelles conformément à la loi applicable.",
       "section8Title": "Contact",
-      "section8Body": "Les questions sur ce résumé peuvent être envoyées au canal de support indiqué sur la page Contact."
+      "section8Body": "Questions sur ce résumé : {{supportEmail}}."
     }
   },
   "pricing": {
@@ -425,8 +425,8 @@
       "alertSelectService": "Veuillez sélectionner au moins un service",
       "errSessionInvalid": "La session de paiement est invalide ou expirée. Réessayez.",
       "errStripeUnavailable": "Stripe n’est pas disponible. Vérifiez la configuration.",
-      "errPaymentGeneric": "Une erreur s’est produite lors du paiement. Réessayez ou contactez le support.",
-      "errPaymentConfig": "Le système de paiement n’est pas correctement configuré. Contactez le support.",
+      "errPaymentGeneric": "Une erreur s’est produite lors du paiement. Réessayez ou écrivez à {{supportEmail}}.",
+      "errPaymentConfig": "Le système de paiement n’est pas correctement configuré. Écrivez à {{supportEmail}}.",
       "errNoSession": "Impossible de créer la session de paiement. Réessayez.",
       "stripeNotConfigured": "Stripe non configuré — traitement des paiements désactivé",
       "oneTimeFee": "Frais uniques",
@@ -437,7 +437,7 @@
       "proceedToPayment": "Payer l’accès à la plateforme",
       "continueWithAccount": "Continuer — connectez-vous ou créez un compte",
       "securePaymentStripe": "Paiement sécurisé par Stripe",
-      "supportEmailLine": "Questions sur le paiement ou la facturation ? Utilisez la page Contact (lien dans le pied de page).",
+      "supportEmailLine": "Questions sur le paiement ou la facturation ? Écrivez à {{supportEmail}}.",
       "faqTitle": "Questions sur les tarifs",
       "faqSubtitle": "Réponses factuelles—ClaimSaver+ vend l’accès à un logiciel de préparation de dossiers, pas des services juridiques.",
       "faq1q": "À quoi sert le paiement de 500 $ ?",
@@ -447,7 +447,7 @@
       "faq3q": "ClaimSaver+ garantit-il que je récupérerai plus d’argent ?",
       "faq3a": "Non. Nous ne garantissons aucun résultat financier. Les tableaux de cette page utilisent des exemples simplifiés. Les résultats dépendent de votre couverture, des faits et du traitement par l’assureur.",
       "faq4q": "Qui contacter pour les frais ou reçus ?",
-      "faq4a": "Pour la facturation et l’assistance plateforme, utilisez la page Contact (pied de page). Nous ne pouvons pas conseiller sur le fond juridique de votre dossier.",
+      "faq4a": "Écrivez à {{supportEmail}} pour la facturation et l’assistance plateforme. Nous ne pouvons pas conseiller sur le fond juridique de votre dossier.",
       "faq5q": "La notarisation est-elle incluse dans les 500 $ ?",
       "faq5a": "Non. La notarisation en ligne facultative via DocuSign est une ligne distincte (~25 $) si vous l’ajoutez au paiement. Elle n’est pas requise pour les outils guidés.",
       "modalServicesTitle": "Nos services",
@@ -1231,7 +1231,7 @@
     },
     "assistance": {
       "title": "Besoin d'Assistance Immédiate?",
-      "description": "Si vous avez des questions urgentes ou devez fournir des informations supplémentaires, n'hésitez pas à nous contacter.",
+      "description": "Écrivez à {{supportEmail}} pour la connexion, la facturation ou un problème technique. Nous ne pouvons pas donner de conseil juridique ni évaluer votre dossier.",
       "email": "Nous Envoyer un Email",
       "dashboard": "Aller au Tableau de Bord"
     },
@@ -1305,7 +1305,7 @@
     "checkEmailLookFor": "Cherchez ceci dans votre boîte de réception",
     "checkEmailSubject": "Objet : Confirm your ClaimSaver+ account",
     "checkEmailFromLine": "De : ClaimSaver+",
-    "checkEmailSpam": "Si vous ne le voyez pas en quelques minutes, vérifiez les indésirables ou les promotions. Le message sera marqué ClaimSaver+, pas un avis générique du fournisseur.",
+    "checkEmailSpam": "Si vous ne le voyez pas en quelques minutes, vérifiez les indésirables ou les promotions. Le message sera marqué ClaimSaver+, pas un avis générique du fournisseur. Besoin d’aide ? Écrivez à {{supportEmail}}.",
     "emailConfirmed": "E-mail confirmé. Vous êtes connecté.",
     "accountCreated": "Compte créé. Vous êtes connecté.",
     "checkoutGateTitle": "Connectez-vous ou créez un compte",
@@ -1329,10 +1329,11 @@
     "privacyTitle": "Politique de confidentialité",
     "privacy1": "ClaimSaver+ collecte les informations de compte et les pièces de dossier que vous choisissez de saisir ou de téléverser afin que vous puissiez organiser et préparer votre propre dossier PIP de Floride. Nous n’utilisons pas ces informations pour négocier avec les assureurs ni pour vous représenter.",
     "privacy2": "Les numéros de carte sont traités par Stripe. Nous ne stockons pas les numéros complets dans le produit destiné aux clients.",
-    "privacy3": "Vous pouvez demander l’export ou la suppression des données de votre compte conformément à la loi applicable. Contactez le support uniquement pour les questions de plateforme et de facturation.",
+    "privacy3": "Vous pouvez demander l’export ou la suppression des données de votre compte conformément à la loi applicable. Écrivez à {{supportEmail}} uniquement pour les questions de plateforme et de facturation.",
     "termsTitle": "Conditions d’utilisation",
     "terms1": "Vous êtes responsable de l’exactitude des informations que vous saisissez. Enregistrer dans votre compte ClaimSaver+ n’envoie rien à un assureur. Le formulaire officiel de l’assureur et votre police font foi.",
-    "terms2": "Les 500 $ sont un achat unique d’accès à la plateforme. La notarisation est facultative et facturée séparément. Il n’y a pas d’abonnement pour le produit principal ni d’honoraire de contingence pour ClaimSaver+."
+    "terms2": "Les 500 $ sont un achat unique d’accès à la plateforme. La notarisation est facultative et facturée séparément. Il n’y a pas d’abonnement pour le produit principal ni d’honoraire de contingence pour ClaimSaver+.",
+    "terms3": "Pour les questions de plateforme et de facturation, écrivez à {{supportEmail}}."
   },
   "admin": {
     "title": "Administration",
@@ -1348,7 +1349,7 @@
   },
   "faqBox": {
     "supportTitle": "Support de la plateforme",
-    "supportBody": "Écrivez-nous pour la connexion, la facturation ou l’utilisation du site. Nous ne pouvons pas donner de conseil juridique ni vous dire quoi faire dans votre cas.",
+    "supportBody": "Écrivez à {{supportEmail}} pour la connexion, la facturation ou l’utilisation du site. Nous ne pouvons pas donner de conseil juridique ni vous dire quoi faire dans votre cas.",
     "emailSupport": "E-mail de support",
     "attorneyLink": "Quand appeler un avocat",
     "defaultTitle": "Questions fréquentes",

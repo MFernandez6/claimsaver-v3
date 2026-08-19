@@ -8,6 +8,7 @@ import { ProductionTestingNotice } from "@/components/production-testing-notice"
 import { AppProviders } from "@/components/app-providers";
 import { siteUrl } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
+import { SUPPORT_EMAIL } from "@claimsaver/shared";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -67,6 +68,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${plusJakarta.variable} antialiased`}>
         <AppProviders>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "ClaimSaver+",
+                url,
+                email: SUPPORT_EMAIL,
+              }),
+            }}
+          />
           <div className="min-h-screen min-w-0 bg-gradient-to-br from-gray-50 via-white to-emerald-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-emerald-950/30 print:min-h-0 print:bg-white">
             <div className="print:hidden">
               <Navbar />

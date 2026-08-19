@@ -1,6 +1,7 @@
 export const BRAND = "ClaimSaver+";
 export const HEADQUARTERS = "Miami, Florida";
 export const SITE_HOST = "claimsaverplus.com";
+export const SUPPORT_EMAIL = "support@claimsaverplus.com";
 
 /** Founder credentials for public footer / trust copy — not representation. */
 export const FOUNDER = {

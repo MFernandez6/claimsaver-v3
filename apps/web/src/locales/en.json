@@ -307,7 +307,7 @@
     "contact": {
       "title": "Contact",
       "subtitle": "Platform & technical support",
-      "body": "For help signing in, billing, or using the website, email us. We cannot answer questions about the legal merits of your specific claim or tell you what you should do in your case—those questions belong to a licensed attorney.",
+      "body": "For help signing in, billing, or using the website, email {{supportEmail}}. We cannot answer questions about the legal merits of your specific claim or tell you what you should do in your case—those questions belong to a licensed attorney.",
       "emailLabel": "Email",
       "notarizationNote": "Optional online notarization is a separate service from guided PIP filing—add it at checkout or review details first:",
       "headquarters": "Headquarters: Miami, Florida.",
@@ -328,11 +328,11 @@
       "section5Title": "Accounts and authentication",
       "section5Body": "Sign-in uses Supabase Auth. We recommend strong passwords and enabling MFA when available.",
       "section6Title": "Email and domain mail policy",
-      "section6Body": "Public support email is sent from our claimsaverplus.com domain.",
+      "section6Body": "Platform support is {{supportEmail}}. Transactional account messages are sent from our claimsaverplus.com domain.",
       "section7Title": "Retention and deletion",
       "section7Body": "We retain data as needed to operate your account and meet legal obligations. You may request deletion or export of personal data subject to applicable law.",
       "section8Title": "Contact",
-      "section8Body": "Questions about this summary can be sent to our support channel listed on the Contact page."
+      "section8Body": "Questions about this summary: {{supportEmail}}."
     }
   },
   "pricing": {
@@ -408,7 +408,7 @@
       "comparisonTitleLead": "Illustrative comparison:",
       "comparisonTitleAccent": "Contingency fee vs. flat software fee",
       "comparisonSubtitle": "Example math for a common PIP benefit limit—not a guarantee about your case or settlement.",
-      "supportEmailLine": "Questions about checkout or billing? Use the Contact page (linked in the footer).",
+      "supportEmailLine": "Questions about checkout or billing? Email {{supportEmail}}.",
       "averageFeesCaption": "Average fees and costs",
       "recommendedBadge": "RECOMMENDED",
       "advantageCallout": "Illustrative: on a $10K PIP benefit, a flat $500 platform fee leaves far more in your pocket than a 33% contingency fee—your results may differ.",
@@ -426,8 +426,8 @@
       "alertSelectService": "Please select at least one service",
       "errSessionInvalid": "Checkout session is invalid or expired. Please try again.",
       "errStripeUnavailable": "Stripe is not available. Please check your configuration.",
-      "errPaymentGeneric": "There was an error processing your payment. Please try again or contact support.",
-      "errPaymentConfig": "Payment system is not properly configured. Please contact support.",
+      "errPaymentGeneric": "There was an error processing your payment. Please try again or email {{supportEmail}}.",
+      "errPaymentConfig": "Payment system is not properly configured. Please email {{supportEmail}}.",
       "errNoSession": "Unable to create payment session. Please try again.",
       "stripeNotConfigured": "Stripe not configured — payment processing disabled",
       "oneTimeFee": "One-time fee",
@@ -447,7 +447,7 @@
       "faq3q": "Does ClaimSaver+ guarantee I’ll recover more money?",
       "faq3a": "No. We do not guarantee any financial outcome. Charts on this page use simplified examples. Results depend on your coverage, facts, and how your insurer processes the claim.",
       "faq4q": "Who do I contact about charges or receipts?",
-      "faq4a": "For billing and platform support, use the Contact page (footer). We cannot advise you on the legal merits of your claim.",
+      "faq4a": "Email {{supportEmail}} for billing and platform support. We cannot advise you on the legal merits of your claim.",
       "faq5q": "Is notarization included in the $500?",
       "faq5a": "No. Optional online notarization through DocuSign is a separate line item (~$25) if you add it at checkout. It is not required to use the guided claim tools.",
       "modalServicesTitle": "Our Services",
@@ -1230,7 +1230,7 @@
     },
     "assistance": {
       "title": "Need Help Using the Platform?",
-      "description": "Email us for login, billing, or technical issues. We cannot provide legal advice or evaluate your claim.",
+      "description": "Email {{supportEmail}} for login, billing, or technical issues. We cannot provide legal advice or evaluate your claim.",
       "email": "Email Support",
       "dashboard": "Go to Dashboard"
     },
@@ -1304,7 +1304,7 @@
     "checkEmailLookFor": "Look for this in your inbox",
     "checkEmailSubject": "Subject: Confirm your ClaimSaver+ account",
     "checkEmailFromLine": "From: ClaimSaver+",
-    "checkEmailSpam": "If you don’t see it in a few minutes, check spam or promotions. It will be branded ClaimSaver+, not a generic provider note.",
+    "checkEmailSpam": "If you don’t see it in a few minutes, check spam or promotions. It will be branded ClaimSaver+, not a generic provider note. Need help? Email {{supportEmail}}.",
     "emailConfirmed": "Email confirmed. You’re signed in.",
     "accountCreated": "Account created. You’re signed in.",
     "checkoutGateTitle": "Sign in or create an account",
@@ -1328,10 +1328,11 @@
     "privacyTitle": "Privacy Policy",
     "privacy1": "ClaimSaver+ collects account information and the claim materials you choose to enter or upload so you can organize and prepare your own Florida PIP package. We do not use that information to negotiate with insurers or to represent you.",
     "privacy2": "Payment card numbers are processed by Stripe. We do not store full card numbers as part of the customer-facing product.",
-    "privacy3": "You may request export or deletion of your account data as required by applicable law. Contact support for platform and billing questions only.",
+    "privacy3": "You may request export or deletion of your account data as required by applicable law. Email {{supportEmail}} for platform and billing questions only.",
     "termsTitle": "Terms of Service",
     "terms1": "You are responsible for the accuracy of information you enter. Saving to your ClaimSaver+ account does not send anything to an insurer. The insurer’s official form and your policy control.",
-    "terms2": "The $500 fee is a one-time purchase of platform access. Notarization is optional and billed separately. There is no subscription for the core product and no contingency fee to ClaimSaver+."
+    "terms2": "The $500 fee is a one-time purchase of platform access. Notarization is optional and billed separately. There is no subscription for the core product and no contingency fee to ClaimSaver+.",
+    "terms3": "For platform and billing questions, email {{supportEmail}}."
   },
   "admin": {
     "title": "Admin",
@@ -1347,7 +1348,7 @@
   },
   "faqBox": {
     "supportTitle": "Platform support",
-    "supportBody": "Email us for login, billing, or how to use the site. We cannot provide legal advice or tell you what to do in your specific case.",
+    "supportBody": "Email {{supportEmail}} for login, billing, or how to use the site. We cannot provide legal advice or tell you what to do in your specific case.",
     "emailSupport": "Email support",
     "attorneyLink": "When to call an attorney",
     "defaultTitle": "Common Questions",

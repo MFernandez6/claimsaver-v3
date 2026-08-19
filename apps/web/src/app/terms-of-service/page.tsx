@@ -15,6 +15,7 @@ export default function TermsPage() {
           <p>{t("footer.legalText")}</p>
           <p>{t("legalPages.terms1")}</p>
           <p>{t("legalPages.terms2")}</p>
+          <p>{t("legalPages.terms3")}</p>
         </div>
       </section>
     </div>
