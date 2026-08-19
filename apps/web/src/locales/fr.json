@@ -1034,21 +1034,22 @@
   },
   "whoWeAre": {
     "hero": {
-      "title": "Votre Partenaire de Confiance en",
-      "subtitle": "Récupération d'Accident",
-      "description": "Nous comprenons que faire face aux conséquences d'un accident peut être accablant. C'est pourquoi nous avons créé une plateforme révolutionnaire qui vous aide à déposer votre réclamation rapidement."
+      "title": "Qui nous sommes",
+      "subtitle": "Votre dossier PIP en Floride",
+      "description": "ClaimSaver+ est un logiciel guidé pour les dossiers no-fault (PIP) automobile en Floride. Vous saisissez vos informations, gardez vos documents en un seul endroit et envoyez le dossier à votre assureur. L’accès est un forfait de 500 $—pas un honoraire de contingence."
     },
     "about": {
       "title": "À Propos de ClaimSaver+",
-      "paragraph1": "ClaimSaver+ est une plateforme révolutionnaire conçue pour simplifier le processus de dépôt de formulaires d'accident sans faute et récupérer une compensation pour les victimes d'accident. Nous comprenons que faire face aux conséquences d'un accident peut être accablant, c'est pourquoi nous avons créé une solution conviviale pour vous aider.",
-      "paragraph2": "Notre plateforme combine une technologie de pointe avec une expertise juridique pour s'assurer que vous recevez le soutien et la compensation que vous méritez. Nous croyons que tout le monde devrait avoir accès à une représentation juridique de qualité, quelles que soient leurs circonstances.",
-      "paragraph3": "Chez ClaimSaver+, nous nous engageons à rendre le processus juridique aussi fluide et sans stress que possible. Notre équipe de professionnels travaille sans relâche pour s'assurer que votre cas reçoit l'attention qu'il mérite, et nous sommes là pour vous guider à chaque étape du chemin.",
+      "paragraph1": "ClaimSaver+ est une plateforme guidée pour les dossiers PIP automobile en Floride. Vous saisissez vos informations, téléversez vos documents et envoyez vos pièces. Nous fournissons un logiciel, de la validation, de l’organisation, des rappels et du contenu éducatif—pas de conseil juridique ni de représentation.",
+      "paragraph2": "Notre objectif est de réduire la confusion et les erreurs qui poussent les gens vers des services coûteux pour des formalités simples. Vous restez aux commandes ; nous fournissons les outils et des informations générales.",
+      "paragraph3": "Nous ne sommes pas un cabinet d’avocats. Nous ne négocions pas avec les compagnies d’assurance et ne vous représentons pas. Si un dossier est trop complexe pour un dépôt PIP standard, la bonne prochaine étape est un avocat licencié en Floride.",
       "imageAlt": "Famille ClaimSaver+",
       "familyFirst": "Famille en Premier"
     },
     "familyStory": {
-      "title": "Notre Histoire Familiale",
+      "title": "Pourquoi nous l’avons créé",
       "subtitle": "ClaimSaver+ est né d'une expérience personnelle qui a changé notre famille pour toujours.",
+      "body": "Nous avons commencé à Miami après que notre famille ait traversé un dossier d’accident et vu ce que l’aide traditionnelle peut coûter. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et les dates—pas une stratégie de tribunal. Nous avons construit la plateforme pour que les gens puissent faire ce travail eux-mêmes lorsqu’un dossier PIP standard suffit.",
       "personalJourney": {
         "title": "Un voyage personnel",
         "description": "Après que notre famille ait fait face à des dossiers d’accident et au coût de l’aide traditionnelle, nous avons réalisé qu’il devait y avoir une meilleure façon. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et le suivi des dates—pas une stratégie de tribunal. Les familles paient souvent un pourcentage de contingence pour un travail qu’elles peuvent accomplir elles-mêmes si le processus est rendu clair."

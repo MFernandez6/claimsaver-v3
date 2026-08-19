@@ -1033,21 +1033,22 @@
   },
   "whoWeAre": {
     "hero": {
-      "title": "Tools for",
+      "title": "Who We Are",
       "subtitle": "Your Florida PIP Claim",
-      "description": "We built ClaimSaver+ so Florida drivers can file and manage no-fault claims with clear, guided tools—without paying contingency fees for paperwork you can complete with the platform."
+      "description": "ClaimSaver+ is guided software for Florida motor-vehicle no-fault (PIP) claims. You enter your information, keep your documents in one place, and send the package to your insurer. Access is a flat $500—not a contingency fee."
     },
     "about": {
       "title": "About ClaimSaver+",
       "paragraph1": "ClaimSaver+ is a guided claim filing platform for Florida motor vehicle no-fault (PIP) claims. You enter your information, upload your documents, and submit your claim materials. We provide software, validation, organization, reminders, and educational content—not legal advice or representation.",
       "paragraph2": "Our goal is to reduce confusion and errors that push people toward expensive services for straightforward paperwork. You stay in control; we provide the tools and general information to help you move through the process confidently.",
-      "paragraph3": "We are not a law firm and do not negotiate with insurance companies on your behalf. When a situation is too complex for standard PIP filing alone, we point you toward professional resources—see our “When to Call an Attorney” page.",
+      "paragraph3": "We are not a law firm. We do not negotiate with insurance companies or represent you. If a claim is too complex for standard PIP filing, a licensed Florida attorney is the right next step.",
       "imageAlt": "ClaimSaver+ Family",
       "familyFirst": "Family First"
     },
     "familyStory": {
-      "title": "Our Family Story",
+      "title": "Why we built it",
       "subtitle": "ClaimSaver+ was born from a personal experience that changed our family forever.",
+      "body": "We started in Miami after our family went through an accident claim and saw what traditional help can cost. A lot of Florida no-fault filing is paperwork, organization, and dates—not courtroom strategy. We built the platform so people can do that work themselves when a standard PIP claim is all they need.",
       "personalJourney": {
         "title": "A Personal Journey",
         "description": "After our family faced accident claims and the cost of traditional help, we realized there had to be a better way. So much of a Florida no-fault filing is paperwork, organization, and staying aware of dates—not courtroom strategy. Families often pay a contingency percentage for work they can complete themselves if the process is made clear."

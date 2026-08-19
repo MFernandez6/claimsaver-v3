@@ -756,21 +756,22 @@
   },
   "whoWeAre": {
     "hero": {
-      "title": "Herramientas para",
+      "title": "Quiénes somos",
       "subtitle": "su reclamo PIP en Florida",
-      "description": "Creamos ClaimSaver+ para que los conductores en Florida puedan presentar y gestionar reclamos sin culpa con herramientas guiadas—sin pagar honorarios de contingencia por trámites que puede completar con la plataforma."
+      "description": "ClaimSaver+ es software guiado para reclamos de no-fault (PIP) de vehículos de motor en Florida. Usted introduce su información, guarda sus documentos en un solo lugar y envía el paquete a su aseguradora. El acceso cuesta $500 fijos—no es un honorario de contingencia."
     },
     "about": {
       "title": "Acerca de ClaimSaver+",
       "paragraph1": "ClaimSaver+ es una plataforma de presentación de reclamos guiada para reclamos PIP de vehículos motorizados en Florida. Usted ingresa su información, sube sus documentos y envía los materiales de su reclamo. Brindamos software, validación, organización, recordatorios y contenido educativo—no asesoramiento legal ni representación.",
       "paragraph2": "Nuestro objetivo es reducir la confusión y los errores que empujan a la gente hacia servicios costosos para un papeleo directo. Usted sigue al mando; nosotros damos las herramientas e información general para avanzar con confianza.",
-      "paragraph3": "No somos un bufete y no negociamos con compañías de seguros en su nombre. Cuando una situación es demasiado compleja para un PIP estándar, le indicamos recursos profesionales—vea nuestra página «Cuándo llamar a un abogado».",
+      "paragraph3": "No somos un bufete. No negociamos con compañías de seguros ni lo representamos. Si un reclamo es demasiado complejo para una presentación PIP estándar, el siguiente paso correcto es un abogado licenciado en Florida.",
       "imageAlt": "Familia ClaimSaver+",
       "familyFirst": "Familia Primero"
     },
     "familyStory": {
-      "title": "Nuestra Historia Familiar",
+      "title": "Por qué lo construimos",
       "subtitle": "ClaimSaver+ nació de una experiencia personal que cambió nuestra familia para siempre.",
+      "body": "Empezamos en Miami después de que nuestra familia pasara por un reclamo de accidente y viera lo que puede costar la ayuda tradicional. Gran parte de una presentación de no-fault en Florida es papeleo, organización y fechas—no estrategia de tribunal. Construimos la plataforma para que las personas puedan hacer ese trabajo ellas mismas cuando un reclamo PIP estándar es todo lo que necesitan.",
       "personalJourney": {
         "title": "Un Viaje Personal",
         "description": "Después de que nuestra familia enfrentara reclamos de accidentes y el costo de la ayuda tradicional, nos dimos cuenta de que tenía que haber una mejor manera. Gran parte de una presentación de no-fault en Florida es papeleo, organización y estar al tanto de las fechas—no estrategia de tribunal. Las familias a menudo pagan un porcentaje de contingencia por un trabajo que pueden completar ellas mismas si el proceso está claro."
