@@ -1298,7 +1298,7 @@
     "createAccount": "Create an account",
     "signUpTitle": "Create your account",
     "signUpSubtitle": "Account information must be accurate. You stay in control of your claim.",
-    "passwordHint": "Password (8+ characters)",
+    "passwordHint": "Password (12+ characters)",
     "creating": "Creating…",
     "alreadyHaveAccount": "Already have an account?",
     "checkEmailTitle": "Check your email",

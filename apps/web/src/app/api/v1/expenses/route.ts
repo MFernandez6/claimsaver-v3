@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { createExpenseSchema } from "@claimsaver/shared";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
+import { resolveOwnedClaimId } from "@/lib/api/owned-claim";
 
 function toExpense(row: Record<string, unknown>) {
   return {
@@ -35,11 +36,13 @@ export async function POST(req: NextRequest) {
   const parsed = createExpenseSchema.safeParse(await req.json().catch(() => ({})));
   if (!parsed.success) return jsonErr("Invalid expense");
   const admin = getSupabaseAdmin();
+  const owned = await resolveOwnedClaimId(admin, user.id, parsed.data.claimId);
+  if (owned.error) return jsonErr(owned.error, 404);
   const { data, error } = await admin
     .from("expenses")
     .insert({
       user_id: user.id,
-      claim_id: parsed.data.claimId ?? null,
+      claim_id: owned.claimId,
       category: parsed.data.category,
       amount_cents: parsed.data.amountCents,
       description: parsed.data.description,

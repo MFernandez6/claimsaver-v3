@@ -15,7 +15,7 @@ export function formatUsd(cents: number) {
 export function generateClaimNumber(now = new Date()) {
   const y = now.getFullYear();
   const m = String(now.getMonth() + 1).padStart(2, "0");
-  const rand = Math.floor(Math.random() * 9000 + 1000);
+  const rand = crypto.randomUUID().replace(/-/g, "").slice(0, 12);
   return `CS${y}${m}-${rand}`;
 }
 

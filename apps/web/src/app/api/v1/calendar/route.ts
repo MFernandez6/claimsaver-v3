@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { createCalendarEventSchema } from "@claimsaver/shared";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
+import { resolveOwnedClaimId } from "@/lib/api/owned-claim";
 
 function toEvent(row: Record<string, unknown>) {
   return {
@@ -39,11 +40,13 @@ export async function POST(req: NextRequest) {
   const parsed = createCalendarEventSchema.safeParse(await req.json().catch(() => ({})));
   if (!parsed.success) return jsonErr("Invalid event");
   const admin = getSupabaseAdmin();
+  const owned = await resolveOwnedClaimId(admin, user.id, parsed.data.claimId);
+  if (owned.error) return jsonErr(owned.error, 404);
   const { data, error } = await admin
     .from("calendar_events")
     .insert({
       user_id: user.id,
-      claim_id: parsed.data.claimId ?? null,
+      claim_id: owned.claimId,
       title: parsed.data.title,
       date: parsed.data.date,
       time: parsed.data.time,

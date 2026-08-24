@@ -13,6 +13,7 @@ import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
 import { siteUrl } from "@/lib/utils";
+import { MIN_PASSWORD_LENGTH } from "@claimsaver/shared";
 
 export default function CheckoutAccountPage() {
   return (
@@ -48,6 +49,10 @@ function CheckoutAccountInner() {
     setError(null);
     if (!ageTerms) {
       setError(t("auth.ageTermsRequired"));
+      return;
+    }
+    if (password.length < MIN_PASSWORD_LENGTH) {
+      setError(t("auth.passwordHint"));
       return;
     }
     if (!isSupabaseBrowserConfigured()) {
@@ -125,7 +130,7 @@ function CheckoutAccountInner() {
             <Input required placeholder={t("common.lastName")} value={lastName} onChange={(e) => setLastName(e.target.value)} />
           </div>
           <Input type="email" required placeholder={t("common.email")} value={email} onChange={(e) => setEmail(e.target.value)} />
-          <Input type="password" required minLength={8} placeholder={t("auth.passwordHint")} value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Input type="password" required minLength={MIN_PASSWORD_LENGTH} placeholder={t("auth.passwordHint")} value={password} onChange={(e) => setPassword(e.target.value)} />
           <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
           {error ? <p className="text-sm text-red-600">{error}</p> : null}
           <Button type="submit" disabled={loading || !ageTerms} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">

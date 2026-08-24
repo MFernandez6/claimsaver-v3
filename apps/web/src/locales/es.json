@@ -1299,7 +1299,7 @@
     "createAccount": "Crear una cuenta",
     "signUpTitle": "Cree su cuenta",
     "signUpSubtitle": "La información de la cuenta debe ser exacta. Usted sigue en control de su reclamo.",
-    "passwordHint": "Contraseña (8+ caracteres)",
+    "passwordHint": "Contraseña (12+ caracteres)",
     "creating": "Creando…",
     "alreadyHaveAccount": "¿Ya tiene una cuenta?",
     "checkEmailTitle": "Revise su correo",

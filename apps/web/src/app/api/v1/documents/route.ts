@@ -2,6 +2,9 @@ import { NextRequest } from "next/server";
 import { DOCUMENT_TYPES } from "@claimsaver/shared";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
+import { resolveOwnedClaimId } from "@/lib/api/owned-claim";
+import { clientIp, rateLimit, rateLimitResponse } from "@/lib/security/rate-limit";
+import { resolveUploadType } from "@/lib/security/upload-mime";
 
 function toDoc(row: Record<string, unknown>) {
   return {
@@ -34,11 +37,14 @@ export async function POST(req: NextRequest) {
   if (response) return response;
   if (!isSupabaseConfigured()) return jsonErr("Database not configured", 503);
 
+  const limited = rateLimit(`upload:${user.id}:${clientIp(req)}`, 30, 10 * 60 * 1000);
+  if (!limited.ok) return rateLimitResponse(limited.retryAfter);
+
   const form = await req.formData();
   const file = form.get("file");
   const name = String(form.get("name") || "");
   const type = String(form.get("type") || "other");
-  const claimId = String(form.get("claimId") || "") || null;
+  const rawClaimId = String(form.get("claimId") || "") || null;
 
   if (!(file instanceof File)) return jsonErr("Missing file");
   if (!DOCUMENT_TYPES.includes(type as (typeof DOCUMENT_TYPES)[number])) {
@@ -47,23 +53,29 @@ export async function POST(req: NextRequest) {
   if (file.size > 50 * 1024 * 1024) return jsonErr("File must be 50MB or smaller");
 
   const admin = getSupabaseAdmin();
-  const ext = file.name.split(".").pop() || "bin";
-  const path = `${user.id}/${crypto.randomUUID()}.${ext}`;
-  const buf = Buffer.from(await file.arrayBuffer());
+  const owned = await resolveOwnedClaimId(admin, user.id, rawClaimId);
+  if (owned.error) return jsonErr(owned.error, 404);
 
+  const buf = Buffer.from(await file.arrayBuffer());
+  const resolved = resolveUploadType(buf, file.type || "");
+  if (!resolved) {
+    return jsonErr("File type not allowed. Use PDF, JPEG, PNG, WebP, HEIC, DOC, or DOCX.");
+  }
+
+  const path = `${user.id}/${crypto.randomUUID()}.${resolved.ext}`;
   const { error: upErr } = await admin.storage
     .from("claim-documents")
-    .upload(path, buf, { contentType: file.type || "application/octet-stream", upsert: false });
+    .upload(path, buf, { contentType: resolved.mime, upsert: false });
   if (upErr) return jsonErr(upErr.message, 500);
 
   const { data, error } = await admin
     .from("claim_documents")
     .insert({
       user_id: user.id,
-      claim_id: claimId,
+      claim_id: owned.claimId,
       name: name || file.name,
       type,
-      mime_type: file.type || "application/octet-stream",
+      mime_type: resolved.mime,
       size_bytes: file.size,
       storage_path: path,
     })

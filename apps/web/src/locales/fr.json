@@ -1299,7 +1299,7 @@
     "createAccount": "Créer un compte",
     "signUpTitle": "Créez votre compte",
     "signUpSubtitle": "Les informations du compte doivent être exactes. Vous restez maître de votre dossier.",
-    "passwordHint": "Mot de passe (8+ caractères)",
+    "passwordHint": "Mot de passe (12+ caractères)",
     "creating": "Création…",
     "alreadyHaveAccount": "Vous avez déjà un compte ?",
     "checkEmailTitle": "Vérifiez votre e-mail",

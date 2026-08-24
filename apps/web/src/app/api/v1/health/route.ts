@@ -5,6 +5,9 @@ import { isSupabaseConfigured } from "@/lib/supabase/admin";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  if (process.env.NODE_ENV === "production") {
+    return NextResponse.json({ ok: true });
+  }
   return NextResponse.json({
     ok: true,
     supabaseBrowser: isSupabaseBrowserConfigured(),

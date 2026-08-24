@@ -3,6 +3,7 @@ import { checkoutRequestSchema, PRODUCTS, stripeProductDescription } from "@clai
 import { getStripe } from "@/lib/stripe/server";
 import { jsonErr, jsonOk, requireUser } from "@/lib/supabase/auth";
 import { siteUrl } from "@/lib/utils";
+import { clientIp, rateLimit, rateLimitResponse } from "@/lib/security/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -14,15 +15,15 @@ export async function POST(req: NextRequest) {
   const { user, response } = await requireUser(req);
   if (response) return response;
 
+  const limited = rateLimit(`checkout:${user.id}:${clientIp(req)}`, 8, 10 * 60 * 1000);
+  if (!limited.ok) return rateLimitResponse(limited.retryAfter);
+
   const parsed = checkoutRequestSchema.safeParse(await req.json().catch(() => ({})));
   if (!parsed.success) {
     return jsonErr("Select at least one product: platform and/or notarization.");
   }
 
-  const origin = req.headers.get("origin") || siteUrl();
-  const successPath = parsed.data.successPath || "/success?session_id={CHECKOUT_SESSION_ID}";
-  const cancelPath = parsed.data.cancelPath || "/pricing";
-
+  const origin = siteUrl().replace(/\/$/, "");
   const line_items = parsed.data.products.map((code) => {
     const product = PRODUCTS[code];
     return {
@@ -43,8 +44,8 @@ export async function POST(req: NextRequest) {
     customer_email: user.email ?? undefined,
     client_reference_id: user.id,
     line_items,
-    success_url: `${origin}${successPath.startsWith("/") ? successPath : `/${successPath}`}`,
-    cancel_url: `${origin}${cancelPath.startsWith("/") ? cancelPath : `/${cancelPath}`}`,
+    success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${origin}/pricing`,
     metadata: {
       userId: user.id,
       products: parsed.data.products.join(","),

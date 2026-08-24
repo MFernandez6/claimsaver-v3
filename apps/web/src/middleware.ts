@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
+import { clientIp, rateLimit, rateLimitResponse } from "@/lib/security/rate-limit";
 
 const AUTH_REQUIRED_PREFIXES = [
   "/dashboard",
@@ -21,6 +22,24 @@ function hasSupabaseAuthCookies(request: NextRequest) {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (request.method === "POST") {
+    const authLimited =
+      pathname === "/login" ||
+      pathname === "/signup" ||
+      pathname === "/checkout-account" ||
+      pathname === "/forgot-password" ||
+      pathname === "/update-password";
+    const apiLimited =
+      pathname === "/api/v1/checkout" ||
+      pathname === "/api/v1/documents" ||
+      pathname === "/api/v1/claims";
+    if (authLimited || apiLimited) {
+      const limited = rateLimit(`mw:${pathname}:${clientIp(request)}`, authLimited ? 20 : 40, 10 * 60 * 1000);
+      if (!limited.ok) return rateLimitResponse(limited.retryAfter);
+    }
+  }
+
   const needsAuth = isProtectedPath(pathname);
 
   if (needsAuth && !hasSupabaseAuthCookies(request)) {
@@ -69,5 +88,8 @@ export const config = {
     "/checkout-account",
     "/forgot-password",
     "/update-password",
+    "/api/v1/checkout",
+    "/api/v1/documents",
+    "/api/v1/claims",
   ],
 };
