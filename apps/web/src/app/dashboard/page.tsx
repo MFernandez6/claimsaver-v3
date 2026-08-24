@@ -15,7 +15,6 @@ import {
   parsePipTemplateId,
 } from "@claimsaver/shared";
 import { ApiClientError } from "@claimsaver/shared";
-import { DashboardOnboarding } from "@/components/dashboard-onboarding";
 import { DashboardOverviewPanels } from "@/components/dashboard-overview-panels";
 import { NotFilingYet } from "@/components/not-filing-yet";
 import { PipDeadlineBanner } from "@/components/pip-deadline-banner";
@@ -144,12 +143,6 @@ export default function DashboardPage() {
 
   const primary = claims[0];
   const welcomeName = greetingName(me, user, t("dashboard.there"));
-  const worksheetStarted = Boolean(
-    primary &&
-      (primary.worksheetStep > 1 ||
-        primary.claimantName ||
-        primary.accidentDate),
-  );
   const lastCompleted = milestones.lastCompleted
     ? {
         title: eventDisplayTitle(milestones.lastCompleted, t),
@@ -167,13 +160,6 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
-      {!worksheetStarted ? (
-        <DashboardOnboarding
-          welcomeName={welcomeName}
-          hasDraft={Boolean(primary)}
-          worksheetStep={primary?.worksheetStep ?? 1}
-        />
-      ) : (
       <DashboardOverviewPanels
         currentStep={primary?.worksheetStep ?? 1}
         totalSteps={TOTAL_WORKSHEET_STEPS}
@@ -185,13 +171,10 @@ export default function DashboardPage() {
         nextEvent={nextEvent}
         welcomeName={welcomeName}
       />
-      )}
 
       <div className="mt-6">
         <NotFilingYet />
       </div>
-      {worksheetStarted ? (
-      <>
       {primary?.accidentDate ? (
         <div className="mt-4">
           <PipDeadlineBanner accidentDate={primary.accidentDate} />
@@ -258,8 +241,6 @@ export default function DashboardPage() {
         </div>
       )}
       {tab === "expenses" && <ExpensesPanel expenses={expenses} onChange={refresh} />}
-      </>
-      ) : null}
     </div>
   );
 }

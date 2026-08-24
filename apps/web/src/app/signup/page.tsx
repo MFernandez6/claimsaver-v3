@@ -26,7 +26,7 @@ function SignupInner() {
   const { t } = useTranslation();
   const router = useRouter();
   const params = useSearchParams();
-  const next = safeNextPath(params.get("next"), "/claim-form");
+  const next = safeNextPath(params.get("next"), "/dashboard");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
