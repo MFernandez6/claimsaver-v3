@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath } from "@/lib/auth/next-path";
+import { normalizeEmail } from "@/lib/auth/email";
 
 export default function LoginInner() {
   const { t } = useTranslation();
@@ -17,7 +18,9 @@ export default function LoginInner() {
   const next = safeNextPath(params.get("next"), "/dashboard");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(
+    params.get("error") === "confirm" ? t("auth.confirmFailed") : null,
+  );
   const [loading, setLoading] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
@@ -29,12 +32,18 @@ export default function LoginInner() {
     }
     setLoading(true);
     const { error: err } = await getBrowserSupabase().auth.signInWithPassword({
-      email,
+      email: normalizeEmail(email),
       password,
     });
     setLoading(false);
     if (err) {
-      setError(err.message);
+      if (err.code === "email_not_confirmed") {
+        setError(t("auth.emailNotConfirmed"));
+      } else if (err.code === "invalid_credentials" || /invalid login credentials/i.test(err.message)) {
+        setError(t("auth.invalidLogin"));
+      } else {
+        setError(err.message);
+      }
       return;
     }
     router.push(next);

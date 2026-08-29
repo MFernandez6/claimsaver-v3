@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { siteUrl } from "@/lib/utils";
+import { normalizeEmail } from "@/lib/auth/email";
 
 export default function ForgotPasswordPage() {
   const { t } = useTranslation();
@@ -14,7 +15,7 @@ export default function ForgotPasswordPage() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    await getBrowserSupabase().auth.resetPasswordForEmail(email, {
+    await getBrowserSupabase().auth.resetPasswordForEmail(normalizeEmail(email), {
       redirectTo: `${siteUrl()}/update-password`,
     });
     setSent(true);

@@ -6,6 +6,11 @@ export const SENDER_NAME = "ClaimSaver+";
 
 const LOGO = `${SITE}/images/brand/claimsaver-plus-lockup-email.png`;
 
+function authCallbackLink(type, next = "/dashboard") {
+  const n = encodeURIComponent(next);
+  return `${SITE}/auth/callback?token_hash={{ .TokenHash }}&type=${type}&next=${n}`;
+}
+
 function wrap({ title, preheader, innerHtml }) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -75,7 +80,11 @@ function fallbackLink(href) {
 <p style="margin:0 0 16px;font-size:12px;line-height:18px;word-break:break-all;"><a href="${href}" style="color:#0f766e;">${href}</a></p>`;
 }
 
-const CONFIRM_URL = "{{ .ConfirmationURL }}";
+const SIGNUP_LINK = authCallbackLink("signup");
+const RECOVERY_LINK = authCallbackLink("recovery", "/update-password");
+const MAGIC_LINK = authCallbackLink("magiclink");
+const EMAIL_CHANGE_LINK = authCallbackLink("email_change");
+const INVITE_LINK = authCallbackLink("invite");
 
 export const templates = {
   confirmation: {
@@ -86,8 +95,8 @@ export const templates = {
       innerHtml:
         heading("Confirm your email") +
         para("Thanks for creating a ClaimSaver+ account. Confirm this email address to finish signing up and open your workspace.") +
-        button(CONFIRM_URL, "Confirm email address") +
-        fallbackLink(CONFIRM_URL) +
+        button(SIGNUP_LINK, "Confirm email address") +
+        fallbackLink(SIGNUP_LINK) +
         para("If you did not create this account, you can ignore this message."),
     }),
   },
@@ -99,8 +108,8 @@ export const templates = {
       innerHtml:
         heading("Reset your password") +
         para("We received a request to reset the password for your ClaimSaver+ account. This link expires shortly and can only be used once.") +
-        button(CONFIRM_URL, "Choose a new password") +
-        fallbackLink(CONFIRM_URL) +
+        button(RECOVERY_LINK, "Choose a new password") +
+        fallbackLink(RECOVERY_LINK) +
         para("If you did not request this, you can ignore this message. Your password will stay the same."),
     }),
   },
@@ -112,8 +121,8 @@ export const templates = {
       innerHtml:
         heading("Sign in to ClaimSaver+") +
         para("Use this one-time link to sign in. It expires shortly and can only be used once.") +
-        button(CONFIRM_URL, "Sign in") +
-        fallbackLink(CONFIRM_URL) +
+        button(MAGIC_LINK, "Sign in") +
+        fallbackLink(MAGIC_LINK) +
         para("If you did not request this, you can ignore this message."),
     }),
   },
@@ -125,8 +134,8 @@ export const templates = {
       innerHtml:
         heading("Confirm your new email") +
         para("Follow the button below to confirm {{ .NewEmail }} as the email address for your ClaimSaver+ account.") +
-        button(CONFIRM_URL, "Confirm new email") +
-        fallbackLink(CONFIRM_URL) +
+        button(EMAIL_CHANGE_LINK, "Confirm new email") +
+        fallbackLink(EMAIL_CHANGE_LINK) +
         para("If you did not request this change, you can ignore this message."),
     }),
   },
@@ -138,8 +147,8 @@ export const templates = {
       innerHtml:
         heading("You're invited") +
         para("You've been invited to create a ClaimSaver+ account. Accept the invitation to get started.") +
-        button(CONFIRM_URL, "Accept invitation") +
-        fallbackLink(CONFIRM_URL),
+        button(INVITE_LINK, "Accept invitation") +
+        fallbackLink(INVITE_LINK),
     }),
   },
   reauthentication: {

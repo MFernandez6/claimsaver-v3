@@ -13,6 +13,7 @@ import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
 import { siteUrl } from "@/lib/utils";
 import { MIN_PASSWORD_LENGTH } from "@claimsaver/shared";
+import { normalizeEmail } from "@/lib/auth/email";
 
 export default function SignupPage() {
   return (
@@ -53,7 +54,7 @@ function SignupInner() {
     }
     setLoading(true);
     const { data, error: err } = await getBrowserSupabase().auth.signUp({
-      email,
+      email: normalizeEmail(email),
       password,
       options: {
         data: { first_name: firstName, last_name: lastName, full_name: `${firstName} ${lastName}`.trim() },

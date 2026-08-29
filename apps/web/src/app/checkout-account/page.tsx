@@ -14,6 +14,7 @@ import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
 import { siteUrl } from "@/lib/utils";
 import { MIN_PASSWORD_LENGTH, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
+import { normalizeEmail } from "@/lib/auth/email";
 
 export default function CheckoutAccountPage() {
   return (
@@ -64,7 +65,7 @@ function CheckoutAccountInner() {
     }
     setLoading(true);
     const { data, error: err } = await getBrowserSupabase().auth.signUp({
-      email,
+      email: normalizeEmail(email),
       password,
       options: {
         data: { first_name: firstName, last_name: lastName, full_name: `${firstName} ${lastName}`.trim() },
@@ -92,10 +93,19 @@ function CheckoutAccountInner() {
       return;
     }
     setLoading(true);
-    const { error: err } = await getBrowserSupabase().auth.signInWithPassword({ email, password });
+    const { error: err } = await getBrowserSupabase().auth.signInWithPassword({
+      email: normalizeEmail(email),
+      password,
+    });
     setLoading(false);
     if (err) {
-      setError(err.message);
+      if (err.code === "email_not_confirmed") {
+        setError(t("auth.emailNotConfirmed"));
+      } else if (err.code === "invalid_credentials" || /invalid login credentials/i.test(err.message)) {
+        setError(t("auth.invalidLogin"));
+      } else {
+        setError(err.message);
+      }
       return;
     }
     router.push(next);
