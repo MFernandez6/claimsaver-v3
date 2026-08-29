@@ -77,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 name: "ClaimSaver+",
                 url,
                 email: SUPPORT_EMAIL,
+                logo: `${url.replace(/\/$/, "")}/images/brand/claimsaver-plus-lockup.png`,
               }),
             }}
           />

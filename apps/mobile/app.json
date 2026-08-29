@@ -4,9 +4,12 @@
     "slug": "claimsaver-plus",
     "version": "3.0.0",
     "orientation": "portrait",
+    "icon": "./assets/brand/app-icon.png",
     "scheme": "claimsaver",
     "userInterfaceStyle": "automatic",
     "splash": {
+      "image": "./assets/brand/splash-icon.png",
+      "resizeMode": "contain",
       "backgroundColor": "#0f172a"
     },
     "ios": {
@@ -21,6 +24,7 @@
     "android": {
       "package": "com.claimsaverplus.app",
       "adaptiveIcon": {
+        "foregroundImage": "./assets/brand/icon-512.png",
         "backgroundColor": "#0f172a"
       }
     },

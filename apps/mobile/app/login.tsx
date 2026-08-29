@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, router } from "expo-router";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Image, Pressable, Text, TextInput, View } from "react-native";
 import { supabase } from "../src/lib/supabase";
 
 export default function LoginScreen() {
@@ -23,7 +23,12 @@ export default function LoginScreen() {
 
   return (
     <View style={{ flex: 1, padding: 24, backgroundColor: "#fff" }}>
-      <Text style={{ fontSize: 28, fontWeight: "700", color: "#0f172a" }}>ClaimSaver+</Text>
+      <Image
+        source={require("../assets/brand/claimsaver-plus-lockup.png")}
+        accessibilityLabel="ClaimSaver+"
+        resizeMode="contain"
+        style={{ width: 240, height: 59, marginBottom: 8 }}
+      />
       <Text style={{ marginTop: 8, color: "#475569" }}>
         File your Florida no-fault claim. Keep what’s yours.
       </Text>

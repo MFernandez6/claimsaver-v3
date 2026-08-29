@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { router } from "expo-router";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Image, Pressable, Text, TextInput, View } from "react-native";
 import { supabase } from "../src/lib/supabase";
 
 export default function SignupScreen() {
@@ -30,6 +30,12 @@ export default function SignupScreen() {
 
   return (
     <View style={{ flex: 1, padding: 24, backgroundColor: "#fff" }}>
+      <Image
+        source={require("../assets/brand/claimsaver-plus-lockup.png")}
+        accessibilityLabel="ClaimSaver+"
+        resizeMode="contain"
+        style={{ width: 240, height: 59, marginBottom: 12 }}
+      />
       <Text style={{ fontSize: 24, fontWeight: "700" }}>Create account</Text>
       <TextInput placeholder="First name" value={firstName} onChangeText={setFirstName} style={input} />
       <TextInput autoCapitalize="none" keyboardType="email-address" placeholder="Email" value={email} onChangeText={setEmail} style={input} />

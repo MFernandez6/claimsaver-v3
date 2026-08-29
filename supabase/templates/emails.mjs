@@ -4,6 +4,8 @@ export const SITE = "https://www.claimsaverplus.com";
 export const SUPPORT = "support@claimsaverplus.com";
 export const SENDER_NAME = "ClaimSaver+";
 
+const LOGO = `${SITE}/images/brand/claimsaver-plus-lockup-email.png`;
+
 function wrap({ title, preheader, innerHtml }) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -19,13 +21,13 @@ function wrap({ title, preheader, innerHtml }) {
       <td align="center">
         <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="width:560px;max-width:560px;background-color:#ffffff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;">
           <tr>
-            <td style="background-color:#0f172a;padding:20px 28px;">
-              <table role="presentation" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td style="width:32px;height:32px;background-color:#1e293b;border-radius:8px;color:#14b8a6;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;text-align:center;line-height:32px;">✓</td>
-                  <td style="padding-left:10px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;color:#ffffff;letter-spacing:-0.02em;">ClaimSaver<span style="color:#2dd4bf;">+</span></td>
-                </tr>
-              </table>
+            <td style="height:4px;background-color:#0d9488;font-size:0;line-height:0;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="background-color:#ffffff;padding:20px 28px 16px;border-bottom:1px solid #e2e8f0;">
+              <a href="${SITE}" style="text-decoration:none;">
+                <img src="${LOGO}" width="200" height="49" alt="ClaimSaver+" style="display:block;border:0;outline:none;text-decoration:none;height:auto;max-width:200px;" />
+              </a>
             </td>
           </tr>
           <tr>

@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { isDrawnSignature, type FloridaNoFaultFormData } from "@claimsaver/shared";
+import { BrandLogo } from "@/components/brand-logo";
 
 function dash(value: string | undefined) {
   const trimmed = value?.trim();
@@ -68,6 +69,7 @@ export function WorksheetPrintDocument({
   return (
     <article id="worksheet-print" className="worksheet-print-document bg-white text-slate-900">
       <header className="border-b-2 border-slate-900 pb-3">
+        <BrandLogo variant="print" className="mb-3" />
         <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{t("claimForm.header.title")}</p>
         <h1 className="mt-1 text-2xl font-bold">{t("claimForm.printDocumentTitle")}</h1>
         {claimNumber ? (

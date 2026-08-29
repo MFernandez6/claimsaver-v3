@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { webApi } from "@/lib/api/client";
+import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useTranslation } from "react-i18next";
@@ -53,13 +53,7 @@ export default function AdminPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <Image
-        src="/images/long-logo-ClaimSaver.jpg"
-        alt="ClaimSaver+"
-        width={280}
-        height={64}
-        className="mb-6 h-12 w-auto object-contain"
-      />
+      <BrandLogo className="mb-6" />
       <h1 className="text-3xl font-bold">{t("admin.workspace")}</h1>
       <p className="mt-2 text-sm text-slate-500">
         {t("admin.intro")}

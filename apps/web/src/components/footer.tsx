@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden>
         <div
           className="absolute inset-0 bg-no-repeat bg-center"
-          style={{ backgroundImage: "url('/images/logo-blue-black.png')", backgroundSize: "min(420px, 50vw)" }}
+          style={{ backgroundImage: "url('/images/brand/claimsaver-plus-mark.png')", backgroundSize: "min(280px, 40vw)" }}
         />
       </div>
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

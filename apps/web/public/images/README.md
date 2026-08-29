@@ -1,5 +1,18 @@
 # Images Directory
 
+## Brand
+
+Processed lockups from the Fiverr ClaimSaver+ mark live in `brand/`:
+
+- `claimsaver-plus-lockup.png` — horizontal logo, dark wordmark (light backgrounds)
+- `claimsaver-plus-lockup-on-dark.png` — horizontal logo, white wordmark (dark backgrounds)
+- `claimsaver-plus-lockup-email.png` — 400×97 lockup for transactional email headers
+- `claimsaver-plus-mark.png` — icon only
+- `claimsaver-plus-icon-192.png` / `claimsaver-plus-icon-512.png` — PWA icons
+- `claimsaver-og-share-1200x630.png` — Open Graph / Twitter share image
+
+Favicon and Apple touch icon are generated from the mark in `apps/web/src/app/icon.png` and `apple-icon.png`.
+
 ## Family Image
 
 Please add the founder's family image as `family.jpg` in this directory.
