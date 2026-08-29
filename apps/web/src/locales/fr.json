@@ -168,23 +168,43 @@
       "beforeAfterSubtitle": "Remplacez la paperasse éparpillée par un parcours guidé unique que vous maîtrisez."
     },
     "faq": {
-      "title": "Questions Fréquemment Posées",
-      "subtitle": "Obtenez des réponses aux questions les plus courantes sur ClaimSaver+",
+      "title": "Questions courantes",
+      "subtitle": "Fonctionnement de la plateforme guidée—informations générales, pas un conseil juridique.",
       "legal": {
-        "question": "Est-ce légal?",
-        "answer": "Oui. ClaimSaver+ est une plateforme logicielle en libre-service pour les réclamations PIP de véhicules à moteur en Floride. Nous ne sommes PAS un cabinet d'avocats et ne fournissons PAS de conseils juridiques, d'évaluation de réclamation ni de représentation. Nous ne négocions pas avec les assureurs et ne déposons pas de réclamation à votre place. Pour un conseil sur votre situation, consultez un avocat agréé en Floride."
+        "question": "Est-ce légal ?",
+        "answer": "Oui. ClaimSaver+ est un logiciel en libre-service pour les réclamations PIP de véhicules à moteur en Floride. Utiliser un logiciel pour organiser et préparer votre propre dépôt est légal. Nous ne sommes pas un cabinet d’avocats et nous ne fournissons pas de conseils juridiques, n’évaluons pas votre réclamation et ne vous représentons pas."
+      },
+      "lawFirm": {
+        "question": "Êtes-vous un cabinet d’avocats ?",
+        "answer": "Non. Nous ne sommes ni un cabinet d’avocats, ni un expert en sinistres indépendant, ni votre représentant. Nous ne donnons pas de conseils juridiques, ne négocions pas avec les assureurs et ne déposons pas à votre place. Si votre situation nécessite un avocat agréé en Floride, c’est une décision distincte."
+      },
+      "attorneyNeed": {
+        "question": "Dois-je embaucher un avocat ?",
+        "answer": "Pas pour utiliser ClaimSaver+, et pas seulement pour déposer une réclamation PIP en Floride auprès de votre propre assureur—le régime sans faute est conçu pour que vous puissiez déposer. Un avocat agréé en Floride peut rester le bon choix en cas de blessure grave, de responsabilité d’un tiers, de litige de couverture, ou si vous voulez une représentation. Cette décision est distincte de l’achat de l’accès à la plateforme."
+      },
+      "vsAttorney": {
+        "question": "Quelle est la différence entre ClaimSaver+ et un avocat ?",
+        "answer": "ClaimSaver+ est un logiciel : formulaires guidés, stockage sécurisé, rappels et contenus éducatifs pour que vous prépariez et soumettiez les pièces de votre réclamation PIP en Floride. Nous ne sommes pas un cabinet d’avocats et ne fournissons pas de conseils juridiques, n’évaluons pas le bien-fondé de votre réclamation, ne négocions pas avec les assureurs et ne vous représentons pas. Un avocat peut conseiller sur la stratégie, la responsabilité, les litiges de couverture, et vous représenter lorsque votre situation l’exige. Pour un conseil sur votre dossier, consultez un avocat agréé en Floride."
+      },
+      "duration": {
+        "question": "Combien de temps dure le processus ?",
+        "answer": "Vous avancez à votre rythme. Commencez la feuille guidée dès que vous avez accès, enregistrez un brouillon et revenez quand vous en avez besoin. Nous ne contrôlons pas le délai de traitement de votre assureur, et nous ne déposons pas ni ne faisons de suivi à votre place."
+      },
+      "cost": {
+        "question": "Combien coûte ClaimSaver+ ?",
+        "answer": "L’accès à la plateforme est un forfait de 500 $—une seule fois, pas un pourcentage de vos prestations. La notarisation en ligne facultative est un module distinct (~25 $) si vous l’ajoutez au paiement. Elle n’est pas obligatoire pour utiliser les outils guidés."
       },
       "accidents": {
         "question": "Quels types d'accidents couvre ClaimSaver+ ?",
         "answer": "La plateforme vise les réclamations PIP liées aux véhicules en Floride—auto, moto, camion, piéton, vélo—afin que vous documentiez et demandiez les prestations sans faute prévues par votre police. Nous ne garantissons aucun résultat et n'agissons pas comme votre représentant."
       },
       "documents": {
-        "question": "Dois-je fournir des documents ?",
-        "answer": "Oui : rapports de police, dossiers médicaux, assurance, photos, etc. Notre plateforme permet de les télécharger et de les organiser de façon sécurisée."
+        "question": "Dois-je téléverser des documents ?",
+        "answer": "ClaimSaver+ comprend un dépôt de documents en ligne pour que vous puissiez garder rapports de police, comptes rendus d’incident, dossiers médicaux, photos et pièces similaires organisés au même endroit. Les catégories habituelles aident à classer ce que vous avez—mais la plateforme n’exige aucun téléversement particulier. Ce que vous y mettez vous appartient. Ce que vous ne téléversez pas peut tout de même figurer dans le dossier physique que vous envoyez à votre assureur."
       },
-      "states": {
-        "question": "ClaimSaver+ est-il disponible partout ?",
-        "answer": "ClaimSaver+ se concentre sur les réclamations PIP en Floride. D'autres États peuvent s'ajouter plus tard. Nous ne fournissons pas de conseil juridique ; pour votre juridiction, consultez un avocat."
+      "ifYouStop": {
+        "question": "Qu’advient-il de ma réclamation si j’arrête d’utiliser la plateforme ?",
+        "answer": "La réclamation vous appartient. ClaimSaver+ n’envoie jamais de documents à votre assureur et ne parle pas en votre nom. Si vous fermez votre compte ou cessez d’utiliser la plateforme, rien ne nous est transféré—parce que nous n’avons jamais eu votre réclamation. Conservez les copies dont vous avez besoin. Votre dossier PIP continue uniquement selon ce que vous faites auprès de votre assureur."
       }
     },
     "optionalServices": {
@@ -1431,6 +1451,7 @@
   "faqBox": {
     "supportTitle": "Support de la plateforme",
     "supportBody": "Écrivez à {{supportEmail}} pour la connexion, la facturation ou l’utilisation du site. Nous ne pouvons pas donner de conseil juridique ni vous dire quoi faire dans votre cas.",
+    "morePrompt": "Une question qui n’est pas ici ?",
     "emailSupport": "E-mail de support",
     "attorneyLink": "Quand appeler un avocat",
     "defaultTitle": "Questions fréquentes",

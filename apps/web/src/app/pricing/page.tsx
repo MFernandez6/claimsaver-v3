@@ -182,6 +182,7 @@ function PricingInner() {
       </section>
       <FAQ
         title={t("pricing.ui.faqTitle")}
+        subtitle={t("pricing.ui.faqSubtitle")}
         items={[
           { question: t("pricing.ui.faq1q"), answer: t("pricing.ui.faq1a") },
           { question: t("pricing.ui.faq3q"), answer: t("pricing.ui.faq3a") },

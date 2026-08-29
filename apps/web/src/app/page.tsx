@@ -20,9 +20,14 @@ export default function HomePage() {
 
   const faqItems = [
     { question: t("home.faq.legal.question"), answer: t("home.faq.legal.answer") },
+    { question: t("home.faq.lawFirm.question"), answer: t("home.faq.lawFirm.answer") },
+    { question: t("home.faq.attorneyNeed.question"), answer: t("home.faq.attorneyNeed.answer") },
+    { question: t("home.faq.vsAttorney.question"), answer: t("home.faq.vsAttorney.answer") },
+    { question: t("home.faq.duration.question"), answer: t("home.faq.duration.answer") },
+    { question: t("home.faq.cost.question"), answer: t("home.faq.cost.answer") },
     { question: t("home.faq.accidents.question"), answer: t("home.faq.accidents.answer") },
     { question: t("home.faq.documents.question"), answer: t("home.faq.documents.answer") },
-    { question: t("home.faq.states.question"), answer: t("home.faq.states.answer") },
+    { question: t("home.faq.ifYouStop.question"), answer: t("home.faq.ifYouStop.answer") },
   ];
 
   const proof = [
@@ -141,7 +146,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <FAQ title={t("home.faq.title")} subtitle={t("home.faq.subtitle")} items={faqItems} />
+      <FAQ
+        title={t("home.faq.title")}
+        subtitle={t("home.faq.subtitle")}
+        items={faqItems}
+        defaultOpenIndexes={[0]}
+      />
     </div>
   );
 }

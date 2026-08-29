@@ -168,23 +168,43 @@
       "beforeAfterSubtitle": "Replace scattered paperwork with a single, guided workflow you control."
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Get answers to the most common questions about ClaimSaver+",
+      "title": "Common questions",
+      "subtitle": "How the guided platform works—general information, not legal advice.",
       "legal": {
+        "question": "Is this legal?",
+        "answer": "Yes. ClaimSaver+ is self-service software for Florida motor vehicle no-fault (PIP) claims. Using software to organize and prepare your own filing is legal. We are not a law firm and we do not provide legal advice, evaluate your claim, or represent you."
+      },
+      "lawFirm": {
+        "question": "Are you a law firm?",
+        "answer": "No. We are not a law firm, not a public adjuster, and not your representative. We do not give legal advice, negotiate with insurers, or file on your behalf. If your situation needs a licensed Florida attorney, that is a separate decision."
+      },
+      "attorneyNeed": {
+        "question": "Do I need to hire an attorney?",
+        "answer": "Not to use ClaimSaver+, and not merely to submit a Florida PIP claim to your own insurer—no-fault is designed so you can file. A licensed Florida attorney may still be the right call for serious injury, someone else’s liability, coverage disputes, or if you want representation. That is a separate decision from buying platform access."
+      },
+      "vsAttorney": {
         "question": "What's the difference between ClaimSaver+ and an attorney?",
         "answer": "ClaimSaver+ is software: guided forms, secure storage, reminders, and education so you can prepare and submit your Florida PIP claim materials. We are not a law firm and do not provide legal advice, evaluate your claim’s merits, negotiate with insurers, or represent you. An attorney can advise on strategy, liability, coverage disputes, and represent you when your situation requires it. For advice about your specific matter, consult a licensed Florida attorney."
+      },
+      "duration": {
+        "question": "How long does the process take?",
+        "answer": "You work at your own pace. Start the guided worksheet when you have access, save a draft, and come back whenever you need. We do not control how long your insurer takes to handle a PIP claim, and we do not file or follow up with them for you."
+      },
+      "cost": {
+        "question": "How much does ClaimSaver+ cost?",
+        "answer": "Platform access is a flat $500—one time, not a percentage of your benefits. Optional online notarization is a separate add-on (~$25) if you add it at checkout. It is not required to use the guided claim tools."
       },
       "accidents": {
         "question": "What types of accidents does ClaimSaver+ handle?",
         "answer": "The platform is designed for Florida motor vehicle-related PIP claims—including car, motorcycle, truck, pedestrian, and bicycle incidents—so you can document and pursue no-fault benefits you are entitled to seek under your policy. We do not guarantee outcomes or act as your representative."
       },
       "documents": {
-        "question": "Do I need to provide documents for my claim?",
-        "answer": "Yes, you'll need to provide relevant documents such as police reports, medical records, insurance information, photos of the accident scene, and any other evidence related to your case. Our secure platform makes it easy to upload and organize these documents."
+        "question": "Do I need to upload documents?",
+        "answer": "ClaimSaver+ includes an online document repository so you can keep police reports, incident reports, medical records, photos, and similar materials organized in one place. Usual categories help you sort what you have—but the platform does not require any particular upload. What you put in the repository is up to you. Anything you do not upload can still go in the physical package you send to your insurer."
       },
-      "states": {
-        "question": "Is ClaimSaver+ available in all states?",
-        "answer": "ClaimSaver+ is focused on Florida motor vehicle no-fault (PIP) claims. Other states may be added over time. We do not provide legal advice; for questions about your jurisdiction, consult a licensed attorney."
+      "ifYouStop": {
+        "question": "What happens to my claim if I stop using it?",
+        "answer": "Your claim is yours. ClaimSaver+ never sends materials to your insurer or speaks for you. If you close your account or stop using the platform, nothing is handed off to us—because we never had your claim. Keep copies of anything you need. Your PIP file continues only based on what you do with your carrier."
       }
     },
     "optionalServices": {
@@ -1430,6 +1450,7 @@
   "faqBox": {
     "supportTitle": "Platform support",
     "supportBody": "Email {{supportEmail}} for login, billing, or how to use the site. We cannot provide legal advice or tell you what to do in your specific case.",
+    "morePrompt": "Have a question that isn’t here?",
     "emailSupport": "Email support",
     "attorneyLink": "When to call an attorney",
     "defaultTitle": "Common Questions",

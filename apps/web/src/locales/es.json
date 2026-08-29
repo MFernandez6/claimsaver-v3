@@ -168,23 +168,43 @@
       "beforeAfterSubtitle": "Sustituye el papeleo disperso por un flujo guiado único que tú controlas."
     },
     "faq": {
-      "title": "Preguntas Frecuentes",
-      "subtitle": "Obtén respuestas a las preguntas más comunes sobre ClaimSaver+",
+      "title": "Preguntas frecuentes",
+      "subtitle": "Cómo funciona la plataforma guiada—información general, no asesoramiento legal.",
       "legal": {
         "question": "¿Es esto legal?",
-        "answer": "Sí. ClaimSaver+ es una plataforma de software de autoservicio para reclamos PIP de vehículos motorizados en Florida. NO somos bufete de abogados y NO brindamos asesoramiento legal, evaluación de reclamos ni representación. No negociamos con aseguradoras ni presentamos reclamos por usted. Para asesoramiento legal sobre su situación, consulte a un abogado licenciado en Florida."
+        "answer": "Sí. ClaimSaver+ es software de autoservicio para reclamos PIP de vehículos motorizados en Florida. Usar software para organizar y preparar su propia presentación es legal. No somos bufete de abogados y no brindamos asesoramiento legal, no evaluamos su reclamo ni lo representamos."
+      },
+      "lawFirm": {
+        "question": "¿Son un bufete de abogados?",
+        "answer": "No. No somos bufete, ni ajustadores públicos, ni su representante. No damos asesoramiento legal, no negociamos con aseguradoras ni presentamos por usted. Si su situación requiere un abogado licenciado en Florida, esa es una decisión aparte."
+      },
+      "attorneyNeed": {
+        "question": "¿Necesito contratar un abogado?",
+        "answer": "No para usar ClaimSaver+, ni solo para presentar un reclamo PIP de Florida ante su propia aseguradora: el no-fault está pensado para que usted presente. Un abogado licenciado en Florida puede seguir siendo la mejor opción ante una lesión grave, la responsabilidad de otra persona, disputas de cobertura, o si quiere representación. Esa decisión es independiente de comprar acceso a la plataforma."
+      },
+      "vsAttorney": {
+        "question": "¿Cuál es la diferencia entre ClaimSaver+ y un abogado?",
+        "answer": "ClaimSaver+ es software: formularios guiados, almacenamiento seguro, recordatorios y educación para que usted prepare y presente los materiales de su reclamo PIP de Florida. No somos bufete y no damos asesoramiento legal, no evaluamos el mérito de su reclamo, no negociamos con aseguradoras ni lo representamos. Un abogado puede aconsejar sobre estrategia, responsabilidad, disputas de cobertura y representarlo cuando su situación lo requiera. Para asesoramiento sobre su caso concreto, consulte a un abogado licenciado en Florida."
+      },
+      "duration": {
+        "question": "¿Cuánto tarda el proceso?",
+        "answer": "Usted trabaja a su ritmo. Empiece la hoja guiada cuando tenga acceso, guarde un borrador y vuelva cuando lo necesite. No controlamos cuánto tarda su aseguradora en tramitar un reclamo PIP, y no presentamos ni hacemos seguimiento por usted."
+      },
+      "cost": {
+        "question": "¿Cuánto cuesta ClaimSaver+?",
+        "answer": "El acceso a la plataforma es una tarifa plana de $500—una sola vez, no un porcentaje de sus beneficios. La notarización en línea opcional es un complemento aparte (~$25) si lo añade en el pago. No es obligatorio para usar las herramientas guiadas del reclamo."
       },
       "accidents": {
         "question": "¿Qué tipos de accidentes maneja ClaimSaver+?",
         "answer": "La plataforma está pensada para reclamos PIP relacionados con vehículos en Florida—auto, moto, camión, peatón, bicicleta—para que documente y busque los beneficios sin culpa a los que tiene derecho según su póliza. No garantizamos resultados ni actuamos como su representante."
       },
       "documents": {
-        "question": "¿Necesito proporcionar documentos para mi reclamo?",
-        "answer": "Sí, necesitarás proporcionar documentos relevantes como reportes policiales, registros médicos, información de seguro, fotos de la escena del accidente y cualquier otra evidencia relacionada con tu caso. Nuestra plataforma segura facilita la carga y organización de estos documentos."
+        "question": "¿Tengo que subir documentos?",
+        "answer": "ClaimSaver+ incluye un repositorio de documentos en línea para que pueda tener reportes policiales, informes de incidente, registros médicos, fotos y materiales similares organizados en un solo lugar. Las categorías habituales ayudan a clasificar lo que tiene, pero la plataforma no exige ninguna carga concreta. Qué sube al repositorio depende de usted. Lo que no cargue puede ir igual en el paquete físico que envíe a su aseguradora."
       },
-      "states": {
-        "question": "¿Está ClaimSaver+ disponible en todos los estados?",
-        "answer": "ClaimSaver+ se centra en reclamos PIP de vehículos motorizados en Florida. Otros estados podrían añadirse con el tiempo. No brindamos asesoramiento legal; para su jurisdicción, consulte a un abogado."
+      "ifYouStop": {
+        "question": "¿Qué pasa con mi reclamo si dejo de usar la plataforma?",
+        "answer": "El reclamo es suyo. ClaimSaver+ nunca envía materiales a su aseguradora ni habla por usted. Si cierra su cuenta o deja de usar la plataforma, nada se transfiere a nosotros—porque nunca tuvimos su reclamo. Conserve copias de lo que necesite. Su expediente PIP continúa solo según lo que usted haga con su aseguradora."
       }
     },
     "optionalServices": {
@@ -1431,6 +1451,7 @@
   "faqBox": {
     "supportTitle": "Soporte de la plataforma",
     "supportBody": "Escriba a {{supportEmail}} para inicio de sesión, facturación o cómo usar el sitio. No podemos dar asesoría legal ni decirle qué hacer en su caso concreto.",
+    "morePrompt": "¿Tiene una pregunta que no está aquí?",
     "emailSupport": "Correo de soporte",
     "attorneyLink": "Cuándo llamar a un abogado",
     "defaultTitle": "Preguntas frecuentes",
