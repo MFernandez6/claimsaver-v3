@@ -14,9 +14,9 @@ export const PLATFORM_PRICE_TESTING = false;
 
 /**
  * Temporary: skip Stripe and unlock the workspace so promo videos can be recorded.
- * Keep list prices on marketing pages. Set false and redeploy when filming is done.
+ * Keep list prices on marketing pages. Leave false except while filming.
  */
-export const SKIP_PAYMENTS_FOR_PROMO = true;
+export const SKIP_PAYMENTS_FOR_PROMO = false;
 
 export const PRODUCTS = {
   platform: {
