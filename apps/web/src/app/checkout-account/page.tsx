@@ -13,7 +13,7 @@ import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
 import { siteUrl } from "@/lib/utils";
-import { MIN_PASSWORD_LENGTH } from "@claimsaver/shared";
+import { MIN_PASSWORD_LENGTH, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
 
 export default function CheckoutAccountPage() {
   return (
@@ -28,7 +28,10 @@ function CheckoutAccountInner() {
   const router = useRouter();
   const params = useSearchParams();
   const { isLoaded, isSignedIn } = useSupabaseUser();
-  const next = safeNextPath(params.get("next"), "/pricing?checkout=1");
+  const next = safeNextPath(
+    params.get("next"),
+    SKIP_PAYMENTS_FOR_PROMO ? "/dashboard" : "/pricing?checkout=1",
+  );
   const [mode, setMode] = useState<"signup" | "login">("signup");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

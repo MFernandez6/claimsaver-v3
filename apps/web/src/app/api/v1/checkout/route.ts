@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { checkoutRequestSchema, PRODUCTS, stripeProductDescription } from "@claimsaver/shared";
+import { checkoutRequestSchema, PRODUCTS, SKIP_PAYMENTS_FOR_PROMO, stripeProductDescription } from "@claimsaver/shared";
 import { getStripe } from "@/lib/stripe/server";
 import { jsonErr, jsonOk, requireUser } from "@/lib/supabase/auth";
 import { siteUrl } from "@/lib/utils";
@@ -9,11 +9,16 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
-  const stripe = getStripe();
-  if (!stripe) return jsonErr("Stripe is not configured", 500);
-
   const { user, response } = await requireUser(req);
   if (response) return response;
+
+  if (SKIP_PAYMENTS_FOR_PROMO) {
+    const origin = siteUrl().replace(/\/$/, "");
+    return jsonOk({ url: `${origin}/dashboard`, sessionId: null });
+  }
+
+  const stripe = getStripe();
+  if (!stripe) return jsonErr("Stripe is not configured", 500);
 
   const limited = rateLimit(`checkout:${user.id}:${clientIp(req)}`, 8, 10 * 60 * 1000);
   if (!limited.ok) return rateLimitResponse(limited.retryAfter);

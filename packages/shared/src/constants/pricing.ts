@@ -12,6 +12,12 @@ export const PLATFORM_LIST_DISPLAY_PRICE = "$500.00";
 /** Public launch: always charge the list price. Keep the flag for a future private test window. */
 export const PLATFORM_PRICE_TESTING = false;
 
+/**
+ * Temporary: skip Stripe and unlock the workspace so promo videos can be recorded.
+ * Keep list prices on marketing pages. Set false and redeploy when filming is done.
+ */
+export const SKIP_PAYMENTS_FOR_PROMO = true;
+
 export const PRODUCTS = {
   platform: {
     code: "platform" as const,

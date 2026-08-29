@@ -4,7 +4,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { PLATFORM_PRICE_TESTING, PRODUCTS } from "@claimsaver/shared";
+import { PLATFORM_PRICE_TESTING, PRODUCTS, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
 import { ProductionTestingNotice } from "@/components/production-testing-notice";
 import { PricingCompare } from "@/components/pricing-compare";
 import { Button } from "@/components/ui/button";
@@ -47,7 +47,14 @@ function PricingInner() {
     setError(null);
     if (!isLoaded) return;
     if (!isSignedIn) {
-      router.push(`/checkout-account?next=${encodeURIComponent(pricingCheckoutPath({ platform, notarization }))}`);
+      const afterAccount = SKIP_PAYMENTS_FOR_PROMO
+        ? "/dashboard"
+        : pricingCheckoutPath({ platform, notarization });
+      router.push(`/checkout-account?next=${encodeURIComponent(afterAccount)}`);
+      return;
+    }
+    if (SKIP_PAYMENTS_FOR_PROMO) {
+      router.push("/dashboard");
       return;
     }
     const products = [
@@ -77,13 +84,17 @@ function PricingInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoCheckout, isLoaded, isSignedIn]);
 
-  const ctaLabel = !isLoaded
-    ? t("pricing.ui.proceedToPayment")
-    : !isSignedIn
+  const ctaLabel = SKIP_PAYMENTS_FOR_PROMO
+    ? !isSignedIn
       ? t("pricing.ui.continueWithAccount")
-      : loading
-        ? t("pricing.redirecting")
-        : t("pricing.ui.proceedToPayment");
+      : t("navigation.dashboard")
+    : !isLoaded
+      ? t("pricing.ui.proceedToPayment")
+      : !isSignedIn
+        ? t("pricing.ui.continueWithAccount")
+        : loading
+          ? t("pricing.redirecting")
+          : t("pricing.ui.proceedToPayment");
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950">
@@ -149,7 +160,9 @@ function PricingInner() {
               <Button disabled={loading || total === 0} onClick={() => void startCheckout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
                 {ctaLabel}
               </Button>
-              <p className="text-center text-xs text-slate-500">{t("pricing.ui.securePaymentStripe")}</p>
+              {SKIP_PAYMENTS_FOR_PROMO ? null : (
+                <p className="text-center text-xs text-slate-500">{t("pricing.ui.securePaymentStripe")}</p>
+              )}
               <p className="text-center text-xs text-slate-500">{t("pricing.ui.supportEmailLine")}</p>
             </CardContent>
           </Card>

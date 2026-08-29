@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
 
 export function isSupabaseConfigured() {
   return Boolean(
@@ -7,8 +8,9 @@ export function isSupabaseConfigured() {
   );
 }
 
-/** Local testing only — never honor this in production builds. */
+/** Unlocks worksheets without a purchase. Promo filming, or local DEV_UNLOCK_PLATFORM. */
 export function isDevPlatformUnlocked() {
+  if (SKIP_PAYMENTS_FOR_PROMO) return true;
   return (
     process.env.NODE_ENV !== "production" &&
     process.env.DEV_UNLOCK_PLATFORM === "true"
