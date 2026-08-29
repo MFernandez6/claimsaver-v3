@@ -68,7 +68,7 @@
       "titleLine1": "Déposez votre réclamation",
       "titleLine2": "sans faute en Floride.",
       "subtitle": "Gardez ce qui vous revient.",
-      "description": "Les outils et l'aide pour faire avancer votre réclamation PIP en Floride, suivre votre rétablissement et conserver le plus possible de vos prestations. Forfait plateforme 500 $—pas d'honoraires de résultat.",
+      "description": "Un logiciel guidé pour les réclamations PIP en Floride que vous déposez vous-même—surtout lorsqu’un cabinet de préjudice corporel ne prend pas le dossier. Accès plateforme 500 $ forfaitaire. Vous restez le déposant. Pas un cabinet d’avocats.",
       "cta": "Commencer",
       "ctaSecondary": "Voir comment ça marche",
       "learnMore": "En Savoir Plus",
@@ -146,13 +146,13 @@
       "title": "Tarification simple et transparente",
       "recoveryTime": "Prestation PIP illustrative (exemple)",
       "recoveryTimeValue": "Plafond 10 000 $",
-      "successRate": "vs honoraires typ. 33 % sur 10 k$",
-      "successRateValue": "3 300 $",
+      "successRate": "Quand les cabinets de préjudice déclinent souvent",
+      "successRateValue": "Pas de dossier BI",
       "satisfaction": "Forfait plateforme",
       "satisfactionValue": "500 $",
       "flatFeeLabel": "Forfait plateforme",
       "flatFeeValue": "500 $",
-      "statsNote": "Exemple : prestation PIP 10 000 $ et 33 % de contingence à titre comparatif seulement—aucun résultat garanti.",
+      "statsNote": "Les avocats en préjudice corporel ont généralement besoin d’une réclamation viable contre un tiers. Un dossier PIP seul n’est souvent pas ce cas. ClaimSaver+ est un logiciel au forfait—pas un pourcentage de vos prestations.",
       "statsIllustrativeBadge": "Comparaison illustrative—pas votre dossier"
     },
     "story": {
@@ -180,7 +180,7 @@
       },
       "attorneyNeed": {
         "question": "Dois-je embaucher un avocat ?",
-        "answer": "Pas pour utiliser ClaimSaver+, et pas seulement pour déposer une réclamation PIP en Floride auprès de votre propre assureur—le régime sans faute est conçu pour que vous puissiez déposer. Un avocat agréé en Floride peut rester le bon choix en cas de blessure grave, de responsabilité d’un tiers, de litige de couverture, ou si vous voulez une représentation. Cette décision est distincte de l’achat de l’accès à la plateforme."
+        "answer": "Pas pour utiliser ClaimSaver+, et pas seulement pour déposer une réclamation PIP en Floride auprès de votre propre assureur—le régime sans faute est conçu pour que vous puissiez déposer. Les cabinets de préjudice prennent généralement les dossiers avec une réclamation viable contre un tiers ; un dossier PIP seul est souvent refusé. Un avocat agréé en Floride peut rester le bon choix en cas de blessure grave, de responsabilité d’un tiers, de litige de couverture, ou si vous voulez une représentation. Cette décision est distincte de l’achat de l’accès à la plateforme."
       },
       "vsAttorney": {
         "question": "Quelle est la différence entre ClaimSaver+ et un avocat ?",
@@ -302,7 +302,7 @@
       "ctaHome": "Retour à l’accueil",
       "ctaHowItWorks": "Fonctionnement de la plateforme",
       "notEveryClaim": "Tous les dossiers PIP ne conviennent pas à une démarche DIY.",
-      "introDiy": "ClaimSaver+ est un logiciel pour les formalités standard de no-fault en Floride. Quittez le chemin DIY et consultez un avocat licencié en Floride lorsque :",
+      "introDiy": "ClaimSaver+ est un logiciel pour les formalités standard de no-fault en Floride—y compris les dossiers PIP seuls que les cabinets de préjudice ne prennent souvent pas au pourcentage. Quittez le chemin DIY et consultez un avocat licencié en Floride lorsque :",
       "supportNote": "Nous ne vous mettons pas en relation avec un avocat dans le cadre du produit à 500 $. Le support peut aider pour la connexion, la facturation et l’utilisation du site—pas pour « que dois-je faire dans mon cas ? »"
     },
     "licenseCredentials": {
@@ -379,23 +379,37 @@
         "price": "25.00"
       }
     },
+    "fit": {
+      "colAttorney": "Cabinet de préjudice corporel",
+      "colOurs": "ClaimSaver+",
+      "why": "L’économie",
+      "whyAttorney": "Le pourcentage qu’ils prendraient n’a pas de sens économique sur les seules prestations PIP, donc un dossier PIP seul est souvent refusé.",
+      "whyOurs": "Toute victime d’accident peut déposer sa propre réclamation PIP et conserver les prestations versées par l’assureur—forfait, pas une retenue.",
+      "who": "Pour qui",
+      "whoAttorney": "En général seulement si la blessure peut franchir le seuil de permanence de Floride—assez grave pour un recours en souffrances contre un tiers.",
+      "whoOurs": "Toutes les victimes d’accident en Floride qui déposent leur propre réclamation sans faute.",
+      "fee": "Comment on facture",
+      "feeAttorney": "Un pourcentage d’un recouvrement contre un tiers, s’il y en a un",
+      "feeOurs": "Forfait de 500 $. Pas un pourcentage de vos prestations PIP.",
+      "footnote": "Informations générales—pas un conseil juridique. ClaimSaver+ n’est pas un cabinet d’avocats et ne vous représente pas."
+    },
     "traditionalCosts": {
       "title": "Illustratif : modèle d’honoraires de contingence",
       "averagePolicy": "Exemple de prestation PIP utilisé pour les comparaisons : 10 000 $ (votre police peut différer)",
-      "attorneyFee": "Exemple d’honoraires de 33 % sur cette prestation : 3 300 $",
+      "attorneyFee": "Les prestations PIP médicales et salariales sont généralement versées aux prestataires et à l’assuré—pas prélevées comme honoraires de contingence d’un cabinet de préjudice",
       "netToVictim": "Montant illustratif restant avant autres coûts : moins de 7 000 $ sur cet exemple",
       "additionalCosts": "D’autres frais professionnels ou judiciaires peuvent s’appliquer selon la voie choisie",
       "hiddenFees": "Les structures de contingence varient selon les cabinets—demandez par écrit les conditions à tout avocat que vous mandatez"
     },
     "claimSaverAdvantages": {
       "title": "Avantage ClaimSaver+",
-      "keep95Percent": "Illustratif seulement : pour une prestation PIP de 10 000 $, un forfait logiciel de 500 $ laisse davantage de prestation qu’honoraires de 33 % sur le même exemple—sans préjuger de votre résultat",
-      "noContingency": "Pas de structure d'honoraires de 33 % sur notre plateforme",
+      "keep95Percent": "Forfait de 500 $ pour l’accès au logiciel. Nous ne prenons pas un pourcentage de vos prestations PIP.",
+      "noContingency": "Aucun pourcentage de vos prestations PIP pour ClaimSaver+",
       "transparentPricing": "Forfait transparent pour l'accès à la plateforme",
       "professionalService": "Outils et information—vous décidez et soumettez",
       "maximumRecovery": "Restez organisé et informé tout au long de votre dossier"
     },
-    "comparisonNote": "Comparaison : dépôt avec les outils guidés ClaimSaver+ vs avocat à 33 % sur une prestation PIP de 10 000 $. Les résultats réels varient.",
+    "comparisonNote": "Le seuil de permanence de Floride concerne un recours en souffrances contre un autre conducteur—pas le droit de déposer une réclamation PIP auprès de votre propre assureur. ClaimSaver+ est un logiciel, pas un cabinet d’avocats.",
     "optionalNotarizationIntro": "L’accès à la plateforme PIP guidée (500 $) et la notarisation en ligne facultative (~25 $) sont des postes distincts. Vous ne payez la notarisation que si vous en avez besoin—voir ci-dessous.",
     "selectServicesNotarizationHint": "Sélectionnez l’accès guidé pour le dépôt PIP. Ajoutez la notarisation seulement si vous devez faire notariser des documents ; elle est facturée séparément et ne fait pas partie du parcours PIP.",
     "selectServicesCheckoutNote": "Il s’agit du paiement pour cette visite—pas de votre tableau de bord ni d’une commande existante. Choisissez les services, puis payez en toute sécurité avec Stripe.",
@@ -406,8 +420,8 @@
         "description": "Un seul forfait clair pour l'accès à la plateforme. Pas d'abonnement caché pour le produit principal."
       },
       "maximumRecovery": {
-        "title": "Conservez plus de votre prestation",
-        "description": "Par rapport aux pourcentages de contingence courants, un forfait peut vous laisser davantage sur les réclamations PIP standard que vous gérez avec la plateforme."
+        "title": "Un écart que les cabinets laissent souvent",
+        "description": "Une réclamation PIP sans faute sans dossier viable contre un tiers n’est souvent pas attractive au pourcentage. ClaimSaver+ est un logiciel pour celles et ceux qui déposent ces formalités eux-mêmes—500 $ forfaitaires, pas de pourcentage PIP pour nous."
       },
       "professionalService": {
         "title": "Guidage plateforme",
@@ -427,18 +441,17 @@
       "complexClaimLead": "Dossier complexe ou couverture contestée ?",
       "complexClaimMid": "Si votre situation peut exiger un avis juridique ou une représentation,",
       "complexClaimLink": "voir quand appeler un avocat",
-      "comparisonTitleLead": "Comparaison illustrative :",
-      "comparisonTitleAccent": "Contingence contre logiciel à forfait",
-      "comparisonSubtitle": "Calcul d’exemple pour une limite PIP courante—aucune garantie sur votre dossier ou règlement.",
+      "comparisonTitleLead": "Pourquoi les dossiers PIP seuls sont refusés",
+      "comparisonSubtitle": "Les cabinets refusent souvent les dossiers PIP seuls, sauf si la blessure peut atteindre le seuil de permanence de Floride. ClaimSaver+ est un forfait, pas un pourcentage de votre PIP.",
       "averageFeesCaption": "Frais et coûts moyens",
       "recommendedBadge": "RECOMMANDÉ",
-      "advantageCallout": "Illustratif : sur une prestation PIP de 10 k$, un forfait de 500 $ laisse bien plus dans votre poche qu’honoraires de 33 % à la contingence—vos résultats peuvent varier.",
+      "advantageCallout": "Forfait de 500 $ pour un logiciel guidé. Nous ne prenons pas un pourcentage de vos prestations PIP.",
       "whyChooseLead": "Pourquoi choisir",
       "whyChooseAccent": "ClaimSaver+ ?",
-      "whyParagraph1": "En Floride, le paiement moyen d’une police auto est de 10 000 $. Avec les méthodes classiques, après 33 % d’honoraires de contingence, il reste souvent moins de 7 000 $ avant autres frais.",
+      "whyParagraph1": "Les cabinets de préjudice corporel prennent généralement les dossiers avec une réclamation viable contre un tiers et des blessures assez graves pour justifier des honoraires de contingence sur une transaction corporelle. Un dossier PIP seul n’est souvent pas ce cas—d’où les appels à plusieurs cabinets, puis un dépôt en solo.",
       "whyParagraph2": "ClaimSaver+ facture 500 $ pour l’accès au logiciel : formulaires guidés, stockage, rappels et contenu éducatif. Nous ne prélevons pas de pourcentage sur vos prestations et ne gérons pas votre dossier à votre place—vous restez la personne qui dépose et correspond avec l’assureur.",
       "savingsCalculator": "Calculateur d’économies",
-      "calcTraditionalFee": "Honoraires de service traditionnels (33 %)",
+      "calcTraditionalFee": "Contingence typique en préjudice (sur une transaction BI, lorsqu’il y en a une)",
       "calcFlatFee": "Forfait ClaimSaver+",
       "calcYourSavings": "Vos économies",
       "ctaFootnote": "Accès plateforme 500 $ • Pas d’honoraires de contingence vers ClaimSaver+",
@@ -464,8 +477,8 @@
       "faqSubtitle": "Réponses factuelles—ClaimSaver+ vend l’accès à un logiciel de préparation de dossiers, pas des services juridiques.",
       "faq1q": "À quoi sert le paiement de 500 $ ?",
       "faq1a": "L’accès aux parcours PIP guidés, au stockage de documents, aux rappels et au contenu éducatif de ClaimSaver+ pour préparer vos propres pièces. Ce n’est pas un honoraire de représentation, de négociation ou de communication avec votre assureur en votre nom.",
-      "faq2q": "Pourquoi comparer 33 % et 500 $ ?",
-      "faq2a": "Nombre de personnes comparent un pourcentage de contingence typique à un forfait logiciel—nous montrons uniquement une illustration. Le choix d’un avocat vous appartient ; nous ne le remplaçons pas lorsque votre situation exige un conseil agréé.",
+      "faq2q": "Les avocats prennent-ils 33 % de mon PIP ?",
+      "faq2a": "En général non, lorsqu’ils représentent le conducteur blessé. Le PIP paie les factures médicales et les salaires perdus directement ; prélever des honoraires là-dessus laisserait le client à court pour les médecins. Les cabinets joignent souvent le papier PIP par courtoisie, tandis que les vrais honoraires viennent d’une transaction corporelle contre un tiers—s’il y en a une. C’est pourquoi un dossier PIP seul n’est souvent pas un cas qu’ils prennent au pourcentage. ClaimSaver+ facture 500 $ forfaitaires pour le logiciel et ne prend pas un pourcentage de vos prestations. Informations générales, pas un conseil sur le mandat d’un avocat.",
       "faq3q": "ClaimSaver+ garantit-il que je récupérerai plus d’argent ?",
       "faq3a": "Non. Nous ne garantissons aucun résultat financier. Les tableaux de cette page utilisent des exemples simplifiés. Les résultats dépendent de votre couverture, des faits et du traitement par l’assureur.",
       "faq4q": "Qui contacter pour les frais ou reçus ?",
@@ -1050,7 +1063,7 @@
     "emailSupport": "Support par e-mail :",
     "servingFlorida": "Plateforme de dossier guidée • Au service des conducteurs en Floride",
     "claimForm": "Formulaire de dossier",
-    "licenseLine": "Contexte du fondateur (ce n’est pas un service vendu sur cette plateforme) : {{name}} · {{type}} · Licence {{number}}. Vérifiez sur la recherche de licences DFS de Floride. ClaimSaver+ n’expertise pas les sinistres, ne négocie pas avec les assureurs et ne vous représente pas."
+    "licenseLine": "Contexte du fondateur (ce n’est pas un service vendu sur cette plateforme) : {{name}} · {{type}} · Licence {{number}}."
   },
   "whoWeAre": {
     "hero": {
@@ -1072,11 +1085,11 @@
       "body": "Nous avons commencé à Miami après que notre famille ait traversé un dossier d’accident et vu ce que l’aide traditionnelle peut coûter. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et les dates—pas une stratégie de tribunal. Nous avons construit la plateforme pour que les gens puissent faire ce travail eux-mêmes lorsqu’un dossier PIP standard suffit.",
       "personalJourney": {
         "title": "Un voyage personnel",
-        "description": "Après que notre famille ait fait face à des dossiers d’accident et au coût de l’aide traditionnelle, nous avons réalisé qu’il devait y avoir une meilleure façon. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et le suivi des dates—pas une stratégie de tribunal. Les familles paient souvent un pourcentage de contingence pour un travail qu’elles peuvent accomplir elles-mêmes si le processus est rendu clair."
+        "description": "Après que notre famille ait fait face à des dossiers d’accident et vu ce que l’aide traditionnelle peut coûter, nous avons réalisé qu’il devait y avoir une meilleure façon. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et le suivi des dates—pas une stratégie de tribunal. Les personnes qui n’ont besoin que de ce travail se retrouvent souvent seules après qu’un cabinet ait refusé un dossier PIP seulement."
       },
       "mission": {
         "title": "Notre mission",
-        "description": "Donner aux familles de Floride des outils simples et abordables pour déposer et gérer des dossiers no-fault—sans payer d’honoraires de contingence pour des formalités qu’elles peuvent accomplir avec une bonne orientation et la plateforme."
+        "description": "Donner aux familles de Floride des outils simples et abordables pour déposer et gérer des dossiers no-fault—avec un forfait logiciel—lorsqu’un dépôt PIP standard est ce dont elles ont besoin."
       },
       "whyWeCare": {
         "title": "Pourquoi cela nous tient à cœur",
@@ -1305,8 +1318,8 @@
     "optionOneBody": "Risque de manquer un délai ou de commettre une erreur technique sur un dossier conçu pour des professionnels.",
     "optionTwoLabel": "Option deux",
     "optionTwoTitle": "Engager un avocat en dommages corporels",
-    "optionTwoBody": "Un honoraire de contingence typique prend environ un tiers du recouvrement—pour ce qui est souvent un dépôt de no-fault routinier et non contesté. Comparaison illustrative, pas une prédiction de votre résultat.",
-    "middlePath": "ClaimSaver+ est la voie intermédiaire guidée : une plateforme qui vous accompagne pour préparer vos propres documents PIP, organise vos pièces et peut vous rappeler les dates courantes liées au PIP en Floride que vous saisissez, y compris la fenêtre de 14 jours comme rappel—pas un conseil juridique. Accès à la plateforme pour 500 $ forfaitaires au lieu d’une part de contingence pour ClaimSaver+. Vous restez le déposant. Nous ne parlons pas à votre assureur.",
+    "optionTwoBody": "Les avocats en préjudice corporel prennent généralement les dossiers avec une réclamation viable contre un tiers et des blessures assez graves pour justifier des honoraires de contingence sur une transaction corporelle. Un dossier PIP seul—sans fautif clair, ou avec des blessures qui n’atteignent pas ce seuil—n’est souvent pas un cas qu’ils prennent. Informations générales, pas un conseil sur vos faits.",
+    "middlePath": "ClaimSaver+ est la voie intermédiaire guidée : une plateforme qui vous accompagne pour préparer vos propres documents PIP, organise vos pièces et peut vous rappeler les dates courantes liées au PIP en Floride que vous saisissez, y compris la fenêtre de 14 jours comme rappel—pas un conseil juridique. Conçu pour celles et ceux qui déposent leur propre réclamation sans faute, y compris après le refus d’un cabinet. 500 $ forfaitaires—pas de pourcentage de vos prestations PIP pour nous. Vous restez le déposant. Nous ne parlons pas à votre assureur.",
     "founder": "ClaimSaver+ est un logiciel conçu à Miami pour les formalités PIP de Floride. Un numéro de licence du fondateur figure en pied de page uniquement pour consultation publique—ce n’est pas un service vendu sur cette plateforme.",
     "attorneyLink": "Les dossiers complexes ou contestés appartiennent à un avocat licencié en Floride."
   },

@@ -68,7 +68,7 @@
       "titleLine1": "File Your Florida",
       "titleLine2": "No-Fault Claim.",
       "subtitle": "Keep What's Yours.",
-      "description": "The tools and guidance you need to move your Florida PIP claim forward—track your recovery and keep more of your benefits. Flat $500 platform access—not a contingency fee.",
+      "description": "Guided software for Florida PIP claims you file yourself—especially when a personal-injury firm isn’t taking the case. Flat $500 platform access. You stay the filer. Not a law firm.",
       "cta": "Get started",
       "ctaSecondary": "See how it works",
       "learnMore": "Learn More",
@@ -146,13 +146,13 @@
       "title": "Simple, transparent pricing",
       "recoveryTime": "Illustrative PIP benefit (example)",
       "recoveryTimeValue": "$10,000 limit",
-      "successRate": "vs. typical 33% attorney fee on $10K",
-      "successRateValue": "$3,300",
+      "successRate": "When PI firms often decline",
+      "successRateValue": "No BI case",
       "satisfaction": "Flat platform fee",
       "satisfactionValue": "$500",
       "flatFeeLabel": "Flat platform fee",
       "flatFeeValue": "$500",
-      "statsNote": "Example assumes a $10,000 PIP benefit and 33% contingency for comparison only—not a guarantee of your outcome.",
+      "statsNote": "PI attorneys typically need a viable third-party claim. A PIP-only file is often not that case. ClaimSaver+ is flat-fee software—not a percentage of your benefits.",
       "statsIllustrativeBadge": "Illustrative comparison—not your claim"
     },
     "story": {
@@ -180,7 +180,7 @@
       },
       "attorneyNeed": {
         "question": "Do I need to hire an attorney?",
-        "answer": "Not to use ClaimSaver+, and not merely to submit a Florida PIP claim to your own insurer—no-fault is designed so you can file. A licensed Florida attorney may still be the right call for serious injury, someone else’s liability, coverage disputes, or if you want representation. That is a separate decision from buying platform access."
+        "answer": "Not to use ClaimSaver+, and not merely to submit a Florida PIP claim to your own insurer—no-fault is designed so you can file. PI firms generally take cases with a viable third-party claim; a PIP-only file is often declined. A licensed Florida attorney may still be the right call for serious injury, someone else’s liability, coverage disputes, or if you want representation. That is a separate decision from buying platform access."
       },
       "vsAttorney": {
         "question": "What's the difference between ClaimSaver+ and an attorney?",
@@ -302,7 +302,7 @@
       "ctaHome": "Back to home",
       "ctaHowItWorks": "How the platform works",
       "notEveryClaim": "Not every PIP claim belongs on a DIY path.",
-      "introDiy": "ClaimSaver+ is software for standard Florida no-fault paperwork. Leave the DIY path and consult a licensed Florida attorney when:",
+      "introDiy": "ClaimSaver+ is software for standard Florida no-fault paperwork—including PIP-only files that PI firms often will not take on contingency. Leave the DIY path and consult a licensed Florida attorney when:",
       "supportNote": "We do not match you to a lawyer as part of the $500 product. Support may help with login, billing, and how to use the site—not “what should I do in my case?”"
     },
     "licenseCredentials": {
@@ -379,23 +379,37 @@
         "price": "25.00"
       }
     },
+    "fit": {
+      "colAttorney": "Personal-injury firm",
+      "colOurs": "ClaimSaver+",
+      "why": "The economics",
+      "whyAttorney": "The percentage they would charge does not make economic sense on PIP benefits alone, so a PIP-only file is often declined.",
+      "whyOurs": "Every accident victim can file their own PIP claim and keep the benefits their insurer pays—flat fee, not a cut.",
+      "who": "Who it’s for",
+      "whoAttorney": "Typically only if the injury may clear Florida’s permanency threshold—serious enough for a third-party pain-and-suffering case.",
+      "whoOurs": "All Florida accident victims filing their own no-fault claim.",
+      "fee": "How you’re charged",
+      "feeAttorney": "A percentage of a third-party recovery, if there is one",
+      "feeOurs": "A flat $500. Not a percentage of your PIP benefits.",
+      "footnote": "General information—not legal advice. ClaimSaver+ is not a law firm and does not represent you."
+    },
     "traditionalCosts": {
-      "title": "Illustrative: attorney contingency model",
-      "averagePolicy": "Example PIP benefit used in comparisons: $10,000 (your policy may differ)",
-      "attorneyFee": "Example 33% contingency fee on that benefit: $3,300",
-      "netToVictim": "Illustrative amount left before other costs: less than $7,000 of the example benefit",
+      "title": "Illustrative: when a PI firm typically takes a case",
+      "averagePolicy": "PIP benefit limits vary by policy (Florida medical PIP is often discussed around a $10,000 example—your coverage may differ)",
+      "attorneyFee": "PIP medical and wage benefits are usually paid to providers and the insured—not taken as a PI contingency cut",
+      "netToVictim": "A PI contingency fee typically comes from a third-party bodily-injury settlement, when there is one",
       "additionalCosts": "Other professional or court costs may still apply with any path",
       "hiddenFees": "Contingency structures vary by firm—ask any lawyer you hire for their written terms"
     },
     "claimSaverAdvantages": {
       "title": "ClaimSaver+ Advantage",
-      "keep95Percent": "Illustrative only: on a $10,000 PIP benefit example, a flat $500 software fee leaves more of the benefit than a 33% contingency fee on the same example—not a prediction of your outcome",
-      "noContingency": "No 33% contingency fee structure on our platform",
+      "keep95Percent": "Flat $500 for software access. We do not take a percentage of your PIP benefits.",
+      "noContingency": "No percentage of your PIP benefits to ClaimSaver+",
       "transparentPricing": "Transparent flat rate for platform access",
       "professionalService": "Tools and education—you decide and submit",
       "maximumRecovery": "Stay organized and informed throughout your claim"
     },
-    "comparisonNote": "Comparison assumes you file using ClaimSaver+ guided tools versus using a 33% contingency attorney on a $10,000 PIP benefit. Actual outcomes vary.",
+    "comparisonNote": "Florida’s permanency threshold is about a pain-and-suffering claim against another driver—not whether you can file PIP with your own insurer. ClaimSaver+ is software, not a law firm.",
     "optionalNotarizationIntro": "Guided PIP platform access ($500) and optional online notarization (~$25) are separate line items. You can purchase notarization only if you need it—see below.",
     "selectServicesNotarizationHint": "Select guided platform access for PIP filing. Add notarization only if you need documents notarized; it is billed separately and is not part of the PIP workflow.",
     "selectServicesCheckoutNote": "This is the purchase flow for this visit—not your claim dashboard or an existing order. Choose services below, then pay securely with Stripe.",
@@ -406,8 +420,8 @@
         "description": "One clear fee for platform access. No hidden subscription for the core product."
       },
       "maximumRecovery": {
-        "title": "Keep More of Your Benefit",
-        "description": "Compared to typical contingency percentages, a flat fee can leave more in your pocket on standard PIP claims you manage with the platform."
+        "title": "A gap PI firms often leave",
+        "description": "A no-fault PIP claim with no viable third-party case is often not attractive on contingency. ClaimSaver+ is software for people filing that paperwork themselves—flat $500, no percentage of PIP to us."
       },
       "professionalService": {
         "title": "Platform guidance",
@@ -427,19 +441,18 @@
       "complexClaimLead": "Complex claim or disputed coverage?",
       "complexClaimMid": "If your situation may require legal judgment or representation,",
       "complexClaimLink": "see when to call an attorney",
-      "comparisonTitleLead": "Illustrative comparison:",
-      "comparisonTitleAccent": "Contingency fee vs. flat software fee",
-      "comparisonSubtitle": "Example math for a common PIP benefit limit—not a guarantee about your case or settlement.",
+      "comparisonTitleLead": "Why PIP-only claims get turned down",
+      "comparisonSubtitle": "Firms often decline PIP-only files unless the injury may meet Florida’s permanency threshold. ClaimSaver+ is a flat fee, not a percentage of your PIP.",
       "supportEmailLine": "Questions about checkout or billing? Email {{supportEmail}}.",
       "averageFeesCaption": "Average fees and costs",
       "recommendedBadge": "RECOMMENDED",
-      "advantageCallout": "Illustrative: on a $10K PIP benefit, a flat $500 platform fee leaves far more in your pocket than a 33% contingency fee—your results may differ.",
+      "advantageCallout": "Flat $500 for guided software. We do not take a percentage of your PIP benefits.",
       "whyChooseLead": "Why Choose",
       "whyChooseAccent": "ClaimSaver+?",
-      "whyParagraph1": "For illustration only, many Florida drivers compare a $10,000 PIP benefit limit to typical 33% contingency fees—that is $3,300 in fees on that example amount alone (your policy and facts may differ).",
+      "whyParagraph1": "Personal-injury firms generally take cases with a viable third-party claim and injuries serious enough to support a contingency fee from a bodily-injury settlement. A PIP-only file often is not that case—which is why people call several firms and still end up filing themselves.",
       "whyParagraph2": "ClaimSaver+ charges a flat $500 for software access: guided forms, storage, reminders, and education. We do not take a percentage of your benefits and we do not handle your claim for you—you remain the person filing and communicating with your insurer.",
       "savingsCalculator": "Savings Calculator",
-      "calcTraditionalFee": "Traditional Service Fee (33%)",
+      "calcTraditionalFee": "Typical PI contingency (on a BI settlement, when there is one)",
       "calcFlatFee": "ClaimSaver+ Flat Fee",
       "calcYourSavings": "Your Savings",
       "ctaFootnote": "Flat $500 platform access • No contingency fee to ClaimSaver+",
@@ -464,8 +477,8 @@
       "faqSubtitle": "Straight answers—ClaimSaver+ sells access to claim-preparation software, not legal services.",
       "faq1q": "What am I paying $500 for?",
       "faq1a": "Access to ClaimSaver+’s guided PIP workflows, document storage, reminders, and educational content—so you can prepare your own materials. It is not a fee for representation, negotiation, or communicating with your insurance company on your behalf.",
-      "faq2q": "Why compare 33% to $500?",
-      "faq2a": "Many people compare a typical attorney contingency percentage to a flat software fee—we show illustrative math only. Whether you use an attorney is your choice; we are not a substitute for one when your situation requires licensed counsel.",
+      "faq2q": "Do attorneys take 33% of my PIP?",
+      "faq2a": "Usually not when they represent the injured driver. PIP pays medical bills and lost wages directly; skimming a fee off that would leave the client short on doctor payments. Firms typically fold PIP paperwork in as a courtesy while the real fee comes from a third-party bodily-injury settlement—if there is one. That is why a PIP-only claim often is not a case they will take on contingency. ClaimSaver+ charges a flat $500 for software and does not take a percentage of your benefits. This is general information, not advice about any lawyer’s engagement letter.",
       "faq3q": "Does ClaimSaver+ guarantee I’ll recover more money?",
       "faq3a": "No. We do not guarantee any financial outcome. Charts on this page use simplified examples. Results depend on your coverage, facts, and how your insurer processes the claim.",
       "faq4q": "Who do I contact about charges or receipts?",
@@ -1049,7 +1062,7 @@
     "emailSupport": "Email support:",
     "servingFlorida": "Guided claim platform • Serving Florida drivers",
     "claimForm": "Claim Form",
-    "licenseLine": "Founder background (not a service sold on this platform): {{name}} · {{type}} · License {{number}}. Verify on the Florida DFS Licensee Search. ClaimSaver+ does not adjust claims, negotiate with insurers, or represent you."
+    "licenseLine": "Founder background (not a service sold on this platform): {{name}} · {{type}} · License {{number}}."
   },
   "whoWeAre": {
     "hero": {
@@ -1071,11 +1084,11 @@
       "body": "We started in Miami after our family went through an accident claim and saw what traditional help can cost. A lot of Florida no-fault filing is paperwork, organization, and dates—not courtroom strategy. We built the platform so people can do that work themselves when a standard PIP claim is all they need.",
       "personalJourney": {
         "title": "A Personal Journey",
-        "description": "After our family faced accident claims and the cost of traditional help, we realized there had to be a better way. So much of a Florida no-fault filing is paperwork, organization, and staying aware of dates—not courtroom strategy. Families often pay a contingency percentage for work they can complete themselves if the process is made clear."
+        "description": "After our family faced accident claims and saw what traditional help can cost, we realized there had to be a better way. So much of a Florida no-fault filing is paperwork, organization, and staying aware of dates—not courtroom strategy. People who only need that work are often left to DIY after firms decline a PIP-only matter."
       },
       "mission": {
         "title": "Our Mission",
-        "description": "To give Florida families straightforward, affordable tools to file and manage no-fault claims—without paying contingency fees for paperwork they can complete with good guidance and the platform."
+        "description": "To give Florida families straightforward, affordable tools to file and manage no-fault claims—at a flat software fee—when a standard PIP filing is what they need."
       },
       "whyWeCare": {
         "title": "Why We Care",
@@ -1304,8 +1317,8 @@
     "optionOneBody": "Risk missing a deadline or making a technical error on a packet built for professionals.",
     "optionTwoLabel": "Option two",
     "optionTwoTitle": "Hire a PI attorney",
-    "optionTwoBody": "A typical contingency takes about a third of the recovery—for what is often a routine, undisputed no-fault filing. Illustrative comparison, not a prediction of your outcome.",
-    "middlePath": "ClaimSaver+ is the guided middle path—a platform that walks you through preparing your own PIP claim materials, keeps documentation organized, and can remind you of common Florida PIP-oriented dates you enter, including the 14-day treatment window as a reminder—not legal advice. Flat $500 platform access instead of a contingency cut to ClaimSaver+. You remain the filer. We do not talk to your insurer.",
+    "optionTwoBody": "PI attorneys generally take cases with a viable third-party claim and injuries serious enough to support a contingency fee from a bodily-injury settlement. A PIP-only file—no clear at-fault party, or injuries that don’t meet that bar—often isn’t a case they will take. General information, not advice about your facts.",
+    "middlePath": "ClaimSaver+ is the guided middle path—a platform that walks you through preparing your own PIP claim materials, keeps documentation organized, and can remind you of common Florida PIP-oriented dates you enter, including the 14-day treatment window as a reminder—not legal advice. Built for people filing their own no-fault claim, including after a firm has declined. Flat $500—no percentage of your PIP benefits to us. You remain the filer. We do not talk to your insurer.",
     "founder": "ClaimSaver+ is Miami-built software for Florida PIP paperwork. A founder license number appears in the site footer for public lookup only—it is not a service sold on this platform.",
     "attorneyLink": "Complex or disputed claims belong with a licensed Florida attorney."
   },

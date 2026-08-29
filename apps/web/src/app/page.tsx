@@ -109,9 +109,14 @@ export default function HomePage() {
 
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-slate-500">
-            {t("floridaOnly.chip")} · {t("pricing.ui.comparisonTitleLead")} {t("pricing.ui.comparisonTitleAccent")}
-          </p>
+          <div className="mx-auto mb-8 max-w-3xl text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+              {t("floridaOnly.chip")}
+            </p>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
+              {t("pricing.ui.comparisonTitleLead")}
+            </h2>
+          </div>
           <PricingCompare ctaHref="/pricing" ctaLabel={t("cta.payAccess")} />
           <p className="mt-4 text-center text-xs text-slate-500">{t("pricing.comparisonNote")}</p>
           <p className="mt-3 text-center text-sm text-slate-500">
@@ -124,6 +129,29 @@ export default function HomePage() {
       </section>
 
       <section className="border-y border-slate-200/70 bg-slate-50/90 py-16 dark:border-slate-800/60 dark:bg-slate-950/40">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-8 max-w-3xl text-center">
+            <h2 className="mb-3 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
+              {t("home.story.beforeAfterTitle")}
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300">
+              {t("home.story.beforeAfterSubtitle")}
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-900">
+            <LocalizedSocialImage
+              baseName="week3-mon-before-after"
+              alt={t("home.story.beforeAfterAlt")}
+              width={1600}
+              height={900}
+              className="h-auto w-full object-cover"
+            />
+          </div>
+          <p className="mt-3 text-center text-xs text-slate-500">{t("home.graphicCaption")}</p>
+        </div>
+      </section>
+
+      <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 max-w-3xl text-center">
             <h2 className="mb-3 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">

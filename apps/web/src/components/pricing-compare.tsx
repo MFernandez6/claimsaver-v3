@@ -2,13 +2,11 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import {
-  ILLUSTRATIVE_CONTINGENCY_FEE_CENTS,
-  PLATFORM_PRICE_TESTING,
-  PRODUCTS,
-} from "@claimsaver/shared";
+import { PLATFORM_PRICE_TESTING, PRODUCTS } from "@claimsaver/shared";
 import { Button } from "@/components/ui/button";
-import { formatUsd } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+
+const ROWS = ["why", "who", "fee"] as const;
 
 export function PricingCompare({
   ctaHref,
@@ -20,51 +18,66 @@ export function PricingCompare({
   const { t } = useTranslation();
 
   return (
-    <div className="grid items-stretch gap-5 md:grid-cols-2">
-      <article className="rounded-2xl border border-rose-200/90 bg-rose-50/80 p-6 dark:border-rose-900/50 dark:bg-rose-950/25">
-        <h3 className="text-base font-semibold leading-snug text-rose-800 dark:text-rose-200">
-          {t("pricing.traditionalCosts.title")}
-        </h3>
-        <p className="mt-5 text-3xl font-semibold tracking-tight text-rose-700 dark:text-rose-300">
-          {formatUsd(ILLUSTRATIVE_CONTINGENCY_FEE_CENTS)}
-        </p>
-        <p className="mt-2 text-sm leading-relaxed text-rose-800/80 dark:text-rose-200/80">
-          {t("pricing.traditionalCosts.attorneyFee")}
-        </p>
-        <p className="mt-3 text-xs leading-relaxed text-rose-700/70 dark:text-rose-300/70">
-          {t("pricing.traditionalCosts.averagePolicy")}
-        </p>
-      </article>
-
-      <article className="relative overflow-hidden rounded-2xl border border-emerald-300/90 bg-emerald-50/80 p-6 shadow-sm dark:border-emerald-700/60 dark:bg-emerald-950/30">
-        <span className="absolute right-0 top-0 origin-top-right translate-x-[30%] translate-y-[40%] rotate-45 bg-emerald-600 px-10 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white shadow-sm dark:bg-emerald-500">
-          {t("pricing.ui.recommendedBadge")}
-        </span>
-        <h3 className="pr-16 text-base font-semibold leading-snug text-emerald-800 dark:text-emerald-200">
-          {t("pricing.claimSaverAdvantages.title")}
-        </h3>
-        <p className="mt-5 text-3xl font-semibold tracking-tight text-emerald-700 dark:text-emerald-300">
-          {PRODUCTS.platform.listDisplayPrice}
-        </p>
-        {PLATFORM_PRICE_TESTING ? (
-          <p className="mt-1 text-xs font-medium text-teal-800 dark:text-teal-200">
-            {t("pricing.testing.compareNote", { testPrice: PRODUCTS.platform.displayPrice })}
+    <div>
+      <div className="grid items-stretch gap-5 md:grid-cols-2">
+        <article className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900/70">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            {t("pricing.fit.colAttorney")}
           </p>
-        ) : null}
-        <p className="mt-2 text-sm leading-relaxed text-emerald-900/80 dark:text-emerald-100/80">
-          {t("pricing.claimSaverAdvantages.noContingency")}
-        </p>
-        <p className="mt-3 text-xs leading-relaxed text-emerald-800/70 dark:text-emerald-200/70">
-          {t("pricing.ui.advantageCallout")}
-        </p>
-        {ctaHref && ctaLabel ? (
-          <div className="mt-5">
-            <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">
-              <Link href={ctaHref}>{ctaLabel}</Link>
-            </Button>
-          </div>
-        ) : null}
-      </article>
+          <ComparisonRows side="Attorney" />
+        </article>
+
+        <article className="flex flex-col rounded-2xl border border-teal-200 bg-white p-6 dark:border-teal-800 dark:bg-slate-900/70">
+          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800 dark:text-teal-300">
+            {t("pricing.fit.colOurs")}
+          </p>
+          <ComparisonRows side="Ours" />
+          {PLATFORM_PRICE_TESTING ? (
+            <p className="mt-3 text-xs font-medium text-teal-800 dark:text-teal-200">
+              {t("pricing.testing.compareNote", { testPrice: PRODUCTS.platform.displayPrice })}
+            </p>
+          ) : null}
+          {ctaHref && ctaLabel ? (
+            <div className="mt-5">
+              <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">
+                <Link href={ctaHref}>{ctaLabel}</Link>
+              </Button>
+            </div>
+          ) : null}
+        </article>
+      </div>
+      <p className="mt-4 text-center text-xs leading-relaxed text-slate-500">
+        {t("pricing.fit.footnote")}
+      </p>
     </div>
+  );
+}
+
+function ComparisonRows({ side }: { side: "Attorney" | "Ours" }) {
+  const { t } = useTranslation();
+  const valueClass =
+    side === "Ours"
+      ? "text-slate-800 dark:text-slate-100"
+      : "text-slate-700 dark:text-slate-200";
+
+  return (
+    <dl className="mt-5 space-y-4">
+      {ROWS.map((row) => (
+        <div
+          key={row}
+          className={cn(
+            "border-t pt-4 first:border-t-0 first:pt-0",
+            side === "Ours" ? "border-teal-100 dark:border-teal-900" : "border-slate-100 dark:border-slate-800",
+          )}
+        >
+          <dt className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+            {t(`pricing.fit.${row}`)}
+          </dt>
+          <dd className={cn("mt-1 text-sm leading-relaxed", valueClass)}>
+            {t(`pricing.fit.${row}${side}`)}
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }

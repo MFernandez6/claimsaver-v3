@@ -41,11 +41,8 @@ export const PRODUCTS = {
   },
 } as const;
 
+/** Kept for internal math only—not used in customer-facing fee-off-PIP ads. */
 export const ILLUSTRATIVE_PIP_LIMIT_CENTS = 1_000_000;
-export const ILLUSTRATIVE_CONTINGENCY_RATE = 0.33;
-export const ILLUSTRATIVE_CONTINGENCY_FEE_CENTS = 330_000;
-export const ILLUSTRATIVE_SAVINGS_CENTS =
-  ILLUSTRATIVE_CONTINGENCY_FEE_CENTS - PLATFORM_LIST_AMOUNT_CENTS;
 
 export function isProductCode(value: string): value is ProductCode {
   return (PRODUCT_CODES as readonly string[]).includes(value);

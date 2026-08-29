@@ -68,7 +68,7 @@
       "titleLine1": "Presenta tu reclamo sin culpa",
       "titleLine2": "en Florida.",
       "subtitle": "Mantén lo tuyo.",
-      "description": "Las herramientas y la orientación para avanzar tu reclamo PIP de Florida, seguir tu recuperación y conservar más de tus beneficios. Tarifa plana de $500 por acceso a la plataforma—no es un honorario de contingencia.",
+      "description": "Software guiado para reclamos PIP de Florida que usted presenta—sobre todo cuando un bufete de lesiones personales no toma el caso. Acceso a la plataforma por $500 fijos. Usted sigue siendo quien presenta. No somos bufete.",
       "cta": "Comenzar",
       "ctaSecondary": "Vea cómo funciona",
       "learnMore": "Más Información",
@@ -146,13 +146,13 @@
       "title": "Precios simples y transparentes",
       "recoveryTime": "Beneficio PIP ilustrativo (ejemplo)",
       "recoveryTimeValue": "Límite $10,000",
-      "successRate": "frente al 33% típ. de honorarios sobre $10K",
-      "successRateValue": "$3,300",
+      "successRate": "Cuando los bufetes de lesiones suelen rechazar",
+      "successRateValue": "Sin caso BI",
       "satisfaction": "Tarifa plana de plataforma",
       "satisfactionValue": "$500",
       "flatFeeLabel": "Tarifa plana de plataforma",
       "flatFeeValue": "$500",
-      "statsNote": "Ejemplo asume beneficio PIP de $10,000 y 33% de contingencia solo para comparar—no garantiza su resultado.",
+      "statsNote": "Los abogados de lesiones personales suelen necesitar un reclamo viable contra un tercero. Un expediente solo de PIP a menudo no es ese caso. ClaimSaver+ es software de tarifa plana—no un porcentaje de sus beneficios.",
       "statsIllustrativeBadge": "Comparación ilustrativa—no es tu reclamo"
     },
     "story": {
@@ -180,7 +180,7 @@
       },
       "attorneyNeed": {
         "question": "¿Necesito contratar un abogado?",
-        "answer": "No para usar ClaimSaver+, ni solo para presentar un reclamo PIP de Florida ante su propia aseguradora: el no-fault está pensado para que usted presente. Un abogado licenciado en Florida puede seguir siendo la mejor opción ante una lesión grave, la responsabilidad de otra persona, disputas de cobertura, o si quiere representación. Esa decisión es independiente de comprar acceso a la plataforma."
+        "answer": "No para usar ClaimSaver+, ni solo para presentar un reclamo PIP de Florida ante su propia aseguradora: el no-fault está pensado para que usted presente. Los bufetes de lesiones suelen tomar casos con un reclamo viable contra un tercero; un expediente solo de PIP a menudo se rechaza. Un abogado licenciado en Florida puede seguir siendo la mejor opción ante una lesión grave, la responsabilidad de otra persona, disputas de cobertura, o si quiere representación. Esa decisión es independiente de comprar acceso a la plataforma."
       },
       "vsAttorney": {
         "question": "¿Cuál es la diferencia entre ClaimSaver+ y un abogado?",
@@ -302,7 +302,7 @@
       "ctaHome": "Volver al inicio",
       "ctaHowItWorks": "Cómo funciona la plataforma",
       "notEveryClaim": "No todo reclamo PIP encaja en un camino de hágalo usted mismo.",
-      "introDiy": "ClaimSaver+ es software para el papeleo estándar de no-fault en Florida. Deje el camino DIY y consulte a un abogado licenciado en Florida cuando:",
+      "introDiy": "ClaimSaver+ es software para el papeleo estándar de no-fault en Florida—incluidos expedientes solo de PIP que los bufetes de lesiones a menudo no toman a contingencia. Deje el camino DIY y consulte a un abogado licenciado en Florida cuando:",
       "supportNote": "No le asignamos un abogado como parte del producto de $500. El soporte puede ayudar con el inicio de sesión, la facturación y el uso del sitio—no con “¿qué debo hacer en mi caso?”"
     },
     "licenseCredentials": {
@@ -379,23 +379,37 @@
         "price": "25.00"
       }
     },
+    "fit": {
+      "colAttorney": "Bufete de lesiones personales",
+      "colOurs": "ClaimSaver+",
+      "why": "La economía",
+      "whyAttorney": "El porcentaje que cobrarían no tiene sentido económico solo sobre los beneficios PIP, así que un expediente solo de PIP a menudo se rechaza.",
+      "whyOurs": "Toda víctima de accidente puede presentar su propio reclamo PIP y quedarse con los beneficios que pague su aseguradora—tarifa plana, no un recorte.",
+      "who": "Para quién es",
+      "whoAttorney": "Por lo general solo si la lesión puede superar el umbral de permanencia de Florida—lo bastante grave para un caso de dolor y sufrimiento contra un tercero.",
+      "whoOurs": "Todas las víctimas de accidentes en Florida que presentan su propio reclamo sin culpa.",
+      "fee": "Cómo se cobra",
+      "feeAttorney": "Un porcentaje de una recuperación contra un tercero, si la hay",
+      "feeOurs": "Tarifa plana de $500. Sin porcentaje de sus beneficios PIP.",
+      "footnote": "Información general—no es asesoramiento legal. ClaimSaver+ no es un bufete y no lo representa."
+    },
     "traditionalCosts": {
       "title": "Ilustrativo: modelo de honorario por contingencia",
       "averagePolicy": "Ejemplo de beneficio PIP usado en comparaciones: $10.000 (su póliza puede variar)",
-      "attorneyFee": "Ejemplo de honorario del 33% sobre ese beneficio: $3.300",
+      "attorneyFee": "Los beneficios PIP médicos y salariales suelen pagarse a proveedores y al asegurado—no como recorte de contingencia de un bufete de lesiones",
       "netToVictim": "Importe ilustrativo restante antes de otros costos: menos de $7.000 de ese ejemplo",
       "additionalCosts": "Otros gastos profesionales o judiciales pueden aplicar con cualquier vía",
       "hiddenFees": "Las estructuras de contingencia varían por bufete—pida por escrito los términos a cualquier abogado que contrate"
     },
     "claimSaverAdvantages": {
       "title": "Ventaja de ClaimSaver+",
-      "keep95Percent": "Solo ilustrativo: con un beneficio PIP de $10.000, una tarifa plana de $500 por software deja más del beneficio que un honorario del 33% sobre el mismo ejemplo—no es predicción de su resultado",
-      "noContingency": "Sin estructura de honorarios del 33% en nuestra plataforma guiada",
+      "keep95Percent": "Tarifa plana de $500 por acceso al software. No nos quedamos con un porcentaje de sus beneficios PIP.",
+      "noContingency": "Ningún porcentaje de sus beneficios PIP para ClaimSaver+",
       "transparentPricing": "Tarifa plana transparente por acceso a la plataforma",
       "professionalService": "Herramientas y educación—usted decide y envía",
       "maximumRecovery": "Organizado e informado durante su reclamo"
     },
-    "comparisonNote": "La comparación supone que presenta con las herramientas guiadas de ClaimSaver+ frente a un abogado del 33% sobre $10,000 de beneficio PIP. Los resultados reales varían.",
+    "comparisonNote": "El umbral de permanencia de Florida se refiere a un reclamo de dolor y sufrimiento contra otro conductor—no a si usted puede presentar PIP ante su propia aseguradora. ClaimSaver+ es software, no un bufete.",
     "optionalNotarizationIntro": "El acceso a la plataforma guiada de PIP ($500) y la notarización en línea opcional (~$25) son partidas separadas. Puede comprar notarización solo si la necesita—vea abajo.",
     "selectServicesNotarizationHint": "Seleccione el acceso guiado a la plataforma para la presentación PIP. Añada notarización solo si necesita notarizar documentos; se factura por separado y no forma parte del flujo PIP.",
     "selectServicesCheckoutNote": "Este es el flujo de compra de esta visita: no es tu panel de reclamos ni un pedido previo. Elige servicios y paga de forma segura con Stripe.",
@@ -406,8 +420,8 @@
         "description": "Una tarifa clara por acceso a la plataforma. Sin suscripción oculta para el producto principal."
       },
       "maximumRecovery": {
-        "title": "Conserve más de su beneficio",
-        "description": "Frente a porcentajes de contingencia típicos, una tarifa plana puede dejarle más en reclamos PIP estándar que usted gestiona."
+        "title": "Un hueco que los bufetes suelen dejar",
+        "description": "Un reclamo PIP sin culpa sin un caso viable contra un tercero a menudo no es atractivo a contingencia. ClaimSaver+ es software para quien presenta ese papeleo—$500 fijos, sin porcentaje de PIP para nosotros."
       },
       "professionalService": {
         "title": "Guía de la plataforma",
@@ -427,18 +441,17 @@
       "complexClaimLead": "¿Reclamo complejo o cobertura en disputa?",
       "complexClaimMid": "Si su situación puede requerir criterio legal o representación,",
       "complexClaimLink": "vea cuándo llamar a un abogado",
-      "comparisonTitleLead": "Comparación ilustrativa:",
-      "comparisonTitleAccent": "Contingencia frente a software de tarifa plana",
-      "comparisonSubtitle": "Matemática de ejemplo para un límite PIP habitual—no es garantía sobre su caso o liquidación.",
+      "comparisonTitleLead": "Por qué rechazan los reclamos solo de PIP",
+      "comparisonSubtitle": "Los bufetes suelen rechazar expedientes solo de PIP salvo que la lesión pueda cumplir el umbral de permanencia de Florida. ClaimSaver+ es una tarifa plana, no un porcentaje de su PIP.",
       "averageFeesCaption": "Honorarios y costos promedio",
       "recommendedBadge": "RECOMENDADO",
-      "advantageCallout": "Ilustrativo: en un beneficio PIP de $10.000, una tarifa plana de $500 deja mucho más en su bolsillo que un honorario de contingencia del 33%—sus resultados pueden variar.",
+      "advantageCallout": "Tarifa plana de $500 por software guiado. No nos quedamos con un porcentaje de sus beneficios PIP.",
       "whyChooseLead": "¿Por qué elegir",
       "whyChooseAccent": "ClaimSaver+?",
-      "whyParagraph1": "En Florida, el pago promedio de la póliza de auto es de $10.000. Con métodos tradicionales, tras un honorario de contingencia del 33%, a las víctimas les queda menos de $7.000 antes de otros gastos de tramitación.",
+      "whyParagraph1": "Los bufetes de lesiones personales suelen tomar casos con un reclamo viable contra un tercero y lesiones lo bastante graves para sostener un honorario de contingencia sobre un acuerdo de lesiones corporales. Un expediente solo de PIP a menudo no es ese caso—por eso la gente llama a varios bufetes y termina presentando sola.",
       "whyParagraph2": "ClaimSaver+ cobra una tarifa plana de $500 por acceso al software: formularios guiados, almacenamiento, recordatorios y contenido educativo. No cobramos un porcentaje de sus beneficios ni gestionamos su reclamo por usted—usted sigue siendo quien presenta los documentos y se comunica con su aseguradora.",
       "savingsCalculator": "Calculadora de ahorros",
-      "calcTraditionalFee": "Tarifa de servicio tradicional (33%)",
+      "calcTraditionalFee": "Contingencia típica de lesiones (sobre un acuerdo BI, cuando lo hay)",
       "calcFlatFee": "Tarifa plana ClaimSaver+",
       "calcYourSavings": "Su ahorro",
       "ctaFootnote": "Acceso a la plataforma por $500 • Sin honorarios de contingencia para ClaimSaver+",
@@ -464,8 +477,8 @@
       "faqSubtitle": "Respuestas directas—ClaimSaver+ vende acceso a software de preparación de reclamos, no servicios legales.",
       "faq1q": "¿Qué incluye el pago de $500?",
       "faq1a": "Acceso a los flujos PIP guiados, almacenamiento de documentos, recordatorios y contenido educativo de ClaimSaver+ para preparar usted mismo sus materiales. No es un honorario por representación, negociación ni comunicación con su aseguradora en su nombre.",
-      "faq2q": "¿Por qué comparan el 33% con $500?",
-      "faq2a": "Muchas personas comparan un porcentaje típico de contingencia con una tarifa plana de software—mostramos solo matemática ilustrativa. Si contrata un abogado es su decisión; no somos sustituto cuando su situación requiere asesoría licenciada.",
+      "faq2q": "¿Los abogados se llevan el 33% de mi PIP?",
+      "faq2a": "Por lo general no, cuando representan al conductor lesionado. El PIP paga facturas médicas y salarios perdidos de forma directa; descontar un honorario de eso dejaría al cliente corto para los médicos. Los bufetes suelen incluir el papeleo PIP por cortesía mientras el honorario real sale de un acuerdo de lesiones corporales contra un tercero—si lo hay. Por eso un reclamo solo de PIP a menudo no es un caso que tomen a contingencia. ClaimSaver+ cobra $500 fijos por software y no se queda con un porcentaje de sus beneficios. Información general, no un consejo sobre el contrato de ningún abogado.",
       "faq3q": "¿ClaimSaver+ garantiza que recuperaré más dinero?",
       "faq3a": "No. No garantizamos ningún resultado económico. Las tablas de esta página usan ejemplos simplificados. Los resultados dependen de su cobertura, los hechos y cómo su aseguradora tramita el reclamo.",
       "faq4q": "¿A quién contacto por cargos o recibos?",
@@ -772,7 +785,7 @@
     "emailSupport": "Soporte por correo:",
     "servingFlorida": "Plataforma guiada de reclamos • Al servicio de conductores en Florida",
     "claimForm": "Formulario de reclamo",
-    "licenseLine": "Antecedentes del fundador (no es un servicio que se venda en esta plataforma): {{name}} · {{type}} · Licencia {{number}}. Verifique en la búsqueda de licencias de DFS de Florida. ClaimSaver+ no ajusta reclamos, no negocia con aseguradoras ni lo representa."
+    "licenseLine": "Antecedentes del fundador (no es un servicio que se venda en esta plataforma): {{name}} · {{type}} · Licencia {{number}}."
   },
   "whoWeAre": {
     "hero": {
@@ -794,11 +807,11 @@
       "body": "Empezamos en Miami después de que nuestra familia pasara por un reclamo de accidente y viera lo que puede costar la ayuda tradicional. Gran parte de una presentación de no-fault en Florida es papeleo, organización y fechas—no estrategia de tribunal. Construimos la plataforma para que las personas puedan hacer ese trabajo ellas mismas cuando un reclamo PIP estándar es todo lo que necesitan.",
       "personalJourney": {
         "title": "Un Viaje Personal",
-        "description": "Después de que nuestra familia enfrentara reclamos de accidentes y el costo de la ayuda tradicional, nos dimos cuenta de que tenía que haber una mejor manera. Gran parte de una presentación de no-fault en Florida es papeleo, organización y estar al tanto de las fechas—no estrategia de tribunal. Las familias a menudo pagan un porcentaje de contingencia por un trabajo que pueden completar ellas mismas si el proceso está claro."
+        "description": "Después de que nuestra familia enfrentara reclamos de accidentes y viera lo que puede costar la ayuda tradicional, nos dimos cuenta de que tenía que haber una mejor manera. Gran parte de una presentación de no-fault en Florida es papeleo, organización y estar al tanto de las fechas—no estrategia de tribunal. Quienes solo necesitan ese trabajo a menudo terminan solos después de que los bufetes rechazan un asunto solo de PIP."
       },
       "mission": {
         "title": "Nuestra Misión",
-        "description": "Ofrecer a las familias en Florida herramientas directas y asequibles para presentar y gestionar reclamos sin culpa—sin pagar honorarios de contingencia por trámites que pueden completar con buena orientación."
+        "description": "Ofrecer a las familias en Florida herramientas directas y asequibles para presentar y gestionar reclamos sin culpa—con una tarifa plana de software—cuando una presentación PIP estándar es lo que necesitan."
       },
       "whyWeCare": {
         "title": "Por Qué Nos Importa",
@@ -1305,8 +1318,8 @@
     "optionOneBody": "Riesgo de perder un plazo o cometer un error técnico en un paquete pensado para profesionales.",
     "optionTwoLabel": "Opción dos",
     "optionTwoTitle": "Contratar a un abogado de lesiones",
-    "optionTwoBody": "Un honorario de contingencia típico se lleva cerca de un tercio de la recuperación—por lo que a menudo es una presentación rutinaria y no disputada de no-fault. Comparación ilustrativa, no una predicción de su resultado.",
-    "middlePath": "ClaimSaver+ es el camino intermedio guiado: una plataforma que le acompaña al preparar sus propios materiales de reclamo PIP, mantiene la documentación organizada y puede recordarle fechas habituales de PIP en Florida que usted introduce, incluida la ventana de 14 días como recordatorio—no como asesoría legal. Acceso a la plataforma por $500 fijos en lugar de un recorte de contingencia para ClaimSaver+. Usted sigue siendo quien presenta. No hablamos con su aseguradora.",
+    "optionTwoBody": "Los abogados de lesiones personales suelen tomar casos con un reclamo viable contra un tercero y lesiones lo bastante graves para sostener un honorario de contingencia sobre un acuerdo de lesiones corporales. Un expediente solo de PIP—sin un culpable claro, o con lesiones que no llegan a ese umbral—a menudo no es un caso que tomen. Información general, no un consejo sobre sus hechos.",
+    "middlePath": "ClaimSaver+ es el camino intermedio guiado: una plataforma que le acompaña al preparar sus propios materiales de reclamo PIP, mantiene la documentación organizada y puede recordarle fechas habituales de PIP en Florida que usted introduce, incluida la ventana de 14 días como recordatorio—no como asesoría legal. Pensado para quien presenta su propio reclamo sin culpa, incluso después de que un bufete haya rechazado el caso. $500 fijos—sin un porcentaje de sus beneficios PIP para nosotros. Usted sigue siendo quien presenta. No hablamos con su aseguradora.",
     "founder": "ClaimSaver+ es software creado en Miami para trámites PIP de Florida. Un número de licencia del fundador aparece en el pie de página solo para consulta pública—no es un servicio que se venda en esta plataforma.",
     "attorneyLink": "Los reclamos complejos o disputados corresponden a un abogado licenciado en Florida."
   },

@@ -168,10 +168,12 @@ function PricingInner() {
           </Card>
 
           <div className="mt-12">
-            <p className="mb-5 text-sm font-medium text-slate-500">
-              {t("pricing.ui.comparisonTitleLead")} {t("pricing.ui.comparisonTitleAccent")}
-            </p>
-            <PricingCompare />
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+              {t("pricing.ui.comparisonTitleLead")}
+            </h2>
+            <div className="mt-6">
+              <PricingCompare />
+            </div>
             <p className="mt-4 text-xs text-slate-500">{t("pricing.comparisonNote")}</p>
           </div>
           <p className="mt-6 text-sm text-slate-500">
@@ -185,6 +187,7 @@ function PricingInner() {
         subtitle={t("pricing.ui.faqSubtitle")}
         items={[
           { question: t("pricing.ui.faq1q"), answer: t("pricing.ui.faq1a") },
+          { question: t("pricing.ui.faq2q"), answer: t("pricing.ui.faq2a") },
           { question: t("pricing.ui.faq3q"), answer: t("pricing.ui.faq3a") },
           { question: t("pricing.ui.faq4q"), answer: t("pricing.ui.faq4a") },
           { question: t("pricing.ui.faq5q"), answer: t("pricing.ui.faq5a") },

@@ -104,7 +104,6 @@ export function PitchNarrative({
       </p>
 
       <p className={cn("text-sm leading-relaxed", dark ? "text-slate-400" : "text-slate-600 dark:text-slate-400")}>
-        {t("pitch.founder")}{" "}
         <Link
           href="/when-to-call-an-attorney"
           className={cn("underline", dark ? "text-teal-200" : "text-teal-800 dark:text-teal-300")}
