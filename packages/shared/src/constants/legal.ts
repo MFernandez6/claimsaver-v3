@@ -9,10 +9,17 @@ export const SUPPORT_EMAIL = "support@claimsaverplus.com";
 export const FOUNDER = {
   name: "Miguel A. Fernandez, M.Sc.",
   role: "Founder",
+  degree: "M.Sc. Law & Policy",
   licenseClass: "6-20",
   licenseType: "Florida All-Lines Adjuster (6-20)",
   licenseNumber: "G279764",
   dfsLookupUrl: "https://licenseesearch.fldfs.com/",
+  /** Published as founder background only — not a service sold on the platform. */
+  backgroundHighlights: [
+    "Paralegal & litigation experience",
+    "M.Sc. Law & Policy",
+    "Florida All-Lines Adjuster (6-20)",
+  ] as const,
 } as const;
 
 export const CHECKOUT_PATH = SKIP_PAYMENTS_FOR_PROMO

@@ -15,9 +15,10 @@ Favicon and Apple touch icon are generated from the mark in `apps/web/src/app/ic
 
 ## Family Image
 
-Please add the founder's family image as `family.jpg` in this directory.
+- `family.jpg` — Who We Are page hero (family story)
+- `founder1.jpg` — Founder portrait (Who We Are + IG promo)
 
-The image should be:
+The family image should be:
 
 - High quality (recommended: 1200x800 pixels or larger)
 - Shows the founder's family in a professional yet warm setting
@@ -28,9 +29,24 @@ The image should be:
 
 The family image is used on the "Who We Are" page to illustrate the personal story behind ClaimSaver+ and show the human element of the company.
 
+## Social / Instagram
+
+Landscape graphics live in `social/`; IG crops in `social/instagram/1x1/` (1080×1080) and `social/instagram/4x5/` (1080×1350).
+
+Founder “Why we exist” promo (pinned post / Highlight):
+
+- `social/week5-mon-founder-why-we-exist.png`
+- `social/instagram/4x5/week5-mon-founder-why-we-exist.png` — **preferred for IG feed**
+- `social/instagram/1x1/week5-mon-founder-why-we-exist.png`
+
+Regenerate: `npm run social:founder-promo`
+
+IG caption copy: `whoWeAre.founderBackground.igCaption` in locale files.
+
 ## Current Status
 
-- ❌ `family.jpg` - Not yet added (placeholder needed)
+- ✅ `family.jpg`
+- ✅ `founder1.jpg`
 - ✅ Image component ready in the page
 - ✅ Responsive design implemented
 - ✅ Loading and error states handled

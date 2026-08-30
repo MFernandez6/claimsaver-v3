@@ -16,7 +16,8 @@
     "lint": "npm run lint -w @claimsaver/web",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "auth-emails:write": "node supabase/templates/write-html.mjs",
-    "auth-emails:push": "node supabase/templates/push.mjs"
+    "auth-emails:push": "node supabase/templates/push.mjs",
+    "social:founder-promo": "node scripts/generate-founder-ig-promo.mjs"
   },
   "engines": {
     "node": ">=20"
