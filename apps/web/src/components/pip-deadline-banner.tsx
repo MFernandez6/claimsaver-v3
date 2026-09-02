@@ -9,6 +9,7 @@ export function PipDeadlineBanner({ accidentDate }: { accidentDate: string }) {
   const { t } = useTranslation();
   if (!accidentDate) return null;
   const day14 = addDays(accidentDate, 14);
+  if (!day14) return null;
   const remaining = daysUntil(day14);
 
   return (

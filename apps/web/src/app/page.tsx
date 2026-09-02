@@ -119,12 +119,7 @@ export default function HomePage() {
           </div>
           <PricingCompare ctaHref="/pricing" ctaLabel={t("cta.payAccess")} />
           <p className="mt-4 text-center text-xs text-slate-500">{t("pricing.comparisonNote")}</p>
-          <p className="mt-3 text-center text-sm text-slate-500">
-            {t("home.notaryNote")}{" "}
-            <Link href="/notarization" className="font-medium text-teal-800 underline underline-offset-2 dark:text-teal-300">
-              {t("home.optionalServices.linkNotarization")}
-            </Link>
-          </p>
+          <p className="mt-3 text-center text-sm text-slate-500">{t("home.futureAddonsNote")}</p>
         </div>
       </section>
 

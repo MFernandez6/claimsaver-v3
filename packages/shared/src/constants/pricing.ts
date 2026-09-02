@@ -2,8 +2,13 @@
 
 export const CURRENCY = "usd" as const;
 
+/** Historical codes remain valid for old Stripe sessions and the purchases table. */
 export const PRODUCT_CODES = ["platform", "notarization"] as const;
 export type ProductCode = (typeof PRODUCT_CODES)[number];
+
+/** Codes the public checkout may sell today. */
+export const CHECKOUT_PRODUCT_CODES = ["platform"] as const;
+export type CheckoutProductCode = (typeof CHECKOUT_PRODUCT_CODES)[number];
 
 /** Standard list price charged at checkout. */
 export const PLATFORM_LIST_AMOUNT_CENTS = 50_000;
@@ -33,8 +38,7 @@ export const PRODUCTS = {
   notarization: {
     code: "notarization" as const,
     name: "Online notarization",
-    description:
-      "Optional remote document notarization via DocuSign. Not part of guided PIP filing.",
+    description: "Not offered. Kept only so historical Stripe sessions can still fulfill.",
     amountCents: 2_500,
     displayPrice: "$25.00",
     required: false,
@@ -46,6 +50,10 @@ export const ILLUSTRATIVE_PIP_LIMIT_CENTS = 1_000_000;
 
 export function isProductCode(value: string): value is ProductCode {
   return (PRODUCT_CODES as readonly string[]).includes(value);
+}
+
+export function isCheckoutProductCode(value: string): value is CheckoutProductCode {
+  return (CHECKOUT_PRODUCT_CODES as readonly string[]).includes(value);
 }
 
 export function stripeProductDescription(code: ProductCode): string {

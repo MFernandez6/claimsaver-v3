@@ -60,7 +60,55 @@ export async function POST(req: NextRequest) {
           .update({ has_platform_access: true, updated_at: new Date().toISOString() })
           .eq("id", userId);
       }
+      if (products.includes("notarization")) {
+        await admin.from("notarization_orders").insert({
+          user_id: userId,
+          stripe_session_id: session.id,
+          status: "awaiting_fulfillment",
+          notes: "Legacy notarization SKU — not offered at checkout. Refund if this line item still charged.",
+        });
+      }
     }
+  }
+
+  if (event.type === "charge.dispute.created" || event.type === "charge.dispute.updated") {
+    const dispute = event.data.object as Stripe.Dispute;
+    const admin = getSupabaseAdmin();
+    const chargeId = typeof dispute.charge === "string" ? dispute.charge : dispute.charge?.id;
+    let userId: string | null = null;
+    if (chargeId) {
+      try {
+        const charge = await stripe.charges.retrieve(chargeId);
+        const paymentIntent =
+          typeof charge.payment_intent === "string" ? charge.payment_intent : charge.payment_intent?.id;
+        if (paymentIntent) {
+          const sessions = await stripe.checkout.sessions.list({ payment_intent: paymentIntent, limit: 1 });
+          const session = sessions.data[0];
+          userId = session?.metadata?.userId || session?.client_reference_id || null;
+          if (!userId && session?.id) {
+            const { data: purchase } = await admin
+              .from("purchases")
+              .select("user_id")
+              .ilike("stripe_session_id", `${session.id}%`)
+              .maybeSingle();
+            userId = purchase?.user_id ?? null;
+          }
+        }
+      } catch {
+        /* Keep the dispute row even if we cannot attach a user. */
+      }
+    }
+    await admin.from("billing_disputes").upsert(
+      {
+        stripe_dispute_id: dispute.id,
+        user_id: userId,
+        amount_cents: dispute.amount,
+        reason: dispute.reason || "",
+        status: dispute.status || "",
+        payload: JSON.parse(JSON.stringify(dispute)) as Record<string, unknown>,
+      },
+      { onConflict: "stripe_dispute_id" },
+    );
   }
 
   return NextResponse.json({ received: true });

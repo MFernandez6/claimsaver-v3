@@ -30,6 +30,7 @@ import { SceneCapture } from "@/components/scene-capture";
 import { StepCoach } from "@/components/claim-form/step-coach";
 import { SignaturePad } from "@/components/claim-form/signature-pad";
 import { WorksheetPrintDocument } from "@/components/claim-form/worksheet-print-document";
+import { LegalReaccept } from "@/components/legal-reaccept";
 
 function Field({
   label,
@@ -76,7 +77,8 @@ export function ClaimFormWizard() {
   const { user, isLoaded, isSignedIn } = useSupabaseUser();
   const [me, setMe] = useState<Me | null>(null);
   const [claim, setClaim] = useState<ClaimDetail | null>(null);
-  const [form, setForm] = useState<FloridaNoFaultFormData>(emptyWorksheet);
+  const [form, setForm] = useState<FloridaNoFaultFormData>(emptyWorksheet());
+  const [loadingClaim, setLoadingClaim] = useState(true);
   const [step, setStep] = useState(1);
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -140,14 +142,16 @@ export function ClaimFormWizard() {
         if (cancelled) return;
         if (list[0]) {
           const detail = await webApi.get<ClaimDetail>(`/api/v1/claims/${list[0].id}`);
-          const worksheet = floridaNoFaultFormSchema.parse(detail.worksheet);
+          const parsed = floridaNoFaultFormSchema.safeParse(detail.worksheet);
+          const worksheet = parsed.success ? parsed.data : emptyWorksheet();
           setClaim(detail);
           setForm(worksheet);
           setStep(normalizeWorksheetStep(detail.worksheetStep || 1, worksheet));
         } else {
           const created = await webApi.post<ClaimDetail>("/api/v1/claims", {});
+          const parsedCreated = floridaNoFaultFormSchema.safeParse(created.worksheet);
           setClaim(created);
-          setForm(floridaNoFaultFormSchema.parse(created.worksheet));
+          setForm(parsedCreated.success ? parsedCreated.data : emptyWorksheet());
         }
       } catch (e) {
         if (e instanceof ApiClientError && e.status === 402) {
@@ -155,6 +159,8 @@ export function ClaimFormWizard() {
           return;
         }
         setError(e instanceof Error ? e.message : t("claimForm.loadFailed"));
+      } finally {
+        if (!cancelled) setLoadingClaim(false);
       }
     })();
     return () => {
@@ -223,6 +229,7 @@ export function ClaimFormWizard() {
       </div>
     );
   }
+  if (loadingClaim) return <p className="p-8 text-slate-500">{t("common.loading")}</p>;
   if (paywall) {
     return (
       <div className="mx-auto max-w-lg px-4 py-16 text-center">
@@ -241,6 +248,10 @@ export function ClaimFormWizard() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
+      {me && me.legalConsentCurrent === false ? (
+        <LegalReaccept onAccepted={() => setMe({ ...me, legalConsentCurrent: true })} />
+      ) : null}
+      {error ? <p className="mb-4 text-sm text-red-600">{error}</p> : null}
       <div className="print:hidden">
       <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{t("claimForm.header.title")}</p>
       <h1 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">{t("claimForm.guidedTitle")}</h1>

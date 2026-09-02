@@ -68,7 +68,7 @@ export default function HowItWorksPage() {
             ))}
           </ol>
           <p className="mt-10 text-sm text-slate-500">
-            {t("pages.howItWorks.notarizationNote")}
+            {t("pages.howItWorks.futureAddonsNote")}
           </p>
           <div className="mt-8 flex gap-3">
             <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">

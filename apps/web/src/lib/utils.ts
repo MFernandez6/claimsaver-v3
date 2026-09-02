@@ -6,10 +6,21 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatUsd(cents: number) {
+  if (!Number.isFinite(cents)) return "—";
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(cents / 100);
+}
+
+/** Safe YYYY-MM-DD for UI. Avoids `Invalid Date` on datetime-local leftovers. */
+export function formatDisplayDate(value: string | null | undefined) {
+  const raw = String(value || "").trim();
+  const iso = raw.match(/^(\d{4}-\d{2}-\d{2})/)?.[1];
+  if (!iso) return "";
+  const d = new Date(`${iso}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return "";
+  return new Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "numeric" }).format(d);
 }
 
 export function generateClaimNumber(now = new Date()) {

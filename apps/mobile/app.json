@@ -18,7 +18,7 @@
       "infoPlist": {
         "NSCameraUsageDescription": "Take photos of accident scenes, vehicle damage, and documents for your PIP file.",
         "NSPhotoLibraryUsageDescription": "Attach existing photos and documents to your claim workspace.",
-        "NSMicrophoneUsageDescription": "Optional if you later use video for notarization."
+        "NSMicrophoneUsageDescription": "Microphone access is reserved for future in-app features and is not required today."
       }
     },
     "android": {

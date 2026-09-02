@@ -192,7 +192,7 @@
       },
       "cost": {
         "question": "Combien coûte ClaimSaver+ ?",
-        "answer": "L’accès à la plateforme est un forfait de 500 $—une seule fois, pas un pourcentage de vos prestations. La notarisation en ligne facultative est un module distinct (~25 $) si vous l’ajoutez au paiement. Elle n’est pas obligatoire pour utiliser les outils guidés."
+        "answer": "L’accès à la plateforme est un forfait de 500 $—une seule fois, pas un pourcentage de vos prestations. C’est le seul produit en vente aujourd’hui. Les modules futurs, si nous les proposons, seront tarifés et divulgués séparément."
       },
       "accidents": {
         "question": "Quels types d'accidents couvre ClaimSaver+ ?",
@@ -218,7 +218,8 @@
       "linkNotarization": "Service de notarisation",
       "linkPricing": "Tarifs et paiement"
     },
-    "notaryNote": "Besoin de notariser un document ? Module facultatif ~25 $ via DocuSign—pas obligatoire pour utiliser la plateforme.",
+    "notaryNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme.",
+    "futureAddonsNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Nous pourrons proposer des modules facultatifs plus tard ; aucun n’est en vente aujourd’hui.",
     "graphicCaption": "Visuel illustratif—pas votre dossier et pas un montant garanti."
   },
   "pages": {
@@ -236,7 +237,8 @@
       "step4Body": "Utilisez calendriers, rappels et suivi des dépenses—y compris des rappels sur des délais courants comme la règle des 14 jours pour les premiers soins en Floride (information générale, pas de conseil juridique).",
       "step5Title": "Constituez et transmettez votre dossier",
       "step5Body": "Lorsque vous êtes prêt, réunissez vos documents en un dossier complet et transmettez-le à votre assureur.",
-      "notarizationNote": "Besoin de faire notariser un document ? Nous proposons une notarisation en ligne facultative via DocuSign, distincte du dépôt PIP guidé—environ 25 $ si vous l’ajoutez au paiement. Ce n’est pas requis pour utiliser la plateforme.",
+      "notarizationNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Nous pourrons proposer des modules facultatifs plus tard ; aucun n’est en vente aujourd’hui.",
+      "futureAddonsNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Nous pourrons proposer des modules facultatifs plus tard ; aucun n’est en vente aujourd’hui.",
       "viewPricing": "Voir les tarifs",
       "startFiling": "Commencer",
       "includesTitle": "Ce qui est inclus",
@@ -331,7 +333,7 @@
       "subtitle": "Assistance plateforme et technique",
       "body": "Pour l’aide à la connexion, la facturation ou l’utilisation du site, écrivez à {{supportEmail}}. Nous ne pouvons pas répondre sur le bien-fondé juridique de votre dossier ni vous dire quoi faire dans votre cas—ces questions relèvent d’un avocat agréé.",
       "emailLabel": "Courriel",
-      "notarizationNote": "La notarisation en ligne facultative est distincte du dépôt PIP guidé—ajoutez-la au paiement ou consultez d’abord les détails :",
+      "notarizationNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
       "headquarters": "Siège : Miami, Floride.",
       "attorneyCta": "Si votre affaire est trop complexe pour un dépôt PIP standard, voir Quand appeler un avocat."
     },
@@ -344,7 +346,7 @@
       "section2Title": "Ce que nous collectons et stockons",
       "section2Body": "Nous collectons les informations de compte que vous fournissez, les champs du formulaire que vous saisissez, les événements de calendrier et dépenses que vous créez, et les fichiers que vous téléversez. Les téléversements peuvent inclure des rapports de police ou d’accident, des dossiers et factures médicaux, des cartes d’assurance ou pages de conditions, des photos et des preuves similaires. Les journaux opérationnels peuvent inclure l’adresse IP, le type d’appareil et des horodatages pour la sécurité et le dépannage.",
       "section3Title": "Chiffrement et stockage",
-      "section3Body": "Le trafic entre votre navigateur et nos services utilise TLS (HTTPS). Le site public est hébergé par Vercel. Les fichiers et données sont stockés chez nos prestataires de base de données et de stockage (Supabase), qui appliquent un chiffrement au repos conforme aux pratiques du secteur. Si vous choisissez la notarisation à distance facultative, elle est traitée par DocuSign. Nous ne décrivons pas cela comme un « chiffrement de niveau bancaire ».",
+      "section3Body": "Le trafic entre votre navigateur et nos services utilise TLS (HTTPS). Le site public est hébergé par Vercel. Les fichiers et données sont stockés chez nos prestataires de base de données et de stockage (Supabase), qui appliquent un chiffrement au repos conforme aux pratiques du secteur. Nous ne décrivons pas cela comme un « chiffrement de niveau bancaire ».",
       "section4Title": "Paiements (Stripe)",
       "section4Body": "Les paiements par carte sont traités par Stripe. Nous ne stockons pas les numéros complets de carte sur les serveurs ClaimSaver+ pour les flux Checkout hébergés.",
       "section5Title": "Comptes et authentification",
@@ -352,7 +354,7 @@
       "section6Title": "E-mail et politique du domaine",
       "section6Body": "L’adresse de support de la plateforme est {{supportEmail}}. Les messages de compte transactionnels sont envoyés depuis notre domaine claimsaverplus.com.",
       "section7Title": "Conservation et suppression",
-      "section7Body": "Nous conservons le compte, la feuille de travail et les fichiers téléversés tant que le compte est ouvert. Après une demande de suppression ou la fermeture du compte (et toute conservation légale), nous visons à supprimer ou dé-identifier le contenu client sous 90 jours, sauf sauvegardes rotatives et dossiers que nous devons conserver pour les impôts, la fraude, les litiges ou la conformité (généralement jusqu’à sept ans pour les dossiers de paiement). Le statut de Floride §501.171 peut exiger un avis en cas d’atteinte aux informations personnelles. Voir la Politique de confidentialité pour les sous-traitants, la suppression et l’avis d’incident.",
+      "section7Body": "Nous conservons le compte, la feuille de travail et les fichiers téléversés tant que le compte est ouvert. Les clients connectés peuvent demander la suppression depuis le tableau de bord ; nous acceptons aussi un e-mail à {{supportEmail}}. Après une demande de suppression ou la fermeture du compte (et toute conservation légale), nous visons à supprimer ou dé-identifier le contenu client sous 90 jours, sauf sauvegardes rotatives et dossiers que nous devons conserver pour les impôts, la fraude, les litiges ou la conformité (généralement jusqu’à sept ans pour les dossiers de paiement). Le statut de Floride §501.171 peut exiger un avis en cas d’atteinte aux informations personnelles. Voir la Politique de confidentialité pour les sous-traitants, la suppression et l’avis d’incident.",
       "section8Title": "Contact",
       "section8Body": "Questions sur ce résumé : {{supportEmail}}."
     }
@@ -362,7 +364,7 @@
     "headlinePart1": "PIP en Floride.",
     "headlinePart2": "Logiciel guidé",
     "headlinePart3": "Accès à 500 $.",
-    "subtitle": "Le même produit que sur le reste du site : un logiciel pour préparer vos éléments de réclamation sans égard à la faute (PIP) en Floride—vous les envoyez à votre assureur. 500 $ couvrent uniquement l’accès à la plateforme. La notarisation en ligne facultative (~25 $) est un ajout distinct. ClaimSaver+ n’est pas un cabinet ; nous ne négocions pas avec les assureurs et ne sommes pas votre représentant.",
+    "subtitle": "Le même produit que sur le reste du site : un logiciel pour préparer vos éléments de réclamation sans égard à la faute (PIP) en Floride—vous les envoyez à votre assureur. 500 $ couvrent uniquement l’accès à la plateforme. ClaimSaver+ n’est pas un cabinet ; nous ne négocions pas avec les assureurs et ne sommes pas votre représentant.",
     "startClaim": "Commencer à remplir votre dossier",
     "learnMore": "En Savoir Plus",
     "selectServices": "Sélectionnez Vos Services et Paiement",
@@ -375,7 +377,7 @@
       },
       "notarization": {
         "name": "Services de Notarisation",
-        "description": "Notarisation de documents en ligne via DocuSign",
+        "description": "Non proposé aujourd’hui. Si nous ajoutons des services facultatifs plus tard, ils seront tarifés séparément.",
         "price": "25.00"
       }
     },
@@ -410,7 +412,8 @@
       "maximumRecovery": "Restez organisé et informé tout au long de votre dossier"
     },
     "comparisonNote": "Le seuil de permanence de Floride concerne un recours en souffrances contre un autre conducteur—pas le droit de déposer une réclamation PIP auprès de votre propre assureur. ClaimSaver+ est un logiciel, pas un cabinet d’avocats.",
-    "optionalNotarizationIntro": "L’accès à la plateforme PIP guidée (500 $) et la notarisation en ligne facultative (~25 $) sont des postes distincts. Vous ne payez la notarisation que si vous en avez besoin—voir ci-dessous.",
+    "optionalNotarizationIntro": "L’accès à la plateforme PIP guidée est de 500 $. C’est le seul produit en vente aujourd’hui.",
+    "futureAddonsNote": "Nous pourrons proposer des modules facultatifs plus tard. Aucun n’est en vente aujourd’hui et aucun n’est inclus dans les 500 $.",
     "selectServicesNotarizationHint": "Sélectionnez l’accès guidé pour le dépôt PIP. Ajoutez la notarisation seulement si vous devez faire notariser des documents ; elle est facturée séparément et ne fait pas partie du parcours PIP.",
     "selectServicesCheckoutNote": "Il s’agit du paiement pour cette visite—pas de votre tableau de bord ni d’une commande existante. Choisissez les services, puis payez en toute sécurité avec Stripe.",
     "platformAccessSubtitle": "Accès guidé à la plateforme—vous pilotez le processus",
@@ -483,8 +486,8 @@
       "faq3a": "Non. Nous ne garantissons aucun résultat financier. Les tableaux de cette page utilisent des exemples simplifiés. Les résultats dépendent de votre couverture, des faits et du traitement par l’assureur.",
       "faq4q": "Qui contacter pour les frais ou reçus ?",
       "faq4a": "Écrivez à {{supportEmail}} pour la facturation et l’assistance plateforme. Nous ne pouvons pas conseiller sur le fond juridique de votre dossier.",
-      "faq5q": "La notarisation est-elle incluse dans les 500 $ ?",
-      "faq5a": "Non. La notarisation en ligne facultative via DocuSign est une ligne distincte (~25 $) si vous l’ajoutez au paiement. Elle n’est pas requise pour les outils guidés.",
+      "faq5q": "Les modules sont-ils inclus dans les 500 $ ?",
+      "faq5a": "Non. 500 $ correspondent uniquement à l’accès à la plateforme. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils seront tarifés et divulgués séparément.",
       "modalServicesTitle": "Nos services",
       "modalServicesSavingsHeading": "Comparaison illustrative (exemple chiffré seulement)",
       "modalServicesSavingsDifferenceLabel": "Écart illustratif sur cet exemple",
@@ -502,7 +505,7 @@
     "selectAtLeastOne": "Sélectionnez au moins un service.",
     "checkoutFailed": "Échec du paiement",
     "redirecting": "Redirection…",
-    "checkoutNote": "Ceci est le parcours d’achat de cette visite—pas votre tableau de bord. Les prix sont fixés côté serveur ; vous choisissez seulement les produits à acheter.",
+    "checkoutNote": "Ceci est le parcours d’achat de cette visite—pas votre tableau de bord. Le seul produit en vente aujourd’hui est l’accès à la plateforme à 500 $.",
     "testing": {
       "kicker": "Test de production limité.",
       "body": "Merci de nous aider à valider ClaimSaver+ avec des paiements réels. Pendant cette période, les testeurs invités sont facturés {{testPrice}} pour l’accès à la plateforme. Ce montant de {{testPrice}} sera remboursé après le test. Le tarif catalogue reste {{listPrice}}. Il s’agit d’un vrai paiement Stripe ; vous recevez le même accès logiciel. Merci de ne pas partager ni diffuser ce tarif de test.",
@@ -861,7 +864,7 @@
       },
       "legal": {
         "question": "La notarisation numérique est-elle légalement valide?",
-        "answer": "Oui, la notarisation numérique est légalement valide dans tous les 50 états et est reconnue par les tribunaux, les agences gouvernementales et les entreprises à travers le pays."
+        "answer": "La Floride reconnaît la notarisation en ligne à distance lorsqu’elle est effectuée par un notaire à distance commissionné en Floride sur une plateforme RON approuvée. ClaimSaver+ vend une séance DocuSign Notary à cette fin—pas une simple signature électronique tapée."
       },
       "documents": {
         "question": "Quels documents peuvent être notarisés en ligne?",
@@ -869,7 +872,7 @@
       },
       "duration": {
         "question": "Combien de temps prend le processus?",
-        "answer": "L'ensemble du processus de notarisation numérique prend généralement 5-10 minutes du début à la fin, y compris le téléchargement de documents et la vérification du notaire."
+        "answer": "Après le paiement, nous vous écrivons pour planifier. La durée dépend du réseau de notaires DocuSign et de votre vérification d’identité. Ce n’est pas un bouton de 5 minutes dans ClaimSaver+."
       },
       "requirements": {
         "question": "De quoi ai-je besoin pour commencer?",
@@ -881,12 +884,12 @@
       }
     },
     "pageTitle": "Notarisation en ligne facultative",
-    "pageIntro": "La notarisation ne fait pas partie du dépôt PIP guidé. Le prix est d’environ 25 $ par document via la notarisation à distance DocuSign.",
+    "pageIntro": "La notarisation ne fait pas partie du dépôt PIP guidé. Après l’achat du complément d’environ 25 $, ClaimSaver+ planifie une séance DocuSign Notary. Cette séance doit être réalisée par un notaire à distance commissionné en Floride selon le chapitre 117 des statuts de Floride (y compris le §117.209). Ce n’est pas une signature électronique générique et ce n’est pas instantané. Nous vous écrirons pour terminer la preuve d’identité et la séance en direct.",
     "needId": "Pièce d’identité officielle valide",
     "needDevice": "Appareil avec caméra et microphone",
     "needPdf": "Document (généralement PDF)",
     "needAvailability": "La disponibilité dépend du réseau de notaires DocuSign—pas 24 h/24 à la demande",
-    "notLegalReview": "Ceci n’est pas un examen juridique ClaimSaver+ du document. N’incluez pas la notarisation dans les 500 $.",
+    "notLegalReview": "Ceci n’est pas un examen juridique ClaimSaver+ du document. N’incluez pas la notarisation dans les 500 $. Si un notaire à distance commissionné en Floride n’est pas disponible, nous remboursons le complément de 25 $.",
     "addAtCheckout": "Ajouter au paiement",
     "promoSection": {
       "description": "Notarisation à distance via DocuSign avec accès protégé par TLS. La disponibilité du notaire et la durée de la session dépendent du réseau DocuSign et du notaire—pas 24 h/24 à la demande ni une fin « instantanée » garantie.",
@@ -1018,6 +1021,7 @@
     "uploading": "Téléversement…",
     "uploadSuccess": "Enregistré dans votre coffre de documents : {{name}}. Il n’est pas envoyé à un assureur.",
     "docsHint": "Typique : rapports de police, dossiers et factures médicaux, attestations d’assurance, photos, preuves de salaire, correspondance de l’assureur.",
+    "docOpenFailed": "Impossible d’ouvrir ce fichier. Réessayez, ou téléchargez-le si le navigateur a bloqué l’aperçu.",
     "reminderTitle": "Titre du rappel",
     "calendarHint": "Lorsque vous saisissez une date d’accident sur la feuille de travail, des modèles d’étapes orientés PIP en Floride peuvent être ajoutés automatiquement. Ce sont des informations générales, pas un conseil juridique.",
     "expenseIntro": "Organisation personnelle des montants que vous saisissez—pas un suivi médical ou juridique. Total enregistré : {{total}}",
@@ -1056,7 +1060,7 @@
     "cookiePolicy": "Politique des Cookies",
     "legalDisclaimer": "Avertissement Légal",
     "legalText": "ClaimSaver+ est une plateforme technologique de réclamation guidée—pas un cabinet d'avocats. Nous ne fournissons pas de conseils juridiques, de représentation, d'évaluation de réclamation ni de négociation avec les assureurs en votre nom. Les informations sont générales et éducatives. Vous déposez votre réclamation PIP avec nos outils—vous êtes le déposant, pas ClaimSaver+. Pour votre situation, consultez un avocat. Nous ne garantissons aucun résultat. ClaimSaver+ n’exploite pas un service d’orientation vers des avocats et ne paie ni ne perçoit d’honoraires pour vous présenter un avocat ou un autre professionnel. Les pages éducatives telles que Quand appeler un avocat sont uniquement des informations générales.",
-    "optionalNotarization": "Notarisation en ligne facultative (DocuSign) proposée séparément—voir Notarisation et Tarifs.",
+    "optionalNotarization": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
     "services": "Services",
     "company": "Entreprise",
     "legal": "Mentions légales",
@@ -1188,8 +1192,8 @@
       }
     },
     "optionalNotarization": {
-      "title": "Option distincte : notarisation en ligne",
-      "body": "Besoin de faire notariser des documents ? Nous proposons la notarisation à distance via DocuSign moyennant des frais distincts (~25 $). Ce n’est pas inclus dans le service guidé du formulaire PIP—vous ne l’ajoutez que si nécessaire, au paiement ou après lecture de la page Notarisation.",
+      "title": "Modules futurs",
+      "body": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Nous pourrons proposer des modules facultatifs plus tard. S’il y en a, ils auront leur propre prix et mentions et ne seront pas regroupés dans l’accès à la plateforme sans un achat distinct.",
       "linkNotarization": "Service de notarisation",
       "linkPricing": "Tarifs et paiement"
     },
@@ -1256,7 +1260,7 @@
       "item6": "Un résumé imprimable de ce que vous avez saisi",
       "item7": "Contenu éducatif général sur le fonctionnement habituel du PIP en Floride"
     },
-    "notaryNote": "La notarisation en ligne est un module distinct (~25 $ via DocuSign) et n’est pas incluse dans les 500 $ d’accès à la plateforme.",
+    "notaryNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
     "seeHow": "Voir comment ça marche"
   },
   "success": {
@@ -1365,7 +1369,7 @@
     "checkoutGateSubtitle": "Vous avez besoin d’un compte avant de payer et d’ouvrir la demande PIP. Créez-en un maintenant, ou connectez-vous si vous en avez déjà un—puis nous vous emmenons au paiement.",
     "checkoutCreateTab": "Créer un compte",
     "checkoutSignInTab": "Connexion",
-    "ageTermsConsent": "J’ai 18 ans ou plus et j’accepte les <terms>Conditions d’utilisation</terms> et la <privacy>Politique de confidentialité</privacy>.",
+    "ageTermsConsent": "J’ai 18 ans ou plus et j’accepte les <terms>Conditions d’utilisation</terms> (y compris l’arbitrage et la renonciation aux actions collectives) et la <privacy>Politique de confidentialité</privacy>. Il s’agit d’un accord clickwrap contraignant. Un enregistrement horodaté de cette acceptation est conservé avec mon compte.",
     "ageTermsRequired": "Confirmez que vous avez 18 ans ou plus et que vous acceptez les Conditions d’utilisation et la Politique de confidentialité.",
     "authNotConfigured": "L’authentification n’est pas configurée. Ajoutez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY dans apps/web/.env.local, puis redémarrez le serveur.",
     "resetTitle": "Réinitialiser le mot de passe",
@@ -1380,23 +1384,32 @@
       "staySignedIn": "Rester connecté"
     }
   },
+  "legal": {
+    "reacceptTitle": "Conditions et Politique de confidentialité mises à jour",
+    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 2026-09-04). Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
+    "reacceptCta": "J’accepte — continuer",
+    "consentFailed": "Nous n’avons pas pu enregistrer votre accord. Vérifiez la connexion et réessayez.",
+    "requestDeletion": "Demander la suppression du compte",
+    "deletionRequested": "Nous avons enregistré votre demande de suppression. Le support la traitera à support@claimsaverplus.com.",
+    "deletionFailed": "Impossible d’enregistrer la demande. Écrivez à support@claimsaverplus.com depuis ce compte."
+  },
   "legalPages": {
     "privacyTitle": "Politique de confidentialité",
     "termsTitle": "Conditions d’utilisation",
     "terms": {
       "title": "Conditions d’utilisation",
-      "updated": "En vigueur à compter du 19 août 2026.",
-      "intro": "Les présentes Conditions d’utilisation (« Conditions ») constituent un contrat entre vous et ClaimSaver+ (l’exploitant de claimsaverplus.com, « nous »). En créant un compte, en payant l’accès à la plateforme ou en utilisant le site, vous acceptez ces Conditions. Si vous n’êtes pas d’accord, n’utilisez pas le service. Ces Conditions sont un contrat produit, pas un conseil juridique. Le texte anglais fait foi.",
+      "updated": "En vigueur à compter du 4 septembre 2026. Version 2026-09-04.",
+      "intro": "Les présentes Conditions d’utilisation (« Conditions ») constituent un contrat entre vous et CLAIMSAVERPLUS LLC, une société à responsabilité limitée de Floride exerçant sous le nom ClaimSaver+ (« ClaimSaver+ », « nous »), qui exploite claimsaverplus.com. Vous acceptez ces Conditions en cochant « J’accepte » à la création du compte ou au paiement. Nous conservons un enregistrement horodaté de ce clickwrap (compte, document, version, heure, IP et agent utilisateur). Consulter les pages publiques n’est pas une acceptation. Si vous n’êtes pas d’accord, ne créez pas de compte et ne payez pas. Ces Conditions sont un contrat produit, pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Ce qu’est ClaimSaver+",
       "s1Body": "ClaimSaver+ est un logiciel en libre-service qui aide les conducteurs de Floride à préparer, organiser et stocker leurs propres documents de dossier no-fault (PIP) automobile. Nous vendons l’accès à des outils. Nous ne sommes pas un cabinet d’avocats, pas votre avocat, pas un expert public, pas votre représentant auprès d’un assureur et pas un gestionnaire de sinistres. Vous restez le déposant. Nous n’évaluons pas le bien-fondé juridique de votre dossier, ne négocions pas avec les assureurs, ne parlons pas à un expert en votre nom et n’envoyons pas votre dossier à un transporteur.",
       "s2Title": "2. Admissibilité",
       "s2Body": "Vous devez avoir au moins 18 ans pour créer un compte. La plateforme concerne les dossiers PIP de Floride. Vous pouvez utiliser un compte pour organiser un dossier pour vous-même ou pour un mineur dont vous êtes le parent ou tuteur légal ; vous restez le titulaire du compte et êtes responsable de tout ce qui est saisi ou téléversé. Le service n’est pas offert pour la gestion commerciale de dossiers pour des tiers non liés, et il ne remplace pas des services professionnels licenciés lorsque ceux-ci sont requis.",
       "s3Title": "3. Votre compte et vos informations",
       "s3Body": "Vous êtes responsable de l’exactitude des informations que vous saisissez, de la sécurité de vos identifiants et de l’activité sur votre compte. Enregistrer dans votre compte ClaimSaver+ stocke un brouillon. Cela n’envoie rien à un assureur. Le formulaire officiel de l’assureur, votre police et le droit de Floride appliqué à vos faits font foi. Nous ne garantissons pas qu’une feuille de travail, un rappel ou une liste de contrôle soit complet, à jour ou suffisant pour votre situation.",
-      "s4Title": "4. Tarifs, accès et notarisation facultative",
-      "s4Body": "Le tarif standard de la plateforme est un paiement unique de 500 $ pour l’accès logiciel (formulaires guidés, stockage, suivi, rappels et contenu éducatif). Ce n’est pas un honoraire de contingence, pas une provision pour représentation et pas un abonnement. L’accès commence lorsque le paiement aboutit. La notarisation à distance facultative est facturée séparément (environ 25 $) et n’est pas requise pour utiliser la plateforme. Les cartes sont traitées par Stripe. Nous ne stockons pas les numéros complets de carte dans le produit destiné aux clients.",
+      "s4Title": "4. Tarifs, accès et modules futurs",
+      "s4Body": "Le tarif standard de la plateforme est un paiement unique de 500 $ pour l’accès logiciel (formulaires guidés, stockage, suivi, rappels et contenu éducatif). Ce n’est pas un honoraire de contingence, pas une provision pour représentation et pas un abonnement. L’accès commence lorsque le paiement aboutit. Ces 500 $ sont le seul produit que nous vendons aujourd’hui. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils auront leur propre prix, conditions et ligne de paiement, et ne seront pas regroupés dans les 500 $ sans un achat distinct. Les cartes sont traitées par Stripe. Nous ne stockons pas les numéros complets de carte.",
       "s5Title": "5. Remboursements et résiliation",
-      "s5Body": "Vous pouvez cesser d’utiliser le logiciel à tout moment. L’accès numérique étant livré lorsque le paiement aboutit, les remboursements ne sont pas automatiques et nous ne proratons pas les 500 $. Nous examinerons une demande écrite envoyée à {{supportEmail}} dans les 14 jours suivant l’achat si vous n’avez pas commencé la feuille guidée et n’avez pas téléversé de documents. Nous ne remboursons pas parce qu’un rappel n’est pas apparu, parce que vous avez manqué une fenêtre de traitement ou de dépôt, ou parce qu’un assureur a retardé, réduit ou refusé des prestations. La notarisation facultative suit les pratiques de remboursement du réseau notarial une fois une séance planifiée ou terminée. Rien dans cette section ne limite les droits de remboursement ou d’annulation que le droit de Floride ou une autre loi applicable ne nous permet pas de renoncer.",
+      "s5Body": "Vous pouvez cesser d’utiliser le logiciel à tout moment. L’accès numérique étant livré lorsque le paiement aboutit, les remboursements ne sont pas automatiques et nous ne proratons pas les 500 $. Nous examinerons une demande écrite envoyée à {{supportEmail}} dans les 14 jours suivant l’achat si vous n’avez pas commencé la feuille guidée et n’avez pas téléversé de documents. Nous ne remboursons pas parce qu’un rappel n’est pas apparu, parce que vous avez manqué une fenêtre de traitement ou de dépôt, ou parce qu’un assureur a retardé, réduit ou refusé des prestations. Rien dans cette section ne limite les droits de remboursement ou d’annulation que le droit de Floride ou une autre loi applicable ne nous permet pas de renoncer.",
       "s6Title": "6. Les rappels sont de l’éducation, pas des délais juridiques",
       "s6Body": "Les éléments de calendrier et les avis de fenêtre de traitement PIP de 14 jours sont des informations générales et des rappels facultatifs basés sur les dates que vous saisissez. Ils ne déterminent pas si une visite « compte », ne remplacent pas votre police ni la loi, et ne promettent pas qu’un rappel sera envoyé, reçu ou opportun. Vous êtes seul responsable d’obtenir des soins, de gérer votre calendrier et d’envoyer les documents à votre assureur. Nous ne garantissons aucun résultat financier ou de dossier.",
       "s7Title": "7. Exclusion de garanties",
@@ -1418,20 +1431,24 @@
       "s15Title": "15. Modifications",
       "s15Body": "Nous pouvons mettre à jour ces Conditions. La date d’entrée en vigueur en haut changera. L’usage continu après une mise à jour constitue l’acceptation des Conditions révisées, sauf lorsque la loi applicable exige un avis ou un consentement supplémentaire. Si vous n’êtes pas d’accord, cessez d’utiliser le service et contactez-nous au sujet de votre compte.",
       "s16Title": "16. Contact",
-      "s16Body": "ClaimSaver+ est exploité depuis Miami, Floride. Pour les questions de plateforme et de facturation uniquement, écrivez à {{supportEmail}}. Nous ne pouvons pas vous conseiller sur le bien-fondé juridique de votre dossier. Faites examiner ces Conditions par un avocat floridien en réglementation des assurances et en droit de la consommation si vous avez besoin de conseils à leur sujet."
+      "s16Body": "Ces Conditions sont proposées par CLAIMSAVERPLUS LLC d/b/a ClaimSaver+, exploitée depuis Miami, Floride. Pour les questions de plateforme et de facturation uniquement, écrivez à {{supportEmail}}. Les avis formels peuvent être envoyés à cette adresse jusqu’à publication d’une adresse postale sur cette page. Nous ne pouvons pas vous conseiller sur le bien-fondé juridique de votre dossier. Faites examiner ces Conditions par un avocat floridien en réglementation des assurances et en droit de la consommation si vous avez besoin de conseils à leur sujet.",
+      "s17Title": "17. Propriété intellectuelle",
+      "s17Body": "ClaimSaver+ et ses concédants possèdent le site, le logiciel, les marques, les graphiques et le texte éducatif. Vous recevez une licence limitée, non exclusive et incessible pour utiliser la plateforme pour votre propre dossier PIP de Floride tant que votre accès reste payé et en règle. Vous ne pouvez pas copier, revendre, extraire ni construire un service concurrent à partir de nos contenus. Vous conservez la propriété des informations et fichiers que vous saisissez. Vous nous accordez une licence limitée pour héberger, afficher et traiter ce contenu uniquement pour exploiter le produit, le sécuriser et respecter la loi. Vous déclarez avoir le droit de téléverser ce que vous téléversez.",
+      "s18Title": "18. Signatures et enregistrements électroniques",
+      "s18Body": "Vous consentez à faire affaire électroniquement avec nous, y compris en cliquant « J’accepte », en tapant ou dessinant un nom sur les autorisations de la feuille, et en recevant des avis par e-mail. Ces actes sont destinés à constituer votre signature électronique en vertu de la loi fédérale E-SIGN et du Florida Uniform Electronic Transaction Act. Les signatures de la feuille concernent votre propre dossier ; elles ne sont pas un acte notarial. Vous êtes responsable de tenir votre e-mail à jour pour les reçus et les mises à jour des documents juridiques."
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "updated": "En vigueur à compter du 19 août 2026.",
-      "intro": "Cette Politique de confidentialité explique comment ClaimSaver+ collecte, utilise et partage des informations lorsque vous utilisez claimsaverplus.com et les applications liées. Elle s’applique au produit logiciel. Ce n’est pas un conseil juridique. Le texte anglais fait foi.",
+      "updated": "En vigueur à compter du 4 septembre 2026. Version 2026-09-04.",
+      "intro": "Cette Politique de confidentialité explique comment CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collecte, utilise et partage des informations lorsque vous utilisez claimsaverplus.com et les applications liées. Elle s’applique au produit logiciel. Ce n’est pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Qui nous sommes",
-      "s1Body": "ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Siège : Miami, Floride.",
+      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Siège : Miami, Floride.",
       "s2Title": "2. Informations que nous collectons",
       "s2Body": "Vous pouvez fournir : nom, e-mail, mot de passe et champs de profil ; réponses de la feuille de dossier (identité, accident, blessure, emploi, assurance, autorisations) ; et des fichiers que vous téléversez, qui peuvent inclure des rapports de police ou d’accident, des dossiers et factures médicaux, des cartes d’assurance ou pages de conditions, des photos et des preuves similaires. Nous collectons aussi des données techniques telles que l’adresse IP, le type d’appareil, le navigateur, les horodatages et les journaux de sécurité. Les numéros de carte sont collectés par Stripe, non stockés par nous comme PAN complet pour Checkout hébergé.",
       "s3Title": "3. Comment nous utilisons les informations",
       "s3Body": "Nous utilisons les informations pour exploiter votre compte, fournir la feuille, le coffre, le calendrier et les rappels, traiter les paiements, envoyer des e-mails transactionnels (par exemple confirmation et réinitialisation de mot de passe), sécuriser le service, déboguer et respecter la loi. Nous ne vendons pas vos informations personnelles. Nous n’envoyons pas votre dossier à un assureur ; vous le faites.",
       "s4Title": "4. Prestataires (sous-traitants)",
-      "s4Body": "Nous utilisons des tiers pour exploiter le produit, notamment : Stripe (paiements) ; Supabase (base de données, authentification et stockage de fichiers) ; Vercel (hébergement et diffusion du site) ; et, si vous choisissez la notarisation facultative, DocuSign (notarisation en ligne à distance). Ces prestataires traitent les données selon leurs propres conditions et contrôles de sécurité. Nous ne contrôlons pas comment un assureur, un prestataire médical ou un notaire que vous choisissez indépendamment traitera les documents que vous leur envoyez.",
+      "s4Body": "Nous utilisons ces sous-traitants pour exploiter le produit : Stripe (paiements et checkout) ; Supabase (base de données, authentification et stockage de fichiers, États-Unis) ; et Vercel (hébergement, diffusion et Vercel Analytics). Nous n’envoyons pas votre feuille à un modèle d’IA pour évaluer votre dossier. Ces prestataires traitent les données selon leurs propres conditions. Nous ne contrôlons pas comment un assureur ou un prestataire médical avec lequel vous traitez indépendamment traitera les documents que vous leur envoyez.",
       "s5Title": "5. Conservation",
       "s5Body": "Nous conservons le compte, la feuille et les fichiers téléversés tant que le compte reste ouvert afin que vous puissiez revenir à un brouillon. Après une demande de suppression, ou après la fermeture d’un compte et l’expiration de toute conservation légale, nous visons à supprimer ou dé-identifier le contenu client sous 90 jours, sauf sauvegardes à cycle plus long et dossiers que nous devons conserver pour les impôts, la prévention de la fraude, les litiges ou la conformité (généralement jusqu’à sept ans pour les dossiers de paiement). Les rappels de calendrier n’existent que tant que les données liées restent dans votre compte.",
       "s6Title": "6. Partage",
@@ -1441,22 +1458,24 @@
       "s8Title": "8. Incidents de sécurité (Floride)",
       "s8Body": "Si nous déterminons qu’une atteinte aux informations personnelles s’est produite, nous enquêterons et aviserons les résidents de Floride concernés conformément au statut de Floride §501.171, y compris un avis sans délai déraisonnable et au plus tard 30 jours après cette détermination, sauf délai autorisé par les autorités. L’avis décrira l’incident en termes généraux, les types d’informations concernées dans la mesure connue, les mesures de protection que nous prenons, et comment nous joindre à {{supportEmail}}. Nous pouvons aussi aviser le Florida Department of Legal Affairs comme l’exige ce statut.",
       "s9Title": "9. Vos choix et suppression",
-      "s9Body": "Vous pouvez consulter et mettre à jour une grande partie de votre feuille dans le produit. Pour exporter ou supprimer votre compte, écrivez à {{supportEmail}} depuis l’adresse du compte. Nous honorerons les demandes de suppression et d’accès comme l’exige la loi applicable, y compris le Florida Information Protection Act of 2014 (§501.171) lorsqu’il s’applique, et d’autres droits des consommateurs non renonçables. Nous pouvons conserver des dossiers limités comme décrit sous Conservation. Supprimer votre compte ClaimSaver+ ne supprime pas les copies que vous (ou un assureur ou prestataire) détenez déjà.",
+      "s9Body": "Vous pouvez consulter et mettre à jour une grande partie de votre feuille dans le produit. Les clients connectés peuvent toucher « Demander la suppression du compte » sur le tableau de bord. Cela crée une demande horodatée que nous traitons depuis la boîte de support, ou vous pouvez écrire à {{supportEmail}} depuis l’adresse du compte. Nous visons à terminer la suppression ou la dé-identification sous 30 jours après vérification de la demande, sous réserve de Conservation (impôts, fraude, litiges et conservations légales). Nous honorerons les droits d’accès et de suppression qu’exigent la Floride ou une autre loi applicable, y compris le statut de Floride §501.171 lorsqu’il s’applique. Supprimer votre compte ClaimSaver+ ne supprime pas les copies que vous, un assureur ou un prestataire détenez déjà.",
       "s10Title": "10. Enfants",
       "s10Body": "Le service n’est pas destiné aux enfants de moins de 18 ans. Vous devez avoir 18 ans ou plus pour créer un compte. Si nous apprenons avoir collecté un compte d’un enfant, nous le supprimerons. Un parent ou tuteur de 18 ans ou plus peut utiliser son propre compte en lien avec l’accident d’un mineur ; cet adulte est le client aux fins de confidentialité.",
       "s11Title": "11. Modifications",
       "s11Body": "Nous pouvons mettre à jour cette Politique. La date d’entrée en vigueur changera. Les changements importants seront publiés sur cette page. L’usage continu après une mise à jour signifie que vous acceptez la Politique révisée, sauf lorsque la loi exige un consentement.",
       "s12Title": "12. Contact",
-      "s12Body": "Demandes de confidentialité et de suppression : {{supportEmail}}. Nous ne pouvons pas donner de conseil juridique sur votre dossier ni sur le fait de savoir si vous devez fournir un document particulier à un assureur."
+      "s12Body": "Demandes de confidentialité et de suppression : {{supportEmail}}. Nous ne pouvons pas donner de conseil juridique sur votre dossier ni sur le fait de savoir si vous devez fournir un document particulier à un assureur.",
+      "s13Title": "13. Cookies et suivi",
+      "s13Body": "Nous utilisons des cookies et un stockage similaire nécessaires pour vous garder connecté, mémoriser votre langue et protéger la session. Nous utilisons aussi Vercel Analytics, qui collecte des données de visite agrégées (pages, référents, type d’appareil) pour voir si le site fonctionne. Nous n’exécutons pas de pixels publicitaires et ne vendons pas de données de navigation. Vous pouvez bloquer les cookies non essentiels dans le navigateur ; le site peut encore avoir besoin de cookies essentiels pour vous connecter. Stripe Checkout définit ses propres cookies lorsque vous payez."
     },
     "accessibility": {
       "title": "Accessibilité",
       "updated": "En vigueur à compter du 19 août 2026.",
       "intro": "ClaimSaver+ veut que les personnes handicapées puissent découvrir le produit, créer un compte et utiliser l’espace de travail guidé. Cette déclaration décrit notre intention et comment demander de l’aide. Ce n’est pas une certification de conformité et pas une renonciation à un droit.",
       "s1Title": "1. Notre objectif",
-      "s1Body": "Nous visons à concevoir claimsaverplus.com pour qu’il puisse être utilisé avec des technologies d’assistance courantes, y compris la navigation au clavier, un contraste lisible et un texte redimensionnable. Nous traitons les Web Content Accessibility Guidelines (WCAG) 2.2 Niveau AA comme un objectif de conception. Le site en production peut ne pas encore atteindre cet objectif dans chaque vue, surtout les pages plus anciennes et les intégrations tierces (par exemple Stripe Checkout ou DocuSign).",
+      "s1Body": "Nous visons à concevoir claimsaverplus.com pour qu’il puisse être utilisé avec des technologies d’assistance courantes, y compris la navigation au clavier, un contraste lisible et un texte redimensionnable. Nous traitons les Web Content Accessibility Guidelines (WCAG) 2.2 Niveau AA comme un objectif de conception. Le site en production peut ne pas encore atteindre cet objectif dans chaque vue, surtout les pages plus anciennes et les intégrations tierces (par exemple Stripe Checkout).",
       "s2Title": "2. Outils tiers",
-      "s2Body": "Le paiement et la notarisation facultative s’exécutent sur Stripe et DocuSign. Leurs écrans sont contrôlés par ces entreprises. Si un parcours tiers constitue une barrière, écrivez-nous et nous vous aiderons à accomplir l’étape autrement lorsque cela est raisonnablement possible (par exemple une alternative prise en charge pour le compte ou la facturation).",
+      "s2Body": "Le paiement s’exécute sur Stripe. Ces écrans sont contrôlés par Stripe. Si un parcours tiers constitue une barrière, écrivez-nous et nous vous aiderons à accomplir l’étape autrement lorsque cela est raisonnablement possible (par exemple une alternative prise en charge pour le compte ou la facturation).",
       "s3Title": "3. Comment demander un aménagement",
       "s3Body": "Écrivez à {{supportEmail}} avec l’objet « Accessibility », une description de la barrière, la page ou la tâche, et la technologie d’assistance que vous utilisez si vous souhaitez le partager. Nous répondrons sur l’accès à la plateforme : connexion, facturation et usage du site. Nous ne pouvons pas fournir de conseil juridique ni accomplir votre dépôt auprès de l’assureur.",
       "s4Title": "4. Commentaires",

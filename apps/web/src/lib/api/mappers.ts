@@ -2,6 +2,7 @@ import {
   emptyWorksheet,
   floridaNoFaultFormSchema,
   isWorksheetComplete,
+  normalizeAccidentDate,
   TOTAL_WORKSHEET_STEPS,
   type ClaimDetail,
   type ClaimSummary,
@@ -21,7 +22,12 @@ export function toClaimSummary(row: Record<string, unknown>): ClaimSummary {
     claimNumber: str(row.claim_number),
     status: (str(row.status) || "draft") as ClaimSummary["status"],
     priority: (str(row.priority) || "medium") as ClaimSummary["priority"],
-    accidentDate: str(ws.accidentDate || ws.dateOfAccident) || null,
+    accidentDate:
+      normalizeAccidentDate({
+        dateOfAccident: str(ws.dateOfAccident),
+        accidentDate: str(ws.accidentDate),
+        accidentDateTime: str(ws.accidentDateTime),
+      }) || null,
     accidentLocation: str(ws.accidentLocation || ws.accidentPlace) || null,
     claimantName: str(ws.claimantName) || null,
     estimatedValue: typeof ws.estimatedValue === "number" ? ws.estimatedValue : null,

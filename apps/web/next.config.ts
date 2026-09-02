@@ -22,7 +22,7 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https:",
       "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://*.stripe.com https://va.vercel-insights.com https://vitals.vercel-insights.com",
-      "frame-src https://js.stripe.com https://hooks.stripe.com https://*.docusign.com https://*.docusign.net",
+      "frame-src https://js.stripe.com https://hooks.stripe.com",
     ].join("; "),
   },
 ];
@@ -41,6 +41,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/what-we-do", destination: "/how-it-works", permanent: true },
       { source: "/license-credentials", destination: "/who-we-are", permanent: true },
+      { source: "/notarization", destination: "/pricing", permanent: true },
     ];
   },
 };

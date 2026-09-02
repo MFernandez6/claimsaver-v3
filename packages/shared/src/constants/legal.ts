@@ -5,6 +5,14 @@ export const HEADQUARTERS = "Miami, Florida";
 export const SITE_HOST = "claimsaverplus.com";
 export const SUPPORT_EMAIL = "support@claimsaverplus.com";
 
+/** Bump when ToS or Privacy materially change so clickwrap can be re-collected. */
+export const LEGAL_DOCUMENTS_VERSION = "2026-09-04";
+
+/** Florida LLC filed 2026. Use on contracts, receipts, and formal notices. */
+export const LEGAL_ENTITY_NAME = "CLAIMSAVERPLUS LLC";
+export const LEGAL_ENTITY_DBA = "ClaimSaver+";
+export const LEGAL_ENTITY_DISPLAY = "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+";
+
 /** Founder credentials for public footer / trust copy — not representation. */
 export const FOUNDER = {
   name: "Miguel A. Fernandez, M.Sc.",

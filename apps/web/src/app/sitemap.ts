@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/who-we-are",
     "/learning-center",
     "/when-to-call-an-attorney",
-    "/notarization",
     "/contact",
     "/privacy-policy",
     "/terms-of-service",

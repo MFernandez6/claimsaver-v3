@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 
   const parsed = checkoutRequestSchema.safeParse(await req.json().catch(() => ({})));
   if (!parsed.success) {
-    return jsonErr("Select at least one product: platform and/or notarization.");
+    return jsonErr("Select platform access to continue to checkout.");
   }
 
   const origin = siteUrl().replace(/\/$/, "");

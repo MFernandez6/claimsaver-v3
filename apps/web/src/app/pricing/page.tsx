@@ -6,7 +6,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { PLATFORM_PRICE_TESTING, PRODUCTS, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
 import { ProductionTestingNotice } from "@/components/production-testing-notice";
+import { AgeTermsConsent } from "@/components/auth/age-terms-consent";
 import { PricingCompare } from "@/components/pricing-compare";
+import { flushPendingLegalConsent, markPendingLegalConsent } from "@/lib/legal-consent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
@@ -35,13 +37,11 @@ function PricingInner() {
     params.get("account_created") !== "1";
   const started = useRef(false);
   const [platform, setPlatform] = useState(params.get("platform") !== "0");
-  const [notarization, setNotarization] = useState(params.get("notarization") === "1");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [ageTerms, setAgeTerms] = useState(false);
 
-  const total =
-    (platform ? PRODUCTS.platform.amountCents : 0) +
-    (notarization ? PRODUCTS.notarization.amountCents : 0);
+  const total = platform ? PRODUCTS.platform.amountCents : 0;
 
   async function startCheckout() {
     setError(null);
@@ -49,7 +49,7 @@ function PricingInner() {
     if (!isSignedIn) {
       const afterAccount = SKIP_PAYMENTS_FOR_PROMO
         ? "/dashboard"
-        : pricingCheckoutPath({ platform, notarization });
+        : pricingCheckoutPath({ platform });
       router.push(`/checkout-account?next=${encodeURIComponent(afterAccount)}`);
       return;
     }
@@ -57,16 +57,23 @@ function PricingInner() {
       router.push("/dashboard");
       return;
     }
-    const products = [
-      ...(platform ? (["platform"] as const) : []),
-      ...(notarization ? (["notarization"] as const) : []),
-    ];
+    const products = platform ? (["platform"] as const) : [];
     if (products.length === 0) {
       setError(t("pricing.selectAtLeastOne"));
       return;
     }
+    if (!ageTerms) {
+      setError(t("auth.ageTermsRequired"));
+      return;
+    }
     setLoading(true);
+    markPendingLegalConsent("pricing");
     try {
+      try {
+        await flushPendingLegalConsent();
+      } catch {
+        /* Consent row retries after checkout if the table is not live yet. */
+      }
       const data = await webApi.post<{ url: string }>("/api/v1/checkout", { products });
       if (data.url) window.location.href = data.url;
     } catch (e) {
@@ -122,6 +129,7 @@ function PricingInner() {
               <p className="text-sm text-slate-500">
                 {t("pricing.checkoutNote")}
               </p>
+              <p className="text-sm text-slate-500">{t("pricing.futureAddonsNote")}</p>
             </CardHeader>
             <CardContent className="space-y-4">
               <label className="flex cursor-pointer flex-col gap-3 rounded-xl border p-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
@@ -142,22 +150,13 @@ function PricingInner() {
                   <input type="checkbox" className="mt-2" checked={platform} onChange={(e) => setPlatform(e.target.checked)} />
                 </div>
               </label>
-              <label className="flex cursor-pointer flex-col gap-3 rounded-xl border p-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-                <div>
-                  <p className="font-semibold">{t("pricing.services.notarization.name")}</p>
-                  <p className="text-sm text-slate-500">{t("pricing.services.notarization.description")}</p>
-                </div>
-                <div className="text-left sm:text-right">
-                  <p className="font-bold">{PRODUCTS.notarization.displayPrice}</p>
-                  <input type="checkbox" className="mt-2" checked={notarization} onChange={(e) => setNotarization(e.target.checked)} />
-                </div>
-              </label>
               <div className="flex items-center justify-between border-t pt-4">
                 <span className="font-medium">{t("pricing.ui.totalLabel")}</span>
                 <span className="text-xl font-bold">{formatUsd(total)}</span>
               </div>
               {error ? <p className="text-sm text-red-600">{error}</p> : null}
-              <Button disabled={loading || total === 0} onClick={() => void startCheckout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
+              <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
+              <Button disabled={loading || total === 0 || !ageTerms} onClick={() => void startCheckout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
                 {ctaLabel}
               </Button>
               {SKIP_PAYMENTS_FOR_PROMO ? null : (

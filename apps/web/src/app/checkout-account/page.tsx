@@ -15,6 +15,7 @@ import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
 import { siteUrl } from "@/lib/utils";
 import { MIN_PASSWORD_LENGTH, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
 import { normalizeEmail } from "@/lib/auth/email";
+import { flushPendingLegalConsent, markPendingLegalConsent } from "@/lib/legal-consent";
 
 export default function CheckoutAccountPage() {
   return (
@@ -64,6 +65,7 @@ function CheckoutAccountInner() {
       return;
     }
     setLoading(true);
+    markPendingLegalConsent("checkout");
     const { data, error: err } = await getBrowserSupabase().auth.signUp({
       email: normalizeEmail(email),
       password,
@@ -78,6 +80,11 @@ function CheckoutAccountInner() {
       return;
     }
     if (data.session) {
+      try {
+        await flushPendingLegalConsent();
+      } catch {
+        /* Pricing / re-accept retries if the record did not land. */
+      }
       router.push(withQueryParam(next, "account_created", "1"));
       router.refresh();
       return;

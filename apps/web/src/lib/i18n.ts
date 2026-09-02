@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { SUPPORT_EMAIL } from "@claimsaver/shared";
+import { LEGAL_ENTITY_DISPLAY, SUPPORT_EMAIL } from "@claimsaver/shared";
 
 import enTranslations from "../locales/en.json";
 import esTranslations from "../locales/es.json";
@@ -28,6 +28,7 @@ i18n
       escapeValue: false,
       defaultVariables: {
         supportEmail: SUPPORT_EMAIL,
+        legalEntity: LEGAL_ENTITY_DISPLAY,
       },
     },
 

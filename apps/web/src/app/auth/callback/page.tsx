@@ -6,6 +6,7 @@ import type { EmailOtpType } from "@supabase/supabase-js";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
+import { flushPendingLegalConsent } from "@/lib/legal-consent";
 
 const OTP_TYPES = new Set<EmailOtpType>([
   "signup",
@@ -71,6 +72,11 @@ function AuthCallbackInner() {
         return;
       }
 
+      try {
+        await flushPendingLegalConsent();
+      } catch {
+        /* Dashboard re-accept collects a record if this insert failed. */
+      }
       const dest =
         typeParam === "recovery"
           ? "/update-password"

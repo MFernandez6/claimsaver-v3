@@ -20,7 +20,7 @@ export async function GET(req: NextRequest, ctx: Ctx) {
 
   const { data: signed, error: signErr } = await admin.storage
     .from("claim-documents")
-    .createSignedUrl(String(data.storage_path), 60);
+    .createSignedUrl(String(data.storage_path), 300);
   if (signErr || !signed?.signedUrl) return jsonErr("Could not create download link", 500);
   return jsonOk({ url: signed.signedUrl, name: data.name, mimeType: data.mime_type });
 }

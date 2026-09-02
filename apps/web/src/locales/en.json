@@ -192,7 +192,7 @@
       },
       "cost": {
         "question": "How much does ClaimSaver+ cost?",
-        "answer": "Platform access is a flat $500—one time, not a percentage of your benefits. Optional online notarization is a separate add-on (~$25) if you add it at checkout. It is not required to use the guided claim tools."
+        "answer": "Platform access is a flat $500—one time, not a percentage of your benefits. That is the only product for sale today. Future add-ons, if we offer them, will be priced and disclosed separately."
       },
       "accidents": {
         "question": "What types of accidents does ClaimSaver+ handle?",
@@ -208,17 +208,18 @@
       }
     },
     "optionalServices": {
-      "title": "Platform access and optional notarization",
-      "subtitle": "Guided PIP filing is our core product. Online notarization is a separate add-on—priced and purchased on its own when you need it.",
+      "title": "Platform access",
+      "subtitle": "Guided PIP filing is our core product. $500 is the only item for sale today.",
       "pipTitle": "Guided claim platform ($500)",
       "pipBody": "Access to guided PIP forms, secure document storage, tracking, and reminders. This is what you use to prepare and file your Florida no-fault claim.",
-      "notarizationBadge": "Optional add-on",
-      "notarizationTitle": "Online notarization (~$25)",
-      "notarizationBody": "Remote document notarization via DocuSign. Add it at checkout if you need it, or review the service first—it is not part of the guided PIP form workflow.",
-      "linkNotarization": "Notarization service",
+      "notarizationBadge": "Later",
+      "notarizationTitle": "Future add-ons",
+      "notarizationBody": "We may offer optional add-ons later. None are for sale today.",
+      "linkNotarization": "Pricing",
       "linkPricing": "Pricing & checkout"
     },
-    "notaryNote": "Need a document notarized? Optional ~$25 add-on via DocuSign—not required to use the platform.",
+    "notaryNote": "The $500 fee is platform access only.",
+    "futureAddonsNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
     "graphicCaption": "Illustrative art—not your claim and not a guaranteed amount."
   },
   "pages": {
@@ -236,7 +237,8 @@
       "step4Body": "Use calendars, reminders, and expense tracking—including awareness of common deadlines like Florida’s 14-day initial treatment rule (general information, not legal advice).",
       "step5Title": "Compile and submit your claim package",
       "step5Body": "When you’re ready, pull your documents together into a complete claim package and submit it to your insurer.",
-      "notarizationNote": "Need a document notarized? We offer optional online notarization via DocuSign as a separate service from guided PIP filing—about $25 when you add it at checkout. It is not required to use the claim platform.",
+      "notarizationNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
+      "futureAddonsNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
       "viewPricing": "View pricing",
       "startFiling": "Get started",
       "includesTitle": "What's included",
@@ -283,7 +285,7 @@
       },
       "footerDisclaimer": "This content is for general educational purposes. ClaimSaver+ is a guided claim platform and does not provide legal advice.",
       "attorneyLink": "Wondering when to call an attorney?",
-      "notarizationLink": "Optional online notarization (separate from PIP filing)"
+      "notarizationLink": "See pricing for platform access"
     },
     "needProfessionalHelp": {
       "title": "When Your Claim Needs Legal Expertise",
@@ -331,7 +333,7 @@
       "subtitle": "Platform & technical support",
       "body": "For help signing in, billing, or using the website, email {{supportEmail}}. We cannot answer questions about the legal merits of your specific claim or tell you what you should do in your case—those questions belong to a licensed attorney.",
       "emailLabel": "Email",
-      "notarizationNote": "Optional online notarization is a separate service from guided PIP filing—add it at checkout or review details first:",
+      "notarizationNote": "The $500 fee is platform access only. Future add-ons, if offered, will be disclosed separately.",
       "headquarters": "Headquarters: Miami, Florida.",
       "attorneyCta": "If your matter is too complex for standard PIP filing, see When to Call an Attorney."
     },
@@ -344,7 +346,7 @@
       "section2Title": "What we collect and store",
       "section2Body": "We collect account information you provide, claim form fields you enter, calendar and expense entries you create, and files you upload. Uploads can include police or crash reports, medical records and bills, insurance cards or declarations pages, photos, and similar evidence. Operational logs may include IP address, device type, and timestamps for security and troubleshooting.",
       "section3Title": "Encryption and storage",
-      "section3Body": "Traffic between your browser and our services uses TLS (HTTPS). The public website is hosted by Vercel. Uploaded files and application data are stored using our database and object storage providers (Supabase), which apply industry-standard encryption for data at rest. Optional remote notarization, if you choose it, is processed by DocuSign. We do not describe this as “bank-level encryption.”",
+      "section3Body": "Traffic between your browser and our services uses TLS (HTTPS). The public website is hosted by Vercel. Uploaded files and application data are stored using our database and object storage providers (Supabase), which apply industry-standard encryption for data at rest. We do not describe this as “bank-level encryption.”",
       "section4Title": "Payments (Stripe)",
       "section4Body": "Card payments are processed by Stripe. We do not store full card numbers on ClaimSaver+ servers for hosted Checkout flows.",
       "section5Title": "Accounts and authentication",
@@ -352,7 +354,7 @@
       "section6Title": "Email and domain mail policy",
       "section6Body": "Platform support is {{supportEmail}}. Transactional account messages are sent from our claimsaverplus.com domain.",
       "section7Title": "Retention and deletion",
-      "section7Body": "We keep account, worksheet, and uploaded files while your account is open. After a deletion request or account closure (and any legal hold), we aim to delete or de-identify customer content within 90 days, except rotating backups and records we must keep for tax, fraud, dispute, or legal compliance (typically up to seven years for payment records). Florida Statutes §501.171 may require notice of a personal-information breach. See the Privacy Policy for subprocessors, deletion requests, and breach-notice details.",
+      "section7Body": "We keep account, worksheet, and uploaded files while your account is open. Signed-in customers can request deletion from the dashboard; we also accept email to {{supportEmail}}. After a deletion request or account closure (and any legal hold), we aim to delete or de-identify customer content within 90 days, except rotating backups and records we must keep for tax, fraud, dispute, or legal compliance (typically up to seven years for payment records). Florida Statutes §501.171 may require notice of a personal-information breach. See the Privacy Policy for subprocessors, deletion requests, and breach-notice details.",
       "section8Title": "Contact",
       "section8Body": "Questions about this summary: {{supportEmail}}."
     }
@@ -362,7 +364,7 @@
     "headlinePart1": "Florida PIP.",
     "headlinePart2": "Guided software",
     "headlinePart3": "Flat $500 access.",
-    "subtitle": "Same product as the rest of this site: software to help you prepare Florida no-fault (PIP) claim materials—you send them to your insurer. $500 is platform access only. Optional online notarization (~$25) is a separate add-on. ClaimSaver+ is not a law firm; we do not negotiate with insurers or act as your representative.",
+    "subtitle": "Same product as the rest of this site: software to help you prepare Florida no-fault (PIP) claim materials—you send them to your insurer. $500 is platform access only. ClaimSaver+ is not a law firm; we do not negotiate with insurers or act as your representative.",
     "startClaim": "Start Filing Your Claim",
     "learnMore": "Learn More",
     "selectServices": "Select Your Services & Payment",
@@ -374,8 +376,8 @@
         "price": "500.00"
       },
       "notarization": {
-        "name": "Notarization Services",
-        "description": "Online document notarization via DocuSign",
+        "name": "Future add-ons",
+        "description": "Not offered today. If we add optional services later, they will be priced separately.",
         "price": "25.00"
       }
     },
@@ -410,8 +412,9 @@
       "maximumRecovery": "Stay organized and informed throughout your claim"
     },
     "comparisonNote": "Florida’s permanency threshold is about a pain-and-suffering claim against another driver—not whether you can file PIP with your own insurer. ClaimSaver+ is software, not a law firm.",
-    "optionalNotarizationIntro": "Guided PIP platform access ($500) and optional online notarization (~$25) are separate line items. You can purchase notarization only if you need it—see below.",
-    "selectServicesNotarizationHint": "Select guided platform access for PIP filing. Add notarization only if you need documents notarized; it is billed separately and is not part of the PIP workflow.",
+    "optionalNotarizationIntro": "Guided PIP platform access is $500. That is the only product for sale today.",
+    "selectServicesNotarizationHint": "Select guided platform access. Future add-ons, if offered, will be listed separately.",
+    "futureAddonsNote": "We may offer optional add-ons later. None are for sale today, and none are included in the $500 fee.",
     "selectServicesCheckoutNote": "This is the purchase flow for this visit—not your claim dashboard or an existing order. Choose services below, then pay securely with Stripe.",
     "platformAccessSubtitle": "Guided platform access—you control the process",
     "features": {
@@ -483,8 +486,8 @@
       "faq3a": "No. We do not guarantee any financial outcome. Charts on this page use simplified examples. Results depend on your coverage, facts, and how your insurer processes the claim.",
       "faq4q": "Who do I contact about charges or receipts?",
       "faq4a": "Email {{supportEmail}} for billing and platform support. We cannot advise you on the legal merits of your claim.",
-      "faq5q": "Is notarization included in the $500?",
-      "faq5a": "No. Optional online notarization through DocuSign is a separate line item (~$25) if you add it at checkout. It is not required to use the guided claim tools.",
+      "faq5q": "Are add-ons included in the $500?",
+      "faq5a": "No. $500 is platform access only. We may offer optional add-ons later; they will be priced and disclosed separately if we do.",
       "modalServicesTitle": "Our Services",
       "modalServicesSavingsHeading": "Illustrative comparison (example math only)",
       "modalServicesSavingsDifferenceLabel": "Illustrative difference on this example",
@@ -502,7 +505,7 @@
     "selectAtLeastOne": "Select at least one service.",
     "checkoutFailed": "Checkout failed",
     "redirecting": "Redirecting…",
-    "checkoutNote": "This is the purchase flow for this visit—not your claim dashboard. Prices are set on the server; you only choose which products to buy.",
+    "checkoutNote": "This is the purchase flow for this visit—not your claim dashboard. The only product for sale today is $500 platform access.",
     "testing": {
       "kicker": "Limited production testing.",
       "body": "Thank you for helping us validate ClaimSaver+ with live payments. During this period, invited testers are charged {{testPrice}} for platform access. That {{testPrice}} charge will be refunded after testing. The standard list price remains {{listPrice}}. This is a real Stripe charge; you receive the same software access. Please do not share or circulate this testing rate.",
@@ -861,7 +864,7 @@
       },
       "legal": {
         "question": "Is digital notarization legally valid?",
-        "answer": "Yes, digital notarization is legally valid in all 50 states and is recognized by courts, government agencies, and businesses nationwide."
+        "answer": "Florida recognizes remote online notarization when it is performed by a Florida-commissioned remote online notary using an approved RON platform. ClaimSaver+ sells a DocuSign Notary session for that purpose—not a typed e-signature by itself."
       },
       "documents": {
         "question": "What documents can be notarized online?",
@@ -869,7 +872,7 @@
       },
       "duration": {
         "question": "How long does the process take?",
-        "answer": "The entire digital notarization process typically takes 5-10 minutes from start to finish, including document upload and notary verification."
+        "answer": "After checkout we email you to schedule. Session length depends on the DocuSign notary network and your ID check. It is not an on-demand 5-minute button inside ClaimSaver+."
       },
       "requirements": {
         "question": "What do I need to get started?",
@@ -893,12 +896,12 @@
       "digitalSecurityBullet": "Transport security: TLS (HTTPS). Notary sessions follow DocuSign’s platform controls; see their documentation for details."
     },
     "pageTitle": "Optional online notarization",
-    "pageIntro": "Notarization is not part of guided PIP filing. Price is about $25 per document via DocuSign remote online notarization.",
+    "pageIntro": "Notarization is not part of guided PIP filing. After you buy the ~$25 add-on, ClaimSaver+ schedules a DocuSign Notary session. That session must be completed by a Florida-commissioned remote online notary under Florida Statutes chapter 117 (including §117.209). This is not a generic e-signature and is not instant. We will email you to finish identity proofing and the live notary session.",
     "needId": "Valid government-issued ID",
     "needDevice": "Device with camera and microphone",
     "needPdf": "Document (typically PDF)",
     "needAvailability": "Availability depends on the DocuSign notary network—not 24/7 on-demand",
-    "notLegalReview": "This is not a ClaimSaver+ legal review of the document. Do not bundle notarization into the $500 fee.",
+    "notLegalReview": "This is not a ClaimSaver+ legal review of the document. Do not bundle notarization into the $500 fee. If a Florida-commissioned remote online notary is not available, we will refund the $25 add-on.",
     "addAtCheckout": "Add at checkout"
   },
   "dashboard": {
@@ -1017,6 +1020,7 @@
     "uploading": "Uploading…",
     "uploadSuccess": "Saved to your document vault: {{name}}. It is not sent to an insurer.",
     "docsHint": "Typical: police/crash reports, medical records and bills, insurance declarations, photos, wage proofs, carrier correspondence.",
+    "docOpenFailed": "Could not open that file. Try again, or download it from the link if your browser blocked the preview.",
     "reminderTitle": "Reminder title",
     "calendarHint": "When you enter an accident date on the worksheet, Florida PIP–oriented milestone templates can be added automatically. They are general information, not legal advice.",
     "expenseIntro": "Personal organization of amounts you enter—not medical or legal monitoring. Logged total: {{total}}",
@@ -1055,7 +1059,7 @@
     "cookiePolicy": "Cookie Policy",
     "legalDisclaimer": "Legal Disclaimer",
     "legalText": "ClaimSaver+ is a guided claim technology platform—not a law firm. We do not provide legal advice, legal representation, claim evaluation, or negotiation with insurers on your behalf. Information on this site is general and educational only. You file your no-fault (PIP) claim using our tools—you are the filer, not ClaimSaver+. For advice about your specific situation, consult a licensed attorney. We do not guarantee any outcome. ClaimSaver+ does not operate a lawyer referral service and does not pay or receive a fee for introducing you to an attorney or other professional. Educational pages such as When to Call an Attorney are general information only.",
-    "optionalNotarization": "Optional online notarization (DocuSign) is available separately—see Notarization and Pricing.",
+    "optionalNotarization": "The $500 fee is platform access only. Future add-ons, if offered, will be disclosed separately.",
     "services": "Services",
     "company": "Company",
     "legal": "Legal",
@@ -1187,8 +1191,8 @@
       }
     },
     "optionalNotarization": {
-      "title": "Optional add-on: online notarization",
-      "body": "Need documents notarized? We offer remote notarization via DocuSign for a separate fee (~$25). It is not part of the guided PIP form service—you add it only if you need it, at checkout or after reviewing the notarization page.",
+      "title": "Future add-ons",
+      "body": "The $500 fee is platform access only. We may offer optional add-ons later. If we do, they will have their own price and disclosures and will not be bundled into platform access without a separate purchase.",
       "linkNotarization": "Notarization service",
       "linkPricing": "Pricing & checkout"
     },
@@ -1255,7 +1259,7 @@
       "item6": "A printable summary of what you entered",
       "item7": "General educational content about how Florida PIP often works"
     },
-    "notaryNote": "Online notarization is a separate add-on (~$25 via DocuSign) and is not included in the $500 platform fee.",
+    "notaryNote": "The $500 fee is platform access only. Future add-ons, if offered, will be disclosed separately.",
     "seeHow": "See how it works"
   },
   "success": {
@@ -1364,7 +1368,7 @@
     "checkoutGateSubtitle": "You need an account before you can pay and open the PIP application. Create one now, or sign in if you already have one—then we’ll take you to checkout.",
     "checkoutCreateTab": "Create account",
     "checkoutSignInTab": "Sign in",
-    "ageTermsConsent": "I am 18 or older and I agree to the <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>.",
+    "ageTermsConsent": "I am 18 or older and I agree to the <terms>Terms of Service</terms> (including arbitration and the class-action waiver) and the <privacy>Privacy Policy</privacy>. This is a binding clickwrap agreement. A timestamped record of this acceptance is stored with my account.",
     "ageTermsRequired": "Confirm that you are 18 or older and that you agree to the Terms of Service and Privacy Policy.",
     "authNotConfigured": "Auth is not configured. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to apps/web/.env.local, then restart the dev server.",
     "resetTitle": "Reset password",
@@ -1379,23 +1383,32 @@
       "staySignedIn": "Stay signed in"
     }
   },
+  "legal": {
+    "reacceptTitle": "Updated Terms and Privacy Policy",
+    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 2026-09-04). Check the box below to continue. We store a timestamped record of this agreement with your account.",
+    "reacceptCta": "I agree — continue",
+    "consentFailed": "We could not save your agreement. Check your connection and try again.",
+    "requestDeletion": "Request account deletion",
+    "deletionRequested": "We recorded your deletion request. Support will process it from the inbox at support@claimsaverplus.com.",
+    "deletionFailed": "Could not record the deletion request. Email support@claimsaverplus.com from this account."
+  },
   "legalPages": {
     "privacyTitle": "Privacy Policy",
     "termsTitle": "Terms of Service",
     "terms": {
       "title": "Terms of Service",
-      "updated": "Effective August 19, 2026.",
-      "intro": "These Terms of Service (“Terms”) are a contract between you and ClaimSaver+ (the operator of claimsaverplus.com, “we,” “us”). By creating an account, paying for platform access, or using the site, you agree to these Terms. If you do not agree, do not use the service. These Terms are a product contract, not legal advice to you.",
+      "updated": "Effective September 4, 2026. Version 2026-09-04.",
+      "intro": "These Terms of Service (“Terms”) are a contract between you and CLAIMSAVERPLUS LLC, a Florida limited liability company doing business as ClaimSaver+ (“ClaimSaver+,” “we,” “us”), which operates claimsaverplus.com. You accept these Terms by checking “I agree” at account creation or checkout. We store a timestamped record of that clickwrap (account, document, version, time, IP, and user agent). Browsing public pages alone is not acceptance. If you do not agree, do not create an account or pay. These Terms are a product contract, not legal advice. The English text controls.",
       "s1Title": "1. What ClaimSaver+ is",
       "s1Body": "ClaimSaver+ is self-serve software that helps Florida drivers prepare, organize, and store their own motor-vehicle no-fault (PIP) claim materials. We sell access to tools. We are not a law firm, not your attorney, not a public adjuster, not your representative to an insurance company, and not a claims handler. You remain the filer. We do not evaluate the legal merits of your claim, negotiate with insurers, speak to an adjuster on your behalf, or submit your package to a carrier.",
       "s2Title": "2. Eligibility",
       "s2Body": "You must be at least 18 years old to create an account. The platform is for Florida motor-vehicle no-fault (PIP) claims. You may use an account to organize a claim for yourself or for a minor for whom you are the parent or legal guardian; you remain the account holder and are responsible for everything entered or uploaded. The service is not offered for commercial claim-handling on behalf of unrelated third parties, and it is not a substitute for licensed professional services when those are required.",
       "s3Title": "3. Your account and your information",
       "s3Body": "You are responsible for the accuracy of information you enter, for keeping your login credentials secure, and for activity on your account. Saving to your ClaimSaver+ account stores a draft for you. It does not send anything to an insurer. The insurer’s official form, your policy, and Florida law as applied to your facts control. We do not guarantee that any worksheet, reminder, or checklist is complete, current, or sufficient for your situation.",
-      "s4Title": "4. Fees, access, and optional notarization",
-      "s4Body": "The standard platform fee is a one-time $500 charge for software access (guided forms, storage, tracking, reminders, and educational content). It is not a contingency fee, not a retainer for representation, and not a subscription. Access begins when payment succeeds. Optional remote notarization is billed separately (about $25) and is not required to use the platform. Payment cards are processed by Stripe. We do not store full card numbers as part of the customer-facing product.",
+      "s4Title": "4. Fees, access, and future add-ons",
+      "s4Body": "The standard platform fee is a one-time $500 charge for software access (guided forms, storage, tracking, reminders, and educational content). It is not a contingency fee, not a retainer for representation, and not a subscription. Access begins when payment succeeds. That $500 fee is the only product we sell today. We may offer optional add-ons later; if we do, they will have their own price, terms, and checkout line item and will not be bundled into the $500 fee without a separate purchase. Payment cards are processed by Stripe. We do not store full card numbers.",
       "s5Title": "5. Refunds and cancellation",
-      "s5Body": "You may stop using the software at any time. Because digital access is delivered when payment succeeds, refunds are not automatic and we do not prorate the $500 fee. We will consider a written refund request sent to {{supportEmail}} within 14 days of purchase if you have not begun the guided worksheet and have not uploaded documents. We do not refund because a reminder did not appear, because you missed a treatment or filing window, or because an insurer delayed, reduced, or denied benefits. Optional notarization follows the notary network’s own completion and refund practices once a session is scheduled or completed. Nothing in this section limits refund or cancellation rights that Florida or other applicable law does not allow us to waive.",
+      "s5Body": "You may stop using the software at any time. Because digital access is delivered when payment succeeds, refunds are not automatic and we do not prorate the $500 fee. We will consider a written refund request sent to {{supportEmail}} within 14 days of purchase if you have not begun the guided worksheet and have not uploaded documents. We do not refund because a reminder did not appear, because you missed a treatment or filing window, or because an insurer delayed, reduced, or denied benefits. Nothing in this section limits refund or cancellation rights that Florida or other applicable law does not allow us to waive.",
       "s6Title": "6. Reminders are education, not legal deadlines",
       "s6Body": "Calendar items and 14-day PIP treatment-window notices are general information and optional reminders based on dates you enter. They are not a determination that a particular visit “counts,” not a substitute for your policy or statute, and not a promise that a reminder will fire, arrive, or be timely. You are solely responsible for obtaining care, calendar management, and sending materials to your insurer. We do not guarantee any financial or claim outcome.",
       "s7Title": "7. Disclaimer of warranties",
@@ -1417,20 +1430,24 @@
       "s15Title": "15. Changes",
       "s15Body": "We may update these Terms. The “Effective” date at the top will change. Continued use after an update constitutes acceptance of the revised Terms, except where applicable law requires additional notice or consent. If you do not agree, stop using the service and contact us about your account.",
       "s16Title": "16. Contact",
-      "s16Body": "ClaimSaver+ is operated from Miami, Florida. For platform and billing questions only, email {{supportEmail}}. We cannot advise you on the legal merits of your claim. Have Florida insurance-regulatory and consumer counsel review these Terms if you need advice about them."
+      "s16Body": "These Terms are offered by CLAIMSAVERPLUS LLC d/b/a ClaimSaver+, operated from Miami, Florida. For platform and billing questions only, email {{supportEmail}}. Formal notices may be sent to that email until a street address is published on this page. We cannot advise you on the legal merits of your claim. Have Florida insurance-regulatory and consumer counsel review these Terms if you need advice about them.",
+      "s17Title": "17. Intellectual property",
+      "s17Body": "ClaimSaver+ and its licensors own the site, software, trademarks, graphics, and educational text. You receive a limited, non-exclusive, non-transferable license to use the platform for your own Florida PIP claim while your access remains paid and in good standing. You may not copy, resell, scrape, or build a competing service from our materials. You keep ownership of the information and files you enter. You grant us a limited license to host, display, and process that content solely to operate the product, secure it, and comply with law. You represent that you have the right to upload what you upload.",
+      "s18Title": "18. Electronic signatures and records",
+      "s18Body": "You consent to do business electronically with us, including clicking “I agree,” typing or drawing a name on worksheet authorizations, and receiving notices by email. Those acts are intended as your electronic signature under the federal E-SIGN Act and the Florida Uniform Electronic Transaction Act. Worksheet signatures are for your own packet; they are not a notarial act. You are responsible for keeping your email current so we can send receipts and legal-document updates."
     },
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Effective August 19, 2026.",
-      "intro": "This Privacy Policy explains how ClaimSaver+ collects, uses, and shares information when you use claimsaverplus.com and related apps. It applies to the software product. It is not legal advice. The English text controls.",
+      "updated": "Effective September 4, 2026. Version 2026-09-04.",
+      "intro": "This Privacy Policy explains how CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collects, uses, and shares information when you use claimsaverplus.com and related apps. It applies to the software product. It is not legal advice. The English text controls.",
       "s1Title": "1. Who we are",
-      "s1Body": "ClaimSaver+ provides guided software for Florida PIP claim preparation. We are not your health care provider, health plan, law firm, or public adjuster. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Headquarters: Miami, Florida.",
+      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ provides guided software for Florida PIP claim preparation. We are not your health care provider, health plan, law firm, or public adjuster. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Headquarters: Miami, Florida.",
       "s2Title": "2. Information we collect",
       "s2Body": "You may provide: name, email, password, and account profile fields; claim worksheet answers (identity, accident, injury, employment, insurance, authorizations); and files you upload, which can include police or crash reports, medical records and bills, insurance cards or declarations pages, photos, and similar evidence. We also collect technical data such as IP address, device type, browser, timestamps, and security logs. Payment card numbers are collected by Stripe, not stored by us as full PAN data for hosted Checkout.",
       "s3Title": "3. How we use information",
       "s3Body": "We use information to operate your account, provide the worksheet, vault, calendar, and reminders, process payments, send transactional email (for example, confirmation and password reset), secure the service, debug, and comply with law. We do not sell your personal information. We do not send your package to an insurer; you do.",
       "s4Title": "4. Service providers (subprocessors)",
-      "s4Body": "We use third parties to run the product, including: Stripe (payments); Supabase (database, authentication, and file storage); Vercel (website hosting and delivery); and, if you choose optional notarization, DocuSign (remote online notarization). Those providers process data under their own terms and security controls. We do not control how an insurer, medical provider, or notary you choose independently will handle documents you send them.",
+      "s4Body": "We use these subprocessors to run the product: Stripe (payments and checkout); Supabase (database, authentication, and file storage, United States); and Vercel (website hosting, delivery, and Vercel Analytics). We do not send your worksheet to an AI model to evaluate your claim. Those providers process data under their own terms. We do not control how an insurer or medical provider you deal with independently will handle documents you send them.",
       "s5Title": "5. Retention",
       "s5Body": "We keep account, worksheet, and uploaded files for as long as your account remains open so you can return to a draft. After you request deletion, or after an account has been closed and any legal hold has expired, we aim to delete or de-identify customer content within 90 days, except backups that rotate on a longer cycle and records we must keep for tax, fraud prevention, dispute, or legal compliance (typically up to seven years for payment records). Calendar reminders exist only while the related data remains in your account.",
       "s6Title": "6. Sharing",
@@ -1440,22 +1457,24 @@
       "s8Title": "8. Security incidents (Florida)",
       "s8Body": "If we determine that a breach of personal information has occurred, we will investigate and notify affected Florida residents in accordance with Florida Statutes §501.171, including notice without unreasonable delay and no later than 30 days after that determination, unless a law-enforcement delay is authorized. Notice will describe the incident in general terms, the types of information involved to the extent known, protective steps we are taking, and how to reach us at {{supportEmail}}. We may also notify the Florida Department of Legal Affairs as that statute requires.",
       "s9Title": "9. Your choices and deletion",
-      "s9Body": "You may access and update much of your worksheet in the product. To export or delete your account, email {{supportEmail}} from the address on the account. We will honor deletion and access requests as required by applicable law, including Florida’s Information Protection Act of 2014 (§501.171) where it applies, and other non-waivable consumer rights. We may retain limited records as described in Retention. Deleting your ClaimSaver+ account does not delete copies you (or an insurer or provider) already hold.",
+      "s9Body": "You may access and update much of your worksheet in the product. Signed-in customers can tap “Request account deletion” on the dashboard. That creates a timestamped request we process from the support inbox, or you may email {{supportEmail}} from the address on the account. We aim to complete deletion or de-identification within 30 days after we verify the request, subject to Retention (tax, fraud, dispute, and legal holds). We will honor access and deletion rights that Florida or other applicable law requires, including Florida Statutes §501.171 where it applies. Deleting your ClaimSaver+ account does not delete copies you, an insurer, or a provider already hold.",
       "s10Title": "10. Children",
       "s10Body": "The service is not directed to children under 18. You must be 18 or older to create an account. If we learn we have collected an account from a child, we will delete it. A parent or guardian who is 18 or older may use their own account in connection with a minor’s accident; that adult is the customer for privacy purposes.",
       "s11Title": "11. Changes",
       "s11Body": "We may update this Policy. The effective date will change. Material changes will be posted on this page. Continued use after an update means you accept the revised Policy, except where law requires consent.",
       "s12Title": "12. Contact",
-      "s12Body": "Privacy and deletion requests: {{supportEmail}}. We cannot give legal advice about your claim or about whether you must provide a particular document to an insurer."
+      "s12Body": "Privacy and deletion requests: {{supportEmail}}. We cannot give legal advice about your claim or about whether you must provide a particular document to an insurer.",
+      "s13Title": "13. Cookies and tracking",
+      "s13Body": "We use cookies and similar storage that are required to keep you signed in, remember your language, and protect the session. We also use Vercel Analytics, which collects aggregated visit data (pages, referrers, device type) to see whether the site is working. We do not run advertising pixels or sell browsing data. You can block non-essential cookies in your browser; the site may still need essential cookies to log you in. Stripe Checkout sets its own cookies when you pay."
     },
     "accessibility": {
       "title": "Accessibility",
       "updated": "Effective August 19, 2026.",
       "intro": "ClaimSaver+ wants people with disabilities to be able to learn about the product, create an account, and use the guided workspace. This statement describes our intent and how to ask for help. It is not a certification of conformance and not a waiver of any legal right.",
       "s1Title": "1. Our goal",
-      "s1Body": "We aim to design claimsaverplus.com so it can be used with common assistive technologies, including keyboard navigation, readable contrast, and resizable text. We treat the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA as a design target. The live site may not yet meet that target in every view, especially older pages and third-party embeds (for example Stripe Checkout or DocuSign).",
+      "s1Body": "We aim to design claimsaverplus.com so it can be used with common assistive technologies, including keyboard navigation, readable contrast, and resizable text. We treat the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA as a design target. The live site may not yet meet that target in every view, especially older pages and third-party embeds (for example Stripe Checkout).",
       "s2Title": "2. Third-party tools",
-      "s2Body": "Checkout, payments, and optional notarization run on Stripe and DocuSign. Their screens are controlled by those companies. If a third-party flow is a barrier, email us and we will help you complete the step another way where we reasonably can (for example, a supported alternative for account or billing questions).",
+      "s2Body": "Checkout and payments run on Stripe. Those screens are controlled by Stripe. If a third-party flow is a barrier, email us and we will help you complete the step another way where we reasonably can (for example, a supported alternative for account or billing questions).",
       "s3Title": "3. How to request an accommodation",
       "s3Body": "Email {{supportEmail}} with the subject “Accessibility,” a description of the barrier, the page or task, and the assistive technology you use if you wish to share that. We will respond about platform access—login, billing, and using the site. We cannot provide legal advice or complete your insurer filing for you.",
       "s4Title": "4. Feedback",

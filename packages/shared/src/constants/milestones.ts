@@ -64,8 +64,17 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
   },
 ];
 
+/** First YYYY-MM-DD in a date or datetime-local string. */
+export function coerceIsoDate(value: string): string {
+  const match = String(value || "").trim().match(/^(\d{4}-\d{2}-\d{2})/);
+  return match?.[1] ?? "";
+}
+
 export function addDays(isoDate: string, days: number): string {
-  const d = new Date(`${isoDate}T12:00:00`);
+  const day = coerceIsoDate(isoDate);
+  if (!day) return "";
+  const d = new Date(`${day}T12:00:00`);
+  if (Number.isNaN(d.getTime())) return "";
   d.setDate(d.getDate() + days);
   return d.toISOString().slice(0, 10);
 }
@@ -79,9 +88,9 @@ export function normalizeAccidentDate(input: {
   accidentDateTime?: string;
 }): string {
   const candidates = [
-    input.dateOfAccident,
-    input.accidentDate,
-    (input.accidentDateTime || "").slice(0, 10),
+    coerceIsoDate(input.dateOfAccident || ""),
+    coerceIsoDate(input.accidentDate || ""),
+    coerceIsoDate(input.accidentDateTime || ""),
   ];
   return candidates.find((v) => v && ISO_DATE.test(v)) || "";
 }

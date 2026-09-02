@@ -5,12 +5,16 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { flushPendingLegalConsent } from "@/lib/legal-consent";
 
 function SuccessInner() {
   const { t } = useTranslation();
   const params = useSearchParams();
   const [ready, setReady] = useState(false);
-  useEffect(() => setReady(true), []);
+  useEffect(() => {
+    setReady(true);
+    void flushPendingLegalConsent().catch(() => undefined);
+  }, []);
   const sessionId = params.get("session_id");
 
   return (

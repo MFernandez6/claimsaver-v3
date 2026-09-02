@@ -15,10 +15,9 @@ export function withQueryParam(path: string, key: string, value: string) {
   return `${beforeHash}${sep}${encodeURIComponent(key)}=${encodeURIComponent(value)}${hash}`;
 }
 
-export function pricingCheckoutPath(opts?: { platform?: boolean; notarization?: boolean }) {
+export function pricingCheckoutPath(opts?: { platform?: boolean }) {
   const q = new URLSearchParams();
   q.set("checkout", "1");
   if (opts?.platform === false) q.set("platform", "0");
-  if (opts?.notarization) q.set("notarization", "1");
   return `/pricing?${q.toString()}`;
 }

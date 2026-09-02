@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { LEGAL_DOCUMENTS_VERSION } from "@claimsaver/shared";
 import { jsonOk, requireUser, getProfile } from "@/lib/supabase/auth";
 import { nameFromAuthUser } from "@/lib/auth/display-name";
 import { getSupabaseAdmin, isDevPlatformUnlocked } from "@/lib/supabase/admin";
@@ -17,6 +18,18 @@ export async function GET(req: NextRequest) {
     });
     if (!error) profile = await getProfile(user.id);
   }
+
+  let legalConsentCurrent = true;
+  const { data: consents, error: consentError } = await getSupabaseAdmin()
+    .from("legal_consents")
+    .select("document")
+    .eq("user_id", user.id)
+    .eq("version", LEGAL_DOCUMENTS_VERSION);
+  if (!consentError) {
+    const docs = new Set((consents ?? []).map((row) => row.document));
+    legalConsentCurrent = docs.has("tos") && docs.has("privacy");
+  }
+
   return jsonOk({
     id: profile?.id ?? user.id,
     email: profile?.email || user.email || "",
@@ -24,5 +37,6 @@ export async function GET(req: NextRequest) {
     lastName: profile?.last_name || String(meta.last_name ?? ""),
     role: profile?.role ?? "user",
     hasPlatformAccess: Boolean(profile?.has_platform_access) || isDevPlatformUnlocked(),
+    legalConsentCurrent,
   });
 }

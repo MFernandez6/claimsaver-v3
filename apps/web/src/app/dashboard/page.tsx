@@ -28,7 +28,8 @@ import { webApi } from "@/lib/api/client";
 import { useSupabaseUser } from "@/components/auth/use-supabase-user";
 import { greetingName } from "@/lib/auth/display-name";
 import { useTranslation } from "react-i18next";
-import { formatUsd, cn } from "@/lib/utils";
+import { formatUsd, formatDisplayDate, cn } from "@/lib/utils";
+import { LegalReaccept } from "@/components/legal-reaccept";
 
 type Tab = "claims" | "docs" | "calendar" | "expenses";
 
@@ -147,19 +148,32 @@ export default function DashboardPage() {
     ? {
         title: eventDisplayTitle(milestones.lastCompleted, t),
         dateLabel: t("dashboard.milestone.markedOn", {
-          date: milestones.lastCompleted.date,
+          date: formatDisplayDate(milestones.lastCompleted.date) || milestones.lastCompleted.date,
         }),
       }
     : null;
   const nextEvent = milestones.nextEvent
     ? {
         title: eventDisplayTitle(milestones.nextEvent, t),
-        dateLabel: milestones.nextEvent.date,
+        dateLabel: formatDisplayDate(milestones.nextEvent.date) || milestones.nextEvent.date,
       }
     : null;
 
+  async function requestDeletion() {
+    try {
+      await webApi.post("/api/v1/account/deletion-request", {});
+      setError(null);
+      window.alert(t("legal.deletionRequested"));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : t("legal.deletionFailed"));
+    }
+  }
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
+      {me && me.legalConsentCurrent === false ? (
+        <LegalReaccept onAccepted={() => void refresh()} />
+      ) : null}
       <DashboardOverviewPanels
         currentStep={primary?.worksheetStep ?? 1}
         totalSteps={TOTAL_WORKSHEET_STEPS}
@@ -204,6 +218,11 @@ export default function DashboardPage() {
       </div>
 
       {error ? <p className="mt-4 text-sm text-red-600">{error}</p> : null}
+      <p className="mt-8 text-center text-xs text-slate-500">
+        <button type="button" className="underline underline-offset-2" onClick={() => void requestDeletion()}>
+          {t("legal.requestDeletion")}
+        </button>
+      </p>
 
       {tab === "claims" && (
         <div className="mt-6 space-y-3">
@@ -293,7 +312,7 @@ function ClaimRecordCard({
             <p className="mt-1 text-sm text-slate-500">
               {claim.claimantName || t("dashboard.untitled")}
               {" · "}
-              {claim.accidentDate || t("dashboard.noAccidentDate")}
+              {formatDisplayDate(claim.accidentDate) || t("dashboard.noAccidentDate")}
             </p>
             <p className="mt-1 text-xs text-slate-400">{t("dashboard.internalIdNote")}</p>
           </div>
@@ -335,7 +354,7 @@ function ClaimRecordCard({
               {lastTitle
                 ? t("dashboard.claimCard.lastDoneDetail", {
                     title: lastTitle,
-                    date: pair.lastCompleted?.date ?? "",
+                    date: formatDisplayDate(pair.lastCompleted?.date) || pair.lastCompleted?.date || "",
                   })
                 : t("dashboard.milestone.noneDone")}
             </dd>
@@ -348,7 +367,7 @@ function ClaimRecordCard({
               {nextTitle && pair.nextEvent
                 ? t("dashboard.claimCard.nextDetail", {
                     title: nextTitle,
-                    date: pair.nextEvent.date,
+                    date: formatDisplayDate(pair.nextEvent.date) || pair.nextEvent.date,
                   })
                 : t("dashboard.milestone.allCaughtUp")}
             </dd>
@@ -417,8 +436,24 @@ function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => vo
                 size="sm"
                 variant="outline"
                 onClick={async () => {
-                  const { url } = await webApi.get<{ url: string }>(`/api/v1/documents/${d.id}`);
-                  window.open(url, "_blank");
+                  try {
+                    const { url, name } = await webApi.get<{ url: string; name?: string }>(
+                      `/api/v1/documents/${d.id}`,
+                    );
+                    const opened = window.open(url, "_blank", "noopener,noreferrer");
+                    if (!opened) {
+                      const link = document.createElement("a");
+                      link.href = url;
+                      link.download = name || d.name;
+                      link.rel = "noopener noreferrer";
+                      link.target = "_blank";
+                      document.body.appendChild(link);
+                      link.click();
+                      link.remove();
+                    }
+                  } catch {
+                    setError(t("dashboard.docOpenFailed"));
+                  }
                 }}
               >
                 {t("common.open")}
@@ -486,7 +521,7 @@ function CalendarPanel({
           <CardContent className="flex items-center justify-between gap-3 pt-6">
             <div>
               <p className={ev.completed ? "line-through text-slate-400" : "font-medium"}>{ev.title}</p>
-              <p className="text-xs text-slate-500">{ev.date} · {ev.type}</p>
+              <p className="text-xs text-slate-500">{formatDisplayDate(ev.date) || ev.date} · {ev.type}</p>
             </div>
             <Button
               size="sm"
@@ -507,7 +542,7 @@ function ExpensesPanel({ expenses, onChange }: { expenses: ExpenseRow[]; onChang
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [incurredOn, setIncurredOn] = useState("");
-  const total = expenses.reduce((s, e) => s + e.amountCents, 0);
+  const total = expenses.reduce((s, e) => s + (Number.isFinite(e.amountCents) ? e.amountCents : 0), 0);
 
   return (
     <div className="mt-6 space-y-4">

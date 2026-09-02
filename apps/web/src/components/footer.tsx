@@ -33,7 +33,6 @@ export default function Footer() {
               <li><Link href={CHECKOUT_PATH} className="hover:text-white">{t("cta.primary")}</Link></li>
               <li><Link href="/pricing" className="hover:text-white">{t("navigation.pricing")}</Link></li>
               <li><Link href="/how-it-works" className="hover:text-white">{t("navigation.howItWorks")}</Link></li>
-              <li><Link href="/notarization" className="hover:text-white">{t("navigation.notarization")}</Link></li>
             </ul>
           </div>
           <div>
@@ -66,7 +65,7 @@ export default function Footer() {
             number: FOUNDER.licenseNumber,
           })}
         </p>
-        <p className="mt-4 text-xs text-white/50">© {new Date().getFullYear()} ClaimSaver+ • {t("footer.servingFlorida")}</p>
+        <p className="mt-4 text-xs text-white/50">© {new Date().getFullYear()} CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ • {t("footer.servingFlorida")}</p>
       </div>
     </footer>
   );

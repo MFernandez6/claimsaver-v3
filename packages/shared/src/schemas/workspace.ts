@@ -60,10 +60,7 @@ export const createExpenseSchema = z.object({
 });
 
 export const checkoutRequestSchema = z.object({
-  products: z
-    .array(z.enum(["platform", "notarization"]))
-    .min(1)
-    .max(2),
+  products: z.array(z.literal("platform")).min(1).max(1),
   successPath: z.string().optional(),
   cancelPath: z.string().optional(),
 });
@@ -84,6 +81,7 @@ export const meSchema = z.object({
   lastName: z.string(),
   role: z.enum(["user", "admin", "super_admin"]),
   hasPlatformAccess: z.boolean(),
+  legalConsentCurrent: z.boolean().default(true),
 });
 
 export type Me = z.infer<typeof meSchema>;
