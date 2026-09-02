@@ -1386,7 +1386,7 @@
   },
   "legal": {
     "reacceptTitle": "Términos y Política de privacidad actualizados",
-    "reacceptBody": "Actualizamos los Términos de servicio y la Política de privacidad (versión 2026-09-04). Marque la casilla para continuar. Guardamos un registro con fecha y hora de este acuerdo con su cuenta.",
+    "reacceptBody": "Actualizamos los Términos de servicio y la Política de privacidad (versión 26.09.04). Marque la casilla para continuar. Guardamos un registro con fecha y hora de este acuerdo con su cuenta.",
     "reacceptCta": "Acepto — continuar",
     "consentFailed": "No pudimos guardar su aceptación. Compruebe la conexión e inténtelo de nuevo.",
     "requestDeletion": "Solicitar eliminación de la cuenta",
@@ -1398,7 +1398,7 @@
     "termsTitle": "Términos de servicio",
     "terms": {
       "title": "Términos de servicio",
-      "updated": "Vigentes desde el 4 de septiembre de 2026. Versión 2026-09-04.",
+      "updated": "Vigentes desde el 4 de septiembre de 2026. Versión 26.09.04.",
       "intro": "Estos Términos de servicio (“Términos”) son un contrato entre usted y CLAIMSAVERPLUS LLC, una sociedad de responsabilidad limitada de Florida que opera como ClaimSaver+ (“ClaimSaver+”, “nosotros”), titular de claimsaverplus.com. Usted acepta estos Términos al marcar “Acepto” al crear la cuenta o al pagar. Guardamos un registro con fecha y hora de ese clickwrap (cuenta, documento, versión, hora, IP y agente de usuario). Navegar las páginas públicas no es aceptación. Si no está de acuerdo, no cree una cuenta ni pague. Estos Términos son un contrato de producto, no asesoría legal. El texto en inglés es el que rige.",
       "s1Title": "1. Qué es ClaimSaver+",
       "s1Body": "ClaimSaver+ es software de autoservicio que ayuda a conductores de Florida a preparar, organizar y guardar sus propios materiales de reclamo de no-fault (PIP) de vehículo de motor. Vendemos acceso a herramientas. No somos un bufete, no somos su abogado, no somos un ajustador público, no somos su representante ante una aseguradora y no somos un tramitador de reclamos. Usted sigue siendo quien presenta. No evaluamos el mérito legal de su reclamo, no negociamos con aseguradoras, no hablamos con un ajustador en su nombre ni enviamos su paquete a la compañía.",
@@ -1439,7 +1439,7 @@
     },
     "privacy": {
       "title": "Política de privacidad",
-      "updated": "Vigente desde el 4 de septiembre de 2026. Versión 2026-09-04.",
+      "updated": "Vigente desde el 4 de septiembre de 2026. Versión 26.09.04.",
       "intro": "Esta Política de privacidad explica cómo CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ recopila, usa y comparte información cuando usted usa claimsaverplus.com y aplicaciones relacionadas. Aplica al producto de software. No es asesoría legal. El texto en inglés es el que rige.",
       "s1Title": "1. Quiénes somos",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ ofrece software guiado para la preparación de reclamos PIP de Florida. No somos su proveedor de salud, plan de salud, bufete ni ajustador público. No usamos su expediente para negociar con aseguradoras ni para representarlo. Contacto: {{supportEmail}}. Sede: Miami, Florida.",

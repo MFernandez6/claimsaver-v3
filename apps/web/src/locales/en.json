@@ -1385,7 +1385,7 @@
   },
   "legal": {
     "reacceptTitle": "Updated Terms and Privacy Policy",
-    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 2026-09-04). Check the box below to continue. We store a timestamped record of this agreement with your account.",
+    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.09.04). Check the box below to continue. We store a timestamped record of this agreement with your account.",
     "reacceptCta": "I agree — continue",
     "consentFailed": "We could not save your agreement. Check your connection and try again.",
     "requestDeletion": "Request account deletion",
@@ -1397,7 +1397,7 @@
     "termsTitle": "Terms of Service",
     "terms": {
       "title": "Terms of Service",
-      "updated": "Effective September 4, 2026. Version 2026-09-04.",
+      "updated": "Effective September 4, 2026. Version 26.09.04.",
       "intro": "These Terms of Service (“Terms”) are a contract between you and CLAIMSAVERPLUS LLC, a Florida limited liability company doing business as ClaimSaver+ (“ClaimSaver+,” “we,” “us”), which operates claimsaverplus.com. You accept these Terms by checking “I agree” at account creation or checkout. We store a timestamped record of that clickwrap (account, document, version, time, IP, and user agent). Browsing public pages alone is not acceptance. If you do not agree, do not create an account or pay. These Terms are a product contract, not legal advice. The English text controls.",
       "s1Title": "1. What ClaimSaver+ is",
       "s1Body": "ClaimSaver+ is self-serve software that helps Florida drivers prepare, organize, and store their own motor-vehicle no-fault (PIP) claim materials. We sell access to tools. We are not a law firm, not your attorney, not a public adjuster, not your representative to an insurance company, and not a claims handler. You remain the filer. We do not evaluate the legal merits of your claim, negotiate with insurers, speak to an adjuster on your behalf, or submit your package to a carrier.",
@@ -1438,7 +1438,7 @@
     },
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Effective September 4, 2026. Version 2026-09-04.",
+      "updated": "Effective September 4, 2026. Version 26.09.04.",
       "intro": "This Privacy Policy explains how CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collects, uses, and shares information when you use claimsaverplus.com and related apps. It applies to the software product. It is not legal advice. The English text controls.",
       "s1Title": "1. Who we are",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ provides guided software for Florida PIP claim preparation. We are not your health care provider, health plan, law firm, or public adjuster. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Headquarters: Miami, Florida.",

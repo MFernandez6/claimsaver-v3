@@ -1386,7 +1386,7 @@
   },
   "legal": {
     "reacceptTitle": "Conditions et Politique de confidentialité mises à jour",
-    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 2026-09-04). Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
+    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.09.04). Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
     "reacceptCta": "J’accepte — continuer",
     "consentFailed": "Nous n’avons pas pu enregistrer votre accord. Vérifiez la connexion et réessayez.",
     "requestDeletion": "Demander la suppression du compte",
@@ -1398,7 +1398,7 @@
     "termsTitle": "Conditions d’utilisation",
     "terms": {
       "title": "Conditions d’utilisation",
-      "updated": "En vigueur à compter du 4 septembre 2026. Version 2026-09-04.",
+      "updated": "En vigueur à compter du 4 septembre 2026. Version 26.09.04.",
       "intro": "Les présentes Conditions d’utilisation (« Conditions ») constituent un contrat entre vous et CLAIMSAVERPLUS LLC, une société à responsabilité limitée de Floride exerçant sous le nom ClaimSaver+ (« ClaimSaver+ », « nous »), qui exploite claimsaverplus.com. Vous acceptez ces Conditions en cochant « J’accepte » à la création du compte ou au paiement. Nous conservons un enregistrement horodaté de ce clickwrap (compte, document, version, heure, IP et agent utilisateur). Consulter les pages publiques n’est pas une acceptation. Si vous n’êtes pas d’accord, ne créez pas de compte et ne payez pas. Ces Conditions sont un contrat produit, pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Ce qu’est ClaimSaver+",
       "s1Body": "ClaimSaver+ est un logiciel en libre-service qui aide les conducteurs de Floride à préparer, organiser et stocker leurs propres documents de dossier no-fault (PIP) automobile. Nous vendons l’accès à des outils. Nous ne sommes pas un cabinet d’avocats, pas votre avocat, pas un expert public, pas votre représentant auprès d’un assureur et pas un gestionnaire de sinistres. Vous restez le déposant. Nous n’évaluons pas le bien-fondé juridique de votre dossier, ne négocions pas avec les assureurs, ne parlons pas à un expert en votre nom et n’envoyons pas votre dossier à un transporteur.",
@@ -1439,7 +1439,7 @@
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "updated": "En vigueur à compter du 4 septembre 2026. Version 2026-09-04.",
+      "updated": "En vigueur à compter du 4 septembre 2026. Version 26.09.04.",
       "intro": "Cette Politique de confidentialité explique comment CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collecte, utilise et partage des informations lorsque vous utilisez claimsaverplus.com et les applications liées. Elle s’applique au produit logiciel. Ce n’est pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Qui nous sommes",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Siège : Miami, Floride.",

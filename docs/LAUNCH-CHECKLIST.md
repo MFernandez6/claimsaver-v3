@@ -1,6 +1,6 @@
 # Launch checklist (items 4–8)
 
-This is an **internal operating brief**, not a legal opinion, insurance binder, or tax ruling. Items 1–3 are in the product (ToS/Privacy v2026-09-04, clickwrap, CLAIMSAVERPLUS LLC named). Notarization is not sold. Items 4, 6, and Florida sales-tax confirmation still need counsel / broker / CPA.
+This is an **internal operating brief**, not a legal opinion, insurance binder, or tax ruling. Items 1–3 are in the product (ToS/Privacy v26.09.04, clickwrap, CLAIMSAVERPLUS LLC named). Notarization is not sold. Items 4, 6, and Florida sales-tax confirmation still need counsel / broker / CPA.
 
 ## 4. Licensing vs Florida §626.854 (counsel briefing)
 
@@ -74,4 +74,4 @@ npx supabase db push
 
 Migration `supabase/migrations/005_launch_readiness.sql` creates `legal_consents`, `account_deletion_requests`, `notarization_orders`, and `billing_disputes`. Until it is applied, `/api/v1/me` fail-opens (no re-accept wall) and consent inserts will 500.
 
-Existing accounts will see the **Updated Terms** modal after the table exists, because they have no `2026-09-04` consent row yet. That is intended.
+Existing accounts will see the **Updated Terms** modal after the table exists, because they have no `26.09.04` consent row yet. That is intended.

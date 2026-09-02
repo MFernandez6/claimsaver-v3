@@ -6,7 +6,7 @@ export const SITE_HOST = "claimsaverplus.com";
 export const SUPPORT_EMAIL = "support@claimsaverplus.com";
 
 /** Bump when ToS or Privacy materially change so clickwrap can be re-collected. */
-export const LEGAL_DOCUMENTS_VERSION = "2026-09-04";
+export const LEGAL_DOCUMENTS_VERSION = "26.09.04";
 
 /** Florida LLC filed 2026. Use on contracts, receipts, and formal notices. */
 export const LEGAL_ENTITY_NAME = "CLAIMSAVERPLUS LLC";
