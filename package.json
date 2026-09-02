@@ -17,7 +17,8 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "auth-emails:write": "node supabase/templates/write-html.mjs",
     "auth-emails:push": "node supabase/templates/push.mjs",
-    "social:founder-promo": "node scripts/generate-founder-ig-promo.mjs"
+    "social:founder-promo": "node scripts/generate-founder-ig-promo.mjs",
+    "seed:sergio-demo": "node scripts/seed-sergio-demo.mjs"
   },
   "engines": {
     "node": ">=20"
