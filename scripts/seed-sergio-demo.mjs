@@ -261,7 +261,7 @@ function worksheetFor({
 const ACCOUNTS = [
   {
     key: "worksheet",
-    email: "demo.worksheet@claimsaverplus.com",
+    email: "test1@claimsaverplus.com",
     firstName: "Alex",
     lastName: "Rivera",
     phone: "305-555-0142",
@@ -289,7 +289,7 @@ const ACCOUNTS = [
   },
   {
     key: "workspace",
-    email: "demo.workspace@claimsaverplus.com",
+    email: "test2@claimsaverplus.com",
     firstName: "Jordan",
     lastName: "Morales",
     phone: "305-555-0177",
@@ -594,9 +594,26 @@ async function seedAccount(account) {
   };
 }
 
+const RETIRED_EMAILS = [
+  "demo.worksheet@claimsaverplus.com",
+  "demo.workspace@claimsaverplus.com",
+];
+
+async function retireEmail(email) {
+  const user = await findUser(email);
+  if (!user) return;
+  await clearUserData(user.id);
+  const { error } = await admin.auth.admin.deleteUser(user.id);
+  if (error) throw error;
+  console.log(`Removed old demo user ${email}`);
+}
+
 const results = [];
 for (const account of ACCOUNTS) {
   results.push(await seedAccount(account));
+}
+for (const email of RETIRED_EMAILS) {
+  await retireEmail(email);
 }
 
 mkdirSync(dirname(CREDENTIALS_PATH), { recursive: true });
