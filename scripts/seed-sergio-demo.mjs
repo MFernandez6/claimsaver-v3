@@ -7,7 +7,7 @@
  * Credentials are printed and written to scripts/.demo-credentials.local (gitignored).
  */
 import { createClient } from "@supabase/supabase-js";
-import { randomBytes, randomUUID } from "node:crypto";
+import { randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -48,18 +48,10 @@ const admin = createClient(url, serviceKey, {
 });
 
 const CREDENTIALS_PATH = join(root, "scripts/.demo-credentials.local");
+const DEMO_PASSWORD = process.env.DEMO_PASSWORD || "Password123!";
 
-function passwordFor(email, fallback) {
-  if (existsSync(CREDENTIALS_PATH)) {
-    try {
-      const saved = JSON.parse(readFileSync(CREDENTIALS_PATH, "utf8"));
-      const match = saved.accounts?.find((row) => row.email === email);
-      if (match?.password) return match.password;
-    } catch {
-      /* generate a new one */
-    }
-  }
-  return process.env.DEMO_PASSWORD || fallback || `Demo-${randomBytes(6).toString("base64url")}!a1`;
+function passwordFor() {
+  return DEMO_PASSWORD;
 }
 
 function addDays(isoDate, days) {
@@ -513,7 +505,7 @@ async function seedDocs(userId, claimId, person) {
 }
 
 async function seedAccount(account) {
-  const password = passwordFor(account.email, `SergioDemo-${account.key}-2026!`);
+  const password = passwordFor();
   const userId = await ensureUser({
     email: account.email,
     password,
