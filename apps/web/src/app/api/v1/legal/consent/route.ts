@@ -31,8 +31,8 @@ export async function POST(req: NextRequest) {
   if (response) return response;
   if (!isSupabaseConfigured()) return jsonErr("Database not configured", 503);
 
-  const body = (await req.json().catch(() => ({}))) as { version?: string; source?: string };
-  const version = String(body.version || LEGAL_DOCUMENTS_VERSION);
+  const body = (await req.json().catch(() => ({}))) as { source?: string };
+  const version = LEGAL_DOCUMENTS_VERSION;
   const source = SOURCES.has(String(body.source)) ? String(body.source) : "signup";
   const admin = getSupabaseAdmin();
   const ip = clientIp(req);
@@ -47,7 +47,9 @@ export async function POST(req: NextRequest) {
     user_agent: userAgent.slice(0, 500),
   }));
 
-  const { error } = await admin.from("legal_consents").insert(rows);
+  const { error } = await admin.from("legal_consents").upsert(rows, {
+    onConflict: "user_id,document,version",
+  });
   if (error) return jsonErr(error.message, 500);
   return jsonOk({ ok: true, version });
 }

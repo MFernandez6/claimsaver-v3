@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { normalizeAccidentDate, patchClaimSchema } from "@claimsaver/shared";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
-import { toClaimDetail } from "@/lib/api/mappers";
+import { stripClaimantSsn, toClaimDetail } from "@/lib/api/mappers";
 import { syncPipDeadlineChain } from "@/lib/api/milestones";
 
 type Ctx = { params: Promise<{ id: string }> };
@@ -47,9 +47,9 @@ export async function PATCH(req: NextRequest, ctx: Ctx) {
   if (!existing) return jsonErr("Not found", 404);
 
   const prev = (existing.worksheet ?? {}) as Record<string, unknown>;
-  const nextWorksheet = parsed.data.worksheet
-    ? { ...prev, ...parsed.data.worksheet }
-    : prev;
+  const nextWorksheet = stripClaimantSsn(
+    parsed.data.worksheet ? { ...prev, ...parsed.data.worksheet } : prev,
+  );
   const accidentDate = normalizeAccidentDate({
     dateOfAccident: String(nextWorksheet.dateOfAccident || ""),
     accidentDate: String(nextWorksheet.accidentDate || ""),

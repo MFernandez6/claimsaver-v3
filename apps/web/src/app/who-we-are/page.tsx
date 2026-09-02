@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CHECKOUT_PATH, FOUNDER } from "@claimsaver/shared";
+import { CHECKOUT_PATH } from "@claimsaver/shared";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import { Button } from "@/components/ui/button";
 
@@ -104,17 +104,6 @@ export default function WhoWeArePage() {
 
                 <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
                   {t("whoWeAre.founderBackground.disclaimer")}
-                </p>
-
-                <p className="mt-3 text-sm">
-                  <a
-                    href={FOUNDER.dfsLookupUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-teal-800 underline dark:text-teal-300"
-                  >
-                    {t("whoWeAre.founderBackground.verifyLink")}
-                  </a>
                 </p>
               </div>
             </div>

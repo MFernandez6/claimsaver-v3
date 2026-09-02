@@ -35,7 +35,7 @@ export async function middleware(request: NextRequest) {
       pathname === "/api/v1/documents" ||
       pathname === "/api/v1/claims";
     if (authLimited || apiLimited) {
-      const limited = rateLimit(`mw:${pathname}:${clientIp(request)}`, authLimited ? 20 : 40, 10 * 60 * 1000);
+      const limited = await rateLimit(`mw:${pathname}:${clientIp(request)}`, authLimited ? 20 : 40, 10 * 60 * 1000);
       if (!limited.ok) return rateLimitResponse(limited.retryAfter);
     }
   }

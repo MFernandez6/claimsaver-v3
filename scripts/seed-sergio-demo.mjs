@@ -4,7 +4,8 @@
  *   node scripts/seed-sergio-demo.mjs
  *
  * Reads NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY from apps/web/.env.local.
- * Credentials are printed and written to scripts/.demo-credentials.local (gitignored).
+ * Requires DEMO_PASSWORD (12+ chars) in the environment. Do not commit it.
+ * Credentials are written to scripts/.demo-credentials.local (gitignored).
  */
 import { createClient } from "@supabase/supabase-js";
 import { randomUUID } from "node:crypto";
@@ -48,9 +49,13 @@ const admin = createClient(url, serviceKey, {
 });
 
 const CREDENTIALS_PATH = join(root, "scripts/.demo-credentials.local");
-const DEMO_PASSWORD = process.env.DEMO_PASSWORD || "Password123!";
+const DEMO_PASSWORD = process.env.DEMO_PASSWORD || "";
 
 function passwordFor() {
+  if (DEMO_PASSWORD.length < 12) {
+    console.error("Set DEMO_PASSWORD (12+ characters) in the environment. Do not commit it.");
+    process.exit(1);
+  }
   return DEMO_PASSWORD;
 }
 

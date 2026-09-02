@@ -12,6 +12,11 @@ function str(v: unknown) {
   return typeof v === "string" ? v : v == null ? "" : String(v);
 }
 
+/** Never persist or return a Social Security number. */
+export function stripClaimantSsn<T extends Record<string, unknown>>(worksheet: T): T {
+  return { ...worksheet, claimantSSN: "" };
+}
+
 export function toClaimSummary(row: Record<string, unknown>): ClaimSummary {
   const ws = (row.worksheet ?? {}) as Record<string, unknown>;
   const parsed = floridaNoFaultFormSchema.safeParse(ws);
@@ -45,6 +50,6 @@ export function toClaimDetail(row: Record<string, unknown>): ClaimDetail {
   const raw = (row.worksheet ?? {}) as Record<string, unknown>;
   return {
     ...toClaimSummary(row),
-    worksheet: { ...ws, ...raw, claimantSSN: str(raw.claimantSSN) },
+    worksheet: stripClaimantSsn({ ...ws, ...raw }),
   };
 }

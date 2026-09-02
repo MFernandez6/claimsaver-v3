@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
   const stripe = getStripe();
   if (!stripe) return jsonErr("Stripe is not configured", 500);
 
-  const limited = rateLimit(`checkout:${user.id}:${clientIp(req)}`, 8, 10 * 60 * 1000);
+  const limited = await rateLimit(`checkout:${user.id}:${clientIp(req)}`, 8, 10 * 60 * 1000);
   if (!limited.ok) return rateLimitResponse(limited.retryAfter);
 
   const parsed = checkoutRequestSchema.safeParse(await req.json().catch(() => ({})));

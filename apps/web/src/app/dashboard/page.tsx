@@ -72,6 +72,9 @@ export default function DashboardPage() {
         setPaywall(true);
         return;
       }
+      if (profile.legalConsentCurrent === false) {
+        return;
+      }
       const [c, d, e, x] = await Promise.all([
         webApi.get<ClaimSummary[]>("/api/v1/claims"),
         webApi.get<DocumentRow[]>("/api/v1/documents"),

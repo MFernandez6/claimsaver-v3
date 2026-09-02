@@ -6,27 +6,25 @@ export const SITE_HOST = "claimsaverplus.com";
 export const SUPPORT_EMAIL = "support@claimsaverplus.com";
 
 /** Bump when ToS or Privacy materially change so clickwrap can be re-collected. */
-export const LEGAL_DOCUMENTS_VERSION = "26.09.04";
+export const LEGAL_DOCUMENTS_VERSION = "26.09.05";
 
 /** Florida LLC filed 2026. Use on contracts, receipts, and formal notices. */
 export const LEGAL_ENTITY_NAME = "CLAIMSAVERPLUS LLC";
 export const LEGAL_ENTITY_DBA = "ClaimSaver+";
 export const LEGAL_ENTITY_DISPLAY = "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+";
 
-/** Founder credentials for public footer / trust copy — not representation. */
+/**
+ * Public founder copy only. Do not put a 6-20 / license number on the
+ * marketing surface until Florida insurance-regulatory counsel writes on
+ * §626.854. The number stays in docs/LAUNCH-CHECKLIST.md for that briefing.
+ */
 export const FOUNDER = {
   name: "Miguel A. Fernandez, M.Sc.",
   role: "Founder",
   degree: "M.Sc. Law & Policy",
-  licenseClass: "6-20",
-  licenseType: "Florida All-Lines Adjuster (6-20)",
-  licenseNumber: "G279764",
-  dfsLookupUrl: "https://licenseesearch.fldfs.com/",
-  /** Published as founder background only — not a service sold on the platform. */
   backgroundHighlights: [
     "Paralegal & litigation experience",
     "M.Sc. Law & Policy",
-    "Florida All-Lines Adjuster (6-20)",
   ] as const,
 } as const;
 

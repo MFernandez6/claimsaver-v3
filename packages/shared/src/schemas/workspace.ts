@@ -81,7 +81,9 @@ export const meSchema = z.object({
   lastName: z.string(),
   role: z.enum(["user", "admin", "super_admin"]),
   hasPlatformAccess: z.boolean(),
+  isActive: z.boolean().optional(),
   legalConsentCurrent: z.boolean().default(true),
+  legalVersion: z.string().optional(),
 });
 
 export type Me = z.infer<typeof meSchema>;

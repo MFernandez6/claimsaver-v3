@@ -16,6 +16,7 @@ type Overview = {
     last_name: string;
     role: string;
     has_platform_access: boolean;
+    is_active?: boolean;
   }>;
   claims: Array<{
     id: string;
@@ -23,6 +24,14 @@ type Overview = {
     claim_number: string;
     status: string;
     updated_at: string;
+  }>;
+  deletions: Array<{
+    id: string;
+    user_id: string;
+    email: string;
+    status: string;
+    created_at: string;
+    processed_at: string | null;
   }>;
 };
 
@@ -33,6 +42,7 @@ export default function AdminPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [detail, setDetail] = useState<Record<string, unknown> | null>(null);
   const [note, setNote] = useState("");
+  const [fulfilling, setFulfilling] = useState<string | null>(null);
 
   useEffect(() => {
     webApi
@@ -65,7 +75,10 @@ export default function AdminPage() {
             {data.users.map((u) => (
               <div key={u.id} className="rounded border p-2">
                 <p className="font-medium">{u.email}</p>
-                <p className="text-xs text-slate-500">{u.role} · {t("admin.access")} {u.has_platform_access ? t("common.yes") : t("common.no")}</p>
+                <p className="text-xs text-slate-500">
+                  {u.role} · {t("admin.access")} {u.has_platform_access ? t("common.yes") : t("common.no")}
+                  {u.is_active === false ? ` · ${t("admin.disabled")}` : ""}
+                </p>
               </div>
             ))}
           </CardContent>
@@ -90,6 +103,43 @@ export default function AdminPage() {
           </CardContent>
         </Card>
       </div>
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>{t("admin.deletions", { count: (data.deletions ?? []).length })}</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-2 text-sm">
+          <p className="text-xs text-slate-500">{t("admin.deletionIntro")}</p>
+          {(data.deletions ?? []).map((row) => (
+            <div key={row.id} className="flex flex-wrap items-center justify-between gap-2 rounded border p-2">
+              <div>
+                <p className="font-medium">{row.email}</p>
+                <p className="text-xs text-slate-500">{row.status} · {row.created_at}</p>
+              </div>
+              {row.status !== "done" ? (
+                <Button
+                  type="button"
+                  disabled={fulfilling === row.id}
+                  onClick={async () => {
+                    setFulfilling(row.id);
+                    try {
+                      await webApi.post(`/api/v1/admin/deletion-requests/${row.id}`, {});
+                      setData(await webApi.get<Overview>("/api/v1/admin/overview"));
+                    } catch (e) {
+                      setError(e instanceof Error ? e.message : t("admin.deletionFailed"));
+                    } finally {
+                      setFulfilling(null);
+                    }
+                  }}
+                >
+                  {t("admin.fulfillDeletion")}
+                </Button>
+              ) : (
+                <p className="text-xs text-slate-500">{t("admin.deletionDone")}</p>
+              )}
+            </div>
+          ))}
+        </CardContent>
+      </Card>
       {selected && detail ? (
         <Card className="mt-6">
           <CardHeader><CardTitle>{t("admin.recordNotes")}</CardTitle></CardHeader>

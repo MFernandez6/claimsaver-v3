@@ -83,6 +83,7 @@ export function ClaimFormWizard() {
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
   const [paywall, setPaywall] = useState(false);
+  const [loadTick, setLoadTick] = useState(0);
   const [savedComplete, setSavedComplete] = useState(false);
   const [stepError, setStepError] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -138,6 +139,10 @@ export function ClaimFormWizard() {
         const profile = await webApi.get<Me>("/api/v1/me");
         if (cancelled) return;
         setMe(profile);
+        if (profile.legalConsentCurrent === false) {
+          setLoadingClaim(false);
+          return;
+        }
         const list = await webApi.get<ClaimDetail[]>("/api/v1/claims");
         if (cancelled) return;
         if (list[0]) {
@@ -168,7 +173,7 @@ export function ClaimFormWizard() {
     };
     // `t` is only used for a fallback error string; do not refetch on language change.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoaded, isSignedIn]);
+  }, [isLoaded, isSignedIn, loadTick]);
 
   useEffect(() => {
     if (prefilled.current) return;
@@ -249,7 +254,12 @@ export function ClaimFormWizard() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
       {me && me.legalConsentCurrent === false ? (
-        <LegalReaccept onAccepted={() => setMe({ ...me, legalConsentCurrent: true })} />
+        <LegalReaccept
+          onAccepted={() => {
+            setMe({ ...me, legalConsentCurrent: true });
+            setLoadTick((n) => n + 1);
+          }}
+        />
       ) : null}
       {error ? <p className="mb-4 text-sm text-red-600">{error}</p> : null}
       <div className="print:hidden">
@@ -332,9 +342,9 @@ export function ClaimFormWizard() {
               </div>
               <Field required label={t("claimForm.fields.address")}><Textarea value={form.claimantAddress} onChange={(e) => set("claimantAddress", e.target.value)} /></Field>
               <Field required label={t("claimForm.fields.dob")}><Input type="date" value={form.claimantDOB} onChange={(e) => set("claimantDOB", e.target.value)} /></Field>
-              <Field label={t("claimForm.fields.ssn")} hint={t("claimForm.hints.ssn")}>
-                <Input type="password" autoComplete="off" value={form.claimantSSN} onChange={(e) => set("claimantSSN", e.target.value)} />
-              </Field>
+              <p className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                {t("claimForm.hints.ssn")}
+              </p>
               <Field required label={t("claimForm.fields.floridaResidency")} hint={t("claimForm.hints.floridaResidency")}><Input value={form.floridaResidencyDuration} onChange={(e) => set("floridaResidencyDuration", e.target.value)} /></Field>
               <Field label={t("claimForm.fields.permanentAddress")} hint={t("claimForm.hints.permanentAddress")}><Textarea value={form.permanentAddress} onChange={(e) => set("permanentAddress", e.target.value)} /></Field>
               <div className="grid gap-3 sm:grid-cols-4">

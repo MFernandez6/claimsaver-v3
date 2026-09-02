@@ -98,7 +98,6 @@ export function WorksheetPrintDocument({
         <Row label={t("claimForm.fields.businessPhone")} value={form.claimantPhoneBusiness} />
         <Row label={t("claimForm.fields.address")} value={form.claimantAddress} />
         <Row label={t("claimForm.fields.dob")} value={form.claimantDOB} />
-        <Row label={t("claimForm.fields.ssn")} value={form.claimantSSN} />
         <Row label={t("claimForm.fields.floridaResidency")} value={form.floridaResidencyDuration} />
         <Row label={t("claimForm.fields.permanentAddress")} value={form.permanentAddress} />
         <Row label={t("claimForm.fields.vehicleYear")} value={form.vehicleYear} />

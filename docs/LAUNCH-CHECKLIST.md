@@ -1,6 +1,6 @@
 # Launch checklist (items 4–8)
 
-This is an **internal operating brief**, not a legal opinion, insurance binder, or tax ruling. Items 1–3 are in the product (ToS/Privacy v26.09.04, clickwrap, CLAIMSAVERPLUS LLC named). Notarization is not sold. Items 4, 6, and Florida sales-tax confirmation still need counsel / broker / CPA.
+This is an **internal operating brief**, not a legal opinion, insurance binder, or tax ruling. Items 1–3 are in the product (ToS/Privacy v26.09.05, clickwrap, CLAIMSAVERPLUS LLC named). Notarization is not sold. The 6-20 license number is **off** the public site until counsel writes. Items 4, 6, and Florida sales-tax confirmation still need counsel / broker / CPA.
 
 ## 4. Licensing vs Florida §626.854 (counsel briefing)
 
@@ -11,7 +11,7 @@ This is an **internal operating brief**, not a legal opinion, insurance binder, 
 - Sells **self-serve software** (guided Florida PIP worksheet, document vault, calendar, educational reminders).
 - Customer remains the **filer**. Software does **not** submit the package to a carrier, call an adjuster, negotiate, or evaluate claim merits.
 - Public copy states we are **not** a law firm, **not** a public adjuster, and **not** the customer’s representative.
-- Founder holds an active Florida **6-20 All-Lines Adjuster** license (G279764). That number is published as **founder background**, not as a sold adjusting service.
+- Founder holds an active Florida **6-20 All-Lines Adjuster** license (G279764). That number is **not** on the public footer, Who We Are, or locale bundles. Tell counsel it was removed from the marketing surface pending their written opinion. Keep this briefing internal.
 - Reminders (including the 14-day treatment window) are labeled **education**, driven by dates the customer enters, and are **not** a determination that a visit “counts.”
 
 ### What counsel should confirm or redesign
@@ -20,7 +20,7 @@ This is an **internal operating brief**, not a legal opinion, insurance binder, 
 - Whether any remaining marketing, admin screens, or “we help you file” phrasing should be tightened.
 - Whether the 6-20 should stay on the public footer or be moved off consumer pages.
 
-Until that memo exists, do not describe ClaimSaver+ as adjusting, representation, or claim evaluation.
+Until that memo exists, do not describe ClaimSaver+ as adjusting, representation, or claim evaluation, and do not put G279764 back on consumer pages.
 
 ## 5. Notarization — not offered
 
@@ -65,6 +65,16 @@ Confirm with Sunbiz + Stripe + the bank that this LLC (not BLACKLINE or another 
 
 Ask a Florida CPA whether this **one-time SaaS access** is taxable under Florida sales/use tax. Register or collect only as that CPA instructs.
 
+## 10. Sole-operator coverage (Miguel)
+
+You are support, incident response, chargebacks, and deletion fulfillment. Before real volume:
+
+1. Name one backup person who can reach Stripe, Vercel, Supabase, and `support@claimsaverplus.com` if you are unavailable for 48 hours.
+2. Store those logins in a password manager with an emergency-access contact—not in chat or the repo.
+3. Deletion requests appear on `/admin`. Fulfill within 30 days (wipes worksheets/files; keeps payment records; disables the account).
+4. Demo accounts: never reuse a password from git. Set `DEMO_PASSWORD` in the environment; credentials land in `scripts/.demo-credentials.local` (gitignored).
+5. Bind cyber / tech E&O with the broker (item 6). This runbook is not insurance.
+
 ## Apply before production traffic
 
 ```bash
@@ -72,6 +82,6 @@ Ask a Florida CPA whether this **one-time SaaS access** is taxable under Florida
 npx supabase db push
 ```
 
-Migration `supabase/migrations/005_launch_readiness.sql` creates `legal_consents`, `account_deletion_requests`, `notarization_orders`, and `billing_disputes`. Until it is applied, `/api/v1/me` fail-opens (no re-accept wall) and consent inserts will 500.
+Migration `006_audit_hardening.sql` revokes authenticated Data API writes on paid tables, adds paid+active RLS, durable rate limits, storage deny policies, and wipes stored SSNs. Apply it before the corresponding web deploy.
 
-Existing accounts will see the **Updated Terms** modal after the table exists, because they have no `26.09.04` consent row yet. That is intended.
+Existing accounts will see the **Updated Terms** modal for version **26.09.05**. Platform APIs return 403 until they accept. That is intended.

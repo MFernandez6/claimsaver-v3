@@ -39,6 +39,14 @@ export async function POST(req: NextRequest) {
       .filter(Boolean);
 
     if (userId && session.payment_status === "paid") {
+      const expectedCents = products
+        .filter(isProductCode)
+        .reduce((sum, code) => sum + PRODUCTS[code].amountCents, 0);
+      const paidCents = typeof session.amount_total === "number" ? session.amount_total : 0;
+      if (expectedCents < 1 || paidCents < expectedCents) {
+        return NextResponse.json({ received: true });
+      }
+
       const admin = getSupabaseAdmin();
       for (const code of products) {
         if (!isProductCode(code)) continue;

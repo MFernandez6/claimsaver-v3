@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 
 type Bucket = { count: number; resetAt: number };
 
@@ -9,7 +10,7 @@ export function clientIp(req: NextRequest) {
   return forwarded || req.headers.get("x-real-ip") || "unknown";
 }
 
-export function rateLimit(
+function memoryLimit(
   key: string,
   limit: number,
   windowMs: number,
@@ -25,6 +26,35 @@ export function rateLimit(
   }
   existing.count += 1;
   return { ok: true };
+}
+
+/** Durable when Supabase is configured; in-memory fallback for local/dev. */
+export async function rateLimit(
+  key: string,
+  limit: number,
+  windowMs: number,
+): Promise<{ ok: true } | { ok: false; retryAfter: number }> {
+  if (isSupabaseConfigured()) {
+    try {
+      const { data, error } = await getSupabaseAdmin()
+        .schema("private")
+        .rpc("consume_rate_limit", {
+          p_key: key,
+          p_limit: limit,
+          p_window_seconds: Math.max(1, Math.ceil(windowMs / 1000)),
+        });
+      if (!error && data && typeof data === "object") {
+        const row = data as { ok?: boolean; retry_after?: number };
+        if (row.ok === false) {
+          return { ok: false, retryAfter: Math.max(1, Number(row.retry_after) || 1) };
+        }
+        if (row.ok === true) return { ok: true };
+      }
+    } catch {
+      /* Fall through to process memory. */
+    }
+  }
+  return memoryLimit(key, limit, windowMs);
 }
 
 export function rateLimitResponse(retryAfter: number) {

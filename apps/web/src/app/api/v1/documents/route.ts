@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
   if (response) return response;
   if (!isSupabaseConfigured()) return jsonErr("Database not configured", 503);
 
-  const limited = rateLimit(`upload:${user.id}:${clientIp(req)}`, 30, 10 * 60 * 1000);
+  const limited = await rateLimit(`upload:${user.id}:${clientIp(req)}`, 30, 10 * 60 * 1000);
   if (!limited.ok) return rateLimitResponse(limited.retryAfter);
 
   const form = await req.formData();

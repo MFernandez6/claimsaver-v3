@@ -5,7 +5,7 @@ import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
 import { generateClaimNumber } from "@/lib/utils";
 import { clientIp, rateLimit, rateLimitResponse } from "@/lib/security/rate-limit";
-import { toClaimDetail, toClaimSummary } from "@/lib/api/mappers";
+import { stripClaimantSsn, toClaimDetail, toClaimSummary } from "@/lib/api/mappers";
 
 export async function GET(req: NextRequest) {
   const { user, response } = await requirePlatformAccess(req);
@@ -28,11 +28,14 @@ export async function POST(req: NextRequest) {
   if (response) return response;
   if (!isSupabaseConfigured()) return jsonErr("Database not configured", 503);
 
-  const limited = rateLimit(`claims:${user.id}:${clientIp(req)}`, 20, 10 * 60 * 1000);
+  const limited = await rateLimit(`claims:${user.id}:${clientIp(req)}`, 20, 10 * 60 * 1000);
   if (!limited.ok) return rateLimitResponse(limited.retryAfter);
 
   const body = (await req.json().catch(() => ({}))) as { worksheet?: unknown };
-  const worksheet = { ...emptyWorksheet(), ...(body.worksheet ?? {}) };
+  const worksheet = stripClaimantSsn({
+    ...emptyWorksheet(),
+    ...((body.worksheet ?? {}) as Record<string, unknown>),
+  });
 
   const admin = getSupabaseAdmin();
   let data: Record<string, unknown> | null = null;

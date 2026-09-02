@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CHECKOUT_PATH, FOUNDER } from "@claimsaver/shared";
+import { CHECKOUT_PATH } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import { ObfuscatedSupportEmail } from "@/components/obfuscated-support-email";
 
@@ -58,13 +58,6 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-10 text-xs leading-relaxed text-white/60">{t("footer.legalText")}</p>
-        <p className="mt-3 text-xs text-white/55">
-          {t("footer.licenseLine", {
-            name: FOUNDER.name,
-            type: FOUNDER.licenseType,
-            number: FOUNDER.licenseNumber,
-          })}
-        </p>
         <p className="mt-4 text-xs text-white/50">© {new Date().getFullYear()} CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ • {t("footer.servingFlorida")}</p>
       </div>
     </footer>

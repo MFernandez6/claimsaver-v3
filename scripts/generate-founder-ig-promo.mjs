@@ -28,13 +28,13 @@ const BRAND = {
 const SLUG = "week5-mon-founder-why-we-exist";
 const COPY = {
   header: "WHY WE EXIST",
-  subheader: "Founder background you can verify",
+  subheader: "Founder background",
   name: "Miguel A. Fernandez, M.Sc.",
   role: "Founder · Miami, Florida",
   credentials: [
     "Paralegal & litigation experience",
     "M.Sc. Law & Policy",
-    "Florida All-Lines Adjuster (6-20) · G279764",
+    "Insurance claims operations experience",
   ],
   body:
     "Born from our family's accident claim in Miami. We built guided software for Florida PIP paperwork—flat $500, you stay the filer.",
