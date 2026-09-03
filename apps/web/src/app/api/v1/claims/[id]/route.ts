@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { normalizeAccidentDate, patchClaimSchema } from "@claimsaver/shared";
+import { CUSTOMER_CLAIM_STATUSES, normalizeAccidentDate, patchClaimSchema } from "@claimsaver/shared";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
 import { stripClaimantSsn, toClaimDetail } from "@/lib/api/mappers";
@@ -60,11 +60,15 @@ export async function PATCH(req: NextRequest, ctx: Ctx) {
     nextWorksheet.accidentDate = accidentDate;
   }
 
+  const nextStatus = parsed.data.status && CUSTOMER_CLAIM_STATUSES.includes(parsed.data.status)
+    ? parsed.data.status
+    : existing.status;
+
   const { data, error } = await admin
     .from("claims")
     .update({
       worksheet: nextWorksheet,
-      status: parsed.data.status ?? existing.status,
+      status: nextStatus,
       priority: parsed.data.priority ?? existing.priority,
       worksheet_step: parsed.data.worksheetStep ?? existing.worksheet_step,
       updated_at: new Date().toISOString(),

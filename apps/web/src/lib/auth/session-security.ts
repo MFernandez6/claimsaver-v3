@@ -1,6 +1,7 @@
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 
+/** Keep in sync with supabase/config.toml jwt_expiry and auth.sessions.inactivity_timeout. */
 export const IDLE_LIMIT_MS = 5 * 60 * 1000;
 export const IDLE_WARN_MS = 60 * 1000;
 export const SESSION_CHANNEL = "csplus-session";

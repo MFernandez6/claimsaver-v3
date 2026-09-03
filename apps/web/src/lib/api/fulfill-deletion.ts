@@ -25,6 +25,7 @@ export async function fulfillAccountDeletion(
   await admin
     .from("profiles")
     .update({
+      email: "",
       first_name: "",
       last_name: "",
       phone: "",

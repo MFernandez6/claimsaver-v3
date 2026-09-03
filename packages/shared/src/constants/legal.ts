@@ -64,6 +64,10 @@ export const CLAIM_STATUSES = [
 ] as const;
 export type ClaimStatus = (typeof CLAIM_STATUSES)[number];
 
+/** Customers may only move a claim between these statuses. Staff workflow values stay admin-only. */
+export const CUSTOMER_CLAIM_STATUSES = ["draft", "in_progress"] as const;
+export type CustomerClaimStatus = (typeof CUSTOMER_CLAIM_STATUSES)[number];
+
 export const CLAIM_PRIORITIES = ["low", "medium", "high", "urgent"] as const;
 export type ClaimPriority = (typeof CLAIM_PRIORITIES)[number];
 

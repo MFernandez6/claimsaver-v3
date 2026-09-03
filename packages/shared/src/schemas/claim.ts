@@ -3,6 +3,7 @@ import { COMPLETION_METHODS, TOTAL_WORKSHEET_STEPS } from "../constants/workshee
 import {
   CLAIM_PRIORITIES,
   CLAIM_STATUSES,
+  CUSTOMER_CLAIM_STATUSES,
 } from "../constants/legal";
 
 export const completionMethodSchema = z.union([
@@ -159,7 +160,7 @@ export type ClaimDetail = z.infer<typeof claimDetailSchema>;
 
 export const patchClaimSchema = z.object({
   worksheet: floridaNoFaultFormSchema.partial().optional(),
-  status: z.enum(CLAIM_STATUSES).optional(),
+  status: z.enum(CUSTOMER_CLAIM_STATUSES).optional(),
   priority: z.enum(CLAIM_PRIORITIES).optional(),
   worksheetStep: z.number().int().min(1).max(TOTAL_WORKSHEET_STEPS).optional(),
 });

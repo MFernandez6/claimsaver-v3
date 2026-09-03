@@ -82,6 +82,8 @@ You are support, incident response, chargebacks, and deletion fulfillment. Befor
 npx supabase db push
 ```
 
-Migration `006_audit_hardening.sql` revokes authenticated Data API writes on paid tables, adds paid+active RLS, durable rate limits, storage deny policies, and wipes stored SSNs. Apply it before the corresponding web deploy.
+Migration `006_audit_hardening.sql` revokes authenticated Data API writes on paid tables, adds paid+active RLS, durable rate limits, storage deny policies, and wipes stored SSNs. Migration `20260903000527_deletion_cap_and_hardening.sql` allows only one pending deletion request per user. Apply both before the corresponding web deploy.
+
+Auth (Management API — do **not** `supabase config push`; that would overwrite production `site_url` with localhost): JWT 5 minutes, password min 12, OTP rate limit 10/hour. Local `supabase/config.toml` already has those values for `supabase start`. **Leaked-password protection (HIBP) and Auth inactivity timeout need a Pro plan** — they returned 402 on the current project. Short JWT still kills a copied Bearer token in 5 minutes.
 
 Existing accounts will see the **Updated Terms** modal for version **26.09.05**. Platform APIs return 403 until they accept. That is intended.
