@@ -85,6 +85,7 @@ export function ClaimFormWizard() {
   const [paywall, setPaywall] = useState(false);
   const [loadTick, setLoadTick] = useState(0);
   const [savedComplete, setSavedComplete] = useState(false);
+  const [ackSoftware, setAckSoftware] = useState(false);
   const [stepError, setStepError] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const claimId = claim?.id;
@@ -507,9 +508,22 @@ export function ClaimFormWizard() {
                 </div>
               ) : (
                 <>
+                  <p className="text-sm text-slate-600">{t("claimForm.generatedFromAnswers")}</p>
                   <p className="text-sm text-slate-600">{t("claimForm.reviewIntro")}</p>
                   <p className="text-sm text-slate-600">{t("claimForm.printFullHint")}</p>
                   <SignaturePad required label={t("claimForm.fields.signature")} hint={t("claimForm.hints.reviewSignature")} value={form.signature} onChange={(v) => set("signature", v)} />
+                  <label className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
+                    <input
+                      type="checkbox"
+                      checked={ackSoftware}
+                      onChange={(e) => {
+                        setAckSoftware(e.target.checked);
+                        if (e.target.checked) setStepError(null);
+                      }}
+                      className="mt-0.5 h-4 w-4 shrink-0"
+                    />
+                    <span>{t("claimForm.beforeSaveAck")}</span>
+                  </label>
                   <p className="text-xs text-slate-400">{t("claimForm.helloFiler", { name: greetingName(me, user, t("dashboard.there")) })}</p>
                 </>
               )}
@@ -517,14 +531,16 @@ export function ClaimFormWizard() {
           )}
 
           {error ? <p className="text-sm text-red-600">{error}</p> : null}
-          {missing.length > 0 ? (
+          {missing.length > 0 || stepError ? (
             <div className={`rounded-lg border p-3 text-sm ${stepError ? "border-amber-200 bg-amber-50 text-amber-950" : "border-slate-200 bg-slate-50 text-slate-700"}`}>
               <p>{stepError || t("claimForm.stillNeeded")}</p>
-              <ul className="mt-2 list-disc pl-5 text-xs">
-                {missing.map((key) => (
-                  <li key={key}>{t(`claimForm.missing.${key}`)}</li>
-                ))}
-              </ul>
+              {missing.length > 0 ? (
+                <ul className="mt-2 list-disc pl-5 text-xs">
+                  {missing.map((key) => (
+                    <li key={key}>{t(`claimForm.missing.${key}`)}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ) : null}
 
@@ -548,6 +564,10 @@ export function ClaimFormWizard() {
                   onClick={async () => {
                     if (missing.length > 0) {
                       setStepError(t("claimForm.completeRequired"));
+                      return;
+                    }
+                    if (!ackSoftware) {
+                      setStepError(t("claimForm.beforeSaveRequired"));
                       return;
                     }
                     if (timer.current) clearTimeout(timer.current);

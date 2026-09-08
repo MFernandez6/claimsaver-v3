@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { PLATFORM_PRICE_TESTING, PRODUCTS } from "@claimsaver/shared";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
-const ROWS = ["why", "who", "fee"] as const;
+const ROWS = ["why", "fee"] as const;
 
 export function PricingCompare({
   ctaHref,
@@ -19,61 +19,57 @@ export function PricingCompare({
 
   return (
     <div>
-      <div className="grid items-stretch gap-5 md:grid-cols-2">
-        <article className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900/70">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-            {t("pricing.fit.colAttorney")}
-          </p>
-          <ComparisonRows side="Attorney" />
-        </article>
+      <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-900">
+        <div className="grid md:grid-cols-2">
+          <article className="border-b border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-emerald-50/70 p-6 sm:p-8 md:border-b-0 md:border-r dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-teal-950/30">
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white sm:text-2xl">
+              {t("pricing.fit.colAttorney")}
+            </h3>
+            <ComparisonRows side="Attorney" />
+          </article>
 
-        <article className="flex flex-col rounded-2xl border border-teal-200 bg-white p-6 dark:border-teal-800 dark:bg-slate-900/70">
-          <p className="text-xs font-semibold uppercase tracking-wide text-teal-800 dark:text-teal-300">
-            {t("pricing.fit.colOurs")}
-          </p>
-          <ComparisonRows side="Ours" />
-          {PLATFORM_PRICE_TESTING ? (
-            <p className="mt-3 text-xs font-medium text-teal-800 dark:text-teal-200">
-              {t("pricing.testing.compareNote", { testPrice: PRODUCTS.platform.displayPrice })}
-            </p>
-          ) : null}
-          {ctaHref && ctaLabel ? (
-            <div className="mt-5">
-              <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">
-                <Link href={ctaHref}>{ctaLabel}</Link>
-              </Button>
-            </div>
-          ) : null}
-        </article>
+          <article className="bg-gradient-to-br from-slate-50 via-white to-emerald-50/70 p-6 sm:p-8 dark:from-slate-900 dark:via-slate-900 dark:to-teal-950/30">
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white sm:text-2xl">
+              {t("pricing.fit.colOurs")}
+            </h3>
+            <ComparisonRows side="Ours" />
+            {PLATFORM_PRICE_TESTING ? (
+              <p className="mt-6 text-sm font-medium text-teal-800 dark:text-teal-200">
+                {t("pricing.testing.compareNote", { testPrice: PRODUCTS.platform.displayPrice })}
+              </p>
+            ) : null}
+          </article>
+        </div>
       </div>
-      <p className="mt-4 text-center text-xs leading-relaxed text-slate-500">
-        {t("pricing.fit.footnote")}
-      </p>
+      <p className="mt-3 text-center text-xs text-slate-500">{t("pricing.fit.footnote")}</p>
+      {ctaHref && ctaLabel ? (
+        <div className="mt-8 flex justify-center">
+          <Button
+            size="lg"
+            asChild
+            className="h-12 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-800 px-7 text-base font-semibold"
+          >
+            <Link href={ctaHref} className="inline-flex items-center gap-2 whitespace-nowrap">
+              {ctaLabel} <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      ) : null}
     </div>
   );
 }
 
 function ComparisonRows({ side }: { side: "Attorney" | "Ours" }) {
   const { t } = useTranslation();
-  const valueClass =
-    side === "Ours"
-      ? "text-slate-800 dark:text-slate-100"
-      : "text-slate-700 dark:text-slate-200";
 
   return (
-    <dl className="mt-5 space-y-4">
+    <dl className="mt-6 space-y-5">
       {ROWS.map((row) => (
-        <div
-          key={row}
-          className={cn(
-            "border-t pt-4 first:border-t-0 first:pt-0",
-            side === "Ours" ? "border-teal-100 dark:border-teal-900" : "border-slate-100 dark:border-slate-800",
-          )}
-        >
-          <dt className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+        <div key={row}>
+          <dt className="text-sm font-semibold text-teal-800 dark:text-teal-300">
             {t(`pricing.fit.${row}`)}
           </dt>
-          <dd className={cn("mt-1 text-sm leading-relaxed", valueClass)}>
+          <dd className="mt-1 text-base leading-relaxed text-slate-600 dark:text-slate-300">
             {t(`pricing.fit.${row}${side}`)}
           </dd>
         </div>

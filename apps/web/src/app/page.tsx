@@ -110,16 +110,14 @@ export default function HomePage() {
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-8 max-w-3xl text-center">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
-              {t("floridaOnly.chip")}
-            </p>
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
+            <h2 className="mb-3 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
               {t("pricing.ui.comparisonTitleLead")}
             </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300">
+              {t("pricing.ui.comparisonSubtitle")}
+            </p>
           </div>
           <PricingCompare ctaHref="/pricing" ctaLabel={t("cta.payAccess")} />
-          <p className="mt-4 text-center text-xs text-slate-500">{t("pricing.comparisonNote")}</p>
-          <p className="mt-3 text-center text-sm text-slate-500">{t("home.futureAddonsNote")}</p>
         </div>
       </section>
 

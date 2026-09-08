@@ -35,7 +35,8 @@ export function toClaimSummary(row: Record<string, unknown>): ClaimSummary {
       }) || null,
     accidentLocation: str(ws.accidentLocation || ws.accidentPlace) || null,
     claimantName: str(ws.claimantName) || null,
-    estimatedValue: typeof ws.estimatedValue === "number" ? ws.estimatedValue : null,
+    // Never surface a claim-value estimate to the customer API (ministerial product).
+    estimatedValue: null,
     updatedAt: str(row.updated_at),
     createdAt: str(row.created_at),
     worksheetStep: step,

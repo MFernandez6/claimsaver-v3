@@ -39,6 +39,10 @@
     "home": "Home",
     "englishControls": "The English version is the controlling text. This translation is for convenience."
   },
+  "disclaimer": {
+    "persistent": "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship.",
+    "blacklineSeparation": "ClaimSaver+ is software sold by CLAIMSAVERPLUS LLC. It is not a licensed adjusting service, and not a paid referral to an attorney or public adjuster."
+  },
   "navigation": {
     "home": "Home",
     "whoWeAre": "Who We Are",
@@ -68,7 +72,7 @@
       "titleLine1": "File Your Florida",
       "titleLine2": "No-Fault Claim.",
       "subtitle": "Keep What's Yours.",
-      "description": "Guided software for Florida PIP claims you file yourself—especially when a personal-injury firm isn’t taking the case. Flat $500 platform access. You stay the filer. Not a law firm.",
+      "description": "Self-help software for Florida PIP paperwork you prepare yourself—especially PIP-only files personal-injury firms often decline. Flat $500 platform access. You stay the filer. Not a law firm. Not legal advice.",
       "cta": "Get started",
       "ctaSecondary": "See how it works",
       "learnMore": "Learn More",
@@ -195,8 +199,8 @@
         "answer": "Platform access is a flat $500—one time, not a percentage of your benefits. That is the only product for sale today. Future add-ons, if we offer them, will be priced and disclosed separately."
       },
       "accidents": {
-        "question": "What types of accidents does ClaimSaver+ handle?",
-        "answer": "The platform is designed for Florida motor vehicle-related PIP claims—including car, motorcycle, truck, pedestrian, and bicycle incidents—so you can document and pursue no-fault benefits you are entitled to seek under your policy. We do not guarantee outcomes or act as your representative."
+        "question": "What types of accidents is ClaimSaver+ for?",
+        "answer": "The platform is self-help software for Florida motor vehicle-related PIP paperwork—including car, motorcycle, truck, pedestrian, and bicycle incidents. You can document facts and prepare forms described in your policy and Florida’s PIP statute. We do not determine what benefits apply to your facts, guarantee outcomes, or act as your representative."
       },
       "documents": {
         "question": "Do I need to upload documents?",
@@ -230,13 +234,13 @@
       "step1Title": "Create your account & pay for access",
       "step1Body": "Sign in, complete checkout for platform access, and unlock the guided workflows and document tools.",
       "step2Title": "Complete the guided PIP information",
-      "step2Body": "Walk through the PIP form one section at a time with plain-language prompts. Built-in validation catches formatting errors and missing fields before you submit.",
+      "step2Body": "Walk through the PIP form one section at a time with plain-language prompts. Built-in validation catches formatting errors and missing fields before you copy answers onto the insurer’s form.",
       "step3Title": "Upload & organize documents",
       "step3Body": "Upload police reports, medical records, photos, and insurance documents to your encrypted vault. Everything stays organized and accessible when you need it.",
       "step4Title": "Track deadlines & recovery",
       "step4Body": "Use calendars, reminders, and expense tracking—including awareness of common deadlines like Florida’s 14-day initial treatment rule (general information, not legal advice).",
-      "step5Title": "Compile and submit your claim package",
-      "step5Body": "When you’re ready, pull your documents together into a complete claim package and submit it to your insurer.",
+      "step5Title": "You compile and send your claim package",
+      "step5Body": "When you’re ready, pull your documents together into a complete claim package and send it to your insurer yourself. ClaimSaver+ does not submit, negotiate, or speak for you.",
       "notarizationNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
       "futureAddonsNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
       "viewPricing": "View pricing",
@@ -300,12 +304,12 @@
         "overlapping": "Overlapping workers’ compensation, Medicare, or stacked coverages",
         "fraud": "Fraud allegations or coordinated treatment audits"
       },
-      "closing": "As we grow, we may add optional professional services as a separate offering—always clearly distinguished from standard platform access, with their own agreements and disclosures.",
+      "closing": "If we add optional professional services later, they will be a separate product from ClaimSaver+ software, with their own agreements, pricing, and disclosures—not a bundled referral from this $500 access.",
       "ctaHome": "Back to home",
       "ctaHowItWorks": "How the platform works",
       "notEveryClaim": "Not every PIP claim belongs on a DIY path.",
       "introDiy": "ClaimSaver+ is software for standard Florida no-fault paperwork—including PIP-only files that PI firms often will not take on contingency. Leave the DIY path and consult a licensed Florida attorney when:",
-      "supportNote": "We do not match you to a lawyer as part of the $500 product. Support may help with login, billing, and how to use the site—not “what should I do in my case?”"
+      "supportNote": "We do not match you to a lawyer as part of the $500 product. Support may help with login, billing, and how to use the site—not how to handle your specific claim."
     },
     "licenseCredentials": {
       "title": "License & Credentials",
@@ -331,7 +335,7 @@
     "contact": {
       "title": "Contact",
       "subtitle": "Platform & technical support",
-      "body": "For help signing in, billing, or using the website, email {{supportEmail}}. We cannot answer questions about the legal merits of your specific claim or tell you what you should do in your case—those questions belong to a licensed attorney.",
+      "body": "For help signing in, billing, or using the website, email {{supportEmail}}. We cannot answer questions about the legal merits of your specific claim or tell you how to handle your case—those questions belong to a licensed attorney.",
       "emailLabel": "Email",
       "notarizationNote": "The $500 fee is platform access only. Future add-ons, if offered, will be disclosed separately.",
       "headquarters": "Headquarters: Miami, Florida.",
@@ -389,7 +393,7 @@
       "whyOurs": "Every accident victim can file their own PIP claim and keep the benefits their insurer pays—flat fee, not a cut.",
       "who": "Who it’s for",
       "whoAttorney": "Typically only if the injury may clear Florida’s permanency threshold—serious enough for a third-party pain-and-suffering case.",
-      "whoOurs": "All Florida accident victims filing their own no-fault claim.",
+      "whoOurs": "Florida accident victims preparing their own no-fault paperwork—especially when a PI firm has declined a PIP-only file.",
       "fee": "How you’re charged",
       "feeAttorney": "A percentage of a third-party recovery, if there is one",
       "feeOurs": "A flat $500. Not a percentage of your PIP benefits.",
@@ -527,13 +531,13 @@
       "medicalInfo": "Medical Information",
       "employmentWages": "Employment & Wages",
       "insuranceAuthorization": "Insurance Authorization",
-      "reviewSubmit": "Review & Submit",
+      "reviewSubmit": "Review & save",
       "hipaaAuthorization": "HIPAA Authorization",
       "step": "Step"
     },
     "success": {
-      "title": "Information Saved",
-      "description": "Your responses have been submitted to your ClaimSaver+ account. Continue organizing documents and, when ready, submit materials to your insurer directly—ClaimSaver+ does not file or negotiate for you.",
+      "title": "Information saved",
+      "description": "Based on your answers, the system saved this worksheet to your ClaimSaver+ account. Continue organizing documents and, when ready, send materials to your insurer directly—ClaimSaver+ does not file or negotiate for you.",
       "goToDashboard": "Go to Dashboard"
     },
     "errors": {
@@ -575,7 +579,7 @@
       },
       "s5": {
         "title": "Injury and first treatment",
-        "body": "Say if you were hurt and what care you’ve started. Florida PIP often discusses a 14-day window for initial qualifying treatment—this is a reminder, not a ruling on your visit.",
+        "body": "Say if you were hurt and what care you’ve started. Florida Statute §627.736 discusses a 14-day period for certain initial medical services—this is a reminder of that statutory topic, not a ruling on your visit.",
         "tip": "Save visit dates, provider names, and bills."
       },
       "s6": {
@@ -600,7 +604,7 @@
       },
       "s10": {
         "title": "Review, then you send it",
-        "body": "Check names and dates. Saving stores a draft in your account. You still send the package to the insurer.",
+        "body": "Based on your answers, here is the worksheet the system generated. Saving stores it in your account. Sending the package to the insurer is a step you take separately.",
         "tip": "Next: upload the crash report, bills, and photos on the dashboard, then file with the carrier."
       }
     },
@@ -682,7 +686,7 @@
     "saveFailed": "Save failed",
     "loadFailed": "Could not load worksheet",
     "stepOf": "Step {{step}} of {{total}} — {{title}}",
-    "methodPrompt": "How will you use this worksheet? This is not legal advice and does not tell you what to claim.",
+    "methodPrompt": "How will you use this worksheet? This is information for form preparation—not legal advice and not an instruction about what to claim.",
     "methodDigital": "I plan to transfer answers onto the insurer’s official form or portal, or print the summary for my records.",
     "methodPaper": "I expect to fill the paper form the insurer sent by hand, and may upload a scan later.",
     "notInjuredNote": "If you were not injured, many official paper forms ask you to sign and return early. Follow the insurer’s version of the form.",
@@ -693,7 +697,10 @@
     "authMedicalIntro": "Use this page to name a health-care provider and who may request treatment or billing records. This is a worksheet, not a form mailed to a clinic.",
     "authPipHeading": "PIP benefits disclosure (patient and provider)",
     "authPipIntro": "Many Florida no-fault packets include a patient acknowledgment—and, when applicable, a treating-office acknowledgment—that personal injury protection (PIP) benefits may apply to medical treatment. Draft those names and signatures here, then use the insurer’s official page when you submit.",
-    "reviewIntro": "Review your answers. Optional signature is for your PDF copy—you may instead sign only the insurer’s paper. Saving means information is stored in your account. You still must send materials to the insurer yourself.",
+    "reviewIntro": "Review your answers. Optional signature is for your PDF copy—you may instead sign only the insurer’s paper. Saving stores information in your account. You still send materials to the insurer yourself.",
+    "generatedFromAnswers": "Based on your answers, here is the form our system generated. It is a self-help worksheet, not advice about your claim.",
+    "beforeSaveAck": "I understand this is a worksheet generated from my answers, and I send any package to my insurer myself.",
+    "beforeSaveRequired": "Confirm the self-help worksheet acknowledgement before saving.",
     "fieldsStarted": "Fields started",
     "identityChecks": "{{count}} of 3 identity/date checks",
     "helloFiler": "Hello {{name}}—you remain the filer.",
@@ -986,13 +993,13 @@
       "totalClaims": "Total Claims",
       "pendingClaims": "Pending Claims",
       "approvedClaims": "Approved Claims",
-      "totalValue": "Total Value"
+      "totalValue": "Logged amounts"
     },
     "claims": {
       "title": "Your Claims",
       "filedOn": "Filed on",
       "accident": "Accident",
-      "estimatedValue": "Estimated Value",
+      "estimatedValue": "Amount logged (optional)",
       "noClaims": {
         "title": "No Claims Yet",
         "description": "Start your recovery journey by filing your first claim",
@@ -1090,7 +1097,7 @@
       "credential1": "Paralegal & litigation experience",
       "credential2": "M.Sc. Law & Policy",
       "credential3": "Insurance claims operations experience",
-      "body": "After our family went through an accident claim in Miami, we saw how much of Florida no-fault filing is paperwork, organization, and dates—not courtroom strategy. ClaimSaver+ is the guided software we wished existed: flat $500 access, you stay the filer, and honest clarity about what software can and can't do.",
+      "body": "His background includes an M.Sc. in Law & Policy, paralegal and litigation experience, and insurance claims operations. ClaimSaver+ is the guided software we wished existed: flat $500 access, you stay the filer, and honest clarity about what software can and can't do.",
       "disclaimer": "These credentials describe the founder's background. ClaimSaver+ is software—we do not provide legal advice, adjust your claim, negotiate with insurers, or represent you.",
       "verifyLink": "Read how the platform works",
       "imageAlt": "Miguel A. Fernandez, ClaimSaver+ founder",
@@ -1239,7 +1246,7 @@
       },
       "help": {
         "question": "What if I need help during the process?",
-        "answer": "Contact us for platform, billing, or technical issues. We cannot tell you what you should do in your specific legal situation—that requires a licensed attorney. If your matter is too complex for standard PIP filing alone, see our “When to Call an Attorney” page."
+        "answer": "Contact us for platform, billing, or technical issues. We cannot tell you how to handle your specific legal situation—that requires a licensed attorney. If your matter is too complex for standard PIP paperwork alone, see our “When to Call an Attorney” page."
       },
       "timeline": {
         "question": "How long does the entire process take?",
@@ -1385,7 +1392,7 @@
   },
   "legal": {
     "reacceptTitle": "Updated Terms and Privacy Policy",
-    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.09.05). Check the box below to continue. We store a timestamped record of this agreement with your account.",
+    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.09.08). Check the box below to continue. We store a timestamped record of this agreement with your account.",
     "reacceptCta": "I agree — continue",
     "consentFailed": "We could not save your agreement. Check your connection and try again.",
     "requestDeletion": "Request account deletion",
@@ -1397,10 +1404,10 @@
     "termsTitle": "Terms of Service",
     "terms": {
       "title": "Terms of Service",
-      "updated": "Effective September 5, 2026. Version 26.09.05.",
+      "updated": "Effective September 8, 2026. Version 26.09.08.",
       "intro": "These Terms of Service (“Terms”) are a contract between you and CLAIMSAVERPLUS LLC, a Florida limited liability company doing business as ClaimSaver+ (“ClaimSaver+,” “we,” “us”), which operates claimsaverplus.com. You accept these Terms by checking “I agree” at account creation or checkout. We store a timestamped record of that clickwrap (account, document, version, time, IP, and user agent). Browsing public pages alone is not acceptance. If you do not agree, do not create an account or pay. These Terms are a product contract, not legal advice. The English text controls.",
       "s1Title": "1. What ClaimSaver+ is",
-      "s1Body": "ClaimSaver+ is self-serve software that helps Florida drivers prepare, organize, and store their own motor-vehicle no-fault (PIP) claim materials. We sell access to tools. We are not a law firm, not your attorney, not a public adjuster, not your representative to an insurance company, and not a claims handler. You remain the filer. We do not evaluate the legal merits of your claim, negotiate with insurers, speak to an adjuster on your behalf, or submit your package to a carrier.",
+      "s1Body": "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. We sell access to software that helps Florida drivers prepare, organize, and store their own motor-vehicle no-fault (PIP) claim materials. We are not a law firm, not your attorney, not a public adjuster, not your representative to an insurance company, and not a claims handler. You remain the filer. The product is ministerial: intake, form population from answers you enter, document storage, and calendar date math. We do not evaluate the legal merits of your claim, estimate settlement or claim value, predict outcomes, recommend strategy (including what to argue if an insurer denies), negotiate with insurers, speak to an adjuster on your behalf, or submit your package to a carrier.",
       "s2Title": "2. Eligibility",
       "s2Body": "You must be at least 18 years old to create an account. The platform is for Florida motor-vehicle no-fault (PIP) claims. You may use an account to organize a claim for yourself or for a minor for whom you are the parent or legal guardian; you remain the account holder and are responsible for everything entered or uploaded. The service is not offered for commercial claim-handling on behalf of unrelated third parties, and it is not a substitute for licensed professional services when those are required.",
       "s3Title": "3. Your account and your information",
@@ -1410,7 +1417,7 @@
       "s5Title": "5. Refunds and cancellation",
       "s5Body": "You may stop using the software at any time. Because digital access is delivered when payment succeeds, refunds are not automatic and we do not prorate the $500 fee. We will consider a written refund request sent to {{supportEmail}} within 14 days of purchase if you have not begun the guided worksheet and have not uploaded documents. We do not refund because a reminder did not appear, because you missed a treatment or filing window, or because an insurer delayed, reduced, or denied benefits. Nothing in this section limits refund or cancellation rights that Florida or other applicable law does not allow us to waive.",
       "s6Title": "6. Reminders are education, not legal deadlines",
-      "s6Body": "Calendar items and 14-day PIP treatment-window notices are general information and optional reminders based on dates you enter. They are not a determination that a particular visit “counts,” not a substitute for your policy or statute, and not a promise that a reminder will fire, arrive, or be timely. You are solely responsible for obtaining care, calendar management, and sending materials to your insurer. We do not guarantee any financial or claim outcome.",
+      "s6Body": "Calendar items are optional reminders based on dates you enter. Florida Statute §627.736 discusses, among other things, a 14-day period for certain initial medical services after a motor-vehicle accident and a 30-day payment window after the insurer receives written notice of a covered loss. We cite those statutory topics as general information. We do not apply the statute to your facts, determine whether a particular visit “counts,” or promise that a reminder will fire, arrive, or be timely. Your policy and Florida law as applied to your situation control. You are solely responsible for obtaining care, calendar management, and sending materials to your insurer. We do not guarantee any financial or claim outcome.",
       "s7Title": "7. Disclaimer of warranties",
       "s7Body": "THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE.” TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SITE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS, THAT REMINDERS WILL SEND, THAT YOUR DATA WILL NEVER BE LOST, OR THAT USE OF THE SOFTWARE WILL RESULT IN PAYMENT OF BENEFITS.",
       "s8Title": "8. Limitation of liability",
@@ -1420,7 +1427,7 @@
       "s10Title": "10. Prohibited uses",
       "s10Body": "You may not: use the platform to provide adjusting, legal, or representation services to the public; scrape, attack, or reverse engineer the service; upload malware; impersonate others; upload another person’s medical, insurance, or identity records without authority; use the service if you are under 18; or use it for claims outside Florida PIP except as we later allow in writing. We may suspend or close accounts that we reasonably believe violate these Terms or create risk to other users or the service.",
       "s11Title": "11. Professional referrals",
-      "s11Body": "ClaimSaver+ does not operate a lawyer referral service and does not pay or receive a fee for introducing you to an attorney or other professional. Educational pages such as “When to Call an Attorney” are general information. If we ever offer a separate referral or professional service, it will have its own agreement, pricing, and disclosures, and will not be bundled into the $500 platform fee without a clear, separate purchase.",
+      "s11Body": "ClaimSaver+ does not operate a lawyer referral service and does not pay or receive a fee for introducing you to an attorney, public adjuster, or other professional. Educational pages such as “When to Call an Attorney” and Learning Center articles are general information; they are not personalized recommendations. ClaimSaver+ is not BLACKLINE. This product does not share claim-handling logic with BLACKLINE, does not transfer your file to BLACKLINE, and does not imply a warm handoff that is a paid legal or adjusting referral. If we ever offer a separate referral or professional service, it will have its own agreement, pricing, and disclosures, and will not be bundled into the $500 platform fee without a clear, separate purchase.",
       "s12Title": "12. Termination",
       "s12Body": "You may close your account by emailing {{supportEmail}}. We may suspend or terminate access if you breach these Terms, if required by law, or if we discontinue the service. After termination we may delete or de-identify data as described in the Privacy Policy, except where we must retain records.",
       "s13Title": "13. Governing law and venue",
@@ -1434,20 +1441,24 @@
       "s17Title": "17. Intellectual property",
       "s17Body": "ClaimSaver+ and its licensors own the site, software, trademarks, graphics, and educational text. You receive a limited, non-exclusive, non-transferable license to use the platform for your own Florida PIP claim while your access remains paid and in good standing. You may not copy, resell, scrape, or build a competing service from our materials. You keep ownership of the information and files you enter. You grant us a limited license to host, display, and process that content solely to operate the product, secure it, and comply with law. You represent that you have the right to upload what you upload.",
       "s18Title": "18. Electronic signatures and records",
-      "s18Body": "You consent to do business electronically with us, including clicking “I agree,” typing or drawing a name on worksheet authorizations, and receiving notices by email. Those acts are intended as your electronic signature under the federal E-SIGN Act and the Florida Uniform Electronic Transaction Act. Worksheet signatures are for your own packet; they are not a notarial act. You are responsible for keeping your email current so we can send receipts and legal-document updates."
+      "s18Body": "You consent to do business electronically with us, including clicking “I agree,” typing or drawing a name on worksheet authorizations, and receiving notices by email. Those acts are intended as your electronic signature under the federal E-SIGN Act and the Florida Uniform Electronic Transaction Act. Worksheet signatures are for your own packet; they are not a notarial act. You are responsible for keeping your email current so we can send receipts and legal-document updates.",
+      "s19Title": "19. Software, not legal advice; no attorney-client relationship",
+      "s19Body": "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. Outputs are information generated from answers you enter (for example, a populated worksheet or a calendar date counted from a date you typed). They are not instructions about what you should think or do about your claim. If a feature would tell you how to argue a denial, evaluate claim strength, or predict a result, it is outside this product.",
+      "s20Title": "20. Generative AI and separate businesses",
+      "s20Body": "We do not currently use generative AI (including Claude or GPT) in any user-facing flow. We do not send your worksheet to an AI model to evaluate your claim. If we later use AI, it will be limited to form-field population from answers you already entered and factual deadline date math, with versioned constraints (AI output policy 26.09.08) available for counsel audit. ClaimSaver+ software is separate from BLACKLINE and from any licensed adjusting practice. Using this product does not retain BLACKLINE, an adjuster, or an attorney."
     },
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Effective September 5, 2026. Version 26.09.05.",
+      "updated": "Effective September 8, 2026. Version 26.09.08.",
       "intro": "This Privacy Policy explains how CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collects, uses, and shares information when you use claimsaverplus.com and related apps. It applies to the software product. It is not legal advice. The English text controls.",
       "s1Title": "1. Who we are",
-      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ provides guided software for Florida PIP claim preparation. We are not your health care provider, health plan, law firm, or public adjuster. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Headquarters: Miami, Florida.",
+      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ provides self-help software for Florida PIP document preparation. We are not your health care provider, health plan, law firm, public adjuster, or BLACKLINE. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Headquarters: Miami, Florida.",
       "s2Title": "2. Information we collect",
       "s2Body": "You may provide: name, email, password, and account profile fields; claim worksheet answers (identity, accident, injury, employment, insurance, authorizations); and files you upload, which can include police or crash reports, medical records and bills, insurance cards or declarations pages, photos, and similar evidence. We do not collect Social Security numbers in the product. We also collect technical data such as IP address, device type, browser, timestamps, and security logs. Payment card numbers are collected by Stripe, not stored by us as full PAN data for hosted Checkout.",
       "s3Title": "3. How we use information",
       "s3Body": "We use information to operate your account, provide the worksheet, vault, calendar, and reminders, process payments, send transactional email (for example, confirmation and password reset), secure the service, debug, and comply with law. We do not sell your personal information. We do not send your package to an insurer; you do.",
       "s4Title": "4. Service providers (subprocessors)",
-      "s4Body": "We use these subprocessors to run the product: Stripe (payments and checkout); Supabase (database, authentication, and file storage, United States); and Vercel (website hosting, delivery, and Vercel Analytics). We do not send your worksheet to an AI model to evaluate your claim. Those providers process data under their own terms. We do not control how an insurer or medical provider you deal with independently will handle documents you send them.",
+      "s4Body": "We use these subprocessors to run the product: Stripe (payments and checkout); Supabase (database, authentication, and file storage, United States); and Vercel (website hosting, delivery, and Vercel Analytics). We do not send your worksheet to an AI model to evaluate your claim, recommend strategy, or generate advice. There is no user-facing generative AI in the product today. If we later use AI, it will be limited to form-field population and deadline date math, with versioned output constraints. Those providers process data under their own terms. We do not control how an insurer or medical provider you deal with independently will handle documents you send them.",
       "s5Title": "5. Retention",
       "s5Body": "We keep account, worksheet, and uploaded files for as long as your account remains open so you can return to a draft. After we verify a deletion request or close an account (and any legal hold has expired), we aim to delete or de-identify customer content within 30 days. Backups may persist on a longer rotation until they expire. We keep payment, tax, fraud, dispute, and legal-compliance records as required (typically up to seven years). Calendar reminders exist only while the related data remains in your account.",
       "s6Title": "6. Sharing",
@@ -1563,7 +1574,7 @@
   },
   "fourteenDay": {
     "banner": "Injured in a Florida crash in the last 14 days?",
-    "body": "PIP medical benefits can be limited if qualifying care is not furnished within a 14-day initial treatment window. That is general information—not a determination about whether a particular visit counts in your case.",
+    "body": "Florida Statute §627.736 discusses a 14-day window for certain initial medical services after a motor-vehicle accident. That is the statutory text—not a determination about whether a particular visit qualifies in your case.",
     "link": "Read the 14-day overview",
     "attorney": "When to call an attorney"
   },
@@ -1594,13 +1605,13 @@
   },
   "meta": {
     "title": "ClaimSaver+ — Florida PIP claim software",
-    "description": "Self-service software for Florida no-fault (PIP) claims. Flat $500 platform access. You file. Not a law firm."
+    "description": "Self-help document preparation software for Florida no-fault (PIP) claims. Flat $500 platform access. You file. Not a law firm. Not legal advice."
   },
   "deadlines": {
     "fourteenTitle": "14-day initial treatment window",
     "fourteenCountdown": "Counted from your accident date, day 14 is {{date}} ({{days}} day(s) from today). This is a reminder—not a determination about whether a visit counts.",
     "fourteenPassed": "Counted from your accident date, day 14 was {{date}}. This is a reminder—not a determination about your case.",
-    "education": "These dates are general Florida PIP-oriented reminders, not legal advice and not a ruling on your facts.",
+    "education": "These dates are general Florida PIP-oriented reminders counted from dates you enter. They cite statutory topics such as Florida Statute §627.736; they are not legal advice and not a ruling on your facts.",
     "seeCalendar": "See reminder dates",
     "chainTitle": "Florida PIP reminder dates",
     "needAccidentDate": "Enter an accident date on the worksheet to generate this reminder chain.",

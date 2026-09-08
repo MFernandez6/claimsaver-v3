@@ -87,12 +87,13 @@ function SignupInner() {
 
   return (
     <div className="mx-auto max-w-md px-4 py-24">
-      <h1 className="text-3xl font-bold text-slate-900">{t("auth.signUpTitle")}</h1>
-      <p className="mt-2 inline-flex rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-teal-800">
+      <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-teal-200/90 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-800 dark:border-teal-500/25 dark:bg-slate-900/70 dark:text-teal-200">
+        <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
         {t("floridaOnly.chip")}
       </p>
-      <p className="mt-2 text-sm text-slate-500">{t("auth.signUpSubtitle")}</p>
-      <p className="mt-2 text-sm text-slate-500">{t("floridaOnly.note")}</p>
+      <h1 className="text-3xl font-bold text-slate-900 dark:text-white">{t("auth.signUpTitle")}</h1>
+      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{t("auth.signUpSubtitle")}</p>
+      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{t("floridaOnly.note")}</p>
       <p className="mt-1 text-xs text-slate-400">{t("cta.path")}</p>
       <form onSubmit={onSubmit} className="mt-8 space-y-4">
         <div className="grid grid-cols-2 gap-3">

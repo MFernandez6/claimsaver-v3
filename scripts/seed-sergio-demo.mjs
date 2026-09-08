@@ -104,42 +104,47 @@ const PIP = [
     label: "14-day treatment window",
     critical: true,
     description:
-      "Initial medical treatment often must begin within 14 days for full PIP eligibility—confirm timing with your policy and a licensed professional if unsure.",
+      "Florida Statute §627.736 discusses a 14-day period after the accident for certain initial medical services. This date is counted from the accident date you entered. It is not a determination that any visit qualifies in your case.",
   },
   {
     id: 3,
     offset: 30,
     label: "PIP application / notice",
     critical: true,
-    description: "Written notice of claim to your insurer—timing varies; track your carrier’s requirements.",
+    description:
+      "Florida Statute §627.736 addresses written notice of a covered loss. This reminder is counted from the accident date you entered. Your policy and the statute as applied to your facts control; this is not a determination of what your carrier will accept.",
   },
   {
     id: 4,
     offset: 35,
     label: "Insurer acknowledgement (illustrative)",
     critical: false,
-    description: "Many carriers acknowledge within days of notice—your adjuster’s timeline may differ.",
+    description:
+      "Some carriers send an acknowledgement after they receive notice. Timelines vary. This date is illustrative, not a promise about your file.",
   },
   {
     id: 5,
     offset: 60,
     label: "Medical bills & records",
     critical: true,
-    description: "Gather and submit bills and related records as treatment progresses.",
+    description:
+      "PIP files often include bills and treatment records. This date is an organizational reminder so you can store copies in your vault if you choose.",
   },
   {
     id: 6,
     offset: 90,
     label: "Payment / denial (illustrative)",
     critical: true,
-    description: "Insurer processing timelines vary after bills are received—follow up on outstanding items.",
+    description:
+      "Florida Statute §627.736 includes a 30-day payment window after the insurer receives written notice of a covered loss, subject to the statute and your policy. This date is general calendar math from the accident date you entered—not a prediction of payment, denial, or outcome.",
   },
   {
     id: 7,
     offset: 365,
     label: "Suit limitation (verify)",
     critical: false,
-    description: "Statutes of limitation are fact-specific—consult a licensed attorney about any suit deadline.",
+    description:
+      "Statutes of limitation are fact-specific. ClaimSaver+ does not calculate or apply a suit deadline to your facts. A licensed Florida attorney can address whether a limitation period applies.",
   },
 ];
 
@@ -251,7 +256,7 @@ function worksheetFor({
     pipProviderSignature: "",
     pipProviderDate: "",
     signature: fullName,
-    estimatedValue: 8500,
+    estimatedValue: 0,
   };
 }
 

@@ -19,7 +19,7 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
     dayOffset: 14,
     label: "14-day treatment window",
     description:
-      "Initial medical treatment often must begin within 14 days for full PIP eligibility—confirm timing with your policy and a licensed professional if unsure.",
+      "Florida Statute §627.736 discusses a 14-day period after the accident for certain initial medical services. This date is counted from the accident date you entered. It is not a determination that any visit qualifies in your case.",
     critical: true,
   },
   {
@@ -27,7 +27,7 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
     dayOffset: 30,
     label: "PIP application / notice",
     description:
-      "Written notice of claim to your insurer—timing varies; track your carrier’s requirements.",
+      "Florida Statute §627.736 addresses written notice of a covered loss. This reminder is counted from the accident date you entered. Your policy and the statute as applied to your facts control; this is not a determination of what your carrier will accept.",
     critical: true,
   },
   {
@@ -35,7 +35,7 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
     dayOffset: 35,
     label: "Insurer acknowledgement (illustrative)",
     description:
-      "Many carriers acknowledge within days of notice—your adjuster’s timeline may differ.",
+      "Some carriers send an acknowledgement after they receive notice. Timelines vary. This date is illustrative, not a promise about your file.",
     critical: false,
   },
   {
@@ -43,7 +43,7 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
     dayOffset: 60,
     label: "Medical bills & records",
     description:
-      "Gather and submit bills and related records as treatment progresses.",
+      "PIP files often include bills and treatment records. This date is an organizational reminder so you can store copies in your vault if you choose.",
     critical: true,
   },
   {
@@ -51,7 +51,7 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
     dayOffset: 90,
     label: "Payment / denial (illustrative)",
     description:
-      "Insurer processing timelines vary after bills are received—follow up on outstanding items.",
+      "Florida Statute §627.736 includes a 30-day payment window after the insurer receives written notice of a covered loss, subject to the statute and your policy. This date is general calendar math from the accident date you entered—not a prediction of payment, denial, or outcome.",
     critical: true,
   },
   {
@@ -59,7 +59,7 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
     dayOffset: 365,
     label: "Suit limitation (verify)",
     description:
-      "Statutes of limitation are fact-specific—consult a licensed attorney about any suit deadline.",
+      "Statutes of limitation are fact-specific. ClaimSaver+ does not calculate or apply a suit deadline to your facts. A licensed Florida attorney can address whether a limitation period applies.",
     critical: false,
   },
 ];

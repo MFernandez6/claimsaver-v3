@@ -10,12 +10,6 @@ import { Button } from "@/components/ui/button";
 export default function WhoWeArePage() {
   const { t } = useTranslation();
 
-  const credentials = [
-    t("whoWeAre.founderBackground.credential1"),
-    t("whoWeAre.founderBackground.credential2"),
-    t("whoWeAre.founderBackground.credential3"),
-  ];
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950">
       <section className="relative overflow-hidden pt-28 pb-20">
@@ -45,70 +39,28 @@ export default function WhoWeArePage() {
           <p className="mt-2 text-sm font-medium text-teal-800 dark:text-teal-300">
             {t("whoWeAre.familyStory.subtitle")}
           </p>
-          <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-            {t("whoWeAre.familyStory.body")}
+          <h3 className="mt-6 text-lg font-semibold text-slate-900 dark:text-white">
+            {t("whoWeAre.familyStory.personalJourney.title")}
+          </h3>
+          <p className="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">
+            {t("whoWeAre.familyStory.personalJourney.description")}
           </p>
           <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
+            <span className="font-semibold text-slate-800 dark:text-slate-200">
+              {t("whoWeAre.familyStory.mission.title")}:{" "}
+            </span>
+            {t("whoWeAre.familyStory.mission.description")}
+          </p>
+          <blockquote className="mt-6 border-l-4 border-teal-600 pl-4 text-slate-600 italic dark:text-slate-300">
+            <p>{t("whoWeAre.familyStory.whyWeCare.quote")}</p>
+            <footer className="mt-2 text-sm not-italic font-medium text-slate-500">
+              {t("whoWeAre.familyStory.whyWeCare.title")}
+            </footer>
+          </blockquote>
+
+          <p className="mt-8 leading-relaxed text-slate-600 dark:text-slate-300">
             {t("whoWeAre.about.paragraph3")}
           </p>
-
-          <div className="mt-14 rounded-2xl border border-teal-200/80 bg-gradient-to-br from-slate-50 to-teal-50/40 p-6 shadow-sm dark:border-teal-900/50 dark:from-slate-900 dark:to-teal-950/30 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
-              {t("whoWeAre.founderBackground.subtitle")}
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">
-              {t("whoWeAre.founderBackground.title")}
-            </h2>
-
-            <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-start">
-              <div className="mx-auto shrink-0 sm:mx-0">
-                <div className="overflow-hidden rounded-full border-4 border-teal-600/30 shadow-md">
-                  <Image
-                    src="/images/founder1.jpg"
-                    alt={t("whoWeAre.founderBackground.imageAlt")}
-                    width={160}
-                    height={160}
-                    className="h-40 w-40 object-cover object-top"
-                  />
-                </div>
-              </div>
-
-              <div className="min-w-0 flex-1">
-                <p className="text-lg font-semibold text-slate-900 dark:text-white">
-                  {t("whoWeAre.founderBackground.name")}
-                </p>
-                <p className="text-sm text-slate-600 dark:text-slate-400">
-                  {t("whoWeAre.founderBackground.role")}
-                </p>
-
-                <ul className="mt-4 space-y-2">
-                  {credentials.map((credential) => (
-                    <li
-                      key={credential}
-                      className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300"
-                    >
-                      <span
-                        className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal-600 text-xs font-bold text-white"
-                        aria-hidden
-                      >
-                        ✓
-                      </span>
-                      <span>{credential}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-300">
-                  {t("whoWeAre.founderBackground.body")}
-                </p>
-
-                <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
-                  {t("whoWeAre.founderBackground.disclaimer")}
-                </p>
-              </div>
-            </div>
-          </div>
-
           <p className="mt-4 text-sm">
             <Link href="/when-to-call-an-attorney" className="text-teal-800 underline dark:text-teal-300">
               {t("navigation.needProfessionalHelp")}

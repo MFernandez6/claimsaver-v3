@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | ClaimSaver+",
   },
   description:
-    "Self-service software for Florida no-fault (PIP) claims: guided forms, secure storage, and tracking. Flat $500 platform access. Not a law firm.",
+    "Self-help document preparation software for Florida no-fault (PIP) claims: guided forms, storage, and deadline tracking. Flat $500. Not a law firm. Not legal advice.",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "ClaimSaver+" },
   openGraph: {

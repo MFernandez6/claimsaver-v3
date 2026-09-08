@@ -39,6 +39,10 @@
     "home": "Accueil",
     "englishControls": "La version anglaise fait foi. Cette traduction est fournie pour votre commodité."
   },
+  "disclaimer": {
+    "persistent": "ClaimSaver+ est un outil d’auto-assistance pour préparer des documents. Il ne fournit pas de conseil juridique et ne crée pas de relation avocat-client.",
+    "blacklineSeparation": "ClaimSaver+ est un logiciel vendu par CLAIMSAVERPLUS LLC. Ce n’est pas un service d’expertise licencié, et pas une orientation payante vers un avocat ou un expert public."
+  },
   "navigation": {
     "home": "Accueil",
     "whoWeAre": "Qui Nous Sommes",
@@ -195,8 +199,8 @@
         "answer": "L’accès à la plateforme est un forfait de 500 $—une seule fois, pas un pourcentage de vos prestations. C’est le seul produit en vente aujourd’hui. Les modules futurs, si nous les proposons, seront tarifés et divulgués séparément."
       },
       "accidents": {
-        "question": "Quels types d'accidents couvre ClaimSaver+ ?",
-        "answer": "La plateforme vise les réclamations PIP liées aux véhicules en Floride—auto, moto, camion, piéton, vélo—afin que vous documentiez et demandiez les prestations sans faute prévues par votre police. Nous ne garantissons aucun résultat et n'agissons pas comme votre représentant."
+        "question": "Pour quels types d’accidents ClaimSaver+ est-il conçu ?",
+        "answer": "La plateforme est un logiciel d’auto-assistance pour le papier PIP de Floride lié aux véhicules—auto, moto, camion, piéton, vélo. Vous pouvez documenter des faits et préparer des formulaires décrits dans votre police et dans le statut PIP de Floride. Nous ne déterminons pas quelles prestations s’appliquent à vos faits, ne garantissons aucun résultat et n’agissons pas comme votre représentant."
       },
       "documents": {
         "question": "Dois-je téléverser des documents ?",
@@ -331,7 +335,7 @@
     "contact": {
       "title": "Contact",
       "subtitle": "Assistance plateforme et technique",
-      "body": "Pour l’aide à la connexion, la facturation ou l’utilisation du site, écrivez à {{supportEmail}}. Nous ne pouvons pas répondre sur le bien-fondé juridique de votre dossier ni vous dire quoi faire dans votre cas—ces questions relèvent d’un avocat agréé.",
+      "body": "Pour l’aide à la connexion, la facturation ou l’utilisation du site, écrivez à {{supportEmail}}. Nous ne pouvons pas répondre sur le bien-fondé juridique de votre dossier ni vous dire comment gérer votre affaire—ces questions relèvent d’un avocat agréé.",
       "emailLabel": "Courriel",
       "notarizationNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
       "headquarters": "Siège : Miami, Floride.",
@@ -389,7 +393,7 @@
       "whyOurs": "Toute victime d’accident peut déposer sa propre réclamation PIP et conserver les prestations versées par l’assureur—forfait, pas une retenue.",
       "who": "Pour qui",
       "whoAttorney": "En général seulement si la blessure peut franchir le seuil de permanence de Floride—assez grave pour un recours en souffrances contre un tiers.",
-      "whoOurs": "Toutes les victimes d’accident en Floride qui déposent leur propre réclamation sans faute.",
+      "whoOurs": "Les victimes d’accident en Floride qui préparent leur propre paperasse no-fault—surtout lorsqu’un cabinet de préjudices corporels a refusé un dossier PIP seulement.",
       "fee": "Comment on facture",
       "feeAttorney": "Un pourcentage d’un recouvrement contre un tiers, s’il y en a un",
       "feeOurs": "Forfait de 500 $. Pas un pourcentage de vos prestations PIP.",
@@ -600,7 +604,7 @@
       },
       "s10": {
         "title": "Vérifiez, puis vous envoyez",
-        "body": "Vérifiez les noms et les dates. Enregistrer stocke un brouillon dans votre compte. Vous envoyez encore le dossier à l’assureur.",
+        "body": "D’après vos réponses, voici la feuille générée par le système. Enregistrer la stocke dans votre compte. Envoyer le dossier à l’assureur est une étape que vous faites séparément.",
         "tip": "Ensuite : téléversez le rapport, les factures et les photos, puis déposez auprès de l’assureur."
       }
     },
@@ -693,7 +697,10 @@
     "authMedicalIntro": "Utilisez cette page pour nommer un prestataire de soins et qui peut demander des dossiers de traitement ou de facturation. C’est une feuille de travail, pas un formulaire envoyé à une clinique.",
     "authPipHeading": "Divulgation des prestations PIP (patient et prestataire)",
     "authPipIntro": "Beaucoup de dossiers sans égard à la faute en Floride incluent un accusé de réception du patient—et, le cas échéant, du cabinet—indiquant que les prestations de protection contre les blessures personnelles (PIP) peuvent s’appliquer au traitement. Rédigez ici ces noms et signatures, puis utilisez la page officielle de l’assureur lors de l’envoi.",
-    "reviewIntro": "Relisez vos réponses. La signature facultative est pour votre copie PDF—vous pouvez signer uniquement le papier de l’assureur. Enregistrer signifie que les informations sont stockées dans votre compte. Vous devez toujours envoyer les pièces à l’assureur vous-même.",
+    "reviewIntro": "Relisez vos réponses. La signature facultative est pour votre copie PDF—vous pouvez signer uniquement le papier de l’assureur. Enregistrer stocke les informations dans votre compte. Vous envoyez encore les pièces à l’assureur vous-même.",
+    "generatedFromAnswers": "D’après vos réponses, voici le formulaire généré par le système. C’est une feuille d’auto-assistance, pas un conseil sur votre dossier.",
+    "beforeSaveAck": "Je comprends que ceci est une feuille générée à partir de mes réponses, et j’envoie tout dossier à mon assureur moi-même.",
+    "beforeSaveRequired": "Confirmez l’accusé d’auto-assistance avant d’enregistrer.",
     "fieldsStarted": "Champs commencés",
     "identityChecks": "{{count}} sur 3 contrôles d’identité/date",
     "helloFiler": "Bonjour {{name}}—vous restez le déposant.",
@@ -1091,7 +1098,7 @@
       "credential1": "Expérience en paralégal et contentieux",
       "credential2": "M.Sc. Droit et Politiques publiques",
       "credential3": "Expérience des opérations de sinistres d’assurance",
-      "body": "Après qu’une réclamation d’accident ait touché notre famille à Miami, nous avons vu à quel point un dossier no-fault en Floride, c’est surtout du papier, de l’organisation et des dates—pas une stratégie de tribunal. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : accès forfaitaire 500 $, vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
+      "body": "Son parcours comprend un M.Sc. en Droit et Politiques publiques, une expérience en paralégal et contentieux, et une expérience des opérations de sinistres d’assurance. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : accès forfaitaire 500 $, vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
       "disclaimer": "Ces références décrivent le parcours du fondateur. ClaimSaver+ est un logiciel—nous ne fournissons pas de conseil juridique, n’ajustons pas votre dossier, ne négocions pas avec les assureurs et ne vous représentons pas.",
       "verifyLink": "Lire comment fonctionne la plateforme",
       "imageAlt": "Miguel A. Fernandez, fondateur de ClaimSaver+",
@@ -1386,7 +1393,7 @@
   },
   "legal": {
     "reacceptTitle": "Conditions et Politique de confidentialité mises à jour",
-    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.09.05). Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
+    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.09.08). Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
     "reacceptCta": "J’accepte — continuer",
     "consentFailed": "Nous n’avons pas pu enregistrer votre accord. Vérifiez la connexion et réessayez.",
     "requestDeletion": "Demander la suppression du compte",
@@ -1398,10 +1405,10 @@
     "termsTitle": "Conditions d’utilisation",
     "terms": {
       "title": "Conditions d’utilisation",
-      "updated": "En vigueur à compter du 5 septembre 2026. Version 26.09.05.",
+      "updated": "En vigueur à compter du 8 septembre 2026. Version 26.09.08.",
       "intro": "Les présentes Conditions d’utilisation (« Conditions ») constituent un contrat entre vous et CLAIMSAVERPLUS LLC, une société à responsabilité limitée de Floride exerçant sous le nom ClaimSaver+ (« ClaimSaver+ », « nous »), qui exploite claimsaverplus.com. Vous acceptez ces Conditions en cochant « J’accepte » à la création du compte ou au paiement. Nous conservons un enregistrement horodaté de ce clickwrap (compte, document, version, heure, IP et agent utilisateur). Consulter les pages publiques n’est pas une acceptation. Si vous n’êtes pas d’accord, ne créez pas de compte et ne payez pas. Ces Conditions sont un contrat produit, pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Ce qu’est ClaimSaver+",
-      "s1Body": "ClaimSaver+ est un logiciel en libre-service qui aide les conducteurs de Floride à préparer, organiser et stocker leurs propres documents de dossier no-fault (PIP) automobile. Nous vendons l’accès à des outils. Nous ne sommes pas un cabinet d’avocats, pas votre avocat, pas un expert public, pas votre représentant auprès d’un assureur et pas un gestionnaire de sinistres. Vous restez le déposant. Nous n’évaluons pas le bien-fondé juridique de votre dossier, ne négocions pas avec les assureurs, ne parlons pas à un expert en votre nom et n’envoyons pas votre dossier à un transporteur.",
+      "s1Body": "ClaimSaver+ est un outil d’auto-assistance pour préparer des documents. Il ne fournit pas de conseil juridique et ne crée pas de relation avocat-client. Nous vendons l’accès à un logiciel qui aide les conducteurs de Floride à préparer, organiser et stocker leurs propres documents de dossier no-fault (PIP) automobile. Nous ne sommes pas un cabinet d’avocats, pas votre avocat, pas un expert public, pas votre représentant auprès d’un assureur et pas un gestionnaire de sinistres. Vous restez le déposant. Le produit est ministériel : saisie, remplissage de formulaires à partir de vos réponses, stockage et calcul de dates. Nous n’évaluons pas le bien-fondé juridique de votre dossier, n’estimons pas de valeur de règlement, ne prédisons pas de résultats, ne recommandons pas de stratégie (y compris quoi argumenter si l’assureur refuse), ne négocions pas avec les assureurs, ne parlons pas à un expert en votre nom et n’envoyons pas votre dossier à un transporteur.",
       "s2Title": "2. Admissibilité",
       "s2Body": "Vous devez avoir au moins 18 ans pour créer un compte. La plateforme concerne les dossiers PIP de Floride. Vous pouvez utiliser un compte pour organiser un dossier pour vous-même ou pour un mineur dont vous êtes le parent ou tuteur légal ; vous restez le titulaire du compte et êtes responsable de tout ce qui est saisi ou téléversé. Le service n’est pas offert pour la gestion commerciale de dossiers pour des tiers non liés, et il ne remplace pas des services professionnels licenciés lorsque ceux-ci sont requis.",
       "s3Title": "3. Votre compte et vos informations",
@@ -1411,7 +1418,7 @@
       "s5Title": "5. Remboursements et résiliation",
       "s5Body": "Vous pouvez cesser d’utiliser le logiciel à tout moment. L’accès numérique étant livré lorsque le paiement aboutit, les remboursements ne sont pas automatiques et nous ne proratons pas les 500 $. Nous examinerons une demande écrite envoyée à {{supportEmail}} dans les 14 jours suivant l’achat si vous n’avez pas commencé la feuille guidée et n’avez pas téléversé de documents. Nous ne remboursons pas parce qu’un rappel n’est pas apparu, parce que vous avez manqué une fenêtre de traitement ou de dépôt, ou parce qu’un assureur a retardé, réduit ou refusé des prestations. Rien dans cette section ne limite les droits de remboursement ou d’annulation que le droit de Floride ou une autre loi applicable ne nous permet pas de renoncer.",
       "s6Title": "6. Les rappels sont de l’éducation, pas des délais juridiques",
-      "s6Body": "Les éléments de calendrier et les avis de fenêtre de traitement PIP de 14 jours sont des informations générales et des rappels facultatifs basés sur les dates que vous saisissez. Ils ne déterminent pas si une visite « compte », ne remplacent pas votre police ni la loi, et ne promettent pas qu’un rappel sera envoyé, reçu ou opportun. Vous êtes seul responsable d’obtenir des soins, de gérer votre calendrier et d’envoyer les documents à votre assureur. Nous ne garantissons aucun résultat financier ou de dossier.",
+      "s6Body": "Les éléments de calendrier sont des rappels facultatifs basés sur les dates que vous saisissez. Le statut de Floride §627.736 traite, entre autres, d’une période de 14 jours pour certains services médicaux initiaux après un accident automobile et d’une fenêtre de paiement de 30 jours après que l’assureur a reçu un avis écrit d’un sinistre couvert. Nous citons ces sujets statutaires comme information générale. Nous n’appliquons pas le statut à vos faits, ne déterminons pas si une visite « compte » et ne promettons pas qu’un rappel sera envoyé ou opportun. Votre police et le droit de Floride appliqué à votre situation font foi. Vous êtes seul responsable d’obtenir des soins, de gérer votre calendrier et d’envoyer les documents à votre assureur. Nous ne garantissons aucun résultat financier ou de dossier.",
       "s7Title": "7. Exclusion de garanties",
       "s7Body": "LE SERVICE EST FOURNI « TEL QUEL » ET « SELON DISPONIBILITÉ ». DANS LA MESURE MAXIMALE PERMISE PAR LA LOI, NOUS DÉCLINONS TOUTES GARANTIES, EXPRESSES OU IMPLICITES, Y COMPRIS LA QUALITÉ MARCHANDE, L’ADÉQUATION À UN USAGE PARTICULIER, LE TITRE ET L’ABSENCE DE CONTREFAÇON. NOUS NE GARANTISSONS PAS QUE LE SITE SERA ININTERROMPU, SANS ERREUR OU SANS COMPOSANTS NUISIBLES, QUE LES RAPPELS SERONT ENVOYÉS, QUE VOS DONNÉES NE SERONT JAMAIS PERDUES, NI QUE L’USAGE DU LOGICIEL ENTRAÎNERA LE PAIEMENT DE PRESTATIONS.",
       "s8Title": "8. Limitation de responsabilité",
@@ -1421,7 +1428,7 @@
       "s10Title": "10. Usages interdits",
       "s10Body": "Vous ne pouvez pas : utiliser la plateforme pour fournir des services d’expertise, juridiques ou de représentation au public ; extraire, attaquer ou rétroconcevoir le service ; téléverser des logiciels malveillants ; usurper l’identité d’autrui ; téléverser les dossiers médicaux, d’assurance ou d’identité d’une autre personne sans autorité ; utiliser le service si vous avez moins de 18 ans ; ou l’utiliser pour des dossiers hors PIP de Floride sauf autorisation écrite ultérieure. Nous pouvons suspendre ou fermer des comptes dont nous croyons raisonnablement qu’ils violent ces Conditions ou créent un risque pour d’autres utilisateurs ou le service.",
       "s11Title": "11. Orientations professionnelles",
-      "s11Body": "ClaimSaver+ n’exploite pas un service d’orientation vers des avocats et ne paie ni ne perçoit d’honoraires pour vous présenter un avocat ou un autre professionnel. Les pages éducatives telles que « Quand appeler un avocat » sont des informations générales. Si nous proposons un jour une orientation ou un service professionnel distinct, il aura son propre contrat, tarif et mentions, et ne sera pas regroupé dans les 500 $ de la plateforme sans un achat clair et séparé.",
+      "s11Body": "ClaimSaver+ n’exploite pas un service d’orientation vers des avocats et ne paie ni ne perçoit d’honoraires pour vous présenter un avocat, un expert public ou un autre professionnel. Les pages éducatives telles que « Quand appeler un avocat » et le Centre d’apprentissage sont des informations générales ; ce ne sont pas des recommandations personnalisées. ClaimSaver+ n’est pas BLACKLINE. Ce produit ne partage pas de logique de gestion de sinistres avec BLACKLINE, ne transfère pas votre dossier à BLACKLINE et n’implique pas un transfert qui serait une orientation payante juridique ou d’expertise. Si nous proposons un jour une orientation ou un service professionnel distinct, il aura son propre contrat, tarif et mentions, et ne sera pas regroupé dans les 500 $ de la plateforme sans un achat clair et séparé.",
       "s12Title": "12. Résiliation",
       "s12Body": "Vous pouvez fermer votre compte en écrivant à {{supportEmail}}. Nous pouvons suspendre ou résilier l’accès en cas de manquement à ces Conditions, si la loi l’exige, ou si nous cessons le service. Après résiliation, nous pouvons supprimer ou dé-identifier des données comme décrit dans la Politique de confidentialité, sauf lorsque nous devons conserver des dossiers.",
       "s13Title": "13. Droit applicable et for",
@@ -1435,11 +1442,15 @@
       "s17Title": "17. Propriété intellectuelle",
       "s17Body": "ClaimSaver+ et ses concédants possèdent le site, le logiciel, les marques, les graphiques et le texte éducatif. Vous recevez une licence limitée, non exclusive et incessible pour utiliser la plateforme pour votre propre dossier PIP de Floride tant que votre accès reste payé et en règle. Vous ne pouvez pas copier, revendre, extraire ni construire un service concurrent à partir de nos contenus. Vous conservez la propriété des informations et fichiers que vous saisissez. Vous nous accordez une licence limitée pour héberger, afficher et traiter ce contenu uniquement pour exploiter le produit, le sécuriser et respecter la loi. Vous déclarez avoir le droit de téléverser ce que vous téléversez.",
       "s18Title": "18. Signatures et enregistrements électroniques",
-      "s18Body": "Vous consentez à faire affaire électroniquement avec nous, y compris en cliquant « J’accepte », en tapant ou dessinant un nom sur les autorisations de la feuille, et en recevant des avis par e-mail. Ces actes sont destinés à constituer votre signature électronique en vertu de la loi fédérale E-SIGN et du Florida Uniform Electronic Transaction Act. Les signatures de la feuille concernent votre propre dossier ; elles ne sont pas un acte notarial. Vous êtes responsable de tenir votre e-mail à jour pour les reçus et les mises à jour des documents juridiques."
+      "s18Body": "Vous consentez à faire affaire électroniquement avec nous, y compris en cliquant « J’accepte », en tapant ou dessinant un nom sur les autorisations de la feuille, et en recevant des avis par e-mail. Ces actes sont destinés à constituer votre signature électronique en vertu de la loi fédérale E-SIGN et du Florida Uniform Electronic Transaction Act. Les signatures de la feuille concernent votre propre dossier ; elles ne sont pas un acte notarial. Vous êtes responsable de tenir votre e-mail à jour pour les reçus et les mises à jour des documents juridiques.",
+      "s19Title": "19. Logiciel, pas conseil juridique ; pas de relation avocat-client",
+      "s19Body": "ClaimSaver+ est un outil d’auto-assistance pour préparer des documents. Il ne fournit pas de conseil juridique et ne crée pas de relation avocat-client. Les sorties sont des informations générées à partir des réponses que vous saisissez (par exemple une feuille remplie ou une date de calendrier comptée à partir d’une date que vous avez tapée). Ce ne sont pas des instructions sur ce que vous devriez penser ou faire de votre dossier. Si une fonction vous disait comment argumenter un refus, évaluer la force du dossier ou prédire un résultat, elle est hors de ce produit.",
+      "s20Title": "20. IA générative et entreprises distinctes",
+      "s20Body": "Nous n’utilisons actuellement aucune IA générative (y compris Claude ou GPT) dans un flux visible par l’utilisateur. Nous n’envoyons pas votre feuille à un modèle d’IA pour évaluer votre dossier. Si nous utilisons plus tard l’IA, elle se limitera au remplissage de champs à partir de réponses déjà saisies et au calcul de dates d’échéance, avec des contraintes versionnées (politique de sortie IA 26.09.08) pour audit par un avocat. Le logiciel ClaimSaver+ est distinct de BLACKLINE et de toute pratique d’expertise licenciée. Utiliser ce produit ne retient ni BLACKLINE, ni un expert, ni un avocat."
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "updated": "En vigueur à compter du 5 septembre 2026. Version 26.09.05.",
+      "updated": "En vigueur à compter du 8 septembre 2026. Version 26.09.08.",
       "intro": "Cette Politique de confidentialité explique comment CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collecte, utilise et partage des informations lorsque vous utilisez claimsaverplus.com et les applications liées. Elle s’applique au produit logiciel. Ce n’est pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Qui nous sommes",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Siège : Miami, Floride.",
@@ -1448,7 +1459,7 @@
       "s3Title": "3. Comment nous utilisons les informations",
       "s3Body": "Nous utilisons les informations pour exploiter votre compte, fournir la feuille, le coffre, le calendrier et les rappels, traiter les paiements, envoyer des e-mails transactionnels (par exemple confirmation et réinitialisation de mot de passe), sécuriser le service, déboguer et respecter la loi. Nous ne vendons pas vos informations personnelles. Nous n’envoyons pas votre dossier à un assureur ; vous le faites.",
       "s4Title": "4. Prestataires (sous-traitants)",
-      "s4Body": "Nous utilisons ces sous-traitants pour exploiter le produit : Stripe (paiements et checkout) ; Supabase (base de données, authentification et stockage de fichiers, États-Unis) ; et Vercel (hébergement, diffusion et Vercel Analytics). Nous n’envoyons pas votre feuille à un modèle d’IA pour évaluer votre dossier. Ces prestataires traitent les données selon leurs propres conditions. Nous ne contrôlons pas comment un assureur ou un prestataire médical avec lequel vous traitez indépendamment traitera les documents que vous leur envoyez.",
+      "s4Body": "Nous utilisons ces sous-traitants pour exploiter le produit : Stripe (paiements et checkout) ; Supabase (base de données, authentification et stockage de fichiers, États-Unis) ; et Vercel (hébergement, diffusion et Vercel Analytics). Nous n’envoyons pas votre feuille à un modèle d’IA pour évaluer votre dossier, recommander une stratégie ou générer un conseil. Il n’y a pas d’IA générative visible par l’utilisateur aujourd’hui. Si nous utilisons plus tard l’IA, elle se limitera au remplissage de champs et au calcul de dates, avec des contraintes versionnées. Ces prestataires traitent les données selon leurs propres conditions. Nous ne contrôlons pas comment un assureur ou un prestataire médical avec lequel vous traitez indépendamment traitera les documents que vous leur envoyez.",
       "s5Title": "5. Conservation",
       "s5Body": "Nous conservons le compte, la feuille et les fichiers téléversés tant que le compte reste ouvert afin que vous puissiez revenir à un brouillon. Après vérification d’une demande de suppression ou fermeture d’un compte (et expiration de toute conservation légale), nous visons à supprimer ou dé-identifier le contenu client sous 30 jours. Les sauvegardes peuvent persister sur un cycle plus long jusqu’à leur expiration. Nous conservons les dossiers de paiement, fiscaux, de fraude, de litige et de conformité comme requis (généralement jusqu’à sept ans). Les rappels de calendrier n’existent que tant que les données liées restent dans votre compte.",
       "s6Title": "6. Partage",
@@ -1564,7 +1575,7 @@
   },
   "fourteenDay": {
     "banner": "Blessé dans un accident en Floride au cours des 14 derniers jours ?",
-    "body": "Les prestations médicales PIP peuvent être limitées si des soins admissibles ne sont pas fournis dans une fenêtre initiale de 14 jours. Ceci est une information générale—pas une décision sur le fait qu’une visite particulière compte dans votre dossier.",
+    "body": "Le statut de Floride §627.736 traite d’une fenêtre de 14 jours pour certains services médicaux initiaux après un accident automobile. C’est le texte statutaire—pas une décision sur le fait qu’une visite particulière compte dans votre dossier.",
     "link": "Lire l’aperçu des 14 jours",
     "attorney": "Quand appeler un avocat"
   },

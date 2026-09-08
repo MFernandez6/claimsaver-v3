@@ -36,7 +36,10 @@ export async function syncPipDeadlineChain(
     );
 
     if (found) {
-      if (found.date !== date || found.title !== milestone.label) {
+      const sameDate = found.date === date;
+      const sameTitle = found.title === milestone.label;
+      const sameDescription = String(found.description ?? "") === description;
+      if (!sameDate || !sameTitle || !sameDescription) {
         await admin
           .from("calendar_events")
           .update({

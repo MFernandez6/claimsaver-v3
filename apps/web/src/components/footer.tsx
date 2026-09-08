@@ -21,11 +21,14 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div className="md:col-span-1">
             <BrandLogo variant="footer" />
-            <p className="mt-4 text-sm text-teal-100/80">
+            <p className="mt-4 text-sm leading-relaxed text-teal-100/80">
               {t("footer.description")}
             </p>
-            <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-teal-200">{t("floridaOnly.chip")}</p>
-            <p className="mt-1 text-sm text-white/70">{t("floridaOnly.note")}</p>
+            <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
+              {t("floridaOnly.chip")}
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">{t("floridaOnly.note")}</p>
           </div>
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-teal-200">{t("footer.services")}</h3>
@@ -58,7 +61,10 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-10 text-xs leading-relaxed text-white/60">{t("footer.legalText")}</p>
-        <p className="mt-4 text-xs text-white/50">© {new Date().getFullYear()} CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ • {t("footer.servingFlorida")}</p>
+        <div className="mt-4 text-center text-xs text-white/50">
+          <p>© {new Date().getFullYear()} CLAIMSAVERPLUS LLC d/b/a ClaimSaver+</p>
+          <p className="mt-1">{t("footer.servingFlorida")}</p>
+        </div>
       </div>
     </footer>
   );

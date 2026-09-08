@@ -108,16 +108,17 @@ function PricingInner() {
       <section className="relative overflow-hidden pt-28 pb-16">
         <PageHeroBackdrop />
         <div className="relative z-10 mx-auto max-w-4xl px-4">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-200/90 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-teal-800 shadow-sm backdrop-blur-sm dark:border-teal-500/25 dark:bg-slate-900/70 dark:text-teal-200">
+            <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
+            {t("floridaOnly.chip")}
+          </p>
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white">
             {t("pricing.headlinePart1")} {t("pricing.headlinePart2")}. {t("pricing.headlinePart3")}
           </h1>
-          <p className="mt-3 inline-flex rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-teal-800">
-            {t("floridaOnly.chip")}
-          </p>
-          <p className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
             {t("pricing.subtitle")}
           </p>
-          <p className="mt-2 max-w-3xl text-sm text-slate-500">{t("floridaOnly.note")}</p>
+          <p className="mt-2 max-w-3xl text-sm text-slate-500 dark:text-slate-400">{t("floridaOnly.note")}</p>
           <p className="mt-1 text-sm font-medium text-slate-500">{t("cta.path")}</p>
           <div className="mt-6">
             <ProductionTestingNotice compact />

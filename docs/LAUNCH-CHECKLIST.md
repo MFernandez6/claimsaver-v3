@@ -1,6 +1,8 @@
 # Launch checklist (items 4–8)
 
-This is an **internal operating brief**, not a legal opinion, insurance binder, or tax ruling. Items 1–3 are in the product (ToS/Privacy v26.09.05, clickwrap, CLAIMSAVERPLUS LLC named). Notarization is not sold. The 6-20 license number is **off** the public site until counsel writes. Items 4, 6, and Florida sales-tax confirmation still need counsel / broker / CPA.
+This is an **internal operating brief**, not a legal opinion, insurance binder, or tax ruling. Items 1–3 are in the product (ToS/Privacy v26.09.08, clickwrap, CLAIMSAVERPLUS LLC named). Notarization is not sold. The 6-20 license number is **off** the public site until counsel writes. Items 4, 6, and Florida sales-tax confirmation still need counsel / broker / CPA.
+
+UPL / unauthorized-practice briefing for Florida insurance-regulatory counsel: **`docs/UPL-FEATURE-BRIEFING.md`**. Ask for a short memo that named features are ministerial / scrivener-type activity.
 
 ## 4. Licensing vs Florida §626.854 (counsel briefing)
 
