@@ -73,7 +73,7 @@
       "titleLine2": "No-Fault Claim.",
       "subtitle": "Keep What's Yours.",
       "description": "Self-help software for Florida PIP paperwork you prepare yourself—especially PIP-only files personal-injury firms often decline. Flat $500 platform access. You stay the filer. Not a law firm. Not legal advice.",
-      "cta": "Get started",
+      "cta": "Create your account",
       "ctaSecondary": "See how it works",
       "learnMore": "Learn More",
       "watchDemo": "Watch Demo",
@@ -216,14 +216,14 @@
       "subtitle": "Guided PIP filing is our core product. $500 is the only item for sale today.",
       "pipTitle": "Guided claim platform ($500)",
       "pipBody": "Access to guided PIP forms, secure document storage, tracking, and reminders. This is what you use to prepare and file your Florida no-fault claim.",
-      "notarizationBadge": "Later",
-      "notarizationTitle": "Future add-ons",
-      "notarizationBody": "We may offer optional add-ons later. None are for sale today.",
+      "notarizationBadge": "Coming Soon",
+      "notarizationTitle": "Online notarization",
+      "notarizationBody": "Coming Soon — awaiting final licensing. Not for sale today.",
       "linkNotarization": "Pricing",
       "linkPricing": "Pricing & checkout"
     },
     "notaryNote": "The $500 fee is platform access only.",
-    "futureAddonsNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
+    "futureAddonsNote": "Online notarization is Coming Soon. The $500 fee is platform access only; notarization is not for sale today.",
     "graphicCaption": "Illustrative art—not your claim and not a guaranteed amount."
   },
   "pages": {
@@ -241,8 +241,8 @@
       "step4Body": "Use calendars, reminders, and expense tracking—including awareness of common deadlines like Florida’s 14-day initial treatment rule (general information, not legal advice).",
       "step5Title": "You compile and send your claim package",
       "step5Body": "When you’re ready, pull your documents together into a complete claim package and send it to your insurer yourself. ClaimSaver+ does not submit, negotiate, or speak for you.",
-      "notarizationNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
-      "futureAddonsNote": "The $500 fee is platform access only. We may offer optional add-ons later; none are for sale today.",
+      "notarizationNote": "Online notarization is Coming Soon and is not for sale today.",
+      "futureAddonsNote": "Online notarization is Coming Soon. The $500 fee is platform access only; notarization is not for sale today.",
       "viewPricing": "View pricing",
       "startFiling": "Get started",
       "includesTitle": "What's included",
@@ -287,6 +287,7 @@
           "summary": "Practical tips to stay organized and complete."
         }
       },
+      "faqTitle": "Questions this article covers",
       "footerDisclaimer": "This content is for general educational purposes. ClaimSaver+ is a guided claim platform and does not provide legal advice.",
       "attorneyLink": "Wondering when to call an attorney?",
       "notarizationLink": "See pricing for platform access"
@@ -320,6 +321,7 @@
       "staffLicenseHeading": "Team credentials (Florida)",
       "staffLicenseBody": "ClaimSaver+ is software. We do not publish an adjuster license number on this site. If licensed professional services are ever offered later, they will be listed with separate agreements and disclosures.",
       "staffLicensePending": "Public adjuster (3-20) or other credentials, if offered as a separate service later, will be listed separately with full disclosures.",
+      "unsupportedNote": "License numbers for public display: UNSUPPORTED — REQUIRES CONFIRMATION. None are published here until the owner supplies them. Do not treat founder background as a credential sold on this platform.",
       "founderAlt": "ClaimSaver+ founder",
       "teamAlt": "ClaimSaver+ team",
       "founderName": "Miguel A. Fernandez, M.Sc.",
@@ -380,8 +382,8 @@
         "price": "500.00"
       },
       "notarization": {
-        "name": "Future add-ons",
-        "description": "Not offered today. If we add optional services later, they will be priced separately.",
+        "name": "Online notarization — Coming Soon",
+        "description": "Not for sale today. Awaiting final licensing. If offered later, it will be priced separately.",
         "price": "25.00"
       }
     },
@@ -418,7 +420,7 @@
     "comparisonNote": "Florida’s permanency threshold is about a pain-and-suffering claim against another driver—not whether you can file PIP with your own insurer. ClaimSaver+ is software, not a law firm.",
     "optionalNotarizationIntro": "Guided PIP platform access is $500. That is the only product for sale today.",
     "selectServicesNotarizationHint": "Select guided platform access. Future add-ons, if offered, will be listed separately.",
-    "futureAddonsNote": "We may offer optional add-ons later. None are for sale today, and none are included in the $500 fee.",
+    "futureAddonsNote": "Online notarization is Coming Soon. It is not for sale today and is not included in the $500 fee.",
     "selectServicesCheckoutNote": "This is the purchase flow for this visit—not your claim dashboard or an existing order. Choose services below, then pay securely with Stripe.",
     "platformAccessSubtitle": "Guided platform access—you control the process",
     "features": {
@@ -802,8 +804,8 @@
     "hero": {
       "title": "Online",
       "subtitle": "Notarization",
-      "description": "Get your documents notarized securely and legally from anywhere. Powered by DocuSign for the most trusted digital notarization experience.",
-      "startNotarization": "Start Notarization",
+      "description": "Online notarization is Coming Soon and is not for sale today. If offered later, it would use DocuSign’s remote online notarization platform—not a typed e-signature by itself.",
+      "startNotarization": "Coming Soon",
       "learnMore": "Learn More",
       "imageAlt": "ClaimSaver+ Background"
     },
@@ -842,8 +844,8 @@
         "description": "Skip the hassle of scheduling and travel time"
       },
       "affordable": {
-        "title": "Affordable Pricing",
-        "description": "Competitive rates starting at $25 per document"
+        "title": "Separate from the $500 fee",
+        "description": "Not for sale today. If offered later, notarization would be priced separately from platform access."
       },
       "experts": {
         "title": "Expert Notaries",
@@ -871,7 +873,7 @@
       },
       "legal": {
         "question": "Is digital notarization legally valid?",
-        "answer": "Florida recognizes remote online notarization when it is performed by a Florida-commissioned remote online notary using an approved RON platform. ClaimSaver+ sells a DocuSign Notary session for that purpose—not a typed e-signature by itself."
+        "answer": "Florida recognizes remote online notarization when it is performed by a Florida-commissioned remote online notary using an approved RON platform. ClaimSaver+ does not sell notarization today—it is Coming Soon, awaiting final licensing."
       },
       "documents": {
         "question": "What documents can be notarized online?",
@@ -902,14 +904,14 @@
     "learnMoreModal": {
       "digitalSecurityBullet": "Transport security: TLS (HTTPS). Notary sessions follow DocuSign’s platform controls; see their documentation for details."
     },
-    "pageTitle": "Optional online notarization",
-    "pageIntro": "Notarization is not part of guided PIP filing. After you buy the ~$25 add-on, ClaimSaver+ schedules a DocuSign Notary session. That session must be completed by a Florida-commissioned remote online notary under Florida Statutes chapter 117 (including §117.209). This is not a generic e-signature and is not instant. We will email you to finish identity proofing and the live notary session.",
+    "pageTitle": "Online notarization — Coming Soon",
+    "pageIntro": "Notarization is not part of guided PIP filing and is not for sale today. Coming Soon — awaiting final licensing. If it is offered later, a Florida-commissioned remote online notary would complete the session on an approved RON platform. This is not a generic e-signature.",
     "needId": "Valid government-issued ID",
     "needDevice": "Device with camera and microphone",
     "needPdf": "Document (typically PDF)",
     "needAvailability": "Availability depends on the DocuSign notary network—not 24/7 on-demand",
-    "notLegalReview": "This is not a ClaimSaver+ legal review of the document. Do not bundle notarization into the $500 fee. If a Florida-commissioned remote online notary is not available, we will refund the $25 add-on.",
-    "addAtCheckout": "Add at checkout"
+    "notLegalReview": "This would not be a ClaimSaver+ legal review of the document. Do not bundle notarization into the $500 fee. Coming Soon — not for sale today.",
+    "addAtCheckout": "Coming Soon — not for sale today"
   },
   "dashboard": {
     "title": "Dashboard",
@@ -920,7 +922,8 @@
       "title": "Welcome, {{name}}. Your workspace fills in as you go.",
       "body": "The dashboard tracks progress, documents, and deadlines after you enter claim facts. Begin with the guided Florida no-fault worksheet. You stay the filer—ClaimSaver+ does not send anything to an insurer.",
       "step1title": "1. Complete the guided application",
-      "step1body": "Eight short steps with field help. Required answers must be filled before you move on.",
+      "step1body": "Short guided steps with field help. Required answers must be filled before you move on.",
+      "dismiss": "I’ll start from the dashboard",
       "step2title": "2. Upload your documents",
       "step2body": "Crash report, medical bills, insurance card, and photos—after the worksheet has your basics.",
       "step3title": "3. Track treatment and deadlines",
@@ -1024,6 +1027,21 @@
     "internalIdNote": "Internal record ID—not your insurer’s claim number unless you entered it.",
     "continue": "Continue",
     "uploadFile": "Upload a file",
+    "uploadModal": {
+      "title": "Upload to your document vault",
+      "fileLabel": "File",
+      "categoryLabel": "Category",
+      "fileRequired": "Choose a file before uploading. The vault did not change.",
+      "submit": "Upload file",
+      "hint": "PDF, JPEG, PNG, WebP, HEIC, DOC, or DOCX. 50 MB or smaller. Files stay in your account until you send them."
+    },
+    "docTypes": {
+      "medical": "Medical",
+      "legal": "Legal",
+      "insurance": "Insurance",
+      "evidence": "Photos & evidence",
+      "other": "Other"
+    },
     "uploading": "Uploading…",
     "uploadSuccess": "Saved to your document vault: {{name}}. It is not sent to an insurer.",
     "docsHint": "Typical: police/crash reports, medical records and bills, insurance declarations, photos, wage proofs, carrier correspondence.",
@@ -1066,7 +1084,7 @@
     "cookiePolicy": "Cookie Policy",
     "legalDisclaimer": "Legal Disclaimer",
     "legalText": "ClaimSaver+ is a guided claim technology platform—not a law firm. We do not provide legal advice, legal representation, claim evaluation, or negotiation with insurers on your behalf. Information on this site is general and educational only. You file your no-fault (PIP) claim using our tools—you are the filer, not ClaimSaver+. For advice about your specific situation, consult a licensed attorney. We do not guarantee any outcome. ClaimSaver+ does not operate a lawyer referral service and does not pay or receive a fee for introducing you to an attorney or other professional. Educational pages such as When to Call an Attorney are general information only.",
-    "optionalNotarization": "The $500 fee is platform access only. Future add-ons, if offered, will be disclosed separately.",
+    "optionalNotarization": "Online notarization is Coming Soon. The $500 fee is platform access only.",
     "services": "Services",
     "company": "Company",
     "legal": "Legal",
@@ -1198,9 +1216,9 @@
       }
     },
     "optionalNotarization": {
-      "title": "Future add-ons",
-      "body": "The $500 fee is platform access only. We may offer optional add-ons later. If we do, they will have their own price and disclosures and will not be bundled into platform access without a separate purchase.",
-      "linkNotarization": "Notarization service",
+      "title": "Online notarization — Coming Soon",
+      "body": "Notarization is not for sale today. If it is offered later, it will have its own price and disclosures and will not be bundled into the $500 platform access.",
+      "linkNotarization": "Coming Soon",
       "linkPricing": "Pricing & checkout"
     },
     "process": {
@@ -1350,12 +1368,13 @@
   "auth": {
     "signInTitle": "Sign in",
     "signInSubtitle": "Access your ClaimSaver+ workspace.",
+    "redirectingToSignIn": "Redirecting to sign in…",
     "signingIn": "Signing in…",
     "forgotPassword": "Forgot password?",
     "newHere": "New here?",
     "createAccount": "Create an account",
     "signUpTitle": "Create your account",
-    "signUpSubtitle": "Account information must be accurate. You stay in control of your claim.",
+    "signUpSubtitle": "Create an account, then pay $500 for platform access. You stay the filer—ClaimSaver+ does not send anything to an insurer.",
     "passwordHint": "Password (12+ characters)",
     "creating": "Creating…",
     "alreadyHaveAccount": "Already have an account?",
@@ -1567,7 +1586,7 @@
     }
   },
   "cta": {
-    "primary": "Get started",
+    "primary": "Create your account",
     "secondary": "See how it works",
     "path": "Create an account, then pay $500 for platform access.",
     "payAccess": "Continue to pricing"

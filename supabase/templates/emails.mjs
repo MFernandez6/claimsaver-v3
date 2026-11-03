@@ -44,6 +44,7 @@ function wrap({ title, preheader, innerHtml }) {
             <td style="padding:20px 28px 28px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#64748b;border-top:1px solid #e2e8f0;">
               ClaimSaver+ · Miami, Florida<br>
               Guided claim software — not a law firm.<br>
+              ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. We do not guarantee any outcome.<br>
               <a href="${SITE}" style="color:#0f766e;text-decoration:underline;">claimsaverplus.com</a>
               &nbsp;·&nbsp;
               <a href="mailto:${SUPPORT}" style="color:#0f766e;text-decoration:underline;">${SUPPORT}</a>

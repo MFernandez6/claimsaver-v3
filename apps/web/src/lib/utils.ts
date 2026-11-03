@@ -30,10 +30,16 @@ export function generateClaimNumber(now = new Date()) {
   return `CS${y}${m}-${rand}`;
 }
 
+const PRODUCTION_SITE_URL = "https://www.claimsaverplus.com";
+
 export function siteUrl() {
-  return (
+  const configured =
     process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.NEXT_PUBLIC_APP_URL ||
-    "http://localhost:3000"
-  );
+    "";
+  if (configured) return configured.replace(/\/$/, "");
+  if (process.env.VERCEL_ENV === "production" || process.env.NODE_ENV === "production") {
+    return PRODUCTION_SITE_URL;
+  }
+  return "http://localhost:3000";
 }

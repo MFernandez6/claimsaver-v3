@@ -73,7 +73,7 @@
       "titleLine2": "en Florida.",
       "subtitle": "Mantén lo tuyo.",
       "description": "Software guiado para reclamos PIP de Florida que usted presenta—sobre todo cuando un bufete de lesiones personales no toma el caso. Acceso a la plataforma por $500 fijos. Usted sigue siendo quien presenta. No somos bufete.",
-      "cta": "Comenzar",
+      "cta": "Cree su cuenta",
       "ctaSecondary": "Vea cómo funciona",
       "learnMore": "Más Información",
       "watchDemo": "Ver Demo",
@@ -212,18 +212,18 @@
       }
     },
     "optionalServices": {
-      "title": "Acceso a la plataforma y notarización opcional",
-      "subtitle": "La presentación guiada de PIP es nuestro producto principal. La notarización en línea es un complemento separado—con precio y compra propios cuando lo necesite.",
+      "title": "Acceso a la plataforma",
+      "subtitle": "La presentación guiada de PIP es nuestro producto principal. $500 es el único artículo a la venta hoy.",
       "pipTitle": "Plataforma de reclamo guiada ($500)",
       "pipBody": "Acceso a formularios PIP guiados, almacenamiento seguro de documentos, seguimiento y recordatorios. Esto es lo que usa para preparar y presentar su reclamo sin culpa en Florida.",
-      "notarizationBadge": "Complemento opcional",
-      "notarizationTitle": "Notarización en línea (~$25)",
-      "notarizationBody": "Notarización remota de documentos vía DocuSign. Añádalo en el pago si lo necesita, o revise el servicio primero—no forma parte del flujo guiado del formulario PIP.",
+      "notarizationBadge": "Próximamente",
+      "notarizationTitle": "Notarización en línea",
+      "notarizationBody": "Próximamente — a la espera de la licencia final. No está a la venta hoy.",
       "linkNotarization": "Servicio de notarización",
       "linkPricing": "Precios y pago"
     },
     "notaryNote": "La tarifa de $500 es solo el acceso a la plataforma.",
-    "futureAddonsNote": "La tarifa de $500 es solo el acceso a la plataforma. Podemos ofrecer complementos opcionales más adelante; ninguno está a la venta hoy.",
+    "futureAddonsNote": "La notarización en línea está Próximamente. La tarifa de $500 es solo el acceso a la plataforma; la notarización no está a la venta hoy.",
     "graphicCaption": "Arte ilustrativo—no es su reclamo ni un monto garantizado."
   },
   "pages": {
@@ -241,8 +241,8 @@
       "step4Body": "Usa calendarios, recordatorios y seguimiento de gastos—incluida información general sobre plazos habituales como la regla de los 14 días para el tratamiento inicial en Florida (información general, no asesoría legal).",
       "step5Title": "Compila y envía tu paquete de reclamo",
       "step5Body": "Cuando esté listo, reúne tus documentos en un paquete completo y envíalo a tu aseguradora.",
-      "notarizationNote": "La tarifa de $500 es solo el acceso a la plataforma. Podemos ofrecer complementos opcionales más adelante; ninguno está a la venta hoy.",
-      "futureAddonsNote": "La tarifa de $500 es solo el acceso a la plataforma. Podemos ofrecer complementos opcionales más adelante; ninguno está a la venta hoy.",
+      "notarizationNote": "La notarización en línea está Próximamente y no está a la venta hoy.",
+      "futureAddonsNote": "La notarización en línea está Próximamente. La tarifa de $500 es solo el acceso a la plataforma; la notarización no está a la venta hoy.",
       "viewPricing": "Ver precios",
       "startFiling": "Comenzar",
       "includesTitle": "Qué incluye",
@@ -287,6 +287,7 @@
           "summary": "Consejos prácticos para mantener el orden y completar la información."
         }
       },
+      "faqTitle": "Preguntas que cubre este artículo",
       "footerDisclaimer": "Este contenido es solo educativo y de carácter general. ClaimSaver+ es una plataforma guiada de reclamos y no brinda asesoría legal.",
       "attorneyLink": "¿Se pregunta cuándo llamar a un abogado?",
       "notarizationLink": "Notarización en línea opcional (separada de la presentación PIP)"
@@ -320,6 +321,7 @@
       "staffLicenseHeading": "Credenciales del equipo (Florida)",
       "staffLicenseBody": "ClaimSaver+ es software. No publicamos un número de licencia de ajustador en este sitio. Si más adelante se ofrecen servicios profesionales con licencia, se listarán con acuerdos y divulgaciones propios.",
       "staffLicensePending": "Perito público (3-20) u otras credenciales, si se ofrecen como servicio aparte más adelante, se listarán por separado con divulgaciones completas.",
+      "unsupportedNote": "Números de licencia para mostrar al público: UNSUPPORTED — REQUIRES CONFIRMATION. No se publica ninguno aquí hasta que el titular los facilite. El historial del fundador no es una credencial vendida en esta plataforma.",
       "founderAlt": "Fundador de ClaimSaver+",
       "teamAlt": "Equipo de ClaimSaver+",
       "founderName": "Miguel A. Fernandez, M.Sc.",
@@ -380,7 +382,7 @@
         "price": "500.00"
       },
       "notarization": {
-        "name": "Servicios de Notarización",
+        "name": "Notarización en línea — Próximamente",
         "description": "No se ofrece hoy. Si más adelante añadimos servicios opcionales, se cotizarán por separado.",
         "price": "25.00"
       }
@@ -417,8 +419,8 @@
     },
     "comparisonNote": "El umbral de permanencia de Florida se refiere a un reclamo de dolor y sufrimiento contra otro conductor—no a si usted puede presentar PIP ante su propia aseguradora. ClaimSaver+ es software, no un bufete.",
     "optionalNotarizationIntro": "El acceso a la plataforma guiada de PIP es $500. Ese es el único producto en venta hoy.",
-    "futureAddonsNote": "Podemos ofrecer complementos opcionales más adelante. Ninguno está a la venta hoy y ninguno está incluido en los $500.",
-    "selectServicesNotarizationHint": "Seleccione el acceso guiado a la plataforma para la presentación PIP. Añada notarización solo si necesita notarizar documentos; se factura por separado y no forma parte del flujo PIP.",
+    "futureAddonsNote": "La notarización en línea está Próximamente. No está a la venta hoy y no está incluida en los $500.",
+    "selectServicesNotarizationHint": "Seleccione el acceso guiado a la plataforma. La notarización está Próximamente y no está a la venta hoy.",
     "selectServicesCheckoutNote": "Este es el flujo de compra de esta visita: no es tu panel de reclamos ni un pedido previo. Elige servicios y paga de forma segura con Stripe.",
     "platformAccessSubtitle": "Acceso guiado a la plataforma—usted controla el proceso",
     "features": {
@@ -590,7 +592,7 @@
       },
       "legal": {
         "question": "¿Es legalmente válida la notarización digital?",
-        "answer": "Florida reconoce la notarización remota en línea cuando la realiza un notario remoto comisionado en Florida usando una plataforma RON aprobada. ClaimSaver+ vende una sesión DocuSign Notary para ese fin—no una firma electrónica escrita por sí sola."
+        "answer": "Florida reconoce la notarización remota en línea cuando la realiza un notario remoto comisionado en Florida usando una plataforma RON aprobada. ClaimSaver+ no vende notarización hoy—está Próximamente, a la espera de la licencia final."
       },
       "documents": {
         "question": "¿Qué documentos se pueden notarizar en línea?",
@@ -606,17 +608,17 @@
       },
       "security": {
         "question": "¿Qué tan seguro es el proceso?",
-        "answer": "Nuestra plataforma usa encriptación y medidas de seguridad de nivel bancario. Todos los documentos están encriptados en tránsito y en reposo, y mantenemos pistas de auditoría completas para todas las transacciones."
+        "answer": "La conexión usa TLS (HTTPS). Los archivos almacenados en ClaimSaver+ usan TLS en tránsito y el cifrado en reposo documentado por el proveedor (Supabase). No afirmamos certificación HIPAA ni seguridad “de nivel bancario”."
       }
     },
-    "pageTitle": "Notarización en línea opcional",
-    "pageIntro": "La notarización no forma parte de la presentación guiada de PIP. Tras comprar el complemento de unos $25, ClaimSaver+ programa una sesión DocuSign Notary. Esa sesión debe completarla un notario remoto comisionado en Florida según el capítulo 117 de los Estatutos de Florida (incluido el §117.209). No es una firma electrónica genérica ni es instantánea. Le escribiremos para terminar la prueba de identidad y la sesión en vivo.",
+    "pageTitle": "Notarización en línea — Próximamente",
+    "pageIntro": "La notarización no forma parte de la presentación guiada de PIP y no está a la venta hoy. Próximamente — a la espera de la licencia final. Si se ofrece más adelante, un notario remoto comisionado en Florida completaría la sesión en una plataforma RON aprobada. No es una firma electrónica genérica.",
     "needId": "Identificación oficial válida",
     "needDevice": "Dispositivo con cámara y micrófono",
     "needPdf": "Documento (normalmente PDF)",
     "needAvailability": "La disponibilidad depende de la red de notarios de DocuSign—no es 24/7 bajo demanda",
     "notLegalReview": "Esto no es una revisión legal de ClaimSaver+ del documento. No incluya la notarización en la tarifa de $500. Si no hay un notario remoto comisionado en Florida disponible, reembolsamos el complemento de $25.",
-    "addAtCheckout": "Añadir al pagar",
+    "addAtCheckout": "Próximamente — no está a la venta hoy",
     "promoSection": {
       "description": "Notarización remota a través de DocuSign con acceso protegido por TLS. La disponibilidad del notario y la duración de la sesión dependen de la red DocuSign y del notario—no es 24/7 bajo demanda ni una finalización “instantánea” garantizada.",
       "pillar1Title": "Cifrado en tránsito",
@@ -639,7 +641,8 @@
       "title": "Bienvenido, {{name}}. El espacio se completa a medida que avanza.",
       "body": "El panel muestra progreso, documentos y plazos después de ingresar los hechos. Comience con la hoja guiada de no-fault de Florida. Usted sigue siendo quien presenta el reclamo—ClaimSaver+ no envía nada a una aseguradora.",
       "step1title": "1. Complete la solicitud guiada",
-      "step1body": "Ocho pasos cortos con ayuda. Debe llenar lo obligatorio antes de seguir.",
+      "step1body": "Pasos guiados cortos con ayuda. Debe llenar lo obligatorio antes de seguir.",
+      "dismiss": "Empezaré desde el panel",
       "step2title": "2. Suba sus documentos",
       "step2body": "Informe del accidente, facturas médicas, tarjeta de seguro y fotos—después de los datos básicos.",
       "step3title": "3. Siga el tratamiento y los plazos",
@@ -744,6 +747,21 @@
     "internalIdNote": "ID interno—no el número de reclamo de su aseguradora salvo que usted lo haya introducido.",
     "continue": "Continuar",
     "uploadFile": "Cargar un archivo",
+    "uploadModal": {
+      "title": "Subir a su bóveda de documentos",
+      "fileLabel": "Archivo",
+      "categoryLabel": "Categoría",
+      "fileRequired": "Elija un archivo antes de subir. La bóveda no cambió.",
+      "submit": "Subir archivo",
+      "hint": "PDF, JPEG, PNG, WebP, HEIC, DOC o DOCX. 50 MB o menos. Los archivos permanecen en su cuenta hasta que usted los envíe."
+    },
+    "docTypes": {
+      "medical": "Médico",
+      "legal": "Legal",
+      "insurance": "Seguro",
+      "evidence": "Fotos y evidencia",
+      "other": "Otro"
+    },
     "uploading": "Cargando…",
     "uploadSuccess": "Guardado en su bóveda de documentos: {{name}}. No se envía a una aseguradora.",
     "docsHint": "Típico: informes policiales, historiales y facturas médicas, declaraciones de seguro, fotos, pruebas de salario, correspondencia de la aseguradora.",
@@ -786,7 +804,7 @@
     "cookiePolicy": "Política de Cookies",
     "legalDisclaimer": "Descargo de Responsabilidad Legal",
     "legalText": "ClaimSaver+ es una plataforma tecnológica de reclamos guiados—no un bufete. No brindamos asesoramiento legal, representación, evaluación de reclamos ni negociación con aseguradoras en su nombre. La información es general y educativa. Usted presenta su reclamo PIP con nuestras herramientas—usted es quien presenta, no ClaimSaver+. Para su caso concreto, consulte a un abogado. No garantizamos resultados. ClaimSaver+ no opera un servicio de derivación de abogados y no paga ni recibe honorario por presentarle a un abogado u otro profesional. Páginas educativas como Cuándo llamar a un abogado son solo información general.",
-    "optionalNotarization": "La tarifa de $500 es solo el acceso a la plataforma. Los complementos futuros, si se ofrecen, se divulgarán por separado.",
+    "optionalNotarization": "La notarización en línea está Próximamente. La tarifa de $500 es solo el acceso a la plataforma.",
     "services": "Servicios",
     "company": "Empresa",
     "legal": "Legal",
@@ -918,9 +936,9 @@
       }
     },
     "optionalNotarization": {
-      "title": "Complementos futuros",
-      "body": "La tarifa de $500 es solo el acceso a la plataforma. Podemos ofrecer complementos opcionales más adelante. Si lo hacemos, tendrán su propio precio y divulgaciones y no se incluirán en el acceso a la plataforma sin una compra separada.",
-      "linkNotarization": "Servicio de notarización",
+      "title": "Notarización en línea — Próximamente",
+      "body": "La notarización no está a la venta hoy. Si se ofrece más adelante, tendrá su propio precio y divulgaciones y no se incluirá en el acceso de $500 sin una compra separada.",
+      "linkNotarization": "Próximamente",
       "linkPricing": "Precios y pago"
     },
     "process": {
@@ -1351,12 +1369,13 @@
   "auth": {
     "signInTitle": "Iniciar sesión",
     "signInSubtitle": "Acceda a su espacio de trabajo ClaimSaver+.",
+    "redirectingToSignIn": "Redirigiendo al inicio de sesión…",
     "signingIn": "Iniciando sesión…",
     "forgotPassword": "¿Olvidó su contraseña?",
     "newHere": "¿Nuevo aquí?",
     "createAccount": "Crear una cuenta",
     "signUpTitle": "Cree su cuenta",
-    "signUpSubtitle": "La información de la cuenta debe ser exacta. Usted sigue en control de su reclamo.",
+    "signUpSubtitle": "Cree una cuenta y luego pague $500 para acceder a la plataforma. Usted sigue siendo quien presenta—ClaimSaver+ no envía nada a una aseguradora.",
     "passwordHint": "Contraseña (12+ caracteres)",
     "creating": "Creando…",
     "alreadyHaveAccount": "¿Ya tiene una cuenta?",
@@ -1568,7 +1587,7 @@
     }
   },
   "cta": {
-    "primary": "Comenzar",
+    "primary": "Cree su cuenta",
     "secondary": "Vea cómo funciona",
     "path": "Cree una cuenta y luego pague $500 para acceder a la plataforma.",
     "payAccess": "Continuar a precios"

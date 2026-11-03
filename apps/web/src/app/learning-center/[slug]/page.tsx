@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import { getLearningArticleParagraphs } from "@/data/learningCenter";
+import { getLearningArticleFaqs } from "@/data/learningCenter/faqs";
 import { SLUG_TO_ARTICLE } from "@/data/learningCenter/slugs";
 import { use } from "react";
 
@@ -14,6 +15,7 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
   const key = SLUG_TO_ARTICLE[slug];
   if (!key) notFound();
   const paragraphs = getLearningArticleParagraphs(i18n.language, key);
+  const faqs = getLearningArticleFaqs(i18n.language, key);
 
   return (
     <div className="min-h-screen">
@@ -29,6 +31,21 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
           </div>
+          {faqs.length ? (
+            <section className="mt-12 border-t border-slate-200 pt-8 dark:border-slate-700">
+              <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+                {t("pages.learningCenter.faqTitle")}
+              </h2>
+              <dl className="mt-4 space-y-5">
+                {faqs.map((faq) => (
+                  <div key={faq.question}>
+                    <dt className="font-medium text-slate-900 dark:text-white">{faq.question}</dt>
+                    <dd className="mt-1 text-slate-600 dark:text-slate-300">{faq.answer}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          ) : null}
           <p className="mt-10 text-xs text-slate-500">{t("pages.learningCenter.footerDisclaimer")}</p>
         </article>
       </section>

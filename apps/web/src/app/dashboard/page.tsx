@@ -30,6 +30,9 @@ import { greetingName } from "@/lib/auth/display-name";
 import { useTranslation } from "react-i18next";
 import { formatUsd, formatDisplayDate, cn } from "@/lib/utils";
 import { LegalReaccept } from "@/components/legal-reaccept";
+import { OnboardingBanner } from "@/components/onboarding-banner";
+import { DocumentUploadModal } from "@/components/document-upload-modal";
+import { useRequireSession } from "@/lib/auth/use-require-session";
 
 type Tab = "claims" | "docs" | "calendar" | "expenses";
 
@@ -54,7 +57,8 @@ function docsForClaim(docs: DocumentRow[], claimId: string, isPrimary: boolean) 
 
 export default function DashboardPage() {
   const { t } = useTranslation();
-  const { user } = useSupabaseUser();
+  const { user, isLoaded, isSignedIn } = useSupabaseUser();
+  useRequireSession("/dashboard");
   const [me, setMe] = useState<Me | null>(null);
   const [paywall, setPaywall] = useState(false);
   const [tab, setTab] = useState<Tab>("claims");
@@ -95,7 +99,7 @@ export default function DashboardPage() {
   }, [t]);
 
   useEffect(() => {
-    if (paywall) return;
+    if (!isSignedIn || paywall) return;
     void refresh();
     const tick = () => {
       if (document.visibilityState === "visible") void refresh();
@@ -108,7 +112,7 @@ export default function DashboardPage() {
       window.removeEventListener("focus", tick);
       document.removeEventListener("visibilitychange", tick);
     };
-  }, [refresh, paywall]);
+  }, [refresh, paywall, isSignedIn]);
 
   const toggleEventCompleted = useCallback(
     async (event: CalendarEvent) => {
@@ -130,6 +134,10 @@ export default function DashboardPage() {
   );
 
   const milestones = useMemo(() => calendarMilestonePair(events), [events]);
+
+  if (!isLoaded || !isSignedIn) {
+    return <p className="p-8 text-slate-500">{t("auth.redirectingToSignIn")}</p>;
+  }
 
   if (paywall) {
     return (
@@ -177,6 +185,11 @@ export default function DashboardPage() {
       {me && me.legalConsentCurrent === false ? (
         <LegalReaccept onAccepted={() => void refresh()} />
       ) : null}
+      <OnboardingBanner
+        name={welcomeName}
+        currentStep={primary?.worksheetStep ?? 1}
+        worksheetComplete={Boolean(primary?.worksheetComplete)}
+      />
       <DashboardOverviewPanels
         currentStep={primary?.worksheetStep ?? 1}
         totalSteps={TOTAL_WORKSHEET_STEPS}
@@ -386,46 +399,25 @@ function ClaimRecordCard({
 
 function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => void }) {
   const { t } = useTranslation();
-  const [busy, setBusy] = useState(false);
+  const [open, setOpen] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  async function upload(file: File) {
-    setBusy(true);
-    setError(null);
-    setNotice(null);
-    try {
-      const form = new FormData();
-      form.append("file", file);
-      form.append("name", file.name);
-      form.append("type", "other");
-      await webApi.upload("/api/v1/documents", form);
-      setNotice(t("dashboard.uploadSuccess", { name: file.name }));
-      onChange();
-    } catch {
-      setError(t("capture.error"));
-    } finally {
-      setBusy(false);
-    }
-  }
-
   return (
     <div className="mt-6 space-y-4">
-      <label className="inline-flex cursor-pointer items-center rounded-lg border px-4 py-2 text-sm">
-        {busy ? t("dashboard.uploading") : t("dashboard.uploadFile")}
-        <input
-          type="file"
-          accept="image/*,.pdf,.heic,.jpg,.jpeg,.png"
-          capture="environment"
-          className="hidden"
-          onChange={(e) => {
-            const f = e.target.files?.[0];
-            e.target.value = "";
-            if (f) void upload(f);
-          }}
-        />
-      </label>
+      <Button type="button" variant="outline" onClick={() => { setOpen(true); setError(null); }}>
+        {t("dashboard.uploadFile")}
+      </Button>
+      <DocumentUploadModal
+        open={open}
+        onClose={() => setOpen(false)}
+        onUploaded={(name) => {
+          setNotice(t("dashboard.uploadSuccess", { name }));
+          onChange();
+        }}
+      />
       <p className="text-xs text-slate-500">{t("dashboard.docsHint")}</p>
+      {notice ? <p className="text-sm text-teal-800">{notice}</p> : null}
       {error ? <p className="text-sm text-red-600">{error}</p> : null}
       {docs.map((d) => (
         <Card key={d.id}>

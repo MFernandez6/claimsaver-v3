@@ -8,7 +8,7 @@ import { ProductionTestingNotice } from "@/components/production-testing-notice"
 import { AppProviders } from "@/components/app-providers";
 import { siteUrl } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
-import { SUPPORT_EMAIL } from "@claimsaver/shared";
+import { LEGAL_ENTITY_NAME, SUPPORT_EMAIL } from "@claimsaver/shared";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -75,9 +75,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 name: "ClaimSaver+",
+                legalName: LEGAL_ENTITY_NAME,
                 url,
                 email: SUPPORT_EMAIL,
                 logo: `${url.replace(/\/$/, "")}/images/brand/claimsaver-plus-lockup.png`,
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Miami",
+                  addressRegion: "FL",
+                  addressCountry: "US",
+                },
               }),
             }}
           />

@@ -23,6 +23,7 @@ const PRIMARY = [
 const COMPANY = [
   { href: "/when-to-call-an-attorney", key: "needProfessionalHelp" },
   { href: "/learning-center", key: "learningCenter" },
+  { href: "/license-credentials", key: "licenseCredentials" },
   { href: "/contact", key: "contact" },
 ] as const;
 
