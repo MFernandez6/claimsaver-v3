@@ -35,12 +35,16 @@ const nextConfig: NextConfig = {
     remotePatterns: [],
   },
   async headers() {
+    // Same-origin only. Do not add Access-Control-Allow-Origin: * here or on API routes.
     return [{ source: "/:path*", headers: securityHeaders }];
   },
   async redirects() {
     return [
       { source: "/what-we-do", destination: "/how-it-works", permanent: true },
-      { source: "/license-credentials", destination: "/who-we-are", permanent: true },
+      { source: "/signin", destination: "/login", permanent: true },
+      { source: "/sign-in", destination: "/login", permanent: true },
+      { source: "/sign-up", destination: "/signup", permanent: true },
+      { source: "/need-professional-help", destination: "/when-to-call-an-attorney", permanent: true },
       { source: "/notarization", destination: "/pricing", permanent: true },
     ];
   },

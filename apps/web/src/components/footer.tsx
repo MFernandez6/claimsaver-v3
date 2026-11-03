@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CHECKOUT_PATH } from "@claimsaver/shared";
+import { CHECKOUT_PATH, PRINCIPAL_ADDRESS_LINE } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import { ObfuscatedSupportEmail } from "@/components/obfuscated-support-email";
 
@@ -42,6 +42,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-teal-200">{t("footer.company")}</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
               <li><Link href="/who-we-are" className="hover:text-white">{t("navigation.whoWeAre")}</Link></li>
+              <li><Link href="/license-credentials" className="hover:text-white">{t("navigation.licenseCredentials")}</Link></li>
               <li><Link href="/contact" className="hover:text-white">{t("navigation.contact")}</Link></li>
               <li><Link href="/learning-center" className="hover:text-white">{t("navigation.learningCenter")}</Link></li>
               <li><Link href="/when-to-call-an-attorney" className="hover:text-white">{t("navigation.needProfessionalHelp")}</Link></li>
@@ -63,6 +64,7 @@ export default function Footer() {
         <p className="mt-10 text-xs leading-relaxed text-white/60">{t("footer.legalText")}</p>
         <div className="mt-4 text-center text-xs text-white/50">
           <p>© {new Date().getFullYear()} CLAIMSAVERPLUS LLC d/b/a ClaimSaver+</p>
+          <p className="mt-1">{PRINCIPAL_ADDRESS_LINE}</p>
           <p className="mt-1">{t("footer.servingFlorida")}</p>
         </div>
       </div>

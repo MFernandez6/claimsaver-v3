@@ -31,6 +31,7 @@ import { StepCoach } from "@/components/claim-form/step-coach";
 import { SignaturePad } from "@/components/claim-form/signature-pad";
 import { WorksheetPrintDocument } from "@/components/claim-form/worksheet-print-document";
 import { LegalReaccept } from "@/components/legal-reaccept";
+import { useRequireSession } from "@/lib/auth/use-require-session";
 
 function Field({
   label,
@@ -75,6 +76,7 @@ function Check({
 export function ClaimFormWizard() {
   const { t } = useTranslation();
   const { user, isLoaded, isSignedIn } = useSupabaseUser();
+  useRequireSession("/claim-form");
   const [me, setMe] = useState<Me | null>(null);
   const [claim, setClaim] = useState<ClaimDetail | null>(null);
   const [form, setForm] = useState<FloridaNoFaultFormData>(emptyWorksheet());
@@ -228,12 +230,7 @@ export function ClaimFormWizard() {
 
   if (!isLoaded) return <p className="p-8 text-slate-500">{t("common.loading")}</p>;
   if (!isSignedIn) {
-    return (
-      <div className="mx-auto max-w-lg px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold">{t("claimForm.signInTitle")}</h1>
-        <Button asChild className="mt-6"><Link href="/login?next=/claim-form">{t("auth.signInTitle")}</Link></Button>
-      </div>
-    );
+    return <p className="p-8 text-slate-500">{t("auth.redirectingToSignIn")}</p>;
   }
   if (loadingClaim) return <p className="p-8 text-slate-500">{t("common.loading")}</p>;
   if (paywall) {
