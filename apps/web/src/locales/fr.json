@@ -321,7 +321,8 @@
       "staffLicenseHeading": "Habilitations de l’équipe (Floride)",
       "staffLicenseBody": "ClaimSaver+ est un logiciel. Nous ne publions pas de numéro de licence d’expert sur ce site. Si des services professionnels licenciés sont proposés plus tard, ils seront listés avec des accords et mentions distincts.",
       "staffLicensePending": "Expert agréé (3-20) ou autres habilitations, s’ils sont proposés comme service distinct plus tard, seront listés séparément avec mentions complètes.",
-      "unsupportedNote": "Numéros de licence à afficher publiquement : UNSUPPORTED — REQUIRES CONFIRMATION. Aucun n’est publié ici tant que le titulaire ne les fournit pas. Le parcours du fondateur n’est pas une habilitation vendue sur cette plateforme.",
+      "unsupportedNote": "Aucun numéro de licence d’expert ou d’expert public n’est publié sur ce site. Les titres du fondateur restent hors des pages grand public jusqu’à un avis écrit d’un avocat floridien en réglementation des assurances. Le parcours du fondateur n’est pas une habilitation vendue sur cette plateforme.",
+      "sunbizLine": "Document de la Division des sociétés de Floride {{document}}.",
       "founderAlt": "Fondateur de ClaimSaver+",
       "teamAlt": "Équipe ClaimSaver+",
       "founderName": "Miguel A. Fernandez, M.Sc.",
@@ -340,7 +341,7 @@
       "body": "Pour l’aide à la connexion, la facturation ou l’utilisation du site, écrivez à {{supportEmail}}. Nous ne pouvons pas répondre sur le bien-fondé juridique de votre dossier ni vous dire comment gérer votre affaire—ces questions relèvent d’un avocat agréé.",
       "emailLabel": "Courriel",
       "notarizationNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
-      "headquarters": "Siège : Miami, Floride.",
+      "headquarters": "Bureau principal : {{businessAddress}}.",
       "attorneyCta": "Si votre affaire est trop complexe pour un dépôt PIP standard, voir Quand appeler un avocat."
     },
     "dataHandling": {
@@ -1167,7 +1168,7 @@
       "startClaim": "Démarrer Votre Réclamation",
       "learnMore": "En Savoir Plus"
     },
-    "headquartersNote": "Siège : Miami, Floride. Nous ne sommes pas un cabinet d’avocats."
+    "headquartersNote": "Bureau principal : {{businessAddress}}. Nous ne sommes pas un cabinet d’avocats."
   },
   "whatWeDo": {
     "hero": {
@@ -1412,7 +1413,7 @@
   },
   "legal": {
     "reacceptTitle": "Conditions et Politique de confidentialité mises à jour",
-    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.09.08). Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
+    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.11.02). Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
     "reacceptCta": "J’accepte — continuer",
     "consentFailed": "Nous n’avons pas pu enregistrer votre accord. Vérifiez la connexion et réessayez.",
     "requestDeletion": "Demander la suppression du compte",
@@ -1424,7 +1425,7 @@
     "termsTitle": "Conditions d’utilisation",
     "terms": {
       "title": "Conditions d’utilisation",
-      "updated": "En vigueur à compter du 8 septembre 2026. Version 26.09.08.",
+      "updated": "En vigueur à compter du 2 novembre 2026. Version 26.11.02.",
       "intro": "Les présentes Conditions d’utilisation (« Conditions ») constituent un contrat entre vous et CLAIMSAVERPLUS LLC, une société à responsabilité limitée de Floride exerçant sous le nom ClaimSaver+ (« ClaimSaver+ », « nous »), qui exploite claimsaverplus.com. Vous acceptez ces Conditions en cochant « J’accepte » à la création du compte ou au paiement. Nous conservons un enregistrement horodaté de ce clickwrap (compte, document, version, heure, IP et agent utilisateur). Consulter les pages publiques n’est pas une acceptation. Si vous n’êtes pas d’accord, ne créez pas de compte et ne payez pas. Ces Conditions sont un contrat produit, pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Ce qu’est ClaimSaver+",
       "s1Body": "ClaimSaver+ est un outil d’auto-assistance pour préparer des documents. Il ne fournit pas de conseil juridique et ne crée pas de relation avocat-client. Nous vendons l’accès à un logiciel qui aide les conducteurs de Floride à préparer, organiser et stocker leurs propres documents de dossier no-fault (PIP) automobile. Nous ne sommes pas un cabinet d’avocats, pas votre avocat, pas un expert public, pas votre représentant auprès d’un assureur et pas un gestionnaire de sinistres. Vous restez le déposant. Le produit est ministériel : saisie, remplissage de formulaires à partir de vos réponses, stockage et calcul de dates. Nous n’évaluons pas le bien-fondé juridique de votre dossier, n’estimons pas de valeur de règlement, ne prédisons pas de résultats, ne recommandons pas de stratégie (y compris quoi argumenter si l’assureur refuse), ne négocions pas avec les assureurs, ne parlons pas à un expert en votre nom et n’envoyons pas votre dossier à un transporteur.",
@@ -1457,7 +1458,7 @@
       "s15Title": "15. Modifications",
       "s15Body": "Nous pouvons mettre à jour ces Conditions. La date d’entrée en vigueur en haut changera. L’usage continu après une mise à jour constitue l’acceptation des Conditions révisées, sauf lorsque la loi applicable exige un avis ou un consentement supplémentaire. Si vous n’êtes pas d’accord, cessez d’utiliser le service et contactez-nous au sujet de votre compte.",
       "s16Title": "16. Contact",
-      "s16Body": "Ces Conditions sont proposées par CLAIMSAVERPLUS LLC d/b/a ClaimSaver+, exploitée depuis Miami, Floride. Pour les questions de plateforme et de facturation uniquement, écrivez à {{supportEmail}}. Les avis formels peuvent être envoyés à cette adresse jusqu’à publication d’une adresse postale sur cette page. Nous ne pouvons pas vous conseiller sur le bien-fondé juridique de votre dossier. Faites examiner ces Conditions par un avocat floridien en réglementation des assurances et en droit de la consommation si vous avez besoin de conseils à leur sujet.",
+      "s16Body": "Ces Conditions sont proposées par CLAIMSAVERPLUS LLC d/b/a ClaimSaver+, exploitée depuis Miami, Floride. Bureau principal : {{businessAddress}}. Pour les questions de plateforme et de facturation uniquement, écrivez à {{supportEmail}}. Les avis formels peuvent être envoyés à cette adresse ou à cet e-mail. Nous ne pouvons pas vous conseiller sur le bien-fondé juridique de votre dossier. Faites examiner ces Conditions par un avocat floridien en réglementation des assurances et en droit de la consommation si vous avez besoin de conseils à leur sujet.",
       "s17Title": "17. Propriété intellectuelle",
       "s17Body": "ClaimSaver+ et ses concédants possèdent le site, le logiciel, les marques, les graphiques et le texte éducatif. Vous recevez une licence limitée, non exclusive et incessible pour utiliser la plateforme pour votre propre dossier PIP de Floride tant que votre accès reste payé et en règle. Vous ne pouvez pas copier, revendre, extraire ni construire un service concurrent à partir de nos contenus. Vous conservez la propriété des informations et fichiers que vous saisissez. Vous nous accordez une licence limitée pour héberger, afficher et traiter ce contenu uniquement pour exploiter le produit, le sécuriser et respecter la loi. Vous déclarez avoir le droit de téléverser ce que vous téléversez.",
       "s18Title": "18. Signatures et enregistrements électroniques",
@@ -1469,10 +1470,10 @@
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "updated": "En vigueur à compter du 8 septembre 2026. Version 26.09.08.",
+      "updated": "En vigueur à compter du 2 novembre 2026. Version 26.11.02.",
       "intro": "Cette Politique de confidentialité explique comment CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collecte, utilise et partage des informations lorsque vous utilisez claimsaverplus.com et les applications liées. Elle s’applique au produit logiciel. Ce n’est pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Qui nous sommes",
-      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Siège : Miami, Floride.",
+      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Bureau principal : {{businessAddress}}.",
       "s2Title": "2. Informations que nous collectons",
       "s2Body": "Vous pouvez fournir : nom, e-mail, mot de passe et champs de profil ; réponses de la feuille de dossier (identité, accident, blessure, emploi, assurance, autorisations) ; et des fichiers que vous téléversez, qui peuvent inclure des rapports de police ou d’accident, des dossiers et factures médicaux, des cartes d’assurance ou pages de conditions, des photos et des preuves similaires. Nous ne collectons pas de numéros de sécurité sociale dans le produit. Nous collectons aussi des données techniques telles que l’adresse IP, le type d’appareil, le navigateur, les horodatages et les journaux de sécurité. Les numéros de carte sont collectés par Stripe, non stockés par nous comme PAN complet pour Checkout hébergé.",
       "s3Title": "3. Comment nous utilisons les informations",

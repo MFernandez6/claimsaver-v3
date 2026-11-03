@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CHECKOUT_PATH } from "@claimsaver/shared";
+import { CHECKOUT_PATH, PRINCIPAL_ADDRESS_LINE } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import { ObfuscatedSupportEmail } from "@/components/obfuscated-support-email";
 
@@ -64,6 +64,7 @@ export default function Footer() {
         <p className="mt-10 text-xs leading-relaxed text-white/60">{t("footer.legalText")}</p>
         <div className="mt-4 text-center text-xs text-white/50">
           <p>© {new Date().getFullYear()} CLAIMSAVERPLUS LLC d/b/a ClaimSaver+</p>
+          <p className="mt-1">{PRINCIPAL_ADDRESS_LINE}</p>
           <p className="mt-1">{t("footer.servingFlorida")}</p>
         </div>
       </div>

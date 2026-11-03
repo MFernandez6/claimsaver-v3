@@ -321,7 +321,8 @@
       "staffLicenseHeading": "Team credentials (Florida)",
       "staffLicenseBody": "ClaimSaver+ is software. We do not publish an adjuster license number on this site. If licensed professional services are ever offered later, they will be listed with separate agreements and disclosures.",
       "staffLicensePending": "Public adjuster (3-20) or other credentials, if offered as a separate service later, will be listed separately with full disclosures.",
-      "unsupportedNote": "License numbers for public display: UNSUPPORTED — REQUIRES CONFIRMATION. None are published here until the owner supplies them. Do not treat founder background as a credential sold on this platform.",
+      "unsupportedNote": "No staff-adjuster or public-adjuster license number is published on this site. Founder credentials stay off consumer pages until Florida insurance-regulatory counsel writes on whether they may be displayed. Do not treat founder background as a credential sold on this platform.",
+      "sunbizLine": "Florida Division of Corporations document {{document}}.",
       "founderAlt": "ClaimSaver+ founder",
       "teamAlt": "ClaimSaver+ team",
       "founderName": "Miguel A. Fernandez, M.Sc.",
@@ -340,7 +341,7 @@
       "body": "For help signing in, billing, or using the website, email {{supportEmail}}. We cannot answer questions about the legal merits of your specific claim or tell you how to handle your case—those questions belong to a licensed attorney.",
       "emailLabel": "Email",
       "notarizationNote": "The $500 fee is platform access only. Future add-ons, if offered, will be disclosed separately.",
-      "headquarters": "Headquarters: Miami, Florida.",
+      "headquarters": "Principal office: {{businessAddress}}.",
       "attorneyCta": "If your matter is too complex for standard PIP filing, see When to Call an Attorney."
     },
     "dataHandling": {
@@ -1166,7 +1167,7 @@
       "startClaim": "Start Filing Your Claim",
       "learnMore": "How It Works"
     },
-    "headquartersNote": "Headquarters: Miami, Florida. We are not a law firm."
+    "headquartersNote": "Principal office: {{businessAddress}}. We are not a law firm."
   },
   "whatWeDo": {
     "hero": {
@@ -1411,7 +1412,7 @@
   },
   "legal": {
     "reacceptTitle": "Updated Terms and Privacy Policy",
-    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.09.08). Check the box below to continue. We store a timestamped record of this agreement with your account.",
+    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.11.02). Check the box below to continue. We store a timestamped record of this agreement with your account.",
     "reacceptCta": "I agree — continue",
     "consentFailed": "We could not save your agreement. Check your connection and try again.",
     "requestDeletion": "Request account deletion",
@@ -1423,7 +1424,7 @@
     "termsTitle": "Terms of Service",
     "terms": {
       "title": "Terms of Service",
-      "updated": "Effective September 8, 2026. Version 26.09.08.",
+      "updated": "Effective November 2, 2026. Version 26.11.02.",
       "intro": "These Terms of Service (“Terms”) are a contract between you and CLAIMSAVERPLUS LLC, a Florida limited liability company doing business as ClaimSaver+ (“ClaimSaver+,” “we,” “us”), which operates claimsaverplus.com. You accept these Terms by checking “I agree” at account creation or checkout. We store a timestamped record of that clickwrap (account, document, version, time, IP, and user agent). Browsing public pages alone is not acceptance. If you do not agree, do not create an account or pay. These Terms are a product contract, not legal advice. The English text controls.",
       "s1Title": "1. What ClaimSaver+ is",
       "s1Body": "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. We sell access to software that helps Florida drivers prepare, organize, and store their own motor-vehicle no-fault (PIP) claim materials. We are not a law firm, not your attorney, not a public adjuster, not your representative to an insurance company, and not a claims handler. You remain the filer. The product is ministerial: intake, form population from answers you enter, document storage, and calendar date math. We do not evaluate the legal merits of your claim, estimate settlement or claim value, predict outcomes, recommend strategy (including what to argue if an insurer denies), negotiate with insurers, speak to an adjuster on your behalf, or submit your package to a carrier.",
@@ -1456,7 +1457,7 @@
       "s15Title": "15. Changes",
       "s15Body": "We may update these Terms. The “Effective” date at the top will change. Continued use after an update constitutes acceptance of the revised Terms, except where applicable law requires additional notice or consent. If you do not agree, stop using the service and contact us about your account.",
       "s16Title": "16. Contact",
-      "s16Body": "These Terms are offered by CLAIMSAVERPLUS LLC d/b/a ClaimSaver+, operated from Miami, Florida. For platform and billing questions only, email {{supportEmail}}. Formal notices may be sent to that email until a street address is published on this page. We cannot advise you on the legal merits of your claim. Have Florida insurance-regulatory and consumer counsel review these Terms if you need advice about them.",
+      "s16Body": "These Terms are offered by CLAIMSAVERPLUS LLC d/b/a ClaimSaver+, operated from Miami, Florida. Principal office: {{businessAddress}}. For platform and billing questions only, email {{supportEmail}}. Formal notices may be sent to that address or that email. We cannot advise you on the legal merits of your claim. Have Florida insurance-regulatory and consumer counsel review these Terms if you need advice about them.",
       "s17Title": "17. Intellectual property",
       "s17Body": "ClaimSaver+ and its licensors own the site, software, trademarks, graphics, and educational text. You receive a limited, non-exclusive, non-transferable license to use the platform for your own Florida PIP claim while your access remains paid and in good standing. You may not copy, resell, scrape, or build a competing service from our materials. You keep ownership of the information and files you enter. You grant us a limited license to host, display, and process that content solely to operate the product, secure it, and comply with law. You represent that you have the right to upload what you upload.",
       "s18Title": "18. Electronic signatures and records",
@@ -1468,10 +1469,10 @@
     },
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Effective September 8, 2026. Version 26.09.08.",
+      "updated": "Effective November 2, 2026. Version 26.11.02.",
       "intro": "This Privacy Policy explains how CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collects, uses, and shares information when you use claimsaverplus.com and related apps. It applies to the software product. It is not legal advice. The English text controls.",
       "s1Title": "1. Who we are",
-      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ provides self-help software for Florida PIP document preparation. We are not your health care provider, health plan, law firm, public adjuster, or BLACKLINE. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Headquarters: Miami, Florida.",
+      "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ provides self-help software for Florida PIP document preparation. We are not your health care provider, health plan, law firm, public adjuster, or BLACKLINE. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Principal office: {{businessAddress}}.",
       "s2Title": "2. Information we collect",
       "s2Body": "You may provide: name, email, password, and account profile fields; claim worksheet answers (identity, accident, injury, employment, insurance, authorizations); and files you upload, which can include police or crash reports, medical records and bills, insurance cards or declarations pages, photos, and similar evidence. We do not collect Social Security numbers in the product. We also collect technical data such as IP address, device type, browser, timestamps, and security logs. Payment card numbers are collected by Stripe, not stored by us as full PAN data for hosted Checkout.",
       "s3Title": "3. How we use information",

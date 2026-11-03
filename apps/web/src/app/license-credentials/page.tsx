@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { LEGAL_ENTITY_DISPLAY } from "@claimsaver/shared";
+import { LEGAL_ENTITY_DISPLAY, PRINCIPAL_ADDRESS_LINE, SUNBIZ_DOCUMENT_NUMBER } from "@claimsaver/shared";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 
 export default function LicenseCredentialsPage() {
@@ -42,7 +42,14 @@ export default function LicenseCredentialsPage() {
             {t("pages.licenseCredentials.verify")}
           </p>
           <p className="mt-6 text-sm text-slate-500">
-            {LEGAL_ENTITY_DISPLAY}. {t("pages.licenseCredentials.searchHint")}
+            {LEGAL_ENTITY_DISPLAY}
+            <br />
+            {PRINCIPAL_ADDRESS_LINE}
+            <br />
+            {t("pages.licenseCredentials.sunbizLine", { document: SUNBIZ_DOCUMENT_NUMBER })}
+          </p>
+          <p className="mt-3 text-sm text-slate-500">
+            {t("pages.licenseCredentials.searchHint")}
           </p>
           <p className="mt-4 text-sm">
             <Link href="/who-we-are" className="text-teal-800 underline dark:text-teal-300">

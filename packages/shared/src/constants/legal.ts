@@ -2,11 +2,21 @@ import { SKIP_PAYMENTS_FOR_PROMO } from "./pricing";
 
 export const BRAND = "ClaimSaver+";
 export const HEADQUARTERS = "Miami, Florida";
+/** Principal office on Florida Division of Corporations filing L26000456741. */
+export const PRINCIPAL_ADDRESS = {
+  streetAddress: "1700 NW North River Drive, Apt. 908",
+  addressLocality: "Miami",
+  addressRegion: "FL",
+  postalCode: "33125",
+  addressCountry: "US",
+} as const;
+export const PRINCIPAL_ADDRESS_LINE = `${PRINCIPAL_ADDRESS.streetAddress}, ${PRINCIPAL_ADDRESS.addressLocality}, ${PRINCIPAL_ADDRESS.addressRegion} ${PRINCIPAL_ADDRESS.postalCode}`;
+export const SUNBIZ_DOCUMENT_NUMBER = "L26000456741";
 export const SITE_HOST = "claimsaverplus.com";
 export const SUPPORT_EMAIL = "support@claimsaverplus.com";
 
 /** Bump when ToS or Privacy materially change so clickwrap can be re-collected. */
-export const LEGAL_DOCUMENTS_VERSION = "26.09.08";
+export const LEGAL_DOCUMENTS_VERSION = "26.11.02";
 
 /** Florida LLC filed 2026. Use on contracts, receipts, and formal notices. */
 export const LEGAL_ENTITY_NAME = "CLAIMSAVERPLUS LLC";
