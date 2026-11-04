@@ -16,6 +16,7 @@ import {
 } from "@claimsaver/shared";
 import { ApiClientError } from "@claimsaver/shared";
 import { DashboardOverviewPanels } from "@/components/dashboard-overview-panels";
+import { SupportAccessBanner } from "@/components/support-access-banner";
 import { NotFilingYet } from "@/components/not-filing-yet";
 import { PipDeadlineBanner } from "@/components/pip-deadline-banner";
 import { PipDeadlineChain } from "@/components/pip-deadline-chain";
@@ -185,6 +186,7 @@ export default function DashboardPage() {
       {me && me.legalConsentCurrent === false ? (
         <LegalReaccept onAccepted={() => void refresh()} />
       ) : null}
+      <SupportAccessBanner />
       <OnboardingBanner
         name={welcomeName}
         currentStep={primary?.worksheetStep ?? 1}

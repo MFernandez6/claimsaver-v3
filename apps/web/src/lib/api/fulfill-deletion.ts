@@ -4,7 +4,7 @@ export async function fulfillAccountDeletion(
   admin: SupabaseClient,
   userId: string,
   requestId: string,
-  processedBy: string,
+  processedBy: string | null,
 ) {
   const { data: docs } = await admin
     .from("claim_documents")

@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /clinic
+Disallow: /clinic/
+Disallow: /enroll/
 
 Sitemap: https://www.claimsaverplus.com/sitemap.xml

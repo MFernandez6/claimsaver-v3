@@ -59,6 +59,11 @@ export function SessionGuard() {
     const tick = () => {
       if (!watching) return;
       registerSessionTab();
+      if (pathRef.current.startsWith("/admin")) {
+        markActivity();
+        setWarnSeconds(null);
+        return;
+      }
       const idle = idleMs();
       if (idle >= IDLE_LIMIT_MS) {
         void logout("idle");
