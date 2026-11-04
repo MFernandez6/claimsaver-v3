@@ -10,8 +10,9 @@ export function LegalDoc({
   i18nPrefix: string;
   sectionCount: number;
 }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const sections = Array.from({ length: sectionCount }, (_, i) => i + 1);
+  const english = (i18n.language || "en").toLowerCase().startsWith("en");
 
   return (
     <div className="min-h-screen">
@@ -21,7 +22,9 @@ export function LegalDoc({
           <header className="space-y-2">
             <h1 className="text-4xl font-bold text-slate-900">{t(`${i18nPrefix}.title`)}</h1>
             <p className="text-sm text-slate-500">{t(`${i18nPrefix}.updated`)}</p>
-            <p className="text-sm text-slate-500">{t("common.englishControls")}</p>
+            {english ? null : (
+              <p className="text-sm text-slate-500">{t("common.englishControls")}</p>
+            )}
           </header>
           <p className="leading-relaxed">{t(`${i18nPrefix}.intro`)}</p>
           {sections.map((n) => (

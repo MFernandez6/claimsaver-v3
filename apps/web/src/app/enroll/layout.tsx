@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Clinic enrollment · ClaimSaver+",
+  title: "Clinic invitation",
+  description: "A Florida clinic invited you to ClaimSaver+. You stay the filer. Platform access is $500.",
   robots: { index: false, follow: false },
 };
 

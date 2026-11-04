@@ -23,6 +23,29 @@ export function formatDisplayDate(value: string | null | undefined) {
   return new Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "numeric" }).format(d);
 }
 
+/** Datetime-local or ISO timestamp → "Aug 12, 2026, 5:42 PM". */
+export function formatDisplayDateTime(value: string | null | undefined) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return formatDisplayDate(raw);
+  const normalized = raw.length === 16 && raw.includes("T") ? `${raw}:00` : raw;
+  const d = new Date(normalized);
+  if (Number.isNaN(d.getTime())) return formatDisplayDate(raw);
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(d);
+}
+
+export function isIosSafari() {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent;
+  return /iP(hone|ad|od)/.test(ua);
+}
+
 export function generateClaimNumber(now = new Date()) {
   const y = now.getFullYear();
   const m = String(now.getMonth() + 1).padStart(2, "0");

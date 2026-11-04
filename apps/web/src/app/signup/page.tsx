@@ -37,6 +37,7 @@ function SignupInner() {
   const [loading, setLoading] = useState(false);
   const [checkEmail, setCheckEmail] = useState(false);
   const [ageTerms, setAgeTerms] = useState(false);
+  const [website, setWebsite] = useState("");
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -51,6 +52,10 @@ function SignupInner() {
     }
     if (!isSupabaseBrowserConfigured()) {
       setError(t("auth.authNotConfigured"));
+      return;
+    }
+    if (website.trim()) {
+      setCheckEmail(true);
       return;
     }
     setLoading(true);
@@ -96,6 +101,19 @@ function SignupInner() {
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{t("floridaOnly.note")}</p>
       <p className="mt-1 text-xs text-slate-400">{t("cta.path")}</p>
       <form onSubmit={onSubmit} className="mt-8 space-y-4">
+        <div className="hidden" aria-hidden="true">
+          <label>
+            Company website
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+            />
+          </label>
+        </div>
         <div className="grid grid-cols-2 gap-3">
           <Input required placeholder={t("common.firstName")} value={firstName} onChange={(e) => setFirstName(e.target.value)} />
           <Input required placeholder={t("common.lastName")} value={lastName} onChange={(e) => setLastName(e.target.value)} />

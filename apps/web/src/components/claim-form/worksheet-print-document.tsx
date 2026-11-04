@@ -4,10 +4,23 @@ import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { isDrawnSignature, type FloridaNoFaultFormData } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
+import { formatDisplayDate, formatDisplayDateTime } from "@/lib/utils";
 
 function dash(value: string | undefined) {
   const trimmed = value?.trim();
   return trimmed ? trimmed : "—";
+}
+
+function humanizeStored(value: string | undefined, t: (key: string, opts?: { defaultValue?: string }) => string) {
+  const trimmed = value?.trim() ?? "";
+  if (!trimmed) return "";
+  if (/^\d{4}-\d{2}-\d{2}T/.test(trimmed)) return formatDisplayDateTime(trimmed) || trimmed;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return formatDisplayDate(trimmed) || trimmed;
+  const mapped: Record<string, string> = {
+    claim_file: t("claimForm.stored.claim_file", { defaultValue: "Claim file" }),
+    treatment_records: t("claimForm.stored.treatment_records", { defaultValue: "Treatment records" }),
+  };
+  return mapped[trimmed] ?? trimmed;
 }
 
 function SignatureValue({ value }: { value: string }) {
@@ -29,11 +42,16 @@ function Row({
   value?: string;
   signature?: string;
 }) {
+  const { t } = useTranslation();
   return (
     <div className="grid gap-1 border-b border-slate-200 py-2 sm:grid-cols-[14rem_minmax(0,1fr)] sm:gap-4">
       <dt className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</dt>
       <dd className="text-sm text-slate-900">
-        {signature !== undefined ? <SignatureValue value={signature} /> : <span className="whitespace-pre-wrap">{dash(value)}</span>}
+        {signature !== undefined ? (
+          <SignatureValue value={signature} />
+        ) : (
+          <span className="whitespace-pre-wrap">{dash(humanizeStored(value, t))}</span>
+        )}
       </dd>
     </div>
   );

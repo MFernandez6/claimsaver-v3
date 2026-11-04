@@ -31,7 +31,7 @@ export function LegalReaccept({ onAccepted }: { onAccepted: () => void }) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/50 p-4 sm:items-center">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-slate-50 p-4 sm:items-center">
       <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl dark:bg-slate-900">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{t("legal.reacceptTitle")}</h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">

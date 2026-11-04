@@ -77,6 +77,12 @@ const nextConfig: NextConfig = {
       { source: "/sign-up", destination: "/signup", permanent: true },
       { source: "/need-professional-help", destination: "/when-to-call-an-attorney", permanent: true },
       { source: "/notarization", destination: "/pricing", permanent: true },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "claimsaverplus.com" }],
+        destination: "https://www.claimsaverplus.com/:path*",
+        permanent: true,
+      },
     ];
   },
 };

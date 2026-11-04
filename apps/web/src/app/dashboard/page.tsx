@@ -29,7 +29,7 @@ import { webApi } from "@/lib/api/client";
 import { useSupabaseUser } from "@/components/auth/use-supabase-user";
 import { greetingName } from "@/lib/auth/display-name";
 import { useTranslation } from "react-i18next";
-import { formatUsd, formatDisplayDate, cn } from "@/lib/utils";
+import { formatUsd, formatDisplayDate, isIosSafari, cn } from "@/lib/utils";
 import { LegalReaccept } from "@/components/legal-reaccept";
 import { OnboardingBanner } from "@/components/onboarding-banner";
 import { DocumentUploadModal } from "@/components/document-upload-modal";
@@ -140,6 +140,14 @@ export default function DashboardPage() {
     return <p className="p-8 text-slate-500">{t("auth.redirectingToSignIn")}</p>;
   }
 
+  if (me?.legalConsentCurrent === false) {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-16">
+        <LegalReaccept onAccepted={() => void refresh()} />
+      </div>
+    );
+  }
+
   if (paywall) {
     return (
       <div className="mx-auto max-w-lg px-4 py-20 text-center">
@@ -183,9 +191,6 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
-      {me && me.legalConsentCurrent === false ? (
-        <LegalReaccept onAccepted={() => void refresh()} />
-      ) : null}
       <SupportAccessBanner />
       <OnboardingBanner
         name={welcomeName}
@@ -201,7 +206,7 @@ export default function DashboardPage() {
         expensesCount={expenses.length}
         lastCompleted={lastCompleted}
         nextEvent={nextEvent}
-        welcomeName={welcomeName}
+        welcomeName={primary?.worksheetComplete ? welcomeName : undefined}
       />
 
       <div className="mt-6">
@@ -434,19 +439,16 @@ function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => vo
                 variant="outline"
                 onClick={async () => {
                   try {
-                    const { url, name } = await webApi.get<{ url: string; name?: string }>(
+                    const { url } = await webApi.get<{ url: string; name?: string }>(
                       `/api/v1/documents/${d.id}`,
                     );
+                    if (isIosSafari()) {
+                      window.location.assign(url);
+                      return;
+                    }
                     const opened = window.open(url, "_blank", "noopener,noreferrer");
                     if (!opened) {
-                      const link = document.createElement("a");
-                      link.href = url;
-                      link.download = name || d.name;
-                      link.rel = "noopener noreferrer";
-                      link.target = "_blank";
-                      document.body.appendChild(link);
-                      link.click();
-                      link.remove();
+                      window.location.assign(url);
                     }
                   } catch {
                     setError(t("dashboard.docOpenFailed"));

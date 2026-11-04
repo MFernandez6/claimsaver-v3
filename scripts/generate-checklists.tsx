@@ -120,7 +120,7 @@ async function renderLocale(locale: DaysLocale) {
   let y = PAGE_H - 118;
   page.drawText(copy.heroTitle, { x: MARGIN, y, size: 32, font: fonts.bold, color: slate });
   y -= 22;
-  page.drawText(copy.formHeading, { x: MARGIN, y, size: 11, font: fonts.regular, color: muted });
+  page.drawText(copy.pdfTitle, { x: MARGIN, y, size: 11, font: fonts.regular, color: muted });
   y -= 16;
   page.drawRectangle({ x: MARGIN, y, width: 56, height: 3, color: teal });
   y -= 22;

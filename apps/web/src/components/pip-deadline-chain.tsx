@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { webApi } from "@/lib/api/client";
-import { cn } from "@/lib/utils";
+import { cn, formatDisplayDate } from "@/lib/utils";
 
 export function PipDeadlineChain({
   accidentDate,
@@ -82,7 +82,7 @@ export function PipDeadlineChain({
                     {t(`deadlines.templates.${template.id}.label`, { defaultValue: template.label })}
                   </p>
                   <p className="mt-0.5 text-xs text-slate-500">
-                    {date || t("dashboard.noAccidentDate")}
+                    {formatDisplayDate(date) || date || t("dashboard.noAccidentDate")}
                     {remaining != null
                       ? ` · ${remaining >= 0 ? t("deadlines.daysAway", { n: remaining }) : t("deadlines.daysAgo", { n: Math.abs(remaining) })}`
                       : ""}

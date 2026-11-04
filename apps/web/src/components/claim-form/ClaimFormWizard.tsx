@@ -90,6 +90,8 @@ export function ClaimFormWizard() {
   const [ackSoftware, setAckSoftware] = useState(false);
   const [stepError, setStepError] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const formRef = useRef(form);
+  formRef.current = form;
   const claimId = claim?.id;
   const prefilled = useRef(false);
 
@@ -117,22 +119,49 @@ export function ClaimFormWizard() {
     [claimId, step, t],
   );
 
-  function setMany(partial: Partial<FloridaNoFaultFormData>) {
+  function setMany(partial: Partial<FloridaNoFaultFormData>, immediate = false) {
     setForm((prev) => {
       const next = { ...prev, ...partial };
+      formRef.current = next;
       if (timer.current) clearTimeout(timer.current);
-      timer.current = setTimeout(() => {
-        void patch(partial);
-      }, 700);
+      const save = () => {
+        timer.current = null;
+        void patch(next);
+      };
+      if (immediate) save();
+      else timer.current = setTimeout(save, 700);
       return next;
     });
   }
 
-  function set<K extends keyof FloridaNoFaultFormData>(key: K, value: FloridaNoFaultFormData[K]) {
-    setMany({ [key]: value } as Partial<FloridaNoFaultFormData>);
+  function set<K extends keyof FloridaNoFaultFormData>(
+    key: K,
+    value: FloridaNoFaultFormData[K],
+    immediate = false,
+  ) {
+    setMany({ [key]: value } as Partial<FloridaNoFaultFormData>, immediate);
   }
 
   const accidentDate = normalizeAccidentDate(form);
+
+  useEffect(() => {
+    const flush = () => {
+      if (!timer.current) return;
+      clearTimeout(timer.current);
+      timer.current = null;
+      void patch(formRef.current);
+    };
+    const onHide = () => {
+      if (document.visibilityState === "hidden") flush();
+    };
+    window.addEventListener("pagehide", flush);
+    document.addEventListener("visibilitychange", onHide);
+    return () => {
+      flush();
+      window.removeEventListener("pagehide", flush);
+      document.removeEventListener("visibilitychange", onHide);
+    };
+  }, [patch]);
 
   useEffect(() => {
     if (!isLoaded || !isSignedIn) return;
@@ -247,18 +276,23 @@ export function ClaimFormWizard() {
     );
   }
 
-  const current = WORKSHEET_STEPS[step - 1];
-
-  return (
-    <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
-      {me && me.legalConsentCurrent === false ? (
+  if (me?.legalConsentCurrent === false) {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-16">
         <LegalReaccept
           onAccepted={() => {
             setMe({ ...me, legalConsentCurrent: true });
             setLoadTick((n) => n + 1);
           }}
         />
-      ) : null}
+      </div>
+    );
+  }
+
+  const current = WORKSHEET_STEPS[step - 1];
+
+  return (
+    <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10">
       {error ? <p className="mb-4 text-sm text-red-600">{error}</p> : null}
       <div className="print:hidden">
       <p className="text-xs font-semibold uppercase tracking-wide text-teal-800">{t("claimForm.header.title")}</p>
@@ -447,7 +481,7 @@ export function ClaimFormWizard() {
                 <Field label={t("claimForm.fields.authStart")}><Input type="date" value={form.insuranceAuthStartDate} onChange={(e) => set("insuranceAuthStartDate", e.target.value)} /></Field>
                 <Field label={t("claimForm.fields.authEnd")}><Input type="date" value={form.insuranceAuthEndDate} onChange={(e) => set("insuranceAuthEndDate", e.target.value)} /></Field>
               </div>
-              <SignaturePad required label={t("claimForm.fields.signature")} value={form.insuranceAuthSignature} onChange={(v) => set("insuranceAuthSignature", v)} />
+              <SignaturePad required label={t("claimForm.fields.signature")} value={form.insuranceAuthSignature} onChange={(v) => set("insuranceAuthSignature", v, true)} />
               <Field required label={t("claimForm.fields.signatureDate")}><Input type="date" value={form.insuranceAuthSignatureDate} onChange={(e) => set("insuranceAuthSignatureDate", e.target.value)} /></Field>
             </>
           )}
@@ -467,7 +501,7 @@ export function ClaimFormWizard() {
                 <Field label={t("claimForm.fields.authStart")}><Input type="date" value={form.hipaaStartDate} onChange={(e) => set("hipaaStartDate", e.target.value)} /></Field>
                 <Field label={t("claimForm.fields.authEnd")}><Input type="date" value={form.hipaaEndDate} onChange={(e) => set("hipaaEndDate", e.target.value)} /></Field>
               </div>
-              <SignaturePad required label={t("claimForm.fields.signature")} value={form.hipaaSignature} onChange={(v) => set("hipaaSignature", v)} />
+              <SignaturePad required label={t("claimForm.fields.signature")} value={form.hipaaSignature} onChange={(v) => set("hipaaSignature", v, true)} />
               <Field required label={t("claimForm.fields.signatureDate")}><Input type="date" value={form.hipaaSignatureDate} onChange={(e) => set("hipaaSignatureDate", e.target.value)} /></Field>
             </>
           )}
@@ -478,10 +512,10 @@ export function ClaimFormWizard() {
               <p className="text-sm text-slate-600">{t("claimForm.authPipIntro")}</p>
               <p className="text-xs text-slate-500">{t("claimForm.authDoesNotSend")}</p>
               <Field required label={t("claimForm.fields.patientName")}><Input value={form.pipPatientName} onChange={(e) => set("pipPatientName", e.target.value)} /></Field>
-              <SignaturePad required label={t("claimForm.fields.signature")} value={form.pipPatientSignature} onChange={(v) => set("pipPatientSignature", v)} />
+              <SignaturePad required label={t("claimForm.fields.signature")} value={form.pipPatientSignature} onChange={(v) => set("pipPatientSignature", v, true)} />
               <Field required label={t("claimForm.fields.signatureDate")}><Input type="date" value={form.pipPatientDate} onChange={(e) => set("pipPatientDate", e.target.value)} /></Field>
               <Field label={t("claimForm.fields.providerName")}><Input value={form.pipProviderName} onChange={(e) => set("pipProviderName", e.target.value)} /></Field>
-              <SignaturePad label={t("claimForm.fields.providerSignature")} value={form.pipProviderSignature} onChange={(v) => set("pipProviderSignature", v)} />
+              <SignaturePad label={t("claimForm.fields.providerSignature")} value={form.pipProviderSignature} onChange={(v) => set("pipProviderSignature", v, true)} />
               <Field label={t("claimForm.fields.providerDate")}><Input type="date" value={form.pipProviderDate} onChange={(e) => set("pipProviderDate", e.target.value)} /></Field>
             </>
           )}
@@ -508,7 +542,7 @@ export function ClaimFormWizard() {
                   <p className="text-sm text-slate-600">{t("claimForm.generatedFromAnswers")}</p>
                   <p className="text-sm text-slate-600">{t("claimForm.reviewIntro")}</p>
                   <p className="text-sm text-slate-600">{t("claimForm.printFullHint")}</p>
-                  <SignaturePad required label={t("claimForm.fields.signature")} hint={t("claimForm.hints.reviewSignature")} value={form.signature} onChange={(v) => set("signature", v)} />
+                  <SignaturePad required label={t("claimForm.fields.signature")} hint={t("claimForm.hints.reviewSignature")} value={form.signature} onChange={(v) => set("signature", v, true)} />
                   <label className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
                     <input
                       type="checkbox"

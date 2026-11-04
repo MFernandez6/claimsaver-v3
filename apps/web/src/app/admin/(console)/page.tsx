@@ -54,7 +54,7 @@ export default function AdminOverviewPage() {
     { label: "Claim records", value: data.counts.claims, hint: "Count only. Contents stay with the claimant." },
     { label: "Open tickets", value: data.counts.openTickets, href: "/admin/support" },
     { label: "Pending deletions", value: data.counts.pendingDeletions, hint: "Disable now, hard-delete in 30 days.", href: "/admin/privacy" },
-    { label: "14-day leads", value: data.counts.leads14days, hint: `${data.counts.leads14daysWeek} this week` },
+    { label: "14-day leads", value: data.counts.leads14days, hint: `${data.counts.leads14daysWeek} this week`, href: "/admin/leads" },
     { label: "Clinics", value: data.counts.clinics ?? 0, hint: `${data.counts.pilots ?? 0} pilots`, href: "/admin/clinics" },
     { label: "Staff seats", value: data.counts.staff, href: "/admin/roles" },
   ];

@@ -57,16 +57,10 @@ function claimProgressPercent({
   const total = Math.max(1, totalSteps);
   const current = clampStep(currentStep, total);
   const completed = worksheetComplete ? total : Math.max(0, current - 1);
-  const worksheetScore = worksheetComplete ? 1 : (completed + 0.4) / total;
-  const docsScore = Math.min(1, documentsCount / 3);
-  const calendarScore = calendarCount > 0 ? 1 : 0;
-  const expensesScore = expensesCount > 0 ? 1 : 0;
-  return Math.min(
-    100,
-    Math.round(
-      worksheetScore * 70 + docsScore * 18 + calendarScore * 7 + expensesScore * 5,
-    ),
-  );
+  void documentsCount;
+  void calendarCount;
+  void expensesCount;
+  return Math.round((completed / total) * 100);
 }
 
 function usePrefersReducedMotion() {

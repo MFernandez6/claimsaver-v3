@@ -37,7 +37,7 @@
     "goToCheckout": "Go to checkout",
     "backHome": "Back home",
     "home": "Home",
-    "englishControls": "The English version is the controlling text. This translation is for convenience."
+    "englishControls": "The English version is the controlling text."
   },
   "disclaimer": {
     "persistent": "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship.",
@@ -1412,7 +1412,7 @@
   },
   "legal": {
     "reacceptTitle": "Updated Terms and Privacy Policy",
-    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.11.02). Check the box below to continue. We store a timestamped record of this agreement with your account.",
+    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.11.02). Accept the updated terms to see your claim. Check the box below to continue. We store a timestamped record of this agreement with your account.",
     "reacceptCta": "I agree — continue",
     "consentFailed": "We could not save your agreement. Check your connection and try again.",
     "requestDeletion": "Request account deletion",

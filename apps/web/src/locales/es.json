@@ -1413,7 +1413,7 @@
   },
   "legal": {
     "reacceptTitle": "Términos y Política de privacidad actualizados",
-    "reacceptBody": "Actualizamos los Términos de servicio y la Política de privacidad (versión 26.11.02). Marque la casilla para continuar. Guardamos un registro con fecha y hora de este acuerdo con su cuenta.",
+    "reacceptBody": "Actualizamos los Términos de servicio y la Política de privacidad (versión 26.11.02). Acepte los términos actualizados para ver su reclamo. Marque la casilla para continuar. Guardamos un registro con fecha y hora de este acuerdo con su cuenta.",
     "reacceptCta": "Acepto — continuar",
     "consentFailed": "No pudimos guardar su aceptación. Compruebe la conexión e inténtelo de nuevo.",
     "requestDeletion": "Solicitar eliminación de la cuenta",

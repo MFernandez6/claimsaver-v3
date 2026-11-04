@@ -30,7 +30,15 @@ function AuthCallbackInner() {
     let cancelled = false;
 
     async function run() {
-      const next = safeNextPath(params.get("next"), "/dashboard");
+      const redirectTo = params.get("next") || params.get("redirect_to");
+      let next = safeNextPath(redirectTo, "/dashboard");
+      if (redirectTo && /^https:\/\/(www\.)?claimsaverplus\.com\//i.test(redirectTo)) {
+        try {
+          next = safeNextPath(new URL(redirectTo).pathname, "/dashboard");
+        } catch {
+          /* keep fallback */
+        }
+      }
       const fail = `/login?error=confirm&next=${encodeURIComponent(next)}`;
 
       if (!isSupabaseBrowserConfigured()) {

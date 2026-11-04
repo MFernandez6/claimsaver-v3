@@ -55,7 +55,9 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
 
   return (
     <>
-      {state?.ok ? <ThanksOverlay copy={copy} pdfPath={state.pdfPath ?? copy.pdfPath} /> : null}
+      {state?.ok ? (
+        <ThanksOverlay copy={copy} pdfPath={state.pdfPath ?? copy.pdfPath} fireLeadPixel />
+      ) : null}
       <form
         action={action}
         className="space-y-4"
@@ -118,6 +120,7 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
         <label htmlFor="lead-phone" className="mb-1 block text-sm font-medium text-slate-800">
           {copy.phone}
         </label>
+        <p className="mb-2 text-xs leading-relaxed text-slate-500">{copy.phoneHint}</p>
         <Input
           id="lead-phone"
           name="phone"

@@ -13,6 +13,7 @@ function readConsent() {
 
 export function CampaignPixels({ event }: { event: PixelEvent }) {
   const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  const conversionLabel = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   const [allowed, setAllowed] = useState(false);
 
@@ -21,6 +22,9 @@ export function CampaignPixels({ event }: { event: PixelEvent }) {
   }, []);
 
   if (!allowed || (!adsId && !pixelId)) return null;
+
+  const conversionSendTo =
+    adsId && conversionLabel ? `${adsId}/${conversionLabel}` : adsId ?? "";
 
   return (
     <>
@@ -34,7 +38,11 @@ export function CampaignPixels({ event }: { event: PixelEvent }) {
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','${adsId}',{allow_enhanced_conversions:false,anonymize_ip:true});
-${event === "Lead" ? `gtag('event','lead_14days',{send_to:'${adsId}'});` : ""}`}
+${
+  event === "Lead"
+    ? `gtag('event','conversion',{send_to:'${conversionSendTo}'});gtag('event','lead_14days',{send_to:'${adsId}'});`
+    : ""
+}`}
           </Script>
         </>
       ) : null}
@@ -65,15 +73,12 @@ export function CampaignCookieNotice({
   accept: string;
   decline: string;
 }) {
-  const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!adsId && !pixelId) return;
     const match = document.cookie.split("; ").find((row) => row.startsWith(`${ADS_CONSENT_COOKIE}=`));
     if (!match) setVisible(true);
-  }, [adsId, pixelId]);
+  }, []);
 
   if (!visible) return null;
 

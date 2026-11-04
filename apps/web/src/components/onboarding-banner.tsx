@@ -36,7 +36,7 @@ export function OnboardingBanner({
     setVisible(false);
   }
 
-  if (!visible) return null;
+  if (worksheetComplete || !visible) return null;
 
   const cta = worksheetComplete
     ? t("dashboard.progress.review")

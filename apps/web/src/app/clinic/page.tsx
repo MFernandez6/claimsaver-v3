@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { webApi } from "@/lib/api/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 type Payload = {
   clinic: { name: string; role: string; enrollmentOpen: boolean };
@@ -30,8 +32,15 @@ export default function ClinicDashboardPage() {
   if (error) {
     return (
       <div className="mx-auto max-w-lg px-6 py-16">
-        <h1 className="text-2xl font-bold">Clinic</h1>
-        <p className="mt-3 text-slate-600">{error}</p>
+        <h1 className="text-2xl font-bold">Clinic staff only</h1>
+        <p className="mt-3 text-base leading-relaxed text-slate-600">
+          This page is for clinic administrators. If you are a claimant, your
+          worksheet and documents stay on your dashboard — clinic staff never
+          see them.
+        </p>
+        <Button asChild className="mt-6 bg-gradient-to-r from-emerald-600 to-teal-800">
+          <Link href="/dashboard">Back to dashboard</Link>
+        </Button>
       </div>
     );
   }

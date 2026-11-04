@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { SUPPORT_EMAIL } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { DAYS_PATH, getDaysCopy, type DaysLocale } from "@/content/14days";
@@ -18,7 +17,7 @@ import { UtmCapture } from "./utm-capture";
 
 export function FourteenDaysLanding({ locale }: { locale: DaysLocale }) {
   const copy = getDaysCopy(locale);
-  const clinicHref = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(copy.clinicsMailtoSubject)}`;
+  const clinicHref = "/clinic-demo";
 
   return (
     <div lang={copy.htmlLang} className="-mx-0 bg-slate-950 text-white">
@@ -105,7 +104,15 @@ export function FourteenDaysLanding({ locale }: { locale: DaysLocale }) {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold">{copy.clinicsHeading}</h2>
           <Button asChild className="mt-6 h-12 rounded-xl bg-teal-800 px-6 font-semibold hover:bg-teal-700">
-            <a href={clinicHref}>{copy.clinicsCta}</a>
+            <a
+              href={clinicHref}
+              onClick={() => {
+                const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+                gtag?.("event", "clinic_demo", { event_category: "clinic" });
+              }}
+            >
+              {copy.clinicsCta}
+            </a>
           </Button>
         </div>
       </section>
@@ -140,6 +147,12 @@ export function FourteenDaysThanks({ locale }: { locale: DaysLocale }) {
   return (
     <div lang={copy.htmlLang} className="min-h-[50vh] bg-slate-950">
       <ThanksOverlay copy={copy} pdfPath={copy.pdfPath} fireLeadPixel autoOpenPdf />
+      <CampaignCookieNotice
+        title={copy.cookieTitle}
+        body={copy.cookieBody}
+        accept={copy.cookieAccept}
+        decline={copy.cookieDecline}
+      />
     </div>
   );
 }

@@ -54,15 +54,10 @@ export const FLORIDA_PIP_MILESTONE_TEMPLATES: FloridaPipMilestoneTemplate[] = [
       "Florida Statute §627.736 includes a 30-day payment window after the insurer receives written notice of a covered loss, subject to the statute and your policy. This date is general calendar math from the accident date you entered—not a prediction of payment, denial, or outcome.",
     critical: true,
   },
-  {
-    id: 7,
-    dayOffset: 365,
-    label: "Suit limitation (verify)",
-    description:
-      "Statutes of limitation are fact-specific. ClaimSaver+ does not calculate or apply a suit deadline to your facts. A licensed Florida attorney can address whether a limitation period applies.",
-    critical: false,
-  },
 ];
+
+/** Accident date (1) is a fact, not an action. Suit-limitation (7) is retired. */
+const SKIP_UP_NEXT_TEMPLATE_IDS = new Set([1, 7]);
 
 /** First YYYY-MM-DD in a date or datetime-local string. */
 export function coerceIsoDate(value: string): string {
@@ -145,15 +140,25 @@ export function lastCompletedMilestone(
   return [...done].sort((a, b) => timestampKey(b).localeCompare(timestampKey(a)))[0] ?? null;
 }
 
+function isUpcomingActionable(event: CalendarMilestoneLike, from = new Date()) {
+  const id = pipTemplateIdForEvent(event);
+  if (id != null && SKIP_UP_NEXT_TEMPLATE_IDS.has(id)) return false;
+  const day = coerceIsoDate(event.date);
+  if (!day) return false;
+  return daysUntil(day, from) >= 0;
+}
+
 /**
- * Next incomplete reminder on the list: after a PIP item, the following PIP
- * template; otherwise the earliest open date.
+ * Next incomplete reminder that is still in the future. Skips the accident-date
+ * fact and retired suit-limitation items. After a PIP item, prefers the next
+ * PIP template that is still upcoming.
  */
 export function nextOpenMilestone(
   events: CalendarMilestoneLike[],
   lastCompleted: CalendarMilestoneLike | null = lastCompletedMilestone(events),
+  from = new Date(),
 ): CalendarMilestoneLike | null {
-  const open = events.filter((event) => !event.completed);
+  const open = events.filter((event) => !event.completed && isUpcomingActionable(event, from));
   if (open.length === 0) return null;
 
   if (lastCompleted) {

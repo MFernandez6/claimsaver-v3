@@ -85,7 +85,7 @@ const SIGNUP_LINK = authCallbackLink("signup");
 const RECOVERY_LINK = authCallbackLink("recovery", "/update-password");
 const MAGIC_LINK = authCallbackLink("magiclink");
 const EMAIL_CHANGE_LINK = authCallbackLink("email_change");
-const INVITE_LINK = authCallbackLink("invite");
+const INVITE_LINK = "{{ .ConfirmationURL }}";
 
 export const templates = {
   confirmation: {

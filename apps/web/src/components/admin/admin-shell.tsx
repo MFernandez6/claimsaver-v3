@@ -14,6 +14,7 @@ import { webApi } from "@/lib/api/client";
 
 const NAV: { href: string; label: string; permission: Permission }[] = [
   { href: "/admin", label: "Overview", permission: "admin.overview" },
+  { href: "/admin/leads", label: "Leads", permission: "admin.overview" },
   { href: "/admin/users", label: "Users", permission: "users.search" },
   { href: "/admin/support", label: "Support", permission: "support.tickets" },
   { href: "/admin/clinics", label: "Clinics", permission: "clinics.manage" },

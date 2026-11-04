@@ -14,7 +14,6 @@ import {
   "/claim-form",
   "/account",
   "/clinic",
-  "/enroll",
 ];
 
 function isProtectedPath(pathname: string) {
@@ -29,6 +28,14 @@ function hasSupabaseAuthCookies(request: NextRequest) {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const host = request.headers.get("host")?.split(":")[0] ?? "";
+  if (host === "claimsaverplus.com") {
+    const url = request.nextUrl.clone();
+    url.hostname = "www.claimsaverplus.com";
+    url.protocol = "https:";
+    url.port = "";
+    return NextResponse.redirect(url, 308);
+  }
 
   if (request.method === "POST") {
     const authLimited =
@@ -116,28 +123,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/dashboard",
-    "/dashboard/:path*",
-    "/admin",
-    "/admin/:path*",
-    "/claim-form",
-    "/claim-form/:path*",
-    "/account",
-    "/account/:path*",
-    "/clinic",
-    "/clinic/:path*",
-    "/enroll/:path*",
-    "/claim/:path*",
-    "/auth/:path*",
-    "/login",
-    "/signup",
-    "/checkout-account",
-    "/forgot-password",
-    "/update-password",
-    "/api/v1/checkout",
-    "/api/v1/documents",
-    "/api/v1/claims",
-    "/api/v1/admin/:path*",
-    "/api/v1/:path*",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|pdf|ico|txt|xml)$).*)",
   ],
 };

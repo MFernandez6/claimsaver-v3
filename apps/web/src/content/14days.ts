@@ -163,14 +163,14 @@ export const daysCopy = {
     heroKicker: "Florida no-fault (PIP)",
     heroTitle: "14 DAYS.",
     heroSubline:
-      "Hurt in a crash in Florida? That's how long you have to get medical care, or you could lose your PIP benefits.",
+      "Hurt in a crash in Florida? The 14-day window after a crash can limit PIP medical benefits if you do not get initial care.",
     heroCta: "Get the free checklist",
-    heroTrust: "Built by a licensed Florida adjuster. Free. English, Spanish & French.",
+    heroTrust: "Free Florida PIP checklist. English, Spanish & French.",
     cardsHeading: "What most people don't know",
     cards: [
       {
         title: "14 days to get treated",
-        body: "Florida PIP requires initial care within 14 days of the crash.",
+        body: "Florida PIP can limit medical benefits if initial care is not furnished within 14 days of the crash.",
       },
       {
         title: "Your insurer may require exams",
@@ -183,11 +183,14 @@ export const daysCopy = {
     ],
     formId: "get-checklist",
     formHeading: "Get the free Florida 14-Day PIP Checklist",
+    pdfTitle: "Florida 14-Day PIP Checklist",
     formIntro:
       "Enter your email and we’ll send the PDF. We do not ask for crash details, medical information, or your policy number on this form.",
     firstName: "Full name",
     email: "Email",
     phone: "Mobile phone (optional)",
+    phoneHint:
+      "Optional. We only text if you check the box. Consent is not required to get the checklist.",
     language: "Preferred language",
     languageEn: "English",
     languageEs: "Spanish",
@@ -243,14 +246,14 @@ export const daysCopy = {
     heroKicker: "Sin culpa (PIP) en Florida",
     heroTitle: "14 DÍAS.",
     heroSubline:
-      "¿Tuviste un accidente en Florida? Ese es el plazo para recibir atención médica, o podrías perder tus beneficios de PIP.",
+      "¿Tuviste un accidente en Florida? La ventana de 14 días después del choque puede limitar los beneficios médicos de PIP si no recibes atención inicial.",
     heroCta: "Descarga la lista gratis",
-    heroTrust: "Creado por un ajustador con licencia en Florida. Gratis. Inglés, español y francés.",
+    heroTrust: "Lista PIP de Florida, gratis. Inglés, español y francés.",
     cardsHeading: "Lo que la mayoría no sabe",
     cards: [
       {
         title: "14 días para recibir tratamiento",
-        body: "El PIP de Florida exige atención inicial dentro de 14 días del accidente.",
+        body: "El PIP de Florida puede limitar los beneficios médicos si no se recibe atención inicial dentro de 14 días del accidente.",
       },
       {
         title: "Tu aseguradora puede exigir exámenes",
@@ -263,11 +266,14 @@ export const daysCopy = {
     ],
     formId: "get-checklist",
     formHeading: "Descarga la lista gratis de PIP de 14 días en Florida",
+    pdfTitle: "Lista PIP de 14 días en Florida",
     formIntro:
       "Escribe tu correo y te enviamos el PDF. En este formulario no pedimos detalles del accidente, información médica ni el número de póliza.",
     firstName: "Nombre completo",
     email: "Correo electrónico",
     phone: "Teléfono móvil (opcional)",
+    phoneHint:
+      "Opcional. Solo enviamos textos si marcas la casilla. El consentimiento no es necesario para obtener la lista.",
     language: "Idioma preferido",
     languageEn: "Inglés",
     languageEs: "Español",
@@ -324,14 +330,14 @@ export const daysCopy = {
     heroKicker: "Sans faute (PIP) en Floride",
     heroTitle: "14 JOURS.",
     heroSubline:
-      "Vous avez eu un accident en Floride ? C'est le délai pour obtenir des soins médicaux, sinon vous pourriez perdre vos prestations PIP.",
+      "Vous avez eu un accident en Floride ? Le délai de 14 jours après l'accident peut limiter les prestations médicales PIP si vous n'obtenez pas de soins initiaux.",
     heroCta: "Obtenir la liste gratuite",
-    heroTrust: "Conçu par un ajusteur agréé en Floride. Gratuit. Anglais, espagnol et français.",
+    heroTrust: "Liste PIP de Floride, gratuite. Anglais, espagnol et français.",
     cardsHeading: "Ce que la plupart des gens ignorent",
     cards: [
       {
         title: "14 jours pour se faire soigner",
-        body: "Le PIP de Floride exige des soins initiaux dans les 14 jours suivant l'accident.",
+        body: "Le PIP de Floride peut limiter les prestations médicales si des soins initiaux ne sont pas fournis dans les 14 jours suivant l'accident.",
       },
       {
         title: "Votre assureur peut exiger des examens",
@@ -344,11 +350,14 @@ export const daysCopy = {
     ],
     formId: "get-checklist",
     formHeading: "Obtenez la liste gratuite PIP de 14 jours en Floride",
+    pdfTitle: "Liste PIP de 14 jours en Floride",
     formIntro:
       "Indiquez votre e-mail et nous vous enverrons le PDF. Nous ne demandons pas les détails de l'accident, d'informations médicales ni votre numéro de police sur ce formulaire.",
     firstName: "Nom complet",
     email: "E-mail",
     phone: "Téléphone mobile (facultatif)",
+    phoneHint:
+      "Facultatif. Nous n'envoyons des SMS que si vous cochez la case. Le consentement n'est pas requis pour obtenir la liste.",
     language: "Langue préférée",
     languageEn: "Anglais",
     languageEs: "Espagnol",

@@ -9,7 +9,9 @@ export async function GET(req: NextRequest) {
   if (response) return response;
 
   const membership = await getClinicMembership(user.id);
-  if (!membership) return jsonErr("Forbidden", 403);
+  if (!membership) {
+    return jsonErr("This page is for clinic staff. Claimants use the dashboard.", 403);
+  }
 
   const { data: clinic, error } = await getSupabaseAdmin()
     .from("clinics")
