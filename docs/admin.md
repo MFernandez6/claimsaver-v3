@@ -32,9 +32,9 @@ A clinic cannot open enrollment until `baa_status = SIGNED` and `is_active`. Pat
 
 OWNER/SUPPORT request a session from a user page with a **ticket + reason**. The claimant approves on the dashboard. Session is 30 minutes and **read-only** (middleware blocks mutations). Snapshot APIs never return worksheet JSON.
 
-## Staff login (SMS)
+## Staff login
 
-After password login, `/admin/mfa` texts a 6-digit code to `ADMIN_MFA_PHONE` (default +1 786-417-3869). Optional Twilio; otherwise the code is sent via carrier SMS email and the OWNER inbox. Codes expire in 10 minutes and are stored hashed.
+OWNER/SUPPORT sign in with email and password, then open `/admin`. A second factor is paused until SMS delivery is reliable. `/admin/mfa` redirects to `/admin`.
 
 ## Privacy
 

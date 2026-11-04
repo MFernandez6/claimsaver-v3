@@ -6,11 +6,7 @@ import {
   type Permission,
   type StaffRole,
 } from "@/lib/auth/permissions";
-import {
-  ADMIN_ABS_COOKIE,
-  adminSessionStateFromRequest,
-  parseCookieTime,
-} from "@/lib/auth/admin-session";
+import { ADMIN_ABS_COOKIE, parseCookieTime } from "@/lib/auth/admin-session";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { getStaffRole } from "./roles";
 import { writeAudit } from "./audit";
@@ -52,11 +48,6 @@ export async function requirePermission(
     return { user: staff.user, role: staff.role, response: jsonErr("Forbidden", 403) };
   }
 
-  const session = adminSessionStateFromRequest(req);
-  if (session !== "ok") {
-    return { user: staff.user, role: staff.role, response: jsonErr("Admin session expired", 401) };
-  }
-
   const method = req.method.toUpperCase();
   const path = new URL(req.url).pathname;
   if (method !== "GET" && method !== "HEAD" && !path.startsWith("/api/v1/admin/impersonation")) {
@@ -67,13 +58,15 @@ export async function requirePermission(
   }
 
   const absAt = parseCookieTime(req.cookies.get(ADMIN_ABS_COOKIE)?.value);
+  const lastSignIn = staff.user.last_sign_in_at ? Date.parse(staff.user.last_sign_in_at) : 0;
+  const sessionStarted = Math.max(lastSignIn, absAt);
   const { data: lock } = await getSupabaseAdmin()
     .from("admin_ops_state")
     .select("admin_revoked_at")
     .eq("id", 1)
     .maybeSingle();
   const revokedAt = lock?.admin_revoked_at ? Date.parse(String(lock.admin_revoked_at)) : 0;
-  if (revokedAt && absAt && revokedAt > absAt) {
+  if (revokedAt && sessionStarted && revokedAt > sessionStarted) {
     return {
       user: staff.user,
       role: staff.role,
