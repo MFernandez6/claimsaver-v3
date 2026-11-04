@@ -167,8 +167,6 @@ export const daysCopy = {
     errorPhone: "Enter a valid U.S. mobile number, or leave it blank.",
     errorAck: "Confirm that you understand ClaimSaver+ is self-help software, not legal advice.",
     errorSms: "To share a mobile number, check the box that you agree to text messages — or leave the number blank.",
-    founder:
-      "Miguel Fernandez, M.Sc. · Licensed Florida all-lines adjuster · Former litigation paralegal · Built in Miami, Cohort 4",
     clinicsHeading: "Run a PIP clinic? Your patients have 14 days. Do they know?",
     clinicsCta: "Book a 15-minute demo",
     clinicsMailtoSubject: "Clinic demo",
@@ -190,7 +188,7 @@ export const daysCopy = {
     emailPreview: "Download your free ClaimSaver+ checklist.",
     emailHeading: "Your Florida 14-Day PIP Checklist",
     emailBody:
-      "Thanks for requesting the checklist. Use the button below to download the PDF. ClaimSaver+ is self-help software — you remain the filer.",
+      "Thanks for requesting the checklist. Open the attached PDF, or use the button below to download it. ClaimSaver+ is self-help software — you remain the filer.",
     emailCta: "Download the checklist",
     emailFoot: PAGE_DISCLAIMER.en,
   },
@@ -252,8 +250,6 @@ export const daysCopy = {
     errorAck: "Confirma que entiendes que ClaimSaver+ es software de autoayuda, no asesoría legal.",
     errorSms:
       "Para compartir un número móvil, marca que aceptas mensajes de texto — o deja el número en blanco.",
-    founder:
-      "Miguel Fernandez, M.Sc. · Ajustador de líneas generales con licencia en Florida · Exparalegal de litigios · Built in Miami, Cohort 4",
     clinicsHeading: "¿Tienes una clínica de PIP? Tus pacientes tienen 14 días. ¿Lo saben?",
     clinicsCta: "Agenda una demo de 15 minutos",
     clinicsMailtoSubject: "Clinic demo",
@@ -275,7 +271,7 @@ export const daysCopy = {
     emailPreview: "Descarga tu lista gratis de ClaimSaver+.",
     emailHeading: "Tu lista de PIP de 14 días en Florida",
     emailBody:
-      "Gracias por pedir la lista. Usa el botón para descargar el PDF. ClaimSaver+ es software de autoayuda: tú sigues siendo quien presenta el reclamo.",
+      "Gracias por pedir la lista. Abre el PDF adjunto, o usa el botón para descargarlo. ClaimSaver+ es software de autoayuda: tú sigues siendo quien presenta el reclamo.",
     emailCta: "Descargar la lista",
     emailFoot: PAGE_DISCLAIMER.es,
   },

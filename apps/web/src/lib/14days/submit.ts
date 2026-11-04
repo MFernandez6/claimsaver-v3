@@ -107,6 +107,7 @@ export async function submitLead14Days(
     await sendChecklistEmail(parsed.data.email, parsed.data.locale);
   } catch (err) {
     console.error("[14days] email threw", err);
+    return { error: copy.errorGeneric };
   }
 
   redirect(thanks);

@@ -95,10 +95,6 @@ export function FourteenDaysLanding({ locale }: { locale: DaysLocale }) {
         </div>
       </section>
 
-      <section className="bg-teal-950 px-4 py-10 text-center sm:px-6">
-        <p className="mx-auto max-w-4xl text-sm font-medium leading-relaxed text-teal-50 sm:text-base">{copy.founder}</p>
-      </section>
-
       <section className="bg-white px-4 py-14 text-slate-900 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold">{copy.clinicsHeading}</h2>

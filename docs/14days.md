@@ -21,7 +21,7 @@ Add these to Vercel (and `apps/web/.env.local` for local mail). Keep secrets out
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `RESEND_API_KEY` | For sending the PDF link | Resend API. From: `ClaimSaver+ <support@claimsaverplus.com>` (domain already used for auth mail). |
+| `RESEND_API_KEY` | For sending the PDF link | Resend API. From: `ClaimSaver+ <noreply@claimsaverplus.com>` (override with `RESEND_FROM_EMAIL`). Reply-To is `support@claimsaverplus.com`. |
 | `LEAD_IP_SALT` | Production | Random string mixed into SHA-256 of the client IP. Raw IP is never stored. |
 | `NEXT_PUBLIC_GOOGLE_ADS_ID` | Optional | Google Ads / gtag id. Conversion event `lead_14days` fires on the thanks page. |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Optional | Meta Pixel. `PageView` on the landing page, `Lead` on thanks. No name/email/phone, no advanced matching. |

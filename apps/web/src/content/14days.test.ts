@@ -24,4 +24,6 @@ test("campaign copy keeps the user as the filer and includes the disclaimer", ()
   assert.equal(CHECKLIST_ITEMS.es.length, 9);
   assert.match(CHECKLIST_ITEMS.en[0], /14 days/);
   assert.equal(daysCopy.en.faq.length, 3);
+  assert.equal(blob.includes("Miguel Fernandez"), false);
+  assert.equal(blob.includes("Cohort 4"), false);
 });
