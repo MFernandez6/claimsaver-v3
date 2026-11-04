@@ -1496,7 +1496,7 @@
       "s12Title": "12. Contact",
       "s12Body": "Privacy and deletion requests: {{supportEmail}}. We cannot give legal advice about your claim or about whether you must provide a particular document to an insurer.",
       "s13Title": "13. Cookies and tracking",
-      "s13Body": "We use cookies and similar storage that are required to keep you signed in, remember your language, and protect the session. We also use Vercel Analytics, which collects aggregated visit data (pages, referrers, device type) to see whether the site is working. We do not run advertising pixels or sell browsing data. You can block non-essential cookies in your browser; the site may still need essential cookies to log you in. Stripe Checkout sets its own cookies when you pay."
+      "s13Body": "We use cookies and similar storage that are required to keep you signed in, remember your language, protect the session, and (on the 14-day checklist pages) remember how you arrived for 30 days. We also use Vercel Analytics, which collects aggregated visit data (pages, referrers, device type) to see whether the site is working. If you accept optional cookies on those campaign pages, we may load Google Ads or Meta pixels there. Those pixels do not receive your name, email, or phone, and we do not use enhanced conversions or advanced matching. We do not sell browsing data. You can decline optional cookies; the site may still need essential cookies to log you in. Stripe Checkout sets its own cookies when you pay."
     },
     "accessibility": {
       "title": "Accessibility",
