@@ -5,11 +5,7 @@ import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { webApi } from "@/lib/api/client";
-import {
-  clinicDemoBookingUrl,
-  clinicDemoCalendarInviteUrl,
-  googleAppointmentEmbedSrc,
-} from "@/lib/clinic-demo";
+import { clinicDemoBookingUrl, googleAppointmentEmbedSrc } from "@/lib/clinic-demo";
 
 declare global {
   interface Window {
@@ -19,9 +15,7 @@ declare global {
 
 export default function ClinicDemoPage() {
   const bookingUrl = clinicDemoBookingUrl();
-  const inviteUrl = clinicDemoCalendarInviteUrl();
-  const calendarUrl = bookingUrl || inviteUrl;
-  const embedSrc = bookingUrl ? googleAppointmentEmbedSrc(bookingUrl) : null;
+  const embedSrc = googleAppointmentEmbedSrc(bookingUrl);
 
   useEffect(() => {
     window.gtag?.("event", "clinic_demo", { event_category: "clinic" });
@@ -39,8 +33,8 @@ export default function ClinicDemoPage() {
         Patients still pay $500 for platform access.
       </p>
       <Button asChild className="mt-6 h-14 w-full bg-gradient-to-r from-emerald-600 to-teal-800 text-base sm:w-auto">
-        <a href={calendarUrl} rel="noopener noreferrer">
-          {bookingUrl ? "Pick a time on Google Calendar" : "Create the appointment in Google Calendar"}
+        <a href={bookingUrl} rel="noopener noreferrer">
+          Pick a time on Google Calendar
         </a>
       </Button>
       {embedSrc ? (
@@ -52,12 +46,7 @@ export default function ClinicDemoPage() {
             loading="lazy"
           />
         </div>
-      ) : (
-        <p className="mt-4 text-sm leading-relaxed text-slate-500">
-          Opens Google Calendar in this tab. Choose a 15-minute slot and send the invite to ClaimSaver+.
-          You’ll get the calendar hold and a Meet link from Google.
-        </p>
-      )}
+      ) : null}
       <p className="mt-6 text-sm text-slate-500">
         <Link href="/14days" className="underline underline-offset-2">
           Back to the 14-day checklist

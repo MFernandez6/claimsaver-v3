@@ -1,27 +1,20 @@
-import { SUPPORT_EMAIL } from "@claimsaver/shared";
+/** Public Google Calendar appointment schedule for the 15-minute clinic demo. */
+export const CLINIC_DEMO_BOOKING_URL = "https://calendar.app.google/obrSBdpVtAjhj4rG9";
 
-/** Google Calendar appointment schedule (calendar.app.google/… or appointments/schedules/…). */
+const CLINIC_DEMO_SCHEDULE_ID =
+  "AcZssZ1i8tUsa8QL19ToVoGQm9fSXHHUCNikqt6crIVVd7N6b9flb0WaA7RGrE5SUoFc0UGxFNiz6G33";
+
 export function clinicDemoBookingUrl() {
-  return (process.env.NEXT_PUBLIC_CLINIC_DEMO_BOOKING_URL || "").trim();
-}
-
-/** Invite-us event if no booking page is configured yet. Opens the visitor's Google Calendar. */
-export function clinicDemoCalendarInviteUrl() {
-  const params = new URLSearchParams({
-    action: "TEMPLATE",
-    text: "ClaimSaver+ clinic demo (15 min)",
-    details:
-      "15-minute walkthrough of ClaimSaver+ for a Florida PIP clinic. Patients stay the filer and still pay $500 for platform access. Clinic staff see checklist progress only — never worksheets or medical details.",
-    location: "Google Meet",
-    add: SUPPORT_EMAIL,
-  });
-  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+  return (process.env.NEXT_PUBLIC_CLINIC_DEMO_BOOKING_URL || CLINIC_DEMO_BOOKING_URL).trim();
 }
 
 export function googleAppointmentEmbedSrc(url: string) {
   try {
     const parsed = new URL(url);
     const host = parsed.hostname.replace(/^www\./, "");
+    if (host === "calendar.app.google") {
+      return `https://calendar.google.com/calendar/appointments/schedules/${CLINIC_DEMO_SCHEDULE_ID}?gv=true`;
+    }
     if (host === "calendar.google.com" && parsed.pathname.includes("/appointments/schedules/")) {
       parsed.searchParams.set("gv", "true");
       return parsed.toString();

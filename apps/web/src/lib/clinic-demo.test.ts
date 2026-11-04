@@ -1,16 +1,22 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { clinicDemoCalendarInviteUrl, googleAppointmentEmbedSrc } from "./clinic-demo";
+import {
+  CLINIC_DEMO_BOOKING_URL,
+  clinicDemoBookingUrl,
+  googleAppointmentEmbedSrc,
+} from "./clinic-demo";
 
-test("Google Calendar invite opens an event template to support@", () => {
-  const url = clinicDemoCalendarInviteUrl();
-  assert.match(url, /^https:\/\/calendar\.google\.com\/calendar\/render\?/);
-  assert.match(url, /action=TEMPLATE/);
-  assert.match(url, /add=support%40claimsaverplus\.com/);
-  assert.match(url, /15-minute|15 min/);
+test("clinic demo uses the Google Calendar appointment schedule", () => {
+  assert.equal(clinicDemoBookingUrl(), CLINIC_DEMO_BOOKING_URL);
+  assert.match(CLINIC_DEMO_BOOKING_URL, /^https:\/\/calendar\.app\.google\//);
 });
 
-test("appointment schedule URLs become embeddable iframe sources", () => {
+test("short Google booking links become embeddable iframe sources", () => {
+  const src = googleAppointmentEmbedSrc(CLINIC_DEMO_BOOKING_URL);
+  assert.match(src ?? "", /calendar\.google\.com\/calendar\/appointments\/schedules\/.+\?gv=true/);
+});
+
+test("full appointment schedule URLs keep gv=true for embed", () => {
   const src = googleAppointmentEmbedSrc(
     "https://calendar.google.com/calendar/appointments/schedules/abc123",
   );
@@ -18,5 +24,4 @@ test("appointment schedule URLs become embeddable iframe sources", () => {
     src,
     "https://calendar.google.com/calendar/appointments/schedules/abc123?gv=true",
   );
-  assert.equal(googleAppointmentEmbedSrc("https://calendar.app.google/short"), null);
 });
