@@ -43,15 +43,15 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
       ) : null}
 
       <div>
-        <label htmlFor="lead-first-name" className="mb-1 block text-sm font-medium text-slate-800">
+        <label htmlFor="lead-full-name" className="mb-1 block text-sm font-medium text-slate-800">
           {copy.firstName}
         </label>
         <Input
-          id="lead-first-name"
+          id="lead-full-name"
           name="firstName"
-          autoComplete="given-name"
+          autoComplete="name"
           required
-          maxLength={80}
+          maxLength={120}
           aria-invalid={Boolean(state?.fields?.firstName)}
           aria-describedby={state?.error ? errorId : undefined}
           className="h-12 bg-white text-base"

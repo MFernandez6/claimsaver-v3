@@ -15,9 +15,10 @@ function form(overrides: Record<string, string> = {}) {
 }
 
 test("accepts a valid email-only lead and lowercases email", () => {
-  const result = parseLeadForm(form());
+  const result = parseLeadForm(form({ firstName: "Alex Rivera" }));
   assert.equal(result.ok, true);
   if (!result.ok || result.honeypot) throw new Error("expected lead");
+  assert.equal(result.data.firstName, "Alex Rivera");
   assert.equal(result.data.email, "alex@claimsaverplus.com");
   assert.equal(result.data.phone, null);
   assert.equal(result.data.smsConsent, false);

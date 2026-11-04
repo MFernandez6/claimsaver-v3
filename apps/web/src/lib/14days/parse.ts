@@ -29,7 +29,7 @@ export type ParseLeadResult =
   | { ok: false; error: string; fields?: Record<string, string> };
 
 const rawSchema = z.object({
-  firstName: z.string().max(80).optional(),
+  firstName: z.string().max(120).optional(),
   email: z.string().max(254).optional(),
   phone: z.string().max(40).optional(),
   locale: z.enum(["en", "es", "fr"]).optional(),

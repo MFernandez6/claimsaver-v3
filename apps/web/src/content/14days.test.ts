@@ -29,6 +29,9 @@ test("campaign copy keeps the user as the filer and includes the disclaimer", ()
   assert.equal(daysCopy.en.faq.length, 3);
   assert.equal(daysCopy.fr.faq.length, 3);
   assert.equal(daysCopy.fr.path, "/fr/14jours");
+  assert.equal(daysCopy.en.firstName, "Full name");
+  assert.equal(daysCopy.es.firstName, "Nombre completo");
+  assert.equal(daysCopy.fr.firstName, "Nom complet");
   assert.equal(blob.includes("Miguel Fernandez"), false);
   assert.equal(blob.includes("Cohort 4"), false);
 });
