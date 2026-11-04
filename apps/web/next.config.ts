@@ -34,6 +34,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/14days": ["./public/downloads/**"],
     "/es/14dias": ["./public/downloads/**"],
+    "/fr/14jours": ["./public/downloads/**"],
   },
   images: {
     remotePatterns: [],

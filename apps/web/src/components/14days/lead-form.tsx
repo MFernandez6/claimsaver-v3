@@ -105,6 +105,7 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
         >
           <option value="en">{copy.languageEn}</option>
           <option value="es">{copy.languageEs}</option>
+          <option value="fr">{copy.languageFr}</option>
         </select>
       </div>
 

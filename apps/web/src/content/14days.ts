@@ -6,22 +6,30 @@
  * Counsel should review all checklist and legal copy before ads go live.
  */
 
-export type DaysLocale = "en" | "es";
+export const DAYS_LOCALES = ["en", "es", "fr"] as const;
+export type DaysLocale = (typeof DAYS_LOCALES)[number];
 
 export const DAYS_PATH = {
   en: "/14days",
   es: "/es/14dias",
+  fr: "/fr/14jours",
 } as const;
 
 export const DAYS_THANKS_PATH = {
   en: "/14days/thanks",
   es: "/es/14dias/gracias",
+  fr: "/fr/14jours/merci",
 } as const;
 
 export const DAYS_PDF_PATH = {
   en: "/downloads/14-day-pip-checklist-en.pdf",
   es: "/downloads/14-day-pip-checklist-es.pdf",
+  fr: "/downloads/14-day-pip-checklist-fr.pdf",
 } as const;
+
+export function parseDaysLocale(value: unknown): DaysLocale {
+  return value === "es" || value === "fr" ? value : "en";
+}
 
 export const ATTR_COOKIE = "cs_14days_attr";
 export const ADS_CONSENT_COOKIE = "cs_14days_ads";
@@ -31,16 +39,19 @@ export const ATTR_COOKIE_MAX_AGE = 60 * 60 * 24 * 30;
 export const SMS_CONSENT_TEXT = {
   en: "I agree to receive text messages from ClaimSaver+ about my checklist and PIP deadlines. Msg & data rates may apply. Reply STOP to opt out. Consent is not a condition of purchase.",
   es: "Acepto recibir mensajes de texto de ClaimSaver+ sobre mi lista y los plazos de PIP. Pueden aplicar tarifas de mensajes y datos. Responde STOP para cancelar. El consentimiento no es una condición de compra.",
+  fr: "J'accepte de recevoir des SMS de ClaimSaver+ au sujet de ma liste et des délais PIP. Des frais de messages et de données peuvent s'appliquer. Répondez STOP pour vous désinscrire. Le consentement n'est pas une condition d'achat.",
 } as const;
 
 export const SELF_HELP_ACK = {
   en: "I understand ClaimSaver+ provides self-help tools, not legal advice or claim representation.",
   es: "Entiendo que ClaimSaver+ ofrece herramientas de autoayuda, no asesoría legal ni representación en un reclamo.",
+  fr: "Je comprends que ClaimSaver+ fournit des outils d'auto-assistance, et non un conseil juridique ni une représentation dans une réclamation.",
 } as const;
 
 export const PAGE_DISCLAIMER = {
   en: "ClaimSaver+ is self-help software. It is not a law firm, insurer, or public adjuster and does not provide legal advice or represent you. Information is general and may not apply to your situation. For legal advice, consult a Florida attorney.",
   es: "ClaimSaver+ es software de autoayuda. No es un bufete, una aseguradora ni un ajustador público, y no ofrece asesoría legal ni te representa. La información es general y puede no aplicar a tu situación. Para asesoría legal, consulta a un abogado de Florida.",
+  fr: "ClaimSaver+ est un logiciel d'auto-assistance. Ce n'est pas un cabinet d'avocats, un assureur ou un expert public, et il ne fournit pas de conseil juridique et ne vous représente pas. Les informations sont générales et peuvent ne pas s'appliquer à votre situation. Pour un conseil juridique, consultez un avocat de Floride.",
 } as const;
 
 /**
@@ -69,6 +80,17 @@ export const CHECKLIST_ITEMS = {
     "Si perdiste días de trabajo, reúne prueba de ingresos perdidos (talones de pago, una carta del empleador o registros de impuestos). El PIP generalmente cubre el 60% de los salarios perdidos, hasta los límites de tu póliza.",
     "Conoce lo que el PIP generalmente paga: el 80% de los gastos médicos razonables, hasta $10,000 en beneficios totales. La cobertura puede limitarse a $2,500 a menos que un proveedor que califique determine que tuviste una condición médica de emergencia. Es posible que debas el 20% restante.",
     "Si una factura o un reclamo es denegado, pide la razón por escrito y guarda una copia. Tal vez quieras hablar con un abogado de Florida sobre tus opciones.",
+  ],
+  fr: [
+    "Obtenez des soins médicaux dans les 14 jours suivant l'accident. Le traitement initial doit provenir d'un prestataire admissible (par exemple, un médecin, un ostéopathe, un chiropraticien, un dentiste, un hôpital/urgences ou des services médicaux d'urgence) pour être admissible aux prestations PIP.",
+    "Informez votre propre assureur automobile de l'accident dès que possible. En Floride, votre propre couverture PIP est généralement la première source de prestations médicales et de salaires perdus, même si vous n'étiez pas en faute.",
+    "Notez votre numéro de réclamation, le nom de l'ajusteur et ses coordonnées.",
+    "Obtenez le numéro du rapport d'accident auprès de l'agence de police qui est intervenue.",
+    "Conservez chaque document : factures médicales, reçus, lettres, courriels et textos de votre assureur. Les photos des véhicules et de la scène aident aussi.",
+    "Surveillez les demandes d'EUO et d'IME. Votre assureur peut vous demander de faire une déclaration sous serment (Examination Under Oath) ou de vous présenter à un examen médical indépendant (Independent Medical Exam). Inscrivez les dates à votre calendrier. Les manquer sans motif valable peut mettre vos prestations en danger.",
+    "Si vous avez manqué du travail, rassemblez une preuve de perte de revenu (bulletins de paie, une lettre de l'employeur ou des documents fiscaux). Le PIP couvre généralement 60 % des salaires perdus, jusqu'aux limites de votre police.",
+    "Sachez ce que le PIP paie généralement : 80 % des frais médicaux raisonnables, jusqu'à 10 000 $ de prestations totales. La couverture peut être limitée à 2 500 $ à moins qu'un prestataire admissible détermine que vous aviez une condition médicale d'urgence. Vous pourriez devoir les 20 % restants.",
+    "Si une facture ou une réclamation est refusée, demandez la raison par ecrit et conservez une copie. Vous pourriez vouloir parler a un avocat de Floride de vos options.",
   ],
 } as const;
 
@@ -107,29 +129,43 @@ const FAQ = {
         "Tu aseguradora puede pedirte una declaración bajo juramento (EUO) o un examen médico independiente (IME). Anota las fechas en tu calendario. Faltar sin una razón válida puede poner en riesgo tus beneficios.",
     },
   ],
+  fr: [
+    {
+      question: "Combien de temps ai-je pour obtenir des soins médicaux pour le PIP de Floride ?",
+      answer:
+        "Le PIP de Floride exige généralement un traitement initial dans les 14 jours suivant l'accident, auprès d'un prestataire admissible, pour être admissible aux prestations PIP.",
+    },
+    {
+      question: "Que paie généralement le PIP de Floride ?",
+      answer:
+        "Le PIP paie généralement 80 % des frais médicaux raisonnables et 60 % des salaires perdus, jusqu'aux limites de la police. Les prestations totales sont souvent d'au plus 10 000 $, et la couverture peut être limitée à 2 500 $ à moins qu'un prestataire admissible détermine que vous aviez une condition médicale d'urgence. Vous pourriez devoir les 20 % restants des factures médicales.",
+    },
+    {
+      question: "Que se passe-t-il si mon assureur demande un EUO ou un IME ?",
+      answer:
+        "Votre assureur peut vous demander de faire une déclaration sous serment (EUO) ou de vous présenter à un examen médical indépendant (IME). Inscrivez les dates à votre calendrier. Les manquer sans motif valable peut mettre vos prestations en danger.",
+    },
+  ],
 } as const;
 
 export const daysCopy = {
   en: {
     htmlLang: "en" as const,
     path: DAYS_PATH.en,
-    otherPath: DAYS_PATH.es,
     thanksPath: DAYS_THANKS_PATH.en,
     pdfPath: DAYS_PDF_PATH.en,
     pdfHrefLang: "en" as const,
     metaTitle: "14 Days. Florida PIP Checklist | ClaimSaver+",
     metaDescription:
-      "Hurt in a Florida car crash? You have 14 days to get medical care for PIP. Get the free step-by-step checklist in English or Spanish.",
+      "Hurt in a Florida car crash? You have 14 days to get medical care for PIP. Get the free step-by-step checklist in English, Spanish, or French.",
     ogAlt: "14 DAYS. Florida PIP checklist from ClaimSaver+",
-    langToggleCurrent: "EN",
-    langToggleOther: "ES",
     langToggleLabel: "Language",
     heroKicker: "Florida no-fault (PIP)",
     heroTitle: "14 DAYS.",
     heroSubline:
       "Hurt in a crash in Florida? That's how long you have to get medical care, or you could lose your PIP benefits.",
     heroCta: "Get the free checklist",
-    heroTrust: "Built by a licensed Florida adjuster. Free. English & Spanish.",
+    heroTrust: "Built by a licensed Florida adjuster. Free. English, Spanish & French.",
     cardsHeading: "What most people don't know",
     cards: [
       {
@@ -155,6 +191,7 @@ export const daysCopy = {
     language: "Preferred language",
     languageEn: "English",
     languageEs: "Spanish",
+    languageFr: "French",
     ackLabel: SELF_HELP_ACK.en,
     smsLabel: SMS_CONSENT_TEXT.en,
     submit: "Send me the checklist",
@@ -195,23 +232,20 @@ export const daysCopy = {
   es: {
     htmlLang: "es" as const,
     path: DAYS_PATH.es,
-    otherPath: DAYS_PATH.en,
     thanksPath: DAYS_THANKS_PATH.es,
     pdfPath: DAYS_PDF_PATH.es,
     pdfHrefLang: "es" as const,
     metaTitle: "14 Días. Lista de PIP en Florida | ClaimSaver+",
     metaDescription:
-      "¿Tuviste un accidente de auto en Florida? Tienes 14 días para recibir atención médica para el PIP. Descarga la lista paso a paso, gratis, en inglés o español.",
+      "¿Tuviste un accidente de auto en Florida? Tienes 14 días para recibir atención médica para el PIP. Descarga la lista paso a paso, gratis, en inglés, español o francés.",
     ogAlt: "14 DÍAS. Lista de PIP en Florida de ClaimSaver+",
-    langToggleCurrent: "ES",
-    langToggleOther: "EN",
     langToggleLabel: "Idioma",
     heroKicker: "Sin culpa (PIP) en Florida",
     heroTitle: "14 DÍAS.",
     heroSubline:
       "¿Tuviste un accidente en Florida? Ese es el plazo para recibir atención médica, o podrías perder tus beneficios de PIP.",
     heroCta: "Descarga la lista gratis",
-    heroTrust: "Creado por un ajustador con licencia en Florida. Gratis. Inglés y español.",
+    heroTrust: "Creado por un ajustador con licencia en Florida. Gratis. Inglés, español y francés.",
     cardsHeading: "Lo que la mayoría no sabe",
     cards: [
       {
@@ -237,6 +271,7 @@ export const daysCopy = {
     language: "Idioma preferido",
     languageEn: "Inglés",
     languageEs: "Español",
+    languageFr: "Francés",
     ackLabel: SELF_HELP_ACK.es,
     smsLabel: SMS_CONSENT_TEXT.es,
     submit: "Envíame la lista",
@@ -274,6 +309,87 @@ export const daysCopy = {
       "Gracias por pedir la lista. Abre el PDF adjunto, o usa el botón para descargarlo. ClaimSaver+ es software de autoayuda: tú sigues siendo quien presenta el reclamo.",
     emailCta: "Descargar la lista",
     emailFoot: PAGE_DISCLAIMER.es,
+  },
+  fr: {
+    htmlLang: "fr" as const,
+    path: DAYS_PATH.fr,
+    thanksPath: DAYS_THANKS_PATH.fr,
+    pdfPath: DAYS_PDF_PATH.fr,
+    pdfHrefLang: "fr" as const,
+    metaTitle: "14 Jours. Liste PIP en Floride | ClaimSaver+",
+    metaDescription:
+      "Vous avez eu un accident de voiture en Floride ? Vous avez 14 jours pour obtenir des soins médicaux pour le PIP. Téléchargez la liste étape par étape, gratuite, en anglais, espagnol ou français.",
+    ogAlt: "14 JOURS. Liste PIP en Floride de ClaimSaver+",
+    langToggleLabel: "Langue",
+    heroKicker: "Sans faute (PIP) en Floride",
+    heroTitle: "14 JOURS.",
+    heroSubline:
+      "Vous avez eu un accident en Floride ? C'est le délai pour obtenir des soins médicaux, sinon vous pourriez perdre vos prestations PIP.",
+    heroCta: "Obtenir la liste gratuite",
+    heroTrust: "Conçu par un ajusteur agréé en Floride. Gratuit. Anglais, espagnol et français.",
+    cardsHeading: "Ce que la plupart des gens ignorent",
+    cards: [
+      {
+        title: "14 jours pour se faire soigner",
+        body: "Le PIP de Floride exige des soins initiaux dans les 14 jours suivant l'accident.",
+      },
+      {
+        title: "Votre assureur peut exiger des examens",
+        body: "Manquer une déclaration sous serment (EUO) ou un examen médical (IME) peut mettre vos prestations en danger.",
+      },
+      {
+        title: "Le PIP ne couvre pas tout",
+        body: "Le PIP paie généralement 80 % des factures médicales raisonnables et 60 % des salaires perdus, jusqu'aux limites de la police.",
+      },
+    ],
+    formId: "get-checklist",
+    formHeading: "Obtenez la liste gratuite PIP de 14 jours en Floride",
+    formIntro:
+      "Indiquez votre e-mail et nous vous enverrons le PDF. Nous ne demandons pas les détails de l'accident, d'informations médicales ni votre numéro de police sur ce formulaire.",
+    firstName: "Prénom",
+    email: "E-mail",
+    phone: "Téléphone mobile (facultatif)",
+    language: "Langue préférée",
+    languageEn: "Anglais",
+    languageEs: "Espagnol",
+    languageFr: "Français",
+    ackLabel: SELF_HELP_ACK.fr,
+    smsLabel: SMS_CONSENT_TEXT.fr,
+    submit: "Envoyez-moi la liste",
+    submitting: "Envoi...",
+    honeypot: "Site web de l'entreprise",
+    errorGeneric: "Nous n'avons pas pu envoyer la liste. Réessayez dans quelques minutes.",
+    errorRateLimit: "Trop de tentatives depuis ce réseau. Attendez une heure et réessayez.",
+    errorFirstName: "Indiquez votre prénom.",
+    errorEmail: "Indiquez une adresse e-mail valide.",
+    errorPhone: "Indiquez un numéro mobile américain valide, ou laissez le champ vide.",
+    errorAck: "Confirmez que vous comprenez que ClaimSaver+ est un logiciel d'auto-assistance, pas un conseil juridique.",
+    errorSms:
+      "Pour indiquer un numéro mobile, cochez que vous acceptez les SMS -- ou laissez le numéro vide.",
+    clinicsHeading: "Vous dirigez une clinique PIP ? Vos patients ont 14 jours. Le savent-ils ?",
+    clinicsCta: "Réserver une démo de 15 minutes",
+    clinicsMailtoSubject: "Clinic demo",
+    disclaimer: PAGE_DISCLAIMER.fr,
+    terms: "Conditions d'utilisation",
+    privacy: "Politique de confidentialité",
+    thanksTitle: "Votre liste est prête",
+    thanksBody:
+      "Téléchargez la liste PIP de 14 jours en Floride. Nous avons aussi envoyé le même lien par e-mail. Vous restez le déposant -- c'est une liste d'auto-assistance, pas un conseil juridique.",
+    thanksDownload: "Télécharger la liste (PDF)",
+    thanksHome: "Retour à ClaimSaver+",
+    cookieTitle: "Cookies sur cette page",
+    cookieBody:
+      "Nous utilisons un cookie propriétaire pour retenir comment vous avez trouve cette liste (30 jours). Facultatif : pixels Google Ads et Meta uniquement sur cette campagne -- ils ne reçoivent jamais votre nom, e-mail ou téléphone.",
+    cookieAccept: "Accepter les pixels facultatifs",
+    cookieDecline: "Essentiel uniquement",
+    faq: FAQ.fr,
+    emailSubject: "Votre liste PIP de 14 jours en Floride",
+    emailPreview: "Téléchargez votre liste gratuite ClaimSaver+.",
+    emailHeading: "Votre liste PIP de 14 jours en Floride",
+    emailBody:
+      "Merci d'avoir demandé la liste. Ouvrez le PDF joint, ou utilisez le bouton ci-dessous pour le télécharger. ClaimSaver+ est un logiciel d'auto-assistance -- vous restez le déposant.",
+    emailCta: "Télécharger la liste",
+    emailFoot: PAGE_DISCLAIMER.fr,
   },
 } as const;
 

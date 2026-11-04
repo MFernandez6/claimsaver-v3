@@ -113,7 +113,8 @@ async function renderLocale(locale: DaysLocale) {
   const pageDrawImage = (args: { x: number; y: number; width: number; height: number }) => {
     page.drawImage(logoImage, args);
   };
-  const kicker = locale === "es" ? "PIP EN FLORIDA" : "FLORIDA PIP";
+  const kicker =
+    locale === "es" ? "PIP EN FLORIDA" : locale === "fr" ? "PIP EN FLORIDE" : "FLORIDA PIP";
   drawHeader(page, fonts, logo, kicker);
 
   let y = PAGE_H - 118;
@@ -209,6 +210,7 @@ async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   await renderLocale("en");
   await renderLocale("es");
+  await renderLocale("fr");
 }
 
 main().catch((err) => {

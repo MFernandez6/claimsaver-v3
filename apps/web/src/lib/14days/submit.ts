@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import "server-only";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { daysCopy, ATTR_COOKIE, type DaysLocale } from "@/content/14days";
+import { daysCopy, ATTR_COOKIE, parseDaysLocale, type DaysLocale } from "@/content/14days";
 import { thanksPathFor, type LeadAttribution } from "./attribution";
 import { sendChecklistEmail } from "./email";
 import { parseLeadForm, type Lead14DaysInput } from "./parse";
@@ -65,7 +65,7 @@ export async function submitLead14Days(
 ): Promise<SubmitLeadState> {
   const headerList = await headers();
   const cookieStore = await cookies();
-  const localeGuess: DaysLocale = formData.get("locale") === "es" ? "es" : "en";
+  const localeGuess: DaysLocale = parseDaysLocale(formData.get("locale"));
   const copy = daysCopy[localeGuess];
 
   const ip =

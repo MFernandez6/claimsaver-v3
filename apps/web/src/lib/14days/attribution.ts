@@ -1,6 +1,7 @@
 import {
   ATTR_COOKIE,
   ATTR_COOKIE_MAX_AGE,
+  DAYS_THANKS_PATH,
   type DaysLocale,
 } from "@/content/14days";
 
@@ -91,5 +92,5 @@ export function serializeAttributionCookie(value: LeadAttribution) {
 }
 
 export function thanksPathFor(locale: DaysLocale) {
-  return locale === "es" ? "/es/14dias/gracias" : "/14days/thanks";
+  return DAYS_THANKS_PATH[locale];
 }

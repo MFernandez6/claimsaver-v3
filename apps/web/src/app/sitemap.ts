@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/accessibility",
     "/14days",
     "/es/14dias",
+    "/fr/14jours",
   ];
   return paths.map((path) => ({
     url: `${base}${path}`,

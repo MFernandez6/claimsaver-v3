@@ -52,3 +52,10 @@ test("does not leak whether an email already exists", () => {
   const result = parseLeadForm(form());
   assert.equal(JSON.stringify(result).includes("already"), false);
 });
+
+test("accepts French as a campaign locale", () => {
+  const result = parseLeadForm(form({ locale: "fr" }));
+  assert.equal(result.ok, true);
+  if (!result.ok || result.honeypot) throw new Error("expected lead");
+  assert.equal(result.data.locale, "fr");
+});

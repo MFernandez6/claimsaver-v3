@@ -4,7 +4,13 @@ import Link from "next/link";
 import { SUPPORT_EMAIL } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
-import { getDaysCopy, type DaysLocale } from "@/content/14days";
+import { DAYS_PATH, getDaysCopy, type DaysLocale } from "@/content/14days";
+
+const LANG_TOGGLE: { locale: DaysLocale; label: string }[] = [
+  { locale: "en", label: "EN" },
+  { locale: "es", label: "ES" },
+  { locale: "fr", label: "FR" },
+];
 import { CampaignCookieNotice, CampaignPixels } from "./campaign-pixels";
 import { LeadForm } from "./lead-form";
 import { UtmCapture } from "./utm-capture";
@@ -24,23 +30,22 @@ export function FourteenDaysLanding({ locale }: { locale: DaysLocale }) {
           <div className="mb-10 flex items-center justify-between gap-4">
             <BrandLogo variant="footer" className="opacity-90" />
             <nav aria-label={copy.langToggleLabel} className="text-sm font-semibold tracking-wide text-teal-100">
-              {locale === "en" ? (
-                <span aria-current="page">EN</span>
-              ) : (
-                <Link href={copy.otherPath} className="underline-offset-4 hover:underline">
-                  EN
-                </Link>
-              )}
-              <span aria-hidden className="px-2 text-teal-700">
-                |
-              </span>
-              {locale === "es" ? (
-                <span aria-current="page">ES</span>
-              ) : (
-                <Link href={copy.otherPath} className="underline-offset-4 hover:underline">
-                  ES
-                </Link>
-              )}
+              {LANG_TOGGLE.map((item, index) => (
+                <span key={item.locale}>
+                  {index > 0 ? (
+                    <span aria-hidden className="px-2 text-teal-700">
+                      |
+                    </span>
+                  ) : null}
+                  {locale === item.locale ? (
+                    <span aria-current="page">{item.label}</span>
+                  ) : (
+                    <Link href={DAYS_PATH[item.locale]} className="underline-offset-4 hover:underline">
+                      {item.label}
+                    </Link>
+                  )}
+                </span>
+              ))}
             </nav>
           </div>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-teal-300">{copy.heroKicker}</p>

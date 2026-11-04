@@ -20,10 +20,15 @@ test("campaign copy keeps the user as the filer and includes the disclaimer", ()
   assert.match(PAGE_DISCLAIMER.en, /not a law firm/i);
   assert.match(PAGE_DISCLAIMER.en, /does not provide legal advice/i);
   assert.match(PAGE_DISCLAIMER.es, /autoayuda/i);
+  assert.match(PAGE_DISCLAIMER.fr, /auto-assistance/i);
   assert.equal(CHECKLIST_ITEMS.en.length, 9);
   assert.equal(CHECKLIST_ITEMS.es.length, 9);
+  assert.equal(CHECKLIST_ITEMS.fr.length, 9);
   assert.match(CHECKLIST_ITEMS.en[0], /14 days/);
+  assert.match(CHECKLIST_ITEMS.fr[0], /14 jours/);
   assert.equal(daysCopy.en.faq.length, 3);
+  assert.equal(daysCopy.fr.faq.length, 3);
+  assert.equal(daysCopy.fr.path, "/fr/14jours");
   assert.equal(blob.includes("Miguel Fernandez"), false);
   assert.equal(blob.includes("Cohort 4"), false);
 });

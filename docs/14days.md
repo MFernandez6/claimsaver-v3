@@ -10,10 +10,12 @@ Counsel should review checklist and legal copy in `apps/web/src/content/14days.t
 | --- | --- |
 | `/14days` | English |
 | `/es/14dias` | Spanish |
+| `/fr/14jours` | French |
 | `/14days/thanks` | English confirmation + PDF |
 | `/es/14dias/gracias` | Spanish confirmation + PDF |
+| `/fr/14jours/merci` | French confirmation + PDF |
 
-PDFs: `apps/web/public/downloads/14-day-pip-checklist-en.pdf` and `-es.pdf`.
+PDFs: `apps/web/public/downloads/14-day-pip-checklist-en.pdf`, `-es.pdf`, and `-fr.pdf`.
 
 ## Environment
 

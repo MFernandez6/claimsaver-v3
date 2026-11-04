@@ -21,6 +21,7 @@ const HIDDEN = [
   "/update-password",
   "/14days",
   "/es/14dias",
+  "/fr/14jours",
 ];
 
 export function FourteenDayBanner() {

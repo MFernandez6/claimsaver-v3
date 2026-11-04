@@ -14,6 +14,7 @@ export function daysMetadata(locale: DaysLocale): Metadata {
       languages: {
         en: DAYS_PATH.en,
         es: DAYS_PATH.es,
+        fr: DAYS_PATH.fr,
         "x-default": DAYS_PATH.en,
       },
     },
@@ -21,7 +22,7 @@ export function daysMetadata(locale: DaysLocale): Metadata {
       title: copy.metaTitle,
       description: copy.metaDescription,
       url: canonical,
-      locale: locale === "es" ? "es_US" : "en_US",
+      locale: locale === "es" ? "es_US" : locale === "fr" ? "fr_FR" : "en_US",
       type: "website",
     },
     twitter: {

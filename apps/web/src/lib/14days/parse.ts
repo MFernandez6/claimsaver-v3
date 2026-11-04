@@ -1,9 +1,10 @@
 import { z } from "zod";
 import {
   SMS_CONSENT_TEXT,
+  daysCopy,
+  parseDaysLocale,
   type DaysLocale,
 } from "@/content/14days";
-import { daysCopy } from "@/content/14days";
 import { parseUsPhone } from "./phone";
 import {
   emptyAttribution,
@@ -31,7 +32,7 @@ const rawSchema = z.object({
   firstName: z.string().max(80).optional(),
   email: z.string().max(254).optional(),
   phone: z.string().max(40).optional(),
-  locale: z.enum(["en", "es"]).optional(),
+  locale: z.enum(["en", "es", "fr"]).optional(),
   ackSelfHelp: z.string().optional(),
   smsConsent: z.string().optional(),
   website: z.string().max(200).optional(),
@@ -56,7 +57,7 @@ export function parseLeadForm(
 ): ParseLeadResult {
   const rec = asFormRecord(form);
   const parsed = rawSchema.safeParse(rec);
-  const locale: DaysLocale = parsed.success && parsed.data.locale === "es" ? "es" : "en";
+  const locale: DaysLocale = parseDaysLocale(parsed.success ? parsed.data.locale : undefined);
   const copy = daysCopy[locale];
 
   if (!parsed.success) {
