@@ -34,7 +34,7 @@ export default function AdminSystemPage() {
     setBusy(true);
     try {
       await webApi.post("/api/v1/admin/system", { action: "revoke_admin_sessions" });
-      window.location.href = "/login?next=/admin";
+      window.location.href = "/admin/mfa?reason=absolute";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Revoke failed");
       setBusy(false);

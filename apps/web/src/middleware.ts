@@ -3,7 +3,7 @@ import { updateSession } from "@/lib/supabase/middleware";
 import { clientIp, rateLimit, rateLimitResponse } from "@/lib/security/rate-limit";
 import {
   adminSessionStateFromRequest,
-  applyAdminSessionCookies,
+  mfaPath,
   refreshAdminIdleCookie,
 } from "@/lib/auth/admin-session";
 
@@ -94,25 +94,21 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  if (user && pathname.startsWith("/admin/mfa")) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/admin";
-    url.search = "";
-    const redirect = NextResponse.redirect(url);
-    supabaseResponse.cookies.getAll().forEach((cookie) => {
-      redirect.cookies.set(cookie);
-    });
-    applyAdminSessionCookies(redirect, { now: Date.now() });
-    return redirect;
-  }
-
-  if (user && pathname.startsWith("/admin")) {
+  const onAdminPage = pathname.startsWith("/admin") && pathname !== "/admin/mfa";
+  if (user && onAdminPage) {
     const state = adminSessionStateFromRequest(request);
     if (state !== "ok") {
-      applyAdminSessionCookies(supabaseResponse, { now: Date.now() });
-    } else {
-      refreshAdminIdleCookie(supabaseResponse);
+      const url = request.nextUrl.clone();
+      const dest = mfaPath(state);
+      url.pathname = dest.split("?")[0] ?? "/admin/mfa";
+      url.search = dest.includes("?") ? dest.slice(dest.indexOf("?")) : "";
+      const redirect = NextResponse.redirect(url);
+      supabaseResponse.cookies.getAll().forEach((cookie) => {
+        redirect.cookies.set(cookie);
+      });
+      return redirect;
     }
+    refreshAdminIdleCookie(supabaseResponse);
   }
 
   return supabaseResponse;

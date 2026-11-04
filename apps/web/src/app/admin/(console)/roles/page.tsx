@@ -40,7 +40,7 @@ export default function AdminRolesPage() {
     try {
       await webApi.post("/api/v1/admin/roles", { email, role: "SUPPORT" });
       setEmail("");
-      setNotice("SUPPORT invited. They sign in with their password to open /admin.");
+      setNotice("SUPPORT invited. They will receive a text code at the OWNER phone on first /admin login.");
       await load();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Invite failed");

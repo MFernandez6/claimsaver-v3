@@ -255,9 +255,9 @@ def build():
         bullets(
             [
                 "Go to <b>https://www.claimsaverplus.com/login?next=/admin</b>.",
-                "After password login, open <b>/admin</b>. Staff access is password-only for now (no authenticator or text code).",
-                "Idle timeout is 30 minutes of admin activity. Absolute session is 12 hours. Sidebar shows remaining idle time.",
-                "If /admin 404s, you are not signed in as OWNER. Sign out, then use support@claimsaverplus.com.",
+                "First time: you are sent to <b>/admin/mfa</b>. Scan the QR in Authy / Google Authenticator / 1Password. Enter the 6-digit code. Staff access is aal2 (authenticator), not password-only.",
+                "Idle timeout is 30 minutes. Absolute session is 12 hours. After either, you must enter a fresh code. Sidebar shows remaining idle time.",
+                "If MFA ever loops, sign out, sign back in, then open /admin/mfa again before visiting /admin.",
             ],
             s,
         )

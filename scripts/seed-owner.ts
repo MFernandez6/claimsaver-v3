@@ -184,7 +184,7 @@ if (auditError) {
   console.error("OWNER written, but audit insert failed:", auditError.message);
 }
 
-console.log(`OWNER seeded for ${email} (${profile.id}). Sign in with the password and open /admin.`);
+console.log(`OWNER seeded for ${email} (${profile.id}). Open /admin and enter the SMS code.`);
 }
 
 main().catch((err) => {
