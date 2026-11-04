@@ -212,8 +212,8 @@ export const daysCopy = {
     privacy: "Privacy Policy",
     thanksTitle: "Your checklist is ready",
     thanksBody:
-      "Download the Florida 14-Day PIP Checklist. We also emailed the same link. You stay the filer — this is a self-help list, not legal advice.",
-    thanksDownload: "Download the checklist (PDF)",
+      "We emailed the Florida 14-Day PIP Checklist to you. On a phone we also open the PDF in a new window so it is not buried behind this page. You stay the filer — this is a self-help list, not legal advice.",
+    thanksDownload: "Open the checklist (PDF)",
     thanksHome: "Back to ClaimSaver+",
     cookieTitle: "Cookies on this page",
     cookieBody:
@@ -293,8 +293,8 @@ export const daysCopy = {
     privacy: "Política de privacidad",
     thanksTitle: "Tu lista está lista",
     thanksBody:
-      "Descarga la lista de PIP de 14 días en Florida. También te enviamos el mismo enlace por correo. Tú sigues siendo quien presenta el reclamo: esto es una lista de autoayuda, no asesoría legal.",
-    thanksDownload: "Descargar la lista (PDF)",
+      "Te enviamos por correo la lista de PIP de 14 días en Florida. En un teléfono también abrimos el PDF en una ventana nueva para que no quede detrás de esta página. Tú sigues siendo quien presenta el reclamo: esto es una lista de autoayuda, no asesoría legal.",
+    thanksDownload: "Abrir la lista (PDF)",
     thanksHome: "Volver a ClaimSaver+",
     cookieTitle: "Cookies en esta página",
     cookieBody:
@@ -374,8 +374,8 @@ export const daysCopy = {
     privacy: "Politique de confidentialité",
     thanksTitle: "Votre liste est prête",
     thanksBody:
-      "Téléchargez la liste PIP de 14 jours en Floride. Nous avons aussi envoyé le même lien par e-mail. Vous restez le déposant -- c'est une liste d'auto-assistance, pas un conseil juridique.",
-    thanksDownload: "Télécharger la liste (PDF)",
+      "Nous vous avons envoyé la liste PIP de 14 jours en Floride par e-mail. Sur un téléphone, nous ouvrons aussi le PDF dans une nouvelle fenêtre pour qu'il ne reste pas derrière cette page. Vous restez le déposant -- c'est une liste d'auto-assistance, pas un conseil juridique.",
+    thanksDownload: "Ouvrir la liste (PDF)",
     thanksHome: "Retour à ClaimSaver+",
     cookieTitle: "Cookies sur cette page",
     cookieBody:

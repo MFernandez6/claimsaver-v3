@@ -1,7 +1,6 @@
 import { createHash } from "node:crypto";
 import "server-only";
 import { cookies, headers } from "next/headers";
-import { redirect } from "next/navigation";
 import { daysCopy, ATTR_COOKIE, parseDaysLocale, type DaysLocale } from "@/content/14days";
 import { thanksPathFor, type LeadAttribution } from "./attribution";
 import { sendChecklistEmail } from "./email";
@@ -82,10 +81,17 @@ export async function submitLead14Days(
     return { error: parsed.error, fields: parsed.fields };
   }
 
-  const thanks = thanksPathFor(parsed.honeypot ? localeGuess : parsed.data.locale);
+  const locale = parsed.honeypot ? localeGuess : parsed.data.locale;
+  const thanksCopy = daysCopy[locale];
+  const success = {
+    error: null,
+    ok: true as const,
+    pdfPath: thanksCopy.pdfPath,
+    thanksPath: thanksPathFor(locale),
+  };
 
   if (parsed.honeypot) {
-    redirect(thanks);
+    return success;
   }
 
   if (!isSupabaseConfigured()) {
@@ -110,5 +116,5 @@ export async function submitLead14Days(
     return { error: copy.errorGeneric };
   }
 
-  redirect(thanks);
+  return success;
 }

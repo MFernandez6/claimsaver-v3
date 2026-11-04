@@ -13,6 +13,7 @@ const LANG_TOGGLE: { locale: DaysLocale; label: string }[] = [
 ];
 import { CampaignCookieNotice, CampaignPixels } from "./campaign-pixels";
 import { LeadForm } from "./lead-form";
+import { ThanksOverlay } from "./thanks-overlay";
 import { UtmCapture } from "./utm-capture";
 
 export function FourteenDaysLanding({ locale }: { locale: DaysLocale }) {
@@ -137,28 +138,8 @@ export function FourteenDaysThanks({ locale }: { locale: DaysLocale }) {
   const copy = getDaysCopy(locale);
 
   return (
-    <div lang={copy.htmlLang} className="bg-slate-950 px-4 py-20 text-white sm:px-6">
-      <CampaignPixels event="Lead" />
-      <div className="mx-auto max-w-xl text-center">
-        <p className="font-display text-5xl font-extrabold tracking-[-0.05em] text-teal-400">{copy.heroTitle}</p>
-        <h1 className="mt-6 text-3xl font-bold">{copy.thanksTitle}</h1>
-        <p className="mt-4 text-base leading-relaxed text-slate-300">{copy.thanksBody}</p>
-        <Button
-          asChild
-          size="lg"
-          className="mt-8 h-14 rounded-xl bg-teal-400 px-8 text-base font-semibold text-slate-950 hover:bg-teal-300"
-        >
-          <a href={copy.pdfPath} download>
-            {copy.thanksDownload}
-          </a>
-        </Button>
-        <p className="mt-6">
-          <Link href="/" className="text-sm text-teal-200 underline underline-offset-2">
-            {copy.thanksHome}
-          </Link>
-        </p>
-        <p className="mt-10 text-left text-xs leading-relaxed text-slate-500">{copy.disclaimer}</p>
-      </div>
+    <div lang={copy.htmlLang} className="min-h-[50vh] bg-slate-950">
+      <ThanksOverlay copy={copy} pdfPath={copy.pdfPath} fireLeadPixel autoOpenPdf />
     </div>
   );
 }

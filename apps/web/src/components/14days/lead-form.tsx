@@ -1,11 +1,18 @@
 "use client";
 
-import { useActionState, useEffect, useId, useState } from "react";
+import { useActionState, useEffect, useId, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { submitLead14Days } from "@/app/14days/actions";
 import type { SubmitLeadState } from "@/lib/14days/types";
 import { ATTR_COOKIE, type DaysCopy, type DaysLocale } from "@/content/14days";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ThanksOverlay } from "./thanks-overlay";
+import {
+  isMobileChecklistDevice,
+  openChecklistPdfWindow,
+  showChecklistPdf,
+} from "@/lib/14days/device";
 
 function readAttrCookie() {
   if (typeof document === "undefined") return "";
@@ -15,18 +22,49 @@ function readAttrCookie() {
 }
 
 export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale }) {
+  const router = useRouter();
   const [state, action, pending] = useActionState(submitLead14Days, null as SubmitLeadState);
   const [phone, setPhone] = useState("");
   const [attr, setAttr] = useState("");
   const errorId = useId();
   const showSms = phone.trim().length > 0;
+  const pdfWindow = useRef<Window | null>(null);
+  const routed = useRef(false);
 
   useEffect(() => {
     setAttr(readAttrCookie());
   }, []);
 
+  useEffect(() => {
+    if (!state?.ok) {
+      if (state?.error && pdfWindow.current && !pdfWindow.current.closed) {
+        pdfWindow.current.close();
+        pdfWindow.current = null;
+      }
+      return;
+    }
+    const pdfPath = state.pdfPath ?? copy.pdfPath;
+    if (isMobileChecklistDevice()) {
+      showChecklistPdf(pdfWindow.current, pdfPath);
+    }
+    if (!routed.current) {
+      routed.current = true;
+      router.replace(state.thanksPath ?? copy.thanksPath);
+    }
+  }, [state, copy.pdfPath, copy.thanksPath, router]);
+
   return (
-    <form action={action} className="space-y-4" noValidate>
+    <>
+      {state?.ok ? <ThanksOverlay copy={copy} pdfPath={state.pdfPath ?? copy.pdfPath} /> : null}
+      <form
+        action={action}
+        className="space-y-4"
+        noValidate
+        onSubmit={() => {
+          if (!isMobileChecklistDevice()) return;
+          pdfWindow.current = openChecklistPdfWindow();
+        }}
+      >
       <input type="hidden" name="landingPath" value={copy.path} />
       <input type="hidden" name="attr" value={attr} />
       <div className="hidden" aria-hidden="true">
@@ -142,5 +180,6 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
         {pending ? copy.submitting : copy.submit}
       </Button>
     </form>
+    </>
   );
 }
