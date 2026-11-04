@@ -1497,7 +1497,7 @@
       "s12Title": "12. Contacto",
       "s12Body": "Solicitudes de privacidad y eliminación: {{supportEmail}}. No podemos dar asesoría legal sobre su reclamo ni sobre si debe entregar un documento concreto a una aseguradora.",
       "s13Title": "13. Cookies y seguimiento",
-      "s13Body": "Usamos cookies y almacenamiento similar necesarios para mantenerle conectado, recordar su idioma y proteger la sesión. También usamos Vercel Analytics, que recopila datos agregados de visitas (páginas, referentes, tipo de dispositivo) para ver si el sitio funciona. No ejecutamos píxeles publicitarios ni vendemos datos de navegación. Puede bloquear cookies no esenciales en el navegador; el sitio puede seguir necesitando cookies esenciales para iniciar sesión. Stripe Checkout establece sus propias cookies cuando usted paga."
+      "s13Body": "Usamos cookies y almacenamiento similar necesarios para mantenerle conectado, recordar su idioma, proteger la sesión y (en las páginas de la lista de 14 días) recordar cómo llegó durante 30 días. También usamos Vercel Analytics, que recopila datos agregados de visitas (páginas, referentes, tipo de dispositivo) para ver si el sitio funciona. Si acepta cookies opcionales en esas páginas de campaña, podemos cargar píxeles de Google Ads o Meta allí. Esos píxeles no reciben su nombre, correo ni teléfono, y no usamos conversiones mejoradas ni coincidencia avanzada. No vendemos datos de navegación. Puede rechazar las cookies opcionales; el sitio puede seguir necesitando cookies esenciales para iniciar sesión. Stripe Checkout establece sus propias cookies cuando usted paga."
     },
     "accessibility": {
       "title": "Accesibilidad",
