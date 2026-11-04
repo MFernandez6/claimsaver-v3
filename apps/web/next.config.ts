@@ -22,7 +22,7 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https:",
       "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://*.stripe.com https://va.vercel-insights.com https://vitals.vercel-insights.com https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.facebook.com https://connect.facebook.net https://graph.facebook.com",
-      "frame-src https://js.stripe.com https://hooks.stripe.com https://www.facebook.com https://www.googletagmanager.com",
+      "frame-src https://js.stripe.com https://hooks.stripe.com https://www.facebook.com https://www.googletagmanager.com https://calendar.google.com https://calendar.app.google",
     ].join("; "),
   },
 ];
