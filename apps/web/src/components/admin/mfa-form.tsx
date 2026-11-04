@@ -27,7 +27,7 @@ export function AdminMfaForm() {
       setChallenge(next);
       setCooldown(30);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not send the text");
+      setError(err instanceof Error ? err.message : "Could not send the code");
     } finally {
       setBusy(false);
     }
@@ -70,24 +70,24 @@ export function AdminMfaForm() {
     >
       {reason === "idle" ? (
         <p className="text-sm text-amber-700">
-          Admin session idle timeout (30 minutes). We sent a new text.
+          Admin session idle timeout (30 minutes). We sent a new code to your OWNER email.
         </p>
       ) : null}
       {reason === "absolute" ? (
         <p className="text-sm text-amber-700">
-          Admin session reached the 12-hour limit. We sent a new text.
+          Admin session reached the 12-hour limit. We sent a new code to your OWNER email.
         </p>
       ) : null}
       <p className="text-sm text-slate-600">
         {challenge
-          ? `We sent a 6-digit code to ${challenge.phone}.${
-              challenge.email ? " A copy also went to your OWNER email." : ""
+          ? `${
+              challenge.email
+                ? "We emailed a 6-digit code to your OWNER inbox."
+                : "We sent a 6-digit admin code."
             }${
-              !challenge.sms && challenge.email
-                ? " If the text is delayed, use the email copy."
-                : ""
-            }`
-          : "Sending a text with your admin code…"}
+              challenge.sms ? ` A text also went to ${challenge.phone}.` : ""
+            } Use the newest email — older codes stop working.`
+          : "Sending a code to your OWNER email…"}
       </p>
       <Input
         inputMode="numeric"
@@ -114,7 +114,7 @@ export function AdminMfaForm() {
         className="w-full"
         onClick={() => void send()}
       >
-        {cooldown > 0 ? `Resend in ${cooldown}s` : "Text me a new code"}
+        {cooldown > 0 ? `Resend in ${cooldown}s` : "Email me a new code"}
       </Button>
     </form>
   );

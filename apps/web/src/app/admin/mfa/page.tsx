@@ -9,14 +9,14 @@ export default function AdminMfaPage() {
       <Card className="w-full max-w-md bg-white">
         <CardHeader>
           <BrandLogo className="mb-4" />
-          <CardTitle>Admin text code</CardTitle>
+          <CardTitle>Admin login code</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <p className="text-sm text-slate-600">
-            Staff access uses a text message code. This console manages the
-            software. You are not the filer.
+            Staff access uses a 6-digit code emailed to the OWNER inbox. This
+            console manages the software. You are not the filer.
           </p>
-          <Suspense fallback={<p className="text-sm text-slate-500">Sending a text…</p>}>
+          <Suspense fallback={<p className="text-sm text-slate-500">Sending a code…</p>}>
             <AdminMfaForm />
           </Suspense>
         </CardContent>
