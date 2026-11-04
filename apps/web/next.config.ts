@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@claimsaver/shared"],
   poweredByHeader: false,
   eslint: { ignoreDuringBuilds: true },
+  outputFileTracingIncludes: {
+    "/14days": ["./public/downloads/**"],
+    "/es/14dias": ["./public/downloads/**"],
+  },
   images: {
     remotePatterns: [],
   },

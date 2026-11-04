@@ -15,7 +15,8 @@ function emailOrigin() {
 }
 
 async function loadChecklistPdf(locale: DaysLocale) {
-  const relative = daysCopy[locale].pdfPath.replace(/^\//, "");
+  const copy = daysCopy[locale];
+  const relative = copy.pdfPath.replace(/^\//, "");
   const filename = relative.split("/").pop() || "14-day-pip-checklist.pdf";
   const candidates = [
     join(process.cwd(), "public", relative),
@@ -28,7 +29,12 @@ async function loadChecklistPdf(locale: DaysLocale) {
       continue;
     }
   }
-  throw new Error("Checklist PDF is missing");
+
+  const res = await fetch(`${emailOrigin()}/${relative}`);
+  if (!res.ok) {
+    throw new Error("Checklist PDF is missing");
+  }
+  return { filename, content: Buffer.from(await res.arrayBuffer()) };
 }
 
 function escapeHtml(value: string) {
