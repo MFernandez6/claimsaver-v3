@@ -9,14 +9,14 @@ export default function AdminMfaPage() {
       <Card className="w-full max-w-md bg-white">
         <CardHeader>
           <BrandLogo className="mb-4" />
-          <CardTitle>Admin authenticator</CardTitle>
+          <CardTitle>Admin text code</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <p className="text-sm text-slate-600">
-            Staff access requires a TOTP app (aal2). This console manages the
+            Staff access uses a text message code. This console manages the
             software. You are not the filer.
           </p>
-          <Suspense fallback={<p className="text-sm text-slate-500">Loading authenticator…</p>}>
+          <Suspense fallback={<p className="text-sm text-slate-500">Sending a text…</p>}>
             <AdminMfaForm />
           </Suspense>
         </CardContent>

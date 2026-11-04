@@ -9,7 +9,7 @@ export const ADMIN = {
   ticketBanner:
     "Do not advise on a PIP claim, and do not discuss the substance of a filing. Help with account, billing, or technical issues only.",
   privacyNote:
-    "OWNER can schedule deletion after a fresh authenticator code. The account is disabled now; personal data is hard-deleted 30 days later. Counsel still reviews retention years.",
+    "OWNER can schedule deletion from an active admin session. The account is disabled now; personal data is hard-deleted 30 days later. Counsel still reviews retention years.",
   impersonationNote:
     "Support may view an account only after the claimant approves, for 30 minutes, read-only. Silent impersonation is never allowed. Worksheets stay with the claimant.",
   impersonationEmail:

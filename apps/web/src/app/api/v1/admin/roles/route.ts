@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk } from "@/lib/supabase/auth";
-import { requirePermission, requireFreshTotp } from "@/lib/admin/require-permission";
+import { requirePermission } from "@/lib/admin/require-permission";
 import { writeAudit } from "@/lib/admin/audit";
 import { requestIp, requestUserAgent } from "@/lib/admin/request-meta";
 import { escapeIlikeExact, parseUserQuery } from "@/lib/admin/user-query";
@@ -63,9 +63,6 @@ export async function POST(req: NextRequest) {
     audit: false,
   });
   if (response) return response;
-
-  const fresh = await requireFreshTotp(req);
-  if (!fresh) return jsonErr("Authenticator code required", 401);
 
   const body = (await req.json().catch(() => null)) as {
     email?: unknown;

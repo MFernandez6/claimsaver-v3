@@ -209,7 +209,7 @@ export default function AdminUserDetailPage() {
             ) : null}
             <p className="text-xs text-slate-500">
               Reveal writes an audit row with the reason, not the revealed values.
-              Disable requires a fresh authenticator code.
+              Disable requires an active admin session (SMS code).
             </p>
           </CardContent>
         </Card>

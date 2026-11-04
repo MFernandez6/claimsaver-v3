@@ -30,7 +30,11 @@ A clinic cannot open enrollment until `baa_status = SIGNED` and `is_active`. Pat
 
 ## Impersonation
 
-OWNER/SUPPORT request a session from a user page with a **ticket + reason** and fresh TOTP. The claimant approves on the dashboard. Session is 30 minutes and **read-only** (middleware blocks mutations). Snapshot APIs never return worksheet JSON.
+OWNER/SUPPORT request a session from a user page with a **ticket + reason**. The claimant approves on the dashboard. Session is 30 minutes and **read-only** (middleware blocks mutations). Snapshot APIs never return worksheet JSON.
+
+## Staff login (SMS)
+
+After password login, `/admin/mfa` texts a 6-digit code to `ADMIN_MFA_PHONE` (default +1 786-417-3869). Optional Twilio; otherwise the code is sent via carrier SMS email and the OWNER inbox. Codes expire in 10 minutes and are stored hashed.
 
 ## Privacy
 
@@ -40,7 +44,7 @@ OWNER/SUPPORT request a session from a user page with a **ticket + reason** and 
 
 ## Env
 
-`OWNER_SEED_EMAIL`, `SUPABASE_SERVICE_ROLE_KEY`, `CRON_SECRET`, `RETENTION_YEARS`, `RESEND_API_KEY`, `LEAD_IP_SALT`
+`OWNER_SEED_EMAIL`, `ADMIN_MFA_PHONE`, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER`, `SUPABASE_SERVICE_ROLE_KEY`, `CRON_SECRET`, `RETENTION_YEARS`, `RESEND_API_KEY`, `LEAD_IP_SALT`
 
 ## Cron
 

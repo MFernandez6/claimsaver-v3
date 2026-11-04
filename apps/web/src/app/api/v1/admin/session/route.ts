@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { jsonErr, jsonOk } from "@/lib/supabase/auth";
-import { requirePermission, requireFreshTotp, requireStaff } from "@/lib/admin/require-permission";
+import { jsonOk } from "@/lib/supabase/auth";
+import { requirePermission } from "@/lib/admin/require-permission";
 import { writeAudit } from "@/lib/admin/audit";
 import { requestIp, requestUserAgent } from "@/lib/admin/request-meta";
 import { maskEmail } from "@/lib/auth/mask";
@@ -37,18 +37,15 @@ export async function POST(req: NextRequest) {
   const limited = await rateLimit(`admin-session:${clientIp(req)}`, 10, 10 * 60 * 1000);
   if (!limited.ok) return rateLimitResponse(limited.retryAfter);
 
-  const { user, role, response } = await requireStaff(req);
+  const { user, role, response } = await requirePermission(req, "admin.access", {
+    audit: false,
+  });
   if (response) return response;
-
-  const fresh = await requireFreshTotp(req);
-  if (!fresh) {
-    return jsonErr("Authenticator code required", 401);
-  }
 
   await writeAudit({
     actorId: user.id,
     actorRole: role,
-    action: "admin.session.start",
+    action: "admin.session.refresh",
     resourceType: "admin",
     resourceId: "session",
     ip: requestIp(req),
@@ -65,6 +62,6 @@ export async function POST(req: NextRequest) {
     },
   };
   const res = NextResponse.json(payload, { status: 200 });
-  applyAdminSessionCookies(res, { now });
+  applyAdminSessionCookies(res, { now, idleAt: now });
   return res;
 }

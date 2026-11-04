@@ -4,84 +4,53 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { getBrowserSupabase } from "@/lib/supabase/browser";
-import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { webApi } from "@/lib/api/client";
 
-type Mode = "loading" | "enroll" | "challenge";
+type Challenge = { phone: string; sms: boolean; email: boolean };
 
 export function AdminMfaForm() {
   const router = useRouter();
   const params = useSearchParams();
   const reason = params.get("reason");
-  const [mode, setMode] = useState<Mode>("loading");
-  const [factorId, setFactorId] = useState("");
-  const [qr, setQr] = useState("");
-  const [secret, setSecret] = useState("");
+  const [challenge, setChallenge] = useState<Challenge | null>(null);
   const [code, setCode] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
   const started = useRef(false);
+
+  const send = async () => {
+    setError(null);
+    setBusy(true);
+    try {
+      const next = await webApi.post<Challenge>("/api/v1/admin/mfa/challenge", {});
+      setChallenge(next);
+      setCooldown(30);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not send the text");
+    } finally {
+      setBusy(false);
+    }
+  };
 
   useEffect(() => {
     if (started.current) return;
     started.current = true;
-    if (!isSupabaseBrowserConfigured()) {
-      setError("Auth is not configured.");
-      return;
-    }
-    const supabase = getBrowserSupabase();
-    void (async () => {
-      const factors = await supabase.auth.mfa.listFactors();
-      if (factors.error) {
-        setError(factors.error.message);
-        return;
-      }
-      const verified = factors.data.totp.find(
-        (factor: { id: string; status: string }) => factor.status === "verified",
-      );
-      if (verified) {
-        setFactorId(verified.id);
-        setMode("challenge");
-        return;
-      }
-      for (const factor of factors.data.totp) {
-        await supabase.auth.mfa.unenroll({ factorId: factor.id });
-      }
-      const enrolled = await supabase.auth.mfa.enroll({
-        factorType: "totp",
-        friendlyName: `ClaimSaver+ admin ${Date.now()}`,
-      });
-      if (enrolled.error) {
-        setError(enrolled.error.message);
-        return;
-      }
-      setFactorId(enrolled.data.id);
-      const qrCode = enrolled.data.totp.qr_code;
-      setQr(
-        qrCode.startsWith("data:")
-          ? qrCode
-          : `data:image/svg+xml;utf-8,${encodeURIComponent(qrCode)}`,
-      );
-      setSecret(enrolled.data.totp.secret);
-      setMode("enroll");
-    })();
+    void send();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = window.setTimeout(() => setCooldown((n) => n - 1), 1000);
+    return () => window.clearTimeout(timer);
+  }, [cooldown]);
 
   async function verify() {
     setError(null);
     setBusy(true);
     try {
-      const supabase = getBrowserSupabase();
-      const challenge = await supabase.auth.mfa.challenge({ factorId });
-      if (challenge.error) throw challenge.error;
-      const verified = await supabase.auth.mfa.verify({
-        factorId,
-        challengeId: challenge.data.id,
-        code: code.trim(),
-      });
-      if (verified.error) throw verified.error;
-      await webApi.post("/api/v1/admin/session");
+      await webApi.post("/api/v1/admin/mfa/verify", { code: code.trim() });
       router.replace("/admin");
       router.refresh();
     } catch (err) {
@@ -101,61 +70,51 @@ export function AdminMfaForm() {
     >
       {reason === "idle" ? (
         <p className="text-sm text-amber-700">
-          Admin session idle timeout (30 minutes). Enter a new authenticator code.
+          Admin session idle timeout (30 minutes). We sent a new text.
         </p>
       ) : null}
       {reason === "absolute" ? (
         <p className="text-sm text-amber-700">
-          Admin session reached the 12-hour limit. Enter a new authenticator code.
+          Admin session reached the 12-hour limit. We sent a new text.
         </p>
       ) : null}
-      {mode === "enroll" ? (
-        <>
-          <p className="text-sm text-slate-600">
-            Scan this QR code in your authenticator app, then enter the 6-digit code.
-            Admin access requires TOTP. Phone SMS is not used.
-          </p>
-          {qr ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={qr}
-              alt="Authenticator QR code"
-              className="mx-auto h-48 w-48 rounded-lg border bg-white p-2"
-            />
-          ) : null}
-          {secret ? (
-            <p className="break-all text-center text-xs text-slate-500">
-              Manual key: {secret}
-            </p>
-          ) : null}
-        </>
-      ) : null}
-      {mode === "challenge" ? (
-        <p className="text-sm text-slate-600">
-          Enter the 6-digit code from your authenticator app.
-        </p>
-      ) : null}
-      {mode !== "loading" ? (
-        <Input
-          inputMode="numeric"
-          autoComplete="one-time-code"
-          pattern="[0-9]*"
-          maxLength={8}
-          required
-          placeholder="123456"
-          value={code}
-          onChange={(e) => setCode(e.target.value.trim())}
-        />
-      ) : (
-        <p className="text-sm text-slate-500">Checking authenticator…</p>
-      )}
+      <p className="text-sm text-slate-600">
+        {challenge
+          ? `We sent a 6-digit code to ${challenge.phone}.${
+              challenge.email ? " A copy also went to your OWNER email." : ""
+            }${
+              !challenge.sms && challenge.email
+                ? " If the text is delayed, use the email copy."
+                : ""
+            }`
+          : "Sending a text with your admin code…"}
+      </p>
+      <Input
+        inputMode="numeric"
+        autoComplete="one-time-code"
+        pattern="[0-9]*"
+        maxLength={8}
+        required
+        placeholder="123456"
+        value={code}
+        onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
+      />
       {error ? <p className="text-sm text-red-600">{error}</p> : null}
       <Button
         type="submit"
-        disabled={busy || mode === "loading" || code.length < 6}
+        disabled={busy || code.length < 6}
         className="w-full bg-gradient-to-r from-emerald-600 to-teal-800"
       >
         {busy ? "Verifying…" : "Continue"}
+      </Button>
+      <Button
+        type="button"
+        variant="outline"
+        disabled={busy || cooldown > 0}
+        className="w-full"
+        onClick={() => void send()}
+      >
+        {cooldown > 0 ? `Resend in ${cooldown}s` : "Text me a new code"}
       </Button>
     </form>
   );

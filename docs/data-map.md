@@ -17,7 +17,8 @@ Where personal and health information lives. Staff consoles must not add new cop
 | `clinics`, `clinic_enrollments` | clinic org + self-enroll | Progress = step/status only |
 | `impersonation_sessions` | consented 30-minute view | Read-only |
 | `audit_events` | append-only ops log | No worksheet/SSN in metadata |
-| `auth.users` | Auth emails, TOTP | Supabase Auth |
+| `auth.users` | Auth emails | Supabase Auth |
+| `admin_sms_challenges` | hashed admin login codes | service_role only; 10-minute TTL |
 | Resend | transactional email | Support replies, 14-day checklist, impersonation ask |
 | Stripe | payments | Customer IDs, amounts |
 | Vercel / logs | request metadata | No PII in URLs or Sentry breadcrumbs |

@@ -2,15 +2,11 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export const ADMIN_IDLE_MS = 30 * 60 * 1000;
 export const ADMIN_ABSOLUTE_MS = 12 * 60 * 60 * 1000;
-/** TOTP must have been verified this recently to mint or refresh an admin session. */
-export const ADMIN_TOTP_FRESH_MS = 10 * 60 * 1000;
 
 export const ADMIN_IDLE_COOKIE = "cs_admin_idle";
 export const ADMIN_ABS_COOKIE = "cs_admin_abs";
 
 export type AdminSessionState = "ok" | "missing" | "idle" | "absolute";
-
-type AmrEntry = { method?: string; timestamp?: number };
 
 export function adminCookieOptions(maxAgeMs: number) {
   return {
@@ -51,22 +47,6 @@ export function adminSessionStateFromRequest(
 
 export function remainingMs(startedAt: number, limitMs: number, now = Date.now()) {
   return Math.max(0, limitMs - (now - startedAt));
-}
-
-function amrTimestampMs(timestamp: number) {
-  return timestamp > 1e12 ? timestamp : timestamp * 1000;
-}
-
-export function hasFreshTotp(
-  methods: readonly AmrEntry[] | null | undefined,
-  now = Date.now(),
-): boolean {
-  if (!methods?.length) return false;
-  return methods.some((entry) => {
-    if (entry.method !== "totp") return false;
-    const ts = typeof entry.timestamp === "number" ? amrTimestampMs(entry.timestamp) : 0;
-    return ts > 0 && now - ts <= ADMIN_TOTP_FRESH_MS;
-  });
 }
 
 export function applyAdminSessionCookies(

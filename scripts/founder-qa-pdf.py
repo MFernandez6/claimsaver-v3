@@ -296,7 +296,7 @@ def build():
                 "Search a test claimant by <b>exact email</b>. Partial names should return nothing useful.",
                 "Open the user. Email / phone / name stay masked until you pick a reveal reason (billing dispute, lockout, legal request, other) and click reveal. That writes an audit row with the reason, not the secret.",
                 "Confirm you see claim <b>record count</b>, purchases, consents, tickets — not the worksheet body.",
-                "<b>Impersonation (two browsers):</b> On the user page, “Ask claimant to approve a 30-minute view.” Needs a ticket + reason + a fresh TOTP code. In the claimant browser, dashboard shows an amber banner: Support asked to view your account; they cannot change your filing. Click Allow. Back in admin, the session is 30 minutes and <b>read-only</b>. Try a POST (save a form) — it should 403. End the session from admin. Silent impersonation is not a button.",
+                "<b>Impersonation (two browsers):</b> On the user page, “Ask claimant to approve a 30-minute view.” Needs a ticket + reason + an active admin session. In the claimant browser, dashboard shows an amber banner: Support asked to view your account; they cannot change your filing. Click Allow. Back in admin, the session is 30 minutes and <b>read-only</b>. Try a POST (save a form) — it should 403. End the session from admin. Silent impersonation is not a button.",
             ],
             s,
         )

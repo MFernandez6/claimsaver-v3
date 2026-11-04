@@ -9,11 +9,9 @@ import {
 import {
   ADMIN_ABS_COOKIE,
   adminSessionStateFromRequest,
-  hasFreshTotp,
   parseCookieTime,
 } from "@/lib/auth/admin-session";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getStaffRole } from "./roles";
 import { writeAudit } from "./audit";
 import { requestIp, requestUserAgent } from "./request-meta";
@@ -30,30 +28,6 @@ type Denied = {
   role: StaffRole | null;
   response: NextResponse;
 };
-
-async function totpIsFresh(req: NextRequest): Promise<boolean> {
-  const header = req.headers.get("authorization");
-  if (header?.startsWith("Bearer ")) {
-    const token = header.slice(7);
-    try {
-      const payload = JSON.parse(
-        Buffer.from(token.split(".")[1] ?? "", "base64url").toString("utf8"),
-      ) as { amr?: Array<{ method?: string; timestamp?: number }>; aal?: string };
-      if (payload.aal !== "aal2") return false;
-      return hasFreshTotp(payload.amr);
-    } catch {
-      return false;
-    }
-  }
-  try {
-    const supabase = await createSupabaseServerClient();
-    const { data, error } = await supabase.auth.mfa.getAuthenticatorAssuranceLevel();
-    if (error || data.currentLevel !== "aal2") return false;
-    return hasFreshTotp(data.currentAuthenticationMethods);
-  } catch {
-    return false;
-  }
-}
 
 export async function requireStaff(req: NextRequest): Promise<Ok | Denied> {
   const { user, response } = await requireUser(req);
@@ -120,8 +94,4 @@ export async function requirePermission(
   }
 
   return { user: staff.user, role: staff.role, response: null };
-}
-
-export async function requireFreshTotp(req: NextRequest): Promise<boolean> {
-  return totpIsFresh(req);
 }

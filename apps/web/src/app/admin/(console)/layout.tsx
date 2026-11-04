@@ -2,7 +2,6 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { getAuthUser } from "@/lib/supabase/auth";
 import { getClinicMembership, getStaffRole } from "@/lib/admin/roles";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { AdminShell } from "@/components/admin/admin-shell";
 import {
   ADMIN_ABS_COOKIE,
@@ -25,10 +24,6 @@ export default async function AdminConsoleLayout({
     if (clinic) redirect("/clinic");
     redirect("/admin/mfa");
   }
-
-  const supabase = await createSupabaseServerClient();
-  const { data: aal } = await supabase.auth.mfa.getAuthenticatorAssuranceLevel();
-  if (aal?.currentLevel !== "aal2") redirect("/admin/mfa");
 
   const store = await cookies();
   const state = adminSessionState(
