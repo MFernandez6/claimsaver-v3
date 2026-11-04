@@ -10,15 +10,15 @@ import {
   const AUTH_REQUIRED_PREFIXES = [
   "/dashboard",
   "/admin",
-  "/claim/",
+  "/claim",
   "/claim-form",
   "/account",
   "/clinic",
 ];
 
 function isProtectedPath(pathname: string) {
-  return AUTH_REQUIRED_PREFIXES.some((p) =>
-    p.endsWith("/") ? pathname.startsWith(p) : pathname.startsWith(p),
+  return AUTH_REQUIRED_PREFIXES.some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`),
   );
 }
 
