@@ -1735,10 +1735,12 @@
     "clinic": {
       "visibility": "Your clinic sees whether a patient started and which worksheet step they are on — never their answers, documents, or medical details.",
       "noReferralFees": "ClaimSaver+ does not pay clinics for referrals, and clinics do not receive any part of a patient's fee.",
-      "pricingPilot": "Clinic dashboard pricing can be discussed during the 15-minute demo. It is software for your staff — not tied to how many patients you refer.",
+      "pricingPilot": "Clinic dashboard pricing can be discussed during the 15-minute demo. It is a separate staff-software subscription — not tied to how many patients you refer.",
       "pricingPublic": "Clinic dashboard: {{clinicPrice}}/month per clinic, flat. Software for your staff — not tied to how many patients you refer. Patients pay their own {{price}} separately.",
       "valueProp": "Help your PIP patients get initial care inside the 14-day window, finish their paperwork, and show up for EUOs and IMEs — with a progress-only view for your front desk.",
       "sectionTitle": "For clinics",
+      "pricingKicker": "Staff software",
+      "pricingHeading": "Clinic dashboard",
       "demoLink": "Book a 15-minute demo"
     },
     "disclaimer": {

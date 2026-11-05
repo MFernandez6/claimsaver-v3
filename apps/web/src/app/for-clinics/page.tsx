@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ObfuscatedSupportEmail } from "@/components/obfuscated-support-email";
 import { MarketingHeading, MarketingPage, MarketingSection } from "@/components/marketing-page";
-import { clinicPricingKey } from "@/lib/copy/pricing";
+import { ClinicPricingNote } from "@/components/clinic-pricing-note";
 
 const STEPS = [1, 2, 3, 4, 5] as const;
 const SEE = [1, 2, 3] as const;
@@ -91,9 +91,8 @@ export default function ForClinicsPage() {
       </MarketingSection>
 
       <MarketingSection last>
-        <p className="text-sm leading-relaxed text-slate-600">{t(clinicPricingKey())}</p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-600">{t("copy.clinic.noReferralFees")}</p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-600">{t("copy.disclaimer.selfHelp")}</p>
+        <ClinicPricingNote ctaHref="/clinic-demo" ctaLabel={t("pages.forClinics.ctaDemo")} />
+        <p className="mt-8 text-sm leading-relaxed text-slate-600">{t("copy.disclaimer.selfHelp")}</p>
         <p className="mt-4 text-sm text-slate-500">
           {t("pages.forClinics.questions")} <ObfuscatedSupportEmail className="underline" />
         </p>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { PLATFORM_PRICE_TESTING, PRODUCTS, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
-import { clinicPricingKey } from "@/lib/copy/pricing";
+import { ClinicPricingNote } from "@/components/clinic-pricing-note";
 import { ProductionTestingNotice } from "@/components/production-testing-notice";
 import { AgeTermsConsent } from "@/components/auth/age-terms-consent";
 import { PricingCompare } from "@/components/pricing-compare";
@@ -203,20 +203,9 @@ function PricingInner() {
             <Link className="underline" href="/when-to-call-an-attorney">{t("pricing.ui.complexClaimLink")}</Link>.
           </p>
 
-          <Card className="mt-12">
-            <CardHeader>
-              <CardTitle>{t("copy.clinic.sectionTitle")}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm leading-relaxed text-slate-600">
-              <p>{t(clinicPricingKey())}</p>
-              <p>{t("copy.clinic.noReferralFees")}</p>
-              <p>
-                <Link href="/clinic-demo" className="font-semibold text-teal-800 underline underline-offset-2">
-                  {t("copy.clinic.demoLink")}
-                </Link>
-              </p>
-            </CardContent>
-          </Card>
+          <div className="mt-12">
+            <ClinicPricingNote ctaHref="/clinic-demo" ctaLabel={t("copy.clinic.demoLink")} />
+          </div>
         </div>
       </section>
       <FAQ

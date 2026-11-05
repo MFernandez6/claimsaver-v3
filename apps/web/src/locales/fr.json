@@ -1736,10 +1736,12 @@
     "clinic": {
       "visibility": "Votre clinique voit si le patient a commencé et à quelle étape de la fiche il se trouve — jamais ses réponses, documents ou informations médicales.",
       "noReferralFees": "ClaimSaver+ ne rémunère pas les cliniques pour les recommandations, et les cliniques ne reçoivent aucune part des frais du patient.",
-      "pricingPilot": "Le tarif du tableau de bord clinique peut se discuter pendant la démo de 15 minutes. C’est un logiciel pour votre personnel — sans lien avec le nombre de patients recommandés.",
+      "pricingPilot": "Le tarif du tableau de bord clinique peut se discuter pendant la démo de 15 minutes. C’est un abonnement distinct de logiciel pour votre personnel — sans lien avec le nombre de patients recommandés.",
       "pricingPublic": "Tableau de bord clinique : {{clinicPrice}}/mois par clinique, forfait. Un logiciel pour votre personnel — sans lien avec le nombre de patients recommandés. Les patients paient leurs propres {{price}} séparément.",
       "valueProp": "Aidez vos patients PIP à obtenir des soins initiaux dans le délai de 14 jours, à terminer leurs formulaires et à se présenter aux EUO et IME — avec une vue de progression pour votre accueil.",
       "sectionTitle": "Pour les cliniques",
+      "pricingKicker": "Logiciel pour le personnel",
+      "pricingHeading": "Tableau de bord clinique",
       "demoLink": "Réserver une démo de 15 minutes"
     },
     "disclaimer": {

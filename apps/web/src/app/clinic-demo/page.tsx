@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MarketingPage, MarketingSection } from "@/components/marketing-page";
 import { webApi } from "@/lib/api/client";
 import { clinicDemoBookingUrl, googleAppointmentEmbedSrc } from "@/lib/clinic-demo";
-import { clinicPricingKey } from "@/lib/copy/pricing";
+import { ClinicPricingNote } from "@/components/clinic-pricing-note";
 
 declare global {
   interface Window {
@@ -46,27 +46,20 @@ export default function ClinicDemoPage() {
         </>
       }
     >
-      <MarketingSection className="grid gap-4 sm:grid-cols-2">
-        <Card className="border-teal-200">
-          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
-            {t(clinicPricingKey())}
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
-            {t("copy.clinic.noReferralFees")}
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
-            {t("copy.clinic.visibility")}
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
-            {t("copy.patientPrice.sameForReferrals")}
-          </CardContent>
-        </Card>
+      <MarketingSection>
+        <ClinicPricingNote />
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <Card>
+            <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
+              {t("copy.clinic.visibility")}
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
+              {t("copy.patientPrice.sameForReferrals")}
+            </CardContent>
+          </Card>
+        </div>
       </MarketingSection>
 
       {embedSrc ? (

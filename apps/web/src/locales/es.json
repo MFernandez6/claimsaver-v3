@@ -1736,10 +1736,12 @@
     "clinic": {
       "visibility": "Tu clínica ve si el paciente comenzó y en qué paso de la hoja de trabajo está — nunca sus respuestas, documentos ni detalles médicos.",
       "noReferralFees": "ClaimSaver+ no paga a las clínicas por referencias, y las clínicas no reciben ninguna parte del pago del paciente.",
-      "pricingPilot": "El precio del panel para clínicas se puede hablar en la demo de 15 minutos. Es software para su personal — no depende de cuántos pacientes refiera.",
+      "pricingPilot": "El precio del panel para clínicas se puede hablar en la demo de 15 minutos. Es una suscripción aparte de software para su personal — no depende de cuántos pacientes refiera.",
       "pricingPublic": "Panel para clínicas: {{clinicPrice}} al mes por clínica, tarifa fija. Software para tu personal — no depende de cuántos pacientes refieras. Los pacientes pagan sus propios {{price}} por separado.",
       "valueProp": "Ayuda a tus pacientes de PIP a recibir atención inicial dentro de los 14 días, terminar su papeleo y asistir a sus EUO e IME — con una vista solo de progreso para tu recepción.",
       "sectionTitle": "Para clínicas",
+      "pricingKicker": "Software para el personal",
+      "pricingHeading": "Panel para clínicas",
       "demoLink": "Reservar una demo de 15 minutos"
     },
     "disclaimer": {
