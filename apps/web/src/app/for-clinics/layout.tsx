@@ -2,7 +2,7 @@ import { pageMeta } from "@/lib/page-seo";
 
 export const metadata = pageMeta(
   "For clinics",
-  "ClaimSaver+ for Florida PIP clinics: patients use self-help software and stay the filer. Staff see checklist progress only. Book a demo at /clinic-demo. After a signed BAA, each clinic gets its own /enroll/ link.",
+  "ClaimSaver+ for Florida PIP clinics: patients use self-help software and stay the filer. Staff see checklist progress only. Book a 15-minute demo.",
   "/for-clinics",
 );
 

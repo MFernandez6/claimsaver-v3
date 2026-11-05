@@ -63,48 +63,6 @@ export default function ForClinicsPage() {
         </ol>
       </MarketingSection>
 
-      <MarketingSection>
-        <MarketingHeading>{t("pages.forClinics.linksTitle")}</MarketingHeading>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-800">
-                {t("pages.forClinics.linkExplainLabel")}
-              </p>
-              <CardTitle className="text-base">{t("pages.forClinics.linkExplainPath")}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm leading-relaxed text-slate-600">{t("pages.forClinics.linkExplainBody")}</p>
-            </CardContent>
-          </Card>
-          <Card className="border-teal-200">
-            <CardHeader>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-800">
-                {t("pages.forClinics.linkDemoLabel")}
-              </p>
-              <CardTitle className="text-base">{t("pages.forClinics.linkDemoPath")}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm leading-relaxed text-slate-600">{t("pages.forClinics.linkDemoBody")}</p>
-              <Link href="/clinic-demo" className="mt-3 inline-block text-sm font-semibold text-teal-800 underline underline-offset-2">
-                {t("pages.forClinics.ctaDemo")}
-              </Link>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-800">
-                {t("pages.forClinics.linkEnrollLabel")}
-              </p>
-              <CardTitle className="text-base">{t("pages.forClinics.linkEnrollPath")}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm leading-relaxed text-slate-600">{t("pages.forClinics.linkEnrollBody")}</p>
-            </CardContent>
-          </Card>
-        </div>
-      </MarketingSection>
-
       <MarketingSection className="grid gap-4 sm:grid-cols-2">
         <Card>
           <CardHeader>

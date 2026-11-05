@@ -3,7 +3,7 @@ import { PATIENT_PRICE_USD } from "@claimsaver/shared";
 
 export const metadata: Metadata = {
   title: "Book a clinic demo",
-  description: `Canvassing link: book a 15-minute ClaimSaver+ walkthrough. Patients still pay $${PATIENT_PRICE_USD} for platform access. After a signed BAA, each clinic gets its own patient enroll URL.`,
+  description: `Book a 15-minute ClaimSaver+ walkthrough for Florida PIP clinics. Patients still pay $${PATIENT_PRICE_USD} for platform access. Staff see checklist progress only.`,
   alternates: { canonical: "/clinic-demo" },
 };
 
