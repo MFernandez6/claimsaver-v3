@@ -8,11 +8,6 @@ import { ATTR_COOKIE, type DaysCopy, type DaysLocale } from "@/content/14days";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ThanksOverlay } from "./thanks-overlay";
-import {
-  isMobileChecklistDevice,
-  openChecklistPdfWindow,
-  showChecklistPdf,
-} from "@/lib/14days/device";
 
 function readAttrCookie() {
   if (typeof document === "undefined") return "";
@@ -27,8 +22,6 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
   const [phone, setPhone] = useState("");
   const [attr, setAttr] = useState("");
   const errorId = useId();
-  const showSms = phone.trim().length > 0;
-  const pdfWindow = useRef<Window | null>(null);
   const routed = useRef(false);
 
   useEffect(() => {
@@ -36,37 +29,19 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
   }, []);
 
   useEffect(() => {
-    if (!state?.ok) {
-      if (state?.error && pdfWindow.current && !pdfWindow.current.closed) {
-        pdfWindow.current.close();
-        pdfWindow.current = null;
-      }
-      return;
-    }
-    const pdfPath = state.pdfPath ?? copy.pdfPath;
-    if (isMobileChecklistDevice()) {
-      showChecklistPdf(pdfWindow.current, pdfPath);
-    }
+    if (!state?.ok) return;
     if (!routed.current) {
       routed.current = true;
       router.replace(state.thanksPath ?? copy.thanksPath);
     }
-  }, [state, copy.pdfPath, copy.thanksPath, router]);
+  }, [state, copy.thanksPath, router]);
 
   return (
     <>
       {state?.ok ? (
         <ThanksOverlay copy={copy} pdfPath={state.pdfPath ?? copy.pdfPath} fireLeadPixel />
       ) : null}
-      <form
-        action={action}
-        className="space-y-4"
-        noValidate
-        onSubmit={() => {
-          if (!isMobileChecklistDevice()) return;
-          pdfWindow.current = openChecklistPdfWindow();
-        }}
-      >
+      <form action={action} className="space-y-4" noValidate>
       <input type="hidden" name="landingPath" value={copy.path} />
       <input type="hidden" name="attr" value={attr} />
       <div className="hidden" aria-hidden="true">
@@ -161,18 +136,15 @@ export function LeadForm({ copy, locale }: { copy: DaysCopy; locale: DaysLocale 
         <span>{copy.ackLabel}</span>
       </label>
 
-      {showSms ? (
-        <label className="flex items-start gap-3 text-sm leading-relaxed text-slate-700">
-          <input
-            type="checkbox"
-            name="smsConsent"
-            value="true"
-            required
-            className="mt-1 size-4 shrink-0 accent-teal-700"
-          />
-          <span>{copy.smsLabel}</span>
-        </label>
-      ) : null}
+      <label className="flex items-start gap-3 text-sm leading-relaxed text-slate-700">
+        <input
+          type="checkbox"
+          name="smsConsent"
+          value="true"
+          className="mt-1 size-4 shrink-0 accent-teal-700"
+        />
+        <span>{copy.smsLabel}</span>
+      </label>
 
       <Button
         type="submit"

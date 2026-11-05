@@ -6,18 +6,15 @@ import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import type { DaysCopy } from "@/content/14days";
 import { CampaignPixels } from "./campaign-pixels";
-import { PDF_WINDOW_NAME, isMobileChecklistDevice } from "@/lib/14days/device";
 
 export function ThanksOverlay({
   copy,
   pdfPath,
   fireLeadPixel = false,
-  autoOpenPdf = false,
 }: {
   copy: DaysCopy;
   pdfPath: string;
   fireLeadPixel?: boolean;
-  autoOpenPdf?: boolean;
 }) {
   useEffect(() => {
     const previous = document.body.style.overflow;
@@ -29,11 +26,6 @@ export function ThanksOverlay({
       document.body.style.overflow = previous;
     };
   }, []);
-
-  useEffect(() => {
-    if (!autoOpenPdf || !isMobileChecklistDevice()) return;
-    window.open(pdfPath, PDF_WINDOW_NAME);
-  }, [autoOpenPdf, pdfPath]);
 
   return (
     <div

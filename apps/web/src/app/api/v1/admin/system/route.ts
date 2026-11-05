@@ -5,6 +5,7 @@ import { requirePermission } from "@/lib/admin/require-permission";
 import { writeAudit } from "@/lib/admin/audit";
 import { requestIp, requestUserAgent } from "@/lib/admin/request-meta";
 import { retentionYears } from "@/lib/admin/retention";
+import { runRetentionJob } from "@/lib/admin/run-retention";
 
 export async function GET(req: NextRequest) {
   const { response } = await requirePermission(req, "admin.overview", {
@@ -44,6 +45,10 @@ export async function POST(req: NextRequest) {
   if (response) return response;
 
   const body = (await req.json().catch(() => null)) as { action?: unknown } | null;
+  if (body?.action === "run_retention") {
+    const counts = await runRetentionJob({ actorId: user.id, actorRole: role });
+    return jsonOk({ ok: true, counts });
+  }
   if (body?.action !== "revoke_admin_sessions") {
     return jsonErr("Unknown system action", 400);
   }

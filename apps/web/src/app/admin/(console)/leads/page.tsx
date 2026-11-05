@@ -47,7 +47,7 @@ export default function AdminLeadsPage() {
       <AdminPageHeader
         kicker="Campaign"
         title="14-day leads"
-        description="Checklist downloads only. No claim worksheets. Attribution is stored for ads, not enhanced matching."
+        description="Checklist downloads only. No claim worksheets. Attribution is stored for ads, not enhanced matching. OWNER sees full contact details; SUPPORT sees masked emails and phones."
       />
       {error ? <p className="text-sm text-red-700">{error}</p> : null}
       {!leads && !error ? <p className="text-sm text-slate-500">Loading leads…</p> : null}

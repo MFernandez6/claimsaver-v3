@@ -215,7 +215,7 @@ export const daysCopy = {
     privacy: "Privacy Policy",
     thanksTitle: "Your checklist is ready",
     thanksBody:
-      "We emailed the Florida 14-Day PIP Checklist to you. On a phone we also open the PDF in a new window so it is not buried behind this page. You stay the filer — this is a self-help list, not legal advice.",
+      "We emailed the Florida 14-Day PIP Checklist to you. Tap the button below to open the PDF. You stay the filer — this is a self-help list, not legal advice.",
     thanksDownload: "Open the checklist (PDF)",
     thanksHome: "Back to ClaimSaver+",
     cookieTitle: "Cookies on this page",
@@ -299,7 +299,7 @@ export const daysCopy = {
     privacy: "Política de privacidad",
     thanksTitle: "Tu lista está lista",
     thanksBody:
-      "Te enviamos por correo la lista de PIP de 14 días en Florida. En un teléfono también abrimos el PDF en una ventana nueva para que no quede detrás de esta página. Tú sigues siendo quien presenta el reclamo: esto es una lista de autoayuda, no asesoría legal.",
+      "Te enviamos por correo la lista de PIP de 14 días en Florida. Pulsa el botón para abrir el PDF. Tú sigues siendo quien presenta el reclamo: esto es una lista de autoayuda, no asesoría legal.",
     thanksDownload: "Abrir la lista (PDF)",
     thanksHome: "Volver a ClaimSaver+",
     cookieTitle: "Cookies en esta página",
@@ -383,7 +383,7 @@ export const daysCopy = {
     privacy: "Politique de confidentialité",
     thanksTitle: "Votre liste est prête",
     thanksBody:
-      "Nous vous avons envoyé la liste PIP de 14 jours en Floride par e-mail. Sur un téléphone, nous ouvrons aussi le PDF dans une nouvelle fenêtre pour qu'il ne reste pas derrière cette page. Vous restez le déposant -- c'est une liste d'auto-assistance, pas un conseil juridique.",
+      "Nous vous avons envoyé la liste PIP de 14 jours en Floride par e-mail. Appuyez sur le bouton pour ouvrir le PDF. Vous restez le déposant -- c'est une liste d'auto-assistance, pas un conseil juridique.",
     thanksDownload: "Ouvrir la liste (PDF)",
     thanksHome: "Retour à ClaimSaver+",
     cookieTitle: "Cookies sur cette page",

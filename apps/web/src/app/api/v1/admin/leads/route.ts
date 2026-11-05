@@ -3,6 +3,7 @@ import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk } from "@/lib/supabase/auth";
 import { requirePermission } from "@/lib/admin/require-permission";
 import { rateLimit, rateLimitResponse, clientIp } from "@/lib/security/rate-limit";
+import { maskEmail, maskName, maskPhone } from "@/lib/auth/mask";
 
 const LEAD_COLUMNS =
   "id, created_at, first_name, email, phone, locale, utm_source, utm_medium, utm_campaign, gclid, fbclid";
@@ -11,11 +12,12 @@ export async function GET(req: NextRequest) {
   const limited = await rateLimit(`admin-leads:${clientIp(req)}`, 40, 10 * 60 * 1000);
   if (!limited.ok) return rateLimitResponse(limited.retryAfter);
 
-  const { response } = await requirePermission(req, "admin.overview", {
+  const { role, response } = await requirePermission(req, "admin.overview", {
     resourceType: "lead",
     resourceId: "list",
   });
   if (response) return response;
+  const reveal = role === "OWNER";
 
   const { data, error } = await getSupabaseAdmin()
     .from("leads_14days")
@@ -28,9 +30,9 @@ export async function GET(req: NextRequest) {
     leads: (data ?? []).map((row) => ({
       id: row.id,
       createdAt: row.created_at,
-      name: row.first_name,
-      email: row.email,
-      phone: row.phone,
+      name: reveal ? row.first_name : maskName(String(row.first_name || "")),
+      email: reveal ? row.email : maskEmail(String(row.email || "")),
+      phone: row.phone ? (reveal ? row.phone : maskPhone(String(row.phone))) : null,
       locale: row.locale,
       utmSource: row.utm_source,
       utmMedium: row.utm_medium,

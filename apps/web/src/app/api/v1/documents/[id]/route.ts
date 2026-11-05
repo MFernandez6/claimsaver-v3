@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
 
@@ -22,6 +22,9 @@ export async function GET(req: NextRequest, ctx: Ctx) {
     .from("claim-documents")
     .createSignedUrl(String(data.storage_path), 300);
   if (signErr || !signed?.signedUrl) return jsonErr("Could not create download link", 500);
+  if (req.nextUrl.searchParams.get("open") === "1") {
+    return NextResponse.redirect(signed.signedUrl, 302);
+  }
   return jsonOk({ url: signed.signedUrl, name: data.name, mimeType: data.mime_type });
 }
 

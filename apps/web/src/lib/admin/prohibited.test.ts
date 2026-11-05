@@ -64,7 +64,11 @@ test("clinic and impersonation routes never select worksheet JSON", () => {
     join(dirname(fileURLToPath(import.meta.url)), "../../app/api/cron/retention/route.ts"),
     "utf8",
   );
-  for (const source of [clinic, snapshot, pilots, patients, cron]) {
+  const retentionJob = readFileSync(
+    join(dirname(fileURLToPath(import.meta.url)), "run-retention.ts"),
+    "utf8",
+  );
+  for (const source of [clinic, snapshot, pilots, patients, cron, retentionJob]) {
     const code = source
       .replace(/\/\*[\s\S]*?\*\//g, "")
       .replace(/\/\/.*$/gm, "")

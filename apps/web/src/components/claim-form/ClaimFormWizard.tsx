@@ -481,7 +481,7 @@ export function ClaimFormWizard() {
                 <Field label={t("claimForm.fields.authStart")}><Input type="date" value={form.insuranceAuthStartDate} onChange={(e) => set("insuranceAuthStartDate", e.target.value)} /></Field>
                 <Field label={t("claimForm.fields.authEnd")}><Input type="date" value={form.insuranceAuthEndDate} onChange={(e) => set("insuranceAuthEndDate", e.target.value)} /></Field>
               </div>
-              <SignaturePad required label={t("claimForm.fields.signature")} value={form.insuranceAuthSignature} onChange={(v) => set("insuranceAuthSignature", v, true)} />
+              <SignaturePad required label={t("claimForm.fields.signature")} signerName={form.insuranceAuthInsuredName || form.claimantName} value={form.insuranceAuthSignature} onChange={(v) => set("insuranceAuthSignature", v, true)} />
               <Field required label={t("claimForm.fields.signatureDate")}><Input type="date" value={form.insuranceAuthSignatureDate} onChange={(e) => set("insuranceAuthSignatureDate", e.target.value)} /></Field>
             </>
           )}
@@ -501,7 +501,7 @@ export function ClaimFormWizard() {
                 <Field label={t("claimForm.fields.authStart")}><Input type="date" value={form.hipaaStartDate} onChange={(e) => set("hipaaStartDate", e.target.value)} /></Field>
                 <Field label={t("claimForm.fields.authEnd")}><Input type="date" value={form.hipaaEndDate} onChange={(e) => set("hipaaEndDate", e.target.value)} /></Field>
               </div>
-              <SignaturePad required label={t("claimForm.fields.signature")} value={form.hipaaSignature} onChange={(v) => set("hipaaSignature", v, true)} />
+              <SignaturePad required label={t("claimForm.fields.signature")} signerName={form.hipaaPatientName || form.claimantName} value={form.hipaaSignature} onChange={(v) => set("hipaaSignature", v, true)} />
               <Field required label={t("claimForm.fields.signatureDate")}><Input type="date" value={form.hipaaSignatureDate} onChange={(e) => set("hipaaSignatureDate", e.target.value)} /></Field>
             </>
           )}
@@ -512,10 +512,10 @@ export function ClaimFormWizard() {
               <p className="text-sm text-slate-600">{t("claimForm.authPipIntro")}</p>
               <p className="text-xs text-slate-500">{t("claimForm.authDoesNotSend")}</p>
               <Field required label={t("claimForm.fields.patientName")}><Input value={form.pipPatientName} onChange={(e) => set("pipPatientName", e.target.value)} /></Field>
-              <SignaturePad required label={t("claimForm.fields.signature")} value={form.pipPatientSignature} onChange={(v) => set("pipPatientSignature", v, true)} />
+              <SignaturePad required label={t("claimForm.fields.signature")} signerName={form.pipPatientName || form.claimantName} value={form.pipPatientSignature} onChange={(v) => set("pipPatientSignature", v, true)} />
               <Field required label={t("claimForm.fields.signatureDate")}><Input type="date" value={form.pipPatientDate} onChange={(e) => set("pipPatientDate", e.target.value)} /></Field>
               <Field label={t("claimForm.fields.providerName")}><Input value={form.pipProviderName} onChange={(e) => set("pipProviderName", e.target.value)} /></Field>
-              <SignaturePad label={t("claimForm.fields.providerSignature")} value={form.pipProviderSignature} onChange={(v) => set("pipProviderSignature", v, true)} />
+              <SignaturePad label={t("claimForm.fields.providerSignature")} signerName={form.pipProviderName} value={form.pipProviderSignature} onChange={(v) => set("pipProviderSignature", v, true)} />
               <Field label={t("claimForm.fields.providerDate")}><Input type="date" value={form.pipProviderDate} onChange={(e) => set("pipProviderDate", e.target.value)} /></Field>
             </>
           )}
@@ -542,7 +542,7 @@ export function ClaimFormWizard() {
                   <p className="text-sm text-slate-600">{t("claimForm.generatedFromAnswers")}</p>
                   <p className="text-sm text-slate-600">{t("claimForm.reviewIntro")}</p>
                   <p className="text-sm text-slate-600">{t("claimForm.printFullHint")}</p>
-                  <SignaturePad required label={t("claimForm.fields.signature")} hint={t("claimForm.hints.reviewSignature")} value={form.signature} onChange={(v) => set("signature", v, true)} />
+                  <SignaturePad required label={t("claimForm.fields.signature")} signerName={form.claimantName} hint={t("claimForm.hints.reviewSignature")} value={form.signature} onChange={(v) => set("signature", v, true)} />
                   <label className="flex items-start gap-2 text-sm leading-relaxed text-slate-700">
                     <input
                       type="checkbox"

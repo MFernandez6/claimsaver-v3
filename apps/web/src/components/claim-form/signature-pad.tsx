@@ -55,18 +55,25 @@ function drawStored(canvas: HTMLCanvasElement, value: string) {
   image.src = value;
 }
 
+function signatureAlt(signerName?: string, fallback = "Signature") {
+  const name = signerName?.trim();
+  return name ? `Signature of ${name}` : fallback;
+}
+
 export function SignaturePad({
   value,
   onChange,
   required,
   label,
   hint,
+  signerName,
 }: {
   value: string;
   onChange: (value: string) => void;
   required?: boolean;
   label: string;
   hint?: string;
+  signerName?: string;
 }) {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -188,6 +195,7 @@ export function SignaturePad({
         <canvas
           ref={canvasRef}
           aria-labelledby={labelId}
+          aria-label={signatureAlt(signerName, label)}
           className="block h-40 w-full cursor-crosshair touch-none bg-white"
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -214,13 +222,13 @@ export function SignaturePad({
   );
 }
 
-export function SignaturePreview({ value }: { value: string }) {
+export function SignaturePreview({ value, signerName }: { value: string; signerName?: string }) {
   if (isDrawnSignature(value)) {
     return (
       <dd>
         <img
           src={value}
-          alt=""
+          alt={signatureAlt(signerName)}
           className="mt-1 h-16 max-w-xs rounded border border-slate-200 bg-white object-contain"
         />
       </dd>

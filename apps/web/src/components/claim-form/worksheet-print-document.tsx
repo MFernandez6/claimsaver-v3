@@ -23,11 +23,16 @@ function humanizeStored(value: string | undefined, t: (key: string, opts?: { def
   return mapped[trimmed] ?? trimmed;
 }
 
-function SignatureValue({ value }: { value: string }) {
+function signatureAlt(signer?: string) {
+  const name = signer?.trim();
+  return name ? `Signature of ${name}` : "Signature";
+}
+
+function SignatureValue({ value, signer }: { value: string; signer?: string }) {
   if (isDrawnSignature(value)) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={value} alt="" className="mt-1 h-16 max-w-xs border border-slate-200 bg-white object-contain" />
+      <img src={value} alt={signatureAlt(signer)} className="mt-1 h-16 max-w-xs border border-slate-200 bg-white object-contain" />
     );
   }
   return <span className="block whitespace-pre-wrap">{dash(value)}</span>;
@@ -37,10 +42,12 @@ function Row({
   label,
   value,
   signature,
+  signer,
 }: {
   label: string;
   value?: string;
   signature?: string;
+  signer?: string;
 }) {
   const { t } = useTranslation();
   return (
@@ -48,7 +55,7 @@ function Row({
       <dt className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</dt>
       <dd className="text-sm text-slate-900">
         {signature !== undefined ? (
-          <SignatureValue value={signature} />
+          <SignatureValue value={signature} signer={signer} />
         ) : (
           <span className="whitespace-pre-wrap">{dash(humanizeStored(value, t))}</span>
         )}
@@ -171,7 +178,7 @@ export function WorksheetPrintDocument({
         <Row label={t("claimForm.fields.reason")} value={form.insuranceAuthReasonForDisclosure} />
         <Row label={t("claimForm.fields.authStart")} value={form.insuranceAuthStartDate} />
         <Row label={t("claimForm.fields.authEnd")} value={form.insuranceAuthEndDate} />
-        <Row label={t("claimForm.fields.signature")} signature={form.insuranceAuthSignature} />
+        <Row label={t("claimForm.fields.signature")} signature={form.insuranceAuthSignature} signer={form.insuranceAuthInsuredName || form.claimantName} />
         <Row label={t("claimForm.fields.signatureDate")} value={form.insuranceAuthSignatureDate} />
       </Section>
 
@@ -184,21 +191,21 @@ export function WorksheetPrintDocument({
         <Row label={t("claimForm.fields.reason")} value={form.hipaaReasonForDisclosure} />
         <Row label={t("claimForm.fields.authStart")} value={form.hipaaStartDate} />
         <Row label={t("claimForm.fields.authEnd")} value={form.hipaaEndDate} />
-        <Row label={t("claimForm.fields.signature")} signature={form.hipaaSignature} />
+        <Row label={t("claimForm.fields.signature")} signature={form.hipaaSignature} signer={form.hipaaPatientName || form.claimantName} />
         <Row label={t("claimForm.fields.signatureDate")} value={form.hipaaSignatureDate} />
       </Section>
 
       <Section title={t("claimForm.authPipHeading")}>
         <Row label={t("claimForm.fields.patientName")} value={form.pipPatientName} />
-        <Row label={t("claimForm.fields.signature")} signature={form.pipPatientSignature} />
+        <Row label={t("claimForm.fields.signature")} signature={form.pipPatientSignature} signer={form.pipPatientName || form.claimantName} />
         <Row label={t("claimForm.fields.signatureDate")} value={form.pipPatientDate} />
         <Row label={t("claimForm.fields.providerName")} value={form.pipProviderName} />
-        <Row label={t("claimForm.fields.providerSignature")} signature={form.pipProviderSignature} />
+        <Row label={t("claimForm.fields.providerSignature")} signature={form.pipProviderSignature} signer={form.pipProviderName} />
         <Row label={t("claimForm.fields.providerDate")} value={form.pipProviderDate} />
       </Section>
 
       <Section title={t("claimForm.worksheetSteps.review")}>
-        <Row label={t("claimForm.fields.signature")} signature={form.signature} />
+        <Row label={t("claimForm.fields.signature")} signature={form.signature} signer={form.claimantName} />
         <Row label={t("claimForm.fields.signatureDate")} value={form.signatureDate} />
       </Section>
 

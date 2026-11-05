@@ -408,11 +408,10 @@ function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => vo
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   return (
     <div className="mt-6 space-y-4">
-      <Button type="button" variant="outline" onClick={() => { setOpen(true); setError(null); }}>
+      <Button type="button" variant="outline" onClick={() => { setOpen(true); }}>
         {t("dashboard.uploadFile")}
       </Button>
       <DocumentUploadModal
@@ -425,7 +424,6 @@ function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => vo
       />
       <p className="text-xs text-slate-500">{t("dashboard.docsHint")}</p>
       {notice ? <p className="text-sm text-teal-800">{notice}</p> : null}
-      {error ? <p className="text-sm text-red-600">{error}</p> : null}
       {docs.map((d) => (
         <Card key={d.id}>
           <CardContent className="flex items-center justify-between gap-3 pt-6">
@@ -434,28 +432,14 @@ function DocsPanel({ docs, onChange }: { docs: DocumentRow[]; onChange: () => vo
               <p className="text-xs text-slate-500">{d.type} · {(d.sizeBytes / 1024).toFixed(0)} KB</p>
             </div>
             <div className="flex gap-2">
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={async () => {
-                  try {
-                    const { url } = await webApi.get<{ url: string; name?: string }>(
-                      `/api/v1/documents/${d.id}`,
-                    );
-                    if (isIosSafari()) {
-                      window.location.assign(url);
-                      return;
-                    }
-                    const opened = window.open(url, "_blank", "noopener,noreferrer");
-                    if (!opened) {
-                      window.location.assign(url);
-                    }
-                  } catch {
-                    setError(t("dashboard.docOpenFailed"));
-                  }
-                }}
-              >
-                {t("common.open")}
+              <Button asChild size="sm" variant="outline">
+                <a
+                  href={`/api/v1/documents/${d.id}?open=1`}
+                  target={isIosSafari() ? "_self" : "_blank"}
+                  rel="noopener noreferrer"
+                >
+                  {t("common.open")}
+                </a>
               </Button>
               <Button
                 size="sm"

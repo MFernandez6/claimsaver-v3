@@ -29,6 +29,21 @@ export default function AdminSystemPage() {
     void load();
   }, []);
 
+  const runRetention = async () => {
+    if (!window.confirm("Run the 30-day retention job now? Due deletions and stale claims will be processed.")) {
+      return;
+    }
+    setBusy(true);
+    try {
+      await webApi.post("/api/v1/admin/system", { action: "run_retention" });
+      await load();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Retention run failed");
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const revoke = async () => {
     if (!window.confirm("Sign out every OWNER and SUPPORT session now?")) return;
     setBusy(true);
@@ -71,7 +86,7 @@ export default function AdminSystemPage() {
             <CardHeader>
               <CardTitle className="text-base">Retention cron</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm">
+            <CardContent className="space-y-3 text-sm">
               {data.lastCron.length === 0 ? (
                 <p className="text-slate-500">No runs yet.</p>
               ) : (
@@ -84,6 +99,14 @@ export default function AdminSystemPage() {
                   ))}
                 </ul>
               )}
+              <Button
+                type="button"
+                variant="outline"
+                disabled={busy}
+                onClick={() => void runRetention()}
+              >
+                Run retention now
+              </Button>
             </CardContent>
           </Card>
         </div>

@@ -146,7 +146,7 @@ export function FourteenDaysThanks({ locale }: { locale: DaysLocale }) {
 
   return (
     <div lang={copy.htmlLang} className="min-h-[50vh] bg-slate-950">
-      <ThanksOverlay copy={copy} pdfPath={copy.pdfPath} fireLeadPixel autoOpenPdf />
+      <ThanksOverlay copy={copy} pdfPath={copy.pdfPath} fireLeadPixel />
       <CampaignCookieNotice
         title={copy.cookieTitle}
         body={copy.cookieBody}
