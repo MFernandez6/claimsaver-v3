@@ -1,8 +1,10 @@
 import { NextRequest } from "next/server";
+import { TOTAL_WORKSHEET_STEPS } from "@claimsaver/shared";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requireUser } from "@/lib/supabase/auth";
 import { getClinicMembership } from "@/lib/admin/roles";
 import { canOpenEnrollment, isOnTrack } from "@/lib/admin/baa";
+import { siteUrl } from "@/lib/utils";
 
 export async function GET(req: NextRequest) {
   const { user, response } = await requireUser(req);
@@ -15,7 +17,7 @@ export async function GET(req: NextRequest) {
 
   const { data: clinic, error } = await getSupabaseAdmin()
     .from("clinics")
-    .select("id, legal_name, baa_status, is_active, enrollment_code")
+    .select("id, legal_name, dba, address, baa_status, is_active, enrollment_code")
     .eq("id", membership.clinicId)
     .maybeSingle();
   if (error) return jsonErr(error.message, 500);
@@ -43,26 +45,34 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  const patients = (enrollments ?? []).map((row) => {
+    const claim = progress.get(String(row.user_id));
+    const step = claim?.step ?? 0;
+    return {
+      displayName: String(row.display_name || "Patient"),
+      enrolledAt: row.enrolled_at,
+      step,
+      totalSteps: TOTAL_WORKSHEET_STEPS,
+      status: claim?.status ?? "none",
+      lastActivity: claim?.updatedAt ?? null,
+      onTrack: claim ? isOnTrack(claim.updatedAt) : false,
+    };
+  });
+  patients.sort((a, b) => Number(a.onTrack) - Number(b.onTrack) || b.step - a.step);
+
   return jsonOk({
     clinic: {
       id: clinic.id,
-      name: clinic.legal_name,
+      name: String(clinic.dba || clinic.legal_name),
+      legalName: String(clinic.legal_name),
+      address: String(clinic.address || ""),
       role: membership.role,
       enrollmentOpen: canOpenEnrollment({
         baaStatus: String(clinic.baa_status),
         isActive: Boolean(clinic.is_active),
       }),
+      enrollmentUrl: `${siteUrl()}/enroll/${clinic.enrollment_code}`,
     },
-    patients: (enrollments ?? []).map((row) => {
-      const claim = progress.get(String(row.user_id));
-      return {
-        displayName: String(row.display_name || "Patient"),
-        enrolledAt: row.enrolled_at,
-        step: claim?.step ?? 0,
-        status: claim?.status ?? "none",
-        lastActivity: claim?.updatedAt ?? null,
-        onTrack: claim ? isOnTrack(claim.updatedAt) : false,
-      };
-    }),
+    patients,
   });
 }
