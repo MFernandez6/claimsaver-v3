@@ -41,7 +41,7 @@ export default function AdminOverviewPage() {
 
   if (error) {
     return (
-      <div className="mx-auto max-w-lg px-6 py-16">
+      <div className="mx-auto max-w-lg px-4 py-10 sm:px-6 sm:py-16">
         <h1 className="text-2xl font-bold">Admin</h1>
         <p className="mt-3 text-slate-600">{error}</p>
       </div>
@@ -60,7 +60,7 @@ export default function AdminOverviewPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="Software operations"
         title="Overview"

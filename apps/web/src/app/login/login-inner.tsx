@@ -6,10 +6,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import type { Me } from "@claimsaver/shared";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath } from "@/lib/auth/next-path";
+import { resolvePostLoginPath } from "@/lib/auth/signed-in-home";
 import { normalizeEmail } from "@/lib/auth/email";
+import { webApi } from "@/lib/api/client";
 
 export default function LoginInner() {
   const { t } = useTranslation();
@@ -35,8 +38,8 @@ export default function LoginInner() {
       email: normalizeEmail(email),
       password,
     });
-    setLoading(false);
     if (err) {
+      setLoading(false);
       if (err.code === "email_not_confirmed") {
         setError(t("auth.emailNotConfirmed"));
       } else if (err.code === "invalid_credentials" || /invalid login credentials/i.test(err.message)) {
@@ -46,7 +49,14 @@ export default function LoginInner() {
       }
       return;
     }
-    router.push(next);
+    let dest = next;
+    try {
+      const me = await webApi.get<Me>("/api/v1/me");
+      dest = resolvePostLoginPath(next, me.staffRole);
+    } catch {
+      /* Keep the requested path if profile lookup fails. */
+    }
+    router.push(dest);
     router.refresh();
   }
 

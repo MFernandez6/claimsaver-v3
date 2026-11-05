@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { LEGAL_DOCUMENTS_VERSION } from "@claimsaver/shared";
 import { jsonOk, requireUser, getProfile, hasCurrentLegalConsent } from "@/lib/supabase/auth";
 import { nameFromAuthUser } from "@/lib/auth/display-name";
+import { getStaffRole } from "@/lib/admin/roles";
 import { getSupabaseAdmin, isDevPlatformUnlocked } from "@/lib/supabase/admin";
 
 export async function GET(req: NextRequest) {
@@ -21,6 +22,7 @@ export async function GET(req: NextRequest) {
 
   const consent = await hasCurrentLegalConsent(user.id);
   const legalConsentCurrent = consent === true;
+  const staffRole = await getStaffRole(user.id);
 
   return jsonOk({
     id: profile?.id ?? user.id,
@@ -34,5 +36,6 @@ export async function GET(req: NextRequest) {
       isDevPlatformUnlocked(),
     legalConsentCurrent,
     legalVersion: LEGAL_DOCUMENTS_VERSION,
+    staffRole,
   });
 }

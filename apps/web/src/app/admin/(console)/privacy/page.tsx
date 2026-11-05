@@ -66,7 +66,7 @@ export default function AdminPrivacyPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="FIPA / deletion"
         title="Privacy requests"
@@ -81,9 +81,9 @@ export default function AdminPrivacyPage() {
         ) : (
           rows.map((row) => (
             <Card key={row.id}>
-              <CardContent className="flex flex-wrap items-center justify-between gap-4 py-4">
-                <div>
-                  <p className="font-medium">{row.email}</p>
+              <CardContent className="flex flex-col gap-3 py-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+                <div className="min-w-0">
+                  <p className="break-words font-medium">{row.email}</p>
                   <p className="text-sm text-slate-500">
                     {row.status} · {new Date(row.createdAt).toLocaleString()}
                     {row.hardDeleteAfter
@@ -91,7 +91,7 @@ export default function AdminPrivacyPage() {
                       : ""}
                   </p>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
                   <Link
                     href={`/admin/users/${row.userId}`}
                     className="text-sm text-teal-800 hover:underline"
@@ -102,6 +102,7 @@ export default function AdminPrivacyPage() {
                     <Button
                       type="button"
                       size="sm"
+                      className="w-full sm:w-auto"
                       disabled={busy === row.id}
                       onClick={() => void schedule(row.id)}
                     >

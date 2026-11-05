@@ -84,6 +84,7 @@ export const meSchema = z.object({
   isActive: z.boolean().optional(),
   legalConsentCurrent: z.boolean().default(true),
   legalVersion: z.string().optional(),
+  staffRole: z.enum(["OWNER", "SUPPORT"]).nullable().optional(),
 });
 
 export type Me = z.infer<typeof meSchema>;

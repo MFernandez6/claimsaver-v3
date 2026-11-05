@@ -57,7 +57,7 @@ export default function AdminSystemPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="OWNER tools"
         title="System health"
@@ -92,7 +92,7 @@ export default function AdminSystemPage() {
               ) : (
                 <ul className="space-y-2">
                   {data.lastCron.map((row) => (
-                    <li key={row.ran_at}>
+                    <li key={row.ran_at} className="break-words">
                       {row.job} · {new Date(row.ran_at).toLocaleString()} ·{" "}
                       {JSON.stringify(row.counts)}
                     </li>
@@ -102,6 +102,7 @@ export default function AdminSystemPage() {
               <Button
                 type="button"
                 variant="outline"
+                className="w-full sm:w-auto"
                 disabled={busy}
                 onClick={() => void runRetention()}
               >
@@ -115,7 +116,7 @@ export default function AdminSystemPage() {
       )}
       <Button
         type="button"
-        className="mt-8 bg-red-700 hover:bg-red-800"
+        className="mt-8 w-full bg-red-700 hover:bg-red-800 sm:w-auto"
         disabled={busy}
         onClick={() => void revoke()}
       >

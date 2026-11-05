@@ -58,7 +58,7 @@ export default function AdminSupportPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="Inbox"
         title="Support"
@@ -87,7 +87,7 @@ export default function AdminSupportPage() {
         </Button>
       </form>
 
-      <div className="mb-4 flex gap-2">
+      <div className="mb-4 flex flex-wrap gap-2">
         {["open", "waiting", "closed", "all"].map((item) => (
           <Button
             key={item}
@@ -109,7 +109,7 @@ export default function AdminSupportPage() {
           tickets.map((ticket) => (
             <Link key={ticket.id} href={`/admin/support/${ticket.id}`} className="block">
               <Card className="transition hover:border-teal-300">
-                <CardContent className="flex items-center justify-between gap-4 py-4">
+                <CardContent className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                   <div>
                     <p className="font-medium">{ticket.subject}</p>
                     <p className="text-sm text-slate-500">

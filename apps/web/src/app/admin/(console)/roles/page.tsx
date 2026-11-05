@@ -50,14 +50,14 @@ export default function AdminRolesPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="OWNER"
         title="Roles"
         description="Invite SUPPORT (admin console) or add CLINIC_ADMIN from a clinic detail later. OWNER is seeded, not invited."
       />
 
-      <form onSubmit={(e) => void invite(e)} className="mb-8 flex max-w-xl gap-2">
+      <form onSubmit={(e) => void invite(e)} className="mb-8 flex max-w-xl flex-col gap-2 sm:flex-row">
         <Input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -65,7 +65,7 @@ export default function AdminRolesPage() {
           type="email"
           required
         />
-        <Button type="submit" disabled={busy}>
+        <Button type="submit" disabled={busy} className="w-full sm:w-auto">
           Invite SUPPORT
         </Button>
       </form>
@@ -75,7 +75,7 @@ export default function AdminRolesPage() {
       <div className="space-y-3">
         {staff.map((row) => (
           <Card key={row.id}>
-            <CardContent className="flex items-center justify-between py-4 text-sm">
+            <CardContent className="flex flex-col gap-2 py-4 text-sm sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="font-medium">{row.email}</p>
                 <p className="text-slate-500">

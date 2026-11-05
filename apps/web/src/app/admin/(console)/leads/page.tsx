@@ -47,7 +47,7 @@ export default function AdminLeadsPage() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-10">
+    <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="Campaign"
         title="14-day leads"
@@ -62,7 +62,7 @@ export default function AdminLeadsPage() {
         {leads?.map((lead) => (
           <Card key={lead.id}>
             <CardContent className="space-y-1 py-4">
-              <p className="font-medium text-slate-900">
+              <p className="break-words font-medium text-slate-900">
                 {lead.name || "—"} · {lead.email}
               </p>
               <p className="text-sm text-slate-600">

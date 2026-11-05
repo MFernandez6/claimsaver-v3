@@ -29,7 +29,7 @@ export default function AdminPilotsPage() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="Business ops"
         title="Pilot tracker"

@@ -43,21 +43,21 @@ export default function AdminUsersPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="Directory"
         title="Users"
         description={ADMIN.searchHint}
       />
 
-      <form onSubmit={(e) => void search(e)} className="flex max-w-xl gap-2">
+      <form onSubmit={(e) => void search(e)} className="flex max-w-xl flex-col gap-2 sm:flex-row">
         <Input
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Exact email or user ID"
           aria-label="Search by exact email or user ID"
         />
-        <Button type="submit" disabled={busy}>
+        <Button type="submit" disabled={busy} className="w-full sm:w-auto">
           {busy ? "Searching…" : "Search"}
         </Button>
       </form>
@@ -71,9 +71,9 @@ export default function AdminUsersPage() {
             users.map((user) => (
               <Link key={user.id} href={`/admin/users/${user.id}`} className="block">
                 <Card className="transition hover:border-teal-300">
-                  <CardContent className="flex items-center justify-between gap-4 py-4">
-                    <div>
-                      <p className="font-medium text-slate-900">{user.email}</p>
+                  <CardContent className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <div className="min-w-0">
+                      <p className="break-words font-medium text-slate-900">{user.email}</p>
                       <p className="text-sm text-slate-500">
                         {user.name} · {user.phone || "no phone"} ·{" "}
                         {user.isActive ? "active" : "disabled"}

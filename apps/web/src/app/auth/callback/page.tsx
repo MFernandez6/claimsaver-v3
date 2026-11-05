@@ -3,10 +3,13 @@
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { EmailOtpType } from "@supabase/supabase-js";
+import type { Me } from "@claimsaver/shared";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
+import { resolvePostLoginPath } from "@/lib/auth/signed-in-home";
 import { flushPendingLegalConsent } from "@/lib/legal-consent";
+import { webApi } from "@/lib/api/client";
 
 const OTP_TYPES = new Set<EmailOtpType>([
   "signup",
@@ -85,10 +88,18 @@ function AuthCallbackInner() {
       } catch {
         /* Dashboard re-accept collects a record if this insert failed. */
       }
-      const dest =
+      let dest =
         typeParam === "recovery"
           ? "/update-password"
           : withQueryParam(next, "email_confirmed", "1");
+      if (typeParam !== "recovery") {
+        try {
+          const me = await webApi.get<Me>("/api/v1/me");
+          dest = resolvePostLoginPath(dest, me.staffRole);
+        } catch {
+          /* Keep the requested path if profile lookup fails. */
+        }
+      }
       router.replace(dest);
       router.refresh();
     }

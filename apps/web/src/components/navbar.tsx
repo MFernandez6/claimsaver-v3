@@ -9,7 +9,7 @@ import { CHECKOUT_PATH } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import LanguageSwitcher from "@/components/language-switcher";
 import { Button } from "@/components/ui/button";
-import { useSupabaseUser } from "@/components/auth/use-supabase-user";
+import { useSignedInHome } from "@/components/auth/use-signed-in-home";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 import { endSession } from "@/lib/auth/session-security";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,7 @@ const COMPANY = [
 export function Navbar() {
   const { t } = useTranslation();
   const pathname = usePathname();
-  const { user, isLoaded, isSignedIn } = useSupabaseUser();
+  const { user, isLoaded, isSignedIn, home, staffReady } = useSignedInHome();
   const [open, setOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
   const companyRef = useRef<HTMLDivElement>(null);
@@ -119,9 +119,13 @@ export function Navbar() {
           <LanguageSwitcher />
           {isLoaded && isSignedIn ? (
             <div className="hidden items-center gap-2 sm:flex">
-              <Button size="sm" asChild className="bg-gradient-to-r from-teal-600 to-teal-800">
-                <Link href="/dashboard">{t("navigation.dashboard")}</Link>
-              </Button>
+              {staffReady ? (
+                <Button size="sm" asChild className="bg-gradient-to-r from-teal-600 to-teal-800">
+                  <Link href={home.href}>{t(home.labelKey)}</Link>
+                </Button>
+              ) : (
+                <span className="inline-block h-8 w-28" aria-hidden />
+              )}
               <Button size="sm" variant="outline" onClick={() => void signOut()}>
                 {t("navigation.signOut")}
               </Button>
@@ -173,8 +177,8 @@ export function Navbar() {
             ))}
             {user ? (
               <>
-                <Link href="/dashboard" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium">
-                  {t("navigation.dashboard")}
+                <Link href={home.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium">
+                  {t(home.labelKey)}
                 </Link>
                 <button type="button" className="rounded-lg px-3 py-3 text-left text-sm text-red-600" onClick={() => void signOut()}>
                   {t("navigation.signOut")}

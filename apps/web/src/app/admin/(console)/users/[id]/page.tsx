@@ -67,7 +67,7 @@ export default function AdminUserDetailPage() {
 
   if (error) {
     return (
-      <div className="mx-auto max-w-lg px-6 py-16">
+      <div className="mx-auto max-w-lg px-4 py-10 sm:px-6 sm:py-16">
         <p className="text-slate-600">{error}</p>
       </div>
     );
@@ -127,7 +127,7 @@ export default function AdminUserDetailPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <p className="mb-4 text-sm">
         <Link href="/admin/users" className="text-teal-800 hover:underline">
           ← Users
@@ -278,7 +278,7 @@ export default function AdminUserDetailPage() {
               ))}
             </ul>
           )}
-          <div className="flex max-w-xl gap-2">
+          <div className="flex max-w-xl flex-col gap-2 sm:flex-row">
             <input
               className="h-9 min-w-0 flex-1 rounded-md border border-slate-200 px-3 text-sm"
               value={ticketSubject}

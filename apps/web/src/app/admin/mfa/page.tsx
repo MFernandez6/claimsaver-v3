@@ -5,7 +5,7 @@ import { AdminMfaForm } from "@/components/admin/mfa-form";
 
 export default function AdminMfaPage() {
   return (
-    <div className="flex h-full items-center justify-center bg-slate-950 p-6">
+    <div className="flex h-full items-center justify-center bg-slate-950 px-4 py-8 pt-[max(2rem,env(safe-area-inset-top))]">
       <Card className="w-full max-w-md bg-white">
         <CardHeader>
           <BrandLogo className="mb-4" />

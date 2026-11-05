@@ -9,14 +9,14 @@ import FAQ from "@/components/faq";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import { HomeHeroVisual } from "@/components/home-hero-visual";
 import { HeroLogoLockup } from "@/components/hero-logo-lockup";
-import { useSupabaseUser } from "@/components/auth/use-supabase-user";
+import { useSignedInHome } from "@/components/auth/use-signed-in-home";
 import { PitchNarrative } from "@/components/pitch-narrative";
 import { LocalizedSocialImage } from "@/components/graphics/localized-social-image";
 import { PricingCompare } from "@/components/pricing-compare";
 
 export function HomePage() {
   const { t } = useTranslation();
-  const { user, isLoaded } = useSupabaseUser();
+  const { user, isLoaded, home, staffReady } = useSignedInHome();
 
   const faqItems = [
     { question: t("home.faq.legal.question"), answer: t("home.faq.legal.answer") },
@@ -63,11 +63,15 @@ export function HomePage() {
               </p>
               <div className="mb-3 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
                 {isLoaded && user ? (
-                  <Button size="lg" asChild className="h-12 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-800 px-7 text-base font-semibold">
-                    <Link href="/dashboard" className="inline-flex items-center gap-2 whitespace-nowrap">
-                      {t("navigation.dashboard")} <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
+                  staffReady ? (
+                    <Button size="lg" asChild className="h-12 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-800 px-7 text-base font-semibold">
+                      <Link href={home.href} className="inline-flex items-center gap-2 whitespace-nowrap">
+                        {t(home.labelKey)} <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  ) : (
+                    <span className="inline-block h-12 w-48" aria-hidden />
+                  )
                 ) : (
                   <>
                     <Button size="lg" asChild className="h-12 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-800 px-7 text-base font-semibold">

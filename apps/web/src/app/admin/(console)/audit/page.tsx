@@ -28,7 +28,7 @@ export default function AdminAuditPage() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader
         kicker="OWNER"
         title="Audit log"
@@ -40,7 +40,7 @@ export default function AdminAuditPage() {
           <Card key={event.id}>
             <CardContent className="py-3 text-sm">
               <p className="font-medium text-slate-900">{event.action}</p>
-              <p className="text-slate-500">
+              <p className="break-words text-slate-500">
                 {event.actorEmail} ({event.actorRole ?? "—"}) · {event.resourceType}{" "}
                 {event.resourceId ? `· ${event.resourceId.slice(0, 8)}…` : ""} ·{" "}
                 {new Date(event.createdAt).toLocaleString()}

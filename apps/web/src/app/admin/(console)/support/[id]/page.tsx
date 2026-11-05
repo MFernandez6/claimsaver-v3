@@ -74,7 +74,7 @@ export default function AdminTicketDetailPage() {
   if (!data) return <p className="p-8 text-slate-500">Loading ticket…</p>;
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-10">
+    <div className="mx-auto max-w-3xl px-4 py-5 sm:px-6 sm:py-8">
       <p className="mb-4 text-sm">
         <Link href="/admin/support" className="text-teal-800 hover:underline">
           ← Support
@@ -129,16 +129,17 @@ export default function AdminTicketDetailPage() {
           rows={8}
           placeholder="Account, billing, or technical reply only"
         />
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
           <Button
             type="button"
             variant="outline"
+            className="w-full sm:w-auto"
             onClick={() => setBody(ADMIN.claimQuestionMacro)}
           >
             Insert “Claim question” macro
           </Button>
           <select
-            className="rounded-md border border-slate-200 bg-white px-2 py-2 text-sm"
+            className="w-full rounded-md border border-slate-200 bg-white px-2 py-2 text-sm sm:w-auto"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           >
@@ -146,7 +147,7 @@ export default function AdminTicketDetailPage() {
             <option value="waiting">waiting</option>
             <option value="closed">closed</option>
           </select>
-          <Button type="submit" disabled={busy}>
+          <Button type="submit" disabled={busy} className="w-full sm:w-auto">
             {busy ? "Saving…" : "Save reply"}
           </Button>
         </div>

@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import FAQ from "@/components/faq";
-import { useSupabaseUser } from "@/components/auth/use-supabase-user";
+import { useSignedInHome } from "@/components/auth/use-signed-in-home";
 import { pricingCheckoutPath } from "@/lib/auth/next-path";
 import { formatUsd } from "@/lib/utils";
 import { webApi } from "@/lib/api/client";
@@ -28,7 +28,7 @@ export default function PricingPage() {
 
 function PricingInner() {
   const { t } = useTranslation();
-  const { isSignedIn, isLoaded } = useSupabaseUser();
+  const { isSignedIn, isLoaded, isStaff, staffReady, home } = useSignedInHome();
   const router = useRouter();
   const params = useSearchParams();
   const autoCheckout =
@@ -46,6 +46,10 @@ function PricingInner() {
   async function startCheckout() {
     setError(null);
     if (!isLoaded) return;
+    if (isStaff) {
+      router.push(home.href);
+      return;
+    }
     if (!isSignedIn) {
       const afterAccount = SKIP_PAYMENTS_FOR_PROMO
         ? "/dashboard"
@@ -84,24 +88,30 @@ function PricingInner() {
   }
 
   useEffect(() => {
-    if (!autoCheckout || !isLoaded || !isSignedIn || started.current) return;
+    if (!autoCheckout || !isLoaded || !isSignedIn || !staffReady || started.current) return;
+    if (isStaff) {
+      router.replace(home.href);
+      return;
+    }
     started.current = true;
     void startCheckout();
     // Intentional: run once when signed-in checkout resume is requested.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [autoCheckout, isLoaded, isSignedIn]);
+  }, [autoCheckout, isLoaded, isSignedIn, staffReady, isStaff]);
 
-  const ctaLabel = SKIP_PAYMENTS_FOR_PROMO
-    ? !isSignedIn
-      ? t("pricing.ui.continueWithAccount")
-      : t("navigation.dashboard")
-    : !isLoaded
-      ? t("pricing.ui.proceedToPayment")
-      : !isSignedIn
+  const ctaLabel = isStaff
+    ? t(home.labelKey)
+    : SKIP_PAYMENTS_FOR_PROMO
+      ? !isSignedIn
         ? t("pricing.ui.continueWithAccount")
-        : loading
-          ? t("pricing.redirecting")
-          : t("pricing.ui.proceedToPayment");
+        : t("navigation.dashboard")
+      : !isLoaded
+        ? t("pricing.ui.proceedToPayment")
+        : !isSignedIn
+          ? t("pricing.ui.continueWithAccount")
+          : loading
+            ? t("pricing.redirecting")
+            : t("pricing.ui.proceedToPayment");
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950">
@@ -156,12 +166,20 @@ function PricingInner() {
                 <span className="text-xl font-bold">{formatUsd(total)}</span>
               </div>
               {error ? <p className="text-sm text-red-600">{error}</p> : null}
-              <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
-              <Button disabled={loading || total === 0 || !ageTerms} onClick={() => void startCheckout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
-                {ctaLabel}
-              </Button>
-              {SKIP_PAYMENTS_FOR_PROMO ? null : (
-                <p className="text-center text-xs text-slate-500">{t("pricing.ui.securePaymentStripe")}</p>
+              {isStaff ? (
+                <Button asChild className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
+                  <Link href={home.href}>{t(home.labelKey)}</Link>
+                </Button>
+              ) : (
+                <>
+                  <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
+                  <Button disabled={loading || total === 0 || !ageTerms} onClick={() => void startCheckout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
+                    {ctaLabel}
+                  </Button>
+                  {SKIP_PAYMENTS_FOR_PROMO ? null : (
+                    <p className="text-center text-xs text-slate-500">{t("pricing.ui.securePaymentStripe")}</p>
+                  )}
+                </>
               )}
               <p className="text-center text-xs text-slate-500">{t("pricing.ui.supportEmailLine")}</p>
             </CardContent>

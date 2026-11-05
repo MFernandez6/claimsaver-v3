@@ -108,7 +108,7 @@ export default function AdminClinicDetailPage() {
   if (!data) return <p className="p-8 text-slate-500">Loading clinic…</p>;
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <p className="mb-4 text-sm">
         <Link href="/admin/clinics" className="text-teal-800 hover:underline">
           ← Clinics
@@ -153,12 +153,12 @@ export default function AdminClinicDetailPage() {
             <p>Enrollment: {data.enrollmentOpen ? "open" : "closed"}</p>
             <p className="break-all text-xs text-slate-500">{data.enrollmentUrl}</p>
             {error ? <p className="text-red-700">{error}</p> : null}
-            <Button type="submit" disabled={busy}>
+            <Button type="submit" disabled={busy} className="w-full sm:w-auto">
               Save
             </Button>
             <div className="border-t pt-3">
               <p className="mb-2 font-medium">Invite CLINIC_ADMIN</p>
-              <div className="flex gap-2">
+              <div className="flex flex-col gap-2 sm:flex-row">
                 <Input
                   type="email"
                   placeholder="clinic-admin@example.com"
@@ -168,6 +168,7 @@ export default function AdminClinicDetailPage() {
                 <Button
                   type="button"
                   variant="outline"
+                  className="w-full sm:w-auto"
                   disabled={busy || !adminEmail}
                   onClick={() => void inviteAdmin()}
                 >

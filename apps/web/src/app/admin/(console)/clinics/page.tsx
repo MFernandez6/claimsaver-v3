@@ -50,16 +50,16 @@ export default function AdminClinicsPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-8">
       <AdminPageHeader kicker="BAA gate" title="Clinics" description={ADMIN.clinicsNote} />
-      <form onSubmit={(e) => void create(e)} className="mb-8 flex max-w-xl gap-2">
+      <form onSubmit={(e) => void create(e)} className="mb-8 flex max-w-xl flex-col gap-2 sm:flex-row">
         <Input
           value={legalName}
           onChange={(e) => setLegalName(e.target.value)}
           placeholder="Legal name"
           required
         />
-        <Button type="submit" disabled={busy}>
+        <Button type="submit" disabled={busy} className="w-full sm:w-auto">
           Add clinic
         </Button>
       </form>
@@ -68,7 +68,7 @@ export default function AdminClinicsPage() {
         {clinics.map((clinic) => (
           <Link key={clinic.id} href={`/admin/clinics/${clinic.id}`} className="block">
             <Card className="transition hover:border-teal-300">
-              <CardContent className="flex items-center justify-between py-4">
+              <CardContent className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="font-medium">{clinic.legal_name}</p>
                   <p className="text-sm text-slate-500">

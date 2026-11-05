@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 import { CHECKOUT_PATH, PRINCIPAL_ADDRESS_LINE } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import { ObfuscatedSupportEmail } from "@/components/obfuscated-support-email";
-import { useSupabaseUser } from "@/components/auth/use-supabase-user";
+import { useSignedInHome } from "@/components/auth/use-signed-in-home";
 
 export default function Footer() {
   const { t } = useTranslation();
-  const { isSignedIn } = useSupabaseUser();
+  const { isSignedIn, home } = useSignedInHome();
 
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 text-white print:hidden">
@@ -37,7 +37,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-white/80">
               <li>
                 {isSignedIn ? (
-                  <Link href="/dashboard" className="hover:text-white">{t("navigation.dashboard")}</Link>
+                  <Link href={home.href} className="hover:text-white">{t(home.labelKey)}</Link>
                 ) : (
                   <Link href={CHECKOUT_PATH} className="hover:text-white">{t("cta.primary")}</Link>
                 )}
