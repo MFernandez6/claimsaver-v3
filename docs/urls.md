@@ -2,6 +2,8 @@
 
 Host: `https://www.claimsaverplus.com`
 
+Printable copy: [ClaimSaver-Plus-url-endings.pdf](./ClaimSaver-Plus-url-endings.pdf)
+
 ## Hand these out
 
 | Path | Who | What |
