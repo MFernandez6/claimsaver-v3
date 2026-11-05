@@ -27,7 +27,7 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
   const copy = readFileSync(join(dir, "pricing.ts"), "utf8");
   assert.match(copy, /PATIENT_PRICE_USD/);
   assert.match(copy, /CLINIC_PRICE_USD_MONTHLY/);
-  assert.match(copy, /CLINIC_TIER_PUBLIC = process\.env\.NEXT_PUBLIC_CLINIC_TIER_PUBLIC === "true"/);
+  assert.match(copy, /CLINIC_TIER_PUBLIC = process\.env\.NEXT_PUBLIC_CLINIC_TIER_PUBLIC !== "false"/);
   assert.match(copy, /pricingPilot/);
   assert.match(copy, /pricingPublic/);
   for (const lang of ["en", "es", "fr"] as const) {

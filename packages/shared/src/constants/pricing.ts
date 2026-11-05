@@ -12,7 +12,7 @@ export type CheckoutProductCode = (typeof CHECKOUT_PRODUCT_CODES)[number];
 
 /** Patient platform fee in dollars. Render from this constant — never a stray dollar literal. */
 export const PATIENT_PRICE_USD = 499;
-/** Clinic dashboard list price. Do not show publicly unless CLINIC_TIER_PUBLIC is true. */
+/** Clinic dashboard list price. Shown on public pages unless CLINIC_TIER_PUBLIC is false. */
 export const CLINIC_PRICE_USD_MONTHLY = 299;
 
 /** Standard list price charged at checkout. */

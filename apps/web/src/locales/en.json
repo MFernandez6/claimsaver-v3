@@ -1483,7 +1483,7 @@
   },
   "legal": {
     "reacceptTitle": "Updated Terms and Privacy Policy",
-    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.11.05). Accept the updated terms to see your claim. Check the box below to continue. We store a timestamped record of this agreement with your account.",
+    "reacceptBody": "We updated our Terms of Service and Privacy Policy (version 26.11.05.2). Accept the updated terms to see your claim. Check the box below to continue. We store a timestamped record of this agreement with your account.",
     "reacceptCta": "I agree — continue",
     "consentFailed": "We could not save your agreement. Check your connection and try again.",
     "requestDeletion": "Request account deletion",
@@ -1495,7 +1495,7 @@
     "termsTitle": "Terms of Service",
     "terms": {
       "title": "Terms of Service",
-      "updated": "Effective November 5, 2026. Version 26.11.05.",
+      "updated": "Effective November 5, 2026. Version 26.11.05.2.",
       "intro": "These Terms of Service (“Terms”) are a contract between you and CLAIMSAVERPLUS LLC, a Florida limited liability company doing business as ClaimSaver+ (“ClaimSaver+,” “we,” “us”), which operates claimsaverplus.com. You accept these Terms by checking “I agree” at account creation or checkout. We store a timestamped record of that clickwrap (account, document, version, time, IP, and user agent). Browsing public pages alone is not acceptance. If you do not agree, do not create an account or pay. These Terms are a product contract, not legal advice. The English text controls.",
       "s1Title": "1. What ClaimSaver+ is",
       "s1Body": "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. We sell access to software that helps Florida drivers prepare, organize, and store their own motor-vehicle no-fault (PIP) claim materials. We are not a law firm, not your attorney, not a public adjuster, not your representative to an insurance company, and not a claims handler. You remain the filer. The product is ministerial: intake, form population from answers you enter, document storage, and calendar date math. We do not evaluate the legal merits of your claim, estimate settlement or claim value, predict outcomes, recommend strategy (including what to argue if an insurer denies), negotiate with insurers, speak to an adjuster on your behalf, or submit your package to a carrier.",
@@ -1504,7 +1504,7 @@
       "s3Title": "3. Your account and your information",
       "s3Body": "You are responsible for the accuracy of information you enter, for keeping your login credentials secure, and for activity on your account. Saving to your ClaimSaver+ account stores a draft for you. It does not send anything to an insurer. The insurer’s official form, your policy, and Florida law as applied to your facts control. We do not guarantee that any worksheet, reminder, or checklist is complete, current, or sufficient for your situation.",
       "s4Title": "4. Fees, access, and future add-ons",
-      "s4Body": "The standard platform fee is a one-time $499 charge for software access (guided forms, storage, tracking, reminders, and educational content). It is not a contingency fee, not a retainer for representation, and not a subscription. Access begins when payment succeeds. That $499 fee is the only product we sell today. We may offer optional add-ons later; if we do, they will have their own price, terms, and checkout line item and will not be bundled into the $499 fee without a separate purchase. Payment cards are processed by Stripe. We do not store full card numbers.",
+      "s4Body": "The standard platform fee is a one-time {{price}} charge for software access (guided forms, storage, tracking, reminders, and educational content). It is not a contingency fee, not a retainer for representation, and not a patient subscription. Access begins when payment succeeds. A separate clinic dashboard subscription is {{clinicPrice}} per month per clinic, flat, for software that clinic staff use themselves. It is not payment for patient access, is not tied to how many patients a clinic refers, and clinics do not receive any part of a patient's {{price}} fee. We may offer optional add-ons later; if we do, they will have their own price, terms, and checkout line item and will not be bundled into the {{price}} fee or the clinic dashboard fee without a separate purchase. Payment cards are processed by Stripe. We do not store full card numbers.",
       "s5Title": "5. Refunds and cancellation",
       "s5Body": "You may stop using the software at any time. Because digital access is delivered when payment succeeds, refunds are not automatic and we do not prorate the $499 fee. We will consider a written refund request sent to {{supportEmail}} within 14 days of purchase if you have not begun the guided worksheet and have not uploaded documents. We do not refund because a reminder did not appear, because you missed a treatment or filing window, or because an insurer delayed, reduced, or denied benefits. Nothing in this section limits refund or cancellation rights that Florida or other applicable law does not allow us to waive.",
       "s6Title": "6. Reminders are education, not legal deadlines",
@@ -1540,7 +1540,7 @@
     },
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Effective November 5, 2026. Version 26.11.05.",
+      "updated": "Effective November 5, 2026. Version 26.11.05.2.",
       "intro": "This Privacy Policy explains how CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collects, uses, and shares information when you use claimsaverplus.com and related apps. It applies to the software product. It is not legal advice. The English text controls.",
       "s1Title": "1. Who we are",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ provides self-help software for Florida PIP document preparation. We are not your health care provider, health plan, law firm, public adjuster, or BLACKLINE. We do not use your claim file to negotiate with insurers or to represent you. Contact: {{supportEmail}}. Principal office: {{businessAddress}}.",
