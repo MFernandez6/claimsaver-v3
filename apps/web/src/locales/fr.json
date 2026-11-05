@@ -1474,7 +1474,7 @@
   },
   "legal": {
     "reacceptTitle": "Conditions et Politique de confidentialité mises à jour",
-    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.11.05.2). Acceptez les conditions mises à jour pour voir votre dossier. Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
+    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.11.05.3). Acceptez les conditions mises à jour pour voir votre dossier. Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
     "reacceptCta": "J’accepte — continuer",
     "consentFailed": "Nous n’avons pas pu enregistrer votre accord. Vérifiez la connexion et réessayez.",
     "requestDeletion": "Demander la suppression du compte",
@@ -1486,7 +1486,7 @@
     "termsTitle": "Conditions d’utilisation",
     "terms": {
       "title": "Conditions d’utilisation",
-      "updated": "En vigueur à compter du 5 novembre 2026. Version 26.11.05.2.",
+      "updated": "En vigueur à compter du 5 novembre 2026. Version 26.11.05.3.",
       "intro": "Les présentes Conditions d’utilisation (« Conditions ») constituent un contrat entre vous et CLAIMSAVERPLUS LLC, une société à responsabilité limitée de Floride exerçant sous le nom ClaimSaver+ (« ClaimSaver+ », « nous »), qui exploite claimsaverplus.com. Vous acceptez ces Conditions en cochant « J’accepte » à la création du compte ou au paiement. Nous conservons un enregistrement horodaté de ce clickwrap (compte, document, version, heure, IP et agent utilisateur). Consulter les pages publiques n’est pas une acceptation. Si vous n’êtes pas d’accord, ne créez pas de compte et ne payez pas. Ces Conditions sont un contrat produit, pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Ce qu’est ClaimSaver+",
       "s1Body": "ClaimSaver+ est un outil d’auto-assistance pour préparer des documents. Il ne fournit pas de conseil juridique et ne crée pas de relation avocat-client. Nous vendons l’accès à un logiciel qui aide les conducteurs de Floride à préparer, organiser et stocker leurs propres documents de dossier no-fault (PIP) automobile. Nous ne sommes pas un cabinet d’avocats, pas votre avocat, pas un expert public, pas votre représentant auprès d’un assureur et pas un gestionnaire de sinistres. Vous restez le déposant. Le produit est ministériel : saisie, remplissage de formulaires à partir de vos réponses, stockage et calcul de dates. Nous n’évaluons pas le bien-fondé juridique de votre dossier, n’estimons pas de valeur de règlement, ne prédisons pas de résultats, ne recommandons pas de stratégie (y compris quoi argumenter si l’assureur refuse), ne négocions pas avec les assureurs, ne parlons pas à un expert en votre nom et n’envoyons pas votre dossier à un transporteur.",
@@ -1495,7 +1495,7 @@
       "s3Title": "3. Votre compte et vos informations",
       "s3Body": "Vous êtes responsable de l’exactitude des informations que vous saisissez, de la sécurité de vos identifiants et de l’activité sur votre compte. Enregistrer dans votre compte ClaimSaver+ stocke un brouillon. Cela n’envoie rien à un assureur. Le formulaire officiel de l’assureur, votre police et le droit de Floride appliqué à vos faits font foi. Nous ne garantissons pas qu’une feuille de travail, un rappel ou une liste de contrôle soit complet, à jour ou suffisant pour votre situation.",
       "s4Title": "4. Tarifs, accès et modules futurs",
-      "s4Body": "Le tarif standard de la plateforme est un paiement unique de {{price}} pour l’accès logiciel (formulaires guidés, stockage, suivi, rappels et contenu éducatif). Ce n’est pas un honoraire de contingence, pas une provision pour représentation et pas un abonnement patient. L’accès commence lorsque le paiement aboutit. Un abonnement distinct au tableau de bord clinique est de {{clinicPrice}} par mois par clinique, forfait, pour un logiciel que le personnel de la clinique utilise lui-même. Ce n’est pas un paiement pour l’accès patient, sans lien avec le nombre de patients recommandés, et les cliniques ne reçoivent aucune part des {{price}} du patient. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils auront leur propre prix, conditions et ligne de paiement, et ne seront pas regroupés dans les {{price}} ni dans le tarif du tableau de bord sans un achat distinct. Les cartes sont traitées par Stripe. Nous ne stockons pas les numéros complets de carte.",
+      "s4Body": "Le tarif standard de la plateforme est un paiement unique de {{price}} pour l’accès logiciel (formulaires guidés, stockage, suivi, rappels et contenu éducatif). Ce n’est pas un honoraire de contingence, pas une provision pour représentation et pas un abonnement patient. L’accès commence lorsque le paiement aboutit. Un abonnement distinct au tableau de bord clinique peut être proposé aux cliniques pour un logiciel que le personnel utilise lui-même. Ce tarif est communiqué à la clinique, n’est pas un frais patient, sans lien avec le nombre de patients recommandés, et les cliniques ne reçoivent aucune part des {{price}} du patient. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils auront leur propre prix, conditions et ligne de paiement, et ne seront pas regroupés dans les {{price}} ni dans le tarif du tableau de bord sans un achat distinct. Les cartes sont traitées par Stripe. Nous ne stockons pas les numéros complets de carte.",
       "s5Title": "5. Remboursements et résiliation",
       "s5Body": "Vous pouvez cesser d’utiliser le logiciel à tout moment. L’accès numérique étant livré lorsque le paiement aboutit, les remboursements ne sont pas automatiques et nous ne proratons pas les 499 $. Nous examinerons une demande écrite envoyée à {{supportEmail}} dans les 14 jours suivant l’achat si vous n’avez pas commencé la feuille guidée et n’avez pas téléversé de documents. Nous ne remboursons pas parce qu’un rappel n’est pas apparu, parce que vous avez manqué une fenêtre de traitement ou de dépôt, ou parce qu’un assureur a retardé, réduit ou refusé des prestations. Rien dans cette section ne limite les droits de remboursement ou d’annulation que le droit de Floride ou une autre loi applicable ne nous permet pas de renoncer.",
       "s6Title": "6. Les rappels sont de l’éducation, pas des délais juridiques",
@@ -1531,7 +1531,7 @@
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "updated": "En vigueur à compter du 5 novembre 2026. Version 26.11.05.2.",
+      "updated": "En vigueur à compter du 5 novembre 2026. Version 26.11.05.3.",
       "intro": "Cette Politique de confidentialité explique comment CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collecte, utilise et partage des informations lorsque vous utilisez claimsaverplus.com et les applications liées. Elle s’applique au produit logiciel. Ce n’est pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Qui nous sommes",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Bureau principal : {{businessAddress}}.",
@@ -1736,11 +1736,11 @@
     "clinic": {
       "visibility": "Votre clinique voit si le patient a commencé et à quelle étape de la fiche il se trouve — jamais ses réponses, documents ou informations médicales.",
       "noReferralFees": "ClaimSaver+ ne rémunère pas les cliniques pour les recommandations, et les cliniques ne reçoivent aucune part des frais du patient.",
-      "pricingPilot": "Les cliniques fondatrices utilisent le tableau de bord clinique sans frais pendant le pilote. Le tarif du tableau de bord sera communiqué avant la fin du pilote.",
+      "pricingPilot": "Le tarif du tableau de bord clinique peut se discuter pendant la démo de 15 minutes. C’est un logiciel pour votre personnel — sans lien avec le nombre de patients recommandés.",
       "pricingPublic": "Tableau de bord clinique : {{clinicPrice}}/mois par clinique, forfait. Un logiciel pour votre personnel — sans lien avec le nombre de patients recommandés. Les patients paient leurs propres {{price}} séparément.",
       "valueProp": "Aidez vos patients PIP à obtenir des soins initiaux dans le délai de 14 jours, à terminer leurs formulaires et à se présenter aux EUO et IME — avec une vue de progression pour votre accueil.",
       "sectionTitle": "Pour les cliniques",
-      "demoLink": "Voir la démo cliniques"
+      "demoLink": "Réserver une démo de 15 minutes"
     },
     "disclaimer": {
       "selfHelp": "ClaimSaver+ est un logiciel d'auto-assistance. Ce n'est pas un cabinet d'avocats, un assureur ou un expert public ; il ne fournit pas de conseil juridique et ne vous représente pas. Vous restez le déclarant."

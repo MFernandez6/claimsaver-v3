@@ -27,7 +27,7 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
   const copy = readFileSync(join(dir, "pricing.ts"), "utf8");
   assert.match(copy, /PATIENT_PRICE_USD/);
   assert.match(copy, /CLINIC_PRICE_USD_MONTHLY/);
-  assert.match(copy, /CLINIC_TIER_PUBLIC = process\.env\.NEXT_PUBLIC_CLINIC_TIER_PUBLIC !== "false"/);
+  assert.match(copy, /CLINIC_TIER_PUBLIC = process\.env\.NEXT_PUBLIC_CLINIC_TIER_PUBLIC === "true"/);
   assert.match(copy, /pricingPilot/);
   assert.match(copy, /pricingPublic/);
   for (const lang of ["en", "es", "fr"] as const) {
@@ -36,11 +36,16 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
     assert.match(pack.copy.patientPrice.sameForReferrals, /\{\{price\}\}/);
     assert.ok(pack.copy.clinic.visibility.length > 20);
     assert.ok(pack.copy.clinic.noReferralFees.length > 20);
-    assert.ok(pack.copy.clinic.pricingPilot.length > 20);
+    assert.match(pack.copy.clinic.pricingPilot, /15/);
+    assert.doesNotMatch(pack.copy.clinic.pricingPilot, /\{\{clinicPrice\}\}|299/);
     assert.match(pack.copy.clinic.pricingPublic, /\{\{clinicPrice\}\}/);
     assert.ok(pack.copy.clinic.valueProp.length > 20);
     assert.ok(pack.copy.disclaimer.selfHelp.length > 20);
     assert.doesNotMatch(JSON.stringify(pack.copy), /\$199|199 \$/);
+    const terms = JSON.parse(readFileSync(join(webRoot, `locales/${lang}.json`), "utf8")) as {
+      legalPages: { terms: { s4Body: string } };
+    };
+    assert.doesNotMatch(terms.legalPages.terms.s4Body, /\{\{clinicPrice\}\}|299/);
   }
 });
 

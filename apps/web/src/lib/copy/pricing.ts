@@ -2,8 +2,8 @@ import { CLINIC_PRICE_USD_MONTHLY, PATIENT_PRICE_USD } from "@claimsaver/shared"
 
 export { CLINIC_PRICE_USD_MONTHLY, PATIENT_PRICE_USD };
 
-/** Counsel approved listing the clinic dashboard price. Set NEXT_PUBLIC_CLINIC_TIER_PUBLIC=false to hide it. */
-export const CLINIC_TIER_PUBLIC = process.env.NEXT_PUBLIC_CLINIC_TIER_PUBLIC !== "false";
+/** Clinic list price stays off public pages so patients are not shown a cheaper clinic fee. Set true to list it. */
+export const CLINIC_TIER_PUBLIC = process.env.NEXT_PUBLIC_CLINIC_TIER_PUBLIC === "true";
 
 export function formatPatientPrice(locale?: string): string {
   return localeStartsWithFr(locale) ? `${PATIENT_PRICE_USD} $` : `$${PATIENT_PRICE_USD}`;

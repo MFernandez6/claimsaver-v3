@@ -1474,7 +1474,7 @@
   },
   "legal": {
     "reacceptTitle": "Términos y Política de privacidad actualizados",
-    "reacceptBody": "Actualizamos los Términos de servicio y la Política de privacidad (versión 26.11.05.2). Acepte los términos actualizados para ver su reclamo. Marque la casilla para continuar. Guardamos un registro con fecha y hora de este acuerdo con su cuenta.",
+    "reacceptBody": "Actualizamos los Términos de servicio y la Política de privacidad (versión 26.11.05.3). Acepte los términos actualizados para ver su reclamo. Marque la casilla para continuar. Guardamos un registro con fecha y hora de este acuerdo con su cuenta.",
     "reacceptCta": "Acepto — continuar",
     "consentFailed": "No pudimos guardar su aceptación. Compruebe la conexión e inténtelo de nuevo.",
     "requestDeletion": "Solicitar eliminación de la cuenta",
@@ -1486,7 +1486,7 @@
     "termsTitle": "Términos de servicio",
     "terms": {
       "title": "Términos de servicio",
-      "updated": "Vigentes desde el 5 de noviembre de 2026. Versión 26.11.05.2.",
+      "updated": "Vigentes desde el 5 de noviembre de 2026. Versión 26.11.05.3.",
       "intro": "Estos Términos de servicio (“Términos”) son un contrato entre usted y CLAIMSAVERPLUS LLC, una sociedad de responsabilidad limitada de Florida que opera como ClaimSaver+ (“ClaimSaver+”, “nosotros”), titular de claimsaverplus.com. Usted acepta estos Términos al marcar “Acepto” al crear la cuenta o al pagar. Guardamos un registro con fecha y hora de ese clickwrap (cuenta, documento, versión, hora, IP y agente de usuario). Navegar las páginas públicas no es aceptación. Si no está de acuerdo, no cree una cuenta ni pague. Estos Términos son un contrato de producto, no asesoría legal. El texto en inglés es el que rige.",
       "s1Title": "1. Qué es ClaimSaver+",
       "s1Body": "ClaimSaver+ es una herramienta de autoayuda para preparar documentos. No brinda asesoramiento legal y no crea una relación abogado-cliente. Vendemos acceso a software que ayuda a conductores de Florida a preparar, organizar y guardar sus propios materiales de reclamo de no-fault (PIP) de vehículo de motor. No somos un bufete, no somos su abogado, no somos un ajustador público, no somos su representante ante una aseguradora y no somos un tramitador de reclamos. Usted sigue siendo quien presenta. El producto es ministerial: captura de datos, llenado de formularios a partir de sus respuestas, almacenamiento y cálculo de fechas de calendario. No evaluamos el mérito legal de su reclamo, no estimamos valor de liquidación, no predecimos resultados, no recomendamos estrategia (incluido qué argumentar si la aseguradora niega), no negociamos con aseguradoras, no hablamos con un ajustador en su nombre ni enviamos su paquete a la compañía.",
@@ -1495,7 +1495,7 @@
       "s3Title": "3. Su cuenta y su información",
       "s3Body": "Usted es responsable de la exactitud de la información que introduce, de proteger sus credenciales y de la actividad en su cuenta. Guardar en su cuenta ClaimSaver+ almacena un borrador. No envía nada a una aseguradora. El formulario oficial de la aseguradora, su póliza y la ley de Florida aplicada a sus hechos rigen. No garantizamos que una hoja de trabajo, un recordatorio o una lista de verificación esté completa, actual o sea suficiente para su situación.",
       "s4Title": "4. Tarifas, acceso y complementos futuros",
-      "s4Body": "La tarifa estándar de la plataforma es un cargo único de {{price}} por acceso al software (formularios guiados, almacenamiento, seguimiento, recordatorios y contenido educativo). No es un honorario de contingencia, no es un anticipo de representación y no es una suscripción del paciente. El acceso comienza cuando el pago se concreta. Hay una suscripción aparte al panel para clínicas de {{clinicPrice}} al mes por clínica, tarifa fija, por software que usa el personal de la clínica. No es un pago por el acceso del paciente, no depende de cuántos pacientes refiera la clínica, y las clínicas no reciben ninguna parte del {{price}} del paciente. Podemos ofrecer complementos opcionales más adelante; si lo hacemos, tendrán su propio precio, términos y partida de pago, y no se incluirán en los {{price}} ni en la tarifa del panel sin una compra separada. Las tarjetas las procesa Stripe. No almacenamos números completos de tarjeta.",
+      "s4Body": "La tarifa estándar de la plataforma es un cargo único de {{price}} por acceso al software (formularios guiados, almacenamiento, seguimiento, recordatorios y contenido educativo). No es un honorario de contingencia, no es un anticipo de representación y no es una suscripción del paciente. El acceso comienza cuando el pago se concreta. Se puede ofrecer a las clínicas una suscripción aparte al panel, por software que usa el personal. Esa tarifa se cotiza a la clínica, no es un cargo del paciente, no depende de cuántos pacientes refiera, y las clínicas no reciben ninguna parte del {{price}} del paciente. Podemos ofrecer complementos opcionales más adelante; si lo hacemos, tendrán su propio precio, términos y partida de pago, y no se incluirán en los {{price}} ni en la tarifa del panel sin una compra separada. Las tarjetas las procesa Stripe. No almacenamos números completos de tarjeta.",
       "s5Title": "5. Reembolsos y cancelación",
       "s5Body": "Puede dejar de usar el software en cualquier momento. Como el acceso digital se entrega cuando el pago se concreta, los reembolsos no son automáticos y no prorrateamos los $499. Consideraremos una solicitud escrita enviada a {{supportEmail}} dentro de los 14 días de la compra si no ha comenzado la hoja guiada y no ha cargado documentos. No reembolsamos porque un recordatorio no apareció, porque perdió una ventana de tratamiento o presentación, o porque una aseguradora retrasó, redujo o negó beneficios. Nada en esta sección limita derechos de reembolso o cancelación que la ley de Florida u otra ley aplicable no nos permita renunciar.",
       "s6Title": "6. Los recordatorios son educación, no plazos legales",
@@ -1531,7 +1531,7 @@
     },
     "privacy": {
       "title": "Política de privacidad",
-      "updated": "Vigente desde el 5 de noviembre de 2026. Versión 26.11.05.2.",
+      "updated": "Vigente desde el 5 de noviembre de 2026. Versión 26.11.05.3.",
       "intro": "Esta Política de privacidad explica cómo CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ recopila, usa y comparte información cuando usted usa claimsaverplus.com y aplicaciones relacionadas. Aplica al producto de software. No es asesoría legal. El texto en inglés es el que rige.",
       "s1Title": "1. Quiénes somos",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ ofrece software guiado para la preparación de reclamos PIP de Florida. No somos su proveedor de salud, plan de salud, bufete ni ajustador público. No usamos su expediente para negociar con aseguradoras ni para representarlo. Contacto: {{supportEmail}}. Oficina principal: {{businessAddress}}.",
@@ -1736,11 +1736,11 @@
     "clinic": {
       "visibility": "Tu clínica ve si el paciente comenzó y en qué paso de la hoja de trabajo está — nunca sus respuestas, documentos ni detalles médicos.",
       "noReferralFees": "ClaimSaver+ no paga a las clínicas por referencias, y las clínicas no reciben ninguna parte del pago del paciente.",
-      "pricingPilot": "Las clínicas fundadoras usan el panel para clínicas sin costo durante el piloto. Compartiremos el precio del panel antes de que termine el piloto.",
+      "pricingPilot": "El precio del panel para clínicas se puede hablar en la demo de 15 minutos. Es software para su personal — no depende de cuántos pacientes refiera.",
       "pricingPublic": "Panel para clínicas: {{clinicPrice}} al mes por clínica, tarifa fija. Software para tu personal — no depende de cuántos pacientes refieras. Los pacientes pagan sus propios {{price}} por separado.",
       "valueProp": "Ayuda a tus pacientes de PIP a recibir atención inicial dentro de los 14 días, terminar su papeleo y asistir a sus EUO e IME — con una vista solo de progreso para tu recepción.",
       "sectionTitle": "Para clínicas",
-      "demoLink": "Ver la demo para clínicas"
+      "demoLink": "Reservar una demo de 15 minutos"
     },
     "disclaimer": {
       "selfHelp": "ClaimSaver+ es software de autoayuda. No es un bufete, una aseguradora ni un ajustador público, y no ofrece asesoría legal ni te representa. Tú sigues siendo quien presenta el reclamo."
