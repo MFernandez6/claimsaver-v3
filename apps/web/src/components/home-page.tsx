@@ -24,7 +24,17 @@ export function HomePage() {
     { question: t("home.faq.attorneyNeed.question"), answer: t("home.faq.attorneyNeed.answer") },
     { question: t("home.faq.vsAttorney.question"), answer: t("home.faq.vsAttorney.answer") },
     { question: t("home.faq.duration.question"), answer: t("home.faq.duration.answer") },
-    { question: t("home.faq.cost.question"), answer: t("home.faq.cost.answer") },
+    {
+      question: t("home.faq.cost.question"),
+      answer: (
+        <>
+          {t("copy.patientPrice.short")}{" "}
+          <Link href="/clinic-demo" className="font-semibold text-teal-800 underline underline-offset-2">
+            {t("home.faq.cost.clinicLink")}
+          </Link>
+        </>
+      ),
+    },
     { question: t("home.faq.accidents.question"), answer: t("home.faq.accidents.answer") },
     { question: t("home.faq.documents.question"), answer: t("home.faq.documents.answer") },
     { question: t("home.faq.ifYouStop.question"), answer: t("home.faq.ifYouStop.answer") },

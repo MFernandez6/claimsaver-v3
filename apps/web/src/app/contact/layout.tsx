@@ -2,7 +2,7 @@ import { pageMeta } from "@/lib/page-seo";
 
 export const metadata = pageMeta(
   "Contact",
-  "Contact ClaimSaver+ support. Software questions only — we do not handle your claim.",
+  "Contact ClaimSaver+ support. Software questions only — you remain the filer.",
   "/contact",
 );
 

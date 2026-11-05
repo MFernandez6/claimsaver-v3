@@ -1,44 +1,59 @@
 "use client";
 
 import Link from "next/link";
-import { AlertTriangle } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { MarketingHeading, MarketingPage, MarketingSection } from "@/components/marketing-page";
+
+const BULLETS = ["serious", "denied", "multi", "euo", "overlapping", "fraud", "advice"] as const;
 
 export default function WhenToCallPage() {
   const { t } = useTranslation();
+
   return (
-    <div className="min-h-screen">
-      <section className="relative overflow-hidden pt-28 pb-20">
-        <PageHeroBackdrop />
-        <div className="relative z-10 mx-auto max-w-3xl px-4">
-          <div className="mb-6 flex items-center gap-3 text-amber-600">
-            <AlertTriangle className="h-10 w-10" />
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white">{t("pages.needProfessionalHelp.title")}</h1>
-          </div>
-          <p className="text-lg text-teal-800">{t("pages.needProfessionalHelp.notEveryClaim")}</p>
-          <p className="mt-4 text-slate-600">
-            {t("pages.needProfessionalHelp.introDiy")}
-          </p>
-          <ul className="mt-6 space-y-3 text-slate-700">
-            <li>• {t("pages.needProfessionalHelp.bullets.serious")}</li>
-            <li>• {t("pages.needProfessionalHelp.bullets.denied")}</li>
-            <li>• {t("pages.needProfessionalHelp.bullets.multi")}</li>
-            <li>• {t("pages.needProfessionalHelp.bullets.euo")}</li>
-            <li>• {t("pages.needProfessionalHelp.bullets.overlapping")}</li>
-            <li>• {t("pages.needProfessionalHelp.bullets.fraud")}</li>
-            <li>• {t("pages.needProfessionalHelp.bullets.advice")}</li>
-          </ul>
-          <p className="mt-8 border-l-4 border-teal-500 pl-4 text-slate-600">
+    <MarketingPage
+      kicker={t("pages.needProfessionalHelp.kicker")}
+      title={t("pages.needProfessionalHelp.title")}
+      subtitle={t("pages.needProfessionalHelp.notEveryClaim")}
+      intro={<p>{t("pages.needProfessionalHelp.introDiy")}</p>}
+      note={t("floridaOnly.note")}
+      actions={
+        <>
+          <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">
+            <Link href="/how-it-works">{t("navigation.howItWorks")}</Link>
+          </Button>
+          <Button variant="outline" asChild className="h-12">
+            <Link href="/">{t("common.home")}</Link>
+          </Button>
+        </>
+      }
+    >
+      <MarketingSection>
+        <MarketingHeading>{t("pages.needProfessionalHelp.subtitle")}</MarketingHeading>
+        <Card className="mt-6">
+          <CardContent className="pt-6">
+            <ul className="list-disc space-y-3 pl-5 text-slate-700 dark:text-slate-300">
+              {BULLETS.map((key) => (
+                <li key={key}>{t(`pages.needProfessionalHelp.bullets.${key}`)}</li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      </MarketingSection>
+
+      <MarketingSection>
+        <Card className="border-amber-200 bg-amber-50">
+          <CardContent className="pt-6 text-sm leading-relaxed text-slate-700">
             {t("pages.needProfessionalHelp.supportNote")}
-          </p>
-          <div className="mt-8 flex gap-3">
-            <Button variant="outline" asChild><Link href="/">{t("common.home")}</Link></Button>
-            <Button asChild><Link href="/how-it-works">{t("navigation.howItWorks")}</Link></Button>
-          </div>
-        </div>
-      </section>
-    </div>
+          </CardContent>
+        </Card>
+      </MarketingSection>
+
+      <MarketingSection last>
+        <p className="text-sm leading-relaxed text-slate-600">{t("pages.needProfessionalHelp.closing")}</p>
+        <p className="mt-4 text-xs leading-relaxed text-slate-400">{t("pages.learningCenter.footerDisclaimer")}</p>
+      </MarketingSection>
+    </MarketingPage>
   );
 }

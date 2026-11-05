@@ -94,7 +94,6 @@ export function AdminShell({
   }, [pathname]);
 
   useEffect(() => {
-    let timer: number | undefined;
     const tick = async () => {
       try {
         const session = await webApi.get<{
@@ -110,10 +109,8 @@ export function AdminShell({
       }
     };
     void tick();
-    timer = window.setInterval(() => void tick(), 60_000);
-    return () => {
-      if (timer) window.clearInterval(timer);
-    };
+    const timer = window.setInterval(() => void tick(), 60_000);
+    return () => window.clearInterval(timer);
   }, []);
 
   const signOut = async () => {

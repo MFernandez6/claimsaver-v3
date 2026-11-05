@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/how-it-works",
     "/pricing",
     "/who-we-are",
+    "/for-clinics",
+    "/clinic-demo",
     "/learning-center",
     "/when-to-call-an-attorney",
     "/contact",

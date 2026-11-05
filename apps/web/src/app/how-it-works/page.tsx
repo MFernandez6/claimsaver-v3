@@ -19,6 +19,7 @@ export default function HowItWorksPage() {
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white">{t("pages.howItWorks.title")}</h1>
           <p className="mt-3 text-xl text-teal-800 dark:text-teal-300">{t("pages.howItWorks.subtitle")}</p>
           <p className="mt-4 text-slate-600 dark:text-slate-300">{t("pages.howItWorks.intro")}</p>
+          <p className="mt-3 text-slate-600 dark:text-slate-300">{t("copy.patientPrice.short")}</p>
           <p className="mt-3 text-slate-600 dark:text-slate-300">{t("whatWeDo.hero.description")}</p>
           <div className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg dark:border-slate-700">
             <LocalizedSocialImage

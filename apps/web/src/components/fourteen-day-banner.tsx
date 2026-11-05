@@ -22,6 +22,10 @@ const HIDDEN = [
   "/14days",
   "/es/14dias",
   "/fr/14jours",
+  "/for-clinics",
+  "/clinic-demo",
+  "/clinic",
+  "/enroll",
 ];
 
 export function FourteenDayBanner() {

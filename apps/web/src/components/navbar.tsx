@@ -21,6 +21,7 @@ const PRIMARY = [
 ] as const;
 
 const COMPANY = [
+  { href: "/for-clinics", key: "forClinics" },
   { href: "/when-to-call-an-attorney", key: "needProfessionalHelp" },
   { href: "/learning-center", key: "learningCenter" },
   { href: "/license-credentials", key: "licenseCredentials" },

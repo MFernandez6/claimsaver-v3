@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { TOTAL_WORKSHEET_STEPS } from "@claimsaver/shared";
 import { webApi } from "@/lib/api/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -43,6 +44,7 @@ function roleLabel(role: string) {
 }
 
 export default function ClinicDashboardPage() {
+  const { t } = useTranslation();
   const [data, setData] = useState<Payload | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -106,9 +108,7 @@ export default function ClinicDashboardPage() {
             <p className="mt-1 text-sm text-slate-600">{data.clinic.address}</p>
           ) : null}
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
-            Checklist progress only. Staff cannot open a claimant’s worksheet,
-            documents, or medical details. Referral does not change the $500
-            platform price — the patient stays the filer.
+            {t("copy.clinic.visibility")} {t("copy.clinic.noReferralFees")}
           </p>
         </div>
         <div className="flex shrink-0 flex-col gap-2 sm:items-end">

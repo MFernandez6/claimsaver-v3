@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { LEGAL_ENTITY_DISPLAY, PRINCIPAL_ADDRESS_LINE, SUPPORT_EMAIL } from "@claimsaver/shared";
+import { formatClinicPrice, formatPatientPrice } from "@/lib/copy/pricing";
 
 import enTranslations from "../locales/en.json";
 import esTranslations from "../locales/es.json";
@@ -12,6 +13,16 @@ const resources = {
   es: { translation: esTranslations },
   fr: { translation: frTranslations },
 };
+
+function interpolationVars(lng?: string) {
+  return {
+    supportEmail: SUPPORT_EMAIL,
+    legalEntity: LEGAL_ENTITY_DISPLAY,
+    businessAddress: PRINCIPAL_ADDRESS_LINE,
+    price: formatPatientPrice(lng),
+    clinicPrice: formatClinicPrice(lng),
+  };
+}
 
 i18n
   .use(LanguageDetector)
@@ -26,11 +37,7 @@ i18n
 
     interpolation: {
       escapeValue: false,
-      defaultVariables: {
-        supportEmail: SUPPORT_EMAIL,
-        legalEntity: LEGAL_ENTITY_DISPLAY,
-        businessAddress: PRINCIPAL_ADDRESS_LINE,
-      },
+      defaultVariables: interpolationVars("en"),
     },
 
     react: {
@@ -43,6 +50,16 @@ i18n
       lookupLocalStorage: "i18nextLng",
     },
   });
+
+function applyPriceVars(lng?: string) {
+  i18n.options.interpolation = {
+    ...i18n.options.interpolation,
+    defaultVariables: interpolationVars(lng),
+  };
+}
+
+i18n.on("initialized", () => applyPriceVars(i18n.language));
+i18n.on("languageChanged", applyPriceVars);
 
 export default i18n;
 

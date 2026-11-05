@@ -2,35 +2,61 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
-import { getLearningArticleParagraphs, type ArticleKey } from "@/data/learningCenter";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MarketingPage, MarketingSection } from "@/components/marketing-page";
+import { type ArticleKey } from "@/data/learningCenter";
 import { ARTICLE_SLUGS, articlePath } from "@/data/learningCenter/slugs";
 
 export default function LearningCenterPage() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const keys = Object.keys(ARTICLE_SLUGS) as ArticleKey[];
+
   return (
-    <div className="min-h-screen">
-      <section className="relative overflow-hidden pt-28 pb-20">
-        <PageHeroBackdrop />
-        <div className="relative z-10 mx-auto max-w-3xl px-4">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white">{t("pages.learningCenter.title")}</h1>
-          <p className="mt-3 text-slate-600">{t("pages.learningCenter.intro")}</p>
-          <ul className="mt-10 space-y-4">
-            {keys.map((key) => (
-              <li key={key}>
-                <Link href={articlePath(key)} className="block rounded-xl border bg-white/80 p-5 hover:border-teal-400">
-                  <h2 className="font-semibold text-slate-900">{t(`pages.learningCenter.articles.${key}.title`)}</h2>
-                  <p className="mt-1 line-clamp-2 text-sm text-slate-500">
-                    {getLearningArticleParagraphs(i18n.language, key)[0]}
+    <MarketingPage
+      kicker={t("pages.learningCenter.kicker")}
+      title={t("pages.learningCenter.title")}
+      subtitle={t("pages.learningCenter.subtitle")}
+      intro={<p>{t("pages.learningCenter.intro")}</p>}
+      note={t("floridaOnly.note")}
+      actions={
+        <>
+          <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">
+            <Link href="/how-it-works">{t("navigation.howItWorks")}</Link>
+          </Button>
+          <Button variant="outline" asChild className="h-12">
+            <Link href="/when-to-call-an-attorney">{t("navigation.needProfessionalHelp")}</Link>
+          </Button>
+        </>
+      }
+    >
+      <MarketingSection>
+        <div className="grid gap-4">
+          {keys.map((key) => (
+            <Link key={key} href={articlePath(key)} className="block">
+              <Card className="h-full transition hover:border-teal-300">
+                <CardHeader>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-800">
+                    {t("pages.learningCenter.kicker")}
                   </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-10 text-xs text-slate-500">{t("pages.learningCenter.footerDisclaimer")}</p>
+                  <CardTitle className="text-lg leading-snug">
+                    {t(`pages.learningCenter.articles.${key}.title`)}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    {t(`pages.learningCenter.articles.${key}.summary`)}
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
         </div>
-      </section>
-    </div>
+      </MarketingSection>
+
+      <MarketingSection last>
+        <p className="text-xs leading-relaxed text-slate-400">{t("pages.learningCenter.footerDisclaimer")}</p>
+      </MarketingSection>
+    </MarketingPage>
   );
 }

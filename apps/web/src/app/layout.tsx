@@ -8,7 +8,7 @@ import { ProductionTestingNotice } from "@/components/production-testing-notice"
 import { AppProviders } from "@/components/app-providers";
 import { siteUrl } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
-import { LEGAL_ENTITY_NAME, PRINCIPAL_ADDRESS, SUPPORT_EMAIL } from "@claimsaver/shared";
+import { LEGAL_ENTITY_NAME, PATIENT_PRICE_USD, PRINCIPAL_ADDRESS, SUPPORT_EMAIL } from "@claimsaver/shared";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     template: "%s | ClaimSaver+",
   },
   description:
-    "Self-help document preparation software for Florida no-fault (PIP) claims: guided forms, storage, and deadline tracking. Flat $500. Not a law firm. Not legal advice.",
+    `Self-help document preparation software for Florida no-fault (PIP) claims: guided forms, storage, and deadline tracking. Flat $${PATIENT_PRICE_USD}. Not a law firm. Not legal advice.`,
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "ClaimSaver+" },
   openGraph: {
     title: "ClaimSaver+ — Florida PIP claim software",
     description:
-      "File your Florida no-fault claim. Keep what’s yours. Flat $500 guided software—you stay in control.",
+      `File your Florida no-fault claim. Keep what’s yours. Flat $${PATIENT_PRICE_USD} guided software—you stay in control.`,
     url,
     siteName: "ClaimSaver+",
     locale: "en_US",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ClaimSaver+ — Florida PIP claim software",
     description:
-      "File your Florida no-fault claim. Keep what’s yours. Flat $500 guided software—you stay in control.",
+      `File your Florida no-fault claim. Keep what’s yours. Flat $${PATIENT_PRICE_USD} guided software—you stay in control.`,
     images: ["/images/brand/claimsaver-og-share-1200x630.png"],
   },
 };

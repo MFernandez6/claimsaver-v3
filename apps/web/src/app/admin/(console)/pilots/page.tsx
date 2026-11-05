@@ -33,7 +33,7 @@ export default function AdminPilotsPage() {
       <AdminPageHeader
         kicker="Business ops"
         title="Pilot tracker"
-        description="Counts and percentages only. No claim contents."
+        description="Your clinic sees whether a patient started and which worksheet step they are on — never their answers, documents, or medical details."
       />
       {error ? <p className="text-sm text-red-700">{error}</p> : null}
       <div className="space-y-3">

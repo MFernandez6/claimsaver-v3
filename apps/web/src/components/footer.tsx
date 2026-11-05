@@ -50,6 +50,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-teal-200">{t("footer.company")}</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
               <li><Link href="/who-we-are" className="hover:text-white">{t("navigation.whoWeAre")}</Link></li>
+              <li><Link href="/for-clinics" className="hover:text-white">{t("navigation.forClinics")}</Link></li>
               <li><Link href="/license-credentials" className="hover:text-white">{t("navigation.licenseCredentials")}</Link></li>
               <li><Link href="/contact" className="hover:text-white">{t("navigation.contact")}</Link></li>
               <li><Link href="/learning-center" className="hover:text-white">{t("navigation.learningCenter")}</Link></li>

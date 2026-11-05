@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 import { Pressable, RefreshControl, ScrollView, Text, View } from "react-native";
 import * as WebBrowser from "expo-web-browser";
 import type { ClaimSummary, Me } from "@claimsaver/shared";
-import { ApiClientError, TOTAL_WORKSHEET_STEPS } from "@claimsaver/shared";
+import { ApiClientError, PATIENT_PRICE_USD, TOTAL_WORKSHEET_STEPS } from "@claimsaver/shared";
 import { api } from "../../src/lib/api";
 
 export default function WorkspaceScreen() {
@@ -38,7 +38,7 @@ export default function WorkspaceScreen() {
       <View style={{ flex: 1, padding: 24, backgroundColor: "#fff" }}>
         <Text style={{ fontSize: 22, fontWeight: "700" }}>Unlock your workspace</Text>
         <Text style={{ marginTop: 8, color: "#475569" }}>
-          Flat $500 platform access. You remain the filer. Notarization is optional and separate.
+          {`Flat $${PATIENT_PRICE_USD} platform access. You remain the filer. Notarization is optional and separate.`}
         </Text>
         <Pressable
           style={btn}

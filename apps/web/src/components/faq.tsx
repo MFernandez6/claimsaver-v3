@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { Minus, Plus } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 interface FAQProps {

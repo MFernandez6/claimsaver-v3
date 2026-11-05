@@ -2,10 +2,13 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { BrandLogo } from "@/components/brand-logo";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { MarketingPage, MarketingSection } from "@/components/marketing-page";
 import { webApi } from "@/lib/api/client";
 import { clinicDemoBookingUrl, googleAppointmentEmbedSrc } from "@/lib/clinic-demo";
+import { clinicPricingKey } from "@/lib/copy/pricing";
 
 declare global {
   interface Window {
@@ -14,6 +17,7 @@ declare global {
 }
 
 export default function ClinicDemoPage() {
+  const { t } = useTranslation();
   const bookingUrl = clinicDemoBookingUrl();
   const embedSrc = googleAppointmentEmbedSrc(bookingUrl);
 
@@ -23,35 +27,66 @@ export default function ClinicDemoPage() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
-      <BrandLogo className="mb-8" />
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-800">Clinics</p>
-      <h1 className="mt-2 text-3xl font-bold text-slate-900">Book a 15-minute demo</h1>
-      <p className="mt-4 text-base leading-relaxed text-slate-600">
-        Pick a time on Google Calendar. ClaimSaver+ is self-help software patients use themselves.
-        Clinic staff see checklist progress only — never worksheets, documents, or medical details.
-        Patients still pay $500 for platform access.
-      </p>
-      <Button asChild className="mt-6 h-14 w-full bg-gradient-to-r from-emerald-600 to-teal-800 text-base sm:w-auto">
-        <a href={bookingUrl} rel="noopener noreferrer">
-          Pick a time on Google Calendar
-        </a>
-      </Button>
+    <MarketingPage
+      kicker={t("pages.clinicDemo.kicker")}
+      title={t("pages.clinicDemo.title")}
+      subtitle={t("copy.clinic.valueProp")}
+      intro={<p>{t("pages.clinicDemo.canvassNote")}</p>}
+      note={t("copy.disclaimer.selfHelp")}
+      actions={
+        <>
+          <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">
+            <a href={bookingUrl} rel="noopener noreferrer">
+              {t("pages.clinicDemo.book")}
+            </a>
+          </Button>
+          <Button variant="outline" asChild className="h-12">
+            <Link href="/for-clinics">{t("pages.clinicDemo.programLink")}</Link>
+          </Button>
+        </>
+      }
+    >
+      <MarketingSection className="grid gap-4 sm:grid-cols-2">
+        <Card className="border-teal-200">
+          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
+            {t(clinicPricingKey())}
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
+            {t("copy.clinic.noReferralFees")}
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
+            {t("copy.clinic.visibility")}
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6 text-sm leading-relaxed text-slate-600">
+            {t("copy.patientPrice.sameForReferrals")}
+          </CardContent>
+        </Card>
+      </MarketingSection>
+
       {embedSrc ? (
-        <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <iframe
-            title="Google Calendar appointment schedule"
-            src={embedSrc}
-            className="h-[40rem] w-full border-0"
-            loading="lazy"
-          />
-        </div>
+        <MarketingSection>
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <iframe
+              title="Google Calendar appointment schedule"
+              src={embedSrc}
+              className="h-[40rem] w-full border-0"
+              loading="lazy"
+            />
+          </div>
+        </MarketingSection>
       ) : null}
-      <p className="mt-6 text-sm text-slate-500">
-        <Link href="/14days" className="underline underline-offset-2">
-          Back to the 14-day checklist
+
+      <MarketingSection last>
+        <Link href="/14days" className="text-sm font-semibold text-teal-800 underline underline-offset-2">
+          {t("pages.clinicDemo.back")}
         </Link>
-      </p>
-    </div>
+      </MarketingSection>
+    </MarketingPage>
   );
 }

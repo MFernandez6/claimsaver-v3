@@ -53,6 +53,7 @@
     "needHelpShort": "Dossier complexe ?",
     "licenseCredentials": "Licence et références",
     "contact": "Contact",
+    "forClinics": "Pour les cliniques",
     "pricing": "Tarifs",
     "notarization": "Notarisation",
     "dashboard": "Tableau de Bord",
@@ -73,7 +74,7 @@
       "titleLine1": "Déposez votre réclamation",
       "titleLine2": "sans faute en Floride.",
       "subtitle": "Gardez ce qui vous revient.",
-      "description": "Un logiciel guidé pour les réclamations PIP en Floride que vous déposez vous-même—surtout lorsqu’un cabinet de préjudice corporel ne prend pas le dossier. Accès plateforme 500 $ forfaitaire. Vous restez le déposant. Pas un cabinet d’avocats.",
+      "description": "Un logiciel guidé pour les réclamations PIP en Floride que vous déposez vous-même—surtout lorsqu’un cabinet de préjudice corporel ne prend pas le dossier. Accès plateforme {{price}} forfaitaire. Vous restez le déposant. Pas un cabinet d’avocats.",
       "cta": "Créez votre compte",
       "ctaSecondary": "Voir comment ça marche",
       "learnMore": "En Savoir Plus",
@@ -92,7 +93,7 @@
       "visualDocsTitle": "Formulaires et envois",
       "visualDocsHint": "Stockage chiffré pour vos dossiers",
       "trust1": "Pas un cabinet d'avocats",
-      "trust2": "Forfait 500 $",
+      "trust2": "Forfait {{price}}",
       "trust3": "Dépôt guidé—vous gardez la maîtrise",
       "visualPreviewEventTitle": "Rappel de suivi",
       "visualPreviewEventDate": "Exemple — ajoutez le vôtre dans le calendrier",
@@ -143,7 +144,7 @@
       "brand": "ClaimSaver+",
       "description": "Outils de réclamation guidés pour le PIP sans faute en Floride : formulaires, stockage sécurisé, suivi des dépenses et ressources pour constituer et gérer votre dossier en toute confiance.",
       "getStarted": "Commencer Aujourd'hui",
-      "flatFee": "Accès plateforme 500 $",
+      "flatFee": "Accès plateforme {{price}}",
       "freeConsultation": "Ressources pédagogiques et visite guidée",
       "imageAlt": "Arrière-plan ClaimSaver+"
     },
@@ -154,9 +155,9 @@
       "successRate": "Quand les cabinets de préjudice déclinent souvent",
       "successRateValue": "Pas de dossier BI",
       "satisfaction": "Forfait plateforme",
-      "satisfactionValue": "500 $",
+      "satisfactionValue": "{{price}}",
       "flatFeeLabel": "Forfait plateforme",
-      "flatFeeValue": "500 $",
+      "flatFeeValue": "{{price}}",
       "statsNote": "Les avocats en préjudice corporel ont généralement besoin d’une réclamation viable contre un tiers. Un dossier PIP seul n’est souvent pas ce cas. ClaimSaver+ est un logiciel au forfait—pas un pourcentage de vos prestations.",
       "statsIllustrativeBadge": "Comparaison illustrative—pas votre dossier"
     },
@@ -197,7 +198,8 @@
       },
       "cost": {
         "question": "Combien coûte ClaimSaver+ ?",
-        "answer": "L’accès à la plateforme est un forfait de 500 $—une seule fois, pas un pourcentage de vos prestations. C’est le seul produit en vente aujourd’hui. Les modules futurs, si nous les proposons, seront tarifés et divulgués séparément."
+        "answer": "Accès à la plateforme pour {{price}} — paiement unique, pas un pourcentage de vos prestations PIP.",
+        "clinicLink": "Les cliniques utilisent un tableau de bord distinct — voir la démo cliniques."
       },
       "accidents": {
         "question": "Pour quels types d’accidents ClaimSaver+ est-il conçu ?",
@@ -214,8 +216,8 @@
     },
     "optionalServices": {
       "title": "Accès à la plateforme",
-      "subtitle": "Le dépôt PIP guidé est notre produit principal. 500 $ est le seul article en vente aujourd’hui.",
-      "pipTitle": "Plateforme de réclamation guidée (500 $)",
+      "subtitle": "Le dépôt PIP guidé est notre produit principal. {{price}} est le seul article en vente aujourd’hui.",
+      "pipTitle": "Plateforme de réclamation guidée ({{price}})",
       "pipBody": "Accès aux formulaires PIP guidés, stockage sécurisé des documents, suivi et rappels. C’est ce que vous utilisez pour préparer et déposer votre réclamation sans faute en Floride.",
       "notarizationBadge": "Bientôt disponible",
       "notarizationTitle": "Notarisation en ligne",
@@ -223,8 +225,8 @@
       "linkNotarization": "Service de notarisation",
       "linkPricing": "Tarifs et paiement"
     },
-    "notaryNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme.",
-    "futureAddonsNote": "La notarisation en ligne est Bientôt disponible. Les 500 $ correspondent uniquement à l’accès à la plateforme ; la notarisation n’est pas en vente aujourd’hui.",
+    "notaryNote": "Les {{price}} correspondent uniquement à l’accès à la plateforme.",
+    "futureAddonsNote": "La notarisation en ligne est Bientôt disponible. Les {{price}} correspondent uniquement à l’accès à la plateforme ; la notarisation n’est pas en vente aujourd’hui.",
     "graphicCaption": "Visuel illustratif—pas votre dossier et pas un montant garanti."
   },
   "pages": {
@@ -243,7 +245,7 @@
       "step5Title": "Constituez et transmettez votre dossier",
       "step5Body": "Lorsque vous êtes prêt, réunissez vos documents en un dossier complet et transmettez-le à votre assureur.",
       "notarizationNote": "La notarisation en ligne est Bientôt disponible et n’est pas en vente aujourd’hui.",
-      "futureAddonsNote": "La notarisation en ligne est Bientôt disponible. Les 500 $ correspondent uniquement à l’accès à la plateforme ; la notarisation n’est pas en vente aujourd’hui.",
+      "futureAddonsNote": "La notarisation en ligne est Bientôt disponible. Les {{price}} correspondent uniquement à l’accès à la plateforme ; la notarisation n’est pas en vente aujourd’hui.",
       "viewPricing": "Voir les tarifs",
       "startFiling": "Commencer",
       "includesTitle": "Ce qui est inclus",
@@ -263,6 +265,7 @@
       "include7Body": "Des articles qui expliquent comment fonctionnent souvent les dossiers no-fault en Floride. Information générale, pas un conseil sur votre cas."
     },
     "learningCenter": {
+      "kicker": "Centre d'apprentissage",
       "title": "Centre d’apprentissage",
       "subtitle": "Information générale sur le PIP en Floride—pas de conseil juridique",
       "intro": "Ces sujets expliquent comment les réclamations sans faute fonctionnent souvent. Votre situation est unique ; pour des conseils sur votre dossier, consultez un avocat agréé en Floride.",
@@ -294,6 +297,7 @@
       "notarizationLink": "Notarisation en ligne facultative (distincte du dépôt PIP)"
     },
     "needProfessionalHelp": {
+      "kicker": "Quand appeler un avocat",
       "title": "Quand votre dossier exige une expertise juridique",
       "subtitle": "Certains dossiers dépassent le dépôt PIP courant. Voici comment savoir si le vôtre en fait partie.",
       "body": "ClaimSaver+ s’adresse aux réclamations PIP standard en Floride—la majorité des dossiers sans faute. Mais certaines situations impliquent des éléments qui vont au-delà des formulaires et des pièces. Voici des signaux que votre dossier pourrait bénéficier d’un avocat agréé :",
@@ -311,13 +315,14 @@
       "ctaHowItWorks": "Fonctionnement de la plateforme",
       "notEveryClaim": "Tous les dossiers PIP ne conviennent pas à une démarche DIY.",
       "introDiy": "ClaimSaver+ est un logiciel pour les formalités standard de no-fault en Floride—y compris les dossiers PIP seuls que les cabinets de préjudice ne prennent souvent pas au pourcentage. Quittez le chemin DIY et consultez un avocat licencié en Floride lorsque :",
-      "supportNote": "Nous ne vous mettons pas en relation avec un avocat dans le cadre du produit à 500 $. Le support peut aider pour la connexion, la facturation et l’utilisation du site—pas pour « que dois-je faire dans mon cas ? »"
+      "supportNote": "Nous ne vous mettons pas en relation avec un avocat dans le cadre du produit à {{price}}. Le support peut aider pour la connexion, la facturation et l’utilisation du site—pas pour « que dois-je faire dans mon cas ? »"
     },
     "licenseCredentials": {
+      "kicker": "Licence et références",
       "title": "Licence et informations d’habilitation",
       "subtitle": "Transparence sur ce que ClaimSaver+ est—et n’est pas",
       "body": "Le produit ClaimSaver+ est un logiciel guidé de réclamation. Ce n’est pas un cabinet d’avocats, pas votre représentant auprès d’un assureur, ni un substitut à un conseil juridique ou d’expertise lorsque votre situation l’exige.",
-      "optionalPA": "Cette plateforme ne vend pas d’expertise publique ni de représentation juridique. Si des services professionnels licenciés sont un jour proposés, ils auront leurs propres contrats, tarifs et mentions—hors de l’accès logiciel standard de 500 $.",
+      "optionalPA": "Cette plateforme ne vend pas d’expertise publique ni de représentation juridique. Si des services professionnels licenciés sont un jour proposés, ils auront leurs propres contrats, tarifs et mentions—hors de l’accès logiciel standard de {{price}}.",
       "verify": "Des liens de vérification vers l’outil de recherche de licences du Florida Department of Financial Services (DFS) seront publiés ici pour toute habilitation que nous affichons.",
       "staffLicenseHeading": "Habilitations de l’équipe (Floride)",
       "staffLicenseBody": "ClaimSaver+ est un logiciel. Nous ne publions pas de numéro de licence d’expert sur ce site. Si des services professionnels licenciés sont proposés plus tard, ils seront listés avec des accords et mentions distincts.",
@@ -336,12 +341,53 @@
       "founderCaption": "Miguel A. Fernandez, M.Sc., fondateur",
       "teamCaption": "Équipe ClaimSaver+"
     },
+    "forClinics": {
+      "kicker": "Pour les cliniques PIP de Floride",
+      "title": "Un logiciel que vos patients utilisent eux-mêmes",
+      "subtitle": "Vous restez la clinique. Ils restent le déposant.",
+      "intro": "ClaimSaver+ est un logiciel d’auto-assistance pour les formalités Florida no-fault (PIP). Les patients remplissent leurs propres fiches. Le personnel de la clinique voit uniquement l’avancement de la liste — jamais les réponses, documents ou détails médicaux.",
+      "howTitle": "Comment fonctionne le programme cliniques",
+      "step1Title": "Réservez une démo de 15 minutes",
+      "step1Body": "Pour le démarchage et les premiers échanges, partagez /clinic-demo. Cette page sert à réserver la démo. Ce n’est pas une invitation patient.",
+      "step2Title": "Signez un accord d’associé d’affaires",
+      "step2Body": "L’inscription reste fermée jusqu’à ce que le BAA soit marqué comme signé. Traitez les informations de santé comme si HIPAA s’appliquait.",
+      "step3Title": "Partagez le lien d’inscription de votre clinique",
+      "step3Body": "Après la signature du BAA, Admin → Clinics délivre un lien /enroll/ unique pour cette clinique. Chaque clinique inscrite a le sien. Les patients utilisent ce lien — pas /clinic-demo ni cette page.",
+      "step4Title": "Les patients créent un compte et paient {{price}}",
+      "step4Body": "Une recommandation de clinique ne change pas le prix de la plateforme. Ils restent le déposant. ClaimSaver+ n’envoie rien, ne négocie pas et ne parle pas en leur nom.",
+      "step5Title": "Le personnel voit uniquement l’avancement",
+      "step5Body": "Le tableau de bord clinique indique si un patient a commencé, à quelle étape de la fiche il en est, et s’il semble dans les temps. Il ne charge jamais le contenu des fiches, les fichiers du coffre ni les détails médicaux.",
+      "linksTitle": "Trois liens différents",
+      "linkExplainLabel": "Cette page",
+      "linkExplainPath": "/for-clinics",
+      "linkExplainBody": "Explique le programme cliniques. À utiliser quand quelqu’un veut comprendre le fonctionnement avant une démo.",
+      "linkDemoLabel": "Démarchage",
+      "linkDemoPath": "/clinic-demo",
+      "linkDemoBody": "Réservation d’une démo de 15 minutes. C’est l’URL à remettre quand vous présentez ClaimSaver+ à une clinique.",
+      "linkEnrollLabel": "Invitation patient",
+      "linkEnrollPath": "/enroll/…",
+      "linkEnrollBody": "Unique à chaque clinique. Délivré depuis Admin → Clinics une fois le BAA marqué comme signé. N’imprimez pas une URL d’inscription générique.",
+      "seeTitle": "Ce que voit le personnel de la clinique",
+      "see1": "Patients inscrits (nom affiché)",
+      "see2": "Étape et statut de la fiche",
+      "see3": "Dans les temps ou en retard",
+      "hideTitle": "Ce que le personnel ne voit jamais",
+      "hide1": "Réponses de la fiche",
+      "hide2": "Documents téléversés",
+      "hide3": "Détails médicaux ou notes de dossier",
+      "ctaDemo": "Réserver une démo de 15 minutes",
+      "ctaContact": "Questions sur le programme",
+      "notLaw": "ClaimSaver+ n’est pas un cabinet d’avocats, pas un expert public, et ne représente pas le patient. Le personnel de la clinique ne dépose pas, ne conseille pas sur une réclamation PIP et n’oriente pas de patients via ce logiciel.",
+      "questions": "Questions sur le programme :",
+      "disclaimer": "Informations générales. Pas un conseil juridique. ClaimSaver+ est un logiciel d’auto-assistance. Vous restez la clinique ; le patient reste le déposant."
+    },
     "contact": {
+      "kicker": "Contact",
       "title": "Contact",
       "subtitle": "Assistance plateforme et technique",
       "body": "Pour l’aide à la connexion, la facturation ou l’utilisation du site, écrivez à {{supportEmail}}. Nous ne pouvons pas répondre sur le bien-fondé juridique de votre dossier ni vous dire comment gérer votre affaire—ces questions relèvent d’un avocat agréé.",
       "emailLabel": "Courriel",
-      "notarizationNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
+      "notarizationNote": "Les {{price}} correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
       "headquarters": "Bureau principal : {{businessAddress}}.",
       "attorneyCta": "Si votre affaire est trop complexe pour un dépôt PIP standard, voir Quand appeler un avocat."
     },
@@ -365,14 +411,38 @@
       "section7Body": "Nous conservons le compte, la feuille de travail et les fichiers téléversés tant que le compte est ouvert. Les clients connectés peuvent demander la suppression depuis le tableau de bord ; nous acceptons aussi un e-mail à {{supportEmail}}. Après une demande vérifiée ou la fermeture du compte (et toute conservation légale), nous visons à supprimer ou dé-identifier le contenu client sous 30 jours. Les sauvegardes peuvent persister sur un cycle plus long jusqu’à leur expiration. Nous conservons les dossiers de paiement, fiscaux, de fraude, de litige et de conformité comme requis (généralement jusqu’à sept ans). Le statut de Floride §501.171 peut exiger un avis en cas d’atteinte aux informations personnelles. Voir la Politique de confidentialité pour les sous-traitants, la suppression et l’avis d’incident.",
       "section8Title": "Contact",
       "section8Body": "Questions sur ce résumé : {{supportEmail}}."
+    },
+    "clinicDemo": {
+      "kicker": "Cliniques",
+      "title": "Réserver une démo de 15 minutes",
+      "canvassNote": "Ceci est le lien de démarchage : une visite de 15 minutes. Après l’inscription d’une clinique et la signature du BAA, Admin → Clinics délivre le lien /enroll/ propre à cette clinique pour les patients. N’utilisez pas cette page de démo comme invitation patient.",
+      "book": "Choisir un créneau sur Google Calendar",
+      "back": "Retour à la liste des 14 jours",
+      "programLink": "Comment fonctionne le programme cliniques"
+    },
+    "enroll": {
+      "kicker": "Invitation de la clinique",
+      "title": "{{clinicName}} vous a invité",
+      "fourteenNote": "Le PIP de Floride exige généralement des soins médicaux initiaux dans les 14 jours suivant l’accident. Ceci est une information générale, pas une détermination qu’une visite compte dans votre dossier.",
+      "enrolled": "Vous êtes inscrit. Continuez sur votre tableau de bord. La clinique voit uniquement la progression.",
+      "checking": "Vérification de votre session…",
+      "enrollCta": "M’inscrire avec cette clinique",
+      "enrollClosed": "Les inscriptions sont fermées",
+      "dashboard": "Aller au tableau de bord",
+      "createAccount": "Créer mon compte",
+      "haveAccount": "Vous avez déjà un compte ?",
+      "notAccepting": "Cette clinique n’accepte pas encore les inscriptions.",
+      "invalidTitle": "Ce lien n’est pas valide",
+      "invalidBody": "Cette invitation de clinique est absente ou expirée. Demandez un nouveau lien à la clinique, ou retournez sur ClaimSaver+.",
+      "backHome": "Retour à ClaimSaver+"
     }
   },
   "pricing": {
     "title": "Tarification — logiciel de réclamation PIP en Floride | ClaimSaver+",
     "headlinePart1": "PIP en Floride.",
     "headlinePart2": "Logiciel guidé",
-    "headlinePart3": "Accès à 500 $.",
-    "subtitle": "Le même produit que sur le reste du site : un logiciel pour préparer vos éléments de réclamation sans égard à la faute (PIP) en Floride—vous les envoyez à votre assureur. 500 $ couvrent uniquement l’accès à la plateforme. ClaimSaver+ n’est pas un cabinet ; nous ne négocions pas avec les assureurs et ne sommes pas votre représentant.",
+    "headlinePart3": "Accès à {{price}}.",
+    "subtitle": "Le même produit que sur le reste du site : un logiciel pour préparer vos éléments de réclamation sans égard à la faute (PIP) en Floride—vous les envoyez à votre assureur. {{price}} couvrent uniquement l’accès à la plateforme. ClaimSaver+ n’est pas un cabinet ; nous ne négocions pas avec les assureurs et ne sommes pas votre représentant.",
     "startClaim": "Commencer à remplir votre dossier",
     "learnMore": "En Savoir Plus",
     "selectServices": "Sélectionnez Vos Services et Paiement",
@@ -381,7 +451,7 @@
       "noFaultAssistance": {
         "name": "Plateforme de réclamation guidée",
         "description": "Formulaires PIP guidés, outils documentaires et rappels—vous restez le déposant",
-        "price": "500.00"
+        "price": "499.00"
       },
       "notarization": {
         "name": "Notarisation en ligne — Bientôt disponible",
@@ -400,7 +470,7 @@
       "whoOurs": "Les victimes d’accident en Floride qui préparent leur propre paperasse no-fault—surtout lorsqu’un cabinet de préjudices corporels a refusé un dossier PIP seulement.",
       "fee": "Comment on facture",
       "feeAttorney": "Un pourcentage d’un recouvrement contre un tiers, s’il y en a un",
-      "feeOurs": "Forfait de 500 $. Pas un pourcentage de vos prestations PIP.",
+      "feeOurs": "Forfait de {{price}}. Pas un pourcentage de vos prestations PIP.",
       "footnote": "Informations générales—pas un conseil juridique. ClaimSaver+ n’est pas un cabinet d’avocats et ne vous représente pas."
     },
     "traditionalCosts": {
@@ -413,15 +483,15 @@
     },
     "claimSaverAdvantages": {
       "title": "Avantage ClaimSaver+",
-      "keep95Percent": "Forfait de 500 $ pour l’accès au logiciel. Nous ne prenons pas un pourcentage de vos prestations PIP.",
+      "keep95Percent": "Forfait de {{price}} pour l’accès au logiciel. Nous ne prenons pas un pourcentage de vos prestations PIP.",
       "noContingency": "Aucun pourcentage de vos prestations PIP pour ClaimSaver+",
       "transparentPricing": "Forfait transparent pour l'accès à la plateforme",
       "professionalService": "Outils et information—vous décidez et soumettez",
       "maximumRecovery": "Restez organisé et informé tout au long de votre dossier"
     },
     "comparisonNote": "Le seuil de permanence de Floride concerne un recours en souffrances contre un autre conducteur—pas le droit de déposer une réclamation PIP auprès de votre propre assureur. ClaimSaver+ est un logiciel, pas un cabinet d’avocats.",
-    "optionalNotarizationIntro": "L’accès à la plateforme PIP guidée est de 500 $. C’est le seul produit en vente aujourd’hui.",
-    "futureAddonsNote": "La notarisation en ligne est Bientôt disponible. Elle n’est pas en vente aujourd’hui et n’est pas incluse dans les 500 $.",
+    "optionalNotarizationIntro": "L’accès à la plateforme PIP guidée est de {{price}}. C’est le seul produit en vente aujourd’hui.",
+    "futureAddonsNote": "La notarisation en ligne est Bientôt disponible. Elle n’est pas en vente aujourd’hui et n’est pas incluse dans les {{price}}.",
     "selectServicesNotarizationHint": "Sélectionnez l’accès guidé à la plateforme. La notarisation est Bientôt disponible et n’est pas en vente aujourd’hui.",
     "selectServicesCheckoutNote": "Il s’agit du paiement pour cette visite—pas de votre tableau de bord ni d’une commande existante. Choisissez les services, puis payez en toute sécurité avec Stripe.",
     "platformAccessSubtitle": "Accès guidé à la plateforme—vous pilotez le processus",
@@ -432,7 +502,7 @@
       },
       "maximumRecovery": {
         "title": "Un écart que les cabinets laissent souvent",
-        "description": "Une réclamation PIP sans faute sans dossier viable contre un tiers n’est souvent pas attractive au pourcentage. ClaimSaver+ est un logiciel pour celles et ceux qui déposent ces formalités eux-mêmes—500 $ forfaitaires, pas de pourcentage PIP pour nous."
+        "description": "Une réclamation PIP sans faute sans dossier viable contre un tiers n’est souvent pas attractive au pourcentage. ClaimSaver+ est un logiciel pour celles et ceux qui déposent ces formalités eux-mêmes—{{price}} forfaitaires, pas de pourcentage PIP pour nous."
       },
       "professionalService": {
         "title": "Guidage plateforme",
@@ -445,7 +515,7 @@
     },
     "cta": {
       "title": "Prêt à faire avancer votre dossier ?",
-      "subtitle": "Outils guidés pour 500 $. Vous préparez et soumettez vos éléments PIP—pas d'honoraires de contingence vers ClaimSaver+.",
+      "subtitle": "Outils guidés pour {{price}}. Vous préparez et soumettez vos éléments PIP—pas d'honoraires de contingence vers ClaimSaver+.",
       "button": "Commencer à remplir votre dossier"
     },
     "ui": {
@@ -456,16 +526,16 @@
       "comparisonSubtitle": "Les cabinets refusent souvent les dossiers PIP seuls, sauf si la blessure peut atteindre le seuil de permanence de Floride. ClaimSaver+ est un forfait, pas un pourcentage de votre PIP.",
       "averageFeesCaption": "Frais et coûts moyens",
       "recommendedBadge": "RECOMMANDÉ",
-      "advantageCallout": "Forfait de 500 $ pour un logiciel guidé. Nous ne prenons pas un pourcentage de vos prestations PIP.",
+      "advantageCallout": "Forfait de {{price}} pour un logiciel guidé. Nous ne prenons pas un pourcentage de vos prestations PIP.",
       "whyChooseLead": "Pourquoi choisir",
       "whyChooseAccent": "ClaimSaver+ ?",
       "whyParagraph1": "Les cabinets de préjudice corporel prennent généralement les dossiers avec une réclamation viable contre un tiers et des blessures assez graves pour justifier des honoraires de contingence sur une transaction corporelle. Un dossier PIP seul n’est souvent pas ce cas—d’où les appels à plusieurs cabinets, puis un dépôt en solo.",
-      "whyParagraph2": "ClaimSaver+ facture 500 $ pour l’accès au logiciel : formulaires guidés, stockage, rappels et contenu éducatif. Nous ne prélevons pas de pourcentage sur vos prestations et ne gérons pas votre dossier à votre place—vous restez la personne qui dépose et correspond avec l’assureur.",
+      "whyParagraph2": "ClaimSaver+ facture {{price}} pour l’accès au logiciel : formulaires guidés, stockage, rappels et contenu éducatif. Nous ne prélevons pas de pourcentage sur vos prestations, et vous restez la personne qui dépose et correspond avec l’assureur.",
       "savingsCalculator": "Calculateur d’économies",
       "calcTraditionalFee": "Contingence typique en préjudice (sur une transaction BI, lorsqu’il y en a une)",
       "calcFlatFee": "Forfait ClaimSaver+",
       "calcYourSavings": "Vos économies",
-      "ctaFootnote": "Accès plateforme 500 $ • Pas d’honoraires de contingence vers ClaimSaver+",
+      "ctaFootnote": "Accès plateforme {{price}} • Pas d’honoraires de contingence vers ClaimSaver+",
       "loadingTitle": "Préparation du paiement",
       "loadingSubtitle": "Validation de la session et redirection vers le paiement sécurisé…",
       "alertSelectService": "Veuillez sélectionner au moins un service",
@@ -486,16 +556,16 @@
       "supportEmailLine": "Questions sur le paiement ou la facturation ? Écrivez à {{supportEmail}}.",
       "faqTitle": "Questions sur les tarifs",
       "faqSubtitle": "Réponses factuelles—ClaimSaver+ vend l’accès à un logiciel de préparation de dossiers, pas des services juridiques.",
-      "faq1q": "À quoi sert le paiement de 500 $ ?",
+      "faq1q": "À quoi sert le paiement de {{price}} ?",
       "faq1a": "L’accès aux parcours PIP guidés, au stockage de documents, aux rappels et au contenu éducatif de ClaimSaver+ pour préparer vos propres pièces. Ce n’est pas un honoraire de représentation, de négociation ou de communication avec votre assureur en votre nom.",
       "faq2q": "Les avocats prennent-ils 33 % de mon PIP ?",
-      "faq2a": "En général non, lorsqu’ils représentent le conducteur blessé. Le PIP paie les factures médicales et les salaires perdus directement ; prélever des honoraires là-dessus laisserait le client à court pour les médecins. Les cabinets joignent souvent le papier PIP par courtoisie, tandis que les vrais honoraires viennent d’une transaction corporelle contre un tiers—s’il y en a une. C’est pourquoi un dossier PIP seul n’est souvent pas un cas qu’ils prennent au pourcentage. ClaimSaver+ facture 500 $ forfaitaires pour le logiciel et ne prend pas un pourcentage de vos prestations. Informations générales, pas un conseil sur le mandat d’un avocat.",
+      "faq2a": "En général non, lorsqu’ils représentent le conducteur blessé. Le PIP paie les factures médicales et les salaires perdus directement ; prélever des honoraires là-dessus laisserait le client à court pour les médecins. Les cabinets joignent souvent le papier PIP par courtoisie, tandis que les vrais honoraires viennent d’une transaction corporelle contre un tiers—s’il y en a une. C’est pourquoi un dossier PIP seul n’est souvent pas un cas qu’ils prennent au pourcentage. ClaimSaver+ facture {{price}} forfaitaires pour le logiciel et ne prend pas un pourcentage de vos prestations. Informations générales, pas un conseil sur le mandat d’un avocat.",
       "faq3q": "ClaimSaver+ garantit-il que je récupérerai plus d’argent ?",
       "faq3a": "Non. Nous ne garantissons aucun résultat financier. Les tableaux de cette page utilisent des exemples simplifiés. Les résultats dépendent de votre couverture, des faits et du traitement par l’assureur.",
       "faq4q": "Qui contacter pour les frais ou reçus ?",
       "faq4a": "Écrivez à {{supportEmail}} pour la facturation et l’assistance plateforme. Nous ne pouvons pas conseiller sur le fond juridique de votre dossier.",
-      "faq5q": "Les modules sont-ils inclus dans les 500 $ ?",
-      "faq5a": "Non. 500 $ correspondent uniquement à l’accès à la plateforme. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils seront tarifés et divulgués séparément.",
+      "faq5q": "Les modules sont-ils inclus dans les {{price}} ?",
+      "faq5a": "Non. {{price}} correspondent uniquement à l’accès à la plateforme. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils seront tarifés et divulgués séparément.",
       "modalServicesTitle": "Nos services",
       "modalServicesSavingsHeading": "Comparaison illustrative (exemple chiffré seulement)",
       "modalServicesSavingsDifferenceLabel": "Écart illustratif sur cet exemple",
@@ -508,12 +578,12 @@
       "btnStartYourClaim": "Commencer votre dossier",
       "modalSelectServices": "Sélectionner les services",
       "stickyBarLead": "accès forfaitaire à la plateforme",
-      "stickyBarCta": "Commencer pour 500 $"
+      "stickyBarCta": "Commencer pour {{price}}"
     },
     "selectAtLeastOne": "Sélectionnez au moins un service.",
     "checkoutFailed": "Échec du paiement",
     "redirecting": "Redirection…",
-    "checkoutNote": "Ceci est le parcours d’achat de cette visite—pas votre tableau de bord. Le seul produit en vente aujourd’hui est l’accès à la plateforme à 500 $.",
+    "checkoutNote": "Ceci est le parcours d’achat de cette visite—pas votre tableau de bord. Le seul produit en vente aujourd’hui est l’accès à la plateforme à {{price}}.",
     "testing": {
       "kicker": "Test de production limité.",
       "body": "Merci de nous aider à valider ClaimSaver+ avec des paiements réels. Pendant cette période, les testeurs invités sont facturés {{testPrice}} pour l’accès à la plateforme. Ce montant de {{testPrice}} sera remboursé après le test. Le tarif catalogue reste {{listPrice}}. Il s’agit d’un vrai paiement Stripe ; vous recevez le même accès logiciel. Merci de ne pas partager ni diffuser ce tarif de test.",
@@ -683,7 +753,7 @@
     },
     "signInTitle": "Connectez-vous pour utiliser la feuille de travail",
     "paywallTitle": "Accès à la plateforme requis",
-    "paywallBody": "La plateforme guidée à 500 $ déverrouille cette feuille de travail, le coffre de documents et les rappels. La notarisation est facultative et séparée.",
+    "paywallBody": "La plateforme guidée à {{price}} déverrouille cette feuille de travail, le coffre de documents et les rappels. La notarisation est facultative et séparée.",
     "record": "Dossier {{number}}",
     "saving": "Enregistrement…",
     "saved": "Enregistré",
@@ -875,7 +945,7 @@
       },
       "legal": {
         "question": "La notarisation numérique est-elle légalement valide?",
-        "answer": "La Floride reconnaît la notarisation en ligne à distance lorsqu’elle est effectuée par un notaire à distance commissionné en Floride sur une plateforme RON approuvée. ClaimSaver+ ne vend pas de notarisation aujourd’hui—c’est Bientôt disponible, en attente de l’autorisation finale."
+        "answer": "La Floride reconnaît la notarisation en ligne à distance lorsqu’elle est effectuée par un notaire en ligne à distance agréé en Floride sur une plateforme RON approuvée. ClaimSaver+ ne vend pas de notarisation aujourd’hui—c’est Bientôt disponible, en attente de l’autorisation finale."
       },
       "documents": {
         "question": "Quels documents peuvent être notarisés en ligne?",
@@ -895,12 +965,12 @@
       }
     },
     "pageTitle": "Notarisation en ligne — Bientôt disponible",
-    "pageIntro": "La notarisation ne fait pas partie du dépôt PIP guidé et n’est pas en vente aujourd’hui. Bientôt disponible — en attente de l’autorisation finale. Si elle est proposée plus tard, un notaire à distance commissionné en Floride réaliserait la séance sur une plateforme RON approuvée. Ce n’est pas une signature électronique générique.",
+    "pageIntro": "La notarisation ne fait pas partie du dépôt PIP guidé et n’est pas en vente aujourd’hui. Bientôt disponible — en attente de l’autorisation finale. Si elle est proposée plus tard, un notaire en ligne à distance agréé en Floride réaliserait la séance sur une plateforme RON approuvée. Ce n’est pas une signature électronique générique.",
     "needId": "Pièce d’identité officielle valide",
     "needDevice": "Appareil avec caméra et microphone",
     "needPdf": "Document (généralement PDF)",
     "needAvailability": "La disponibilité dépend du réseau de notaires DocuSign—pas 24 h/24 à la demande",
-    "notLegalReview": "Ceci ne serait pas un examen juridique ClaimSaver+ du document. N’incluez pas la notarisation dans les 500 $. Bientôt disponible — pas en vente aujourd’hui.",
+    "notLegalReview": "Ceci ne serait pas un examen juridique ClaimSaver+ du document. N’incluez pas la notarisation dans les {{price}}. Bientôt disponible — pas en vente aujourd’hui.",
     "addAtCheckout": "Bientôt disponible — pas en vente aujourd’hui",
     "promoSection": {
       "description": "Notarisation à distance via DocuSign avec accès protégé par TLS. La disponibilité du notaire et la durée de la session dépendent du réseau DocuSign et du notaire—pas 24 h/24 à la demande ni une fin « instantanée » garantie.",
@@ -1016,7 +1086,7 @@
       "loadFailed": "Échec du chargement des réclamations"
     },
     "unlockTitle": "Déverrouillez votre espace",
-    "unlockBody": "L’accès forfaitaire de 500 $ inclut la feuille de travail guidée, le coffre de documents, le calendrier et le journal des dépenses. Vous restez le déposant.",
+    "unlockBody": "L’accès forfaitaire de {{price}} inclut la feuille de travail guidée, le coffre de documents, le calendrier et le journal des dépenses. Vous restez le déposant.",
     "journeyTitle": "Le parcours de votre dossier",
     "journeySubtitle": "Liste de l’espace de travail—pas une décision de l’assureur.",
     "tabClaims": "Dossiers",
@@ -1087,7 +1157,7 @@
     "cookiePolicy": "Politique des Cookies",
     "legalDisclaimer": "Avertissement Légal",
     "legalText": "ClaimSaver+ est une plateforme technologique de réclamation guidée—pas un cabinet d'avocats. Nous ne fournissons pas de conseils juridiques, de représentation, d'évaluation de réclamation ni de négociation avec les assureurs en votre nom. Les informations sont générales et éducatives. Vous déposez votre réclamation PIP avec nos outils—vous êtes le déposant, pas ClaimSaver+. Pour votre situation, consultez un avocat. Nous ne garantissons aucun résultat. ClaimSaver+ n’exploite pas un service d’orientation vers des avocats et ne paie ni ne perçoit d’honoraires pour vous présenter un avocat ou un autre professionnel. Les pages éducatives telles que Quand appeler un avocat sont uniquement des informations générales.",
-    "optionalNotarization": "La notarisation en ligne est Bientôt disponible. Les 500 $ correspondent uniquement à l’accès à la plateforme.",
+    "optionalNotarization": "La notarisation en ligne est Bientôt disponible. Les {{price}} correspondent uniquement à l’accès à la plateforme.",
     "services": "Services",
     "company": "Entreprise",
     "legal": "Mentions légales",
@@ -1100,7 +1170,7 @@
     "hero": {
       "title": "Qui nous sommes",
       "subtitle": "Votre dossier PIP en Floride",
-      "description": "ClaimSaver+ est un logiciel guidé pour les dossiers no-fault (PIP) automobile en Floride. Vous saisissez vos informations, gardez vos documents en un seul endroit et envoyez le dossier à votre assureur. L’accès est un forfait de 500 $—pas un honoraire de contingence."
+      "description": "ClaimSaver+ est un logiciel guidé pour les dossiers no-fault (PIP) automobile en Floride. Vous saisissez vos informations, gardez vos documents en un seul endroit et envoyez le dossier à votre assureur. L’accès est un forfait de {{price}}—pas un honoraire de contingence."
     },
     "about": {
       "title": "À Propos de ClaimSaver+",
@@ -1118,11 +1188,11 @@
       "credential1": "Expérience en paralégal et contentieux",
       "credential2": "M.Sc. Droit et Politiques publiques",
       "credential3": "Expérience des opérations de sinistres d’assurance",
-      "body": "Son parcours comprend un M.Sc. en Droit et Politiques publiques, une expérience en paralégal et contentieux, et une expérience des opérations de sinistres d’assurance. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : accès forfaitaire 500 $, vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
+      "body": "Son parcours comprend un M.Sc. en Droit et Politiques publiques, une expérience en paralégal et contentieux, et une expérience des opérations de sinistres d’assurance. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : accès forfaitaire {{price}}, vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
       "disclaimer": "Ces références décrivent le parcours du fondateur. ClaimSaver+ est un logiciel—nous ne fournissons pas de conseil juridique, n’ajustons pas votre dossier, ne négocions pas avec les assureurs et ne vous représentons pas.",
       "verifyLink": "Lire comment fonctionne la plateforme",
       "imageAlt": "Miguel A. Fernandez, fondateur de ClaimSaver+",
-      "igCaption": "Pourquoi ClaimSaver+ existe\n\nJe suis Miguel A. Fernandez, M.Sc. — fondateur de ClaimSaver+, créé à Miami pour les formalités PIP en Floride.\n\nMon parcours :\n• Expérience en paralégal et contentieux\n• M.Sc. Droit et Politiques publiques\n• Expérience des opérations de sinistres d’assurance\n\nClaimSaver+ est un logiciel guidé : 500 $ forfaitaires, vous déposez, pas un cabinet d’avocats.\n\nclaimsaverplus.com"
+      "igCaption": "Pourquoi ClaimSaver+ existe\n\nJe suis Miguel A. Fernandez, M.Sc. — fondateur de ClaimSaver+, créé à Miami pour les formalités PIP en Floride.\n\nMon parcours :\n• Expérience en paralégal et contentieux\n• M.Sc. Droit et Politiques publiques\n• Expérience des opérations de sinistres d’assurance\n\nClaimSaver+ est un logiciel guidé : {{price}} forfaitaires, vous déposez, pas un cabinet d’avocats.\n\nclaimsaverplus.com"
     },
     "familyStory": {
       "title": "Pourquoi nous l’avons créé",
@@ -1175,7 +1245,7 @@
     "hero": {
       "title": "Votre dossier.",
       "subtitle": "Votre contrôle. Nos outils.",
-      "description": "ClaimSaver+ offre aux conducteurs en Floride des outils guidés complets, des formulaires et des repères pour déposer eux-mêmes leurs réclamations PIP sans faute. Forfait plateforme 500 $—aucun pourcentage de contingence pour nous.",
+      "description": "ClaimSaver+ offre aux conducteurs en Floride des outils guidés complets, des formulaires et des repères pour déposer eux-mêmes leurs réclamations PIP sans faute. Forfait plateforme {{price}}—aucun pourcentage de contingence pour nous.",
       "startRecovery": "Voir comment ça marche",
       "fileClaim": "Commencer votre dossier",
       "imageAlt": "Arrière-plan ClaimSaver+"
@@ -1220,7 +1290,7 @@
     },
     "optionalNotarization": {
       "title": "Notarisation en ligne — Bientôt disponible",
-      "body": "La notarisation n’est pas en vente aujourd’hui. Si elle est proposée plus tard, elle aura son propre prix et mentions et ne sera pas regroupée dans l’accès de 500 $ sans un achat distinct.",
+      "body": "La notarisation n’est pas en vente aujourd’hui. Si elle est proposée plus tard, elle aura son propre prix et mentions et ne sera pas regroupée dans l’accès de {{price}} sans un achat distinct.",
       "linkNotarization": "Bientôt disponible",
       "linkPricing": "Tarifs et paiement"
     },
@@ -1287,7 +1357,7 @@
       "item6": "Un résumé imprimable de ce que vous avez saisi",
       "item7": "Contenu éducatif général sur le fonctionnement habituel du PIP en Floride"
     },
-    "notaryNote": "Les 500 $ correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
+    "notaryNote": "Les {{price}} correspondent uniquement à l’accès à la plateforme. Les modules futurs, s’ils sont proposés, seront divulgués séparément.",
     "seeHow": "Voir comment ça marche"
   },
   "success": {
@@ -1364,7 +1434,7 @@
     "optionTwoLabel": "Option deux",
     "optionTwoTitle": "Engager un avocat en dommages corporels",
     "optionTwoBody": "Les avocats en préjudice corporel prennent généralement les dossiers avec une réclamation viable contre un tiers et des blessures assez graves pour justifier des honoraires de contingence sur une transaction corporelle. Un dossier PIP seul—sans fautif clair, ou avec des blessures qui n’atteignent pas ce seuil—n’est souvent pas un cas qu’ils prennent. Informations générales, pas un conseil sur vos faits.",
-    "middlePath": "ClaimSaver+ est la voie intermédiaire guidée : une plateforme qui vous accompagne pour préparer vos propres documents PIP, organise vos pièces et peut vous rappeler les dates courantes liées au PIP en Floride que vous saisissez, y compris la fenêtre de 14 jours comme rappel—pas un conseil juridique. Conçu pour celles et ceux qui déposent leur propre réclamation sans faute, y compris après le refus d’un cabinet. 500 $ forfaitaires—pas de pourcentage de vos prestations PIP pour nous. Vous restez le déposant. Nous ne parlons pas à votre assureur.",
+    "middlePath": "ClaimSaver+ est la voie intermédiaire guidée : une plateforme qui vous accompagne pour préparer vos propres documents PIP, organise vos pièces et peut vous rappeler les dates courantes liées au PIP en Floride que vous saisissez, y compris la fenêtre de 14 jours comme rappel—pas un conseil juridique. Conçu pour celles et ceux qui déposent leur propre réclamation sans faute, y compris après le refus d’un cabinet. {{price}} forfaitaires—pas de pourcentage de vos prestations PIP pour nous. Vous restez le déposant. Nous ne parlons pas à votre assureur.",
     "founder": "ClaimSaver+ est un logiciel conçu à Miami pour les formalités PIP de Floride. Ce n’est pas un cabinet d’avocats et il ne vend pas d’expertise ou de représentation juridique.",
     "attorneyLink": "Les dossiers complexes ou contestés appartiennent à un avocat licencié en Floride."
   },
@@ -1377,7 +1447,7 @@
     "newHere": "Nouveau ici ?",
     "createAccount": "Créer un compte",
     "signUpTitle": "Créez votre compte",
-    "signUpSubtitle": "Créez un compte, puis payez 500 $ pour accéder à la plateforme. Vous restez le déposant—ClaimSaver+ n’envoie rien à un assureur.",
+    "signUpSubtitle": "Créez un compte, puis payez {{price}} pour accéder à la plateforme. Vous restez le déposant—ClaimSaver+ n’envoie rien à un assureur.",
     "passwordHint": "Mot de passe (12+ caractères)",
     "creating": "Création…",
     "alreadyHaveAccount": "Vous avez déjà un compte ?",
@@ -1414,7 +1484,7 @@
   },
   "legal": {
     "reacceptTitle": "Conditions et Politique de confidentialité mises à jour",
-    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.11.02). Acceptez les conditions mises à jour pour voir votre dossier. Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
+    "reacceptBody": "Nous avons mis à jour nos Conditions d’utilisation et notre Politique de confidentialité (version 26.11.05). Acceptez les conditions mises à jour pour voir votre dossier. Cochez la case pour continuer. Nous conservons un enregistrement horodaté de cet accord avec votre compte.",
     "reacceptCta": "J’accepte — continuer",
     "consentFailed": "Nous n’avons pas pu enregistrer votre accord. Vérifiez la connexion et réessayez.",
     "requestDeletion": "Demander la suppression du compte",
@@ -1426,7 +1496,7 @@
     "termsTitle": "Conditions d’utilisation",
     "terms": {
       "title": "Conditions d’utilisation",
-      "updated": "En vigueur à compter du 2 novembre 2026. Version 26.11.02.",
+      "updated": "En vigueur à compter du 5 novembre 2026. Version 26.11.05.",
       "intro": "Les présentes Conditions d’utilisation (« Conditions ») constituent un contrat entre vous et CLAIMSAVERPLUS LLC, une société à responsabilité limitée de Floride exerçant sous le nom ClaimSaver+ (« ClaimSaver+ », « nous »), qui exploite claimsaverplus.com. Vous acceptez ces Conditions en cochant « J’accepte » à la création du compte ou au paiement. Nous conservons un enregistrement horodaté de ce clickwrap (compte, document, version, heure, IP et agent utilisateur). Consulter les pages publiques n’est pas une acceptation. Si vous n’êtes pas d’accord, ne créez pas de compte et ne payez pas. Ces Conditions sont un contrat produit, pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Ce qu’est ClaimSaver+",
       "s1Body": "ClaimSaver+ est un outil d’auto-assistance pour préparer des documents. Il ne fournit pas de conseil juridique et ne crée pas de relation avocat-client. Nous vendons l’accès à un logiciel qui aide les conducteurs de Floride à préparer, organiser et stocker leurs propres documents de dossier no-fault (PIP) automobile. Nous ne sommes pas un cabinet d’avocats, pas votre avocat, pas un expert public, pas votre représentant auprès d’un assureur et pas un gestionnaire de sinistres. Vous restez le déposant. Le produit est ministériel : saisie, remplissage de formulaires à partir de vos réponses, stockage et calcul de dates. Nous n’évaluons pas le bien-fondé juridique de votre dossier, n’estimons pas de valeur de règlement, ne prédisons pas de résultats, ne recommandons pas de stratégie (y compris quoi argumenter si l’assureur refuse), ne négocions pas avec les assureurs, ne parlons pas à un expert en votre nom et n’envoyons pas votre dossier à un transporteur.",
@@ -1435,9 +1505,9 @@
       "s3Title": "3. Votre compte et vos informations",
       "s3Body": "Vous êtes responsable de l’exactitude des informations que vous saisissez, de la sécurité de vos identifiants et de l’activité sur votre compte. Enregistrer dans votre compte ClaimSaver+ stocke un brouillon. Cela n’envoie rien à un assureur. Le formulaire officiel de l’assureur, votre police et le droit de Floride appliqué à vos faits font foi. Nous ne garantissons pas qu’une feuille de travail, un rappel ou une liste de contrôle soit complet, à jour ou suffisant pour votre situation.",
       "s4Title": "4. Tarifs, accès et modules futurs",
-      "s4Body": "Le tarif standard de la plateforme est un paiement unique de 500 $ pour l’accès logiciel (formulaires guidés, stockage, suivi, rappels et contenu éducatif). Ce n’est pas un honoraire de contingence, pas une provision pour représentation et pas un abonnement. L’accès commence lorsque le paiement aboutit. Ces 500 $ sont le seul produit que nous vendons aujourd’hui. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils auront leur propre prix, conditions et ligne de paiement, et ne seront pas regroupés dans les 500 $ sans un achat distinct. Les cartes sont traitées par Stripe. Nous ne stockons pas les numéros complets de carte.",
+      "s4Body": "Le tarif standard de la plateforme est un paiement unique de 499 $ pour l’accès logiciel (formulaires guidés, stockage, suivi, rappels et contenu éducatif). Ce n’est pas un honoraire de contingence, pas une provision pour représentation et pas un abonnement. L’accès commence lorsque le paiement aboutit. Ces 499 $ sont le seul produit que nous vendons aujourd’hui. Nous pourrons proposer des modules facultatifs plus tard ; s’il y en a, ils auront leur propre prix, conditions et ligne de paiement, et ne seront pas regroupés dans les 499 $ sans un achat distinct. Les cartes sont traitées par Stripe. Nous ne stockons pas les numéros complets de carte.",
       "s5Title": "5. Remboursements et résiliation",
-      "s5Body": "Vous pouvez cesser d’utiliser le logiciel à tout moment. L’accès numérique étant livré lorsque le paiement aboutit, les remboursements ne sont pas automatiques et nous ne proratons pas les 500 $. Nous examinerons une demande écrite envoyée à {{supportEmail}} dans les 14 jours suivant l’achat si vous n’avez pas commencé la feuille guidée et n’avez pas téléversé de documents. Nous ne remboursons pas parce qu’un rappel n’est pas apparu, parce que vous avez manqué une fenêtre de traitement ou de dépôt, ou parce qu’un assureur a retardé, réduit ou refusé des prestations. Rien dans cette section ne limite les droits de remboursement ou d’annulation que le droit de Floride ou une autre loi applicable ne nous permet pas de renoncer.",
+      "s5Body": "Vous pouvez cesser d’utiliser le logiciel à tout moment. L’accès numérique étant livré lorsque le paiement aboutit, les remboursements ne sont pas automatiques et nous ne proratons pas les 499 $. Nous examinerons une demande écrite envoyée à {{supportEmail}} dans les 14 jours suivant l’achat si vous n’avez pas commencé la feuille guidée et n’avez pas téléversé de documents. Nous ne remboursons pas parce qu’un rappel n’est pas apparu, parce que vous avez manqué une fenêtre de traitement ou de dépôt, ou parce qu’un assureur a retardé, réduit ou refusé des prestations. Rien dans cette section ne limite les droits de remboursement ou d’annulation que le droit de Floride ou une autre loi applicable ne nous permet pas de renoncer.",
       "s6Title": "6. Les rappels sont de l’éducation, pas des délais juridiques",
       "s6Body": "Les éléments de calendrier sont des rappels facultatifs basés sur les dates que vous saisissez. Le statut de Floride §627.736 traite, entre autres, d’une période de 14 jours pour certains services médicaux initiaux après un accident automobile et d’une fenêtre de paiement de 30 jours après que l’assureur a reçu un avis écrit d’un sinistre couvert. Nous citons ces sujets statutaires comme information générale. Nous n’appliquons pas le statut à vos faits, ne déterminons pas si une visite « compte » et ne promettons pas qu’un rappel sera envoyé ou opportun. Votre police et le droit de Floride appliqué à votre situation font foi. Vous êtes seul responsable d’obtenir des soins, de gérer votre calendrier et d’envoyer les documents à votre assureur. Nous ne garantissons aucun résultat financier ou de dossier.",
       "s7Title": "7. Exclusion de garanties",
@@ -1449,7 +1519,7 @@
       "s10Title": "10. Usages interdits",
       "s10Body": "Vous ne pouvez pas : utiliser la plateforme pour fournir des services d’expertise, juridiques ou de représentation au public ; extraire, attaquer ou rétroconcevoir le service ; téléverser des logiciels malveillants ; usurper l’identité d’autrui ; téléverser les dossiers médicaux, d’assurance ou d’identité d’une autre personne sans autorité ; utiliser le service si vous avez moins de 18 ans ; ou l’utiliser pour des dossiers hors PIP de Floride sauf autorisation écrite ultérieure. Nous pouvons suspendre ou fermer des comptes dont nous croyons raisonnablement qu’ils violent ces Conditions ou créent un risque pour d’autres utilisateurs ou le service.",
       "s11Title": "11. Orientations professionnelles",
-      "s11Body": "ClaimSaver+ n’exploite pas un service d’orientation vers des avocats et ne paie ni ne perçoit d’honoraires pour vous présenter un avocat, un expert public ou un autre professionnel. Les pages éducatives telles que « Quand appeler un avocat » et le Centre d’apprentissage sont des informations générales ; ce ne sont pas des recommandations personnalisées. ClaimSaver+ n’est pas BLACKLINE. Ce produit ne partage pas de logique de gestion de sinistres avec BLACKLINE, ne transfère pas votre dossier à BLACKLINE et n’implique pas un transfert qui serait une orientation payante juridique ou d’expertise. Si nous proposons un jour une orientation ou un service professionnel distinct, il aura son propre contrat, tarif et mentions, et ne sera pas regroupé dans les 500 $ de la plateforme sans un achat clair et séparé.",
+      "s11Body": "ClaimSaver+ n’exploite pas un service d’orientation vers des avocats et ne paie ni ne perçoit d’honoraires pour vous présenter un avocat, un expert public ou un autre professionnel. Les pages éducatives telles que « Quand appeler un avocat » et le Centre d’apprentissage sont des informations générales ; ce ne sont pas des recommandations personnalisées. ClaimSaver+ n’est pas BLACKLINE. Ce produit ne partage pas de logique de gestion de sinistres avec BLACKLINE, ne transfère pas votre dossier à BLACKLINE et n’implique pas un transfert qui serait une orientation payante juridique ou d’expertise. Si nous proposons un jour une orientation ou un service professionnel distinct, il aura son propre contrat, tarif et mentions, et ne sera pas regroupé dans les 499 $ de la plateforme sans un achat clair et séparé.",
       "s12Title": "12. Résiliation",
       "s12Body": "Vous pouvez fermer votre compte en écrivant à {{supportEmail}}. Nous pouvons suspendre ou résilier l’accès en cas de manquement à ces Conditions, si la loi l’exige, ou si nous cessons le service. Après résiliation, nous pouvons supprimer ou dé-identifier des données comme décrit dans la Politique de confidentialité, sauf lorsque nous devons conserver des dossiers.",
       "s13Title": "13. Droit applicable et for",
@@ -1471,7 +1541,7 @@
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "updated": "En vigueur à compter du 2 novembre 2026. Version 26.11.02.",
+      "updated": "En vigueur à compter du 5 novembre 2026. Version 26.11.05.",
       "intro": "Cette Politique de confidentialité explique comment CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ collecte, utilise et partage des informations lorsque vous utilisez claimsaverplus.com et les applications liées. Elle s’applique au produit logiciel. Ce n’est pas un conseil juridique. Le texte anglais fait foi.",
       "s1Title": "1. Qui nous sommes",
       "s1Body": "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+ fournit un logiciel guidé pour la préparation de dossiers PIP de Floride. Nous ne sommes pas votre prestataire de soins, régime de santé, cabinet d’avocats ou expert public. Nous n’utilisons pas votre dossier pour négocier avec les assureurs ni pour vous représenter. Contact : {{supportEmail}}. Bureau principal : {{businessAddress}}.",
@@ -1591,7 +1661,7 @@
   "cta": {
     "primary": "Créez votre compte",
     "secondary": "Voir comment ça marche",
-    "path": "Créez un compte, puis payez 500 $ pour accéder à la plateforme.",
+    "path": "Créez un compte, puis payez {{price}} pour accéder à la plateforme.",
     "payAccess": "Continuer vers les tarifs"
   },
   "fourteenDay": {
@@ -1619,7 +1689,7 @@
   "proof": {
     "miami": "Siège à Miami",
     "languages": "Anglais, espagnol et français",
-    "flat": "500 $ forfaitaires—pas de contingence pour nous",
+    "flat": "{{price}} forfaitaires—pas de contingence pour nous",
     "notLaw": "Pas un cabinet d’avocats"
   },
   "nav": {
@@ -1627,7 +1697,7 @@
   },
   "meta": {
     "title": "ClaimSaver+ — Logiciel de dossiers PIP en Floride",
-    "description": "Logiciel en libre-service pour les dossiers no-fault (PIP) en Floride. Accès à la plateforme pour 500 $. Vous déposez. Pas un cabinet d’avocats."
+    "description": "Logiciel en libre-service pour les dossiers no-fault (PIP) en Floride. Accès à la plateforme pour {{price}}. Vous déposez. Pas un cabinet d’avocats."
   },
   "deadlines": {
     "fourteenTitle": "Fenêtre initiale de soins de 14 jours",
@@ -1666,6 +1736,24 @@
       "7": {
         "label": "Délai pour agir (à vérifier)"
       }
+    }
+  },
+  "copy": {
+    "patientPrice": {
+      "short": "Accès à la plateforme pour {{price}} — paiement unique, pas un pourcentage de vos prestations PIP.",
+      "sameForReferrals": "Une recommandation par une clinique ne change pas le prix. Chaque patient paie les mêmes {{price}} directement à ClaimSaver+."
+    },
+    "clinic": {
+      "visibility": "Votre clinique voit si le patient a commencé et à quelle étape de la fiche il se trouve — jamais ses réponses, documents ou informations médicales.",
+      "noReferralFees": "ClaimSaver+ ne rémunère pas les cliniques pour les recommandations, et les cliniques ne reçoivent aucune part des frais du patient.",
+      "pricingPilot": "Les cliniques fondatrices utilisent le tableau de bord clinique sans frais pendant le pilote. Le tarif du tableau de bord sera communiqué avant la fin du pilote.",
+      "pricingPublic": "Tableau de bord clinique : {{clinicPrice}}/mois par clinique, forfait. Un logiciel pour votre personnel — sans lien avec le nombre de patients recommandés. Les patients paient leurs propres {{price}} séparément.",
+      "valueProp": "Aidez vos patients PIP à obtenir des soins initiaux dans le délai de 14 jours, à terminer leurs formulaires et à se présenter aux EUO et IME — avec une vue de progression pour votre accueil.",
+      "sectionTitle": "Pour les cliniques",
+      "demoLink": "Voir la démo cliniques"
+    },
+    "disclaimer": {
+      "selfHelp": "ClaimSaver+ est un logiciel d'auto-assistance. Ce n'est pas un cabinet d'avocats, un assureur ou un expert public ; il ne fournit pas de conseil juridique et ne vous représente pas. Vous restez le déclarant."
     }
   }
 }

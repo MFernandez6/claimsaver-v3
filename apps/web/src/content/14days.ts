@@ -49,9 +49,9 @@ export const SELF_HELP_ACK = {
 } as const;
 
 export const PAGE_DISCLAIMER = {
-  en: "ClaimSaver+ is self-help software. It is not a law firm, insurer, or public adjuster and does not provide legal advice or represent you. Information is general and may not apply to your situation. For legal advice, consult a Florida attorney.",
-  es: "ClaimSaver+ es software de autoayuda. No es un bufete, una aseguradora ni un ajustador público, y no ofrece asesoría legal ni te representa. La información es general y puede no aplicar a tu situación. Para asesoría legal, consulta a un abogado de Florida.",
-  fr: "ClaimSaver+ est un logiciel d'auto-assistance. Ce n'est pas un cabinet d'avocats, un assureur ou un expert public, et il ne fournit pas de conseil juridique et ne vous représente pas. Les informations sont générales et peuvent ne pas s'appliquer à votre situation. Pour un conseil juridique, consultez un avocat de Floride.",
+  en: "ClaimSaver+ is self-help software. It is not a law firm, insurer, or public adjuster and does not provide legal advice or represent you. You remain the filer. Information is general and may not apply to your situation. For legal advice, consult a Florida attorney.",
+  es: "ClaimSaver+ es software de autoayuda. No es un bufete, una aseguradora ni un ajustador público, y no ofrece asesoría legal ni te representa. Tú sigues siendo quien presenta el reclamo. La información es general y puede no aplicar a tu situación. Para asesoría legal, consulta a un abogado de Florida.",
+  fr: "ClaimSaver+ est un logiciel d'auto-assistance. Ce n'est pas un cabinet d'avocats, un assureur ou un expert public ; il ne fournit pas de conseil juridique et ne vous représente pas. Vous restez le déclarant. Les informations sont générales et peuvent ne pas s'appliquer à votre situation. Pour un conseil juridique, consultez un avocat de Floride.",
 } as const;
 
 /**
@@ -89,7 +89,7 @@ export const CHECKLIST_ITEMS = {
     "Conservez chaque document : factures médicales, reçus, lettres, courriels et textos de votre assureur. Les photos des véhicules et de la scène aident aussi.",
     "Surveillez les demandes d'EUO et d'IME. Votre assureur peut vous demander de faire une déclaration sous serment (Examination Under Oath) ou de vous présenter à un examen médical indépendant (Independent Medical Exam). Inscrivez les dates à votre calendrier. Les manquer sans motif valable peut mettre vos prestations en danger.",
     "Si vous avez manqué du travail, rassemblez une preuve de perte de revenu (bulletins de paie, une lettre de l'employeur ou des documents fiscaux). Le PIP couvre généralement 60 % des salaires perdus, jusqu'aux limites de votre police.",
-    "Sachez ce que le PIP paie généralement : 80 % des frais médicaux raisonnables, jusqu'à 10 000 $ de prestations totales. La couverture peut être limitée à 2 500 $ à moins qu'un prestataire admissible détermine que vous aviez une condition médicale d'urgence. Vous pourriez devoir les 20 % restants.",
+    "Sachez ce que le PIP paie généralement : 80 % des frais médicaux raisonnables, jusqu'à 10 000 $ de prestations totales. La couverture peut être limitée à 2 500 dollars à moins qu'un prestataire admissible détermine que vous aviez une condition médicale d'urgence. Vous pourriez devoir les 20 % restants.",
     "Si une facture ou une réclamation est refusée, demandez la raison par ecrit et conservez une copie. Vous pourriez vouloir parler a un avocat de Floride de vos options.",
   ],
 } as const;
@@ -138,7 +138,7 @@ const FAQ = {
     {
       question: "Que paie généralement le PIP de Floride ?",
       answer:
-        "Le PIP paie généralement 80 % des frais médicaux raisonnables et 60 % des salaires perdus, jusqu'aux limites de la police. Les prestations totales sont souvent d'au plus 10 000 $, et la couverture peut être limitée à 2 500 $ à moins qu'un prestataire admissible détermine que vous aviez une condition médicale d'urgence. Vous pourriez devoir les 20 % restants des factures médicales.",
+        "Le PIP paie généralement 80 % des frais médicaux raisonnables et 60 % des salaires perdus, jusqu'aux limites de la police. Les prestations totales sont souvent d'au plus 10 000 $, et la couverture peut être limitée à 2 500 dollars à moins qu'un prestataire admissible détermine que vous aviez une condition médicale d'urgence. Vous pourriez devoir les 20 % restants des factures médicales.",
     },
     {
       question: "Que se passe-t-il si mon assureur demande un EUO ou un IME ?",
@@ -208,7 +208,10 @@ export const daysCopy = {
     errorAck: "Confirm that you understand ClaimSaver+ is self-help software, not legal advice.",
     errorSms: "To share a mobile number, check the box that you agree to text messages — or leave the number blank.",
     clinicsHeading: "Run a PIP clinic? Your patients have 14 days. Do they know?",
+    clinicsValueProp:
+      "Help your PIP patients get initial care inside the 14-day window, finish their paperwork, and show up for EUOs and IMEs — with a progress-only view for your front desk.",
     clinicsCta: "Book a 15-minute demo",
+    clinicsLearn: "How the clinic program works",
     clinicsMailtoSubject: "Clinic demo",
     disclaimer: PAGE_DISCLAIMER.en,
     terms: "Terms of Service",
@@ -292,7 +295,10 @@ export const daysCopy = {
     errorSms:
       "Para compartir un número móvil, marca que aceptas mensajes de texto — o deja el número en blanco.",
     clinicsHeading: "¿Tienes una clínica de PIP? Tus pacientes tienen 14 días. ¿Lo saben?",
+    clinicsValueProp:
+      "Ayuda a tus pacientes de PIP a recibir atención inicial dentro de los 14 días, terminar su papeleo y asistir a sus EUO e IME — con una vista solo de progreso para tu recepción.",
     clinicsCta: "Agenda una demo de 15 minutos",
+    clinicsLearn: "Cómo funciona el programa para clínicas",
     clinicsMailtoSubject: "Clinic demo",
     disclaimer: PAGE_DISCLAIMER.es,
     terms: "Términos del servicio",
@@ -376,7 +382,10 @@ export const daysCopy = {
     errorSms:
       "Pour indiquer un numéro mobile, cochez que vous acceptez les SMS -- ou laissez le numéro vide.",
     clinicsHeading: "Vous dirigez une clinique PIP ? Vos patients ont 14 jours. Le savent-ils ?",
+    clinicsValueProp:
+      "Aidez vos patients PIP à obtenir des soins initiaux dans le délai de 14 jours, à terminer leurs formulaires et à se présenter aux EUO et IME — avec une vue de progression pour votre accueil.",
     clinicsCta: "Réserver une démo de 15 minutes",
+    clinicsLearn: "Comment fonctionne le programme cliniques",
     clinicsMailtoSubject: "Clinic demo",
     disclaimer: PAGE_DISCLAIMER.fr,
     terms: "Conditions d'utilisation",

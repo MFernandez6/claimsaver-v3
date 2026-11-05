@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { PLATFORM_PRICE_TESTING, PRODUCTS, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
+import { clinicPricingKey } from "@/lib/copy/pricing";
 import { ProductionTestingNotice } from "@/components/production-testing-notice";
 import { AgeTermsConsent } from "@/components/auth/age-terms-consent";
 import { PricingCompare } from "@/components/pricing-compare";
@@ -126,6 +127,9 @@ function PricingInner() {
             {t("pricing.headlinePart1")} {t("pricing.headlinePart2")}. {t("pricing.headlinePart3")}
           </h1>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            {t("copy.patientPrice.short")}
+          </p>
+          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
             {t("pricing.subtitle")}
           </p>
           <p className="mt-2 max-w-3xl text-sm text-slate-500 dark:text-slate-400">{t("floridaOnly.note")}</p>
@@ -198,6 +202,21 @@ function PricingInner() {
             {t("pricing.ui.complexClaimLead")}{" "}
             <Link className="underline" href="/when-to-call-an-attorney">{t("pricing.ui.complexClaimLink")}</Link>.
           </p>
+
+          <Card className="mt-12">
+            <CardHeader>
+              <CardTitle>{t("copy.clinic.sectionTitle")}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm leading-relaxed text-slate-600">
+              <p>{t(clinicPricingKey())}</p>
+              <p>{t("copy.clinic.noReferralFees")}</p>
+              <p>
+                <Link href="/clinic-demo" className="font-semibold text-teal-800 underline underline-offset-2">
+                  {t("copy.clinic.demoLink")}
+                </Link>
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
       <FAQ

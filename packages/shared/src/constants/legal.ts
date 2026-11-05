@@ -1,4 +1,4 @@
-import { SKIP_PAYMENTS_FOR_PROMO } from "./pricing";
+import { PATIENT_PRICE_USD, SKIP_PAYMENTS_FOR_PROMO } from "./pricing";
 
 export const BRAND = "ClaimSaver+";
 export const HEADQUARTERS = "Miami, Florida";
@@ -16,7 +16,7 @@ export const SITE_HOST = "claimsaverplus.com";
 export const SUPPORT_EMAIL = "support@claimsaverplus.com";
 
 /** Bump when ToS or Privacy materially change so clickwrap can be re-collected. */
-export const LEGAL_DOCUMENTS_VERSION = "26.11.02";
+export const LEGAL_DOCUMENTS_VERSION = "26.11.05";
 
 /** Florida LLC filed 2026. Use on contracts, receipts, and formal notices. */
 export const LEGAL_ENTITY_NAME = "CLAIMSAVERPLUS LLC";
@@ -47,7 +47,7 @@ export const POSITIONING =
 
 export const TRUST_LINES = [
   "Not a law firm",
-  "Flat $500 software access",
+  `Flat $${PATIENT_PRICE_USD} software access`,
   "Document prep—you stay in control",
 ] as const;
 
@@ -72,7 +72,7 @@ export const FRAUD_NOTICE =
   "Any person who knowingly and with intent to injure, defraud or deceive any insurance company makes a statement of claim containing any false incomplete or misleading information, is guilty of a felony of the third degree.";
 
 export const LEGAL_DISCLAIMER =
-  "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. We are not a law firm, not your representative with an insurance company, and we do not evaluate claims, estimate settlement value, or negotiate on your behalf. You prepare and send your own no-fault (PIP) materials—you are the filer, not ClaimSaver+. The $500 fee is for software access (guided forms, storage, tracking, reminders, and educational content). We do not guarantee any outcome. For advice about your specific situation, consult a licensed Florida attorney.";
+  `ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. We are not a law firm, not your representative with an insurance company, and we do not evaluate claims, estimate settlement value, or negotiate on your behalf. You prepare and send your own no-fault (PIP) materials—you are the filer, not ClaimSaver+. The $${PATIENT_PRICE_USD} fee is for software access (guided forms, storage, tracking, reminders, and educational content). We do not guarantee any outcome. For advice about your specific situation, consult a licensed Florida attorney.`;
 
 export const EDUCATION_FOOTER =
   "ClaimSaver+ is a self-help document preparation tool. It does not provide legal advice and does not create an attorney-client relationship. This article is general information about Florida PIP, not advice about your case.";

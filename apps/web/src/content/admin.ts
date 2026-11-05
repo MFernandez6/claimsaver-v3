@@ -15,7 +15,7 @@ export const ADMIN = {
   impersonationEmail:
     "ClaimSaver+ Support has asked to view your account to fix a software issue. This does not let anyone change your filing. Approve or deny from your dashboard. Access lasts 30 minutes.",
   clinicsNote:
-    "A clinic cannot enroll patients until a BAA is marked SIGNED. Clinic staff see checklist progress only — never worksheet contents.",
+    "A clinic cannot enroll patients until a BAA is marked SIGNED. Your clinic sees whether a patient started and which worksheet step they are on — never their answers, documents, or medical details.",
   ticketEmailFooter:
     "This message is about your ClaimSaver+ account, billing, or a technical issue. We cannot advise on your PIP claim or the substance of your filing. You remain the filer.",
   claimQuestionMacro: `I can't advise on your PIP claim or the substance of your filing.

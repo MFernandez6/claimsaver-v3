@@ -103,6 +103,7 @@ export function FourteenDaysLanding({ locale }: { locale: DaysLocale }) {
       <section className="bg-white px-4 py-14 text-slate-900 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold">{copy.clinicsHeading}</h2>
+          <p className="mt-4 text-base leading-relaxed text-slate-600">{copy.clinicsValueProp}</p>
           <Button asChild className="mt-6 h-12 rounded-xl bg-teal-800 px-6 font-semibold hover:bg-teal-700">
             <a
               href={clinicHref}
@@ -114,6 +115,11 @@ export function FourteenDaysLanding({ locale }: { locale: DaysLocale }) {
               {copy.clinicsCta}
             </a>
           </Button>
+          <p className="mt-4">
+            <Link href="/for-clinics" className="text-sm font-medium text-teal-800 underline underline-offset-2">
+              {copy.clinicsLearn}
+            </Link>
+          </p>
         </div>
       </section>
 

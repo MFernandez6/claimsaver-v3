@@ -10,9 +10,14 @@ export type ProductCode = (typeof PRODUCT_CODES)[number];
 export const CHECKOUT_PRODUCT_CODES = ["platform"] as const;
 export type CheckoutProductCode = (typeof CHECKOUT_PRODUCT_CODES)[number];
 
+/** Patient platform fee in dollars. Render from this constant — never a stray dollar literal. */
+export const PATIENT_PRICE_USD = 499;
+/** Clinic dashboard list price. Do not show publicly unless CLINIC_TIER_PUBLIC is true. */
+export const CLINIC_PRICE_USD_MONTHLY = 299;
+
 /** Standard list price charged at checkout. */
-export const PLATFORM_LIST_AMOUNT_CENTS = 50_000;
-export const PLATFORM_LIST_DISPLAY_PRICE = "$500.00";
+export const PLATFORM_LIST_AMOUNT_CENTS = PATIENT_PRICE_USD * 100;
+export const PLATFORM_LIST_DISPLAY_PRICE = `$${PATIENT_PRICE_USD}.00`;
 
 /** Public launch: always charge the list price. Keep the flag for a future private test window. */
 export const PLATFORM_PRICE_TESTING = false;

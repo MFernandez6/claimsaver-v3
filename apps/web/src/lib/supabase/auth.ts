@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { LEGAL_DOCUMENTS_VERSION } from "@claimsaver/shared";
+import { LEGAL_DOCUMENTS_VERSION, PATIENT_PRICE_USD } from "@claimsaver/shared";
 import { createSupabaseServerClient } from "./server";
 import { getSupabaseAdmin, isDevPlatformUnlocked, isSupabaseConfigured } from "./admin";
 import type { User } from "@supabase/supabase-js";
@@ -89,7 +89,10 @@ export async function requirePlatformAccess(req: NextRequest): Promise<{
     return {
       user,
       profile,
-      response: jsonErr("Platform access required. Purchase $500 access to continue.", 402),
+      response: jsonErr(
+        `Platform access required. Purchase $${PATIENT_PRICE_USD} access to continue.`,
+        402,
+      ),
     };
   }
   const consent = await hasCurrentLegalConsent(user.id);
