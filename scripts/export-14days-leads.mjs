@@ -24,6 +24,7 @@ const COLS = [
   "ack_self_help",
   "sms_consent",
   "sms_consent_at",
+  "sms_consent_text",
   "utm_source",
   "utm_medium",
   "utm_campaign",

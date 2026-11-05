@@ -5,6 +5,7 @@ import { daysCopy, ATTR_COOKIE, parseDaysLocale, type DaysLocale } from "@/conte
 import { thanksPathFor, type LeadAttribution } from "./attribution";
 import { sendChecklistEmail } from "./email";
 import { parseLeadForm, type Lead14DaysInput } from "./parse";
+import { mergeLeadSmsReceipt } from "./sms-receipt";
 import { rateLimit } from "@/lib/security/rate-limit";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import type { SubmitLeadState } from "./types";
@@ -31,15 +32,36 @@ async function persistLead(
 ) {
   const admin = getSupabaseAdmin();
   const attr: LeadAttribution = data.attribution;
+  const { data: existing } = await admin
+    .from("leads_14days")
+    .select("phone, sms_consent, sms_consent_text, sms_consent_at")
+    .eq("email", data.email)
+    .maybeSingle();
+  const sms = mergeLeadSmsReceipt(
+    {
+      phone: data.phone,
+      smsConsent: data.smsConsent,
+      smsConsentText: data.smsConsentText,
+    },
+    existing
+      ? {
+          phone: existing.phone ?? null,
+          smsConsent: Boolean(existing.sms_consent),
+          smsConsentText: existing.sms_consent_text ?? null,
+          smsConsentAt: existing.sms_consent_at ?? null,
+        }
+      : null,
+    new Date().toISOString(),
+  );
   const row = {
     first_name: data.firstName,
     email: data.email,
-    phone: data.phone,
+    phone: sms.phone,
     locale: data.locale,
     ack_self_help: true,
-    sms_consent: data.smsConsent,
-    sms_consent_text: data.smsConsentText,
-    sms_consent_at: data.smsConsent ? new Date().toISOString() : null,
+    sms_consent: sms.smsConsent,
+    sms_consent_text: sms.smsConsentText,
+    sms_consent_at: sms.smsConsentAt,
     utm_source: clip(attr.utmSource),
     utm_medium: clip(attr.utmMedium),
     utm_campaign: clip(attr.utmCampaign),

@@ -28,4 +28,5 @@ test("thanks overlay stays on screen; PDF opens only from a tap", () => {
   assert.doesNotMatch(thanks, /autoOpenPdf/);
   assert.doesNotMatch(submit, /redirect\(/);
   assert.match(submit, /sendChecklistEmail/);
+  assert.match(submit, /mergeLeadSmsReceipt/);
 });

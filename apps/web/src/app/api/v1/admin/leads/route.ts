@@ -4,9 +4,10 @@ import { jsonErr, jsonOk } from "@/lib/supabase/auth";
 import { requirePermission } from "@/lib/admin/require-permission";
 import { rateLimit, rateLimitResponse, clientIp } from "@/lib/security/rate-limit";
 import { maskEmail, maskName, maskPhone } from "@/lib/auth/mask";
+import { canSendLeadSms } from "@/lib/14days/sms-receipt";
 
 const LEAD_COLUMNS =
-  "id, created_at, first_name, email, phone, locale, utm_source, utm_medium, utm_campaign, gclid, fbclid";
+  "id, created_at, first_name, email, phone, locale, sms_consent, sms_consent_at, sms_consent_text, utm_source, utm_medium, utm_campaign, gclid, fbclid";
 
 export async function GET(req: NextRequest) {
   const limited = await rateLimit(`admin-leads:${clientIp(req)}`, 40, 10 * 60 * 1000);
@@ -33,6 +34,15 @@ export async function GET(req: NextRequest) {
       name: reveal ? row.first_name : maskName(String(row.first_name || "")),
       email: reveal ? row.email : maskEmail(String(row.email || "")),
       phone: row.phone ? (reveal ? row.phone : maskPhone(String(row.phone))) : null,
+      smsConsent: Boolean(row.sms_consent),
+      smsConsentAt: row.sms_consent_at ?? null,
+      smsConsentText: row.sms_consent_text ?? null,
+      canText: canSendLeadSms({
+        phone: row.phone ?? null,
+        smsConsent: Boolean(row.sms_consent),
+        smsConsentAt: row.sms_consent_at ?? null,
+        smsConsentText: row.sms_consent_text ?? null,
+      }),
       locale: row.locale,
       utmSource: row.utm_source,
       utmMedium: row.utm_medium,

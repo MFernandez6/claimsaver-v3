@@ -11,6 +11,10 @@ type Lead = {
   name: string;
   email: string;
   phone: string | null;
+  smsConsent: boolean;
+  smsConsentAt: string | null;
+  smsConsentText: string | null;
+  canText: boolean;
   locale: string;
   utmSource: string | null;
   utmMedium: string | null;
@@ -47,7 +51,7 @@ export default function AdminLeadsPage() {
       <AdminPageHeader
         kicker="Campaign"
         title="14-day leads"
-        description="Checklist downloads only. No claim worksheets. Attribution is stored for ads, not enhanced matching. OWNER sees full contact details; SUPPORT sees masked emails and phones."
+        description="Checklist downloads only. No claim worksheets. Text only when the SMS receipt is on file: the ticked box, the exact copy, and the time they agreed. OWNER sees full contact details; SUPPORT sees masked emails and phones."
       />
       {error ? <p className="text-sm text-red-700">{error}</p> : null}
       {!leads && !error ? <p className="text-sm text-slate-500">Loading leads…</p> : null}
@@ -65,6 +69,16 @@ export default function AdminLeadsPage() {
                 {fmtDate(lead.createdAt)} · {lead.locale.toUpperCase()}
                 {lead.phone ? ` · ${lead.phone}` : " · no phone"}
               </p>
+              <p className={lead.canText ? "text-sm text-teal-800" : "text-sm text-amber-800"}>
+                {lead.canText && lead.smsConsentAt
+                  ? `SMS receipt: opted in ${fmtDate(lead.smsConsentAt)}`
+                  : lead.phone
+                    ? "Phone saved. No SMS receipt — do not text."
+                    : "No SMS opt-in."}
+              </p>
+              {lead.canText && lead.smsConsentText ? (
+                <p className="text-xs leading-relaxed text-slate-500">{lead.smsConsentText}</p>
+              ) : null}
               <p className="text-xs text-slate-500">
                 source {lead.utmSource || "—"} · medium {lead.utmMedium || "—"} · campaign{" "}
                 {lead.utmCampaign || "—"}

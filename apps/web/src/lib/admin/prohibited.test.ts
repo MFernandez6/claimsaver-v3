@@ -26,6 +26,9 @@ test("deletion approval schedules a 30-day delay instead of wiping immediately",
 test("14-day leads list never loads worksheet JSON", () => {
   const source = readFileSync(join(root, "leads/route.ts"), "utf8");
   assert.match(source, /utm_source/);
+  assert.match(source, /sms_consent/);
+  assert.match(source, /sms_consent_at/);
+  assert.match(source, /canSendLeadSms/);
   assert.doesNotMatch(source, /worksheet/);
   assert.doesNotMatch(source, /claim_number/);
 });
