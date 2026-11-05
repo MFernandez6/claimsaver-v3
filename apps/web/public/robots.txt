@@ -5,5 +5,7 @@ Disallow: /admin/
 Disallow: /clinic
 Disallow: /clinic/
 Disallow: /enroll/
+Disallow: /films
+Disallow: /films/
 
 Sitemap: https://www.claimsaverplus.com/sitemap.xml

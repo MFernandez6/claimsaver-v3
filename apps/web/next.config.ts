@@ -67,6 +67,8 @@ const nextConfig: NextConfig = {
       { source: "/clinic", headers: adminHeaders },
       { source: "/clinic/:path*", headers: adminHeaders },
       { source: "/enroll/:path*", headers: adminHeaders },
+      { source: "/films", headers: adminHeaders },
+      { source: "/films/:path*", headers: adminHeaders },
     ];
   },
   async rewrites() {

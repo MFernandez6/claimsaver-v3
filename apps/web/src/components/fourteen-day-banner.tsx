@@ -27,6 +27,7 @@ const HIDDEN = [
   "/demo",
   "/clinic",
   "/enroll",
+  "/films",
 ];
 
 export function FourteenDayBanner() {

@@ -54,6 +54,12 @@ Host: `https://www.claimsaverplus.com`
 | --- | --- |
 | `/clinic` | Clinic dashboard. Progress only — never worksheet answers, vault files, or medical details. CLINIC_ADMIN / CLINIC_STAFF. |
 
+## Internal review (OWNER / SUPPORT)
+
+| Path | What |
+| --- | --- |
+| `/films` | Promo films for phone review. Sign in as OWNER/SUPPORT. Not indexed. |
+
 ## Admin console (OWNER / SUPPORT)
 
 | Path | What |
@@ -90,4 +96,4 @@ Host: `https://www.claimsaverplus.com`
 | `/need-professional-help` | `/when-to-call-an-attorney` |
 | `/notarization` | `/pricing` |
 
-Do not index `/admin`, `/clinic`, or `/enroll/` (`robots.txt`).
+Do not index `/admin`, `/clinic`, `/enroll/`, or `/films` (`robots.txt`).
