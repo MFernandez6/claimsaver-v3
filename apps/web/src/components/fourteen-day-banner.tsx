@@ -24,6 +24,7 @@ const HIDDEN = [
   "/fr/14jours",
   "/for-clinics",
   "/clinic-demo",
+  "/demo",
   "/clinic",
   "/enroll",
 ];

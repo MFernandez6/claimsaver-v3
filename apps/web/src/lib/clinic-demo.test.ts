@@ -1,10 +1,15 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   CLINIC_DEMO_BOOKING_URL,
   clinicDemoBookingUrl,
   googleAppointmentEmbedSrc,
 } from "./clinic-demo";
+
+const webRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 test("clinic demo uses the Google Calendar appointment schedule", () => {
   assert.equal(clinicDemoBookingUrl(), CLINIC_DEMO_BOOKING_URL);
@@ -24,4 +29,12 @@ test("full appointment schedule URLs keep gv=true for embed", () => {
     src,
     "https://calendar.google.com/calendar/appointments/schedules/abc123?gv=true",
   );
+});
+
+test("/demo is the short public URL for the clinic booking page", () => {
+  const config = readFileSync(join(webRoot, "next.config.ts"), "utf8");
+  assert.match(config, /source: "\/demo"/);
+  assert.match(config, /destination: "\/clinic-demo"/);
+  const banner = readFileSync(join(webRoot, "src/components/fourteen-day-banner.tsx"), "utf8");
+  assert.match(banner, /"\/demo"/);
 });

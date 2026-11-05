@@ -69,6 +69,9 @@ const nextConfig: NextConfig = {
       { source: "/enroll/:path*", headers: adminHeaders },
     ];
   },
+  async rewrites() {
+    return [{ source: "/demo", destination: "/clinic-demo" }];
+  },
   async redirects() {
     return [
       { source: "/what-we-do", destination: "/how-it-works", permanent: true },
