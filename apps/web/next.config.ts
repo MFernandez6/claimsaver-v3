@@ -17,11 +17,11 @@ const securityHeaders = [
       "form-action 'self'",
       "frame-ancestors 'none'",
       "object-src 'none'",
-      "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://js.stripe.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://connect.facebook.net",
+      "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://js.stripe.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://connect.facebook.net https://in.heycatch.ai",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://*.stripe.com https://va.vercel-insights.com https://vitals.vercel-insights.com https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.facebook.com https://connect.facebook.net https://graph.facebook.com",
+      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://*.stripe.com https://va.vercel-insights.com https://vitals.vercel-insights.com https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.facebook.com https://connect.facebook.net https://graph.facebook.com https://in.heycatch.ai",
       "frame-src https://js.stripe.com https://hooks.stripe.com https://www.facebook.com https://www.googletagmanager.com https://calendar.google.com https://calendar.app.google",
     ].join("; "),
   },
@@ -47,11 +47,11 @@ const nextConfig: NextConfig = {
       "form-action 'self'",
       "frame-ancestors 'none'",
       "object-src 'none'",
-      "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+      "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://in.heycatch.ai",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob:",
-      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://va.vercel-insights.com https://vitals.vercel-insights.com",
+      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://va.vercel-insights.com https://vitals.vercel-insights.com https://in.heycatch.ai",
       "frame-src 'none'",
     ].join("; ");
     const adminHeaders = [
@@ -76,6 +76,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/:l([a-z0-9])",
+        destination: "/?utm_source=heycatch&utm_campaign=:l",
+        permanent: false,
+      },
       { source: "/what-we-do", destination: "/how-it-works", permanent: true },
       { source: "/signin", destination: "/login", permanent: true },
       { source: "/sign-in", destination: "/login", permanent: true },

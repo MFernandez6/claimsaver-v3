@@ -16,6 +16,7 @@ import { siteUrl } from "@/lib/utils";
 import { MIN_PASSWORD_LENGTH, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
 import { normalizeEmail } from "@/lib/auth/email";
 import { flushPendingLegalConsent, markPendingLegalConsent } from "@/lib/legal-consent";
+import { identifyUser, markPendingSignup, trackSignupCompleted } from "@/lib/analytics/heycatch";
 
 export default function CheckoutAccountPage() {
   return (
@@ -80,6 +81,7 @@ function CheckoutAccountInner() {
       return;
     }
     if (data.session) {
+      if (data.user) trackSignupCompleted(data.user);
       try {
         await flushPendingLegalConsent();
       } catch {
@@ -89,6 +91,7 @@ function CheckoutAccountInner() {
       router.refresh();
       return;
     }
+    markPendingSignup();
     setCheckEmail(true);
   }
 
@@ -100,7 +103,7 @@ function CheckoutAccountInner() {
       return;
     }
     setLoading(true);
-    const { error: err } = await getBrowserSupabase().auth.signInWithPassword({
+    const { data, error: err } = await getBrowserSupabase().auth.signInWithPassword({
       email: normalizeEmail(email),
       password,
     });
@@ -115,6 +118,7 @@ function CheckoutAccountInner() {
       }
       return;
     }
+    if (data.user) identifyUser(data.user);
     router.push(next);
     router.refresh();
   }

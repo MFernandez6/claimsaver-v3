@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import { analytics } from "@heycatch/sdk";
 import { PRODUCTS, isProductCode } from "@claimsaver/shared";
 import { getStripe } from "@/lib/stripe/server";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import type Stripe from "stripe";
+
+analytics.init({ projectKey: "hck_pk_mXAe0H2X98dyJTiaEHEXTjjuZKairf4Y" });
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -76,6 +79,20 @@ export async function POST(req: NextRequest) {
           notes: "Legacy notarization SKU — not offered at checkout. Refund if this line item still charged.",
         });
       }
+
+      const email = session.customer_details?.email ?? undefined;
+      const name = session.customer_details?.name ?? undefined;
+      const plan = products.includes("platform") ? "platform" : undefined;
+      await analytics.setIdentity(userId, {
+        ...(email ? { email } : {}),
+        ...(name ? { name } : {}),
+        ...(plan ? { plan } : {}),
+      });
+      await analytics.trackEvent(
+        "purchase_completed",
+        { products: products.filter(isProductCode).join(","), amount_cents: paidCents },
+        { userId },
+      );
     }
   }
 

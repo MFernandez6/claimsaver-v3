@@ -13,6 +13,7 @@ import { safeNextPath } from "@/lib/auth/next-path";
 import { resolvePostLoginPath } from "@/lib/auth/signed-in-home";
 import { normalizeEmail } from "@/lib/auth/email";
 import { webApi } from "@/lib/api/client";
+import { identifyUser } from "@/lib/analytics/heycatch";
 
 export default function LoginInner() {
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ export default function LoginInner() {
       return;
     }
     setLoading(true);
-    const { error: err } = await getBrowserSupabase().auth.signInWithPassword({
+    const { data, error: err } = await getBrowserSupabase().auth.signInWithPassword({
       email: normalizeEmail(email),
       password,
     });
@@ -49,6 +50,7 @@ export default function LoginInner() {
       }
       return;
     }
+    if (data.user) identifyUser(data.user);
     let dest = next;
     try {
       const me = await webApi.get<Me>("/api/v1/me");

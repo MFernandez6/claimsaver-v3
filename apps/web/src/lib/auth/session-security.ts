@@ -1,3 +1,4 @@
+import { resetAnalyticsIdentity } from "@/lib/analytics/heycatch";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { isSupabaseBrowserConfigured } from "@/lib/supabase/env-public";
 
@@ -95,6 +96,7 @@ export async function endSession(reason: "idle" | "new_window" | "manual" | "bro
     if (isSupabaseBrowserConfigured()) {
       await getBrowserSupabase().auth.signOut();
     }
+    resetAnalyticsIdentity();
   } finally {
     ending = false;
   }

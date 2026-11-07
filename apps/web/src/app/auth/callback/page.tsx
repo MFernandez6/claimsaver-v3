@@ -10,6 +10,7 @@ import { safeNextPath, withQueryParam } from "@/lib/auth/next-path";
 import { resolvePostLoginPath } from "@/lib/auth/signed-in-home";
 import { flushPendingLegalConsent } from "@/lib/legal-consent";
 import { webApi } from "@/lib/api/client";
+import { consumePendingSignup, identifyUser, trackSignupCompleted } from "@/lib/analytics/heycatch";
 
 const OTP_TYPES = new Set<EmailOtpType>([
   "signup",
@@ -81,6 +82,16 @@ function AuthCallbackInner() {
         setMessage("That link could not sign you in. Redirecting…");
         router.replace(fail);
         return;
+      }
+
+      const { data: sessionData } = await supabase.auth.getUser();
+      const user = sessionData.user;
+      if (user) {
+        if (typeParam === "signup" || consumePendingSignup()) {
+          trackSignupCompleted(user);
+        } else {
+          identifyUser(user);
+        }
       }
 
       try {

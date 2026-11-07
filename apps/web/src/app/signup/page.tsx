@@ -15,6 +15,7 @@ import { siteUrl } from "@/lib/utils";
 import { MIN_PASSWORD_LENGTH } from "@claimsaver/shared";
 import { normalizeEmail } from "@/lib/auth/email";
 import { flushPendingLegalConsent, markPendingLegalConsent } from "@/lib/legal-consent";
+import { markPendingSignup, trackSignupCompleted } from "@/lib/analytics/heycatch";
 
 export default function SignupPage() {
   return (
@@ -74,6 +75,7 @@ function SignupInner() {
       return;
     }
     if (data.session) {
+      if (data.user) trackSignupCompleted(data.user);
       try {
         await flushPendingLegalConsent();
       } catch {
@@ -83,6 +85,7 @@ function SignupInner() {
       router.refresh();
       return;
     }
+    markPendingSignup();
     setCheckEmail(true);
   }
 
