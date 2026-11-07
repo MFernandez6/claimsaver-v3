@@ -187,6 +187,8 @@ test("required surfaces import the canonical copy keys", () => {
   assert.match(nav, /id="site-menu"/);
   assert.match(nav, /ResizeObserver/);
   assert.match(nav, /setMode\("full"\)/);
+  assert.match(nav, /overflow-visible/);
+  assert.doesNotMatch(nav, /gap-0\.5 overflow-hidden/);
   assert.match(nav, /href: "\/for-clinics"/);
   const footer = readFileSync(join(webRoot, "components/footer.tsx"), "utf8");
   assert.doesNotMatch(footer, /CHECKOUT_PATH/);

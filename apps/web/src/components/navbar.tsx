@@ -142,7 +142,7 @@ export function Navbar() {
 
         <nav
           className={cn(
-            "min-w-0 flex-1 items-center justify-end gap-0.5 overflow-hidden",
+            "min-w-0 flex-1 items-center justify-end gap-0.5 overflow-visible",
             showBar ? "flex" : "hidden lg:flex",
           )}
         >
