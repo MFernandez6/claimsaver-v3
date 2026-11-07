@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CHECKOUT_PATH } from "@claimsaver/shared";
+import { START_PATH } from "@claimsaver/shared";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import { Button } from "@/components/ui/button";
 import { LocalizedSocialImage } from "@/components/graphics/localized-social-image";
@@ -73,10 +73,7 @@ export default function HowItWorksPage() {
           </p>
           <div className="mt-8 flex gap-3">
             <Button asChild className="bg-gradient-to-r from-emerald-600 to-teal-800">
-              <Link href="/pricing">{t("pages.howItWorks.viewPricing")}</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href={CHECKOUT_PATH}>{t("cta.primary")}</Link>
+              <Link href={START_PATH}>{t("cta.payAccess")}</Link>
             </Button>
           </div>
         </div>

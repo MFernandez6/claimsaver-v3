@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { CHECKOUT_PATH, PRINCIPAL_ADDRESS_LINE } from "@claimsaver/shared";
+import { PRINCIPAL_ADDRESS_LINE, START_PATH } from "@claimsaver/shared";
 import { BrandLogo } from "@/components/brand-logo";
 import { ObfuscatedSupportEmail } from "@/components/obfuscated-support-email";
 import { useSignedInHome } from "@/components/auth/use-signed-in-home";
@@ -30,7 +30,6 @@ export default function Footer() {
               <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
               {t("floridaOnly.chip")}
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-white/70">{t("floridaOnly.note")}</p>
           </div>
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-teal-200">{t("footer.services")}</h3>
@@ -39,10 +38,10 @@ export default function Footer() {
                 {isSignedIn ? (
                   <Link href={home.href} className="hover:text-white">{t(home.labelKey)}</Link>
                 ) : (
-                  <Link href={CHECKOUT_PATH} className="hover:text-white">{t("cta.primary")}</Link>
+                  <Link href={START_PATH} className="hover:text-white">{t("cta.payAccess")}</Link>
                 )}
               </li>
-              <li><Link href="/pricing" className="hover:text-white">{t("navigation.pricing")}</Link></li>
+              <li><Link href={START_PATH} className="hover:text-white">{t("navigation.pricing")}</Link></li>
               <li><Link href="/how-it-works" className="hover:text-white">{t("navigation.howItWorks")}</Link></li>
             </ul>
           </div>

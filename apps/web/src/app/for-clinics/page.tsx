@@ -26,7 +26,6 @@ export default function ForClinicsPage() {
           <p>{t("pages.forClinics.intro")}</p>
         </>
       }
-      note={t("floridaOnly.note")}
       actions={
         <>
           <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">

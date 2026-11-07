@@ -16,7 +16,6 @@ export default function LicenseCredentialsPage() {
       title={t("pages.licenseCredentials.title")}
       subtitle={t("pages.licenseCredentials.subtitle")}
       intro={<p>{t("pages.licenseCredentials.body")}</p>}
-      note={t("floridaOnly.note")}
       actions={
         <>
           <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">

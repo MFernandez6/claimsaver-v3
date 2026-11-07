@@ -33,6 +33,9 @@ export function PricingCompare({
               {t("pricing.fit.colOurs")}
             </h3>
             <ComparisonRows side="Ours" />
+            <p className="mt-6 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              {t("pricing.fit.anchorEcho")}
+            </p>
             {PLATFORM_PRICE_TESTING ? (
               <p className="mt-6 text-sm font-medium text-teal-800 dark:text-teal-200">
                 {t("pricing.testing.compareNote", { testPrice: PRODUCTS.platform.displayPrice })}

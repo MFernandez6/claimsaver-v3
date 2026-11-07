@@ -73,8 +73,11 @@
       "title": "Déposez votre réclamation sans faute en Floride.",
       "titleLine1": "Déposez votre réclamation",
       "titleLine2": "sans faute en Floride.",
-      "subtitle": "Gardez ce qui vous revient.",
-      "description": "Un logiciel guidé pour les réclamations PIP en Floride que vous déposez vous-même—surtout lorsqu’un cabinet de préjudice corporel ne prend pas le dossier. Accès plateforme {{price}} forfaitaire. Vous restez le déposant. Pas un cabinet d’avocats.",
+      "subtitle": "L’avocat a dit non ? Vous déposez quand même.",
+      "trustSpine": "C’est votre couverture. Vous l’avez payée. Utilisez-la.",
+      "founderCredential": "Conçu par un ancien ajusteur de sinistres de Floride.",
+      "description": "Un logiciel guidé pour les réclamations PIP en Floride que vous déposez vous-même—surtout un dossier PIP seulement après qu’un avocat a dit non. Accès plateforme {{price}} forfaitaire. Vous restez le déposant. Pas un cabinet d’avocats.",
+      "urgency": "Blessé dans un accident ? Vous avez 14 jours pour vous faire soigner.",
       "cta": "Créez votre compte",
       "ctaSecondary": "Voir comment ça marche",
       "learnMore": "En Savoir Plus",
@@ -170,8 +173,20 @@
       "pipStepsSubtitle": "De l’accident à une réclamation structurée : la feuille de route que notre plateforme guidée suit avec vous.",
       "whatYouGetTitle": "Ce que vous obtenez",
       "whatYouGetSubtitle": "Outils structurés et stockage sécurisé—pas d’honoraires de résultat.",
-      "beforeAfterTitle": "Du chaos à la clarté",
-      "beforeAfterSubtitle": "Remplacez la paperasse éparpillée par un parcours guidé unique que vous maîtrisez."
+      "beforeAfterTitle": "Paperasse éparpillée vs. un seul dossier PIP",
+      "beforeAfterSubtitle": "Mettez les pièces, les dates et les formulaires au même endroit, sous votre contrôle—pas dans un tas dans la boîte à gants."
+    },
+    "productPreview": {
+      "title": "La feuille de travail, le coffre et le calendrier",
+      "subtitle": "C’est le logiciel que vous utilisez après le paiement. Données d’exemple—pas votre dossier.",
+      "worksheetTitle": "Feuille de travail PIP guidée",
+      "vaultTitle": "Coffre de documents",
+      "calendarTitle": "Calendrier des délais",
+      "caption": "Aperçu d’exemple—pas votre dossier et pas un montant garanti."
+    },
+    "proofQuotes": {
+      "title": "Des personnes qui ont déposé leur propre dossier PIP",
+      "counter": "{{count}} dossiers préparés avec ClaimSaver+"
     },
     "faq": {
       "title": "Questions courantes",
@@ -212,6 +227,10 @@
       "ifYouStop": {
         "question": "Qu’advient-il de ma réclamation si j’arrête d’utiliser la plateforme ?",
         "answer": "La réclamation vous appartient. ClaimSaver+ n’envoie jamais de documents à votre assureur et ne parle pas en votre nom. Si vous fermez votre compte ou cessez d’utiliser la plateforme, rien ne nous est transféré—parce que nous n’avons jamais eu votre réclamation. Conservez les copies dont vous avez besoin. Votre dossier PIP continue uniquement selon ce que vous faites auprès de votre assureur."
+      },
+      "refund": {
+        "question": "Puis-je obtenir un remboursement ?",
+        "answer": "Les remboursements ne sont pas automatiques et nous ne proratisons pas les {{price}}. Écrivez à {{supportEmail}} dans les 14 jours suivant l’achat si vous n’avez pas commencé la feuille de travail guidée et n’avez pas téléversé de documents. Nous ne remboursons pas parce qu’un rappel n’est pas apparu, parce que vous avez manqué une fenêtre de soins ou de dépôt, ou parce qu’un assureur a retardé, réduit ou refusé des prestations. Les paiements par carte sont traités par Stripe."
       }
     },
     "optionalServices": {
@@ -316,6 +335,40 @@
       "notEveryClaim": "Tous les dossiers PIP ne conviennent pas à une démarche DIY.",
       "introDiy": "ClaimSaver+ est un logiciel pour les formalités standard de no-fault en Floride—y compris les dossiers PIP seuls que les cabinets de préjudice ne prennent souvent pas au pourcentage. Quittez le chemin DIY et consultez un avocat licencié en Floride lorsque :",
       "supportNote": "Nous ne vous mettons pas en relation avec un avocat dans le cadre du produit à {{price}}. Le support peut aider pour la connexion, la facturation et l’utilisation du site—pas pour « que dois-je faire dans mon cas ? »"
+    },
+    "lawyerDeclined": {
+      "kicker": "Comparaison",
+      "title": "Un avocat ne prendra pas mon dossier PIP",
+      "subtitle": "Vous pouvez quand même déposer votre réclamation no-fault en Floride.",
+      "intro": "Les cabinets de préjudice refusent souvent un dossier PIP seulement. Le pourcentage qu’ils prendraient n’a pas de sens économique sur les seules prestations PIP. Cela ne vous empêche pas de déposer une réclamation PIP auprès de votre propre assureur.",
+      "note": "Informations générales—pas un conseil juridique. ClaimSaver+ n’est pas un cabinet d’avocats et ne vous représente pas.",
+      "navLink": "Un avocat ne prendra pas mon dossier PIP",
+      "economicsTitle": "Pourquoi les cabinets disent non",
+      "economicsBody": "Le pourcentage qu’ils prendraient n’a pas de sens économique sur les seules prestations PIP, donc un dossier PIP seulement est souvent refusé. Les cabinets prennent en général des affaires avec un recours viable contre un tiers et des blessures assez graves pour justifier des honoraires de contingence sur un règlement de préjudice corporel.",
+      "diyTitle": "Déposez-le vous-même",
+      "diyBody": "Le no-fault en Floride est conçu pour que vous déposiez auprès de votre propre assureur. Vous pouvez remplir les formulaires, rassembler les pièces et envoyer le dossier. Le risque est de manquer une échéance ou de faire une erreur technique sur un paquet conçu pour des professionnels.",
+      "flatTitle": "Logiciel à forfait",
+      "flatBody": "ClaimSaver+ est un logiciel guidé : feuilles de travail, coffre de documents, rappels et éducation. {{price}} une fois, pas un pourcentage de vos prestations PIP. Vous restez le déposant. Pas un cabinet d’avocats. Pas un conseil juridique.",
+      "attorneyTitle": "Quand appeler quand même un avocat",
+      "attorneyBody": "Blessure grave, responsabilité d’un tiers, litige de couverture, dépositions sous serment, ou si vous voulez une représentation. C’est une décision distincte de l’achat de l’accès à la plateforme.",
+      "faqTitle": "Questions fréquentes",
+      "faqSubtitle": "Réponses claires sur un dossier PIP seulement refusé—pas un conseil sur votre affaire.",
+      "faq1": {
+        "question": "Puis-je déposer une réclamation PIP si un avocat a dit non ?",
+        "answer": "Oui. Le no-fault en Floride est conçu pour que vous déposiez auprès de votre propre assureur. Qu’un avocat refuse un dossier PIP seulement ne vous enlève pas cette option."
+      },
+      "faq2": {
+        "question": "Pourquoi un cabinet de préjudice ne prend-il pas un dossier PIP seulement ?",
+        "answer": "Le pourcentage qu’ils prendraient n’a pas de sens économique sur les seules prestations PIP, donc un dossier PIP seulement est souvent refusé."
+      },
+      "faq3": {
+        "question": "Combien coûte ClaimSaver+ ?",
+        "answer": "{{price}} une fois, par déposant. Pas un pourcentage de vos prestations PIP. Vous restez le déposant."
+      },
+      "faq4": {
+        "question": "Si j’utilise le logiciel, puis-je engager un avocat plus tard ?",
+        "answer": "Oui. Votre dossier et vos pièces sont à vous. ClaimSaver+ ne dépose rien et ne parle pas à votre place. Si vous engagez plus tard un avocat licencié en Floride, vous pouvez partager ce que vous avez conservé."
+      }
     },
     "licenseCredentials": {
       "kicker": "Licence et références",
@@ -428,7 +481,7 @@
     }
   },
   "pricing": {
-    "title": "Tarification — logiciel de réclamation PIP en Floride | ClaimSaver+",
+    "title": "Tarifs ClaimSaver+ : {{price}} forfaitaires, logiciel PIP en Floride",
     "headlinePart1": "PIP en Floride.",
     "headlinePart2": "Logiciel guidé",
     "headlinePart3": "Accès à {{price}}.",
@@ -461,7 +514,32 @@
       "fee": "Comment on facture",
       "feeAttorney": "Un pourcentage d’un recouvrement contre un tiers, s’il y en a un",
       "feeOurs": "Forfait de {{price}}. Pas un pourcentage de vos prestations PIP.",
+      "anchorEcho": "{{price}} une fois—pas un pourcentage d’une indemnisation qui peut ne jamais arriver, et pas une facture mensuelle pour un seul dossier.",
       "footnote": "Informations générales—pas un conseil juridique. ClaimSaver+ n’est pas un cabinet d’avocats et ne vous représente pas."
+    },
+    "offer": {
+      "kicker": "Accès à la plateforme",
+      "priceLine": "{{price}} une fois",
+      "perFiler": "Par déposant",
+      "noPercentage": "Pas un pourcentage de vos prestations PIP",
+      "includedTitle": "Ce qui est inclus",
+      "forSaleToday": "C’est le produit en vente aujourd’hui."
+    },
+    "vs": {
+      "title": "Ce que {{price}} représente, à côté des autres façons de payer",
+      "compare": "Comparer",
+      "colFirm": "Cabinet de préjudice",
+      "colSub": "Abonnement mensuel",
+      "colOurs": "ClaimSaver+",
+      "howLabel": "Comment vous payez",
+      "howFirm": "Un pourcentage d’une indemnisation qui peut ne jamais arriver",
+      "howSub": "Vous facture chaque mois pour un seul dossier",
+      "howOurs": "{{price}} une fois",
+      "whatLabel": "Ce que vous obtenez",
+      "whatFirm": "Une représentation s’ils prennent le dossier. Un dossier PIP seulement est souvent refusé.",
+      "whatSub": "Une facture mensuelle de plan juridique. Pas un logiciel guidé de réclamation PIP en Floride.",
+      "whatOurs": "Feuilles de travail PIP guidées, coffre, rappels et éducation. Vous restez le déposant.",
+      "note": "Informations générales—pas un conseil juridique. Nous ne citons pas le tarif d’une autre entreprise."
     },
     "traditionalCosts": {
       "title": "Illustratif : modèle d’honoraires de contingence",
@@ -1174,11 +1252,17 @@
       "title": "Qui a construit ClaimSaver+",
       "subtitle": "Parcours du fondateur vérifiable—pas une représentation vendue sur cette plateforme.",
       "name": "Miguel A. Fernandez, M.Sc.",
-      "role": "Fondateur · Miami, Floride",
-      "credential1": "Expérience en paralégal et contentieux",
-      "credential2": "M.Sc. Droit et Politiques publiques",
-      "credential3": "Expérience des opérations de sinistres d’assurance",
-      "body": "Son parcours comprend un M.Sc. en Droit et Politiques publiques, une expérience en paralégal et contentieux, et une expérience des opérations de sinistres d’assurance. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : accès forfaitaire {{price}}, vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
+      "role": "Fondateur et PDG · Miami, Floride",
+      "initials": "MF",
+      "credential1": "Master of Science in Law and Policy",
+      "credential2": "Diplômé Magna Cum Laude, premier de sa promotion, GPA 3.78",
+      "credential3": "Invité à la Golden Key International Honour Society",
+      "credential4": "Expérience des opérations de sinistres d’assurance",
+      "credential5": "Expérience en paralégal et contentieux",
+      "credential6": "Accepté au programme d’accélération Built in Miami Cohort 4 de la Ville de Miami",
+      "adjusterLine": "Conçu par un ancien ajusteur de sinistres de Floride.",
+      "linkedin": "LinkedIn",
+      "body": "ClaimSaver+ est conçu par un ancien ajusteur de sinistres de Floride. Son parcours comprend un Master of Science in Law and Policy, obtenu Magna Cum Laude en tête de promotion avec un GPA de 3.78, et une invitation à la Golden Key International Honour Society, ainsi que des opérations de sinistres d’assurance et une expérience en paralégal et contentieux. Il a été accepté au programme d’accélération Built in Miami Cohort 4 de la Ville de Miami. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : accès forfaitaire {{price}}, vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
       "disclaimer": "Ces références décrivent le parcours du fondateur. ClaimSaver+ est un logiciel—nous ne fournissons pas de conseil juridique, n’ajustons pas votre dossier, ne négocions pas avec les assureurs et ne vous représentons pas.",
       "verifyLink": "Lire comment fonctionne la plateforme",
       "imageAlt": "Miguel A. Fernandez, fondateur de ClaimSaver+",
@@ -1190,12 +1274,13 @@
       "body": "Nous avons commencé à Miami après que notre famille ait traversé un dossier d’accident et vu ce que l’aide traditionnelle peut coûter. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et les dates—pas une stratégie de tribunal. Nous avons construit la plateforme pour que les gens puissent faire ce travail eux-mêmes lorsqu’un dossier PIP standard suffit.",
       "personalJourney": {
         "title": "Un voyage personnel",
-        "description": "Après que notre famille ait fait face à des dossiers d’accident et vu ce que l’aide traditionnelle peut coûter, nous avons réalisé qu’il devait y avoir une meilleure façon. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et le suivi des dates—pas une stratégie de tribunal. Les personnes qui n’ont besoin que de ce travail se retrouvent souvent seules après qu’un cabinet ait refusé un dossier PIP seulement."
+        "description": "Après que notre famille ait fait face à des dossiers d’accident et vu ce que l’aide traditionnelle peut coûter, nous avons réalisé qu’il devait y avoir une meilleure façon. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et le suivi des dates—pas une stratégie de tribunal. Les personnes qui n’ont besoin que de ce travail se retrouvent souvent seules après qu’un avocat a dit non sur un dossier PIP seulement."
       },
       "mission": {
         "title": "Notre mission",
         "description": "Donner aux familles de Floride des outils simples et abordables pour déposer et gérer des dossiers no-fault—avec un forfait logiciel—lorsqu’un dépôt PIP standard est ce dont elles ont besoin."
       },
+      "founderVoice": "Je suis Miguel. Quand un avocat dit non, le délai de 14 jours continue de courir. J’ai travaillé les dossiers du côté de l’assureur. ClaimSaver+ est le logiciel guidé que j’aurais voulu pour notre famille : vous préparez le dossier PIP vous-même, à un forfait, sans céder à quiconque un pourcentage de vos prestations.",
       "whyWeCare": {
         "title": "Pourquoi cela nous tient à cœur",
         "quote": "« Nous avons créé cette plateforme pour aider les familles comme la nôtre à éviter le fardeau financier des services administratifs traditionnels pendant des moments déjà difficiles. »"
@@ -1424,8 +1509,10 @@
     "optionTwoLabel": "Option deux",
     "optionTwoTitle": "Engager un avocat en dommages corporels",
     "optionTwoBody": "Les avocats en préjudice corporel prennent généralement les dossiers avec une réclamation viable contre un tiers et des blessures assez graves pour justifier des honoraires de contingence sur une transaction corporelle. Un dossier PIP seul—sans fautif clair, ou avec des blessures qui n’atteignent pas ce seuil—n’est souvent pas un cas qu’ils prennent. Informations générales, pas un conseil sur vos faits.",
-    "middlePath": "ClaimSaver+ est la voie intermédiaire guidée : une plateforme qui vous accompagne pour préparer vos propres documents PIP, organise vos pièces et peut vous rappeler les dates courantes liées au PIP en Floride que vous saisissez, y compris la fenêtre de 14 jours comme rappel—pas un conseil juridique. Conçu pour celles et ceux qui déposent leur propre réclamation sans faute, y compris après le refus d’un cabinet. {{price}} forfaitaires—pas de pourcentage de vos prestations PIP pour nous. Vous restez le déposant. Nous ne parlons pas à votre assureur.",
+    "middlePath": "ClaimSaver+ est la voie intermédiaire guidée : une plateforme qui vous accompagne pour préparer vos propres documents PIP, organise vos pièces et peut vous rappeler les dates courantes liées au PIP en Floride que vous saisissez, y compris la fenêtre de 14 jours comme rappel—pas un conseil juridique. Conçu pour celles et ceux qui déposent leur propre réclamation sans faute, y compris après qu’un avocat a dit non. {{price}} forfaitaires—pas de pourcentage de vos prestations PIP pour nous. Vous restez le déposant. Nous ne parlons pas à votre assureur.",
+    "emotional": "Quand un avocat dit non, le délai de 14 jours continue de courir et la panique est réelle. J’ai construit cela après avoir travaillé les dossiers du côté de l’assureur : la paperasse est faite pour des professionnels, pas pour la personne qui vient d’être tamponnée. Le logiciel vous guide pour préparer votre propre dossier. Vous restez le déposant. Nous ne parlons pas à votre assureur.",
     "founder": "ClaimSaver+ est un logiciel conçu à Miami pour les formalités PIP de Floride. Ce n’est pas un cabinet d’avocats et il ne vend pas d’expertise ou de représentation juridique.",
+    "founderByline": "Conçu par un ancien ajusteur de sinistres de Floride. Expérience en paralégal et contentieux. Opérations de sinistres d’assurance. Parcours du fondateur—pas un service vendu sur cette plateforme.",
     "attorneyLink": "Les dossiers complexes ou contestés appartiennent à un avocat licencié en Floride."
   },
   "auth": {
@@ -1652,7 +1739,10 @@
     "primary": "Créez votre compte",
     "secondary": "Voir comment ça marche",
     "path": "Créez un compte, puis payez {{price}} pour accéder à la plateforme.",
-    "payAccess": "Continuer vers les tarifs"
+    "payAccess": "Continuer vers les tarifs",
+    "refundLine": "Remboursement sous 14 jours si vous n’avez pas commencé la feuille de travail ni téléversé de documents.",
+    "stripeLine": "Paiements traités par Stripe.",
+    "refundTermsLink": "Conditions de remboursement"
   },
   "fourteenDay": {
     "banner": "Blessé dans un accident en Floride au cours des 14 derniers jours ?",
@@ -1661,8 +1751,7 @@
     "attorney": "Quand appeler un avocat"
   },
   "floridaOnly": {
-    "chip": "PIP de Floride uniquement",
-    "note": "Cette plateforme concerne les dossiers no-fault (PIP) de véhicules à moteur en Floride. Les autres États ne sont pas encore pris en charge."
+    "chip": "PIP de Floride uniquement"
   },
   "notFiling": {
     "title": "Vous ne déposez pas encore",
@@ -1679,8 +1768,7 @@
   "proof": {
     "miami": "Siège à Miami",
     "languages": "Anglais, espagnol et français",
-    "flat": "{{price}} forfaitaires—pas de contingence pour nous",
-    "notLaw": "Pas un cabinet d’avocats"
+    "flat": "{{price}} forfaitaires—pas de contingence pour nous"
   },
   "nav": {
     "company": "Entreprise"

@@ -31,7 +31,6 @@ export default function ArticlePage({ params }: { params: Promise<{ slug: string
           </Link>
         </p>
       }
-      note={t("floridaOnly.note")}
       actions={
         <>
           <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">

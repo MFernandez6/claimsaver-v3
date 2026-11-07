@@ -54,7 +54,7 @@ export function FourteenDayBanner() {
         <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
           <p className="text-sm leading-relaxed">
             <span className="font-semibold">{t("fourteenDay.banner")}</span>{" "}
-            {t("fourteenDay.body")}
+            <span className="hidden sm:inline">{t("fourteenDay.body")}</span>
           </p>
           <p className="flex shrink-0 flex-wrap gap-x-4 gap-y-1 text-sm font-semibold">
             <Link href={articlePath("fourteenDay")} className="underline underline-offset-2 hover:text-amber-800 dark:hover:text-amber-200">

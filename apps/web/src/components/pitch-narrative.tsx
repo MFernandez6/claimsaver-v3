@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+import { FounderTrustCard } from "@/components/trust-signals";
 
 /**
  * Customer-facing version of the founder pitch.
@@ -50,6 +51,14 @@ export function PitchNarrative({
         )}
       >
         {t("pitch.body1")}
+      </p>
+      <p
+        className={cn(
+          "text-lg leading-relaxed",
+          dark ? "text-slate-200" : "text-slate-700 dark:text-slate-300",
+        )}
+      >
+        {t("pitch.emotional")}
       </p>
       <p className={cn("text-sm", dark ? "text-slate-400" : "text-slate-500")}>
         {t("pitch.fourteenDayNote")}
@@ -102,6 +111,8 @@ export function PitchNarrative({
       >
         {t("pitch.middlePath")}
       </p>
+
+      <FounderTrustCard tone={dark ? "dark" : "light"} />
 
       <p className={cn("text-sm leading-relaxed", dark ? "text-slate-400" : "text-slate-600 dark:text-slate-400")}>
         <Link

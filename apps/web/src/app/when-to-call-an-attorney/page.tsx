@@ -17,7 +17,6 @@ export default function WhenToCallPage() {
       title={t("pages.needProfessionalHelp.title")}
       subtitle={t("pages.needProfessionalHelp.notEveryClaim")}
       intro={<p>{t("pages.needProfessionalHelp.introDiy")}</p>}
-      note={t("floridaOnly.note")}
       actions={
         <>
           <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">

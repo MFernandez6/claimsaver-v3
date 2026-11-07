@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MarketingPage, MarketingSection } from "@/components/marketing-page";
 import { type ArticleKey } from "@/data/learningCenter";
 import { ARTICLE_SLUGS, articlePath } from "@/data/learningCenter/slugs";
+import { LAWYER_DECLINED_PATH } from "@/lib/seo/paths";
 
 export default function LearningCenterPage() {
   const { t } = useTranslation();
@@ -18,7 +19,6 @@ export default function LearningCenterPage() {
       title={t("pages.learningCenter.title")}
       subtitle={t("pages.learningCenter.subtitle")}
       intro={<p>{t("pages.learningCenter.intro")}</p>}
-      note={t("floridaOnly.note")}
       actions={
         <>
           <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">
@@ -32,6 +32,23 @@ export default function LearningCenterPage() {
     >
       <MarketingSection>
         <div className="grid gap-4">
+          <Link href={LAWYER_DECLINED_PATH} className="block">
+            <Card className="h-full transition hover:border-teal-300">
+              <CardHeader>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-800">
+                  {t("pages.lawyerDeclined.kicker")}
+                </p>
+                <CardTitle className="text-lg leading-snug">
+                  {t("pages.lawyerDeclined.title")}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm leading-relaxed text-slate-600">
+                  {t("pages.lawyerDeclined.intro")}
+                </p>
+              </CardContent>
+            </Card>
+          </Link>
           {keys.map((key) => (
             <Link key={key} href={articlePath(key)} className="block">
               <Card className="h-full transition hover:border-teal-300">

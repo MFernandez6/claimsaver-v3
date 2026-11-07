@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/how-it-works",
     "/pricing",
+    "/vs/lawyer-wont-take-my-pip-claim",
     "/who-we-are",
     "/for-clinics",
     "/clinic-demo",

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ClaimSaver+ — Florida PIP claim software",
     description:
-      `File your Florida no-fault claim. Keep what’s yours. Flat $${PATIENT_PRICE_USD} guided software—you stay in control.`,
+      `Hurt in a crash? You have 14 days to get treated. File your Florida no-fault claim. Flat $${PATIENT_PRICE_USD}. You stay the filer.`,
     url,
     siteName: "ClaimSaver+",
     locale: "en_US",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ClaimSaver+ — Florida PIP claim software",
     description:
-      `File your Florida no-fault claim. Keep what’s yours. Flat $${PATIENT_PRICE_USD} guided software—you stay in control.`,
+      `Hurt in a crash? You have 14 days to get treated. File your Florida no-fault claim. Flat $${PATIENT_PRICE_USD}. You stay the filer.`,
     images: ["/images/brand/claimsaver-og-share-1200x630.png"],
   },
 };

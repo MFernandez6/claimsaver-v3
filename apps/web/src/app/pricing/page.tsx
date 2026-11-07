@@ -1,11 +1,16 @@
 "use client";
 
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Check, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { PLATFORM_PRICE_TESTING, PRODUCTS, SKIP_PAYMENTS_FOR_PROMO } from "@claimsaver/shared";
-import { ClinicPricingNote } from "@/components/clinic-pricing-note";
+import {
+  PATIENT_PRICE_USD,
+  PLATFORM_PRICE_TESTING,
+  PRODUCTS,
+  SKIP_PAYMENTS_FOR_PROMO,
+} from "@claimsaver/shared";
 import { ProductionTestingNotice } from "@/components/production-testing-notice";
 import { AgeTermsConsent } from "@/components/auth/age-terms-consent";
 import { PricingCompare } from "@/components/pricing-compare";
@@ -16,18 +21,109 @@ import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
 import FAQ from "@/components/faq";
 import { useSignedInHome } from "@/components/auth/use-signed-in-home";
 import { pricingCheckoutPath } from "@/lib/auth/next-path";
-import { formatUsd } from "@/lib/utils";
+import { cn, formatUsd } from "@/lib/utils";
 import { webApi } from "@/lib/api/client";
+import { NamedProofSection, ThirdPartyStrip, TrustCtaNote } from "@/components/trust-signals";
+import { PricingOffer, PricingValueTable } from "@/components/pricing-offer";
+import { LAWYER_DECLINED_PATH } from "@/lib/seo/paths";
 
 export default function PricingPage() {
+  const { t } = useTranslation();
+
   return (
-    <Suspense>
-      <PricingInner />
-    </Suspense>
+    <div className="min-h-screen bg-white dark:bg-gray-950">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50 pt-28 pb-16 dark:from-slate-950 dark:via-gray-900 dark:to-slate-900">
+        <PageHeroBackdrop />
+        <div className="relative z-10 mx-auto max-w-4xl px-4">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-200/90 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-teal-800 shadow-sm backdrop-blur-sm dark:border-teal-500/25 dark:bg-slate-900/70 dark:text-teal-200">
+            <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
+            {t("floridaOnly.chip")}
+          </p>
+          <h1 className="text-4xl font-bold tracking-tight text-balance text-slate-900 dark:text-white">
+            {t("pricing.headlinePart1")} {t("pricing.headlinePart2")}. {t("pricing.headlinePart3")}
+          </h1>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            {t("copy.patientPrice.short")}
+          </p>
+          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            {t("pricing.subtitle")}
+          </p>
+          <p className="mt-1 text-sm font-medium text-slate-500">{t("cta.path")}</p>
+          <div className="mt-6">
+            <ProductionTestingNotice compact />
+          </div>
+
+          <PricingOffer />
+
+          <Suspense fallback={<PricingCheckoutFallback />}>
+            <PricingCheckout />
+          </Suspense>
+
+          <PricingValueTable />
+
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              {t("pricing.ui.comparisonTitleLead")}
+            </h2>
+            <p className="mt-2">
+              <Link href={LAWYER_DECLINED_PATH} className="font-semibold text-teal-800 underline underline-offset-2">
+                {t("pages.lawyerDeclined.navLink")}
+              </Link>
+            </p>
+            <div className="mt-6">
+              <PricingCompare />
+            </div>
+            <p className="mt-4 text-xs text-slate-500">{t("pricing.comparisonNote")}</p>
+          </div>
+          <p className="mt-6 text-sm text-slate-500">
+            {t("pricing.ui.complexClaimLead")}{" "}
+            <Link className="font-semibold text-teal-800 underline underline-offset-2 dark:text-teal-300" href="/when-to-call-an-attorney">
+              {t("pricing.ui.complexClaimLink")}
+            </Link>
+            .
+          </p>
+
+          <p className="mt-10 text-center text-sm leading-relaxed text-slate-500">
+            <Link
+              href="/for-clinics"
+              className="font-semibold text-teal-800 underline underline-offset-2 dark:text-teal-300"
+            >
+              {t("navigation.forClinics")}
+            </Link>
+            <span className="text-slate-400"> · </span>
+            {t("pages.forClinics.subtitle")}
+          </p>
+        </div>
+      </section>
+      <NamedProofSection />
+      <FAQ
+        title={t("pricing.ui.faqTitle")}
+        subtitle={t("pricing.ui.faqSubtitle")}
+        items={[
+          { question: t("pricing.ui.faq1q"), answer: t("pricing.ui.faq1a") },
+          { question: t("pricing.ui.faq2q"), answer: t("pricing.ui.faq2a") },
+          { question: t("pricing.ui.faq3q"), answer: t("pricing.ui.faq3a") },
+          { question: t("pricing.ui.faq4q"), answer: t("pricing.ui.faq4a") },
+          { question: t("pricing.ui.faq5q"), answer: t("pricing.ui.faq5a") },
+          {
+            question: t("home.faq.refund.question"),
+            answer: (
+              <>
+                {t("home.faq.refund.answer")}{" "}
+                <Link href="/terms-of-service#section-5" className="font-semibold text-teal-800 underline underline-offset-2">
+                  {t("cta.refundTermsLink")}
+                </Link>
+              </>
+            ),
+          },
+        ]}
+      />
+      <ThirdPartyStrip />
+    </div>
   );
 }
 
-function PricingInner() {
+function PricingCheckout() {
   const { t } = useTranslation();
   const { isSignedIn, isLoaded, isStaff, staffReady, home } = useSignedInHome();
   const router = useRouter();
@@ -115,110 +211,130 @@ function PricingInner() {
             : t("pricing.ui.proceedToPayment");
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-      <section className="relative overflow-hidden pt-28 pb-16">
-        <PageHeroBackdrop />
-        <div className="relative z-10 mx-auto max-w-4xl px-4">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-200/90 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-teal-800 shadow-sm backdrop-blur-sm dark:border-teal-500/25 dark:bg-slate-900/70 dark:text-teal-200">
-            <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
-            {t("floridaOnly.chip")}
-          </p>
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white">
-            {t("pricing.headlinePart1")} {t("pricing.headlinePart2")}. {t("pricing.headlinePart3")}
-          </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            {t("copy.patientPrice.short")}
-          </p>
-          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            {t("pricing.subtitle")}
-          </p>
-          <p className="mt-2 max-w-3xl text-sm text-slate-500 dark:text-slate-400">{t("floridaOnly.note")}</p>
-          <p className="mt-1 text-sm font-medium text-slate-500">{t("cta.path")}</p>
-          <div className="mt-6">
-            <ProductionTestingNotice compact />
-          </div>
-
-          <Card className="mt-10">
-            <CardHeader>
-              <CardTitle>{t("pricing.selectServices")}</CardTitle>
-              <p className="text-sm text-slate-500">
-                {t("pricing.checkoutNote")}
-              </p>
-              <p className="text-sm text-slate-500">{t("pricing.futureAddonsNote")}</p>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <label className="flex cursor-pointer flex-col gap-3 rounded-xl border p-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-                <div>
-                  <p className="font-semibold">{t("pricing.services.noFaultAssistance.name")}</p>
-                  <p className="text-sm text-slate-500">{t("pricing.services.noFaultAssistance.description")}</p>
-                </div>
-                <div className="text-left sm:text-right">
-                  <p className="font-bold">{PRODUCTS.platform.displayPrice}</p>
-                  {PLATFORM_PRICE_TESTING ? (
-                    <>
-                      <p className="text-[11px] font-medium uppercase tracking-wide text-teal-700">
-                        {t("pricing.testing.rateLabel")}
-                      </p>
-                      <p className="text-xs text-slate-400 line-through">{PRODUCTS.platform.listDisplayPrice}</p>
-                    </>
-                  ) : null}
-                  <input type="checkbox" className="mt-2" checked={platform} onChange={(e) => setPlatform(e.target.checked)} />
-                </div>
-              </label>
-              <div className="flex items-center justify-between border-t pt-4">
-                <span className="font-medium">{t("pricing.ui.totalLabel")}</span>
-                <span className="text-xl font-bold">{formatUsd(total)}</span>
-              </div>
-              {error ? <p className="text-sm text-red-600">{error}</p> : null}
-              {isStaff ? (
-                <Button asChild className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
-                  <Link href={home.href}>{t(home.labelKey)}</Link>
-                </Button>
-              ) : (
-                <>
-                  <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
-                  <Button disabled={loading || total === 0 || !ageTerms} onClick={() => void startCheckout()} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">
-                    {ctaLabel}
-                  </Button>
-                  {SKIP_PAYMENTS_FOR_PROMO ? null : (
-                    <p className="text-center text-xs text-slate-500">{t("pricing.ui.securePaymentStripe")}</p>
-                  )}
-                </>
+    <PaymentCard>
+      <CardHeader className="pt-2">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-teal-800 sm:text-xs sm:tracking-[0.16em] dark:text-teal-300">
+          {t("pricing.ui.securePaymentStripe")}
+        </p>
+        <CardTitle className="text-2xl tracking-tight">{t("pricing.selectServices")}</CardTitle>
+        <p className="text-sm leading-relaxed text-slate-500">{t("pricing.checkoutNote")}</p>
+        <p className="text-sm leading-relaxed text-slate-500">{t("pricing.futureAddonsNote")}</p>
+      </CardHeader>
+      <CardContent className="space-y-5">
+        <label
+          className={cn(
+            "flex cursor-pointer flex-col gap-3 rounded-2xl border-2 p-5 transition-colors sm:flex-row sm:items-start sm:justify-between sm:gap-4",
+            platform
+              ? "border-teal-500 bg-gradient-to-br from-teal-50/90 via-white to-emerald-50/60 shadow-sm dark:border-teal-500 dark:from-teal-950/40 dark:via-slate-900 dark:to-emerald-950/20"
+              : "border-slate-200 bg-white hover:border-teal-300 dark:border-slate-700 dark:bg-slate-900",
+          )}
+        >
+          <div className="flex gap-3">
+            <span
+              className={cn(
+                "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2",
+                platform
+                  ? "border-teal-600 bg-gradient-to-br from-teal-600 to-emerald-800 text-white"
+                  : "border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900",
               )}
-              <p className="text-center text-xs text-slate-500">{t("pricing.ui.supportEmailLine")}</p>
-            </CardContent>
-          </Card>
-
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-              {t("pricing.ui.comparisonTitleLead")}
-            </h2>
-            <div className="mt-6">
-              <PricingCompare />
+              aria-hidden
+            >
+              {platform ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : null}
+            </span>
+            <div>
+              <p className="font-semibold text-slate-900 dark:text-white">
+                {t("pricing.services.noFaultAssistance.name")}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-slate-500">
+                {t("pricing.services.noFaultAssistance.description")}
+              </p>
             </div>
-            <p className="mt-4 text-xs text-slate-500">{t("pricing.comparisonNote")}</p>
           </div>
-          <p className="mt-6 text-sm text-slate-500">
-            {t("pricing.ui.complexClaimLead")}{" "}
-            <Link className="underline" href="/when-to-call-an-attorney">{t("pricing.ui.complexClaimLink")}</Link>.
-          </p>
-
-          <div className="mt-12">
-            <ClinicPricingNote ctaHref="/clinic-demo" ctaLabel={t("copy.clinic.demoLink")} />
+          <div className="pl-9 text-left sm:pl-0 sm:text-right">
+            <p className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              {PRODUCTS.platform.displayPrice}
+            </p>
+            <p className="mt-0.5 text-xs font-medium uppercase tracking-wide text-slate-500">
+              {t("pricing.ui.oneTimeFee")}
+            </p>
+            {PLATFORM_PRICE_TESTING ? (
+              <>
+                <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-teal-700">
+                  {t("pricing.testing.rateLabel")}
+                </p>
+                <p className="text-xs text-slate-400 line-through">{PRODUCTS.platform.listDisplayPrice}</p>
+              </>
+            ) : null}
+            <input
+              type="checkbox"
+              className="sr-only"
+              checked={platform}
+              onChange={(e) => setPlatform(e.target.checked)}
+            />
           </div>
+        </label>
+        <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-slate-50 to-emerald-50/70 px-4 py-3 dark:from-slate-900 dark:to-teal-950/30">
+          <span className="font-medium text-slate-700 dark:text-slate-200">{t("pricing.ui.totalLabel")}</span>
+          <span className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">{formatUsd(total)}</span>
         </div>
-      </section>
-      <FAQ
-        title={t("pricing.ui.faqTitle")}
-        subtitle={t("pricing.ui.faqSubtitle")}
-        items={[
-          { question: t("pricing.ui.faq1q"), answer: t("pricing.ui.faq1a") },
-          { question: t("pricing.ui.faq2q"), answer: t("pricing.ui.faq2a") },
-          { question: t("pricing.ui.faq3q"), answer: t("pricing.ui.faq3a") },
-          { question: t("pricing.ui.faq4q"), answer: t("pricing.ui.faq4a") },
-          { question: t("pricing.ui.faq5q"), answer: t("pricing.ui.faq5a") },
-        ]}
+        {error ? <p className="text-sm text-red-600">{error}</p> : null}
+        {isStaff ? (
+          <Button asChild className="h-12 w-full bg-gradient-to-r from-emerald-600 to-teal-800 text-base font-semibold">
+            <Link href={home.href}>{t(home.labelKey)}</Link>
+          </Button>
+        ) : (
+          <>
+            <div className="rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3 dark:border-slate-700 dark:bg-slate-900/70">
+              <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
+            </div>
+            <Button
+              disabled={loading || total === 0 || !ageTerms}
+              onClick={() => void startCheckout()}
+              className="h-12 w-full bg-gradient-to-r from-emerald-600 to-teal-800 text-base font-semibold"
+            >
+              {ctaLabel}
+            </Button>
+            {SKIP_PAYMENTS_FOR_PROMO ? null : (
+              <div className="flex items-start gap-2">
+                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-teal-700 dark:text-teal-300" aria-hidden />
+                <TrustCtaNote className="text-xs" />
+              </div>
+            )}
+          </>
+        )}
+        <p className="text-center text-xs text-slate-500">{t("pricing.ui.supportEmailLine")}</p>
+      </CardContent>
+    </PaymentCard>
+  );
+}
+
+function PricingCheckoutFallback() {
+  const { t } = useTranslation();
+
+  return (
+    <PaymentCard>
+      <CardHeader className="pt-2">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-teal-800 sm:text-xs sm:tracking-[0.16em] dark:text-teal-300">
+          {t("pricing.ui.securePaymentStripe")}
+        </p>
+        <CardTitle className="text-2xl tracking-tight">{t("pricing.services.noFaultAssistance.name")}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">${PATIENT_PRICE_USD}.00</p>
+        <p className="mt-1 text-sm text-slate-500">{t("pricing.offer.priceLine")}</p>
+      </CardContent>
+    </PaymentCard>
+  );
+}
+
+function PaymentCard({ children }: { children: ReactNode }) {
+  return (
+    <Card className="relative mt-10 overflow-hidden rounded-2xl border-teal-200/90 bg-white shadow-xl dark:border-teal-800 dark:bg-slate-900">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-600 to-teal-800"
+        aria-hidden
       />
-    </div>
+      {children}
+    </Card>
   );
 }

@@ -16,7 +16,6 @@ export default function ContactPage() {
       title={t("pages.contact.title")}
       subtitle={t("pages.contact.subtitle")}
       intro={<p>{t("pages.contact.body")}</p>}
-      note={t("floridaOnly.note")}
       actions={
         <>
           <Button asChild className="h-12 bg-gradient-to-r from-emerald-600 to-teal-800">

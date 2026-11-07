@@ -73,8 +73,11 @@
       "title": "Presenta tu reclamo sin culpa en Florida.",
       "titleLine1": "Presenta tu reclamo sin culpa",
       "titleLine2": "en Florida.",
-      "subtitle": "Mantén lo tuyo.",
-      "description": "Software guiado para reclamos PIP de Florida que usted presenta—sobre todo cuando un bufete de lesiones personales no toma el caso. Acceso a la plataforma por {{price}} fijos. Usted sigue siendo quien presenta. No somos bufete.",
+      "subtitle": "¿El abogado le dijo que no? Usted igual presenta.",
+      "trustSpine": "Es su cobertura. Usted la pagó. Úsela.",
+      "founderCredential": "Creado por un exajustador de reclamos de Florida.",
+      "description": "Software guiado para reclamos PIP de Florida que usted presenta—sobre todo un expediente solo de PIP después de que un abogado le dijo que no. Acceso a la plataforma por {{price}} fijos. Usted sigue siendo quien presenta. No somos bufete.",
+      "urgency": "¿Salió herido de un choque? Tiene 14 días para recibir tratamiento.",
       "cta": "Cree su cuenta",
       "ctaSecondary": "Vea cómo funciona",
       "learnMore": "Más Información",
@@ -170,8 +173,20 @@
       "pipStepsSubtitle": "Del accidente a un reclamo organizado: la hoja de ruta que la plataforma guiada recorre contigo.",
       "whatYouGetTitle": "Lo que obtienes",
       "whatYouGetSubtitle": "Herramientas estructuradas y almacenamiento seguro—no un honorario de contingencia.",
-      "beforeAfterTitle": "Del caos a la claridad",
-      "beforeAfterSubtitle": "Sustituye el papeleo disperso por un flujo guiado único que tú controlas."
+      "beforeAfterTitle": "Papeleo disperso vs. un solo expediente PIP",
+      "beforeAfterSubtitle": "Ponga los registros, las fechas y los formularios en un solo lugar que usted controla—no en un montón en la guantera."
+    },
+    "productPreview": {
+      "title": "La hoja de trabajo, la bóveda y el calendario",
+      "subtitle": "Esto es el software que usa después de pagar. Datos de muestra—no su reclamo.",
+      "worksheetTitle": "Hoja de trabajo PIP guiada",
+      "vaultTitle": "Bóveda de documentos",
+      "calendarTitle": "Calendario de plazos",
+      "caption": "Vista de muestra—no es su reclamo ni un monto garantizado."
+    },
+    "proofQuotes": {
+      "title": "Personas que presentaron su propio reclamo PIP",
+      "counter": "{{count}} reclamos preparados con ClaimSaver+"
     },
     "faq": {
       "title": "Preguntas frecuentes",
@@ -212,6 +227,10 @@
       "ifYouStop": {
         "question": "¿Qué pasa con mi reclamo si dejo de usar la plataforma?",
         "answer": "El reclamo es suyo. ClaimSaver+ nunca envía materiales a su aseguradora ni habla por usted. Si cierra su cuenta o deja de usar la plataforma, nada se transfiere a nosotros—porque nunca tuvimos su reclamo. Conserve copias de lo que necesite. Su expediente PIP continúa solo según lo que usted haga con su aseguradora."
+      },
+      "refund": {
+        "question": "¿Puedo pedir un reembolso?",
+        "answer": "Los reembolsos no son automáticos y no prorrateamos la tarifa de {{price}}. Escriba a {{supportEmail}} dentro de 14 días de la compra si no ha empezado la hoja de trabajo guiada y no ha subido documentos. No reembolsamos porque no apareció un recordatorio, porque perdió una ventana de tratamiento o presentación, o porque una aseguradora retrasó, redujo o negó beneficios. Los pagos con tarjeta los procesa Stripe."
       }
     },
     "optionalServices": {
@@ -316,6 +335,40 @@
       "notEveryClaim": "No todo reclamo PIP encaja en un camino de hágalo usted mismo.",
       "introDiy": "ClaimSaver+ es software para el papeleo estándar de no-fault en Florida—incluidos expedientes solo de PIP que los bufetes de lesiones a menudo no toman a contingencia. Deje el camino DIY y consulte a un abogado licenciado en Florida cuando:",
       "supportNote": "No le asignamos un abogado como parte del producto de {{price}}. El soporte puede ayudar con el inicio de sesión, la facturación y el uso del sitio—no con “¿qué debo hacer en mi caso?”"
+    },
+    "lawyerDeclined": {
+      "kicker": "Comparación",
+      "title": "Un abogado no tomará mi reclamo PIP",
+      "subtitle": "Usted igual puede presentar su reclamo de no-fault en Florida.",
+      "intro": "Los bufetes de lesiones a menudo rechazan un expediente solo de PIP. El porcentaje que cobrarían no tiene sentido económico solo sobre los beneficios PIP. Eso no le impide presentar PIP ante su propia aseguradora.",
+      "note": "Información general—no es asesoramiento legal. ClaimSaver+ no es un bufete y no lo representa.",
+      "navLink": "Un abogado no tomará mi reclamo PIP",
+      "economicsTitle": "Por qué los bufetes dicen que no",
+      "economicsBody": "El porcentaje que cobrarían no tiene sentido económico solo sobre los beneficios PIP, así que un expediente solo de PIP a menudo se rechaza. Los bufetes por lo general toman casos con un reclamo viable contra un tercero y lesiones lo bastante graves para sostener un honorario de contingencia de un acuerdo por lesiones corporales.",
+      "diyTitle": "Preséntelo usted mismo",
+      "diyBody": "El no-fault de Florida está pensado para que usted presente ante su propia aseguradora. Puede llenar los formularios, reunir registros y enviar el paquete. El riesgo es perder una fecha o cometer un error técnico en un paquete hecho para profesionales.",
+      "flatTitle": "Software de tarifa plana",
+      "flatBody": "ClaimSaver+ es software guiado: hojas de trabajo, una bóveda de documentos, recordatorios y educación. {{price}} una vez, no un porcentaje de sus beneficios PIP. Usted sigue siendo quien presenta. No es un bufete. No es asesoramiento legal.",
+      "attorneyTitle": "Cuándo igual llamar a un abogado",
+      "attorneyBody": "Lesión grave, responsabilidad de otra persona, disputas de cobertura, declaraciones bajo juramento, o si quiere representación. Esa es una decisión aparte de comprar acceso a la plataforma.",
+      "faqTitle": "Preguntas frecuentes",
+      "faqSubtitle": "Respuestas claras sobre un expediente solo de PIP rechazado—no es consejo sobre su caso.",
+      "faq1": {
+        "question": "¿Puedo presentar PIP si un abogado me dijo que no?",
+        "answer": "Sí. El no-fault de Florida está pensado para que usted presente ante su propia aseguradora. Que un abogado rechace un expediente solo de PIP no le quita esa opción."
+      },
+      "faq2": {
+        "question": "¿Por qué un bufete de lesiones no toma un reclamo solo de PIP?",
+        "answer": "El porcentaje que cobrarían no tiene sentido económico solo sobre los beneficios PIP, así que un expediente solo de PIP a menudo se rechaza."
+      },
+      "faq3": {
+        "question": "¿Cuánto cuesta ClaimSaver+?",
+        "answer": "{{price}} una vez, por reclamante. No un porcentaje de sus beneficios PIP. Usted sigue siendo quien presenta."
+      },
+      "faq4": {
+        "question": "Si uso el software, ¿puedo contratar un abogado después?",
+        "answer": "Sí. Su reclamo y sus registros son suyos. ClaimSaver+ no presenta ni habla por usted. Si más adelante contrata a un abogado licenciado en Florida, puede compartir lo que guardó."
+      }
     },
     "licenseCredentials": {
       "kicker": "Licencia y credenciales",
@@ -428,7 +481,7 @@
     }
   },
   "pricing": {
-    "title": "Precios — software de reclamos PIP en Florida | ClaimSaver+",
+    "title": "Precios ClaimSaver+: {{price}} fijos, software PIP en Florida",
     "headlinePart1": "PIP de Florida.",
     "headlinePart2": "Software guiado",
     "headlinePart3": "Acceso por {{price}}.",
@@ -461,7 +514,32 @@
       "fee": "Cómo se cobra",
       "feeAttorney": "Un porcentaje de una recuperación contra un tercero, si la hay",
       "feeOurs": "Tarifa plana de {{price}}. Sin porcentaje de sus beneficios PIP.",
+      "anchorEcho": "{{price}} una vez—no un porcentaje de una recuperación que puede no llegar nunca, y no una factura mensual por un solo reclamo.",
       "footnote": "Información general—no es asesoramiento legal. ClaimSaver+ no es un bufete y no lo representa."
+    },
+    "offer": {
+      "kicker": "Acceso a la plataforma",
+      "priceLine": "{{price}} una vez",
+      "perFiler": "Por reclamante",
+      "noPercentage": "Sin porcentaje de sus beneficios PIP",
+      "includedTitle": "Qué incluye",
+      "forSaleToday": "Este es el producto a la venta hoy."
+    },
+    "vs": {
+      "title": "Qué es {{price}}, junto a las otras formas de pagar",
+      "compare": "Comparar",
+      "colFirm": "Bufete de lesiones",
+      "colSub": "Suscripción mensual",
+      "colOurs": "ClaimSaver+",
+      "howLabel": "Cómo se paga",
+      "howFirm": "Un porcentaje de una recuperación que puede no llegar nunca",
+      "howSub": "Le cobra todos los meses por un solo reclamo",
+      "howOurs": "{{price}} una vez",
+      "whatLabel": "Qué recibe",
+      "whatFirm": "Representación si aceptan el caso. Un expediente solo de PIP a menudo se rechaza.",
+      "whatSub": "Una factura mensual de plan legal. No es software guiado de reclamos PIP de Florida.",
+      "whatOurs": "Hojas de trabajo PIP guiadas, bóveda, recordatorios y educación. Usted sigue siendo quien presenta.",
+      "note": "Información general—no es asesoramiento legal. No cotizamos el precio de otra empresa."
     },
     "traditionalCosts": {
       "title": "Ilustrativo: modelo de honorario por contingencia",
@@ -893,11 +971,17 @@
       "title": "Quién construyó ClaimSaver+",
       "subtitle": "Antecedentes del fundador que puede verificar—no representación vendida en esta plataforma.",
       "name": "Miguel A. Fernandez, M.Sc.",
-      "role": "Fundador · Miami, Florida",
-      "credential1": "Experiencia como paralegal y en litigio",
-      "credential2": "M.Sc. en Derecho y Políticas Públicas",
-      "credential3": "Experiencia en operaciones de reclamos de seguros",
-      "body": "Su trayectoria incluye un M.Sc. en Derecho y Políticas Públicas, experiencia como paralegal y en litigio, y experiencia en operaciones de reclamos de seguros. ClaimSaver+ es el software guiado que desearíamos haber tenido: acceso de {{price}} fijos, usted sigue siendo quien presenta, y claridad honesta sobre lo que el software puede y no puede hacer.",
+      "role": "Fundador y CEO · Miami, Florida",
+      "initials": "MF",
+      "credential1": "Master of Science in Law and Policy",
+      "credential2": "Graduado Magna Cum Laude, primero de su clase, GPA 3.78",
+      "credential3": "Invitado a la Golden Key International Honour Society",
+      "credential4": "Experiencia en operaciones de reclamos de seguros",
+      "credential5": "Experiencia como paralegal y en litigio",
+      "credential6": "Aceptado en Built in Miami Cohort 4, el programa acelerador de la Ciudad de Miami",
+      "adjusterLine": "Creado por un exajustador de reclamos de Florida.",
+      "linkedin": "LinkedIn",
+      "body": "ClaimSaver+ está creado por un exajustador de reclamos de Florida. Su trayectoria incluye un Master of Science in Law and Policy, obtenido Magna Cum Laude como primero de su clase con un GPA de 3.78, y una invitación a la Golden Key International Honour Society, además de experiencia en operaciones de reclamos de seguros y como paralegal y en litigio. Fue aceptado en Built in Miami Cohort 4, el programa acelerador de la Ciudad de Miami. ClaimSaver+ es el software guiado que desearíamos haber tenido: acceso de {{price}} fijos, usted sigue siendo quien presenta, y claridad honesta sobre lo que el software puede y no puede hacer.",
       "disclaimer": "Estas credenciales describen los antecedentes del fundador. ClaimSaver+ es software—no damos asesoramiento legal, no ajustamos su reclamo, no negociamos con aseguradoras ni lo representamos.",
       "verifyLink": "Lea cómo funciona la plataforma",
       "imageAlt": "Miguel A. Fernandez, fundador de ClaimSaver+",
@@ -909,12 +993,13 @@
       "body": "Empezamos en Miami después de que nuestra familia pasara por un reclamo de accidente y viera lo que puede costar la ayuda tradicional. Gran parte de una presentación de no-fault en Florida es papeleo, organización y fechas—no estrategia de tribunal. Construimos la plataforma para que las personas puedan hacer ese trabajo ellas mismas cuando un reclamo PIP estándar es todo lo que necesitan.",
       "personalJourney": {
         "title": "Un Viaje Personal",
-        "description": "Después de que nuestra familia enfrentara reclamos de accidentes y viera lo que puede costar la ayuda tradicional, nos dimos cuenta de que tenía que haber una mejor manera. Gran parte de una presentación de no-fault en Florida es papeleo, organización y estar al tanto de las fechas—no estrategia de tribunal. Quienes solo necesitan ese trabajo a menudo terminan solos después de que los bufetes rechazan un asunto solo de PIP."
+        "description": "Después de que nuestra familia enfrentara reclamos de accidentes y viera lo que puede costar la ayuda tradicional, nos dimos cuenta de que tenía que haber una mejor manera. Gran parte de una presentación de no-fault en Florida es papeleo, organización y estar al tanto de las fechas—no estrategia de tribunal. Quienes solo necesitan ese trabajo a menudo terminan solos después de que un abogado les dijo que no en un expediente solo de PIP."
       },
       "mission": {
         "title": "Nuestra Misión",
         "description": "Ofrecer a las familias en Florida herramientas directas y asequibles para presentar y gestionar reclamos sin culpa—con una tarifa plana de software—cuando una presentación PIP estándar es lo que necesitan."
       },
+      "founderVoice": "Soy Miguel. Cuando un abogado le dice que no, el reloj de 14 días sigue corriendo. Trabajé reclamos desde el lado de la aseguradora. ClaimSaver+ es el software guiado que ojalá hubiera tenido nuestra familia: usted prepara el papeleo PIP, a un precio fijo, sin cederle a nadie un porcentaje de sus beneficios.",
       "whyWeCare": {
         "title": "Por Qué Nos Importa",
         "quote": "\"Creamos esta plataforma para ayudar a familias como la nuestra a evitar la carga financiera de los servicios administrativos tradicionales durante tiempos ya difíciles.\""
@@ -1424,8 +1509,10 @@
     "optionTwoLabel": "Opción dos",
     "optionTwoTitle": "Contratar a un abogado de lesiones",
     "optionTwoBody": "Los abogados de lesiones personales suelen tomar casos con un reclamo viable contra un tercero y lesiones lo bastante graves para sostener un honorario de contingencia sobre un acuerdo de lesiones corporales. Un expediente solo de PIP—sin un culpable claro, o con lesiones que no llegan a ese umbral—a menudo no es un caso que tomen. Información general, no un consejo sobre sus hechos.",
-    "middlePath": "ClaimSaver+ es el camino intermedio guiado: una plataforma que le acompaña al preparar sus propios materiales de reclamo PIP, mantiene la documentación organizada y puede recordarle fechas habituales de PIP en Florida que usted introduce, incluida la ventana de 14 días como recordatorio—no como asesoría legal. Pensado para quien presenta su propio reclamo sin culpa, incluso después de que un bufete haya rechazado el caso. {{price}} fijos—sin un porcentaje de sus beneficios PIP para nosotros. Usted sigue siendo quien presenta. No hablamos con su aseguradora.",
+    "middlePath": "ClaimSaver+ es el camino intermedio guiado: una plataforma que le acompaña al preparar sus propios materiales de reclamo PIP, mantiene la documentación organizada y puede recordarle fechas habituales de PIP en Florida que usted introduce, incluida la ventana de 14 días como recordatorio—no como asesoría legal. Pensado para quien presenta su propio reclamo sin culpa, incluso después de que un abogado le haya dicho que no. {{price}} fijos—sin un porcentaje de sus beneficios PIP para nosotros. Usted sigue siendo quien presenta. No hablamos con su aseguradora.",
+    "emotional": "Cuando un abogado dice que no, el reloj de 14 días sigue corriendo y el pánico es real. Construí esto después de trabajar reclamos desde el lado de la aseguradora: el papeleo es para profesionales, no para quien acaba de ser chocado por detrás. El software le acompaña a preparar su propio expediente. Usted sigue siendo quien presenta. No hablamos con su aseguradora.",
     "founder": "ClaimSaver+ es software creado en Miami para trámites PIP de Florida. No es un bufete y no vende ajuste ni representación jurídica.",
+    "founderByline": "Creado por un exajustador de reclamos de Florida. Experiencia como paralegal y en litigio. Operaciones de reclamos de seguros. Antecedentes del fundador—no un servicio vendido en esta plataforma.",
     "attorneyLink": "Los reclamos complejos o disputados corresponden a un abogado licenciado en Florida."
   },
   "auth": {
@@ -1652,7 +1739,10 @@
     "primary": "Cree su cuenta",
     "secondary": "Vea cómo funciona",
     "path": "Cree una cuenta y luego pague {{price}} para acceder a la plataforma.",
-    "payAccess": "Continuar a precios"
+    "payAccess": "Continuar a precios",
+    "refundLine": "Reembolso en 14 días si no ha empezado la hoja de trabajo ni ha subido documentos.",
+    "stripeLine": "Los pagos los procesa Stripe.",
+    "refundTermsLink": "Términos de reembolso"
   },
   "fourteenDay": {
     "banner": "¿Resultó lesionado en un choque en Florida en los últimos 14 días?",
@@ -1661,8 +1751,7 @@
     "attorney": "Cuándo llamar a un abogado"
   },
   "floridaOnly": {
-    "chip": "Solo PIP de Florida",
-    "note": "Esta plataforma es para reclamos de no-fault (PIP) de vehículos de motor en Florida. Otros estados aún no están disponibles."
+    "chip": "Solo PIP de Florida"
   },
   "notFiling": {
     "title": "Aún no está presentando el reclamo",
@@ -1679,8 +1768,7 @@
   "proof": {
     "miami": "Sede en Miami",
     "languages": "Inglés, español y francés",
-    "flat": "Tarifa plana de {{price}}—sin contingencia para nosotros",
-    "notLaw": "No somos un bufete"
+    "flat": "Tarifa plana de {{price}}—sin contingencia para nosotros"
   },
   "nav": {
     "company": "Empresa"

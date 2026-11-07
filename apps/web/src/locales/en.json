@@ -53,7 +53,7 @@
     "needHelpShort": "Complex claim?",
     "licenseCredentials": "License & Credentials",
     "contact": "Contact",
-    "forClinics": "For clinics",
+    "forClinics": "For Clinics",
     "pricing": "Pricing",
     "notarization": "Notarization",
     "dashboard": "Dashboard",
@@ -73,8 +73,11 @@
       "title": "File Your Florida No-Fault Claim.",
       "titleLine1": "File Your Florida",
       "titleLine2": "No-Fault Claim.",
-      "subtitle": "Keep What's Yours.",
-      "description": "Self-help software for Florida PIP paperwork you prepare yourself—especially PIP-only files personal-injury firms often decline. Flat {{price}} platform access. You stay the filer. Not a law firm. Not legal advice.",
+      "subtitle": "Lawyer turned you down? You still file.",
+      "trustSpine": "It's your coverage. You paid for it. Use it.",
+      "founderCredential": "Built by a former Florida claims adjuster.",
+      "description": "Self-help software for Florida PIP paperwork you prepare yourself—especially PIP-only files after a lawyer turned you down. Flat {{price}} platform access. You stay the filer. Not a law firm. Not legal advice.",
+      "urgency": "Hurt in a crash? You have 14 days to get treated.",
       "cta": "Create your account",
       "ctaSecondary": "See how it works",
       "learnMore": "Learn More",
@@ -170,8 +173,20 @@
       "pipStepsSubtitle": "From the accident to an organized claim—the roadmap our guided platform follows with you.",
       "whatYouGetTitle": "What you get",
       "whatYouGetSubtitle": "Structured tools and secure storage—not a contingency fee.",
-      "beforeAfterTitle": "From chaos to clarity",
-      "beforeAfterSubtitle": "Replace scattered paperwork with a single, guided workflow you control."
+      "beforeAfterTitle": "Scattered paperwork vs. one PIP file",
+      "beforeAfterSubtitle": "Put the records, dates, and forms in one place you control—not a pile in the glove box."
+    },
+    "productPreview": {
+      "title": "The worksheet, the vault, and the calendar",
+      "subtitle": "This is the software you use after you pay. Sample data—not your claim.",
+      "worksheetTitle": "Guided PIP worksheet",
+      "vaultTitle": "Document vault",
+      "calendarTitle": "Deadline calendar",
+      "caption": "Sample preview—not your claim and not a guaranteed amount."
+    },
+    "proofQuotes": {
+      "title": "People who filed their own PIP claim",
+      "counter": "{{count}} claims prepared through ClaimSaver+"
     },
     "faq": {
       "title": "Common questions",
@@ -212,6 +227,10 @@
       "ifYouStop": {
         "question": "What happens to my claim if I stop using it?",
         "answer": "Your claim is yours. ClaimSaver+ never sends materials to your insurer or speaks for you. If you close your account or stop using the platform, nothing is handed off to us—because we never had your claim. Keep copies of anything you need. Your PIP file continues only based on what you do with your carrier."
+      },
+      "refund": {
+        "question": "Can I get a refund?",
+        "answer": "Refunds are not automatic and we do not prorate the {{price}} fee. Write {{supportEmail}} within 14 days of purchase if you have not begun the guided worksheet and have not uploaded documents. We do not refund because a reminder did not appear, because you missed a treatment or filing window, or because an insurer delayed, reduced, or denied benefits. Card payments are processed by Stripe."
       }
     },
     "optionalServices": {
@@ -316,6 +335,40 @@
       "notEveryClaim": "Not every PIP claim belongs on a DIY path.",
       "introDiy": "ClaimSaver+ is software for standard Florida no-fault paperwork—including PIP-only files that PI firms often will not take on contingency. Leave the DIY path and consult a licensed Florida attorney when:",
       "supportNote": "We do not match you to a lawyer as part of the {{price}} product. Support may help with login, billing, and how to use the site—not how to handle your specific claim."
+    },
+    "lawyerDeclined": {
+      "kicker": "Comparison",
+      "title": "Lawyer won't take my PIP claim",
+      "subtitle": "You can still file your Florida no-fault claim.",
+      "intro": "PI firms often decline a PIP-only file. The percentage they would charge does not make economic sense on PIP benefits alone. That does not stop you from filing PIP with your own insurer.",
+      "note": "General information—not legal advice. ClaimSaver+ is not a law firm and does not represent you.",
+      "navLink": "Lawyer won't take my PIP claim",
+      "economicsTitle": "Why firms say no",
+      "economicsBody": "The percentage they would charge does not make economic sense on PIP benefits alone, so a PIP-only file is often declined. Firms generally take cases with a viable third-party claim and injuries serious enough to support a contingency fee from a bodily-injury settlement.",
+      "diyTitle": "File it yourself",
+      "diyBody": "Florida no-fault is designed so you can file with your own insurer. You can fill out the forms, gather records, and send the package. The risk is missing a deadline or making a technical error on a packet built for professionals.",
+      "flatTitle": "Flat-fee software",
+      "flatBody": "ClaimSaver+ is guided software: worksheets, a document vault, reminders, and education. Flat {{price}} one time, not a percentage of your PIP benefits. You stay the filer. Not a law firm. Not legal advice.",
+      "attorneyTitle": "When to still call an attorney",
+      "attorneyBody": "Serious injury, someone else's liability, coverage disputes, examinations under oath, or if you want representation. That is a separate decision from buying platform access.",
+      "faqTitle": "Common questions",
+      "faqSubtitle": "Plain answers about a declined PIP-only file—not advice about your case.",
+      "faq1": {
+        "question": "Can I file PIP if a lawyer turned me down?",
+        "answer": "Yes. Florida no-fault is designed so you can file with your own insurer. A lawyer declining a PIP-only file does not take away that option."
+      },
+      "faq2": {
+        "question": "Why won't a PI firm take a PIP-only claim?",
+        "answer": "The percentage they would charge does not make economic sense on PIP benefits alone, so a PIP-only file is often declined."
+      },
+      "faq3": {
+        "question": "What does ClaimSaver+ cost?",
+        "answer": "Flat {{price}} one time, per filer. Not a percentage of your PIP benefits. You stay the filer."
+      },
+      "faq4": {
+        "question": "If I use the software, can I still hire a lawyer later?",
+        "answer": "Yes. Your claim and your records are yours. ClaimSaver+ does not file or speak for you. If you later hire a licensed Florida attorney, you can share what you kept."
+      }
     },
     "licenseCredentials": {
       "kicker": "License & credentials",
@@ -428,7 +481,7 @@
     }
   },
   "pricing": {
-    "title": "Pricing — Florida PIP claim software | ClaimSaver+",
+    "title": "ClaimSaver+ pricing: flat {{price}}, Florida PIP claim software",
     "headlinePart1": "Florida PIP.",
     "headlinePart2": "Guided software",
     "headlinePart3": "Flat {{price}} access.",
@@ -461,7 +514,32 @@
       "fee": "How you’re charged",
       "feeAttorney": "A percentage of a third-party recovery, if there is one",
       "feeOurs": "A flat {{price}}. Not a percentage of your PIP benefits.",
+      "anchorEcho": "{{price}} once—not a percentage of a recovery that may never come, and not a monthly bill for one claim.",
       "footnote": "General information—not legal advice. ClaimSaver+ is not a law firm and does not represent you."
+    },
+    "offer": {
+      "kicker": "Platform access",
+      "priceLine": "{{price}} one time",
+      "perFiler": "Per filer",
+      "noPercentage": "No percentage of your PIP benefits",
+      "includedTitle": "What's included",
+      "forSaleToday": "This is the product for sale today."
+    },
+    "vs": {
+      "title": "What {{price}} is, next to the other ways people pay",
+      "compare": "Compare",
+      "colFirm": "PI firm",
+      "colSub": "Monthly subscription",
+      "colOurs": "ClaimSaver+",
+      "howLabel": "How you pay",
+      "howFirm": "A percentage of a recovery that may never come",
+      "howSub": "Bills you every month for one claim",
+      "howOurs": "{{price}} once",
+      "whatLabel": "What you get",
+      "whatFirm": "Representation if they take the case. A PIP-only file is often declined.",
+      "whatSub": "A monthly legal-plan bill. Not guided Florida PIP claim software.",
+      "whatOurs": "Guided PIP worksheets, vault, reminders, and education. You stay the filer.",
+      "note": "General information—not legal advice. We do not quote another company's price."
     },
     "traditionalCosts": {
       "title": "Illustrative: when a PI firm typically takes a case",
@@ -1173,11 +1251,17 @@
       "title": "Who built ClaimSaver+",
       "subtitle": "Founder background—not representation sold on this platform.",
       "name": "Miguel A. Fernandez, M.Sc.",
-      "role": "Founder · Miami, Florida",
-      "credential1": "Paralegal & litigation experience",
-      "credential2": "M.Sc. Law & Policy",
-      "credential3": "Insurance claims operations experience",
-      "body": "His background includes an M.Sc. in Law & Policy, paralegal and litigation experience, and insurance claims operations. ClaimSaver+ is the guided software we wished existed: flat {{price}} access, you stay the filer, and honest clarity about what software can and can't do.",
+      "role": "Founder & CEO · Miami, Florida",
+      "initials": "MF",
+      "credential1": "Master of Science in Law and Policy",
+      "credential2": "Graduated Magna Cum Laude, top of class, 3.78 GPA",
+      "credential3": "Invited to the Golden Key International Honour Society",
+      "credential4": "Insurance claims operations experience",
+      "credential5": "Paralegal & litigation experience",
+      "credential6": "Accepted to the City of Miami Built in Miami accelerator, Cohort 4",
+      "adjusterLine": "Built by a former Florida claims adjuster.",
+      "linkedin": "LinkedIn",
+      "body": "ClaimSaver+ is built by a former Florida claims adjuster. His background includes a Master of Science in Law and Policy, earned Magna Cum Laude at the top of his class with a 3.78 GPA, and an invitation to the Golden Key International Honour Society, along with insurance claims operations and paralegal and litigation experience. He was accepted to the City of Miami Built in Miami accelerator, Cohort 4. ClaimSaver+ is the guided software we wished existed: flat {{price}} access, you stay the filer, and honest clarity about what software can and can't do.",
       "disclaimer": "These credentials describe the founder's background. ClaimSaver+ is software—we do not provide legal advice, adjust your claim, negotiate with insurers, or represent you.",
       "verifyLink": "Read how the platform works",
       "imageAlt": "Miguel A. Fernandez, ClaimSaver+ founder",
@@ -1189,12 +1273,13 @@
       "body": "We started in Miami after our family went through an accident claim and saw what traditional help can cost. A lot of Florida no-fault filing is paperwork, organization, and dates—not courtroom strategy. We built the platform so people can do that work themselves when a standard PIP claim is all they need.",
       "personalJourney": {
         "title": "A Personal Journey",
-        "description": "After our family faced accident claims and saw what traditional help can cost, we realized there had to be a better way. So much of a Florida no-fault filing is paperwork, organization, and staying aware of dates—not courtroom strategy. People who only need that work are often left to DIY after firms decline a PIP-only matter."
+        "description": "After our family faced accident claims and saw what traditional help can cost, we realized there had to be a better way. So much of a Florida no-fault filing is paperwork, organization, and staying aware of dates—not courtroom strategy. People who only need that work are often left to DIY after a lawyer turned them down on a PIP-only file."
       },
       "mission": {
         "title": "Our Mission",
         "description": "To give Florida families straightforward, affordable tools to file and manage no-fault claims—at a flat software fee—when a standard PIP filing is what they need."
       },
+      "founderVoice": "I'm Miguel. When a lawyer turns you down, the 14-day clock is still running. I worked claims from the insurer's side. ClaimSaver+ is the guided software I wished our family had: you prepare the PIP paperwork yourself, at a flat fee, without giving anyone a percentage of your benefits.",
       "whyWeCare": {
         "title": "Why We Care",
         "quote": "\"We created this platform to help families like ours avoid the financial burden of traditional administrative services during already difficult times.\""
@@ -1423,8 +1508,10 @@
     "optionTwoLabel": "Option two",
     "optionTwoTitle": "Hire a PI attorney",
     "optionTwoBody": "PI attorneys generally take cases with a viable third-party claim and injuries serious enough to support a contingency fee from a bodily-injury settlement. A PIP-only file—no clear at-fault party, or injuries that don’t meet that bar—often isn’t a case they will take. General information, not advice about your facts.",
-    "middlePath": "ClaimSaver+ is the guided middle path—a platform that walks you through preparing your own PIP claim materials, keeps documentation organized, and can remind you of common Florida PIP-oriented dates you enter, including the 14-day treatment window as a reminder—not legal advice. Built for people filing their own no-fault claim, including after a firm has declined. Flat {{price}}—no percentage of your PIP benefits to us. You remain the filer. We do not talk to your insurer.",
+    "middlePath": "ClaimSaver+ is the guided middle path—a platform that walks you through preparing your own PIP claim materials, keeps documentation organized, and can remind you of common Florida PIP-oriented dates you enter, including the 14-day treatment window as a reminder—not legal advice. Built for people filing their own no-fault claim, including after a lawyer turned you down. Flat {{price}}—no percentage of your PIP benefits to us. You remain the filer. We do not talk to your insurer.",
+    "emotional": "When a lawyer says no, the 14-day clock is still running and the panic is real. I built this after working claims from the insurer's side: the paperwork is for professionals, not the person who just got rear-ended. The software walks you through preparing your own file. You stay the filer. We do not talk to your insurer.",
     "founder": "ClaimSaver+ is Miami-built software for Florida PIP paperwork. It is not a law firm and does not sell adjusting or legal representation.",
+    "founderByline": "Built by a former Florida claims adjuster. Paralegal and litigation experience. Insurance claims operations. Founder background—not a service sold on this platform.",
     "attorneyLink": "Complex or disputed claims belong with a licensed Florida attorney."
   },
   "auth": {
@@ -1651,7 +1738,10 @@
     "primary": "Create your account",
     "secondary": "See how it works",
     "path": "Create an account, then pay {{price}} for platform access.",
-    "payAccess": "Continue to pricing"
+    "payAccess": "Continue to pricing",
+    "refundLine": "14-day refund if you have not started the worksheet or uploaded documents.",
+    "stripeLine": "Payments handled by Stripe.",
+    "refundTermsLink": "Refund terms"
   },
   "fourteenDay": {
     "banner": "Injured in a Florida crash in the last 14 days?",
@@ -1660,8 +1750,7 @@
     "attorney": "When to call an attorney"
   },
   "floridaOnly": {
-    "chip": "Florida PIP only",
-    "note": "This platform is for Florida motor-vehicle no-fault (PIP) claims. Other states are not supported yet."
+    "chip": "Florida PIP only"
   },
   "notFiling": {
     "title": "You are not filing yet",
@@ -1678,8 +1767,7 @@
   "proof": {
     "miami": "Headquartered in Miami",
     "languages": "English, Spanish, and French",
-    "flat": "Flat {{price}}—no contingency to us",
-    "notLaw": "Not a law firm"
+    "flat": "Flat {{price}}—no contingency to us"
   },
   "nav": {
     "company": "Company"
@@ -1738,7 +1826,7 @@
       "pricingPilot": "Clinic dashboard pricing can be discussed during the 15-minute demo. It is a separate staff-software subscription — not tied to how many patients you refer.",
       "pricingPublic": "Clinic dashboard: {{clinicPrice}}/month per clinic, flat. Software for your staff — not tied to how many patients you refer. Patients pay their own {{price}} separately.",
       "valueProp": "Help your PIP patients get initial care inside the 14-day window, finish their paperwork, and show up for EUOs and IMEs — with a progress-only view for your front desk.",
-      "sectionTitle": "For clinics",
+      "sectionTitle": "For Clinics",
       "pricingKicker": "Staff software",
       "pricingHeading": "Clinic dashboard",
       "demoLink": "Book a 15-minute demo"

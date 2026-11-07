@@ -7,7 +7,7 @@ import { BrandLogo } from "@/components/brand-logo";
  */
 export function HeroLogoLockup() {
   return (
-    <div className="relative mb-12 flex justify-center sm:mb-16">
+    <div className="relative mb-4 hidden justify-center sm:mb-12 lg:mb-16 lg:flex">
       <div
         className="pointer-events-none absolute left-1/2 top-1/2 h-[min(280px,50vw)] w-[min(900px,100vw)] -translate-x-1/2 -translate-y-1/2"
         aria-hidden

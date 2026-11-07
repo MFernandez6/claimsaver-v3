@@ -98,7 +98,6 @@ function SignupInner() {
       </p>
       <h1 className="text-3xl font-bold text-slate-900 dark:text-white">{t("auth.signUpTitle")}</h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{t("auth.signUpSubtitle")}</p>
-      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{t("floridaOnly.note")}</p>
       <p className="mt-1 text-xs text-slate-400">{t("cta.path")}</p>
       <form onSubmit={onSubmit} className="mt-8 space-y-4">
         <div className="hidden" aria-hidden="true">
@@ -115,11 +114,11 @@ function SignupInner() {
           </label>
         </div>
         <div className="grid grid-cols-2 gap-3">
-          <Input required placeholder={t("common.firstName")} value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-          <Input required placeholder={t("common.lastName")} value={lastName} onChange={(e) => setLastName(e.target.value)} />
+          <Input required autoComplete="given-name" name="given-name" placeholder={t("common.firstName")} value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+          <Input required autoComplete="family-name" name="family-name" placeholder={t("common.lastName")} value={lastName} onChange={(e) => setLastName(e.target.value)} />
         </div>
-        <Input type="email" required placeholder={t("common.email")} value={email} onChange={(e) => setEmail(e.target.value)} />
-        <Input type="password" required minLength={MIN_PASSWORD_LENGTH} placeholder={t("auth.passwordHint")} value={password} onChange={(e) => setPassword(e.target.value)} />
+        <Input type="email" required autoComplete="email" name="email" placeholder={t("common.email")} value={email} onChange={(e) => setEmail(e.target.value)} />
+        <Input type="password" required autoComplete="new-password" name="new-password" minLength={MIN_PASSWORD_LENGTH} placeholder={t("auth.passwordHint")} value={password} onChange={(e) => setPassword(e.target.value)} />
         <AgeTermsConsent checked={ageTerms} onChange={setAgeTerms} />
         {error ? <p className="text-sm text-red-600">{error}</p> : null}
         <Button type="submit" disabled={loading || !ageTerms} className="w-full bg-gradient-to-r from-emerald-600 to-teal-800">

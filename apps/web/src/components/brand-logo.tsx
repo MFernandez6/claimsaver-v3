@@ -9,7 +9,7 @@ type BrandLogoProps = {
 const VARIANT_CLASS = {
   navbar: "h-9 w-auto max-w-[200px]",
   footer: "h-11 w-auto max-w-[240px]",
-  hero: "h-auto w-[min(32rem,88vw)] max-w-full",
+  hero: "h-auto w-[min(16rem,72vw)] sm:w-[min(32rem,88vw)] max-w-full",
   print: "h-10 w-auto max-w-[200px]",
 } as const;
 

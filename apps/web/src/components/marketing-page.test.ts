@@ -12,6 +12,7 @@ const pages = [
   "app/learning-center/page.tsx",
   "app/license-credentials/page.tsx",
   "app/contact/page.tsx",
+  "app/vs/lawyer-wont-take-my-pip-claim/page.tsx",
 ];
 
 test("company pages share the for-clinics marketing shell", () => {

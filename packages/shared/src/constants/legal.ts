@@ -30,13 +30,16 @@ export const LEGAL_ENTITY_DISPLAY = "CLAIMSAVERPLUS LLC d/b/a ClaimSaver+";
  */
 export const FOUNDER = {
   name: "Miguel A. Fernandez, M.Sc.",
-  role: "Founder",
+  role: "Founder & CEO",
   degree: "M.Sc. Law & Policy",
   backgroundHighlights: [
     "Paralegal & litigation experience",
     "M.Sc. Law & Policy",
   ] as const,
 } as const;
+
+/** Public conversion path: show the $499 offer before account creation. */
+export const START_PATH = "/pricing";
 
 export const CHECKOUT_PATH = SKIP_PAYMENTS_FOR_PROMO
   ? "/signup?next=/dashboard"

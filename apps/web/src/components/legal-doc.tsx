@@ -28,7 +28,7 @@ export function LegalDoc({
           </header>
           <p className="leading-relaxed">{t(`${i18nPrefix}.intro`)}</p>
           {sections.map((n) => (
-            <section key={n} className="space-y-2">
+            <section key={n} id={`section-${n}`} className="space-y-2">
               <h2 className="text-xl font-semibold text-slate-900">{t(`${i18nPrefix}.s${n}Title`)}</h2>
               <p className="whitespace-pre-line leading-relaxed">{t(`${i18nPrefix}.s${n}Body`)}</p>
             </section>
