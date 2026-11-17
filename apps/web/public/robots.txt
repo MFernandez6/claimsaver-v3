@@ -7,5 +7,7 @@ Disallow: /clinic/
 Disallow: /enroll/
 Disallow: /films
 Disallow: /films/
+Disallow: /claims-clinic-outreach
+Disallow: /claims-clinic-outreach/
 
 Sitemap: https://www.claimsaverplus.com/sitemap.xml

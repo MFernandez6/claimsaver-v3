@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ClaimSaver+ private Florida launch and outreach workspace">
+<title>ClaimSaver+ | Outreach Desk</title>
+<link href="desk.css" rel="stylesheet">
+<script type="module" src="desk.js"></script>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true">+</span><span>ClaimSaver<span class="plus">+</span><small>OUTREACH DESK</small></span></a>
+  <nav id="nav" aria-label="Workspace"></nav>
+  <div class="sidebar-footer"><span class="location">MIAMI, FLORIDA</span><p>Local. Family-run.</p><span>Your claim. Your control.<br>Our tools.</span></div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><span id="breadcrumb">Workspace / Overview</span><button id="new" class="primary"><span aria-hidden="true">＋</span> New record</button></header>
+  <main id="view" tabindex="-1"><p>Loading workspace…</p></main>
+  <footer class="page-foot"><span>ClaimSaver<span class="plus">+</span> Outreach Desk</span><span>Florida launch workspace</span></footer>
+</div>
+</div>
+<dialog id="editor"><form id="edit-form"><header><div><p class="eyebrow">OUTREACH DESK</p><h2 id="editor-title"></h2></div><button type="button" class="icon-button" id="close" aria-label="Close">×</button></header><div id="gps-pip" hidden title="Your location stays on this page. It is not saved with the clinic."><div class="gps-frame"><canvas id="gps-map" aria-label="Live map of your location"></canvas><span class="gps-label">You</span><span class="gps-dot" aria-hidden="true"></span></div><div class="gps-bar"><span id="gps-status">Finding your location…</span><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap</a></div></div><div id="fields"></div><p id="form-error" role="alert"></p><footer><button type="button" id="delete" class="danger">Delete record</button><div><button type="button" class="secondary" id="cancel">Cancel</button> <button class="primary" id="save">Save record</button></div></footer></form></dialog>
+<div id="print-sheet"></div>
+<div id="toast" role="status"></div>
+</body>
+</html>

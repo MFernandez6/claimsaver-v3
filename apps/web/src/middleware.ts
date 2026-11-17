@@ -15,6 +15,7 @@ import {
   "/account",
   "/clinic",
   "/films",
+  "/claims-clinic-outreach",
 ];
 
 function isProtectedPath(pathname: string) {

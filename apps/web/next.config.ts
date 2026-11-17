@@ -35,6 +35,7 @@ const nextConfig: NextConfig = {
     "/14days": ["./public/downloads/**"],
     "/es/14dias": ["./public/downloads/**"],
     "/fr/14jours": ["./public/downloads/**"],
+    "/claims-clinic-outreach/[[...asset]]": ["./outreach-desk/**"],
   },
   images: {
     remotePatterns: [],
@@ -59,8 +60,29 @@ const nextConfig: NextConfig = {
       { key: "Content-Security-Policy", value: adminCsp },
       { key: "X-Robots-Tag", value: "noindex, nofollow" },
     ];
+    const outreachCsp = [
+      "default-src 'self'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'none'",
+      "object-src 'none'",
+      "script-src 'self'",
+      "style-src 'self'",
+      "img-src 'self' https://tile.openstreetmap.org",
+      "connect-src 'self' https://tile.openstreetmap.org",
+      "font-src 'self'",
+    ].join("; ");
+    const outreachHeaders = [
+      ...securityHeaders.filter(
+        (header) => header.key !== "Content-Security-Policy" && header.key !== "Permissions-Policy",
+      ),
+      { key: "Content-Security-Policy", value: outreachCsp },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(self)" },
+      { key: "X-Robots-Tag", value: "noindex, nofollow" },
+    ];
     return [
-      { source: "/:path*", headers: securityHeaders },
+      { source: "/((?!claims-clinic-outreach).*)", headers: securityHeaders },
+      { source: "/claims-clinic-outreach/:path*", headers: outreachHeaders },
       { source: "/admin", headers: adminHeaders },
       { source: "/admin/:path*", headers: adminHeaders },
       { source: "/api/v1/admin/:path*", headers: adminHeaders },
