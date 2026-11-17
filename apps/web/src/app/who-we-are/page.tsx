@@ -20,7 +20,7 @@ export default function WhoWeArePage() {
             {t("whoWeAre.hero.title")}
           </h1>
           <p className="mt-4 text-lg font-semibold leading-snug text-slate-900 dark:text-white">
-            {t("home.hero.trustSpine")}
+            {t("whoWeAre.hero.lead")}
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
             {t("whoWeAre.hero.description")}
@@ -69,7 +69,7 @@ export default function WhoWeArePage() {
               </div>
             </div>
             <ul className="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-300">
-              {(["credential1", "credential2", "credential3", "credential4", "credential5", "credential6"] as const).map((key) => (
+              {(["credential1", "credential2", "credential3", "credential4"] as const).map((key) => (
                 <li key={key}>{t(`whoWeAre.founderBackground.${key}`)}</li>
               ))}
             </ul>

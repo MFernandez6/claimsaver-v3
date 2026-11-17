@@ -1236,7 +1236,8 @@
     "hero": {
       "title": "Who We Are",
       "subtitle": "Your Florida PIP Claim",
-      "description": "ClaimSaver+ is guided software for Florida motor-vehicle no-fault (PIP) claims. You enter your information, keep your documents in one place, and send the package to your insurer. Access is a flat {{price}}—not a contingency fee."
+      "lead": "We built this because our family needed it.",
+      "description": "After a crash, a lawyer turned us down and the 14-day clock kept running. ClaimSaver+ is the guided Florida PIP software we wished we'd had, built in Miami by people who lived that scramble."
     },
     "about": {
       "title": "About ClaimSaver+",
@@ -1254,13 +1255,11 @@
       "initials": "MF",
       "credential1": "Master of Science in Law and Policy",
       "credential2": "Graduated Magna Cum Laude, top of class, 3.78 GPA",
-      "credential3": "Invited to the Golden Key International Honour Society",
-      "credential4": "Insurance claims operations experience",
-      "credential5": "Paralegal & litigation experience",
-      "credential6": "Accepted to the City of Miami Built in Miami accelerator, Cohort 4",
+      "credential3": "Golden Key International Honour Society member",
+      "credential4": "City of Miami Built in Miami Pre-Accelerator member",
       "adjusterLine": "Built by a former Florida claims adjuster.",
       "linkedin": "LinkedIn",
-      "body": "ClaimSaver+ is built by a former Florida claims adjuster. His background includes a Master of Science in Law and Policy, earned Magna Cum Laude at the top of his class with a 3.78 GPA, and an invitation to the Golden Key International Honour Society, along with insurance claims operations and paralegal and litigation experience. He was accepted to the City of Miami Built in Miami accelerator, Cohort 4. ClaimSaver+ is the guided software we wished existed: flat {{price}} access, you stay the filer, and honest clarity about what software can and can't do.",
+      "body": "ClaimSaver+ is built by a former Florida claims adjuster. His background includes a Master of Science in Law and Policy, earned Magna Cum Laude at the top of his class with a 3.78 GPA, membership in the Golden Key International Honour Society, and membership in the City of Miami Built in Miami Pre-Accelerator. ClaimSaver+ is the guided software we wished existed: you stay the filer, and honest clarity about what software can and can't do.",
       "disclaimer": "These credentials describe the founder's background. ClaimSaver+ is software—we do not provide legal advice, adjust your claim, negotiate with insurers, or represent you.",
       "verifyLink": "Read how the platform works",
       "imageAlt": "Miguel A. Fernandez, ClaimSaver+ founder",
@@ -1272,11 +1271,11 @@
       "body": "We started in Miami after our family went through an accident claim and saw what traditional help can cost. A lot of Florida no-fault filing is paperwork, organization, and dates—not courtroom strategy. We built the platform so people can do that work themselves when a standard PIP claim is all they need.",
       "personalJourney": {
         "title": "A Personal Journey",
-        "description": "After our family faced accident claims and saw what traditional help can cost, we realized there had to be a better way. So much of a Florida no-fault filing is paperwork, organization, and staying aware of dates—not courtroom strategy. People who only need that work are often left to DIY after a lawyer turned them down on a PIP-only file."
+        "description": "After our family faced accident claims and saw what traditional help can cost, we realized there had to be a better way. So much of a Florida No-Fault filing is paperwork, organization, and staying aware of dates, not courtroom strategy! People who only need that work are often left to DIY after a lawyer turned them down on a PIP-only file."
       },
       "mission": {
         "title": "Our Mission",
-        "description": "To give Florida families straightforward, affordable tools to file and manage no-fault claims—at a flat software fee—when a standard PIP filing is what they need."
+        "description": "To give Florida families straightforward, affordable tools to file and manage no-fault claims, at a flat software fee, when a standard PIP filing is what they need."
       },
       "founderVoice": "I'm Miguel. When a lawyer turns you down, the 14-day clock is still running. I worked claims from the insurer's side. ClaimSaver+ is the guided software I wished our family had: you prepare the PIP paperwork yourself, at a flat fee, without giving anyone a percentage of your benefits.",
       "whyWeCare": {

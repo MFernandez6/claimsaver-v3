@@ -55,6 +55,7 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
       };
       pitch: { founderByline: string };
       whoWeAre: {
+        hero: { lead: string };
         founderBackground: {
           initials: string;
           role: string;
@@ -62,7 +63,7 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
           credential1: string;
           credential2: string;
           credential3: string;
-          credential6: string;
+          credential4: string;
           adjusterLine: string;
           body: string;
         };
@@ -88,8 +89,9 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
     assert.match(full.whoWeAre.founderBackground.credential2, /3\.78/);
     assert.doesNotMatch(full.whoWeAre.founderBackground.credential2, /\(/);
     assert.match(full.whoWeAre.founderBackground.credential3, /Golden Key International Honour Society/);
-    assert.match(full.whoWeAre.founderBackground.credential6, /Built in Miami/);
-    assert.match(full.whoWeAre.founderBackground.credential6, /Cohort 4/);
+    assert.match(full.whoWeAre.founderBackground.credential3, /member|Miembro|Membre/i);
+    assert.match(full.whoWeAre.founderBackground.credential4, /Built in Miami/);
+    assert.match(full.whoWeAre.founderBackground.credential4, /Pre-Accelerator|pré-accélérateur/i);
     assert.match(full.home.hero.urgency, /14/);
     assert.ok(full.home.hero.trustSpine.length > 8);
     assert.ok(full.home.hero.founderCredential.length > 8);
@@ -100,7 +102,12 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
       assert.equal(full.home.hero.founderCredential, "Built by a former Florida claims adjuster.");
       assert.equal(full.whoWeAre.founderBackground.adjusterLine, "Built by a former Florida claims adjuster.");
       assert.match(full.whoWeAre.founderBackground.body, /built by a former Florida claims adjuster/i);
-      assert.match(full.whoWeAre.founderBackground.body, /Built in Miami accelerator, Cohort 4/);
+      assert.equal(full.whoWeAre.hero.lead, "We built this because our family needed it.");
+      assert.equal(full.whoWeAre.founderBackground.credential3, "Golden Key International Honour Society member");
+      assert.equal(full.whoWeAre.founderBackground.credential4, "City of Miami Built in Miami Pre-Accelerator member");
+      assert.match(full.whoWeAre.founderBackground.body, /Built in Miami Pre-Accelerator/);
+      assert.doesNotMatch(full.whoWeAre.founderBackground.body, /insurance claims operations/i);
+      assert.doesNotMatch(full.whoWeAre.founderBackground.body, /paralegal/i);
       assert.match(full.pitch.founderByline, /former Florida claims adjuster/);
     }
     assert.match(full.pricing.offer.priceLine, /\{\{price\}\}/);
@@ -196,9 +203,11 @@ test("required surfaces import the canonical copy keys", () => {
   assert.match(footer, /cta\.payAccess/);
   const who = readFileSync(join(webRoot, "app/who-we-are/page.tsx"), "utf8");
   assert.match(who, /founderBackground\.adjusterLine/);
-  assert.match(who, /credential6/);
+  assert.match(who, /credential4/);
+  assert.doesNotMatch(who, /credential6/);
   assert.match(who, /FOUNDER_LINKEDIN_HREF/);
-  assert.match(who, /home\.hero\.trustSpine/);
+  assert.match(who, /whoWeAre\.hero\.lead/);
+  assert.doesNotMatch(who, /home\.hero\.trustSpine/);
   assert.doesNotMatch(who, /CHECKOUT_PATH/);
   assert.match(who, /START_PATH/);
   assert.match(who, /cta\.payAccess/);

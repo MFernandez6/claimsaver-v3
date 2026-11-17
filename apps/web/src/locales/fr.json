@@ -1237,7 +1237,8 @@
     "hero": {
       "title": "Qui nous sommes",
       "subtitle": "Votre dossier PIP en Floride",
-      "description": "ClaimSaver+ est un logiciel guidé pour les dossiers no-fault (PIP) automobile en Floride. Vous saisissez vos informations, gardez vos documents en un seul endroit et envoyez le dossier à votre assureur. L’accès est un forfait de {{price}}—pas un honoraire de contingence."
+      "lead": "Nous l’avons créé parce que notre famille en avait besoin.",
+      "description": "Après un accident, un avocat nous a dit non et le délai de 14 jours continuait de courir. ClaimSaver+ est le logiciel PIP guidé de Floride que nous aurions voulu avoir, conçu à Miami par des gens qui ont vécu cette course."
     },
     "about": {
       "title": "À Propos de ClaimSaver+",
@@ -1255,13 +1256,11 @@
       "initials": "MF",
       "credential1": "Master of Science in Law and Policy",
       "credential2": "Diplômé Magna Cum Laude, premier de sa promotion, GPA 3.78",
-      "credential3": "Invité à la Golden Key International Honour Society",
-      "credential4": "Expérience des opérations de sinistres d’assurance",
-      "credential5": "Expérience en paralégal et contentieux",
-      "credential6": "Accepté au programme d’accélération Built in Miami Cohort 4 de la Ville de Miami",
+      "credential3": "Membre de la Golden Key International Honour Society",
+      "credential4": "Membre du pré-accélérateur Built in Miami de la Ville de Miami",
       "adjusterLine": "Conçu par un ancien ajusteur de sinistres de Floride.",
       "linkedin": "LinkedIn",
-      "body": "ClaimSaver+ est conçu par un ancien ajusteur de sinistres de Floride. Son parcours comprend un Master of Science in Law and Policy, obtenu Magna Cum Laude en tête de promotion avec un GPA de 3.78, et une invitation à la Golden Key International Honour Society, ainsi que des opérations de sinistres d’assurance et une expérience en paralégal et contentieux. Il a été accepté au programme d’accélération Built in Miami Cohort 4 de la Ville de Miami. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : accès forfaitaire {{price}}, vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
+      "body": "ClaimSaver+ est conçu par un ancien ajusteur de sinistres de Floride. Son parcours comprend un Master of Science in Law and Policy, obtenu Magna Cum Laude en tête de promotion avec un GPA de 3.78, l’appartenance à la Golden Key International Honour Society et au pré-accélérateur Built in Miami de la Ville de Miami. ClaimSaver+ est le logiciel guidé que nous aurions voulu avoir : vous restez le déposant, et une clarté honnête sur ce que le logiciel peut et ne peut pas faire.",
       "disclaimer": "Ces références décrivent le parcours du fondateur. ClaimSaver+ est un logiciel—nous ne fournissons pas de conseil juridique, n’ajustons pas votre dossier, ne négocions pas avec les assureurs et ne vous représentons pas.",
       "verifyLink": "Lire comment fonctionne la plateforme",
       "imageAlt": "Miguel A. Fernandez, fondateur de ClaimSaver+",
@@ -1273,11 +1272,11 @@
       "body": "Nous avons commencé à Miami après que notre famille ait traversé un dossier d’accident et vu ce que l’aide traditionnelle peut coûter. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et les dates—pas une stratégie de tribunal. Nous avons construit la plateforme pour que les gens puissent faire ce travail eux-mêmes lorsqu’un dossier PIP standard suffit.",
       "personalJourney": {
         "title": "Un voyage personnel",
-        "description": "Après que notre famille ait fait face à des dossiers d’accident et vu ce que l’aide traditionnelle peut coûter, nous avons réalisé qu’il devait y avoir une meilleure façon. Une grande part d’un dépôt no-fault en Floride, c’est le papier, l’organisation et le suivi des dates—pas une stratégie de tribunal. Les personnes qui n’ont besoin que de ce travail se retrouvent souvent seules après qu’un avocat a dit non sur un dossier PIP seulement."
+        "description": "Après que notre famille ait fait face à des dossiers d’accident et vu ce que l’aide traditionnelle peut coûter, nous avons réalisé qu’il devait y avoir une meilleure façon. Une grande part d’un dépôt No-Fault en Floride, c’est le papier, l’organisation et le suivi des dates, pas une stratégie de tribunal ! Les personnes qui n’ont besoin que de ce travail se retrouvent souvent seules après qu’un avocat a dit non sur un dossier PIP seulement."
       },
       "mission": {
         "title": "Notre mission",
-        "description": "Donner aux familles de Floride des outils simples et abordables pour déposer et gérer des dossiers no-fault—avec un forfait logiciel—lorsqu’un dépôt PIP standard est ce dont elles ont besoin."
+        "description": "Donner aux familles de Floride des outils simples et abordables pour déposer et gérer des dossiers no-fault, avec un forfait logiciel, lorsqu’un dépôt PIP standard est ce dont elles ont besoin."
       },
       "founderVoice": "Je suis Miguel. Quand un avocat dit non, le délai de 14 jours continue de courir. J’ai travaillé les dossiers du côté de l’assureur. ClaimSaver+ est le logiciel guidé que j’aurais voulu pour notre famille : vous préparez le dossier PIP vous-même, à un forfait, sans céder à quiconque un pourcentage de vos prestations.",
       "whyWeCare": {

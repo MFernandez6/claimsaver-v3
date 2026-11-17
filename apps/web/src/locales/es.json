@@ -956,7 +956,8 @@
     "hero": {
       "title": "Quiénes somos",
       "subtitle": "su reclamo PIP en Florida",
-      "description": "ClaimSaver+ es software guiado para reclamos de no-fault (PIP) de vehículos de motor en Florida. Usted introduce su información, guarda sus documentos en un solo lugar y envía el paquete a su aseguradora. El acceso cuesta {{price}} fijos—no es un honorario de contingencia."
+      "lead": "Lo construimos porque nuestra familia lo necesitaba.",
+      "description": "Después de un accidente, un abogado nos dijo que no y el reloj de 14 días seguía corriendo. ClaimSaver+ es el software guiado de PIP de Florida que hubiéramos querido tener, creado en Miami por quienes vivieron esa carrera."
     },
     "about": {
       "title": "Acerca de ClaimSaver+",
@@ -974,13 +975,11 @@
       "initials": "MF",
       "credential1": "Master of Science in Law and Policy",
       "credential2": "Graduado Magna Cum Laude, primero de su clase, GPA 3.78",
-      "credential3": "Invitado a la Golden Key International Honour Society",
-      "credential4": "Experiencia en operaciones de reclamos de seguros",
-      "credential5": "Experiencia como paralegal y en litigio",
-      "credential6": "Aceptado en Built in Miami Cohort 4, el programa acelerador de la Ciudad de Miami",
+      "credential3": "Miembro de la Golden Key International Honour Society",
+      "credential4": "Miembro del Pre-Accelerator Built in Miami de la Ciudad de Miami",
       "adjusterLine": "Creado por un exajustador de reclamos de Florida.",
       "linkedin": "LinkedIn",
-      "body": "ClaimSaver+ está creado por un exajustador de reclamos de Florida. Su trayectoria incluye un Master of Science in Law and Policy, obtenido Magna Cum Laude como primero de su clase con un GPA de 3.78, y una invitación a la Golden Key International Honour Society, además de experiencia en operaciones de reclamos de seguros y como paralegal y en litigio. Fue aceptado en Built in Miami Cohort 4, el programa acelerador de la Ciudad de Miami. ClaimSaver+ es el software guiado que desearíamos haber tenido: acceso de {{price}} fijos, usted sigue siendo quien presenta, y claridad honesta sobre lo que el software puede y no puede hacer.",
+      "body": "ClaimSaver+ está creado por un exajustador de reclamos de Florida. Su trayectoria incluye un Master of Science in Law and Policy, obtenido Magna Cum Laude como primero de su clase con un GPA de 3.78, membresía en la Golden Key International Honour Society y membresía en el Pre-Accelerator Built in Miami de la Ciudad de Miami. ClaimSaver+ es el software guiado que desearíamos haber tenido: usted sigue siendo quien presenta, y claridad honesta sobre lo que el software puede y no puede hacer.",
       "disclaimer": "Estas credenciales describen los antecedentes del fundador. ClaimSaver+ es software—no damos asesoramiento legal, no ajustamos su reclamo, no negociamos con aseguradoras ni lo representamos.",
       "verifyLink": "Lea cómo funciona la plataforma",
       "imageAlt": "Miguel A. Fernandez, fundador de ClaimSaver+",
@@ -992,11 +991,11 @@
       "body": "Empezamos en Miami después de que nuestra familia pasara por un reclamo de accidente y viera lo que puede costar la ayuda tradicional. Gran parte de una presentación de no-fault en Florida es papeleo, organización y fechas—no estrategia de tribunal. Construimos la plataforma para que las personas puedan hacer ese trabajo ellas mismas cuando un reclamo PIP estándar es todo lo que necesitan.",
       "personalJourney": {
         "title": "Un Viaje Personal",
-        "description": "Después de que nuestra familia enfrentara reclamos de accidentes y viera lo que puede costar la ayuda tradicional, nos dimos cuenta de que tenía que haber una mejor manera. Gran parte de una presentación de no-fault en Florida es papeleo, organización y estar al tanto de las fechas—no estrategia de tribunal. Quienes solo necesitan ese trabajo a menudo terminan solos después de que un abogado les dijo que no en un expediente solo de PIP."
+        "description": "Después de que nuestra familia enfrentara reclamos de accidentes y viera lo que puede costar la ayuda tradicional, nos dimos cuenta de que tenía que haber una mejor manera. Gran parte de una presentación de No-Fault en Florida es papeleo, organización y estar al tanto de las fechas, no estrategia de tribunal! Quienes solo necesitan ese trabajo a menudo terminan solos después de que un abogado les dijo que no en un expediente solo de PIP."
       },
       "mission": {
         "title": "Nuestra Misión",
-        "description": "Ofrecer a las familias en Florida herramientas directas y asequibles para presentar y gestionar reclamos sin culpa—con una tarifa plana de software—cuando una presentación PIP estándar es lo que necesitan."
+        "description": "Ofrecer a las familias en Florida herramientas directas y asequibles para presentar y gestionar reclamos sin culpa, con una tarifa plana de software, cuando una presentación PIP estándar es lo que necesitan."
       },
       "founderVoice": "Soy Miguel. Cuando un abogado le dice que no, el reloj de 14 días sigue corriendo. Trabajé reclamos desde el lado de la aseguradora. ClaimSaver+ es el software guiado que ojalá hubiera tenido nuestra familia: usted prepara el papeleo PIP, a un precio fijo, sin cederle a nadie un porcentaje de sus beneficios.",
       "whyWeCare": {
