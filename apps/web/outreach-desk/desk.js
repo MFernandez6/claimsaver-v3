@@ -97,7 +97,7 @@ function overview() {
     '</section></div>' + guidance();
 }
 const subheads = {
-  canvass:'Start near 33183 and work outward in neighborhood batches. Call ahead to confirm PIP handling, office hours, and the best contact.',
+  canvass:'Pick a neighborhood, then work the clinics in ZIP order. Kendall 33183 is the starting group. Call ahead to confirm PIP handling, office hours, and the best contact.',
   documents:'Open the clinic pitch deck and preparation materials. Add links to current versions as your packet evolves.',
   pipeline:'Track Florida clinics and potential clients from first contact through the next step.',
   calendar:'See upcoming visits and follow-ups. Update dates directly from any record.',
@@ -149,14 +149,28 @@ function planner() {
     (due.map(r => row(r,'clock',date(r.due) + (r.next ? ' · ' + r.next : ''),r.due < day() ? 'Overdue' : r.due === day() ? 'Today' : '')).join('') || empty('No follow-ups in this view.')) +
     '</section></div>';
 }
+const byZip = (a, b) => String(a.zip || '99999').localeCompare(String(b.zip || '99999')) || String(a.title || '').localeCompare(String(b.title || ''));
+function batchNames() {
+  const extras = outreachRecords().filter(r => r.kind === 'clinic').map(r => r.batch || 'Unassigned').filter(name => !batches.some(batch => batch.name === name));
+  return [...batches.map(batch => batch.name), ...new Set(extras)];
+}
 function clinicRows() {
-  return outreachRecords().filter(r => r.kind === 'clinic')
+  const query = clinicSearch.toLowerCase();
+  const clinics = outreachRecords().filter(r => r.kind === 'clinic')
     .filter(r => batchFilter === '*' || (r.batch || 'Unassigned') === batchFilter)
-    .filter(r => [r.title,r.address,r.zip,r.contact,r.pip].some(v => (v || '').toLowerCase().includes(clinicSearch.toLowerCase())));
+    .filter(r => [r.title,r.address,r.zip,r.contact,r.pip,r.batch].some(v => (v || '').toLowerCase().includes(query)));
+  const names = batchFilter === '*' ? batchNames() : [batchFilter];
+  return names.flatMap(name => clinics.filter(r => (r.batch || 'Unassigned') === name).sort(byZip));
+}
+function clinicSections() {
+  const rows = clinicRows();
+  const names = batchFilter === '*' ? batchNames() : [batchFilter];
+  return names.map(name => ({name, batch: batches.find(batch => batch.name === name), rows: rows.filter(r => (r.batch || 'Unassigned') === name)}))
+    .filter(section => batchFilter !== '*' || !clinicSearch || section.rows.length);
 }
 function canvass() {
   const clinics = outreachRecords().filter(r => r.kind === 'clinic');
-  const names = [...new Set([...batches.map(b => b.name), ...clinics.map(r => r.batch || 'Unassigned')])];
+  const names = batchNames();
   const description = batches.find(b => b.name === batchFilter)?.description;
   return '<div class="batch-grid" aria-label="Neighborhood batches">' + names.map(name => {
     const count = clinics.filter(r => (r.batch || 'Unassigned') === name).length;
@@ -169,17 +183,22 @@ function canvass() {
     '<div class="record-grid" id="clinic-results">' + clinicCards() + '</div>';
 }
 function clinicCards() {
-  return clinicRows().map(recordCard).join('') || empty('No clinics in this view. Add a clinic to build this batch.');
+  const sections = clinicSections();
+  if (batchFilter !== '*') return sections[0]?.rows.map(recordCard).join('') || empty('No clinics in this neighborhood yet. Add one after you confirm the ZIP and PIP handling.');
+  return sections.filter(section => section.rows.length).map(section => '<section class="neighborhood"><div class="section-title"><h2>' + escape(section.name) + '</h2><span class="date">' + section.rows.length + ' ' + (section.rows.length === 1 ? 'clinic' : 'clinics') + '</span></div>' +
+    section.rows.map(recordCard).join('') + '</section>').join('') || empty('No clinics match this search.');
 }
 function printClinics() {
-  const rows = clinicRows();
-  if (!rows.length) { notify('There are no clinics to print in this view.'); return; }
-  $('print-sheet').innerHTML = '<h1>ClaimSaver+ clinic canvassing</h1><p>' + escape(batchFilter === '*' ? 'All clinics' : batchFilter) +
-    ' · ' + rows.length + ' stops · ' + todayLabel() + '</p><p>Starting area: Kendall 33183. Confirm PIP handling and visit hours before leaving.</p>' +
-    rows.map((r,i) => '<section><h2>' + (i+1) + '. ' + escape(r.title) + '</h2><p>' + escape([r.address,r.phone,r.website].filter(Boolean).join(' · ')) +
-      '</p><p>' + escape([r.pip,r.status,r.contact,r.hours,r.due && 'Follow-up ' + date(r.due)].filter(Boolean).join(' · ')) + '</p>' +
+  const sections = clinicSections().filter(section => section.rows.length);
+  const total = sections.reduce((sum, section) => sum + section.rows.length, 0);
+  if (!total) { notify('There are no clinics to print in this view.'); return; }
+  let stop = 0;
+  $('print-sheet').innerHTML = '<h1>ClaimSaver+ clinic canvassing</h1><p>' + escape(batchFilter === '*' ? 'All neighborhoods' : batchFilter) +
+    ' · ' + total + ' stops · ' + todayLabel() + '</p><p>Sorted by ZIP inside each neighborhood. Start in Kendall 33183. Confirm PIP handling and visit hours before leaving.</p>' +
+    sections.map(section => '<h2>' + escape(section.name) + '</h2>' + section.rows.map(r => '<section><h2>' + (++stop) + '. ' + escape(r.title) + '</h2><p>' + escape([r.zip && 'ZIP ' + r.zip, r.address, r.phone, r.website].filter(Boolean).join(' · ')) +
+      '</p><p>' + escape([r.pip, r.status, r.contact, r.hours, r.due && 'Follow-up ' + date(r.due)].filter(Boolean).join(' · ')) + '</p>' +
       (r.next ? '<p>Next step: ' + escape(r.next) + '</p>' : '') + (r.notes ? '<p class="print-note">' + escape(r.notes) + '</p>' : '') +
-      '<p class="write-line">Visit notes / next step:</p><p class="write-line"></p></section>').join('');
+      '<p class="write-line">Visit notes / next step:</p><p class="write-line"></p></section>').join('')).join('');
   window.print();
 }
 function render() {
@@ -390,7 +409,7 @@ function showEditor(kind, record) {
   edit = {kind,record};
   $('editor-title').textContent = record ? 'Edit ' + kindNames[kind].toLowerCase() : 'New record';
   const kindInput = record ? '' : '<label>Record type<select id="kind" name="kind">' + options(Object.entries(kindNames),kind) + '</select></label>';
-  $('fields').innerHTML = kindInput + '<div id="record-fields">' + editorFields(kind,record ? {...record, ...(record.url?.startsWith('/') && {url:location.origin + record.url})} : (kind === 'clinic' && page() === 'canvass' && batchFilter !== '*' && batchFilter !== 'Unassigned' ? {batch:batchFilter,next:'Confirm office manager, PIP handling, and best time to drop by.'} : {})) + '</div>';
+  $('fields').innerHTML = kindInput + '<div id="record-fields">' + editorFields(kind,record ? {...record, ...(record.url?.startsWith('/') && {url:location.origin + record.url})} : (kind === 'clinic' && page() === 'canvass' && batchFilter !== '*' && batchFilter !== 'Unassigned' ? {batch:batchFilter,zip:/^\d{5}$/.test(batchFilter.split(' · ')[1] || '') ? batchFilter.split(' · ')[1] : '',next:'Confirm office manager, PIP handling, and best time to drop by.'} : {})) + '</div>';
   $('form-error').textContent = '';
   $('delete').hidden = !record;
   if (!$('editor').open) $('editor').showModal();
