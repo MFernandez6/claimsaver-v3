@@ -28,7 +28,12 @@ export async function GET() {
     .order("updated", { ascending: false });
   if (error) {
     console.error("Outreach storage error:", error.message);
-    return json({ error: "Workspace storage is temporarily unavailable. Try again." }, 503);
+    const missing = /outreach_records|schema cache|PGRST205/i.test(error.message);
+    return json({
+      error: missing
+        ? "Outreach storage is not set up yet. The starter clinics are still listed. Saves will work after the database update."
+        : "Workspace storage is temporarily unavailable. The starter clinics are still listed.",
+    }, 503);
   }
   return json(
     (data ?? []).map((row) => ({

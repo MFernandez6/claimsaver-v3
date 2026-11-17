@@ -50,7 +50,7 @@ const configs = {
   note:['title','category','due','notes'],
   document:['title','category','url','notes']
 };
-let saved = [], suppressed = new Set(), edit, failure = '', toastTimer, busy = false;
+let saved = [], suppressed = new Set(), edit, failure = '', storageWarning = '', toastTimer, busy = false;
 let batchFilter = 'Kendall · 33183', clinicSearch = '', filter = '', typeFilter = '', stageFilter = '', timeFilter = 'all';
 const day = () => new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 const todayLabel = () => new Intl.DateTimeFormat('en-US',{dateStyle:'full',timeZone:'America/New_York'}).format(new Date());
@@ -187,11 +187,12 @@ function render() {
   $('breadcrumb').textContent = 'Workspace / ' + nav[p];
   $('nav').innerHTML = '<span class="nav-label">WORKSPACE</span>' + Object.entries(nav).map(([key,label]) =>
     '<a class="nav-link" href="#' + key + '"' + (key === p ? ' aria-current="page"' : '') + '>' + icon(key) + label + '</a>').join('');
+  const banner = storageWarning ? '<div class="panel guidance"><span class="icon-wrap">' + icon('info') + '</span><div><strong>Saved records are unavailable</strong><p class="sub">' + escape(storageWarning) + '</p></div></div>' : '';
   if (failure) {
-    $('view').innerHTML = empty(escape(failure) + ' ' + button('Retry','retry'));
+    $('view').innerHTML = banner + empty(escape(failure) + ' ' + button('Retry','retry'));
     return;
   }
-  if (p === 'overview') { $('view').innerHTML = overview(); return; }
+  if (p === 'overview') { $('view').innerHTML = banner + overview(); return; }
   let body;
   if (p === 'canvass') body = canvass();
   else if (p === 'pipeline') {
@@ -212,7 +213,7 @@ function render() {
     const items = records().filter(r => r.kind === primaryKind[p]);
     body = '<div class="record-grid">' + (items.map(recordCard).join('') || empty('No entries yet.')) + '</div>' + (p === 'messaging' ? guidance() : '');
   }
-  $('view').innerHTML = heading(p) + body;
+  $('view').innerHTML = banner + heading(p) + body;
 }
 async function request(method = 'GET', record) {
   const response = await fetch(new URL('api/records', assetBase), {
@@ -224,8 +225,12 @@ async function request(method = 'GET', record) {
   return result;
 }
 async function load() {
-  try { saved = await request(); failure = ''; }
-  catch { failure = 'The workspace could not load. Try again in a moment.'; }
+  try { saved = await request(); failure = ''; storageWarning = ''; }
+  catch (error) {
+    saved = [];
+    failure = '';
+    storageWarning = error.message || 'The starter list is still here. Try a save again in a moment.';
+  }
   suppressed = new Set(saved.filter(r => r.hidden === 'yes').map(r => r.id));
   render();
 }
