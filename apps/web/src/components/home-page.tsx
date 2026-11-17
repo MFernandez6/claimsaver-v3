@@ -74,7 +74,7 @@ export function HomePage() {
     <div className="min-h-screen bg-white dark:bg-gray-950">
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-emerald-50 dark:from-slate-950 dark:via-gray-900 dark:to-slate-900">
         <PageHeroBackdrop />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-4 pb-12 sm:px-6 sm:pt-12 sm:pb-16 lg:px-8 lg:pb-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-8 pb-12 sm:px-6 sm:pt-14 sm:pb-16 lg:px-8 lg:pb-20">
           <HeroLogoLockup />
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
             <div className="text-center lg:text-left">
@@ -88,9 +88,6 @@ export function HomePage() {
                 </span>
                 <span className="block">{t("home.hero.titleLine1")} {t("home.hero.titleLine2")}</span>
               </h1>
-              <p className="mb-2 text-lg font-semibold leading-snug text-slate-800 sm:mb-3 sm:text-2xl dark:text-slate-100">
-                {t("home.hero.subtitle")}
-              </p>
               <p className="mb-3 text-base font-semibold leading-snug text-slate-900 sm:mb-4 sm:text-xl dark:text-white">
                 {t("home.hero.trustSpine")}
               </p>

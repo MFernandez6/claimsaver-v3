@@ -9,7 +9,7 @@ type BrandLogoProps = {
 const VARIANT_CLASS = {
   navbar: "h-9 w-auto max-w-[200px]",
   footer: "h-11 w-auto max-w-[240px]",
-  hero: "h-auto w-[min(16rem,72vw)] sm:w-[min(32rem,88vw)] max-w-full",
+  hero: "h-auto w-[min(18rem,86vw)] max-w-full object-center sm:w-[min(28rem,72vw)] lg:w-[min(36rem,46vw)]",
   print: "h-10 w-auto max-w-[200px]",
 } as const;
 
@@ -27,7 +27,7 @@ export function BrandLogo({
   variant = "navbar",
 }: BrandLogoProps) {
   const sizeClass = VARIANT_CLASS[variant];
-  const imgClass = `${sizeClass} object-contain object-left`;
+  const imgClass = `${sizeClass} object-contain ${variant === "hero" ? "object-center" : "object-left"}`;
   const forceDark = variant === "footer";
   const forceLight = variant === "print";
   const priority = variant === "navbar" || variant === "hero" || variant === "print";
