@@ -114,6 +114,17 @@ export default function AdminOverviewPage() {
             <p className="text-xs text-slate-500">{ADMIN.clinicsNote}</p>
             <p className="text-xs text-slate-500">{ADMIN.impersonationNote}</p>
             <p className="text-xs text-slate-500">{ADMIN.privacyNote}</p>
+            {data.actor.role === "OWNER" ? (
+              <p className="text-sm">
+                <Link href="/admin/results" className="text-teal-800 underline">
+                  Verified results
+                </Link>
+                {" · "}
+                <Link href="/admin/pitch" className="text-teal-800 underline">
+                  Pitch (actuals vs targets)
+                </Link>
+              </p>
+            ) : null}
           </CardContent>
         </Card>
 

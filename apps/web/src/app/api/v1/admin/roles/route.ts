@@ -7,6 +7,7 @@ import { requestIp, requestUserAgent } from "@/lib/admin/request-meta";
 import { escapeIlikeExact, parseUserQuery } from "@/lib/admin/user-query";
 import { maskEmail } from "@/lib/auth/mask";
 import { rateLimit, rateLimitResponse, clientIp } from "@/lib/security/rate-limit";
+import { atClinicSeatLimit, CLINIC_STAFF_SEATS } from "@claimsaver/shared";
 
 type RoleRow = {
   id: string;
@@ -83,6 +84,17 @@ export async function POST(req: NextRequest) {
   }
 
   const admin = getSupabaseAdmin();
+  if (assigned === "CLINIC_ADMIN") {
+    const { count: seatCount, error: seatError } = await admin
+      .from("user_roles")
+      .select("id", { count: "exact", head: true })
+      .eq("clinic_id", clinicId)
+      .in("role", ["CLINIC_ADMIN", "CLINIC_STAFF"]);
+    if (seatError) return jsonErr(seatError.message, 500);
+    if (atClinicSeatLimit(seatCount ?? 0)) {
+      return jsonErr(`This clinic already has ${CLINIC_STAFF_SEATS} staff seats.`, 409);
+    }
+  }
   const origin =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || new URL(req.url).origin;
 

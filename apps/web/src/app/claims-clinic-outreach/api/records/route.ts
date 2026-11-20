@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireStaff } from "@/lib/outreach/guard";
-import { parseOutreachBody } from "@/lib/outreach/records";
+import { parseOutreachBody, resolveOutreachStage } from "@/lib/outreach/records";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +24,7 @@ export async function GET() {
   if (staff.response) return staff.response;
   const { data, error } = await getSupabaseAdmin()
     .from("outreach_records")
-    .select("id, kind, data, updated")
+    .select("id, kind, data, updated, stage, next_action_at, consent_at, consent_source")
     .order("updated", { ascending: false });
   if (error) {
     console.error("Outreach storage error:", error.message);
@@ -36,12 +36,24 @@ export async function GET() {
     }, 503);
   }
   return json(
-    (data ?? []).map((row) => ({
-      ...(row.data && typeof row.data === "object" ? row.data : {}),
-      id: row.id,
-      kind: row.kind,
-      updated: row.updated,
-    })),
+    (data ?? []).map((row) => {
+      const payload = row.data && typeof row.data === "object" ? (row.data as Record<string, unknown>) : {};
+      const stage = resolveOutreachStage({
+        kind: String(row.kind),
+        stage: row.stage,
+        status: typeof payload.status === "string" ? payload.status : undefined,
+      });
+      return {
+        ...payload,
+        id: row.id,
+        kind: row.kind,
+        updated: row.updated,
+        stage: stage ?? "",
+        nextActionAt: row.next_action_at ?? "",
+        consentAt: row.consent_at ?? "",
+        consentSource: row.consent_source ?? "",
+      };
+    }),
   );
 }
 
@@ -77,6 +89,10 @@ async function write(request: NextRequest, method: "PUT" | "DELETE") {
     id: write.id,
     kind: write.kind,
     data: write.fields,
+    stage: write.stage,
+    next_action_at: write.nextActionAt,
+    consent_at: write.consentAt,
+    consent_source: write.consentSource,
     updated: new Date().toISOString(),
   });
   if (error) {

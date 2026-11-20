@@ -19,6 +19,8 @@ function locale(lang: string) {
         pricingKicker: string;
         pricingHeading: string;
         valueProp: string;
+        include1: string;
+        include6: string;
       };
       disclaimer: { selfHelp: string };
     };
@@ -44,6 +46,8 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
     assert.ok(pack.copy.clinic.pricingKicker.length > 4);
     assert.ok(pack.copy.clinic.pricingHeading.length > 4);
     assert.ok(pack.copy.clinic.valueProp.length > 20);
+    assert.match(pack.copy.clinic.include1, /3/);
+    assert.match(pack.copy.clinic.include6, /filer|presenta|déposant/i);
     assert.ok(pack.copy.disclaimer.selfHelp.length > 20);
     assert.doesNotMatch(JSON.stringify(pack.copy), /\$199|199 \$/);
     const full = JSON.parse(readFileSync(join(webRoot, `locales/${lang}.json`), "utf8")) as {
@@ -51,7 +55,7 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
       cta: { refundLine: string; stripeLine: string };
       home: {
         faq: { refund: { question: string; answer: string } };
-        hero: { urgency: string; trustSpine: string; founderCredential: string };
+        hero: { urgency: string; trustSpine: string };
       };
       pitch: { founderByline: string };
       whoWeAre: {
@@ -94,12 +98,10 @@ test("canonical pricing constants and i18n keys exist in en/es/fr", () => {
     assert.match(full.whoWeAre.founderBackground.credential4, /Pre-Accelerator|pré-accélérateur/i);
     assert.match(full.home.hero.urgency, /14/);
     assert.ok(full.home.hero.trustSpine.length > 8);
-    assert.ok(full.home.hero.founderCredential.length > 8);
     assert.ok(full.whoWeAre.founderBackground.adjusterLine.length > 8);
     if (lang === "en") {
       assert.equal(full.home.hero.urgency, "Hurt in a crash? You have 14 days to get treated.");
       assert.equal(full.home.hero.trustSpine, "It's your coverage. You paid for it. Use it.");
-      assert.equal(full.home.hero.founderCredential, "Built by a former Florida claims adjuster.");
       assert.equal(full.whoWeAre.founderBackground.adjusterLine, "Built by a former Florida claims adjuster.");
       assert.match(full.whoWeAre.founderBackground.body, /built by a former Florida claims adjuster/i);
       assert.equal(full.whoWeAre.hero.lead, "We built this because our family needed it.");
@@ -130,6 +132,7 @@ test("required surfaces import the canonical copy keys", () => {
   const note = readFileSync(join(webRoot, "components/clinic-pricing-note.tsx"), "utf8");
   assert.match(note, /clinicPricingKey/);
   assert.match(note, /copy\.clinic\.noReferralFees/);
+  assert.match(note, /copy\.clinic\.include\$\{n\}/);
   const demo = readFileSync(join(webRoot, "app/clinic-demo/page.tsx"), "utf8");
   assert.match(demo, /copy\.clinic\.valueProp/);
   assert.match(demo, /ClinicPricingNote/);
@@ -163,7 +166,7 @@ test("required surfaces import the canonical copy keys", () => {
   assert.match(home, /home\.hero\.urgency/);
   assert.match(home, /<h1[\s\S]*home\.hero\.urgency[\s\S]*<\/h1>/);
   assert.match(home, /home\.hero\.trustSpine/);
-  assert.match(home, /home\.hero\.founderCredential/);
+  assert.doesNotMatch(home, /home\.hero\.founderCredential|proof\.miami|proof\.languages|proof\.flat/);
   assert.match(home, /copy\.patientPrice\.short/);
   assert.match(home, /href="\/clinic-demo"/);
   assert.doesNotMatch(home, /CHECKOUT_PATH/);
@@ -172,7 +175,7 @@ test("required surfaces import the canonical copy keys", () => {
   assert.doesNotMatch(home, /TrustProofSection/);
   assert.match(home, /home\.faq\.refund/);
   assert.doesNotMatch(home, /rear-ended on I-95, filed alone/);
-  assert.match(home, /ProductPreview/);
+  assert.doesNotMatch(home, /ProductPreview/);
   assert.match(home, /NamedProofSection/);
   assert.match(home, /ThirdPartyStrip/);
   assert.doesNotMatch(home, /LocalizedSocialImage/);

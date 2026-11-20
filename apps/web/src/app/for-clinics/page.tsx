@@ -9,6 +9,7 @@ import { MarketingHeading, MarketingPage, MarketingSection } from "@/components/
 import { ClinicPricingNote } from "@/components/clinic-pricing-note";
 
 const STEPS = [1, 2, 3, 4, 5] as const;
+const INCLUDES = [1, 2, 3, 4, 5, 6] as const;
 const SEE = [1, 2, 3] as const;
 const HIDE = [1, 2, 3] as const;
 
@@ -60,6 +61,18 @@ export default function ForClinicsPage() {
             </li>
           ))}
         </ol>
+      </MarketingSection>
+
+      <MarketingSection>
+        <MarketingHeading>{t("pages.forClinics.includeTitle")}</MarketingHeading>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
+          {t("pages.forClinics.includeLead")}
+        </p>
+        <ul className="mt-6 list-disc space-y-2 pl-5 text-slate-600 dark:text-slate-300">
+          {INCLUDES.map((n) => (
+            <li key={n}>{t(`pages.forClinics.include${n}`)}</li>
+          ))}
+        </ul>
       </MarketingSection>
 
       <MarketingSection className="grid gap-4 sm:grid-cols-2">

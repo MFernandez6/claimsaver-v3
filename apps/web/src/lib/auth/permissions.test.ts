@@ -22,6 +22,8 @@ test("OWNER can assign roles and read the overview; SUPPORT cannot assign roles"
   assert.equal(can("SUPPORT", "audit.read"), false);
   assert.equal(can("SUPPORT", "impersonate.breakglass"), true);
   assert.equal(can("SUPPORT", "clinics.manage"), false);
+  assert.equal(can("OWNER", "admin.pitch"), true);
+  assert.equal(can("SUPPORT", "admin.pitch"), false);
 });
 
 test("clinic and claimant roles cannot open the admin console", () => {

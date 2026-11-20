@@ -18,7 +18,23 @@ const paths = {
 };
 const icon = name => '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="' + paths[name] + '"/></svg>';
 const nav = {overview:'Overview',canvass:'Clinic canvassing',pipeline:'Outreach pipeline',calendar:'Visits & follow-ups',readiness:'Launch readiness',messaging:'Messaging',documents:'Documents',notes:'Campaign notes'};
-const stage = ['New target','Contacted','Responded','Visit scheduled','Visited','In discussion','Partnered / onboarded','On hold','Closed'];
+const stages = [
+  ['lead','Lead'],
+  ['contacted','Contacted'],
+  ['visit_scheduled','Visit scheduled'],
+  ['visited','Visited'],
+  ['demo_completed','Demo completed'],
+  ['follow_up','Follow-up'],
+  ['negotiating','Negotiating'],
+  ['converted','Converted'],
+  ['lost','Lost']
+];
+const legacyStage = {
+  'New target':'lead', Contacted:'contacted', Responded:'contacted', 'Visit scheduled':'visit_scheduled',
+  Visited:'visited', 'In discussion':'negotiating', 'Partnered / onboarded':'converted', 'On hold':'follow_up', Closed:'lost'
+};
+const pipelineStage = r => stages.some(([id]) => id === r.stage) ? r.stage : (legacyStage[r.status] || ((r.kind === 'clinic' || r.kind === 'client') ? 'lead' : ''));
+const stageLabel = id => (stages.find(([key]) => key === id) || [id, id])[1];
 const kindNames = {clinic:'Clinic',client:'Potential client',task:'Readiness item',script:'Script',note:'Campaign note',document:'Document link'};
 const starterRecords = [
   ['packet-one','task','Review and print the clinic packet','Packet','To do','Proof the one-page overview, contact details, pricing language and QR link. Pack copies and business cards.'],
@@ -39,10 +55,13 @@ const fields = {
   url:['Document URL','url'],
   title:['Name','text'], contact:['Contact name','text'], role:['Role','text'], city:['City / area','text'], address:['Visit address','text'],
   email:['Email','email'], phone:['Phone','tel'], channel:['Preferred channel',['','Email','Phone','In person','Text','Other']],
-  status:['Status',stage], last:['Last outreach','date'], reply:['Response received','date'],
+  stage:['Pipeline stage',stages],
+  consentAt:['Outreach consent date','date'],
+  consentSource:['Consent source',['','Verbal','Email','Signed form','Other']],
+  status:['Status',[]], last:['Last outreach','date'], reply:['Response received','date'],
   visit:['Scheduled visit / call (ET)','datetime-local'], due:['Follow-up date','date'], next:['Next step / visit purpose','text'], notes:['Notes','textarea']
 };
-const outreach = ['title','contact','role','city','address','email','phone','channel','status','last','reply','visit','due','next','notes'];
+const outreach = ['title','contact','role','city','address','email','phone','channel','stage','last','reply','visit','due','next','consentAt','consentSource','notes'];
 const configs = {
   clinic:[...outreach.slice(0,-1),'batch','zip','website','pip','hours','source','outreachResult','notes'], client:outreach,
   task:['title','category','status','due','notes'],
@@ -59,7 +78,7 @@ const visit = value => date(value) + ' · ' + new Date(value).toLocaleTimeString
 const page = () => Object.hasOwn(nav,location.hash.slice(1)) ? location.hash.slice(1) : 'overview';
 const records = () => [...saved.filter(r => r.hidden !== 'yes'), ...suggestions.filter(r => !suppressed.has(r.id) && !saved.some(item => item.id === r.id))];
 const outreachRecords = () => records().filter(r => r.kind === 'clinic' || r.kind === 'client');
-const open = r => !['Closed','On hold','Partnered / onboarded'].includes(r.status);
+const open = r => !['converted','lost'].includes(pipelineStage(r));
 const upcoming = () => outreachRecords().filter(r => open(r) && r.visit?.slice(0,10) >= day()).sort((a,b) => a.visit.localeCompare(b.visit));
 const followups = () => outreachRecords().filter(r => open(r) && r.due).sort((a,b) => a.due.localeCompare(b.due));
 const tag = (text,style='') => '<span class="tag ' + style + '">' + escape(text) + '</span>';
@@ -115,7 +134,7 @@ function recordCard(r) {
   const details = isLead ? [kindNames[r.kind],r.contact,r.role,r.city,r.address,r.email,r.phone,r.channel].filter(Boolean).join(' · ') : r.category;
   return '<article class="record"><span class="row-icon">' + icon(isLead ? r.kind : {task:'readiness',script:'messaging',note:'notes',document:'documents'}[r.kind]) +
     '</span><div class="content"><h3>' + escape(r.title) + '</h3><p class="sub">' + escape(details) + '</p><div class="meta">' +
-    (r.status ? tag(r.status,r.category === 'Launch issue' && r.status !== 'Done' ? 'issue' : '') : '') +
+    (isLead ? tag(stageLabel(pipelineStage(r)), pipelineStage(r) === 'lost' ? 'issue' : '') : (r.status ? tag(r.status,r.category === 'Launch issue' && r.status !== 'Done' ? 'issue' : '') : '')) +
     (r.batch ? tag(r.batch,'neutral') : '') + (r.pip ? tag(r.pip,'neutral') : '') + (r.last ? tag('Reached out ' + date(r.last),'neutral') : '') + (r.reply ? tag('Replied ' + date(r.reply)) : '') +
     (r.visit ? tag(visit(r.visit),'neutral') : '') + (r.due ? tag((isLead ? 'Follow-up ' : 'Due ') + date(r.due),r.due < day() && r.status !== 'Done' ? 'issue' : 'neutral') : '') +
     '</div>' + (r.next ? '<p class="text"><b>Next step</b> · ' + escape(r.next) + '</p>' : '') +
@@ -134,7 +153,7 @@ const options = (values,selected) => values.map(value => {
 }).join('');
 function pipeline() {
   const items = outreachRecords().filter(r => (!typeFilter || r.kind === typeFilter) &&
-    (!stageFilter || r.status === stageFilter) && [r.title,r.contact,r.city,r.notes,r.email].some(v => (v || '').toLowerCase().includes(filter.toLowerCase())));
+    (!stageFilter || pipelineStage(r) === stageFilter) && [r.title,r.contact,r.city,r.notes,r.email].some(v => (v || '').toLowerCase().includes(filter.toLowerCase())));
   return items.map(recordCard).join('') || empty('No matching outreach records. Add a clinic or potential client to get started.');
 }
 function planner() {
@@ -217,7 +236,7 @@ function render() {
   else if (p === 'pipeline') {
     body = '<div class="filters"><input type="search" aria-label="Search outreach" placeholder="Search name, contact or area" id="search" value="' + escape(filter) + '"><select id="type-filter" aria-label="Filter by record type">' +
       options([['','All contacts'],['clinic','Clinics'],['client','Potential clients']],typeFilter) + '</select><select id="stage-filter" aria-label="Filter by stage">' +
-      options([['','All stages'],...stage],stageFilter) + '</select>' + button('＋ Add potential client','add','client') +
+      options([['','All stages'],...stages],stageFilter) + '</select>' + button('＋ Add potential client','add','client') +
       '</div><div id="results" class="record-grid">' + pipeline() + '</div>';
   } else if (p === 'calendar') body = planner();
   else if (p === 'readiness') {
@@ -409,7 +428,11 @@ function showEditor(kind, record) {
   edit = {kind,record};
   $('editor-title').textContent = record ? 'Edit ' + kindNames[kind].toLowerCase() : 'New record';
   const kindInput = record ? '' : '<label>Record type<select id="kind" name="kind">' + options(Object.entries(kindNames),kind) + '</select></label>';
-  $('fields').innerHTML = kindInput + '<div id="record-fields">' + editorFields(kind,record ? {...record, ...(record.url?.startsWith('/') && {url:location.origin + record.url})} : (kind === 'clinic' && page() === 'canvass' && batchFilter !== '*' && batchFilter !== 'Unassigned' ? {batch:batchFilter,zip:/^\d{5}$/.test(batchFilter.split(' · ')[1] || '') ? batchFilter.split(' · ')[1] : '',next:'Confirm office manager, PIP handling, and best time to drop by.'} : {})) + '</div>';
+  const blank = {stage:'lead'};
+  const seeded = kind === 'clinic' && page() === 'canvass' && batchFilter !== '*' && batchFilter !== 'Unassigned'
+    ? {stage:'lead',batch:batchFilter,zip:/^\d{5}$/.test(batchFilter.split(' · ')[1] || '') ? batchFilter.split(' · ')[1] : '',next:'Confirm office manager, PIP handling, and best time to drop by.'}
+    : blank;
+  $('fields').innerHTML = kindInput + '<div id="record-fields">' + editorFields(kind,record ? {...record,stage:pipelineStage(record), ...(record.url?.startsWith('/') && {url:location.origin + record.url})} : seeded) + '</div>';
   $('form-error').textContent = '';
   $('delete').hidden = !record;
   if (!$('editor').open) $('editor').showModal();

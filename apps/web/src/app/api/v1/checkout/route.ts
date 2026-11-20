@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { checkoutRequestSchema, PRODUCTS, SKIP_PAYMENTS_FOR_PROMO, stripeProductDescription } from "@claimsaver/shared";
 import { getStripe } from "@/lib/stripe/server";
-import { jsonErr, jsonOk, requireUser } from "@/lib/supabase/auth";
+import { getProfile, jsonErr, jsonOk, requireUser } from "@/lib/supabase/auth";
 import { siteUrl } from "@/lib/utils";
 import { clientIp, rateLimit, rateLimitResponse } from "@/lib/security/rate-limit";
 
@@ -15,6 +15,11 @@ export async function POST(req: NextRequest) {
   if (SKIP_PAYMENTS_FOR_PROMO) {
     const origin = siteUrl().replace(/\/$/, "");
     return jsonOk({ url: `${origin}/dashboard`, sessionId: null });
+  }
+
+  const profile = await getProfile(user.id);
+  if (profile?.has_platform_access) {
+    return jsonErr("You already have platform access.", 409);
   }
 
   const stripe = getStripe();

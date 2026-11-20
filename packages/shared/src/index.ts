@@ -1,5 +1,6 @@
 export * from "./constants/auth";
 export * from "./constants/pricing";
+export * from "./constants/entitlements";
 export * from "./constants/legal";
 export * from "./constants/milestones";
 export * from "./constants/worksheet";

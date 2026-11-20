@@ -15,6 +15,7 @@ export type StaffRole = (typeof STAFF_ROLES)[number];
 export const PERMISSIONS = [
   "admin.access",
   "admin.overview",
+  "admin.pitch",
   "roles.assign",
   "audit.read",
   "users.search",

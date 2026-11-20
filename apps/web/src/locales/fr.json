@@ -74,7 +74,6 @@
       "titleLine1": "Déposez votre réclamation",
       "titleLine2": "sans faute en Floride.",
       "trustSpine": "C’est votre couverture. Vous l’avez payée. Utilisez-la.",
-      "founderCredential": "Conçu par un ancien ajusteur de sinistres de Floride.",
       "description": "Un logiciel guidé pour les réclamations PIP en Floride que vous déposez vous-même—surtout un dossier PIP seulement après qu’un avocat a dit non. Accès plateforme {{price}} forfaitaire. Vous restez le déposant. Pas un cabinet d’avocats.",
       "urgency": "Blessé dans un accident ? Vous avez 14 jours pour vous faire soigner.",
       "cta": "Créez votre compte",
@@ -174,14 +173,6 @@
       "whatYouGetSubtitle": "Outils structurés et stockage sécurisé—pas d’honoraires de résultat.",
       "beforeAfterTitle": "Paperasse éparpillée vs. un seul dossier PIP",
       "beforeAfterSubtitle": "Mettez les pièces, les dates et les formulaires au même endroit, sous votre contrôle—pas dans un tas dans la boîte à gants."
-    },
-    "productPreview": {
-      "title": "La feuille de travail, le coffre et le calendrier",
-      "subtitle": "C’est le logiciel que vous utilisez après le paiement. Données d’exemple—pas votre dossier.",
-      "worksheetTitle": "Feuille de travail PIP guidée",
-      "vaultTitle": "Coffre de documents",
-      "calendarTitle": "Calendrier des délais",
-      "caption": "Aperçu d’exemple—pas votre dossier et pas un montant garanti."
     },
     "proofQuotes": {
       "title": "Des personnes qui ont déposé leur propre dossier PIP",
@@ -413,6 +404,14 @@
       "see1": "Patients inscrits (nom affiché)",
       "see2": "Étape et statut de la fiche",
       "see3": "Dans les temps ou en retard",
+      "includeTitle": "Ce que comprend le tableau de bord clinique",
+      "includeLead": "Les patients paient toujours eux-mêmes le tarif plateforme de {{price}}. Le tableau de bord est un logiciel distinct pour le personnel — pas une licence patient et pas un pourcentage des prestations PIP.",
+      "include1": "Jusqu’à 3 sièges personnel",
+      "include2": "Jusqu’à 25 patients inscrits actifs (une réclamation active est une inscription en cours)",
+      "include3": "Suivi de progression et de statut : étape de la fiche, dans les temps ou en retard, liste terminée",
+      "include4": "Un lien d’invitation patient unique après un BAA signé",
+      "include5": "Mise en route assistée par le fondateur et une démo de 15 minutes",
+      "include6": "Les fiches, le coffre, les rappels et les détails médicaux restent dans l’espace du patient — le personnel ne les ouvre pas",
       "hideTitle": "Ce que le personnel ne voit jamais",
       "hide1": "Réponses de la fiche",
       "hide2": "Documents téléversés",
@@ -1763,11 +1762,6 @@
     "vaultHint": "Les photos sont enregistrées dans votre coffre de documents. Elles ne sont pas envoyées à un assureur.",
     "error": "Le téléversement a échoué. Réessayez."
   },
-  "proof": {
-    "miami": "Siège à Miami",
-    "languages": "Anglais, espagnol et français",
-    "flat": "{{price}} forfaitaires—pas de contingence pour nous"
-  },
   "nav": {
     "company": "Entreprise"
   },
@@ -1822,7 +1816,13 @@
     "clinic": {
       "visibility": "Votre clinique voit si le patient a commencé et à quelle étape de la fiche il se trouve — jamais ses réponses, documents ou informations médicales.",
       "noReferralFees": "ClaimSaver+ ne rémunère pas les cliniques pour les recommandations, et les cliniques ne reçoivent aucune part des frais du patient.",
-      "pricingPilot": "Le tarif du tableau de bord clinique peut se discuter pendant la démo de 15 minutes. C’est un abonnement distinct de logiciel pour votre personnel — sans lien avec le nombre de patients recommandés.",
+      "pricingPilot": "Le tarif du tableau de bord clinique peut se discuter pendant la démo de 15 minutes. C’est un abonnement distinct de logiciel pour votre personnel — sans lien avec le nombre de patients recommandés. Les patients paient toujours le tarif de la plateforme.",
+      "include1": "Jusqu’à 3 sièges personnel",
+      "include2": "Jusqu’à 25 patients inscrits actifs",
+      "include3": "Suivi de progression et de statut pour votre accueil",
+      "include4": "Lien d’invitation patient après un BAA signé",
+      "include5": "Mise en route assistée par le fondateur",
+      "include6": "Les fichiers et les fiches restent chez le déposant",
       "pricingPublic": "Tableau de bord clinique : {{clinicPrice}}/mois par clinique, forfait. Un logiciel pour votre personnel — sans lien avec le nombre de patients recommandés. Les patients paient leurs propres {{price}} séparément.",
       "valueProp": "Aidez vos patients PIP à obtenir des soins initiaux dans le délai de 14 jours, à terminer leurs formulaires et à se présenter aux EUO et IME — avec une vue de progression pour votre accueil.",
       "sectionTitle": "Pour les cliniques",

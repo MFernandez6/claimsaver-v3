@@ -13,7 +13,6 @@ import { useSignedInHome } from "@/components/auth/use-signed-in-home";
 import { PitchNarrative } from "@/components/pitch-narrative";
 import { PricingCompare } from "@/components/pricing-compare";
 import { NamedProofSection, ThirdPartyStrip, TrustCtaNote } from "@/components/trust-signals";
-import { ProductPreview } from "@/components/product-preview";
 import { LAWYER_DECLINED_PATH } from "@/lib/seo/paths";
 
 export function HomePage() {
@@ -61,13 +60,6 @@ export function HomePage() {
         </>
       ),
     },
-  ];
-
-  const proof = [
-    t("home.hero.founderCredential"),
-    t("proof.miami"),
-    t("proof.languages"),
-    t("proof.flat"),
   ];
 
   return (
@@ -119,18 +111,8 @@ export function HomePage() {
                 )}
               </div>
               {!(isLoaded && user) ? (
-                <TrustCtaNote className="mx-auto mb-3 max-w-xl lg:mx-0" />
-              ) : (
-                <div className="mb-2" />
-              )}
-              <ul className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-600 lg:justify-start dark:text-slate-300">
-                {proof.map((line) => (
-                  <li key={line} className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-teal-600" />
-                    {line}
-                  </li>
-                ))}
-              </ul>
+                <TrustCtaNote className="mx-auto max-w-xl lg:mx-0" />
+              ) : null}
             </div>
             <HomeHeroVisual />
           </div>
@@ -162,8 +144,6 @@ export function HomePage() {
           <PricingCompare ctaHref={START_PATH} ctaLabel={t("cta.payAccess")} />
         </div>
       </section>
-
-      <ProductPreview />
 
       <NamedProofSection />
 

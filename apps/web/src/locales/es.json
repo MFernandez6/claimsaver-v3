@@ -74,7 +74,6 @@
       "titleLine1": "Presenta tu reclamo sin culpa",
       "titleLine2": "en Florida.",
       "trustSpine": "Es su cobertura. Usted la pagó. Úsela.",
-      "founderCredential": "Creado por un exajustador de reclamos de Florida.",
       "description": "Software guiado para reclamos PIP de Florida que usted presenta—sobre todo un expediente solo de PIP después de que un abogado le dijo que no. Acceso a la plataforma por {{price}} fijos. Usted sigue siendo quien presenta. No somos bufete.",
       "urgency": "¿Salió herido de un choque? Tiene 14 días para recibir tratamiento.",
       "cta": "Cree su cuenta",
@@ -174,14 +173,6 @@
       "whatYouGetSubtitle": "Herramientas estructuradas y almacenamiento seguro—no un honorario de contingencia.",
       "beforeAfterTitle": "Papeleo disperso vs. un solo expediente PIP",
       "beforeAfterSubtitle": "Ponga los registros, las fechas y los formularios en un solo lugar que usted controla—no en un montón en la guantera."
-    },
-    "productPreview": {
-      "title": "La hoja de trabajo, la bóveda y el calendario",
-      "subtitle": "Esto es el software que usa después de pagar. Datos de muestra—no su reclamo.",
-      "worksheetTitle": "Hoja de trabajo PIP guiada",
-      "vaultTitle": "Bóveda de documentos",
-      "calendarTitle": "Calendario de plazos",
-      "caption": "Vista de muestra—no es su reclamo ni un monto garantizado."
     },
     "proofQuotes": {
       "title": "Personas que presentaron su propio reclamo PIP",
@@ -413,6 +404,14 @@
       "see1": "Pacientes inscritos (nombre para mostrar)",
       "see2": "Paso y estado de la hoja de trabajo",
       "see3": "Al día o atrasado",
+      "includeTitle": "Qué incluye el panel para clínicas",
+      "includeLead": "Los pacientes siguen pagando ellos mismos la tarifa de plataforma de {{price}}. El panel es software aparte para el personal — no es una licencia de paciente ni un porcentaje de los beneficios PIP.",
+      "include1": "Hasta 3 puestos de personal",
+      "include2": "Hasta 25 pacientes inscritos activos (un reclamo activo es una inscripción vigente)",
+      "include3": "Seguimiento de progreso y estado: paso de la hoja, al día o atrasado, lista completa",
+      "include4": "Un enlace único de invitación a pacientes después de un BAA firmado",
+      "include5": "Puesta en marcha con el fundador y una demostración de 15 minutos",
+      "include6": "Las hojas, el archivo, los recordatorios y los detalles médicos quedan en el espacio del paciente — el personal no los abre",
       "hideTitle": "Lo que el personal nunca ve",
       "hide1": "Respuestas de la hoja de trabajo",
       "hide2": "Documentos cargados",
@@ -1763,11 +1762,6 @@
     "vaultHint": "Las fotos se guardan en su bóveda de documentos. No se envían a una aseguradora.",
     "error": "La carga falló. Inténtelo de nuevo."
   },
-  "proof": {
-    "miami": "Sede en Miami",
-    "languages": "Inglés, español y francés",
-    "flat": "Tarifa plana de {{price}}—sin contingencia para nosotros"
-  },
   "nav": {
     "company": "Empresa"
   },
@@ -1822,7 +1816,13 @@
     "clinic": {
       "visibility": "Tu clínica ve si el paciente comenzó y en qué paso de la hoja de trabajo está — nunca sus respuestas, documentos ni detalles médicos.",
       "noReferralFees": "ClaimSaver+ no paga a las clínicas por referencias, y las clínicas no reciben ninguna parte del pago del paciente.",
-      "pricingPilot": "El precio del panel para clínicas se puede hablar en la demo de 15 minutos. Es una suscripción aparte de software para su personal — no depende de cuántos pacientes refiera.",
+      "pricingPilot": "El precio del panel para clínicas se puede hablar en la demo de 15 minutos. Es una suscripción aparte de software para su personal — no depende de cuántos pacientes refiera. Los pacientes siguen pagando la tarifa de la plataforma.",
+      "include1": "Hasta 3 puestos de personal",
+      "include2": "Hasta 25 pacientes inscritos activos",
+      "include3": "Seguimiento de progreso y estado para su recepción",
+      "include4": "Enlace de invitación a pacientes después de un BAA firmado",
+      "include5": "Puesta en marcha con el fundador",
+      "include6": "Los archivos y las hojas quedan con quien presenta",
       "pricingPublic": "Panel para clínicas: {{clinicPrice}} al mes por clínica, tarifa fija. Software para tu personal — no depende de cuántos pacientes refieras. Los pacientes pagan sus propios {{price}} por separado.",
       "valueProp": "Ayuda a tus pacientes de PIP a recibir atención inicial dentro de los 14 días, terminar su papeleo y asistir a sus EUO e IME — con una vista solo de progreso para tu recepción.",
       "sectionTitle": "Para clínicas",

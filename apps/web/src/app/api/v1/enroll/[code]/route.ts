@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requireUser } from "@/lib/supabase/auth";
+import { atClinicActiveClaimLimit, CLINIC_ACTIVE_CLAIM_SLOTS } from "@claimsaver/shared";
 import { canOpenEnrollment } from "@/lib/admin/baa";
 import { writeAudit } from "@/lib/admin/audit";
 import { requestIp, requestUserAgent } from "@/lib/admin/request-meta";
@@ -52,6 +53,26 @@ export async function POST(req: NextRequest, ctx: Ctx) {
     .eq("id", user.id)
     .maybeSingle();
   const displayName = `${profile?.first_name ?? ""} ${profile?.last_name ?? ""}`.trim() || "Patient";
+
+  const { data: already } = await admin
+    .from("clinic_enrollments")
+    .select("id")
+    .eq("clinic_id", clinic.id)
+    .eq("user_id", user.id)
+    .maybeSingle();
+  if (already) return jsonOk({ ok: true, alreadyEnrolled: true });
+
+  const { count: enrolledCount, error: enrolledError } = await admin
+    .from("clinic_enrollments")
+    .select("id", { count: "exact", head: true })
+    .eq("clinic_id", clinic.id);
+  if (enrolledError) return jsonErr(enrolledError.message, 500);
+  if (atClinicActiveClaimLimit(enrolledCount ?? 0)) {
+    return jsonErr(
+      `This clinic has reached its ${CLINIC_ACTIVE_CLAIM_SLOTS} active patient limit.`,
+      409,
+    );
+  }
 
   const { error } = await admin.from("clinic_enrollments").insert({
     clinic_id: clinic.id,

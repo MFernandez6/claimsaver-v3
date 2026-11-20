@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { emptyWorksheet, normalizeAccidentDate } from "@claimsaver/shared";
+import { atIndividualClaimLimit, emptyWorksheet, normalizeAccidentDate } from "@claimsaver/shared";
 import { syncPipDeadlineChain } from "@/lib/api/milestones";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/admin";
 import { jsonErr, jsonOk, requirePlatformAccess } from "@/lib/supabase/auth";
@@ -31,13 +31,25 @@ export async function POST(req: NextRequest) {
   const limited = await rateLimit(`claims:${user.id}:${clientIp(req)}`, 20, 10 * 60 * 1000);
   if (!limited.ok) return rateLimitResponse(limited.retryAfter);
 
+  const admin = getSupabaseAdmin();
+  const { count: existingClaims, error: countError } = await admin
+    .from("claims")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", user.id);
+  if (countError) return jsonErr(countError.message, 500);
+  if (atIndividualClaimLimit(existingClaims ?? 0)) {
+    return jsonErr(
+      "This purchase includes one claim workspace. Open your existing claim, or contact support if you need help.",
+      409,
+    );
+  }
+
   const body = (await req.json().catch(() => ({}))) as { worksheet?: unknown };
   const worksheet = stripClaimantSsn({
     ...emptyWorksheet(),
     ...((body.worksheet ?? {}) as Record<string, unknown>),
   });
 
-  const admin = getSupabaseAdmin();
   let data: Record<string, unknown> | null = null;
   let error: { message: string } | null = null;
   for (let attempt = 0; attempt < 3; attempt += 1) {

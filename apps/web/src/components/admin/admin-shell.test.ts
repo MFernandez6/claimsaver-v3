@@ -11,4 +11,7 @@ test("admin console uses a mobile header and drawer instead of a permanent sideb
   assert.match(src, /hidden w-64[\s\S]*lg:flex/);
   assert.match(src, /aria-label="Admin sections"/);
   assert.match(src, /Open menu/);
+  assert.match(src, /href: "\/admin\/results"/);
+  assert.match(src, /href: "\/admin\/pitch"/);
+  assert.match(src, /permission: "admin.pitch"/);
 });

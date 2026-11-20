@@ -74,7 +74,6 @@
       "titleLine1": "File Your Florida",
       "titleLine2": "No-Fault Claim.",
       "trustSpine": "It's your coverage. You paid for it. Use it.",
-      "founderCredential": "Built by a former Florida claims adjuster.",
       "description": "Self-help software for Florida PIP paperwork you prepare yourself—especially PIP-only files after a lawyer turned you down. Flat {{price}} platform access. You stay the filer. Not a law firm. Not legal advice.",
       "urgency": "Hurt in a crash? You have 14 days to get treated.",
       "cta": "Create your account",
@@ -174,14 +173,6 @@
       "whatYouGetSubtitle": "Structured tools and secure storage—not a contingency fee.",
       "beforeAfterTitle": "Scattered paperwork vs. one PIP file",
       "beforeAfterSubtitle": "Put the records, dates, and forms in one place you control—not a pile in the glove box."
-    },
-    "productPreview": {
-      "title": "The worksheet, the vault, and the calendar",
-      "subtitle": "This is the software you use after you pay. Sample data—not your claim.",
-      "worksheetTitle": "Guided PIP worksheet",
-      "vaultTitle": "Document vault",
-      "calendarTitle": "Deadline calendar",
-      "caption": "Sample preview—not your claim and not a guaranteed amount."
     },
     "proofQuotes": {
       "title": "People who filed their own PIP claim",
@@ -413,6 +404,14 @@
       "see1": "Enrolled patients (display name)",
       "see2": "Worksheet step and status",
       "see3": "On-track vs falling behind",
+      "includeTitle": "What’s included in the clinic dashboard",
+      "includeLead": "Patients still pay the {{price}} platform fee themselves. The clinic dashboard is separate staff software — not a patient license and not a cut of PIP benefits.",
+      "include1": "Up to 3 staff seats",
+      "include2": "Up to 25 active enrolled patients (an active claim is a current enrollment)",
+      "include3": "Progress and status tracking: worksheet step, on-track vs behind, checklist complete",
+      "include4": "A unique patient invite link after a signed BAA",
+      "include5": "Founder-assisted onboarding and a 15-minute walkthrough",
+      "include6": "Patient worksheets, vault files, reminders, and medical details stay in the patient’s own workspace — staff never open them",
       "hideTitle": "What clinic staff never see",
       "hide1": "Worksheet answers",
       "hide2": "Uploaded documents",
@@ -1762,11 +1761,6 @@
     "vaultHint": "Photos save to your document vault. They are not sent to an insurer.",
     "error": "Upload failed. Try again."
   },
-  "proof": {
-    "miami": "Headquartered in Miami",
-    "languages": "English, Spanish, and French",
-    "flat": "Flat {{price}}—no contingency to us"
-  },
   "nav": {
     "company": "Company"
   },
@@ -1821,7 +1815,13 @@
     "clinic": {
       "visibility": "Your clinic sees whether a patient started and which worksheet step they are on — never their answers, documents, or medical details.",
       "noReferralFees": "ClaimSaver+ does not pay clinics for referrals, and clinics do not receive any part of a patient's fee.",
-      "pricingPilot": "Clinic dashboard pricing can be discussed during the 15-minute demo. It is a separate staff-software subscription — not tied to how many patients you refer.",
+      "pricingPilot": "Clinic dashboard pricing can be discussed during the 15-minute demo. It is a separate staff-software subscription — not tied to how many patients you refer. Patients still pay the platform fee themselves.",
+      "include1": "Up to 3 staff seats",
+      "include2": "Up to 25 active enrolled patients",
+      "include3": "Progress and status tracking for your front desk",
+      "include4": "Patient invite link after a signed BAA",
+      "include5": "Founder-assisted onboarding",
+      "include6": "Patient files and worksheets stay with the filer",
       "pricingPublic": "Clinic dashboard: {{clinicPrice}}/month per clinic, flat. Software for your staff — not tied to how many patients you refer. Patients pay their own {{price}} separately.",
       "valueProp": "Help your PIP patients get initial care inside the 14-day window, finish their paperwork, and show up for EUOs and IMEs — with a progress-only view for your front desk.",
       "sectionTitle": "For Clinics",

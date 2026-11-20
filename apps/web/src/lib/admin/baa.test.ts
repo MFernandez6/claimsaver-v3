@@ -10,9 +10,10 @@ test("enrollment stays closed until BAA is signed and the clinic is active", () 
   assert.equal(canOpenEnrollment({ baaStatus: "SIGNED", isActive: true }), true);
 });
 
-test("pilot clinics do not contribute listed MRR", () => {
+test("pilot clinics do not contribute listed MRR; founding list price is gone", () => {
   assert.equal(listedMrrCents("PILOT"), 0);
-  assert.equal(listedMrrCents("FOUNDING_199"), 19900);
+  assert.equal(listedMrrCents("STANDARD_299"), 29900);
+  assert.equal(listedMrrCents("FOUNDING_199"), 29900);
 });
 
 test("on-track means activity inside 14 days", () => {

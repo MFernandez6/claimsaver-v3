@@ -25,6 +25,11 @@ export function ClinicPricingNote({
       </CardHeader>
       <CardContent className="mx-auto max-w-xl space-y-3 text-center text-base leading-relaxed text-slate-600">
         <p>{t(clinicPricingKey())}</p>
+        <ul className="list-disc space-y-1 pl-5 text-left text-sm text-slate-600">
+          {([1, 2, 3, 4, 5, 6] as const).map((n) => (
+            <li key={n}>{t(`copy.clinic.include${n}`)}</li>
+          ))}
+        </ul>
         <p>{t("copy.clinic.noReferralFees")}</p>
         {ctaHref && ctaLabel ? (
           <div className="pt-2">

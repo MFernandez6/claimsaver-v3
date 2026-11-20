@@ -33,6 +33,15 @@ test("14-day leads list never loads worksheet JSON", () => {
   assert.doesNotMatch(source, /claim_number/);
 });
 
+test("KPI actuals never load worksheet JSON or listed MRR as cash", () => {
+  const source = readFileSync(join(root, "kpis/route.ts"), "utf8");
+  assert.match(source, /admin.pitch/);
+  assert.doesNotMatch(source, /worksheet/);
+  assert.doesNotMatch(source, /claim_number/);
+  assert.doesNotMatch(source, /listedMrrCents/);
+  assert.match(source, /PLANNING_FUNDING_USD/);
+});
+
 test("overview no longer lists unmasked users or claim records", () => {
   const source = readFileSync(join(root, "overview/route.ts"), "utf8");
   assert.match(source, /count: "exact"/);

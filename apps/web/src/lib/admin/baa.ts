@@ -1,4 +1,4 @@
-export const CLINIC_PLANS = ["PILOT", "FOUNDING_199", "STANDARD_299"] as const;
+export const CLINIC_PLANS = ["PILOT", "STANDARD_299"] as const;
 export type ClinicPlan = (typeof CLINIC_PLANS)[number];
 
 export const BAA_STATUSES = ["NOT_SENT", "SENT", "SIGNED"] as const;
@@ -12,8 +12,7 @@ export function canOpenEnrollment(input: {
 }
 
 export function listedMrrCents(plan: string): number {
-  if (plan === "FOUNDING_199") return 19900;
-  if (plan === "STANDARD_299") return 29900;
+  if (plan === "STANDARD_299" || plan === "FOUNDING_199") return 29900;
   return 0;
 }
 
