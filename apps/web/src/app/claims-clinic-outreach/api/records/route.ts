@@ -19,13 +19,35 @@ function sameOriginWrite(request: NextRequest) {
   return origin === request.nextUrl.origin && request.headers.get("x-outreach-request") === "1";
 }
 
+function missingPipelineColumns(message: string) {
+  return /does not exist|schema cache|PGRST204|Could not find the .* column/i.test(message);
+}
+
+type OutreachRow = {
+  id: string;
+  kind: string;
+  data: unknown;
+  updated: string;
+  stage?: unknown;
+  next_action_at?: unknown;
+  consent_at?: unknown;
+  consent_source?: unknown;
+};
+
 export async function GET() {
   const staff = await requireStaff();
   if (staff.response) return staff.response;
-  const { data, error } = await getSupabaseAdmin()
+  const admin = getSupabaseAdmin();
+  const full = await admin
     .from("outreach_records")
     .select("id, kind, data, updated, stage, next_action_at, consent_at, consent_source")
     .order("updated", { ascending: false });
+  const fallback =
+    full.error && missingPipelineColumns(full.error.message)
+      ? await admin.from("outreach_records").select("id, kind, data, updated").order("updated", { ascending: false })
+      : null;
+  const data = (fallback?.data ?? full.data) as OutreachRow[] | null;
+  const error = fallback ? fallback.error : full.error;
   if (error) {
     console.error("Outreach storage error:", error.message);
     const missing = /outreach_records|schema cache|PGRST205/i.test(error.message);
@@ -40,7 +62,7 @@ export async function GET() {
       const payload = row.data && typeof row.data === "object" ? (row.data as Record<string, unknown>) : {};
       const stage = resolveOutreachStage({
         kind: String(row.kind),
-        stage: row.stage,
+        stage: row.stage ?? payload.stage,
         status: typeof payload.status === "string" ? payload.status : undefined,
       });
       return {
@@ -49,9 +71,9 @@ export async function GET() {
         kind: row.kind,
         updated: row.updated,
         stage: stage ?? "",
-        nextActionAt: row.next_action_at ?? "",
-        consentAt: row.consent_at ?? "",
-        consentSource: row.consent_source ?? "",
+        nextActionAt: row.next_action_at ?? payload.nextActionAt ?? "",
+        consentAt: row.consent_at ?? payload.consentAt ?? "",
+        consentSource: row.consent_source ?? payload.consentSource ?? "",
       };
     }),
   );
@@ -85,7 +107,8 @@ async function write(request: NextRequest, method: "PUT" | "DELETE") {
   }
   const write = parsed.write;
   if (!write) return json({ error: "Invalid record." }, 400);
-  const { error } = await admin.from("outreach_records").upsert({
+  const updated = new Date().toISOString();
+  let { error } = await admin.from("outreach_records").upsert({
     id: write.id,
     kind: write.kind,
     data: write.fields,
@@ -93,8 +116,22 @@ async function write(request: NextRequest, method: "PUT" | "DELETE") {
     next_action_at: write.nextActionAt,
     consent_at: write.consentAt,
     consent_source: write.consentSource,
-    updated: new Date().toISOString(),
+    updated,
   });
+  if (error && missingPipelineColumns(error.message)) {
+    ({ error } = await admin.from("outreach_records").upsert({
+      id: write.id,
+      kind: write.kind,
+      data: {
+        ...write.fields,
+        ...(write.stage ? { stage: write.stage } : {}),
+        ...(write.nextActionAt ? { nextActionAt: write.nextActionAt } : {}),
+        ...(write.consentAt ? { consentAt: write.consentAt } : {}),
+        ...(write.consentSource ? { consentSource: write.consentSource } : {}),
+      },
+      updated,
+    }));
+  }
   if (error) {
     console.error("Outreach storage error:", error.message);
     return json({ error: "Workspace storage is temporarily unavailable. Try again." }, 503);
