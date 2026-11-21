@@ -14,4 +14,5 @@ test("how-it-works embeds the public user walkthrough, not a gated /films asset"
   assert.doesNotMatch(page, /\/films\//);
   assert.ok(existsSync(join(webRoot, "public/walkthroughs/user.mp4")));
   assert.ok(existsSync(join(webRoot, "public/walkthroughs/clinic.mp4")));
+  assert.ok(existsSync(join(webRoot, "public/walkthroughs/user-9x16.mp4")));
 });

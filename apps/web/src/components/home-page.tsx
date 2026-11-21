@@ -7,7 +7,7 @@ import { START_PATH } from "@claimsaver/shared";
 import { Button } from "@/components/ui/button";
 import FAQ from "@/components/faq";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
-import { HomeHeroVisual } from "@/components/home-hero-visual";
+import { HomeWalkthroughReel } from "@/components/home-walkthrough-reel";
 import { HeroLogoLockup } from "@/components/hero-logo-lockup";
 import { useSignedInHome } from "@/components/auth/use-signed-in-home";
 import { PitchNarrative } from "@/components/pitch-narrative";
@@ -68,7 +68,7 @@ export function HomePage() {
         <PageHeroBackdrop />
         <div className="relative z-10 mx-auto max-w-7xl px-4 pt-8 pb-12 sm:px-6 sm:pt-14 sm:pb-16 lg:px-8 lg:pb-20">
           <HeroLogoLockup />
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-20">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,22.5rem)] lg:gap-16 xl:gap-20">
             <div className="text-center lg:text-left">
               <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-teal-200/90 bg-white/70 px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-teal-800 shadow-sm backdrop-blur-sm sm:mb-4 sm:px-4 sm:text-xs sm:tracking-[0.2em] dark:border-teal-500/25 dark:bg-slate-900/70 dark:text-teal-200">
                 <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
@@ -114,7 +114,7 @@ export function HomePage() {
                 <TrustCtaNote className="mx-auto max-w-xl lg:mx-0" />
               ) : null}
             </div>
-            <HomeHeroVisual />
+            <HomeWalkthroughReel />
           </div>
         </div>
       </section>

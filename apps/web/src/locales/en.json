@@ -101,7 +101,12 @@
       "visualPreviewLastDoneTitle": "Finished physical therapy",
       "visualPreviewLastDoneDate": "Marked done",
       "dashboardPreviewBadge": "Sample preview",
-      "dashboardPreviewHint": "Your own progress and documents will appear here after you sign in."
+      "dashboardPreviewHint": "Your own progress and documents will appear here after you sign in.",
+      "reelKicker": "37-second walkthrough",
+      "reelTitle": "See the workspace",
+      "reelCaption": "Create an account, the guided form, reminders, and your document vault. You stay the filer.",
+      "reelPlay": "Play 37 seconds",
+      "reelFull": "Full walkthrough"
     },
     "video": {
       "notSupported": "Your browser does not support the video tag."

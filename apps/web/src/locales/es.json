@@ -101,7 +101,12 @@
       "visualPreviewLastDoneTitle": "Terminó la fisioterapia",
       "visualPreviewLastDoneDate": "Marcado como hecho",
       "dashboardPreviewBadge": "Vista previa de ejemplo",
-      "dashboardPreviewHint": "Tu propio progreso y documentos aparecerán aquí después de iniciar sesión."
+      "dashboardPreviewHint": "Tu propio progreso y documentos aparecerán aquí después de iniciar sesión.",
+      "reelKicker": "Recorrido de 37 segundos",
+      "reelTitle": "Mira el espacio de trabajo",
+      "reelCaption": "Crea la cuenta, el formulario guiado, recordatorios y la bóveda. Tú presentas el reclamo.",
+      "reelPlay": "Reproducir 37 segundos",
+      "reelFull": "Recorrido completo"
     },
     "video": {
       "notSupported": "Tu navegador no soporta el elemento de video."

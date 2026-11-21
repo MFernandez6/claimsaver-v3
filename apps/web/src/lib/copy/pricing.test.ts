@@ -176,6 +176,8 @@ test("required surfaces import the canonical copy keys", () => {
   assert.match(home, /home\.faq\.refund/);
   assert.doesNotMatch(home, /rear-ended on I-95, filed alone/);
   assert.doesNotMatch(home, /ProductPreview/);
+  assert.match(home, /HomeWalkthroughReel/);
+  assert.doesNotMatch(home, /HomeHeroVisual/);
   assert.match(home, /NamedProofSection/);
   assert.match(home, /ThirdPartyStrip/);
   assert.doesNotMatch(home, /LocalizedSocialImage/);

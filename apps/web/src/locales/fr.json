@@ -101,7 +101,12 @@
       "visualPreviewLastDoneTitle": "Kinésithérapie terminée",
       "visualPreviewLastDoneDate": "Marqué comme fait",
       "dashboardPreviewBadge": "Aperçu d’exemple",
-      "dashboardPreviewHint": "Votre progrès et vos documents s’afficheront ici après la connexion."
+      "dashboardPreviewHint": "Votre progrès et vos documents s’afficheront ici après la connexion.",
+      "reelKicker": "Parcours de 37 secondes",
+      "reelTitle": "Voir l’espace de travail",
+      "reelCaption": "Création du compte, formulaire guidé, rappels et coffre. Vous restez le déposant.",
+      "reelPlay": "Lire 37 secondes",
+      "reelFull": "Parcours complet"
     },
     "video": {
       "notSupported": "Votre navigateur ne prend pas en charge l'élément vidéo."
