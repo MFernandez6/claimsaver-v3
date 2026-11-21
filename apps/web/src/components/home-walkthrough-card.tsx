@@ -5,10 +5,10 @@ import Link from "next/link";
 import { Play } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const SRC = "/walkthroughs/user-9x16.mp4";
-const POSTER = "/walkthroughs/user-9x16.jpg";
+const SRC = "/walkthroughs/user-16x9.mp4";
+const POSTER = "/walkthroughs/user-16x9.jpg";
 
-export function HomeWalkthroughReel() {
+export function HomeWalkthroughCard() {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
@@ -21,20 +21,19 @@ export function HomeWalkthroughReel() {
   }, []);
 
   return (
-    <figure className="relative mx-auto w-full max-w-[20.5rem] lg:max-w-[22rem]">
-      <p className="mb-3 text-center text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-teal-800 dark:text-teal-200">
-        {t("home.hero.reelKicker")}
-      </p>
-      <div className="relative">
-        <div
-          className="pointer-events-none absolute -inset-10 rounded-[3.5rem] bg-[radial-gradient(ellipse_at_center,rgba(13,148,136,0.32),transparent_68%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(45,212,191,0.18),transparent_68%)]"
-          aria-hidden
-        />
-        <div className="relative rounded-[2rem] bg-gradient-to-b from-slate-600 via-slate-900 to-[#071614] p-[0.65rem] shadow-[0_32px_70px_-24px_rgba(15,23,42,0.7)] ring-1 ring-white/25">
-          <div className="relative overflow-hidden rounded-[1.45rem] bg-[#0b1f1a] shadow-inner">
+    <section className="bg-white py-12 sm:py-16 dark:bg-gray-950">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-teal-800 dark:text-teal-200">
+          {t("home.hero.reelKicker")}
+        </p>
+        <h2 className="mt-2 text-center text-2xl font-semibold text-slate-900 sm:text-3xl dark:text-white">
+          {t("home.hero.reelTitle")}
+        </h2>
+        <figure className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.45)] dark:border-slate-700">
+          <div className="relative bg-black">
             <video
               ref={videoRef}
-              className="aspect-[9/16] h-auto w-full bg-[#0b1f1a]"
+              className="aspect-video h-auto w-full bg-black"
               playsInline
               preload="metadata"
               poster={POSTER}
@@ -58,7 +57,7 @@ export function HomeWalkthroughReel() {
               <button
                 type="button"
                 onClick={start}
-                className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#071614]/20"
+                className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-slate-950/25"
                 aria-label={t("home.hero.reelPlay")}
               >
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-800 text-white shadow-[0_12px_30px_rgba(13,148,136,0.45)] ring-2 ring-white/35">
@@ -70,14 +69,17 @@ export function HomeWalkthroughReel() {
               </button>
             )}
           </div>
-        </div>
+          <figcaption className="bg-white px-5 py-4 text-center text-sm leading-relaxed text-slate-600 sm:text-left dark:bg-slate-900 dark:text-slate-300">
+            {t("home.hero.reelCaption")}{" "}
+            <Link
+              href="/how-it-works"
+              className="whitespace-nowrap font-semibold text-teal-800 underline underline-offset-2 dark:text-teal-200"
+            >
+              {t("home.hero.reelFull")}
+            </Link>
+          </figcaption>
+        </figure>
       </div>
-      <figcaption className="mt-4 text-center text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-        {t("home.hero.reelCaption")}{" "}
-        <Link href="/how-it-works" className="whitespace-nowrap font-semibold text-teal-800 underline underline-offset-2 dark:text-teal-200">
-          {t("home.hero.reelFull")}
-        </Link>
-      </figcaption>
-    </figure>
+    </section>
   );
 }
