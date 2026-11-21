@@ -11,6 +11,7 @@ const layout = readFileSync(join(dir, "layout.tsx"), "utf8");
 test("for-clinics explains the program and books a demo without internal routing copy", () => {
   assert.match(layout, /"\/for-clinics"/);
   assert.match(page, /href="\/clinic-demo"/);
+  assert.match(page, /\/walkthroughs\/clinic\.mp4/);
   assert.match(page, /pages\.forClinics\.includeTitle/);
   assert.match(page, /pages\.forClinics\.includeLead/);
   assert.doesNotMatch(page, /href="\/enroll/);

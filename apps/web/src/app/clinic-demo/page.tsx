@@ -9,6 +9,8 @@ import { MarketingPage, MarketingSection } from "@/components/marketing-page";
 import { webApi } from "@/lib/api/client";
 import { clinicDemoBookingUrl, googleAppointmentEmbedSrc } from "@/lib/clinic-demo";
 import { ClinicPricingNote } from "@/components/clinic-pricing-note";
+import { ProductVideo } from "@/components/product-video";
+
 
 declare global {
   interface Window {
@@ -59,6 +61,22 @@ export default function ClinicDemoPage() {
               {t("copy.patientPrice.sameForReferrals")}
             </CardContent>
           </Card>
+        </div>
+      </MarketingSection>
+
+      <MarketingSection>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-800">
+          {t("pages.forClinics.walkthroughKicker")}
+        </p>
+        <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">
+          {t("pages.forClinics.walkthroughTitle")}
+        </h2>
+        <div className="mt-4">
+          <ProductVideo
+            src="/walkthroughs/clinic.mp4"
+            title={t("pages.forClinics.walkthroughTitle")}
+            caption={t("pages.forClinics.walkthroughCaption")}
+          />
         </div>
       </MarketingSection>
 

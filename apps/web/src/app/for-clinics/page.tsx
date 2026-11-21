@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ObfuscatedSupportEmail } from "@/components/obfuscated-support-email";
 import { MarketingHeading, MarketingPage, MarketingSection } from "@/components/marketing-page";
 import { ClinicPricingNote } from "@/components/clinic-pricing-note";
+import { ProductVideo } from "@/components/product-video";
 
 const STEPS = [1, 2, 3, 4, 5] as const;
 const INCLUDES = [1, 2, 3, 4, 5, 6] as const;
@@ -38,6 +39,20 @@ export default function ForClinicsPage() {
         </>
       }
     >
+      <MarketingSection>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-800">
+          {t("pages.forClinics.walkthroughKicker")}
+        </p>
+        <MarketingHeading>{t("pages.forClinics.walkthroughTitle")}</MarketingHeading>
+        <div className="mt-4">
+          <ProductVideo
+            src="/walkthroughs/clinic.mp4"
+            title={t("pages.forClinics.walkthroughTitle")}
+            caption={t("pages.forClinics.walkthroughCaption")}
+          />
+        </div>
+      </MarketingSection>
+
       <MarketingSection>
         <MarketingHeading>{t("pages.forClinics.howTitle")}</MarketingHeading>
         <ol className="mt-8 space-y-8">

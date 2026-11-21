@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { START_PATH } from "@claimsaver/shared";
 import { PageHeroBackdrop } from "@/components/page-hero-backdrop";
+import { ProductVideo } from "@/components/product-video";
 import { Button } from "@/components/ui/button";
-import { LocalizedSocialImage } from "@/components/graphics/localized-social-image";
 
 export default function HowItWorksPage() {
   const { t } = useTranslation();
@@ -21,16 +21,19 @@ export default function HowItWorksPage() {
           <p className="mt-4 text-slate-600 dark:text-slate-300">{t("pages.howItWorks.intro")}</p>
           <p className="mt-3 text-slate-600 dark:text-slate-300">{t("copy.patientPrice.short")}</p>
           <p className="mt-3 text-slate-600 dark:text-slate-300">{t("whatWeDo.hero.description")}</p>
-          <div className="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg dark:border-slate-700">
-            <LocalizedSocialImage
-              baseName="week1-wed-pip-5-steps"
-              alt={t("home.story.pipStepsAlt")}
-              width={1600}
-              height={900}
-              className="h-auto w-full object-cover"
+          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.18em] text-teal-800">
+            {t("pages.howItWorks.walkthroughKicker")}
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">
+            {t("pages.howItWorks.walkthroughTitle")}
+          </h2>
+          <div className="mt-4">
+            <ProductVideo
+              src="/walkthroughs/user.mp4"
+              title={t("pages.howItWorks.walkthroughTitle")}
+              caption={t("pages.howItWorks.walkthroughCaption")}
             />
           </div>
-          <p className="mt-3 text-center text-xs text-slate-500">{t("home.graphicCaption")}</p>
           <ol className="mt-12 space-y-8">
             {steps.map((n) => (
               <li key={n} className="flex gap-5">
