@@ -6,12 +6,14 @@
  */
 import { createClient } from "@supabase/supabase-js";
 import { randomBytes, randomUUID } from "node:crypto";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const CLINIC_ID = "06ecfbc5-98a0-487e-90c8-7f4d6a54d270";
+const CREDENTIALS_PATH = join(root, "scripts/.demo-credentials.local");
+const STAFF_EMAIL = "clinic.demo@claimsaverplus.com";
 
 function loadEnv(file) {
   if (!existsSync(file)) return;
@@ -198,7 +200,83 @@ async function main() {
     console.log("enrolled test1", displayName);
   }
 
+  await ensureClinicStaff();
   console.log("Palm Grove mock roster ready.");
+}
+
+function staffPassword() {
+  if (existsSync(CREDENTIALS_PATH)) {
+    const data = JSON.parse(readFileSync(CREDENTIALS_PATH, "utf8"));
+    const existing = data.accounts?.find((row) => row.email === STAFF_EMAIL)?.password
+      || data.accounts?.[0]?.password;
+    if (existing && String(existing).length >= 12) return String(existing);
+  }
+  const envPw = process.env.DEMO_PASSWORD || "";
+  if (envPw.length >= 12) return envPw;
+  throw new Error("Set DEMO_PASSWORD or keep scripts/.demo-credentials.local. Do not commit it.");
+}
+
+function rememberStaffPassword(password) {
+  const data = existsSync(CREDENTIALS_PATH)
+    ? JSON.parse(readFileSync(CREDENTIALS_PATH, "utf8"))
+    : { accounts: [] };
+  const accounts = Array.isArray(data.accounts) ? data.accounts : [];
+  const next = {
+    email: STAFF_EMAIL,
+    name: "Palm Grove staff",
+    password,
+    role: "CLINIC_ADMIN",
+  };
+  const idx = accounts.findIndex((row) => row.email === STAFF_EMAIL);
+  if (idx >= 0) accounts[idx] = { ...accounts[idx], ...next };
+  else accounts.push(next);
+  writeFileSync(
+    CREDENTIALS_PATH,
+    JSON.stringify({ ...data, accounts, note: data.note || "Not in git." }, null, 2),
+  );
+}
+
+async function ensureClinicStaff() {
+  const password = staffPassword();
+  const existing = await findUser(STAFF_EMAIL);
+  let userId = existing?.id;
+  if (!userId) {
+    const created = await admin.auth.admin.createUser({
+      email: STAFF_EMAIL,
+      password,
+      email_confirm: true,
+      user_metadata: { first_name: "Maya", last_name: "Santos", demo_clinic: "palm-grove" },
+    });
+    if (created.error || !created.data.user) {
+      throw new Error(created.error?.message ?? `Could not create ${STAFF_EMAIL}`);
+    }
+    userId = created.data.user.id;
+  } else {
+    const { error } = await admin.auth.admin.updateUserById(userId, {
+      password,
+      email_confirm: true,
+      user_metadata: { first_name: "Maya", last_name: "Santos", demo_clinic: "palm-grove" },
+    });
+    if (error) throw error;
+  }
+  await waitForProfile(userId);
+  await admin
+    .from("profiles")
+    .update({
+      first_name: "Maya",
+      last_name: "Santos",
+      email: STAFF_EMAIL,
+      has_platform_access: false,
+      is_active: true,
+    })
+    .eq("id", userId);
+  const { error } = await admin.from("user_roles").upsert(
+    { user_id: userId, role: "CLINIC_ADMIN", clinic_id: CLINIC_ID },
+    { onConflict: "user_id,role" },
+  );
+  if (error) throw error;
+  rememberStaffPassword(password);
+  console.log("clinic staff ready", STAFF_EMAIL);
 }
 
 main().catch((err) => {
