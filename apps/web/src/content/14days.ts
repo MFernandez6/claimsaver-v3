@@ -155,9 +155,9 @@ export const daysCopy = {
     thanksPath: DAYS_THANKS_PATH.en,
     pdfPath: DAYS_PDF_PATH.en,
     pdfHrefLang: "en" as const,
-    metaTitle: "14 Days. Florida PIP Checklist | ClaimSaver+",
+    metaTitle: "Florida PIP 14-day rule checklist | ClaimSaver+",
     metaDescription:
-      "Hurt in a Florida car crash? You have 14 days to get medical care for PIP. Get the free step-by-step checklist in English, Spanish, or French.",
+      "Hurt in a Florida car crash? You have 14 days to get medical care for PIP benefits. Free no-fault checklist in English, Spanish, or French. Not legal advice.",
     ogAlt: "14 DAYS. Florida PIP checklist from ClaimSaver+",
     langToggleLabel: "Language",
     heroKicker: "Florida no-fault (PIP)",
@@ -241,7 +241,7 @@ export const daysCopy = {
     thanksPath: DAYS_THANKS_PATH.es,
     pdfPath: DAYS_PDF_PATH.es,
     pdfHrefLang: "es" as const,
-    metaTitle: "14 Días. Lista de PIP en Florida | ClaimSaver+",
+    metaTitle: "Lista de la regla de 14 días del PIP en Florida | ClaimSaver+",
     metaDescription:
       "¿Tuviste un accidente de auto en Florida? Tienes 14 días para recibir atención médica para el PIP. Descarga la lista paso a paso, gratis, en inglés, español o francés.",
     ogAlt: "14 DÍAS. Lista de PIP en Florida de ClaimSaver+",
@@ -328,7 +328,7 @@ export const daysCopy = {
     thanksPath: DAYS_THANKS_PATH.fr,
     pdfPath: DAYS_PDF_PATH.fr,
     pdfHrefLang: "fr" as const,
-    metaTitle: "14 Jours. Liste PIP en Floride | ClaimSaver+",
+    metaTitle: "Liste de la règle des 14 jours PIP en Floride | ClaimSaver+",
     metaDescription:
       "Vous avez eu un accident de voiture en Floride ? Vous avez 14 jours pour obtenir des soins médicaux pour le PIP. Téléchargez la liste étape par étape, gratuite, en anglais, espagnol ou français.",
     ogAlt: "14 JOURS. Liste PIP en Floride de ClaimSaver+",

@@ -1,8 +1,8 @@
 import { pageMeta } from "@/lib/page-seo";
 
 export const metadata = pageMeta(
-  "Learning center",
-  "General Florida PIP education. Not legal advice. ClaimSaver+ is self-help software.",
+  "Florida PIP claim guides",
+  "How to file a Florida PIP claim, the 14-day rule, documents, and when to call an attorney. General education. Not legal advice. Self-help software.",
   "/learning-center",
 );
 

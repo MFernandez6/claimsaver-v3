@@ -1,8 +1,8 @@
 import { pageMeta } from "@/lib/page-seo";
 
 export const metadata = pageMeta(
-  "Who we are",
-  "CLAIMSAVERPLUS LLC builds self-help software for Florida no-fault (PIP) paperwork. Not a law firm. Not legal advice.",
+  "Florida PIP software from Miami",
+  "CLAIMSAVERPLUS LLC builds self-help software so you can file Florida no-fault (PIP) paperwork yourself. Not a law firm. Not legal advice.",
   "/who-we-are",
 );
 

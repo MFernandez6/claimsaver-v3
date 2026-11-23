@@ -81,7 +81,7 @@
       "learnMore": "Learn More",
       "watchDemo": "Watch Demo",
       "imageAlt": "ClaimSaver+ Background",
-      "eyebrow": "Florida PIP only · Guided claim platform",
+      "eyebrow": "Florida no-fault (PIP) · File it yourself",
       "visualProgressTitle": "Claim progress",
       "visualProgressSubtitle": "Guided steps · save anytime",
       "visualStepsDone": "Steps completed",
@@ -186,6 +186,18 @@
     "faq": {
       "title": "Common questions",
       "subtitle": "How the guided platform works—general information, not legal advice.",
+      "fileYourself": {
+        "question": "Can I file a Florida PIP claim myself?",
+        "answer": "Yes. Florida no-fault is designed so you can file PIP with your own insurer. ClaimSaver+ is self-help software: guided worksheets, a document vault, and reminders so you can prepare the paperwork. You stay the filer. We do not submit, negotiate, or speak to the insurer for you."
+      },
+      "whatIsPip": {
+        "question": "What is Florida PIP (no-fault) insurance?",
+        "answer": "Personal Injury Protection (PIP) is Florida’s no-fault auto coverage. After a qualifying motor-vehicle crash it can help pay medical expenses and a portion of lost wages, subject to your policy, limits, and Florida law. This is general information, not a determination of your benefits."
+      },
+      "fourteenDay": {
+        "question": "What is the 14-day rule after a Florida car accident?",
+        "answer": "Florida PIP generally requires initial medical treatment within 14 days of the crash, from a qualifying provider, for certain medical benefits to be available. Exact language, exceptions, and whether a visit counts belong to the statute, your carrier, and a licensed attorney—not this website."
+      },
       "legal": {
         "question": "Is this legal?",
         "answer": "Yes. ClaimSaver+ is self-service software for Florida motor vehicle no-fault (PIP) claims. Using software to organize and prepare your own filing is legal. We are not a law firm and we do not provide legal advice, evaluate your claim, or represent you."
@@ -195,7 +207,7 @@
         "answer": "No. We are not a law firm, not a public adjuster, and not your representative. We do not give legal advice, negotiate with insurers, or file on your behalf. If your situation needs a licensed Florida attorney, that is a separate decision."
       },
       "attorneyNeed": {
-        "question": "Do I need to hire an attorney?",
+        "question": "Do I need a lawyer to file a PIP claim in Florida?",
         "answer": "Not to use ClaimSaver+, and not merely to submit a Florida PIP claim to your own insurer—no-fault is designed so you can file. PI firms generally take cases with a viable third-party claim; a PIP-only file is often declined. A licensed Florida attorney may still be the right call for serious injury, someone else’s liability, coverage disputes, or if you want representation. That is a separate decision from buying platform access."
       },
       "vsAttorney": {
@@ -245,9 +257,9 @@
   },
   "pages": {
     "howItWorks": {
-      "title": "How It Works",
+      "title": "How to file a Florida PIP claim",
       "subtitle": "Your claim. Your control. Our tools.",
-      "intro": "You handle every step. We provide the platform that makes each step easier.",
+      "intro": "File a Florida no-fault (PIP) claim yourself. You handle every step. We provide the platform that makes each step easier.",
       "walkthroughKicker": "Product walkthrough",
       "walkthroughTitle": "See the workspace",
       "walkthroughCaption": "A demo account: create an account, the guided form, reminders, and the document vault. You stay the filer. ClaimSaver+ does not send anything to an insurer.",
@@ -283,28 +295,28 @@
     },
     "learningCenter": {
       "kicker": "Learning center",
-      "title": "Learning Center",
-      "subtitle": "General education about Florida PIP—not legal advice",
-      "intro": "These topics explain how no-fault claims often work. Your situation is unique; for advice about your specific case, consult a licensed Florida attorney.",
+      "title": "Florida PIP claim guides",
+      "subtitle": "How to file a no-fault claim, the 14-day rule, documents, and when to call a lawyer—not legal advice",
+      "intro": "These topics explain how Florida PIP claims often work after a car accident. Your situation is unique; for advice about your specific case, consult a licensed Florida attorney.",
       "articles": {
         "pipSteps": {
           "title": "How to file a PIP claim in Florida (overview)",
           "summary": "A high-level look at forms, documentation, and timelines—educational only."
         },
         "fourteenDay": {
-          "title": "The 14-day rule and PIP",
-          "summary": "Why the initial treatment window matters in many Florida PIP matters (general information)."
+          "title": "Florida PIP 14-day rule",
+          "summary": "Why the initial treatment window after a crash matters in many Florida PIP matters (general information)."
         },
         "needLawyer": {
-          "title": "Do you need an attorney for every PIP claim?",
+          "title": "Do you need a lawyer for a Florida PIP claim?",
           "summary": "When guided tools may be enough—and when to call a licensed attorney."
         },
         "documents": {
-          "title": "Documents often used in no-fault claims",
+          "title": "Florida PIP claim documents checklist",
           "summary": "Checklists and organization tips—not a determination of what you must submit."
         },
         "mistakes": {
-          "title": "Common mistakes that complicate claims",
+          "title": "Common Florida PIP claim mistakes",
           "summary": "Practical tips to stay organized and complete."
         }
       },
@@ -315,7 +327,7 @@
     },
     "needProfessionalHelp": {
       "kicker": "When to call an attorney",
-      "title": "When Your Claim Needs Legal Expertise",
+      "title": "When a Florida PIP claim needs an attorney",
       "subtitle": "Some claims go beyond standard PIP filing. Here’s how to know if yours is one of them.",
       "body": "ClaimSaver+ is designed for standard Florida PIP claims—the kind that make up the vast majority of no-fault filings. But some situations involve complexities that go beyond form filing and documentation. Here are signals that your claim may benefit from a licensed attorney:",
       "bullets": {

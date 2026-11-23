@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { HomePage } from "@/components/home-page";
-import { JsonLd, homeFaqJsonLd } from "@/lib/seo/json-ld";
+import { JsonLd, homeFaqJsonLd, softwareApplicationJsonLd, websiteJsonLd } from "@/lib/seo/json-ld";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <JsonLd data={websiteJsonLd()} />
+      <JsonLd data={softwareApplicationJsonLd()} />
       <JsonLd data={homeFaqJsonLd()} />
       <HomePage />
     </>

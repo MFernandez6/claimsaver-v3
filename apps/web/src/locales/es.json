@@ -81,7 +81,7 @@
       "learnMore": "Más Información",
       "watchDemo": "Ver Demo",
       "imageAlt": "Fondo ClaimSaver+",
-      "eyebrow": "Solo PIP de Florida · Plataforma guiada de reclamos",
+      "eyebrow": "Sin culpa (PIP) en Florida · Preséntalo tú mismo",
       "visualProgressTitle": "Progreso del reclamo",
       "visualProgressSubtitle": "Pasos guiados · guarda en cualquier momento",
       "visualStepsDone": "Pasos completados",
@@ -186,6 +186,18 @@
     "faq": {
       "title": "Preguntas frecuentes",
       "subtitle": "Cómo funciona la plataforma guiada—información general, no asesoramiento legal.",
+      "fileYourself": {
+        "question": "¿Puedo presentar un reclamo PIP de Florida yo mismo?",
+        "answer": "Sí. El régimen sin culpa de Florida está pensado para que usted presente PIP ante su propia aseguradora. ClaimSaver+ es software de autoayuda: hojas guiadas, una bóveda de documentos y recordatorios para preparar el papeleo. Usted sigue siendo quien presenta. No enviamos, negociamos ni hablamos con la aseguradora por usted."
+      },
+      "whatIsPip": {
+        "question": "¿Qué es el PIP (sin culpa) de Florida?",
+        "answer": "La Protección contra Lesiones Personales (PIP) es la cobertura de auto sin culpa de Florida. Tras un accidente de vehículo que califique, puede ayudar a pagar gastos médicos y una parte de salarios perdidos, según su póliza, los límites y la ley de Florida. Esto es información general, no una determinación de sus beneficios."
+      },
+      "fourteenDay": {
+        "question": "¿Qué es la regla de 14 días después de un accidente de auto en Florida?",
+        "answer": "El PIP de Florida generalmente exige tratamiento médico inicial dentro de 14 días del accidente, de un proveedor que califique, para que ciertos beneficios médicos estén disponibles. El texto exacto, las excepciones y si una visita cuenta corresponden al estatuto, a su aseguradora y a un abogado con licencia—no a este sitio."
+      },
       "legal": {
         "question": "¿Es esto legal?",
         "answer": "Sí. ClaimSaver+ es software de autoservicio para reclamos PIP de vehículos motorizados en Florida. Usar software para organizar y preparar su propia presentación es legal. No somos bufete de abogados y no brindamos asesoramiento legal, no evaluamos su reclamo ni lo representamos."
@@ -195,7 +207,7 @@
         "answer": "No. No somos bufete, ni ajustadores públicos, ni su representante. No damos asesoramiento legal, no negociamos con aseguradoras ni presentamos por usted. Si su situación requiere un abogado licenciado en Florida, esa es una decisión aparte."
       },
       "attorneyNeed": {
-        "question": "¿Necesito contratar un abogado?",
+        "question": "¿Necesito un abogado para presentar un reclamo PIP en Florida?",
         "answer": "No para usar ClaimSaver+, ni solo para presentar un reclamo PIP de Florida ante su propia aseguradora: el no-fault está pensado para que usted presente. Los bufetes de lesiones suelen tomar casos con un reclamo viable contra un tercero; un expediente solo de PIP a menudo se rechaza. Un abogado licenciado en Florida puede seguir siendo la mejor opción ante una lesión grave, la responsabilidad de otra persona, disputas de cobertura, o si quiere representación. Esa decisión es independiente de comprar acceso a la plataforma."
       },
       "vsAttorney": {
@@ -245,9 +257,9 @@
   },
   "pages": {
     "howItWorks": {
-      "title": "Cómo funciona",
+      "title": "Cómo presentar un reclamo PIP en Florida",
       "subtitle": "Tu reclamo. Tu control. Nuestras herramientas.",
-      "intro": "Tú realizas cada paso. Nosotros te ofrecemos la plataforma que hace cada paso más sencillo.",
+      "intro": "Presenta un reclamo sin culpa (PIP) de Florida tú mismo. Tú realizas cada paso. Nosotros te ofrecemos la plataforma que hace cada paso más sencillo.",
       "walkthroughKicker": "Recorrido del producto",
       "walkthroughTitle": "Mira el espacio de trabajo",
       "walkthroughCaption": "Cuenta de demostración: crear la cuenta, el formulario guiado, recordatorios y la bóveda. Tú presentas el reclamo. ClaimSaver+ no envía nada a un asegurador.",
@@ -283,28 +295,28 @@
     },
     "learningCenter": {
       "kicker": "Centro de aprendizaje",
-      "title": "Centro de aprendizaje",
-      "subtitle": "Información general sobre el PIP en Florida—no es asesoría legal",
-      "intro": "Estos temas explican cómo suelen funcionar los reclamos sin culpa. Su situación es única; para consejos sobre su caso concreto, consulte a un abogado licenciado en Florida.",
+      "title": "Guías de reclamos PIP en Florida",
+      "subtitle": "Cómo presentar un reclamo sin culpa, la regla de 14 días, documentos y cuándo llamar a un abogado—no es asesoría legal",
+      "intro": "Estos temas explican cómo suelen funcionar los reclamos PIP de Florida después de un accidente. Su situación es única; para consejos sobre su caso concreto, consulte a un abogado licenciado en Florida.",
       "articles": {
         "pipSteps": {
           "title": "Cómo presentar un reclamo PIP en Florida (resumen)",
           "summary": "Una visión general de formularios, documentación y plazos—solo con fines educativos."
         },
         "fourteenDay": {
-          "title": "La regla de los 14 días y el PIP",
-          "summary": "Por qué la ventana de tratamiento inicial importa en muchos casos PIP en Florida (información general)."
+          "title": "Regla de 14 días del PIP en Florida",
+          "summary": "Por qué la ventana de tratamiento inicial después de un choque importa en muchos casos PIP en Florida (información general)."
         },
         "needLawyer": {
-          "title": "¿Necesita un abogado en todo reclamo PIP?",
+          "title": "¿Necesita un abogado para un reclamo PIP en Florida?",
           "summary": "Cuándo pueden bastar las herramientas guiadas y cuándo conviene llamar a un abogado licenciado."
         },
         "documents": {
-          "title": "Documentos que se usan a menudo en reclamos sin culpa",
+          "title": "Lista de documentos para un reclamo PIP en Florida",
           "summary": "Listas de verificación y consejos de organización—no es una lista definitiva de lo que debe enviar."
         },
         "mistakes": {
-          "title": "Errores frecuentes que complican los reclamos",
+          "title": "Errores frecuentes en reclamos PIP de Florida",
           "summary": "Consejos prácticos para mantener el orden y completar la información."
         }
       },
@@ -315,7 +327,7 @@
     },
     "needProfessionalHelp": {
       "kicker": "Cuándo llamar a un abogado",
-      "title": "Cuando su reclamo requiere experiencia legal",
+      "title": "Cuándo un reclamo PIP de Florida necesita un abogado",
       "subtitle": "Algunos reclamos van más allá del trámite PIP estándar. Así puede saber si el suyo es uno de ellos.",
       "body": "ClaimSaver+ está pensado para reclamos PIP estándar en Florida—la mayoría de los trámites sin culpa. Pero algunas situaciones tienen complejidades que exceden formularios y documentación. Estas son señales de que su reclamo podría beneficiarse de un abogado licenciado:",
       "bullets": {

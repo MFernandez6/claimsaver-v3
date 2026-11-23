@@ -1,9 +1,9 @@
-import { pageMeta } from "@/lib/page-seo";
+import { privatePageMeta } from "@/lib/page-seo";
 import { redirect } from "next/navigation";
 import { getAuthUser } from "@/lib/supabase/auth";
 import { getStaffRole } from "@/lib/admin/roles";
 
-export const metadata = pageMeta(
+export const metadata = privatePageMeta(
   "Dashboard",
   "Your ClaimSaver+ claim workspace. Progress, documents, and PIP reminders.",
 );

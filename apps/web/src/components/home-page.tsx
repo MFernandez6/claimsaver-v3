@@ -21,6 +21,9 @@ export function HomePage() {
   const { user, isLoaded, home, staffReady } = useSignedInHome();
 
   const faqItems = [
+    { question: t("home.faq.fileYourself.question"), answer: t("home.faq.fileYourself.answer") },
+    { question: t("home.faq.whatIsPip.question"), answer: t("home.faq.whatIsPip.answer") },
+    { question: t("home.faq.fourteenDay.question"), answer: t("home.faq.fourteenDay.answer") },
     { question: t("home.faq.legal.question"), answer: t("home.faq.legal.answer") },
     { question: t("home.faq.lawFirm.question"), answer: t("home.faq.lawFirm.answer") },
     {

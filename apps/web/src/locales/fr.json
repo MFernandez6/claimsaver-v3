@@ -81,7 +81,7 @@
       "learnMore": "En Savoir Plus",
       "watchDemo": "Regarder la Démo",
       "imageAlt": "Arrière-plan ClaimSaver+",
-      "eyebrow": "PIP de Floride uniquement · Plateforme de dossier guidée",
+      "eyebrow": "Sans faute (PIP) en Floride · Déposez-le vous-même",
       "visualProgressTitle": "Avancement du dossier",
       "visualProgressSubtitle": "Étapes guidées · enregistrez à tout moment",
       "visualStepsDone": "Étapes terminées",
@@ -186,6 +186,18 @@
     "faq": {
       "title": "Questions courantes",
       "subtitle": "Fonctionnement de la plateforme guidée—informations générales, pas un conseil juridique.",
+      "fileYourself": {
+        "question": "Puis-je déposer une réclamation PIP en Floride moi-même ?",
+        "answer": "Oui. Le régime sans faute de Floride est conçu pour que vous puissiez déposer le PIP auprès de votre propre assureur. ClaimSaver+ est un logiciel d’auto-assistance : feuilles guidées, coffre de documents et rappels pour préparer le dossier. Vous restez le déposant. Nous ne déposons pas, ne négocions pas et ne parlons pas à l’assureur à votre place."
+      },
+      "whatIsPip": {
+        "question": "Qu’est-ce que le PIP (sans faute) en Floride ?",
+        "answer": "La Personal Injury Protection (PIP) est la couverture auto sans faute de Floride. Après un accident de véhicule admissible, elle peut aider à payer des frais médicaux et une partie des salaires perdus, sous réserve de votre police, des plafonds et de la loi de Floride. Ceci est une information générale, pas une décision sur vos prestations."
+      },
+      "fourteenDay": {
+        "question": "Qu’est-ce que la règle des 14 jours après un accident de voiture en Floride ?",
+        "answer": "Le PIP de Floride exige généralement des soins médicaux initiaux dans les 14 jours suivant l’accident, auprès d’un prestataire admissible, pour que certaines prestations médicales soient disponibles. Le texte exact, les exceptions et le fait qu’une visite compte appartiennent à la loi, à votre assureur et à un avocat agréé—pas à ce site."
+      },
       "legal": {
         "question": "Est-ce légal ?",
         "answer": "Oui. ClaimSaver+ est un logiciel en libre-service pour les réclamations PIP de véhicules à moteur en Floride. Utiliser un logiciel pour organiser et préparer votre propre dépôt est légal. Nous ne sommes pas un cabinet d’avocats et nous ne fournissons pas de conseils juridiques, n’évaluons pas votre réclamation et ne vous représentons pas."
@@ -195,7 +207,7 @@
         "answer": "Non. Nous ne sommes ni un cabinet d’avocats, ni un expert en sinistres indépendant, ni votre représentant. Nous ne donnons pas de conseils juridiques, ne négocions pas avec les assureurs et ne déposons pas à votre place. Si votre situation nécessite un avocat agréé en Floride, c’est une décision distincte."
       },
       "attorneyNeed": {
-        "question": "Dois-je embaucher un avocat ?",
+        "question": "Ai-je besoin d’un avocat pour déposer une réclamation PIP en Floride ?",
         "answer": "Pas pour utiliser ClaimSaver+, et pas seulement pour déposer une réclamation PIP en Floride auprès de votre propre assureur—le régime sans faute est conçu pour que vous puissiez déposer. Les cabinets de préjudice prennent généralement les dossiers avec une réclamation viable contre un tiers ; un dossier PIP seul est souvent refusé. Un avocat agréé en Floride peut rester le bon choix en cas de blessure grave, de responsabilité d’un tiers, de litige de couverture, ou si vous voulez une représentation. Cette décision est distincte de l’achat de l’accès à la plateforme."
       },
       "vsAttorney": {
@@ -245,9 +257,9 @@
   },
   "pages": {
     "howItWorks": {
-      "title": "Comment ça marche",
+      "title": "Comment déposer une réclamation PIP en Floride",
       "subtitle": "Votre dossier. Votre contrôle. Nos outils.",
-      "intro": "Vous effectuez chaque étape. Nous fournissons la plateforme qui facilite chacune d’elles.",
+      "intro": "Déposez une réclamation sans faute (PIP) en Floride vous-même. Vous effectuez chaque étape. Nous fournissons la plateforme qui facilite chacune d’elles.",
       "walkthroughKicker": "Parcours du produit",
       "walkthroughTitle": "Voir l’espace de travail",
       "walkthroughCaption": "Compte démo : création du compte, formulaire guidé, rappels et coffre. Vous restez le déposant. ClaimSaver+ n’envoie rien à un assureur.",
@@ -283,28 +295,28 @@
     },
     "learningCenter": {
       "kicker": "Centre d'apprentissage",
-      "title": "Centre d’apprentissage",
-      "subtitle": "Information générale sur le PIP en Floride—pas de conseil juridique",
-      "intro": "Ces sujets expliquent comment les réclamations sans faute fonctionnent souvent. Votre situation est unique ; pour des conseils sur votre dossier, consultez un avocat agréé en Floride.",
+      "title": "Guides de réclamation PIP en Floride",
+      "subtitle": "Comment déposer une réclamation sans faute, la règle des 14 jours, les documents et quand appeler un avocat—pas de conseil juridique",
+      "intro": "Ces sujets expliquent comment les réclamations PIP en Floride fonctionnent souvent après un accident. Votre situation est unique ; pour des conseils sur votre dossier, consultez un avocat agréé en Floride.",
       "articles": {
         "pipSteps": {
           "title": "Comment déposer une réclamation PIP en Floride (aperçu)",
           "summary": "Vue d’ensemble des formulaires, pièces et délais—à titre purement éducatif."
         },
         "fourteenDay": {
-          "title": "La règle des 14 jours et le PIP",
-          "summary": "Pourquoi la fenêtre des premiers soins compte dans de nombreux dossiers PIP en Floride (information générale)."
+          "title": "Règle des 14 jours du PIP en Floride",
+          "summary": "Pourquoi la fenêtre des premiers soins après un accident compte dans de nombreux dossiers PIP en Floride (information générale)."
         },
         "needLawyer": {
-          "title": "Faut-il un avocat pour chaque réclamation PIP ?",
+          "title": "Faut-il un avocat pour une réclamation PIP en Floride ?",
           "summary": "Quand les outils guidés peuvent suffire—et quand appeler un avocat agréé."
         },
         "documents": {
-          "title": "Documents souvent utilisés en sinistre sans faute",
+          "title": "Liste de documents pour une réclamation PIP en Floride",
           "summary": "Listes et conseils d’organisation—pas une liste définitive de ce que vous devez transmettre."
         },
         "mistakes": {
-          "title": "Erreurs fréquentes qui compliquent les dossiers",
+          "title": "Erreurs fréquentes dans les dossiers PIP en Floride",
           "summary": "Conseils pratiques pour rester organisé et complet."
         }
       },
@@ -315,7 +327,7 @@
     },
     "needProfessionalHelp": {
       "kicker": "Quand appeler un avocat",
-      "title": "Quand votre dossier exige une expertise juridique",
+      "title": "Quand une réclamation PIP en Floride nécessite un avocat",
       "subtitle": "Certains dossiers dépassent le dépôt PIP courant. Voici comment savoir si le vôtre en fait partie.",
       "body": "ClaimSaver+ s’adresse aux réclamations PIP standard en Floride—la majorité des dossiers sans faute. Mais certaines situations impliquent des éléments qui vont au-delà des formulaires et des pièces. Voici des signaux que votre dossier pourrait bénéficier d’un avocat agréé :",
       "bullets": {

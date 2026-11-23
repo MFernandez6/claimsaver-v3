@@ -5,7 +5,7 @@ export type ArticleFaq = { question: string; answer: string };
 const EN: Record<ArticleKey, readonly ArticleFaq[]> = {
   pipSteps: [
     {
-      question: "What is a typical Florida PIP filing workflow?",
+      question: "How do I file a PIP claim in Florida?",
       answer:
         "Many people start with policy documents, a notice of the crash if required, a PIP application or equivalent intake, and records that support medical or wage benefits. Requirements vary by carrier and policy. This is general education, not a filing instruction for your case.",
     },
@@ -39,7 +39,7 @@ const EN: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   needLawyer: [
     {
-      question: "Do you need an attorney for every Florida PIP claim?",
+      question: "Do I need a lawyer for a Florida PIP claim?",
       answer:
         "Not every PIP claim requires hiring a lawyer. Straightforward files with clear coverage and timely paperwork may be organized without litigation. Whether that describes your situation is not something ClaimSaver+ determines.",
     },
@@ -56,7 +56,7 @@ const EN: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   documents: [
     {
-      question: "What documents are often used in a PIP file?",
+      question: "What documents do I need for a Florida PIP claim?",
       answer:
         "Many files include policy documents, crash reports, medical bills and notes, wage proofs when relevant, authorizations, and correspondence. Requirements vary by company and endorsement. Nothing here promises a carrier will accept every page.",
     },
@@ -73,7 +73,7 @@ const EN: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   mistakes: [
     {
-      question: "What delays commonly complicate PIP claims?",
+      question: "What mistakes delay a Florida PIP claim?",
       answer:
         "Common issues include postponing the first medical visit, delayed notice to the carrier, incomplete applications, and gaps in medical records. Early organization does not guarantee payment.",
     },
@@ -93,7 +93,7 @@ const EN: Record<ArticleKey, readonly ArticleFaq[]> = {
 const ES: Record<ArticleKey, readonly ArticleFaq[]> = {
   pipSteps: [
     {
-      question: "¿Cómo suele ser un trámite PIP en Florida?",
+      question: "¿Cómo presento un reclamo PIP en Florida?",
       answer:
         "Muchas personas empiezan con la póliza, un aviso del accidente si aplica, una solicitud PIP o equivalente, y documentos que respalden beneficios médicos o salariales. Los requisitos varían. Esto es educación general, no una instrucción para su caso.",
     },
@@ -127,7 +127,7 @@ const ES: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   needLawyer: [
     {
-      question: "¿Se necesita un abogado para cada reclamo PIP?",
+      question: "¿Necesito un abogado para un reclamo PIP en Florida?",
       answer:
         "No. Algunos expedientes sencillos se organizan sin litigio. ClaimSaver+ no determina si esa es su situación.",
     },
@@ -144,7 +144,7 @@ const ES: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   documents: [
     {
-      question: "¿Qué documentos suelen usarse en un expediente PIP?",
+      question: "¿Qué documentos necesito para un reclamo PIP en Florida?",
       answer:
         "Con frecuencia: póliza, informe del accidente, facturas y notas médicas, pruebas de salarios si aplican, autorizaciones y correspondencia. Los requisitos varían. Nada aquí promete que la aseguradora acepte cada página.",
     },
@@ -161,7 +161,7 @@ const ES: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   mistakes: [
     {
-      question: "¿Qué demoras suelen complicar un reclamo PIP?",
+      question: "¿Qué errores retrasan un reclamo PIP en Florida?",
       answer:
         "Posponer la primera visita médica, avisar tarde a la aseguradora, solicitudes incompletas y huecos en el expediente. Organizarse temprano no garantiza el pago.",
     },
@@ -181,7 +181,7 @@ const ES: Record<ArticleKey, readonly ArticleFaq[]> = {
 const FR: Record<ArticleKey, readonly ArticleFaq[]> = {
   pipSteps: [
     {
-      question: "À quoi ressemble un dossier PIP typique en Floride ?",
+      question: "Comment déposer une réclamation PIP en Floride ?",
       answer:
         "Beaucoup commencent par la police, un avis d’accident si requis, une demande PIP ou équivalent, et des pièces pour les prestations médicales ou salariales. Les exigences varient. Ceci est une information générale, pas une instruction pour votre dossier.",
     },
@@ -215,7 +215,7 @@ const FR: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   needLawyer: [
     {
-      question: "Faut-il un avocat pour chaque dossier PIP ?",
+      question: "Ai-je besoin d’un avocat pour une réclamation PIP en Floride ?",
       answer:
         "Non. Certains dossiers simples peuvent être organisés sans litige. ClaimSaver+ ne détermine pas si c’est votre situation.",
     },
@@ -232,7 +232,7 @@ const FR: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   documents: [
     {
-      question: "Quels documents sont souvent utilisés dans un dossier PIP ?",
+      question: "Quels documents faut-il pour une réclamation PIP en Floride ?",
       answer:
         "Souvent : police, rapport d’accident, factures et notes médicales, preuves de salaire le cas échéant, autorisations et correspondance. Les exigences varient. Rien ici ne promet qu’un assureur acceptera chaque page.",
     },
@@ -249,7 +249,7 @@ const FR: Record<ArticleKey, readonly ArticleFaq[]> = {
   ],
   mistakes: [
     {
-      question: "Quels retards compliquent souvent un dossier PIP ?",
+      question: "Quelles erreurs retardent une réclamation PIP en Floride ?",
       answer:
         "Reporter la première visite médicale, aviser tard l’assureur, des demandes incomplètes et des lacunes dans le dossier. S’organiser tôt ne garantit pas le paiement.",
     },

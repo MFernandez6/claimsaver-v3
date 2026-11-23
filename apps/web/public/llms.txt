@@ -1,6 +1,8 @@
 # ClaimSaver+
 
-> Self-help software for Florida motor-vehicle no-fault (PIP) claims. You prepare the paperwork and send it to your insurer. Flat $499 one time, per filer. Not a law firm. Not legal advice.
+> Self-help software so you can file a Florida motor-vehicle no-fault (PIP) claim yourself. You prepare the paperwork and send it to your insurer. Flat $499 one time, per filer. Not a law firm. Not legal advice.
+
+People search for: file a PIP claim in Florida, Florida no-fault after a car accident, PIP without a lawyer, lawyer won’t take my PIP claim, 14-day PIP rule, PIP documents checklist.
 
 ## Product
 
@@ -13,10 +15,15 @@
 ## Key pages
 
 - Home: https://www.claimsaverplus.com/
+- How to file a Florida PIP claim: https://www.claimsaverplus.com/how-it-works
 - Pricing: https://www.claimsaverplus.com/pricing
-- How it works: https://www.claimsaverplus.com/how-it-works
 - Lawyer won't take my PIP claim: https://www.claimsaverplus.com/vs/lawyer-wont-take-my-pip-claim
-- When to call an attorney: https://www.claimsaverplus.com/when-to-call-an-attorney
-- Learning center: https://www.claimsaverplus.com/learning-center
+- When a PIP claim needs an attorney: https://www.claimsaverplus.com/when-to-call-an-attorney
+- Florida PIP claim guides: https://www.claimsaverplus.com/learning-center
+- How to file PIP in Florida: https://www.claimsaverplus.com/learning-center/how-to-file-pip-in-florida
+- Florida PIP 14-day rule: https://www.claimsaverplus.com/learning-center/florida-pip-14-day-rule
+- Do you need an attorney: https://www.claimsaverplus.com/learning-center/do-you-need-an-attorney
+- PIP documents checklist: https://www.claimsaverplus.com/learning-center/pip-claim-documents-checklist
+- Common PIP mistakes: https://www.claimsaverplus.com/learning-center/common-pip-claim-mistakes
+- 14-day checklist: https://www.claimsaverplus.com/14days
 - Who we are: https://www.claimsaverplus.com/who-we-are
-- 14-day overview: https://www.claimsaverplus.com/14days

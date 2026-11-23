@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "ClaimSaver+",
     short_name: "ClaimSaver+",
-    description: "Florida PIP guided claim platform",
+    description: "File a Florida PIP claim yourself — self-help no-fault software",
     start_url: "/dashboard",
     display: "standalone",
     background_color: "#ffffff",

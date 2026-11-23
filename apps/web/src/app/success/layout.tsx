@@ -1,6 +1,6 @@
-import { pageMeta } from "@/lib/page-seo";
+import { privatePageMeta } from "@/lib/page-seo";
 
-export const metadata = pageMeta(
+export const metadata = privatePageMeta(
   "Payment received",
   "Your ClaimSaver+ platform access is ready. Continue to your dashboard.",
 );

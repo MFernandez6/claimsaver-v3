@@ -8,7 +8,8 @@ import { ProductionTestingNotice } from "@/components/production-testing-notice"
 import { AppProviders } from "@/components/app-providers";
 import { siteUrl } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
-import { LEGAL_ENTITY_NAME, PATIENT_PRICE_USD, PRINCIPAL_ADDRESS, SUPPORT_EMAIL } from "@claimsaver/shared";
+import { PATIENT_PRICE_USD } from "@claimsaver/shared";
+import { organizationJsonLd } from "@/lib/seo/json-ld";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -27,20 +28,49 @@ export const viewport: Viewport = {
 
 const url = siteUrl();
 
+const defaultTitle = "File a Florida PIP claim yourself | ClaimSaver+";
+const defaultDescription = `Self-help software for Florida PIP after a crash: file no-fault paperwork yourself. Guided forms, vault, 14-day reminders. Flat $${PATIENT_PRICE_USD}. Not a law firm.`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(url),
   title: {
-    default: "ClaimSaver+ — Florida PIP claim software",
+    default: defaultTitle,
     template: "%s | ClaimSaver+",
   },
-  description:
-    `Self-help document preparation software for Florida no-fault (PIP) claims: guided forms, storage, and deadline tracking. Flat $${PATIENT_PRICE_USD}. Not a law firm. Not legal advice.`,
+  description: defaultDescription,
+  keywords: [
+    "file PIP claim Florida",
+    "Florida no-fault claim",
+    "PIP claim without a lawyer",
+    "Florida PIP 14 day rule",
+    "file your own PIP claim",
+    "car accident PIP benefits Florida",
+    "lawyer won't take my PIP claim",
+    "Florida PIP paperwork",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
+  },
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "ClaimSaver+" },
   openGraph: {
-    title: "ClaimSaver+ — Florida PIP claim software",
+    title: defaultTitle,
     description:
-      `Hurt in a crash? You have 14 days to get treated. File your Florida no-fault claim. Flat $${PATIENT_PRICE_USD}. You stay the filer.`,
+      `Hurt in a Florida crash? File your no-fault (PIP) claim yourself. Flat $${PATIENT_PRICE_USD}. You stay the filer.`,
     url,
     siteName: "ClaimSaver+",
     locale: "en_US",
@@ -50,15 +80,15 @@ export const metadata: Metadata = {
         url: "/images/brand/claimsaver-og-share-1200x630.png",
         width: 1200,
         height: 630,
-        alt: "ClaimSaver+ — Florida PIP claim software",
+        alt: "File a Florida PIP claim yourself with ClaimSaver+",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClaimSaver+ — Florida PIP claim software",
+    title: defaultTitle,
     description:
-      `Hurt in a crash? You have 14 days to get treated. File your Florida no-fault claim. Flat $${PATIENT_PRICE_USD}. You stay the filer.`,
+      `Hurt in a Florida crash? File your no-fault (PIP) claim yourself. Flat $${PATIENT_PRICE_USD}. You stay the filer.`,
     images: ["/images/brand/claimsaver-og-share-1200x630.png"],
   },
 };
@@ -71,23 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                name: "ClaimSaver+",
-                legalName: LEGAL_ENTITY_NAME,
-                url,
-                email: SUPPORT_EMAIL,
-                logo: `${url.replace(/\/$/, "")}/images/brand/claimsaver-plus-lockup.png`,
-                address: {
-                  "@type": "PostalAddress",
-                  streetAddress: PRINCIPAL_ADDRESS.streetAddress,
-                  addressLocality: PRINCIPAL_ADDRESS.addressLocality,
-                  addressRegion: PRINCIPAL_ADDRESS.addressRegion,
-                  postalCode: PRINCIPAL_ADDRESS.postalCode,
-                  addressCountry: PRINCIPAL_ADDRESS.addressCountry,
-                },
-              }),
+              __html: JSON.stringify(organizationJsonLd()),
             }}
           />
           <div className="min-h-screen min-w-0 bg-gradient-to-br from-gray-50 via-white to-emerald-50/80 dark:from-gray-950 dark:via-gray-900 dark:to-emerald-950/30 print:min-h-0 print:bg-white">

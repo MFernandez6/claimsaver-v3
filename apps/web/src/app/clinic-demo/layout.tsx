@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { PATIENT_PRICE_USD } from "@claimsaver/shared";
 
 export const metadata: Metadata = {
-  title: "Book a clinic demo",
-  description: `Book a 15-minute ClaimSaver+ walkthrough for Florida PIP clinics. Patients still pay $${PATIENT_PRICE_USD} for platform access. Staff see checklist progress only.`,
+  title: "Florida PIP clinic demo",
+  description: `Book a 15-minute walkthrough of Florida PIP clinic software. Patients still pay $${PATIENT_PRICE_USD} and stay the filer. Staff see checklist progress only.`,
   alternates: { canonical: "/clinic-demo" },
 };
 

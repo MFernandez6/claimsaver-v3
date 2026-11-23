@@ -1,8 +1,8 @@
 import { pageMeta } from "@/lib/page-seo";
 
 export const metadata = pageMeta(
-  "Contact",
-  "Contact ClaimSaver+ support. Software questions only — you remain the filer.",
+  "Florida PIP software support",
+  "Contact ClaimSaver+ about the self-help PIP platform. Software and billing questions only — you remain the filer. Not legal advice.",
   "/contact",
 );
 

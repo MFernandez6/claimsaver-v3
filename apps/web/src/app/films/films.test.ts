@@ -21,6 +21,8 @@ test("review films exist and the /films page stays off the public index", () => 
   }
   const middleware = readFileSync(join(webRoot, "src/middleware.ts"), "utf8");
   assert.match(middleware, /"\/films"/);
-  const robots = readFileSync(join(webRoot, "public/robots.txt"), "utf8");
-  assert.match(robots, /Disallow: \/films/);
+  const robots = readFileSync(join(webRoot, "src/app/robots.ts"), "utf8");
+  assert.match(robots, /ROBOTS_DISALLOW/);
+  const disallow = readFileSync(join(webRoot, "src/lib/seo/public-urls.ts"), "utf8");
+  assert.match(disallow, /\/films/);
 });
