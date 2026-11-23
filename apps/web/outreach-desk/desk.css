@@ -33,3 +33,4 @@ dialog:has(#gps-pip:not([hidden])){width:min(880px,calc(100% - 24px))}
   #edit-form:has(#gps-pip:not([hidden]))>#fields{grid-row:3}
 }
 @media print{#gps-pip{display:none!important}}
+.record-open{cursor:pointer}.record-open:hover,.record-open:focus-within{border-color:#79bba4}

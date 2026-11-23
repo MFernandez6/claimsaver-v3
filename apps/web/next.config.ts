@@ -68,8 +68,8 @@ const nextConfig: NextConfig = {
       "object-src 'none'",
       "script-src 'self'",
       "style-src 'self'",
-      "img-src 'self' https://tile.openstreetmap.org",
-      "connect-src 'self' https://tile.openstreetmap.org",
+      "img-src 'self' https://server.arcgisonline.com",
+      "connect-src 'self' https://server.arcgisonline.com",
       "font-src 'self'",
     ].join("; ");
     const outreachHeaders = [

@@ -129,10 +129,11 @@ function heading(p) {
   return '<div class="heading"><div><p class="eyebrow">WORKSPACE</p><h1>' + nav[p] + '</h1><p class="sub">' + subheads[p] + '</p></div>' +
     button('＋ ' + (p === 'calendar' ? 'Plan a visit' : 'Add ' + kindNames[primaryKind[p]].toLowerCase()),'add',primaryKind[p],'primary') + '</div>';
 }
-function recordCard(r) {
+function recordCard(r, clickToEdit = false) {
   const isLead = ['client','clinic'].includes(r.kind);
   const details = isLead ? [kindNames[r.kind],r.contact,r.role,r.city,r.address,r.email,r.phone,r.channel].filter(Boolean).join(' · ') : r.category;
-  return '<article class="record"><span class="row-icon">' + icon(isLead ? r.kind : {task:'readiness',script:'messaging',note:'notes',document:'documents'}[r.kind]) +
+  return '<article class="record' + (clickToEdit ? ' record-open' : '') + '"' +
+    (clickToEdit ? ' data-record-id="' + escape(r.id) + '"' : '') + '><span class="row-icon">' + icon(isLead ? r.kind : {task:'readiness',script:'messaging',note:'notes',document:'documents'}[r.kind]) +
     '</span><div class="content"><h3>' + escape(r.title) + '</h3><p class="sub">' + escape(details) + '</p><div class="meta">' +
     (isLead ? tag(stageLabel(pipelineStage(r)), pipelineStage(r) === 'lost' ? 'issue' : '') : (r.status ? tag(r.status,r.category === 'Launch issue' && r.status !== 'Done' ? 'issue' : '') : '')) +
     (r.batch ? tag(r.batch,'neutral') : '') + (r.pip ? tag(r.pip,'neutral') : '') + (r.last ? tag('Reached out ' + date(r.last),'neutral') : '') + (r.reply ? tag('Replied ' + date(r.reply)) : '') +
@@ -203,9 +204,10 @@ function canvass() {
 }
 function clinicCards() {
   const sections = clinicSections();
-  if (batchFilter !== '*') return sections[0]?.rows.map(recordCard).join('') || empty('No clinics in this neighborhood yet. Add one after you confirm the ZIP and PIP handling.');
+  const card = record => recordCard(record, true);
+  if (batchFilter !== '*') return sections[0]?.rows.map(card).join('') || empty('No clinics in this neighborhood yet. Add one after you confirm the ZIP and PIP handling.');
   return sections.filter(section => section.rows.length).map(section => '<section class="neighborhood"><div class="section-title"><h2>' + escape(section.name) + '</h2><span class="date">' + section.rows.length + ' ' + (section.rows.length === 1 ? 'clinic' : 'clinics') + '</span></div>' +
-    section.rows.map(recordCard).join('') + '</section>').join('') || empty('No clinics match this search.');
+    section.rows.map(card).join('') + '</section>').join('') || empty('No clinics match this search.');
 }
 function printClinics() {
   const sections = clinicSections().filter(section => section.rows.length);
@@ -319,7 +321,7 @@ function loadTile(zoom, x, y) {
   const wrapped = ((x % span) + span) % span;
   const key = zoom + '/' + wrapped + '/' + y;
   if (gpsTiles.has(key)) return gpsTiles.get(key);
-  const pending = fetch('https://tile.openstreetmap.org/' + key + '.png').then(response => {
+  const pending = fetch('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/' + zoom + '/' + y + '/' + wrapped).then(response => {
     if (!response.ok) throw new Error('Map tile unavailable');
     return response.blob();
   }).then(blob => createImageBitmap(blob)).catch(() => null);
@@ -487,8 +489,16 @@ $('editor').addEventListener('cancel',event => { if (busy) event.preventDefault(
 $('editor').addEventListener('close', stopGps);
 $('new').addEventListener('click',() => showEditor(primaryKind[page()]));
 $('view').addEventListener('click', async event => {
+  if (event.target.closest('a')) return;
   const target = event.target.closest('[data-action]');
-  if (!target || busy) return;
+  if (!target) {
+    const card = event.target.closest('article.record-open');
+    if (!card || busy) return;
+    const record = records().find(item => item.id === card.dataset.recordId);
+    if (record) showEditor(record.kind, record);
+    return;
+  }
+  if (busy) return;
   const {action,id} = target.dataset;
   const record = records().find(r => r.id === id);
   if (action === 'batch') { batchFilter = id; clinicSearch = ''; render(); return; }
